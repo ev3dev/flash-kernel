@@ -13,3 +13,12 @@ Description: utility to write kernel and initramfs to MTD flash
  and write them to MTD flash.  This is useful on a range of embedded
  devices which boot from MTD flash.
 
+Package: flash-kernel-installer
+XC-Package-Type: udeb
+Architecture: arm
+XB-Subarchitecture: iop32x
+Provides: bootable-system
+Depends: cdebconf-udeb, base-installer
+XB-Installer-Menu-Item: 73
+Description: Configure flash to boot the system
+

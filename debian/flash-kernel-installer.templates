@@ -1,0 +1,16 @@
+Template: flash-kernel-installer/progress
+Type: text
+_Description: Configuring flash to boot the system
+
+Template: flash-kernel-installer/prepare
+Type: text
+_Description: Preparing the system
+
+Template: flash-kernel-installer/flashing
+Type: text
+_Description: Writing kernel to flash
+
+Template: debian-installer/flash-kernel-installer/title
+Type: text
+#  Main menu item
+_Description: Configure flash to boot the system

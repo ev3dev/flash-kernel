@@ -1,0 +1,43 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+log() {
+	logger -t flash-kernel-installer "$@"
+}
+
+error() {
+	log "error: $@"
+}
+
+db_progress START 0 2 flash-kernel-installer/progress
+db_progress INFO flash-kernel-installer/prepare
+
+apt-install initramfs-tools || true # probably already installed; make sure
+
+if ! apt-install flash-kernel; then
+	error "apt-install flash-kernel failed"
+	exit 1
+fi
+
+# Set up flash-kernel to run on kernel upgrades.
+if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
+	echo "postinst_hook = /usr/sbin/flash-kernel" >> \
+		/target/etc/kernel-img.conf
+fi
+
+db_progress STEP 1
+db_progress INFO flash-kernel-installer/flashing
+
+# We need the udev /dev which has the MTD devices
+mount -o bind /dev /target/dev
+if ! in-target flash-kernel; then
+	umount /target/dev || true
+	error "flash-kernel failed"
+	exit 1
+fi
+umount /target/dev || true
+
+db_progress STEP 1
+db_progress STOP
