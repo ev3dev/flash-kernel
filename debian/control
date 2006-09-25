@@ -14,6 +14,7 @@ Description: utility to write kernel and initramfs to MTD flash
  devices which boot from MTD flash.
 
 Package: flash-kernel-installer
+Section: debian-installer
 XC-Package-Type: udeb
 Architecture: arm
 XB-Subarchitecture: iop32x
