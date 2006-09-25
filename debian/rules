@@ -1,0 +1,56 @@
+#!/usr/bin/make -f
+# Copyright (C) 2004, 2006  Martin Michlmayr <tbm@cyrius.com>
+
+# Uncomment the following line to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PACKAGE=flash-kernel
+
+pwd=$(shell pwd)
+
+TOPDIR := $(shell pwd)
+t=${TOPDIR}/debian/${PACKAGE}
+
+build: build-stamp
+
+build-stamp:
+	dh_testdir
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	-rm build-stamp
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	dh_installman flash-kernel.8
+	dh_install flash-kernel usr/sbin
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_install -i
+	dh_installman -i
+	dh_installchangelogs -i
+	dh_link -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_shlibdeps -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+# Build architecture-dependent files here.
+binary-arch: build install
+# We have nothing to do by default.
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

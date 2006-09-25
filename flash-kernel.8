@@ -1,0 +1,15 @@
+.\" -*- nroff -*-
+.TH FLASH-KERNEL 8
+.SH NAME
+flash-kernel \- write kernel and initramfs to MTD flash
+.SH SYNOPSIS
+.B flash-kernel [kvers]
+.SH DESCRIPTION
+flash-kernel is a script which will take a kernel and initramfs image
+and write them to MTD flash.  This is useful on a range of embedded
+devices which boot from MTD flash.
+.P
+Optionally, it can be passed the version of the kernel to flash; it
+defaults to flashing /vmlinuz or /boot/vmlinuz.
+.SH AUTHOR
+Martin Michlmayr <tbm@cyrius.com>

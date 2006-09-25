@@ -1,0 +1,93 @@
+#!/bin/sh
+
+# Copyright (C) 2006  Joey Hess  <joeyh@debian.org>
+# Copyright (C) 2006  Martin Michlmayr <tbm@cyrius.com>
+
+# This code is covered by the GNU General Public License.
+
+set -e
+
+error() {
+	echo "$@" >&2
+	exit 1
+}
+
+check_mtd() {
+	if [ ! -e /proc/mtd ]; then
+		error "/proc/mtd doesn't exist"
+	fi
+}
+
+mtdblock() {
+	grep "$1" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
+}
+
+# Return a number to indicate by how many bytes a file has to be padded
+# so it will align with an mtd erase block (131072 bytes).
+# $1 = size of the file
+# $2 = size of the mtd partition
+pad_mtd_block() {
+	echo $(expr 131072 - $1 % 131072)
+}
+
+# Like pad_mtd_block but here we add one erase block to the padding because
+# this is apparently needed so an initramfs is recognized.
+pad_mtd_block_plus1() {
+	if [ $(expr $2 - $1) -le 131072 ]; then
+		echo $(expr $2 - $1)
+	else
+		echo $(expr $(pad_mtd_block $1 $2) + 131072)
+	fi
+}
+
+if [ -n "$1" ]; then
+	kvers="$1"
+	kfile=/boot/vmlinuz-$kvers
+	ifile=/boot/initrd.img-$kvers
+else
+	if [ -e /vmlinuz ]; then
+		kfile=/vmlinuz
+		ifile=/initrd.img
+	elif [ -e /boot/vmlinuz ]; then
+		kfile=/boot/vmlinuz
+		ifile=/boot/initrd.img
+	else
+		error "Cannot find a default kernel in /vmlinuz or /boot/vmlinuz"
+	fi
+fi
+
+if [ ! -e $kfile ] || [ ! -e $ifile ]; then
+	error "Can't find $kfile and $ifile"
+fi
+
+machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+case "$machine" in
+	"Thecus N2100")
+		check_mtd
+		mtdramdisk=$(mtdblock ramdisk)
+		if [ -z "$mtdramdisk" ]; then
+			error "Cannot find mtd partition 'ramdisk'"
+		fi
+		mtdkernel=$(mtdblock kernel)
+		if [ -z "$mtdkernel" ]; then
+			error "Cannot find mtd partition 'kernel'"
+		fi
+		printf "Flashing initramfs... " >&2
+		size=$(grep "ramdisk" /proc/mtd | cut -d " " -f 2)
+		size=$(printf "%d" 0x$size)
+		isize=$(wc -c $ifile | cut -d " " -f 1)
+		pad=$(pad_mtd_block_plus1 $isize $size)
+		(
+			cat $ifile
+			dd if=/dev/zero bs=$pad count=1 2>/dev/null
+		) > $mtdramdisk || error "failed."
+		echo "done." >&2
+		printf "Flashing kernel... " >&2
+		(
+			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
+			cat $kfile
+		) > $mtdkernel || error "failed."
+		echo "done." >&2
+	;;
+esac
+

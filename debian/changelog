@@ -1,0 +1,7 @@
+flash-kernel (0.1) UNRELEASED; urgency=low
+
+  * Initial release.
+  * Add support for Thecus N2100.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 25 Sep 2006 19:45:57 +0200
+

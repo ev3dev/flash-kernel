@@ -1,0 +1,15 @@
+Source: flash-kernel
+Section: utils
+Priority: optional
+Maintainer: Martin Michlmayr <tbm@cyrius.com>
+Build-Depends: debhelper (>> 5.0.0)
+Standards-Version: 3.7.2
+
+Package: flash-kernel
+Architecture: all
+Depends: devio
+Description: utility to write kernel and initramfs to MTD flash
+ flash-kernel is a script which will take a kernel and initramfs image
+ and write them to MTD flash.  This is useful on a range of embedded
+ devices which boot from MTD flash.
+
