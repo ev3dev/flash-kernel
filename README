@@ -1,0 +1,25 @@
+flash-kernel
+------------
+
+flash-kernel is a script which will take a kernel and initramfs image
+and write them to MTD flash.  This is useful on a range of embedded
+devices which boot from MTD flash.  You will generally want to use
+this script as a post installation hook of the kernel image.  This way,
+the newly installed kernel and newly created initramfs will automatically
+be written to flash.  In order for this to work, you have to edit the
+file /etc/kernel-img.conf and add the following line:
+
+  postinst_hook = /usr/sbin/flash-kernel
+
+Supported systems
+- - - - - - - - -
+
+At the moment, the following system is supported:
+
+ - Thecus N2100
+
+If you would like to see support for another device, please file a bug
+report in the Debian Bug Tracking System and include all information
+related to the boot process of your device.  Instructions can be found
+at http://bugs.debian.org/
+
