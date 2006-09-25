@@ -89,5 +89,8 @@ case "$machine" in
 		) > $mtdkernel || error "failed."
 		echo "done." >&2
 	;;
+	*)
+		error "Unsupported platform."
+	;;
 esac
 
