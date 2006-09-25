@@ -22,23 +22,6 @@ mtdblock() {
 	grep "$1" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
 }
 
-# Return a number to indicate by how many bytes a file has to be padded
-# so it will align with an mtd erase block (131072 bytes).
-# $1 = size of the file
-# $2 = size of the mtd partition
-pad_mtd_block() {
-	echo $(expr 131072 - $1 % 131072)
-}
-
-# Like pad_mtd_block but here we add one erase block to the padding because
-# this is apparently needed so an initramfs is recognized.
-pad_mtd_block_plus1() {
-	if [ $(expr $2 - $1) -le 131072 ]; then
-		echo $(expr $2 - $1)
-	else
-		echo $(expr $(pad_mtd_block $1 $2) + 131072)
-	fi
-}
 
 if [ -n "$1" ]; then
 	kvers="$1"
@@ -76,7 +59,7 @@ case "$machine" in
 		size=$(grep "ramdisk" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
 		isize=$(wc -c $ifile | cut -d " " -f 1)
-		pad=$(pad_mtd_block_plus1 $isize $size)
+		pad=$(expr $size - $isize)
 		(
 			cat $ifile
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
