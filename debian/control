@@ -1,7 +1,8 @@
 Source: flash-kernel
 Section: utils
 Priority: optional
-Maintainer: Martin Michlmayr <tbm@cyrius.com>
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Uploaders: Martin Michlmayr <tbm@cyrius.com>, Joey Hess <joeyh@debian.org>
 Build-Depends: debhelper (>> 5.0.0)
 Standards-Version: 3.7.2
 
