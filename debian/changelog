@@ -1,4 +1,4 @@
-flash-kernel (0.1) UNRELEASED; urgency=low
+flash-kernel (0.1) unstable; urgency=low
 
   [ Martin Michlmayr ]
   * Initial release.
@@ -8,5 +8,5 @@ flash-kernel (0.1) UNRELEASED; urgency=low
   * Remove hardcoded path from kernel-image.conf, should not be necessary.
   * Fix i386 build issue.
 
- -- Joey Hess <joeyh@debian.org>  Tue, 26 Sep 2006 03:58:10 -0400
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 26 Sep 2006 15:14:51 +0200
 
