@@ -6,6 +6,7 @@ flash-kernel (0.1) UNRELEASED; urgency=low
 
   [ Joey Hess ]
   * Remove hardcoded path from kernel-image.conf, should not be necessary.
+  * Fix i386 build issue.
 
- -- Joey Hess <joeyh@debian.org>  Tue, 26 Sep 2006 02:50:21 -0400
+ -- Joey Hess <joeyh@debian.org>  Tue, 26 Sep 2006 03:58:10 -0400
 

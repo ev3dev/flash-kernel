@@ -52,12 +52,13 @@ binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installdebconf
+	dh_installdebconf -s
+	install -d debian/flash-kernel-installer/DEBIAN
 	cp debian/flash-kernel-installer.isinstallable debian/flash-kernel-installer/DEBIAN/isinstallable
-	dh_installdeb
-	dh_fixperms
-	dh_gencontrol
-	dh_builddeb
+	dh_installdeb -s
+	dh_fixperms -s
+	dh_gencontrol -s
+	dh_builddeb -s
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
