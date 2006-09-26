@@ -1,7 +1,11 @@
 flash-kernel (0.1) UNRELEASED; urgency=low
 
+  [ Martin Michlmayr ]
   * Initial release.
   * Add support for Thecus N2100.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Mon, 25 Sep 2006 19:45:57 +0200
+  [ Joey Hess ]
+  * Remove hardcoded path from kernel-image.conf, should not be necessary.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 26 Sep 2006 02:50:21 -0400
 

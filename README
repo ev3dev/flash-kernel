@@ -9,7 +9,7 @@ the newly installed kernel and newly created initramfs will automatically
 be written to flash.  In order for this to work, you have to edit the
 file /etc/kernel-img.conf and add the following line:
 
-  postinst_hook = /usr/sbin/flash-kernel
+  postinst_hook = flash-kernel
 
 Supported systems
 - - - - - - - - -

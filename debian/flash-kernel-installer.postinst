@@ -23,7 +23,7 @@ fi
 
 # Set up flash-kernel to run on kernel upgrades.
 if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
-	echo "postinst_hook = /usr/sbin/flash-kernel" >> \
+	echo "postinst_hook = flash-kernel" >> \
 		/target/etc/kernel-img.conf
 fi
 
