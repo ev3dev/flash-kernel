@@ -7,7 +7,7 @@ Build-Depends: debhelper (>> 5.0.0)
 Standards-Version: 3.7.2
 
 Package: flash-kernel
-Architecture: all
+Architecture: arm
 Depends: devio
 Description: utility to write kernel and initramfs to MTD flash
  flash-kernel is a script which will take a kernel and initramfs image
@@ -23,4 +23,3 @@ Provides: bootable-system
 Depends: cdebconf-udeb, base-installer
 XB-Installer-Menu-Item: 73
 Description: Configure flash to boot the system
-

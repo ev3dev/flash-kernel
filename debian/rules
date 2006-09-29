@@ -31,33 +31,22 @@ install: build
 	dh_installman flash-kernel.8
 	dh_install flash-kernel usr/sbin
 
-# Build architecture-independent files here.
-binary-indep: build install
-	dh_testdir
-	dh_testroot
-	dh_installdocs
-	dh_install -i
-	dh_installman -i
-	dh_installchangelogs -i
-	dh_installdebconf -i
-	dh_compress -i
-	dh_fixperms -i
-	dh_installdeb -i
-	dh_shlibdeps -i
-	dh_gencontrol -i
-	dh_md5sums -i
-	dh_builddeb -i
-
-# Build architecture-dependent files here.
 binary-arch: build install
 	dh_testdir
 	dh_testroot
+	dh_installdocs -s
+	dh_install -s
+	dh_installman -s
+	dh_installchangelogs -s
 	dh_installdebconf -s
+	dh_compress -s
+	dh_fixperms -s
 	install -d debian/flash-kernel-installer/DEBIAN
 	cp debian/flash-kernel-installer.isinstallable debian/flash-kernel-installer/DEBIAN/isinstallable
 	dh_installdeb -s
-	dh_fixperms -s
+	dh_shlibdeps -s
 	dh_gencontrol -s
+	dh_md5sums -s
 	dh_builddeb -s
 
 binary: binary-indep binary-arch
