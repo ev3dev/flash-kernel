@@ -2,6 +2,7 @@ flash-kernel (0.2) UNRELEASED; urgency=low
 
   [ Martin Michlmayr ]
   * Make the isinstallable script of flash-kernel-installer executable.
+  * Add support for Linksys NSLU2.
 
   [ Christian Perrier ]
   * Correct debconf templates to fit the D-I writing style and add i18n stuff
