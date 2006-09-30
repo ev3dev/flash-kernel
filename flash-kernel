@@ -119,10 +119,10 @@ case "$machine" in
 		tmp=$(tempfile)
 		printf "Flashing kernel: " >&2
 		(
-			sercomm_header $ksize1
+			sercomm_header $(expr $ksize + 16)
 			dd if=$kfile of=$tmp bs=$ksize1 count=1 2>/dev/null
 			nslu2_swap $tmp
-			sercomm_header $ksize2
+			sercomm_header 131072
 			dd if=$kfile of=$tmp bs=1 skip=$ksize1 count=$ksize2 2>/dev/null
 			nslu2_swap $tmp
 			rm -f $tmp
