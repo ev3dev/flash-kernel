@@ -14,8 +14,9 @@ file /etc/kernel-img.conf and add the following line:
 Supported systems
 - - - - - - - - -
 
-At the moment, the following system is supported:
+At the moment, the following systems are supported:
 
+ - Linksys NSLU2
  - Thecus N2100
 
 If you would like to see support for another device, please file a bug
