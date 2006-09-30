@@ -49,5 +49,8 @@ binary-arch: build install
 	dh_md5sums -s
 	dh_builddeb -s
 
+binary-indep:
+	# do nothing
+
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
