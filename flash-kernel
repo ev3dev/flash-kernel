@@ -131,7 +131,7 @@ case "$machine" in
 		printf "Flashing initramfs: " >&2
 		size=$(grep "Ramdisk" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
-		isize=$(wc -c $ifile | cut -d " " -f 1)
+		isize=$(wc -c $ifile | awk '{print $1}')
 		cat $ifile > $tmp
 		pad=$(expr $size - $isize - 16)
 		if [ "$pad" -gt 0 ]; then
@@ -157,7 +157,7 @@ case "$machine" in
 		printf "Flashing initramfs... " >&2
 		size=$(grep "ramdisk" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
-		isize=$(wc -c $ifile | cut -d " " -f 1)
+		isize=$(wc -c $ifile | awk '{print $1}')
 		pad=$(expr $size - $isize)
 		(
 			cat $ifile
