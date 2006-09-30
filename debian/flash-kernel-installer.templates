@@ -2,7 +2,7 @@ Template: flash-kernel-installer/progress
 Type: text
 # This item is a progress bar item when the system configures
 # some flashable memory used by many embedded devices
-_Description: Configuring the flash memory to boot the system
+_Description: Configuring flash memory to boot the system
 
 Template: flash-kernel-installer/prepare
 Type: text
@@ -14,7 +14,7 @@ Template: flash-kernel-installer/flashing
 Type: text
 # This is a progress bar showing up when the system
 # write the kernel to the flashable memory of the embedded device
-_Description: Writing the kernel to the flash memory
+_Description: Writing the kernel to flash memory
 
 Template: debian-installer/flash-kernel-installer/title
 Type: text
@@ -22,4 +22,4 @@ Type: text
 # This item is a menu entry for a step where the system configures
 # the flashable memory used by many embedded devices
 # (writing the kernel and initrd to it)
-_Description: Configure the flash memory to boot the system
+_Description: Configure flash memory to boot the system
