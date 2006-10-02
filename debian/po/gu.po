@@ -29,9 +29,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "સિસ્ટમ બુટ કરવા માટે NSLU2 ફર્મવેર રૂપરેખાંકિત કરે છે"
+msgstr "સિસ્ટમ બુટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરે છે"
 
 #. Type: text
 #. Description
@@ -47,7 +46,7 @@ msgstr "સિસ્ટમ તૈયાર કરે છે"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે છે"
 
 #. Type: text
 #. Description
@@ -56,6 +55,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "સિસ્ટમ બુટ કરવા માટે NSLU2 ફર્મવેર રૂપરેખાંકિત કરો"
+msgstr "સિસ્ટમ બુટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરો"

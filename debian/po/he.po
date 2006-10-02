@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-26 23:23+0300\n"
+"PO-Revision-Date: 2006-10-02 10:09+0200\n"
 "Last-Translator: Lior Kaplan <kaplan@debian.org>\n"
 "Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "מגדיר את הקושחה NSLU2 לאתחל את המערכת"
+msgstr "מגדיר את זכרון הפלאש לאתחל את המערכת"
 
 #. Type: text
 #. Description
@@ -46,7 +45,7 @@ msgstr "מכיר את המערכת"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "כותב את הקרנל לזיכרון הפלאש"
 
 #. Type: text
 #. Description
@@ -55,6 +54,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "הגדרת הקושחה NSLU2 לאתחל את המערכת"
+msgstr "הגדרת זיכרון פלאש לאתחל את המערכת"

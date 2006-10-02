@@ -12,29 +12,29 @@
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
 # Nishant Sharma <me@nishants.net>, 2005, 2006.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-29 17:58+0530\n"
+"PO-Revision-Date: 2006-10-01 21:33+0530\n"
 "Last-Translator: Nishant Sharma <me at nishants.net>\n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: 2X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.2\n"
 
 #. Type: text
 #. Description
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "NSLU2 फर्मवेयर को सिस्टम बूट करने के लिए व्यवस्थित कर रहे है"
+msgstr "तंत्र को बूट करने के लिए फ्लैश मेमोरी को व्यवस्थित कर रहे हैं"
 
 #. Type: text
 #. Description
@@ -50,7 +50,7 @@ msgstr "तंत्र को तैयार कर रहे हैं"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "कर्नेल को फ्लैश मेमोरी में लिख रहे हैं"
 
 #. Type: text
 #. Description
@@ -59,6 +59,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "NSLU2 फर्मवेयर को तंत्र बूट करने के लिए व्यवस्थित करें"
+msgstr "तंत्र को बूट करने के लिए फ्लैश मेमोरी व्यवस्थित करें"
