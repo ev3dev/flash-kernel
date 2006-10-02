@@ -27,6 +27,16 @@ if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
 		/target/etc/kernel-img.conf
 fi
 
+machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+case "$machine" in
+	"Linksys NSLU2")
+		if ! apt-install nslu2-utils; then
+			error "apt-install nslu2-utils failed"
+			exit 1
+		fi
+	;;
+esac
+
 db_progress STEP 1
 db_progress INFO flash-kernel-installer/flashing
 

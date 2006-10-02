@@ -1,3 +1,9 @@
+flash-kernel (0.3) UNRELEASED; urgency=low
+
+  * Install nslu2-utils on NSLU2 devices.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 02 Oct 2006 11:54:10 +0200
+
 flash-kernel (0.2) unstable; urgency=low
 
   [ Martin Michlmayr ]
