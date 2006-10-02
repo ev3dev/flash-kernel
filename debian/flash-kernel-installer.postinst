@@ -34,6 +34,10 @@ case "$machine" in
 			error "apt-install nslu2-utils failed"
 			exit 1
 		fi
+		if ! apt-install apex-nslu2; then
+			error "apt-install apex-nslu2 failed"
+			exit 1
+		fi
 	;;
 esac
 
