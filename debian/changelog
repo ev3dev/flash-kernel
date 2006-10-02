@@ -1,6 +1,7 @@
 flash-kernel (0.3) UNRELEASED; urgency=low
 
   * Install nslu2-utils on NSLU2 devices.
+  * Update flash-kernel-installer.isinstallable to list NSLU2.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Mon, 02 Oct 2006 11:54:10 +0200
 

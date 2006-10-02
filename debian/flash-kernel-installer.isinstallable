@@ -10,6 +10,9 @@ case "`archdetect`" in
 			exit 0
 		fi
 		;;
+	arm/ixp4xx)
+			exit 0
+		;;
 	# Don't activate it by default
 	*)
 		exit 1
