@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-08 00:02+0300\n"
+"PO-Revision-Date: 2006-10-03 03:03+0300\n"
 "Last-Translator: Recai Oktaş <roktas@omu.edu.tr>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "NLSU2 aygıt yazılımı sistem açılışı için yapılandırılıyor"
+msgstr "Silinebilir (flash) bellek sistem açılışı için yapılandırılıyor"
 
 #. Type: text
 #. Description
@@ -49,7 +48,7 @@ msgstr "Sistem hazırlanıyor"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Çekirdek silinebilir (flash) belleğe yazılıyor"
 
 #. Type: text
 #. Description
@@ -58,6 +57,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "NLSU2 aygıt yazılımını sistem açılışı için yapılandır"
+msgstr "Silinebilir (flash) belleği sistem açılışı için yapılandır"

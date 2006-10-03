@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: eo\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-25 11:54+0200\n"
+"PO-Revision-Date: 2006-10-03 01:26+0200\n"
 "Last-Translator: Serge Leblanc <serge.leblanc@wanadoo.fr>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Akomodado de 'NSLU2'-firmvaro por startigi la sistemo"
+msgstr "Akomodado de 'flash'-memoroj por startigi la sistemon"
 
 #. Type: text
 #. Description
@@ -45,7 +44,7 @@ msgstr "Preparado de la sistemo"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Skribado de la kernon en 'flash'-memoroj"
 
 #. Type: text
 #. Description
@@ -54,6 +53,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Akomodu la 'NSLU2'-firmvaron por startigi la sistemo"
+msgstr "Akomodu la 'flash'-memorojn por startigi la sistemon"
