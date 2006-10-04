@@ -14,22 +14,21 @@ msgstr ""
 "Project-Id-Version: debian-installer etch\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-15 10:39+0200\n"
+"PO-Revision-Date: 2006-10-04 10:37+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# flash -> flaix? jm
 #. Type: text
 #. Description
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr ""
-"S'està configurant el microprogramari de l'NSLU2 per a arrencar el sistema"
+msgstr "S'està configurant la memòria flaix per a arrencar el sistema"
 
 #. Type: text
 #. Description
@@ -45,7 +44,7 @@ msgstr "S'està preparant el sistema"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "S'està escrivint el nucli a la memòria flaix"
 
 #. Type: text
 #. Description
@@ -54,6 +53,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Configureu el microprogramari de l'NSLU2 per a arrencar el sistema"
+msgstr "Configureu la memòria flaix per a arrencar el sistema"
