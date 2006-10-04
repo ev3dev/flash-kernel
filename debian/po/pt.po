@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-26 22:25+0000\n"
+"PO-Revision-Date: 2006-10-03 22:25+0000\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,9 +24,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "A configurar o firmware NSLU2 para arrancar o sistema"
+msgstr "A configurar a memória flash para arrancar o sistema"
 
 #. Type: text
 #. Description
@@ -42,7 +41,7 @@ msgstr "A preparar o sistema"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Escrever o kernel para a memória flash"
 
 #. Type: text
 #. Description
@@ -51,6 +50,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "A configurar o firmware NSLU2 para arrancar o sistema"
+msgstr "Configurar a memória flash para arrancar o sistema"
