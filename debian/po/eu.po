@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-27 10:00+0200\n"
+"PO-Revision-Date: 2006-10-04 23:39+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: librezale <librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "NSLU2 firmwarea konfiguratzen sistema abiarazteko"
+msgstr "Flash memoria konfiguratzen sistema abiarazteko"
 
 #. Type: text
 #. Description
@@ -48,7 +47,7 @@ msgstr "Sistema prestatzen"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Kernel-a flash memorian idazten"
 
 #. Type: text
 #. Description
@@ -57,6 +56,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "NSLU2 firmwarea sistema abiarazteko konfiguratu"
+msgstr "Flash memoria sistema abiarazteko konfiguratu"
