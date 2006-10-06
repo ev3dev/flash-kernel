@@ -39,7 +39,7 @@ msgstr ""
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
 msgid "Configuring flash memory to boot the system"
-msgstr "Configurazione della memroia flash per l'avvio del sistema in corso"
+msgstr "Configurazione della memoria flash per l'avvio del sistema in corso"
 
 #. Type: text
 #. Description
