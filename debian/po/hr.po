@@ -25,9 +25,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Podešavam NSLU2 firmware za podizanje sustava"
+msgstr "Podešavam flash memoriju za podizanje sustava"
 
 #. Type: text
 #. Description
@@ -43,7 +42,7 @@ msgstr "Pripremam sustav"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Zapisujem kernel u flash memoriju"
 
 #. Type: text
 #. Description
@@ -52,6 +51,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Podesiti NSLU2 firmware za podizanje sustava"
+msgstr "Podesiti flash memoriju za podizanje sustava"

@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: dz\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-17 22:37+0530\n"
+"PO-Revision-Date: 2006-10-06 10:45+0530\n"
 "Last-Translator: Jurmey Rabgay <jur_gay@yahoo.com>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "རིམ་ལུགས་འདི་ བུཊི་གི་དོན་ལུ་ NSLU2 ཚོང་ལས་ཁང་གི་ཅ་ཆས་ རིམ་སྒྲིག་འབད་དོ།"
+msgstr "རིམ་ལུགས་འདི་ བུཊི་གི་དོན་ལུ་ ཕེལེཤི་དྲན་ཚད་ རིམ་སྒྲིག་འབད་དོ།"
 
 #. Type: text
 #. Description
@@ -49,7 +48,7 @@ msgstr "རིམ་ལུགས་ གྲ་སྒྲིག་འབད་ད�
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "ཀར་ནེལ་ ཕེ་ལེཤ་དྲན་ཚད་ནང་འབྲི་དོ་"
 
 #. Type: text
 #. Description
@@ -58,6 +57,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "རིམ་ལུགས་བུཊི་གི་དོན་ལུ་  NSLU2ཚོང་ལས་ཁང་གི་ཅ་ཆས་ རིམ་སྒྲིག་འབད།"
+msgstr "རིམ་ལུགས་བུཊི་འབད་ནི་གི་དོན་ལུ་  ཕེལེཤ་དྲན་ཚད་ རིམ་སྒྲིག་འབད།"
