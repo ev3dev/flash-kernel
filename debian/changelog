@@ -1,9 +1,36 @@
-flash-kernel (0.3) UNRELEASED; urgency=low
+flash-kernel (0.3) unstable; urgency=low
 
   * Install nslu2-utils and apex-nslu2 on NSLU2 devices.
   * Update flash-kernel-installer.isinstallable to list NSLU2.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Mon, 02 Oct 2006 11:54:10 +0200
+  [ Updated translations ]
+  * Bengali (bn.po) by Mahay Alam Khan (মাহে আলম)
+  * Catalan (ca.po) by Jordi Mallach
+  * Czech (cs.po) by Miroslav Kure
+  * Danish (da.po) by Claus Hindsgaul
+  * Esperanto (eo.po) by Serge Leblanc
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Estonian (et.po) by Siim Põder
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Tapio Lehtonen
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Hebrew (he.po) by Lior Kaplan
+  * Hindi (hi.po) by Nishant Sharma
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Italian (it.po) by Stefano Canepa
+  * Japanese (ja.po) by Kenshi Muto
+  * Khmer (km.po) by Khoem Sokhem
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Portuguese (Brazil) (pt_BR.po) by André Luís Lopes
+  * Romanian (ro.po) by Eddy Petrişor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Peter Mann
+  * Swedish (sv.po) by Daniel Nylander
+  * Turkish (tr.po) by Recai Oktaş
+  * Ukrainian (uk.po) by Eugeniy Meshcheryakov
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Fri, 06 Oct 2006 10:17:27 +0100
 
 flash-kernel (0.2) unstable; urgency=low
 
