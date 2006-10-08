@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-09 20:18+0200\n"
+"PO-Revision-Date: 2006-10-07 20:49+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@powertech.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Setter opp NSLU2 fastprogram for å starte systemet"
+msgstr "Setter opp flash-minne for å starte systemet"
 
 #. Type: text
 #. Description
@@ -48,7 +47,7 @@ msgstr "Forbereder grunnsystemet"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Skriver kjernen til flash-minne"
 
 #. Type: text
 #. Description
@@ -57,6 +56,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Setter opp NSLU2 fastprogram til å starte systemet"
+msgstr "Sett opp flash-minne til å starte systemet"

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-27 12:01+0300\n"
+"PO-Revision-Date: 2006-10-07 09:45+0300\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Konfigūruojama NSLU2 mikroprograma (firmware) sistemos įkėlimui"
+msgstr "Atmintuko (flash memory) konfigūravimas sistemos įkėlimui iš jo"
 
 #. Type: text
 #. Description
@@ -45,7 +44,7 @@ msgstr "Sistemos paruošimas"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Branduolio įrašymas į atmintuką (flash memory)"
 
 #. Type: text
 #. Description
@@ -54,6 +53,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "NSLU2 mikroprogramos (firmware) konfigūravimas sistemos įkėlimui"
+msgstr "Konfigūruoti atmintuką (flash memory) sistemos įkėlimui iš jo"
