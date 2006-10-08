@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-26 12:56+0200\n"
+"PO-Revision-Date: 2006-10-08 14:29+0200\n"
 "Last-Translator: Georgi Stanojevski <glisha@gmail.com>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Конфигурирање на NSLU2 фирмверот за да се бутира системот"
+msgstr "Конфигурирање на флеш меморијата за да се бутира системот"
 
 #. Type: text
 #. Description
@@ -45,7 +44,7 @@ msgstr "Подготовка на системот"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Запишување на кернелот во флеш меморијата"
 
 #. Type: text
 #. Description
@@ -54,6 +53,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Конфигурирање на NSLU2 фирмверот за да се подигне системот"
+msgstr "Конфигурирај флеш меморија за да се подигне системот"
