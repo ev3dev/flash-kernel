@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: debian-installer Level 1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-21 18:04+0930\n"
+"PO-Revision-Date: 2006-10-09 17:50+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Đang cấu hình phần vững NSLU2 để khởi động hệ thống..."
+msgstr "Đang cấu hình bộ nhớ khó phai để khởi động hệ thống"
 
 #. Type: text
 #. Description
@@ -48,7 +47,7 @@ msgstr "Đang chuẩn bị hệ thống..."
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Đang ghi hạt nhân vào bộ nhớ khó phai"
 
 #. Type: text
 #. Description
@@ -57,6 +56,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Cấu hình phần vững NSLU2 để khởi động hệ thống"
+msgstr "Cấu hình bộ nhớ khó phai để khởi động hệ thống"
