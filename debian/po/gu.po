@@ -30,7 +30,7 @@ msgstr ""
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
 msgid "Configuring flash memory to boot the system"
-msgstr "સિસ્ટમ બુટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરે છે"
+msgstr "સિસ્ટમ બૂટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરે છે"
 
 #. Type: text
 #. Description
@@ -56,4 +56,4 @@ msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
 msgid "Configure flash memory to boot the system"
-msgstr "સિસ્ટમ બુટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરો"
+msgstr "સિસ્ટમ બૂટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરો"
