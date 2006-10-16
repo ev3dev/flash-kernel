@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-09-28 00:01+0800\n"
+"PO-Revision-Date: 2006-10-16 23:38+0800\n"
 "Last-Translator: Eric Pareja <xenos@upm.edu.ph>\n"
 "Language-Team: Tagalog <debian-tl@banwa.upm.edu.ph>\n"
 "MIME-Version: 1.0\n"
@@ -32,9 +32,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Isinasaayos ang NSLU2 firmware upang i-boot ang sistema"
+msgstr "Isinasaayos ang flash memory upang iboot ang sistema"
 
 #. Type: text
 #. Description
@@ -50,7 +49,7 @@ msgstr "Hinahanda ang sistema"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Isinusulat ang kernel sa flash memory"
 
 #. Type: text
 #. Description
@@ -59,6 +58,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Isaayos ang NSLU2 firmware na i-boot ang sistema"
+msgstr "Isaayos ang flash memory upang iboot ang sistema"
