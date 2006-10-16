@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: debian-installer Level 1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-10-09 17:50+0930\n"
+"PO-Revision-Date: 2006-10-16 15:34+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Đang cấu hình bộ nhớ khó phai để khởi động hệ thống
 #. on a flashable memory
 #: ../flash-kernel-installer.templates:11
 msgid "Preparing the system"
-msgstr "Đang chuẩn bị hệ thống..."
+msgstr "Đang chuẩn bị hệ thống"
 
 #. Type: text
 #. Description
