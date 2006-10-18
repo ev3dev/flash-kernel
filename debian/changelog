@@ -1,3 +1,9 @@
+flash-kernel (0.4) unstable; urgency=low
+
+  * Add ixp4xx to XB-Subarchitecture.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Wed, 18 Oct 2006 10:59:25 +0100
+
 flash-kernel (0.3) unstable; urgency=low
 
   * Install nslu2-utils and apex-nslu2 on NSLU2 devices.

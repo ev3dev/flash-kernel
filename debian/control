@@ -19,7 +19,7 @@ Package: flash-kernel-installer
 Section: debian-installer
 XC-Package-Type: udeb
 Architecture: arm
-XB-Subarchitecture: iop32x
+XB-Subarchitecture: iop32x ixp4xx
 Provides: bootable-system
 Depends: cdebconf-udeb, base-installer
 XB-Installer-Menu-Item: 73
