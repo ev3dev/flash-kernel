@@ -3,7 +3,7 @@
 #
 # DO NOT MODIFY IT DIRECTLY : SUCH CHANGES WILL BE LOST
 # 
-# translation of be-20061012.po to Belarussian
+# translation of be-20061017-cristian-in.po to Belarusian
 #
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files#
@@ -11,14 +11,15 @@
 # in doc/i18n/i18n.txt#
 #
 # Andrei Darashenka <adorosh2@it.org.by>, 2005, 2006.
+# Pavel Piatruk <berserker@neolocation.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: be-20061012\n"
+"Project-Id-Version: be\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-10-15 02:08+0200\n"
+"PO-Revision-Date: 2006-10-17 23:34+0300\n"
 "Last-Translator: Andrei Darashenka <adorosh2@it.org.by>\n"
-"Language-Team: Belarussian <be@li.org>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,18 +30,16 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Сканфігураваць базавую сістэму перад перазагрузкай"
+msgstr "Сканфігураваць памяць flash для запуску сістэмы"
 
 #. Type: text
 #. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #: ../flash-kernel-installer.templates:11
-#, fuzzy
 msgid "Preparing the system"
-msgstr "Не атрымалася ўсталяваць базавую сістэму"
+msgstr "Падрыхтоўка сістэмы"
 
 #. Type: text
 #. Description
@@ -48,7 +47,7 @@ msgstr "Не атрымалася ўсталяваць базавую сістэ
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Запіс ядра ў флэш-памяць"
 
 #. Type: text
 #. Description
@@ -57,6 +56,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Сканфігураваць базавую сістэму перад перазагрузкай"
+msgstr "Сканфігураваць флэш-памяць для запуску сістэмы"
