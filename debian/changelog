@@ -1,3 +1,10 @@
+flash-kernel (0.5) UNRELEASED; urgency=low
+
+  * Changed the priority of flash-kernel-installer to standard so d-i will
+    load it by default.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Fri, 20 Oct 2006 20:21:16 +0100
+
 flash-kernel (0.4) unstable; urgency=low
 
   * Add ixp4xx to XB-Subarchitecture.

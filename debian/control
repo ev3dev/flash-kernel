@@ -17,6 +17,7 @@ Description: utility to write kernel and initramfs to MTD flash
 
 Package: flash-kernel-installer
 Section: debian-installer
+Priority: standard
 XC-Package-Type: udeb
 Architecture: arm
 XB-Subarchitecture: iop32x ixp4xx
