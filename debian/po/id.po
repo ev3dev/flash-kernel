@@ -12,7 +12,7 @@
 # Translators:
 # * Parlin Imanuel Toh (parlin_i@yahoo.com), 2004-2005.
 # * I Gede Wijaya S (gwijayas@yahoo.com), 2004.
-# * Arief S F (arief@gurame.fisika.ui.ac.id), 2004.
+# * Arief S F (arief@gurame.fisika.ui.ac.id), 2004-2006
 # * Setyo Nugroho (setyo@gmx.net), 2004.
 #
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-08-28 13:00+0700\n"
+"PO-Revision-Date: 2006-10-21 13:35+0700\n"
 "Last-Translator: Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>\n"
 "Language-Team: Debian Indonesia Team <debian-l10n-id@gurame.fisika.ui.ac."
 "id>\n"
@@ -35,9 +35,8 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Sedang mengkonfigurasi firmware NSLU2 untuk boot sistem."
+msgstr "Sedang mengkonfigurasi memory flash untuk boot sistem."
 
 #. Type: text
 #. Description
@@ -53,7 +52,7 @@ msgstr "Sedang mempersiapkan sistem"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Sedang menulis kernel ke memory flash."
 
 #. Type: text
 #. Description
@@ -62,6 +61,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Konfigurasi firmware NSLU2 untuk boot sistem "
+msgstr "Konfigurasikan memory flash untuk boot sistem."
