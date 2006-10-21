@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: ku-neu\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-10-16 03:50+0100\n"
+"PO-Revision-Date: 2006-10-21 15:08+0100\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,9 +37,8 @@ msgstr "Pergala bingehî saz dike"
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #: ../flash-kernel-installer.templates:11
-#, fuzzy
 msgid "Preparing the system"
-msgstr "Pergala bingehî ji paketa xwe derdixe"
+msgstr "Pergala tê amadekirin"
 
 #. Type: text
 #. Description
