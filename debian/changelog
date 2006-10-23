@@ -1,5 +1,7 @@
 flash-kernel (0.5) UNRELEASED; urgency=low
 
+  * Install the NSLU2 microcode to the target if it's found on the d-i
+    image.
   * Changed the priority of flash-kernel-installer to standard so d-i will
     load it by default.
 
