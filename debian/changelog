@@ -1,3 +1,10 @@
+flash-kernel (0.6) unstable; urgency=low
+
+  * Provide an initramfs-tools hook for Thecus N2100/N4100 so the
+    right root paramater is given to the kernel.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 23 Oct 2006 22:49:32 +0100
+
 flash-kernel (0.5) unstable; urgency=low
 
   * Install the NSLU2 microcode to the target if it's found on the d-i

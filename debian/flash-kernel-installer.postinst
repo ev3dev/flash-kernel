@@ -50,6 +50,9 @@ case "$machine" in
 			exit 1
 		fi
 	;;
+	"Thecus N2100" | "Thecus N4100")
+		in-target update-initramfs -u || true
+	;;
 esac
 
 db_progress STEP 1

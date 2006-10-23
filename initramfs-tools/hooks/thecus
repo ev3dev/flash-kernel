@@ -1,0 +1,33 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs() {
+	echo "$PREREQ"
+}
+
+case $1 in
+prereqs)
+	prereqs
+	exit 0
+	;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+# Only run if we're on a Thecus N2100 or N4100 machine
+machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+if ! echo $machine | grep -q "^Thecus "; then
+	exit 0
+fi
+
+# Record the root filesystem device for use during boot, since the
+# bootloader of the Thecus is hardcoded to use root=/dev/ram.
+rootdev=$(egrep '^[^ 	]*[ 	]*/[ 	]' /etc/fstab | awk '{print $1}') || true
+if [ -z "$rootdev" ]; then
+	rootdev=/dev/sda1
+	echo "Warning: /etc/fstab parse error; guessing that the root device is $rootdev" >&2
+fi
+install -d $DESTDIR/conf
+echo ROOT="$rootdev" >> $DESTDIR/conf/param.conf
+
