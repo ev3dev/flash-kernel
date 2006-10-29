@@ -1,4 +1,4 @@
-flash-kernel (0.7) UNRELEASED; urgency=high
+flash-kernel (0.7) unstable; urgency=high
 
   * Copy the ixp400 modules to target if they exist.  This code got lost
     in the transition from nslu2-firmware-installer to this package.
