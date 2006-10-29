@@ -1,3 +1,10 @@
+flash-kernel (0.7) UNRELEASED; urgency=high
+
+  * Copy the ixp400 modules to target if they exist.  This code got lost
+    in the transition from nslu2-firmware-installer to this package.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 29 Oct 2006 11:41:34 +0100
+
 flash-kernel (0.6) unstable; urgency=low
 
   * Provide an initramfs-tools hook for Thecus N2100/N4100 so the
