@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: bs\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-04-11 11:42+0100\n"
+"PO-Revision-Date: 2006-10-31 02:55+0100\n"
 "Last-Translator: Safir Secerovic <sapphire@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: 3\n"
-"X-Poedit-Language: Bosnian\n"
 "X-Poedit-Country: BOSNIA AND HERZEGOVINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -31,18 +30,16 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Podešavam osnovni sistem"
+msgstr "Podešavam flash memoriju za podizanje sistema"
 
 #. Type: text
 #. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #: ../flash-kernel-installer.templates:11
-#, fuzzy
 msgid "Preparing the system"
-msgstr "Raspakivam osnovni sistem"
+msgstr "Pripremam sistem"
 
 #. Type: text
 #. Description
@@ -50,7 +47,7 @@ msgstr "Raspakivam osnovni sistem"
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr ""
+msgstr "Upisujem kernel u flash memoriju"
 
 #. Type: text
 #. Description
@@ -59,6 +56,5 @@ msgstr ""
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #: ../flash-kernel-installer.templates:25
-#, fuzzy
 msgid "Configure flash memory to boot the system"
-msgstr "Podešavam osnovni sistem"
+msgstr "Podesi flash memoriju za podizanje sistema"

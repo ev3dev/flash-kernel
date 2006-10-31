@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-09-30 12:21+0000\n"
-"PO-Revision-Date: 2006-10-30 17:36+0200\n"
+"PO-Revision-Date: 2006-10-31 10:29+0200\n"
 "Last-Translator:  Damyan Ivaniv <dam@modsoftsys.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,9 +36,8 @@ msgstr "Настройване на основната система"
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #: ../flash-kernel-installer.templates:11
-#, fuzzy
 msgid "Preparing the system"
-msgstr "Разопаковане на основната система"
+msgstr "Подготовка"
 
 #. Type: text
 #. Description
