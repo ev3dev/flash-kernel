@@ -153,6 +153,12 @@ case "$machine" in
 		if [ -z "$mtdkernel" ]; then
 			error "Cannot find mtd partition 'kernel'"
 		fi
+		printf "Flashing kernel... " >&2
+		(
+			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
+			cat $kfile
+		) > $mtdkernel || error "failed."
+		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		size=$(grep "ramdisk" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
@@ -162,12 +168,6 @@ case "$machine" in
 			cat $ifile
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
 		) > $mtdramdisk || error "failed."
-		echo "done." >&2
-		printf "Flashing kernel... " >&2
-		(
-			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
-			cat $kfile
-		) > $mtdkernel || error "failed."
 		echo "done." >&2
 	;;
 	*)
