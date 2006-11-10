@@ -115,7 +115,6 @@ case "$machine" in
 		boundary=1441792 # 0x00160000
 		ksize=$(wc -c $kfile | awk '{print $1}')
 		ksize1=$(expr $boundary - $offset - 16)
-		ksize2=$(expr $ksize - $ksize1)
 		tmp=$(tempfile)
 		printf "Flashing kernel: " >&2
 		(
@@ -123,7 +122,7 @@ case "$machine" in
 			dd if=$kfile of=$tmp bs=$ksize1 count=1 2>/dev/null
 			nslu2_swap $tmp
 			sercomm_header 131072
-			dd if=$kfile of=$tmp bs=1 skip=$ksize1 count=$ksize2 2>/dev/null
+			dd if=$kfile of=$tmp ibs=$ksize1 skip=1 2>/dev/null
 			nslu2_swap $tmp
 			rm -f $tmp
 		) > "$mtdkernel" || error "failed."
