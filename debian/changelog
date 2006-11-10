@@ -1,11 +1,17 @@
 flash-kernel (0.8) unstable; urgency=low
 
+  [ Martin Michlmayr ]
   * Speed up flash-kernel on NSLU2 by reading the second part of the
     kernel in one go rather than byte by byte.
   * Write the kernel first, followed by the initramfs on Thecus N2100
     (for comsmetics reasons only).
 
- -- Martin Michlmayr <tbm@cyrius.com>  Fri, 10 Nov 2006 08:12:16 +0000
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bosnian (bs.po) by Safir Secerovic
+  * Polish (pl.po) by Bartosz Fenski
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Fri, 10 Nov 2006 08:15:06 +0000
 
 flash-kernel (0.7) unstable; urgency=high
 
