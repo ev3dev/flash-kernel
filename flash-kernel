@@ -23,7 +23,7 @@ mtdblock() {
 }
 
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
-# 16 byte MTD header, the first two bytes (big endian) give the length of
+# 16 byte MTD header, the first four bytes (big endian) give the length of
 # the remainder of the image, and the remaining bytes are zero.  Generate
 # this header.
 sercomm_header() {
