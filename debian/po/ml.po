@@ -5,7 +5,8 @@
 # 
 # translation of ml.po to malayalam
 # http://fci.wikia.com/wiki/Debian/മലയാളം/ഇന്സ്റ്റാളര്‍/ലെവല്‍1/മാസ്റ്റര്‍/ml.po
-# Contributors: Praveen A <pravi.a@gmail.com>, Santhosh, Sreejith
+# Copyright (c)  2006 Praveen A <pravi.a@gmail.com>, Santhosh Thottingal <santhosh00@gmail.com>, Sreejith :: ശ്രീജിത്ത് കെ <sreejithk2000@gmail.com> and Debian Project
+# Credits:  V Sasi Kumar, Sreejith N and Seena N
 #
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
@@ -18,13 +19,12 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2007-01-06 22:48+0100\n"
-"PO-Revision-Date: 2006-11-23 14:33+0530\n"
+"PO-Revision-Date: 2007-01-18 08:21+0530\n"
 "Last-Translator: Praveen A <pravi.a@gmail.com>\n"
 "Language-Team: malayalam <smc-discuss@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #. Type: text
 #. Description
@@ -48,7 +48,7 @@ msgstr "സിസ്റ്റം തയ്യാറാക്കി കൊണ്�
 #. write the kernel to the flashable memory of the embedded device
 #: ../flash-kernel-installer.templates:17
 msgid "Writing the kernel to flash memory"
-msgstr "കെര്ണല്‍ ഫ്ലാഷ് മെമറിയിലേക്ക് എഴുതിക്കൊണ്ടിരിക്കുന്നു"
+msgstr "കെര്‍ണല്‍ ഫ്ലാഷ് മെമറിയിലേക്ക് എഴുതിക്കൊണ്ടിരിക്കുന്നു"
 
 #. Type: text
 #. Description
