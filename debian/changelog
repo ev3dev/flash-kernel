@@ -1,8 +1,20 @@
-flash-kernel (0.9) UNRELEASED; urgency=low
+flash-kernel (1.0) unstable; urgency=low
 
   * Fix comment about the Sercomm header.  Closes: #402142.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Fri, 08 Dec 2006 13:42:25 +0000
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Danish (da.po) by Claus Hindsgaul
+  * Esperanto (eo.po) by Serge Leblanc
+  * Kurdish (ku.po) by rizoye-xerzi
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Malayalam (ml.po) by Praveen A
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by A S Alam
+  * Romanian (ro.po) by Eddy Petrișor
+  * Slovenian (sl.po) by Matej Kovačič
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Thu, 01 Feb 2007 16:28:02 +0100
 
 flash-kernel (0.8) unstable; urgency=low
 
