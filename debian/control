@@ -8,7 +8,7 @@ Standards-Version: 3.7.2
 XS-Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/flash-kernel
 
 Package: flash-kernel
-Architecture: arm
+Architecture: arm armel armeb
 Depends: devio
 Description: utility to write kernel and initramfs to MTD flash
  flash-kernel is a script which will take a kernel and initramfs image
@@ -19,7 +19,7 @@ Package: flash-kernel-installer
 Section: debian-installer
 Priority: standard
 XC-Package-Type: udeb
-Architecture: arm
+Architecture: arm armel armeb
 XB-Subarchitecture: iop32x ixp4xx
 Provides: bootable-system
 Depends: cdebconf-udeb, base-installer

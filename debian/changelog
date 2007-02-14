@@ -1,3 +1,9 @@
+flash-kernel (1.1) UNRELEASED; urgency=low
+
+  * Add armel and armeb architectures.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 14 Feb 2007 14:10:17 -0500
+
 flash-kernel (1.0) unstable; urgency=low
 
   * Fix comment about the Sercomm header.  Closes: #402142.
