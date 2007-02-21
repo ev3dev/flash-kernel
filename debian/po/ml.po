@@ -4,24 +4,23 @@
 # DO NOT MODIFY IT DIRECTLY : SUCH CHANGES WILL BE LOST
 # 
 # translation of ml.po to malayalam
-# http://fci.wikia.com/wiki/Debian/മലയാളം/ഇന്സ്റ്റാളര്‍/ലെവല്‍1/മാസ്റ്റര്‍/ml.po
-# Copyright (c)  2006 Praveen A <pravi.a@gmail.com>, Santhosh Thottingal <santhosh00@gmail.com>, Sreejith :: ശ്രീജിത്ത് കെ <sreejithk2000@gmail.com> and Debian Project
-# Credits:  V Sasi Kumar, Sreejith N and Seena N
+# Copyright (c)  2006-2007 Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>, Santhosh Thottingal <santhosh00@gmail.com>, Sreejith :: ശ്രീജിത്ത് കെ <sreejithk2000@gmail.com> and Debian Project
+# Credits:  V Sasi Kumar, Sreejith N, Seena N, Anivar Aravind, Hiran Venugopalan and Suresh P
 #
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt#
 #
-# Praveen A <pravi.a@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: ml\n"
+"Project-Id-Version: Debian Installer Level 1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2007-01-06 22:48+0100\n"
-"PO-Revision-Date: 2007-01-18 08:21+0530\n"
+"PO-Revision-Date: 2007-02-17 20:46+0530\n"
 "Last-Translator: Praveen A <pravi.a@gmail.com>\n"
-"Language-Team: malayalam <smc-discuss@googlegroups.com>\n"
+"Language-Team: Swathanthra Malayalam Computing <smc-discuss@googlegroups."
+"com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
