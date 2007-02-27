@@ -1,8 +1,13 @@
-flash-kernel (1.1) UNRELEASED; urgency=low
+flash-kernel (1.1) unstable; urgency=low
 
+  [ Joey Hess ]
   * Add armel and armeb architectures.
 
- -- Joey Hess <joeyh@debian.org>  Wed, 14 Feb 2007 14:10:17 -0500
+  [ Updated translations ]
+  * Hebrew (he.po) by Lior Kaplan
+  * Malayalam (ml.po) by Praveen A
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 27 Feb 2007 19:51:03 +0000
 
 flash-kernel (1.0) unstable; urgency=low
 
