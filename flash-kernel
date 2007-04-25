@@ -143,6 +143,30 @@ case "$machine" in
 		) > $mtdramdisk || error "failed."
 		echo "done." >&2
 	;;
+	"Iomega NAS 100d")
+		check_mtd
+		mtdramdisk=$(mtdblock filesystem)
+		if [ -z "$mtdramdisk" ]; then
+			error "Cannot find mtd partition 'filesystem'"
+		fi
+		mtdkernel=$(mtdblock kernel)
+		if [ -z "$mtdkernel" ]; then
+			error "Cannot find mtd partition 'kernel'"
+		fi
+		printf "Flashing kernel: " >&2
+		cat $kfile > "$mtdkernel" || error "failed."
+		echo "done." >&2
+		printf "Flashing initramfs: " >&2
+		size=$(grep "\"filesystem\"" /proc/mtd | cut -d " " -f 2)
+		size=$(printf "%d" 0x$size)
+		isize=$(wc -c $ifile | awk '{print $1}')
+		pad=$(expr $size - $isize)
+		(
+		        cat $ifile
+			dd if=/dev/zero bs=$pad count=1 2>/dev/null
+		) > $mtdramdisk || error "failed."
+		echo "done." >&2
+	;;
 	"Thecus N2100")
 		check_mtd
 		mtdramdisk=$(mtdblock ramdisk)
