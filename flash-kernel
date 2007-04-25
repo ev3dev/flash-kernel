@@ -131,10 +131,9 @@ case "$machine" in
 		size=$(grep "\"Ramdisk\"" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
 		isize=$(wc -c $ifile | awk '{print $1}')
-		cat $ifile > $tmp
 		pad=$(expr $size - $isize - 16)
 		if [ "$pad" -gt 0 ]; then
-			dd if=/dev/zero bs=$pad count=1 2>/dev/null >> $tmp
+			dd if=$ifile of=$tmp ibs=4M conv=sync 2>/dev/null
 		fi
 		(
 			sercomm_header $isize
