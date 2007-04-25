@@ -19,7 +19,7 @@ check_mtd() {
 }
 
 mtdblock() {
-	grep "$1" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
+	grep "\"$1\"" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
 }
 
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
@@ -128,7 +128,7 @@ case "$machine" in
 		) > "$mtdkernel" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
-		size=$(grep "Ramdisk" /proc/mtd | cut -d " " -f 2)
+		size=$(grep "\"Ramdisk\"" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
 		isize=$(wc -c $ifile | awk '{print $1}')
 		cat $ifile > $tmp
@@ -160,7 +160,7 @@ case "$machine" in
 		) > $mtdkernel || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
-		size=$(grep "ramdisk" /proc/mtd | cut -d " " -f 2)
+		size=$(grep "\"ramdisk\"" /proc/mtd | cut -d " " -f 2)
 		size=$(printf "%d" 0x$size)
 		isize=$(wc -c $ifile | awk '{print $1}')
 		pad=$(expr $size - $isize)
