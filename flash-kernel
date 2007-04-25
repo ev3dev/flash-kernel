@@ -83,6 +83,7 @@ case "$machine" in
 				little_endian=0
 			;;
 		esac
+		check_mtd
 		mtdfis=$(mtdblock "FIS directory")
 		if [ -z "$mtdfis" ]; then
 			error "Cannot find mtd FIS directory"
