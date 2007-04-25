@@ -22,6 +22,12 @@ mtdblock() {
 	grep "\"$1\"" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
 }
 
+check_subarch() {
+        if [ -n "$subarch" ] && [ "$subarch" != "$1" ]; then
+		error "Kernel $kfile does not match your subarchitecture $subarch."
+	fi
+}
+
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
 # 16 byte MTD header, the first four bytes (big endian) give the length of
 # the remainder of the image, and the remaining bytes are zero.  Generate
@@ -59,9 +65,16 @@ if [ ! -e $kfile ] || [ ! -e $ifile ]; then
 	error "Can't find $kfile and $ifile"
 fi
 
+# Extract the subarchitectue from the kernel name
+if [ -L "$kfile" ]; then
+    kfile=$(readlink -e "$kfile")
+fi
+subarch=$(echo "$kfile" | sed -e 's/.*-//')
+
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"Linksys NSLU2")
+		check_subarch "ixp4xx"
 		case "$(dpkg --print-architecture)" in
 			arm|armel)
 				little_endian=1
@@ -143,6 +156,7 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Iomega NAS 100d")
+		check_subarch "ixp4xx"
 		check_mtd
 		mtdramdisk=$(mtdblock filesystem)
 		if [ -z "$mtdramdisk" ]; then
@@ -167,6 +181,7 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Thecus N2100")
+		check_subarch "iop32x"
 		check_mtd
 		mtdramdisk=$(mtdblock ramdisk)
 		if [ -z "$mtdramdisk" ]; then

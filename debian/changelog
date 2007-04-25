@@ -3,6 +3,8 @@ flash-kernel (1.2) UNRELEASED; urgency=low
   [ Martin Michlmayr ]
   * Make the parsing code more robust so searching for "foo" won't match
     "foo2".  Thanks, Rod Whitby.
+  * Print an error when the subarchitecture of the kernel doesn't match
+    that of the device.  Closes: #411551.
 
   [ Rod Whitby ]
   * Add support for Iomega NAS 100d.  Closes: #403017.
