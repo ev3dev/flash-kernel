@@ -65,7 +65,7 @@ if [ ! -e $kfile ] || [ ! -e $ifile ]; then
 	error "Can't find $kfile and $ifile"
 fi
 
-# Extract the subarchitectue from the kernel name
+# Extract the subarchitecture from the kernel name
 if [ -L "$kfile" ]; then
     kfile=$(readlink -e "$kfile")
 fi
