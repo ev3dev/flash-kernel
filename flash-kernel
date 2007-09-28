@@ -25,7 +25,7 @@ mtdblock() {
 check_subarch() {
         if [ -n "$subarch" ] && [ "$subarch" != "$1" ]; then
 		echo "Kernel $kfile does not match your subarchitecture" >&2
-		echo "$subarch, therefore not writing it to flash." >&2
+		echo "$1, therefore not writing it to flash." >&2
 		exit 0
 	fi
 }
