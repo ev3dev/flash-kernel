@@ -1,3 +1,10 @@
+flash-kernel (1.4) UNRELEASED; urgency=low
+
+  * Convert the error about subarchitecture mismatches to a warning
+    (but still don't write the bogus kernel to flash).
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Fri, 28 Sep 2007 15:02:46 +0200
+
 flash-kernel (1.3) unstable; urgency=low
 
   [ Otavio Salvador ]
