@@ -1,3 +1,10 @@
+flash-kernel (1.5) UNRELEASED; urgency=low
+
+  * Missed in the menu item number transition. Multiply menu item number by
+    1000.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 28 Oct 2007 13:09:05 -0400
+
 flash-kernel (1.4) unstable; urgency=low
 
   * Convert the error about subarchitecture mismatches to a warning
