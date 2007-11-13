@@ -22,6 +22,11 @@ mtdblock() {
 	grep "\"$1\"" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
 }
 
+mtdsize() {
+	size=$(grep "\"$1\"" /proc/mtd | cut -d " " -f 2)
+	printf "%d" 0x$size
+}
+
 check_subarch() {
         if [ -n "$subarch" ] && [ "$subarch" != "$1" ]; then
 		echo "Kernel $kfile does not match your subarchitecture" >&2
@@ -144,8 +149,7 @@ case "$machine" in
 		) > "$mtdkernel" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
-		size=$(grep "\"Ramdisk\"" /proc/mtd | cut -d " " -f 2)
-		size=$(printf "%d" 0x$size)
+		size=$(mtdsize "Ramdisk")
 		isize=$(wc -c $ifile | awk '{print $1}')
 		pad=$(expr $size - $isize - 16)
 		if [ "$pad" -gt 0 ]; then
@@ -173,8 +177,7 @@ case "$machine" in
 		cat $kfile > "$mtdkernel" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
-		size=$(grep "\"filesystem\"" /proc/mtd | cut -d " " -f 2)
-		size=$(printf "%d" 0x$size)
+		size=$(mtdsize "filesystem")
 		isize=$(wc -c $ifile | awk '{print $1}')
 		pad=$(expr $size - $isize)
 		(
@@ -201,8 +204,7 @@ case "$machine" in
 		) > $mtdkernel || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
-		size=$(grep "\"ramdisk\"" /proc/mtd | cut -d " " -f 2)
-		size=$(printf "%d" 0x$size)
+		size=$(mtdsize "ramdisk")
 		isize=$(wc -c $ifile | awk '{print $1}')
 		pad=$(expr $size - $isize)
 		(
