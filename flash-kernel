@@ -95,12 +95,12 @@ case "$machine" in
 		if [ -z "$mtdfis" ]; then
 			error "Cannot find mtd FIS directory"
 		fi
-		mtdkernel=$(mtdblock Kernel)
-		if [ -z "$mtdkernel" ]; then
+		kmtd=$(mtdblock Kernel)
+		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'Kernel'"
 		fi
-		mtdramdisk=$(mtdblock Ramdisk)
-		if [ -z "$mtdramdisk" ]; then
+		rmtd=$(mtdblock Ramdisk)
+		if [ -z "$rmtd" ]; then
 			error "Cannot find mtd partition 'Ramdisk'"
 		fi
 		# The following devio magic parses the FIS directory to
@@ -146,7 +146,7 @@ case "$machine" in
 			dd if=$kfile of=$tmp ibs=$ksize1 skip=1 2>/dev/null
 			nslu2_swap $tmp
 			rm -f $tmp
-		) > "$mtdkernel" || error "failed."
+		) > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
 		size=$(mtdsize "Ramdisk")
@@ -159,22 +159,22 @@ case "$machine" in
 			sercomm_header $isize
 			nslu2_swap $tmp
 			rm -f $tmp
-		) > $mtdramdisk || error "failed."
+		) > $rmtd || error "failed."
 		echo "done." >&2
 	;;
 	"Iomega NAS 100d")
 		check_subarch "ixp4xx"
 		check_mtd
-		mtdramdisk=$(mtdblock filesystem)
-		if [ -z "$mtdramdisk" ]; then
+		rmtd=$(mtdblock filesystem)
+		if [ -z "$rmtd" ]; then
 			error "Cannot find mtd partition 'filesystem'"
 		fi
-		mtdkernel=$(mtdblock kernel)
-		if [ -z "$mtdkernel" ]; then
+		kmtd=$(mtdblock kernel)
+		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'kernel'"
 		fi
 		printf "Flashing kernel: " >&2
-		cat $kfile > "$mtdkernel" || error "failed."
+		cat $kfile > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
 		size=$(mtdsize "filesystem")
@@ -183,25 +183,25 @@ case "$machine" in
 		(
 		        cat $ifile
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
-		) > $mtdramdisk || error "failed."
+		) > $rmtd || error "failed."
 		echo "done." >&2
 	;;
 	"Thecus N2100")
 		check_subarch "iop32x"
 		check_mtd
-		mtdramdisk=$(mtdblock ramdisk)
-		if [ -z "$mtdramdisk" ]; then
+		rmtd=$(mtdblock ramdisk)
+		if [ -z "$rmtd" ]; then
 			error "Cannot find mtd partition 'ramdisk'"
 		fi
-		mtdkernel=$(mtdblock kernel)
-		if [ -z "$mtdkernel" ]; then
+		kmtd=$(mtdblock kernel)
+		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'kernel'"
 		fi
 		printf "Flashing kernel... " >&2
 		(
 			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
 			cat $kfile
-		) > $mtdkernel || error "failed."
+		) > $kmtd || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		size=$(mtdsize "ramdisk")
@@ -210,7 +210,7 @@ case "$machine" in
 		(
 			cat $ifile
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
-		) > $mtdramdisk || error "failed."
+		) > $rmtd || error "failed."
 		echo "done." >&2
 	;;
 	*)
