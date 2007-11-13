@@ -168,32 +168,6 @@ case "$machine" in
 		) > $imtd || error "failed."
 		echo "done." >&2
 	;;
-	"Iomega NAS 100d")
-		check_subarch "ixp4xx"
-		check_mtd
-		imtd=$(mtdblock filesystem)
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'filesystem'"
-		fi
-		imtdsize=$(mtdsize "filesystem")
-		check_size "ramdisk" $ifilesize $imtdsize
-		kmtd=$(mtdblock kernel)
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'kernel'"
-		fi
-		kmtdsize=$(mtdsize "kernel")
-		check_size "kernel" $kfilesize $kmtdsize
-		printf "Flashing kernel: " >&2
-		cat $kfile > "$kmtd" || error "failed."
-		echo "done." >&2
-		printf "Flashing initramfs: " >&2
-		pad=$(expr $imtdsize - $ifilesize)
-		(
-			cat $ifile
-			dd if=/dev/zero bs=$pad count=1 2>/dev/null
-		) > $imtd || error "failed."
-		echo "done." >&2
-	;;
 	"Thecus N2100")
 		check_subarch "iop32x"
 		check_mtd

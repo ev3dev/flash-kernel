@@ -2,6 +2,8 @@ flash-kernel (1.6) UNRELEASED; urgency=low
 
   * Check whether kernel and ramdisk fit into flash before writing
     them.
+  * Remove Iomega NAS 100d support at the request of Rod Whitby since
+    the firmware does CRC checks and this isn't handled yet.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 13 Nov 2007 14:27:36 +0100
 
