@@ -1,3 +1,10 @@
+flash-kernel (1.6) UNRELEASED; urgency=low
+
+  * Check whether kernel and ramdisk fit into flash before writing
+    them.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 13 Nov 2007 14:27:36 +0100
+
 flash-kernel (1.5) unstable; urgency=low
 
   * Missed in the menu item number transition. Multiply menu item number by
