@@ -2,6 +2,8 @@ flash-kernel (1.6) UNRELEASED; urgency=low
 
   * Check whether kernel and ramdisk fit into flash before writing
     them.
+  * Use the whole partition available for the ramdisk on NSLU2 (6 MB),
+    not just the first 4 MB.  This needs a new version of APEX.
   * Remove Iomega NAS 100d support at the request of Rod Whitby since
     the firmware does CRC checks and this isn't handled yet.
 
