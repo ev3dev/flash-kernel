@@ -160,7 +160,7 @@ case "$machine" in
 		) > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
-		dd if=$ifile of=$tmp ibs=$((($imtdsize - 16)) conv=sync 2>/dev/null
+		dd if=$ifile of=$tmp ibs=$(($imtdsize - 16)) conv=sync 2>/dev/null
 		(
 			sercomm_header $ifilesize
 			nslu2_swap $tmp
