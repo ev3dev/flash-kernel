@@ -4,7 +4,8 @@ flash-kernel (1.6) UNRELEASED; urgency=low
     them.
   * Use the whole partition available for the ramdisk on NSLU2 (6 MB),
     not just the first 4 MB.  In order to be actually able to use
-    ramdisks larger than 4 MB, a new version of APEX is needed though.
+    ramdisks larger than 4 MB, a new version of APEX is needed though
+    (see #451882).
   * Remove Iomega NAS 100d support at the request of Rod Whitby since
     the firmware does CRC checks and this isn't handled yet.
 
