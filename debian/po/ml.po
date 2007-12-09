@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Debian Installer Level 1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2007-01-06 22:48+0100\n"
-"PO-Revision-Date: 2007-12-03 15:07-0800\n"
+"PO-Revision-Date: 2007-12-09 14:26-0800\n"
 "Last-Translator: Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
 "discuss@googlegroups.com>\n"
@@ -33,7 +33,7 @@ msgstr ""
 #. some flashable memory used by many embedded devices
 #: ../flash-kernel-installer.templates:5
 msgid "Configuring flash memory to boot the system"
-msgstr "സിസ്റ്റം ബൂട്ട് ചെയ്യാന്‍ ഫ്ലാഷ് മെമറി ക്രമീകരിച്ചു കൊണ്ടിരിക്കുന്നു"
+msgstr "സിസ്റ്റം ബൂട്ട് ചെയ്യാന്‍ ഫ്ലാഷ് മെമറി ക്രമീകരിച്ചു കൊണ്ടിരിയ്ക്കുന്നു"
 
 #. Type: text
 #. Description
@@ -41,7 +41,7 @@ msgstr "സിസ്റ്റം ബൂട്ട് ചെയ്യാന്‍ 
 #. on a flashable memory
 #: ../flash-kernel-installer.templates:11
 msgid "Preparing the system"
-msgstr "സിസ്റ്റം തയ്യാറാക്കി കൊണ്ടിരിക്കുന്നു"
+msgstr "സിസ്റ്റം തയ്യാറാക്കി കൊണ്ടിരിയ്ക്കുന്നു"
 
 #. Type: text
 #. Description
