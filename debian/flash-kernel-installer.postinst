@@ -34,19 +34,19 @@ case "$machine" in
 			if [ -e /lib/firmware/$i ]; then
 				log "Installing microcode $i"
 				file=$(basename $(readlink /lib/firmware/$i))
-				cp /lib/firmware/$file /target/lib/firmware/
-				ln -s $file /target/lib/firmware/$i
+				cp -f /lib/firmware/$file /target/lib/firmware/
+				ln -sf $file /target/lib/firmware/$i
 			fi
 		done
 		if [ -e /lib/firmware/IxNpeMicrocode.dat ]; then
-			cp /lib/firmware/IxNpeMicrocode.dat /target/lib/firmware/
+			cp -f /lib/firmware/IxNpeMicrocode.dat /target/lib/firmware/
 		fi
 		ixp400_found=0
 		for file in $(find /lib/modules -type f | grep ixp400); do
 			ixp400_found=1
 			dir=$(dirname $file)
 			mkdir -p /target/$dir
-			cp -a $file /target/$file
+			cp -af $file /target/$file
 		done
 		if [ $ixp400_found -gt 0 ]; then
 			log "copied ixp400 driver to /target"
