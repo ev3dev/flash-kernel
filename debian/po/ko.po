@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-01-06 22:48+0100\n"
+"POT-Creation-Date: 2007-12-23 22:49+0000\n"
 "PO-Revision-Date: 2007-12-18 11:06+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
@@ -24,7 +24,8 @@ msgstr ""
 #. Description
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
-#: ../flash-kernel-installer.templates:5
+#. :sl4:
+#: ../flash-kernel-installer.templates:6
 msgid "Configuring flash memory to boot the system"
 msgstr "플래시 메모리를 설정해 시스템을 부팅할 수 있도록 하는 중입니다"
 
@@ -32,7 +33,8 @@ msgstr "플래시 메모리를 설정해 시스템을 부팅할 수 있도록 �
 #. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
-#: ../flash-kernel-installer.templates:11
+#. :sl4:
+#: ../flash-kernel-installer.templates:13
 msgid "Preparing the system"
 msgstr "시스템을 준비하는 중입니다"
 
@@ -40,7 +42,8 @@ msgstr "시스템을 준비하는 중입니다"
 #. Description
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
-#: ../flash-kernel-installer.templates:17
+#. :sl4:
+#: ../flash-kernel-installer.templates:20
 msgid "Writing the kernel to flash memory"
 msgstr "커널을 플래시 메모리에 쓰는 중입니다"
 
@@ -50,6 +53,7 @@ msgstr "커널을 플래시 메모리에 쓰는 중입니다"
 #. This item is a menu entry for a step where the system configures
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
-#: ../flash-kernel-installer.templates:25
+#. :sl4:
+#: ../flash-kernel-installer.templates:29
 msgid "Configure flash memory to boot the system"
 msgstr "플래시 메모리에서 시스템을 부팅하도록 설정"

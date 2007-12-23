@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-01-06 22:48+0100\n"
+"POT-Creation-Date: 2007-12-23 22:49+0000\n"
 "PO-Revision-Date: 2006-10-18 21:41-0500\n"
 "Last-Translator: Ming Hua <minghua@rice.edu>\n"
 "Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
@@ -27,7 +27,8 @@ msgstr ""
 #. Description
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
-#: ../flash-kernel-installer.templates:5
+#. :sl4:
+#: ../flash-kernel-installer.templates:6
 msgid "Configuring flash memory to boot the system"
 msgstr "正在配置闪存 (flash memory) 以启动系统"
 
@@ -35,7 +36,8 @@ msgstr "正在配置闪存 (flash memory) 以启动系统"
 #. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
-#: ../flash-kernel-installer.templates:11
+#. :sl4:
+#: ../flash-kernel-installer.templates:13
 msgid "Preparing the system"
 msgstr "正在准备基本系统"
 
@@ -43,7 +45,8 @@ msgstr "正在准备基本系统"
 #. Description
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
-#: ../flash-kernel-installer.templates:17
+#. :sl4:
+#: ../flash-kernel-installer.templates:20
 msgid "Writing the kernel to flash memory"
 msgstr "正在将内核写入闪存 (flash memory)"
 
@@ -53,6 +56,7 @@ msgstr "正在将内核写入闪存 (flash memory)"
 #. This item is a menu entry for a step where the system configures
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
-#: ../flash-kernel-installer.templates:25
+#. :sl4:
+#: ../flash-kernel-installer.templates:29
 msgid "Configure flash memory to boot the system"
 msgstr "配置闪存 (flash memory) 以启动系统"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-01-06 22:48+0100\n"
+"POT-Creation-Date: 2007-12-23 22:49+0000\n"
 "PO-Revision-Date: 2006-10-08 14:29+0200\n"
 "Last-Translator: Georgi Stanojevski <glisha@gmail.com>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
@@ -26,7 +26,8 @@ msgstr ""
 #. Description
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
-#: ../flash-kernel-installer.templates:5
+#. :sl4:
+#: ../flash-kernel-installer.templates:6
 msgid "Configuring flash memory to boot the system"
 msgstr "Конфигурирање на флеш меморијата за да се бутира системот"
 
@@ -34,7 +35,8 @@ msgstr "Конфигурирање на флеш меморијата за да 
 #. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
-#: ../flash-kernel-installer.templates:11
+#. :sl4:
+#: ../flash-kernel-installer.templates:13
 msgid "Preparing the system"
 msgstr "Подготовка на системот"
 
@@ -42,7 +44,8 @@ msgstr "Подготовка на системот"
 #. Description
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
-#: ../flash-kernel-installer.templates:17
+#. :sl4:
+#: ../flash-kernel-installer.templates:20
 msgid "Writing the kernel to flash memory"
 msgstr "Запишување на кернелот во флеш меморијата"
 
@@ -52,6 +55,7 @@ msgstr "Запишување на кернелот во флеш мемориј�
 #. This item is a menu entry for a step where the system configures
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
-#: ../flash-kernel-installer.templates:25
+#. :sl4:
+#: ../flash-kernel-installer.templates:29
 msgid "Configure flash memory to boot the system"
 msgstr "Конфигурирај флеш меморија за да се подигне системот"
