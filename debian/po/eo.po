@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eo\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-23 22:49+0000\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
 "PO-Revision-Date: 2007-05-01 14:01+0200\n"
 "Last-Translator: Serge Leblanc <serge.leblanc@wanadoo.fr>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
-#: ../flash-kernel-installer.templates:6
+#: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
 msgstr "Akomodado de 'flash'-memoroj por startigi la sistemon"
 
@@ -36,7 +36,7 @@ msgstr "Akomodado de 'flash'-memoroj por startigi la sistemon"
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:13
+#: ../flash-kernel-installer.templates:2001
 msgid "Preparing the system"
 msgstr "Preparado de la sistemo"
 
@@ -45,7 +45,7 @@ msgstr "Preparado de la sistemo"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:20
+#: ../flash-kernel-installer.templates:3001
 msgid "Writing the kernel to flash memory"
 msgstr "Skribado de la kerno en 'flash'-memoroj"
 
@@ -56,6 +56,6 @@ msgstr "Skribado de la kerno en 'flash'-memoroj"
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:29
+#: ../flash-kernel-installer.templates:4001
 msgid "Configure flash memory to boot the system"
 msgstr "Akomodi la 'flash'-memorojn por startigi la sistemon"

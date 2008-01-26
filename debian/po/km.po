@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-23 22:49+0000\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
 "PO-Revision-Date: 2006-10-04 09:11+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team:  <en@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
-#: ../flash-kernel-installer.templates:6
+#: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
 msgstr "កំពុង​កំណត់​រចនាសម្ព័ន្ធ​សតិ​បញ្ចេញ​ពន្លឺ​ដើម្បី​ចាប់ផ្ដើម​ប្រព័ន្ធ"
 
@@ -39,7 +39,7 @@ msgstr "កំពុង​កំណត់​រចនាសម្ព័ន្ធ
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:13
+#: ../flash-kernel-installer.templates:2001
 msgid "Preparing the system"
 msgstr "កំពុង​រៀបចំ​ប្រព័ន្ធ"
 
@@ -48,7 +48,7 @@ msgstr "កំពុង​រៀបចំ​ប្រព័ន្ធ"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:20
+#: ../flash-kernel-installer.templates:3001
 msgid "Writing the kernel to flash memory"
 msgstr "កំពុង​សរសេរ​ខឺណែល​ទៅ​សតិ​បញ្ចេញ​ពន្លឺ"
 
@@ -59,6 +59,6 @@ msgstr "កំពុង​សរសេរ​ខឺណែល​ទៅ​សតិ
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:29
+#: ../flash-kernel-installer.templates:4001
 msgid "Configure flash memory to boot the system"
 msgstr "កំណត់​រចនាសម្ព័ន្ធ​សតិ​បញ្ចេញ​ពន្លឺ​ដើម្បី​ចាប់ផ្ដើម​ប្រព័ន្ធ"

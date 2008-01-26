@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-23 22:49+0000\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
 "PO-Revision-Date: 2006-10-04 04:34+0200\n"
 "Last-Translator: Peter Mann <Peter.Mann@tuke.sk>\n"
 "Language-Team:  Slovak <sk-i18n@lists.linux.sk>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
-#: ../flash-kernel-installer.templates:6
+#: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
 msgstr "Flash pamäť sa nastavuje na spustenie systému"
 
@@ -33,7 +33,7 @@ msgstr "Flash pamäť sa nastavuje na spustenie systému"
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:13
+#: ../flash-kernel-installer.templates:2001
 msgid "Preparing the system"
 msgstr "Pripravuje sa systém"
 
@@ -42,7 +42,7 @@ msgstr "Pripravuje sa systém"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:20
+#: ../flash-kernel-installer.templates:3001
 msgid "Writing the kernel to flash memory"
 msgstr "Do flash pamäti sa zapisuje kernel"
 
@@ -53,6 +53,6 @@ msgstr "Do flash pamäti sa zapisuje kernel"
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:29
+#: ../flash-kernel-installer.templates:4001
 msgid "Configure flash memory to boot the system"
 msgstr "Nastavenie flash pamäti na spustenie systému"

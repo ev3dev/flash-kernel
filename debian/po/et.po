@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-23 22:49+0000\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
 "PO-Revision-Date: 2006-10-03 23:32+0300\n"
 "Last-Translator: Siim Põder <windo@p6drad-teel.net>\n"
 "Language-Team: Eesti <linuxiabi@hot.ee>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
-#: ../flash-kernel-installer.templates:6
+#: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
 msgstr "Flash mälu seadistamine süsteemi alglaadimiseks"
 
@@ -29,7 +29,7 @@ msgstr "Flash mälu seadistamine süsteemi alglaadimiseks"
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:13
+#: ../flash-kernel-installer.templates:2001
 msgid "Preparing the system"
 msgstr "Süsteemi ettevalmistamine"
 
@@ -38,7 +38,7 @@ msgstr "Süsteemi ettevalmistamine"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:20
+#: ../flash-kernel-installer.templates:3001
 msgid "Writing the kernel to flash memory"
 msgstr "Tuuma flash mälu kirjutamise järel ootamine"
 
@@ -49,6 +49,6 @@ msgstr "Tuuma flash mälu kirjutamise järel ootamine"
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:29
+#: ../flash-kernel-installer.templates:4001
 msgid "Configure flash memory to boot the system"
 msgstr "Seadista flash mälu süsteemi alglaadimiseks"

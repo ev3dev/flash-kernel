@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-23 22:49+0000\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
 "PO-Revision-Date: 2007-12-11 08:55+0530\n"
 "Last-Translator: A S Alam <apbrar@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-l10n@users.sf.net>\n"
@@ -35,7 +35,7 @@ msgstr ""
 #. This item is a progress bar item when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
-#: ../flash-kernel-installer.templates:6
+#: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
 msgstr "ਸਿਸਟਮ ਬੂਟ ਕਰਨ ਲਈ ਫਲੈਸ਼ ਮੋਮਰੀ ਸੰਰਚਨਾ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
 
@@ -44,7 +44,7 @@ msgstr "ਸਿਸਟਮ ਬੂਟ ਕਰਨ ਲਈ ਫਲੈਸ਼ ਮੋਮਰ�
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:13
+#: ../flash-kernel-installer.templates:2001
 msgid "Preparing the system"
 msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
@@ -53,7 +53,7 @@ msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:20
+#: ../flash-kernel-installer.templates:3001
 msgid "Writing the kernel to flash memory"
 msgstr "ਕਰਨਲ ਨੂੰ ਫਲੈਸ਼ ਮੈਮੋਰੀ ਵਿੱਚ ਲਿਖਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 
@@ -64,6 +64,6 @@ msgstr "ਕਰਨਲ ਨੂੰ ਫਲੈਸ਼ ਮੈਮੋਰੀ ਵਿੱਚ �
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:29
+#: ../flash-kernel-installer.templates:4001
 msgid "Configure flash memory to boot the system"
 msgstr "ਸਿਸਟਮ ਬੂਟ ਕਰਨ ਲਈ ਫਲੈਸ਼ ਮੋਮਰੀ ਸੰਰਚਨਾ"
