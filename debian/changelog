@@ -1,8 +1,19 @@
-flash-kernel (1.7) UNRELEASED; urgency=low
+flash-kernel (1.7) unstable; urgency=low
 
-  * Copy firmware idempotently.
+  [ Joey Hess ]
+  * Copy nslu2 firmware idempotently.
 
- -- Joey Hess <joeyh@debian.org>  Wed, 12 Dec 2007 15:20:02 -0500
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Korean (ko.po) by Changwoo Ryu
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Latvian (lv.po) by Viesturs Zarins
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Panjabi (pa.po) by A S Alam
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Fri, 15 Feb 2008 10:03:39 +0100
 
 flash-kernel (1.6) unstable; urgency=low
 
