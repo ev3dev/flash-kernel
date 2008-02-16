@@ -17,6 +17,7 @@ Supported systems
 At the moment, the following systems are supported:
 
  - Linksys NSLU2
+ - QNAP TS-109/TS-209
  - Thecus N2100
 
 If you would like to see support for another device, please file a bug

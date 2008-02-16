@@ -1,3 +1,10 @@
+flash-kernel (1.8) unstable; urgency=low
+
+  [ Martin Michlmayr ]
+  * Add support for QNAP TS-109/TS-209.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sat, 16 Feb 2008 11:57:24 +0100
+
 flash-kernel (1.7) unstable; urgency=low
 
   [ Joey Hess ]
