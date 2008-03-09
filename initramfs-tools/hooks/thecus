@@ -6,6 +6,17 @@ prereqs() {
 	echo "$PREREQ"
 }
 
+pause_error() {
+	#exit 1 # won't work; initramfs-tools ignores hook script exit code
+	echo "" >&2
+	if [ "$DEBIAN_FRONTEND" = "noninteractive" ] ; then
+		echo "Unable to abort; system will probably be broken!" >&2
+	else
+		echo "Press Ctrl-C to abort build, or Enter to continue" >&2
+		read
+	fi
+}
+
 case $1 in
 prereqs)
 	prereqs
@@ -24,7 +35,41 @@ fi
 # Record the root filesystem device for use during boot, since the
 # bootloader of the Thecus is hardcoded to use root=/dev/ram.
 rootdev=$(egrep '^[^ 	]*[ 	]*/[ 	]' /etc/fstab | awk '{print $1}') || true
-if [ -z "$rootdev" ]; then
+
+# Translate LABEL and UUID entries into a proper device name.
+if echo "$rootdev" | grep -q "="; then
+	a=$(echo "$rootdev" | cut -d "=" -f 1)
+	b=$(echo "$rootdev" | cut -d "=" -f 2)
+	case "$a" in
+		LABEL)
+			# Not all labels show up in /dev/disk/by-label:
+			# e.g. LABEL=/ doesn't.
+			found=0
+			if [ -e /dev/disk/by-label ]; then
+				for i in $(ls -1 /dev/disk/by-label/); do
+					[ "$i" = "$b" ] && found=1
+				done
+			fi
+			if [ $found -eq 0 ]; then
+				echo "/etc/fstab parse error; $rootdev not supported or found" >&2
+				rootdev=/dev/sda1
+				pause_error
+			else
+				rootdev="/dev/disk/by-label/$b"
+			fi
+		;;
+		UUID)
+			rootdev=/dev/disk/by-uuid/$b
+		;;
+		*)
+			echo "/etc/fstab parse error; cannot recognize root $rootdev" >&2
+			rootdev=/dev/sda1
+			pause_error
+		;;
+	esac
+fi
+
+if [ ! -e "$rootdev" ]; then
 	rootdev=/dev/sda1
 	echo "Warning: /etc/fstab parse error; guessing that the root device is $rootdev" >&2
 fi
