@@ -1,4 +1,4 @@
-flash-kernel (1.8) unstable; urgency=low
+flash-kernel (1.8) UNRELEASED; urgency=low
 
   [ Martin Michlmayr ]
   * Add support for QNAP TS-109/TS-209.
