@@ -34,7 +34,7 @@ fi
 
 # Record the root filesystem device for use during boot, since the
 # bootloader of the Thecus is hardcoded to use root=/dev/ram.
-rootdev=$(egrep '^[^ 	]*[ 	]*/[ 	]' /etc/fstab | awk '{print $1}') || true
+rootdev=$(egrep '^[^# 	]+[ 	]+/[ 	]' /etc/fstab | awk '{print $1}') || true
 
 # Translate LABEL and UUID entries into a proper device name.
 if echo "$rootdev" | grep -q "="; then
