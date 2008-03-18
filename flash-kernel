@@ -171,7 +171,7 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"QNAP TS-109/TS-209")
-		check_subarch "orion"
+		check_subarch "orion5x"
 		check_mtd
 		imtd=$(mtdblock "RootFS1")
 		if [ -z "$imtd" ]; then
