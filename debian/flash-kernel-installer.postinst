@@ -38,20 +38,6 @@ case "$machine" in
 				ln -sf $file /target/lib/firmware/$i
 			fi
 		done
-		if [ -e /lib/firmware/IxNpeMicrocode.dat ]; then
-			cp -f /lib/firmware/IxNpeMicrocode.dat /target/lib/firmware/
-		fi
-		ixp400_found=0
-		for file in $(find /lib/modules -type f | grep ixp400); do
-			ixp400_found=1
-			dir=$(dirname $file)
-			mkdir -p /target/$dir
-			cp -af $file /target/$file
-		done
-		if [ $ixp400_found -gt 0 ]; then
-			log "copied ixp400 driver to /target"
-			chroot /target depmod -a || true
-		fi
 		if ! apt-install nslu2-utils; then
 			error "apt-install nslu2-utils failed"
 			exit 1

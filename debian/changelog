@@ -5,6 +5,7 @@ flash-kernel (1.8) UNRELEASED; urgency=low
   * Sync the Thecus initramfs-hootls hook with the one from nslu2-utils:
     - Support LABEL and UUID in /etc/fstab.
     - Fix fstab parsing to ignore comments.
+  * Remove support for the old Intel IXP4xx Ethernet driver.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sat, 16 Feb 2008 11:57:24 +0100
 
