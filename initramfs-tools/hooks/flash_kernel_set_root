@@ -30,7 +30,7 @@ esac
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"Linksys NSLU2" | "QNAP TS-109/TS-209" | "Thecus N2100")
-		# Do nothing, continue below
+		# Pass the check and continue below
 	;;
 	*)
 		# If the machine is not listed, don't run this hook
