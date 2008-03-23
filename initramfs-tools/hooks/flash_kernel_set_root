@@ -95,7 +95,7 @@ case "$machine" in
 	# above wasn't added here.
 	*)
 		echo "Device $machine not supported.  Please file a bug." >&2
-		exit 1
+		pause_error
 	;;
 esac
 
