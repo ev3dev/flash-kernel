@@ -51,6 +51,7 @@ case "$machine" in
 		in-target update-initramfs -u || true
 	;;
 	"QNAP TS-109/TS-209")
+		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 			exit 1
