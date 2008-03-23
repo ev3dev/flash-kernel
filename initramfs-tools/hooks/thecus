@@ -26,14 +26,19 @@ esac
 
 . /usr/share/initramfs-tools/hook-functions
 
-# Only run if we're on a Thecus N2100 or N4100 machine
+# Only run on some machines
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
-if ! echo $machine | grep -q "^Thecus "; then
-	exit 0
-fi
+case "$machine" in
+	"QNAP TS-109/TS-209")
+	;;
+	"Thecus N2100")
+	;;
+	*)
+		exit 0
+	;;
+esac
 
-# Record the root filesystem device for use during boot, since the
-# bootloader of the Thecus is hardcoded to use root=/dev/ram.
+# Record the root filesystem device for use during boot
 rootdev=$(egrep '^[^# 	]+[ 	]+/[ 	]' /etc/fstab | awk '{print $1}') || true
 
 # Translate LABEL and UUID entries into a proper device name.
