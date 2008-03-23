@@ -13,6 +13,9 @@ case "`archdetect`" in
 	arm*/ixp4xx)
 			exit 0
 		;;
+	arm*/orion5x)
+			exit 0
+		;;
 	# Don't activate it by default
 	*)
 		exit 1
