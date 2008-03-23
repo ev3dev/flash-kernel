@@ -2,7 +2,7 @@ flash-kernel (1.8) UNRELEASED; urgency=low
 
   [ Martin Michlmayr ]
   * Add support for QNAP TS-109/TS-209.
-  * Sync the Thecus initramfs-hootls hook with the one from nslu2-utils:
+  * Sync the Thecus initramfs-tools hook with the one from nslu2-utils:
     - Support LABEL and UUID in /etc/fstab.
     - Fix fstab parsing to ignore comments.
   * Make the initramfs-tools hook to set the root partition more generic
