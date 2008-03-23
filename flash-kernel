@@ -189,7 +189,7 @@ case "$machine" in
 		tmp=$(tempfile)
 		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
 		cat $kfile >> $tmp
-		uboot-mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
+		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
