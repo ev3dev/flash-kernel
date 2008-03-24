@@ -8,6 +8,8 @@ flash-kernel (1.8) UNRELEASED; urgency=low
   * Make the initramfs-tools hook to set the root partition more generic
     and run it on Thecus N2100, QNAP TS-109/TS-209 and Linksys NSLU2.
   * Remove support for the old Intel IXP4xx Ethernet driver.
+  * Improve initramfs-tools hook (to set the root partition):
+    - Handle quoted LABELs and UUIDs.  Closes: #471390
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sat, 16 Feb 2008 11:57:24 +0100
 
