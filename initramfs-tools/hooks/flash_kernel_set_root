@@ -65,6 +65,10 @@ if echo "$rootdev" | grep -q "="; then
 		;;
 		UUID)
 			rootdev=/dev/disk/by-uuid/$b
+			if [ ! -e $rootdev ]; then
+				echo "UUID $b doesn't exist in /dev/disk/by-label" >&2
+				pause_error
+			fi
 		;;
 		*)
 			echo "/etc/fstab parse error; cannot recognize root $rootdev" >&2

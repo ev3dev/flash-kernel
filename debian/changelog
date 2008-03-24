@@ -10,6 +10,7 @@ flash-kernel (1.8) UNRELEASED; urgency=low
   * Remove support for the old Intel IXP4xx Ethernet driver.
   * Improve initramfs-tools hook (to set the root partition):
     - Handle quoted LABELs and UUIDs.  Closes: #471390
+    - Check if the specified UUID actually exists.  Closes: #471393
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sat, 16 Feb 2008 11:57:24 +0100
 
