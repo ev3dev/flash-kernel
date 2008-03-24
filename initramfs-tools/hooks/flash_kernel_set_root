@@ -44,7 +44,7 @@ rootdev=$(egrep '^[^# 	]+[ 	]+/[ 	]' /etc/fstab | awk '{print $1}') || true
 # Translate LABEL and UUID entries into a proper device name.
 if echo "$rootdev" | grep -q "="; then
 	a=$(echo "$rootdev" | cut -d "=" -f 1)
-	b=$(echo "$rootdev" | cut -d "=" -f 2 | sed -e 's/^"\(.*\)"$/\1/')
+	b=$(echo "$rootdev" | cut -d "=" -f 2- | sed -e 's/^"\(.*\)"$/\1/')
 	case "$a" in
 		LABEL)
 			# Not all labels show up in /dev/disk/by-label:
