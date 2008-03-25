@@ -1,4 +1,4 @@
-flash-kernel (1.8) UNRELEASED; urgency=low
+flash-kernel (1.8) unstable; urgency=low
 
   [ Martin Michlmayr ]
   * Add support for QNAP TS-109/TS-209.
@@ -13,7 +13,7 @@ flash-kernel (1.8) UNRELEASED; urgency=low
     - Accept multiple = characters in a string.
   * Remove support for the old Intel IXP4xx Ethernet driver.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sat, 16 Feb 2008 11:57:24 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 25 Mar 2008 19:36:14 +0100
 
 flash-kernel (1.7) unstable; urgency=low
 
