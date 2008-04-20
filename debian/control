@@ -9,7 +9,7 @@ Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/flash-kernel
 
 Package: flash-kernel
 Architecture: arm armel armeb
-Depends: devio
+Depends: devio, initramfs-tools
 Suggests: uboot-mkimage
 Description: utility to write kernel and initramfs to MTD flash
  flash-kernel is a script which will take a kernel and initramfs image
