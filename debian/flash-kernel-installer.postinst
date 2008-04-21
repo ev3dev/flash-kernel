@@ -14,8 +14,6 @@ error() {
 db_progress START 0 2 flash-kernel-installer/progress
 db_progress INFO flash-kernel-installer/prepare
 
-apt-install initramfs-tools || true # probably already installed; make sure
-
 if ! apt-install flash-kernel; then
 	error "apt-install flash-kernel failed"
 	exit 1
