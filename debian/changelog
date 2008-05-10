@@ -1,3 +1,9 @@
+flash-kernel (1.10) unstable; urgency=low
+
+  * Add orion5x to XB-Subarchitecture, thanks Frans Pop.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sat, 10 May 2008 19:55:09 +0200
+
 flash-kernel (1.9) unstable; urgency=low
 
   [ Martin Michlmayr ]
