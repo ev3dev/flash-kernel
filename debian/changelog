@@ -1,9 +1,13 @@
-flash-kernel (1.9) UNRELEASED; urgency=low
+flash-kernel (1.9) unstable; urgency=low
 
   [ Martin Michlmayr ]
   * Add a Depends on initramfs-tools, thanks Tim Froidcoeur.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 20 Apr 2008 22:51:55 +0200
+  [ Updated translations ]
+  * Marathi (mr.po) by Sampada
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sat, 10 May 2008 07:53:48 +0200
 
 flash-kernel (1.8) unstable; urgency=low
 
