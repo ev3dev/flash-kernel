@@ -1,3 +1,9 @@
+flash-kernel (1.11) unstable; urgency=low
+
+  * Add support for QNAP TS-409.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 11 May 2008 09:35:11 +0200
+
 flash-kernel (1.10) unstable; urgency=low
 
   * Add orion5x to XB-Subarchitecture, thanks Frans Pop.

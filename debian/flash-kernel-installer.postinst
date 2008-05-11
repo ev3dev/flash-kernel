@@ -48,7 +48,7 @@ case "$machine" in
 	"Thecus N2100" | "Thecus N4100")
 		in-target update-initramfs -u || true
 	;;
-	"QNAP TS-109/TS-209")
+	"QNAP TS-109/TS-209" | "QNAP TS-409")
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"

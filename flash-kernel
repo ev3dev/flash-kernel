@@ -170,7 +170,7 @@ case "$machine" in
 		) > $imtd || error "failed."
 		echo "done." >&2
 	;;
-	"QNAP TS-109/TS-209")
+	"QNAP TS-109/TS-209" | "QNAP TS-409")
 		check_subarch "orion5x"
 		check_mtd
 		imtd=$(mtdblock "RootFS1")
@@ -187,7 +187,14 @@ case "$machine" in
 		check_size "Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmp=$(tempfile)
-		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
+		case "$machine" in
+			"QNAP TS-109/TS-209")
+				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
+			;;
+			"QNAP TS-409")
+				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811041,4'
+			;;
+		esac
 		cat $kfile >> $tmp
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
