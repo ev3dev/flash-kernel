@@ -189,9 +189,11 @@ case "$machine" in
 		tmp=$(tempfile)
 		case "$machine" in
 			"QNAP TS-109/TS-209")
+				# Set machine id 1565 (0x061d)
 				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
 			;;
 			"QNAP TS-409")
+				# Set machine id 1601 (0x0641)
 				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811041,4'
 			;;
 		esac
@@ -228,6 +230,7 @@ case "$machine" in
 		check_size "kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
 		(
+			# Set machine id 1101 (0x044d)
 			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
 			cat $kfile
 		) > $kmtd || error "failed."
