@@ -9,6 +9,7 @@ log() {
 
 error() {
 	log "error: $@"
+	exit 1
 }
 
 db_progress START 0 2 flash-kernel-installer/progress
@@ -16,7 +17,6 @@ db_progress INFO flash-kernel-installer/prepare
 
 if ! apt-install flash-kernel; then
 	error "apt-install flash-kernel failed"
-	exit 1
 fi
 
 # Set up flash-kernel to run on kernel upgrades.
@@ -29,7 +29,7 @@ machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"Linksys NSLU2")
 		if ! apt-install ixp4xx-firmware; then
-			error "apt-install ixp4xx-firmware failed"
+			log "apt-install ixp4xx-firmware failed"
 			for i in NPE-A NPE-B NPE-C; do
 				if [ -e /lib/firmware/$i ]; then
 					log "Installing microcode $i"
@@ -41,11 +41,9 @@ case "$machine" in
 		fi
 		if ! apt-install nslu2-utils; then
 			error "apt-install nslu2-utils failed"
-			exit 1
 		fi
 		if ! apt-install apex-nslu2; then
 			error "apt-install apex-nslu2 failed"
-			exit 1
 		fi
 	;;
 	"Thecus N2100" | "Thecus N4100")
@@ -55,7 +53,6 @@ case "$machine" in
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
-			exit 1
 		fi
 	;;
 esac
@@ -68,7 +65,6 @@ mount -o bind /dev /target/dev
 if ! in-target flash-kernel; then
 	umount /target/dev || true
 	error "flash-kernel failed"
-	exit 1
 fi
 umount /target/dev || true
 
