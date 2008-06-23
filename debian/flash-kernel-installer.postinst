@@ -40,7 +40,7 @@ case "$machine" in
 			done
 		fi
 		# nslu2-utils will call update-initramfs -u to include the
-		# firmware
+		# firmware and to run the hook from flash-kernel
 		if ! apt-install nslu2-utils; then
 			error "apt-install nslu2-utils failed"
 		fi
