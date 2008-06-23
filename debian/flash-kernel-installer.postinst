@@ -39,6 +39,8 @@ case "$machine" in
 				fi
 			done
 		fi
+		# nslu2-utils will call update-initramfs -u to include the
+		# firmware
 		if ! apt-install nslu2-utils; then
 			error "apt-install nslu2-utils failed"
 		fi
