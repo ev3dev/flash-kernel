@@ -29,15 +29,8 @@ machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"Linksys NSLU2")
 		if ! apt-install ixp4xx-firmware; then
+			# not fatal, firmware can be provided other ways
 			log "apt-install ixp4xx-firmware failed"
-			for i in NPE-A NPE-B NPE-C; do
-				if [ -e /lib/firmware/$i ]; then
-					log "Installing microcode $i"
-					file=$(basename $(readlink /lib/firmware/$i))
-					cp -f /lib/firmware/$file /target/lib/firmware/
-					ln -sf $file /target/lib/firmware/$i
-				fi
-			done
 		fi
 		# nslu2-utils will call update-initramfs -u to include the
 		# firmware and to run the hook from flash-kernel
