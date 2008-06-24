@@ -30,6 +30,7 @@ case "$machine" in
 	"Linksys NSLU2")
 		if ! apt-install ixp4xx-firmware; then
 			# not fatal, firmware can be provided other ways
+			# and is not always needed
 			log "apt-install ixp4xx-firmware failed"
 		fi
 		# nslu2-utils will call update-initramfs -u to include the
