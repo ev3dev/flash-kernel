@@ -1,9 +1,15 @@
 flash-kernel (1.12) UNRELEASED; urgency=low
 
+  [ Joey Hess ]
   * Try to install the new ixp4xx-microcode package, falling back to copying
     microcode files only if the installation fails.
   * Remove code to copy ixp4xx-microcode files from d-i to target.
     This is handled more generically by hw-detect version 1.64.
+
+  [ Martin Michlmayr ]
+  * Add support for HP Media Vault mv2120 (this machine actually boots
+    from disk rather then flash; but it makes sense to use the
+    infrastructure provided by flash-kernel).
 
  -- Joey Hess <joeyh@debian.org>  Sun, 22 Jun 2008 15:13:06 -0400
 

@@ -12,6 +12,11 @@ error() {
 	exit 1
 }
 
+findfs () {
+	mount | grep "on /target${1%/} " | cut -d' ' -f1
+}
+
+
 db_progress START 0 2 flash-kernel-installer/progress
 db_progress INFO flash-kernel-installer/prepare
 
@@ -27,6 +32,23 @@ fi
 
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
+	"HP Media Vault mv2120")
+		in-target update-initramfs -u || true
+		if ! apt-install uboot-mkimage; then
+			error "apt-install uboot-mkimage failed"
+		fi
+		# The firmware loads /boot/uImage from the first partition
+		# but uImage will be in / if a separate boot partition is
+		# used.  In this case, create a /boot/boot -> /boot symlink.
+		# Note that a partman check will make sure that /boot (if
+		# it exists) or / (if there's no separate /boot) are on the
+		# first partition.
+		rootfs=$(findfs /)
+		bootfs=$(findfs /boot)
+		if [ "$rootfs" != "$bootfs" ]; then
+			ln -s . /target/boot/boot
+		fi
+	;;
 	"Linksys NSLU2")
 		if ! apt-install ixp4xx-firmware; then
 			# not fatal, firmware can be provided other ways

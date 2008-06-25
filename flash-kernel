@@ -90,6 +90,23 @@ subarch=$(echo "$kfile" | sed -e 's/.*-//')
 
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
+	"HP Media Vault mv2120")
+		check_subarch "orion5x"
+		tmp=$(tempfile)
+		printf "Generating kernel u-boot image... " >&2
+		# Set machine id 1693 (0x069d)
+		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
+		cat $kfile >> $tmp
+		mkimage -A arm -O linux -T multi -C none -n "$desc" -e 0x01000000 -a 0x01000000 -d $tmp:$ifile $tmp.uboot >&2 1>/dev/null
+		echo "done." >&2
+		if [ -e /boot/uImage ]; then
+			echo "Creating backup of /boot/uImage." >&2
+			mv /boot/uImage /boot/uImage.bak
+		fi
+		echo "Creating new /boot/uImage." >&2
+		mv $tmp.uboot /boot/uImage
+		rm -f $tmp
+	;;
 	"Linksys NSLU2")
 		check_subarch "ixp4xx"
 		case "$(dpkg --print-architecture)" in
