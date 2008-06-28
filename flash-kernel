@@ -28,7 +28,7 @@ mtdsize() {
 }
 
 check_subarch() {
-        if [ -n "$subarch" ] && [ "$subarch" != "$1" ]; then
+	if [ -n "$subarch" ] && [ "$subarch" != "$1" ]; then
 		echo "Kernel $kfile does not match your subarchitecture" >&2
 		echo "$1, therefore not writing it to flash." >&2
 		exit 0
@@ -84,7 +84,7 @@ ifilesize=$(wc -c $ifile | awk '{print $1}')
 
 # Extract the subarchitecture from the kernel name
 if [ -L "$kfile" ]; then
-    kfile=$(readlink -e "$kfile")
+	kfile=$(readlink -e "$kfile")
 fi
 subarch=$(echo "$kfile" | sed -e 's/.*-//')
 
