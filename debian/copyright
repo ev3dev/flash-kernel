@@ -1,5 +1,5 @@
 This is a Debian native package.  The code is based on Joey Hess'
-nslu2-flashkernel as part of the nslu2-utils package.
+nslu2-flashkernel that used to be part of the nslu2-utils package.
 
 Copyright:
 
