@@ -1,13 +1,19 @@
 flash-kernel
 ------------
 
-flash-kernel is a script which will take a kernel and initramfs image
-and write them to MTD flash.  This is useful on a range of embedded
-devices which boot from MTD flash.  You will generally want to use
-this script as a post installation hook of the kernel image.  This way,
-the newly installed kernel and newly created initramfs will automatically
-be written to flash.  In order for this to work, you have to edit the
-file /etc/kernel-img.conf and add the following line:
+flash-kernel is a script which will make your system bootable on
+certain embedded devices that don't load the kernel and initramfs
+directly from /boot.  Traditionally, flash-kernel was meant to
+support devices that boot from flash memory (hence the name).
+Nowadays, it also has support for some devices that require a
+specific boot image on the disk.
+
+You will generally want to use this script as a post installation
+hook of the kernel image.  This way, the newly installed kernel and
+newly created initramfs will automatically be used after you restart
+your machine (either by writing it to flash memory or by constructing
+a specific boot image on disk).  In order for this to work, you have
+to edit the file /etc/kernel-img.conf and add the following line:
 
   postinst_hook = flash-kernel
 

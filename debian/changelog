@@ -10,6 +10,9 @@ flash-kernel (1.12) UNRELEASED; urgency=low
   * Add support for HP Media Vault mv2120 (this machine actually boots
     from disk rather then flash; but it makes sense to use the
     infrastructure provided by flash-kernel).
+  * Update the package description and README to say that flash-kernel
+    makes embedded devices bootable (either by putting the kernel and
+    ramdisk in flash or by constructing a specific boot image).
 
  -- Joey Hess <joeyh@debian.org>  Sun, 22 Jun 2008 15:13:06 -0400
 

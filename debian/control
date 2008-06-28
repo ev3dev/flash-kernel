@@ -11,10 +11,13 @@ Package: flash-kernel
 Architecture: arm armel armeb
 Depends: devio, initramfs-tools
 Suggests: uboot-mkimage
-Description: utility to write kernel and initramfs to MTD flash
- flash-kernel is a script which will take a kernel and initramfs image
- and write them to MTD flash.  This is useful on a range of embedded
- devices which boot from MTD flash.
+Description: utility to make certain embedded devices bootable
+ flash-kernel is a script which will make your system bootable on
+ certain embedded devices that don't load the kernel and initramfs
+ directly from /boot.  Traditionally, flash-kernel was meant to
+ support devices that boot from flash memory (hence the name).
+ Nowadays, it also has support for some devices that require a
+ specific boot image on the disk.
 
 Package: flash-kernel-installer
 Section: debian-installer
