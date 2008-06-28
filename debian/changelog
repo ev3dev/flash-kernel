@@ -1,4 +1,4 @@
-flash-kernel (1.12) UNRELEASED; urgency=low
+flash-kernel (2.0) UNRELEASED; urgency=low
 
   [ Joey Hess ]
   * Try to install the new ixp4xx-microcode package, falling back to copying
@@ -13,6 +13,7 @@ flash-kernel (1.12) UNRELEASED; urgency=low
   * Update the package description and README to say that flash-kernel
     makes embedded devices bootable (either by putting the kernel and
     ramdisk in flash or by constructing a specific boot image).
+  * Increase the version number to reflect these changes in purpose.
 
  -- Joey Hess <joeyh@debian.org>  Sun, 22 Jun 2008 15:13:06 -0400
 
