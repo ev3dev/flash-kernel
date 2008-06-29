@@ -1,4 +1,4 @@
-flash-kernel (2.0) UNRELEASED; urgency=low
+flash-kernel (2.0) unstable; urgency=low
 
   [ Joey Hess ]
   * Try to install the new ixp4xx-microcode package, falling back to copying
@@ -18,7 +18,7 @@ flash-kernel (2.0) UNRELEASED; urgency=low
   * Add an ellipsis to progress bar indicators as recommended by
     Christian Perrier.
 
- -- Joey Hess <joeyh@debian.org>  Sun, 22 Jun 2008 15:13:06 -0400
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 29 Jun 2008 14:33:17 +0200
 
 flash-kernel (1.11) unstable; urgency=low
 
