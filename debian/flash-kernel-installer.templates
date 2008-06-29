@@ -17,14 +17,14 @@ Type: text
 # This is "preparing the system" to flash the kernel and initrd
 # on a flashable memory
 # :sl4:
-_Description: Preparing the system
+_Description: Preparing the system...
 
 Template: flash-kernel-installer/flashing
 Type: text
 # This is a progress bar showing up when the system
 # write the kernel to the flashable memory of the embedded device
 # :sl4:
-_Description: Writing the kernel to flash memory
+_Description: Writing the kernel to flash memory...
 
 Template: flash-kernel-installer/generating_image
 Type: text

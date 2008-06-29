@@ -15,6 +15,8 @@ flash-kernel (2.0) UNRELEASED; urgency=low
     ramdisk in flash or by constructing a specific boot image).
   * Update the debconf notes accordingly, thanks Christian Perrier.
   * Increase the version number to reflect these changes in purpose.
+  * Add an ellipsis to progress bar indicators as recommended by
+    Christian Perrier.
 
  -- Joey Hess <joeyh@debian.org>  Sun, 22 Jun 2008 15:13:06 -0400
 
