@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-01-26 07:33+0000\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
 "PO-Revision-Date: 2006-10-18 05:21+0530\n"
 "Last-Translator: Damodharan Rajalingam <rdamodharan@gmail.com>\n"
 "Language-Team: Tamil <tamil-DI@yahoogroups.com>\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. This item is a progress bar item when the system configures
+#. This item is a progress bar heading when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
@@ -33,11 +33,22 @@ msgstr "கணிணியை துவக்குவதற்காக பி�
 
 #. Type: text
 #. Description
+#. This item is a progress bar heading when an embedded device is
+#. configured so it will boot from disk
+#. :sl4:
+#: ../flash-kernel-installer.templates:2001
+#, fuzzy
+msgid "Making the system bootable"
+msgstr "கணிணி ஏற்பாடாகிறது"
+
+#. Type: text
+#. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:2001
-msgid "Preparing the system"
+#: ../flash-kernel-installer.templates:3001
+#, fuzzy
+msgid "Preparing the system..."
 msgstr "கணிணி ஏற்பாடாகிறது"
 
 #. Type: text
@@ -45,9 +56,20 @@ msgstr "கணிணி ஏற்பாடாகிறது"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:3001
-msgid "Writing the kernel to flash memory"
+#: ../flash-kernel-installer.templates:4001
+#, fuzzy
+msgid "Writing the kernel to flash memory..."
 msgstr "கரு பிளாஷ் நினைவகத்திற்கு எழுதப்படுகிறது"
+
+#. Type: text
+#. Description
+#. This is a progress bar showing up when the system generates a
+#. special boot image on disk for some embedded device so they
+#. can boot.
+#. :sl4:
+#: ../flash-kernel-installer.templates:5001
+msgid "Generating boot image on disk..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -56,6 +78,9 @@ msgstr "கரு பிளாஷ் நினைவகத்திற்கு 
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:4001
-msgid "Configure flash memory to boot the system"
-msgstr "கணிணியை துவக்க பிளாஷ் நினைவகத்தை வடிவமை"
+#: ../flash-kernel-installer.templates:6001
+msgid "Make the system bootable"
+msgstr ""
+
+#~ msgid "Configure flash memory to boot the system"
+#~ msgstr "கணிணியை துவக்க பிளாஷ் நினைவகத்தை வடிவமை"

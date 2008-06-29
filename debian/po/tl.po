@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-01-26 07:33+0000\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
 "PO-Revision-Date: 2006-10-16 23:38+0800\n"
 "Last-Translator: Eric Pareja <xenos@upm.edu.ph>\n"
 "Language-Team: Tagalog <debian-tl@banwa.upm.edu.ph>\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. This item is a progress bar item when the system configures
+#. This item is a progress bar heading when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
@@ -38,11 +38,22 @@ msgstr "Isinasaayos ang flash memory upang iboot ang sistema"
 
 #. Type: text
 #. Description
+#. This item is a progress bar heading when an embedded device is
+#. configured so it will boot from disk
+#. :sl4:
+#: ../flash-kernel-installer.templates:2001
+#, fuzzy
+msgid "Making the system bootable"
+msgstr "Hinahanda ang sistema"
+
+#. Type: text
+#. Description
 #. This is "preparing the system" to flash the kernel and initrd
 #. on a flashable memory
 #. :sl4:
-#: ../flash-kernel-installer.templates:2001
-msgid "Preparing the system"
+#: ../flash-kernel-installer.templates:3001
+#, fuzzy
+msgid "Preparing the system..."
 msgstr "Hinahanda ang sistema"
 
 #. Type: text
@@ -50,9 +61,20 @@ msgstr "Hinahanda ang sistema"
 #. This is a progress bar showing up when the system
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
-#: ../flash-kernel-installer.templates:3001
-msgid "Writing the kernel to flash memory"
+#: ../flash-kernel-installer.templates:4001
+#, fuzzy
+msgid "Writing the kernel to flash memory..."
 msgstr "Isinusulat ang kernel sa flash memory"
+
+#. Type: text
+#. Description
+#. This is a progress bar showing up when the system generates a
+#. special boot image on disk for some embedded device so they
+#. can boot.
+#. :sl4:
+#: ../flash-kernel-installer.templates:5001
+msgid "Generating boot image on disk..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -61,6 +83,9 @@ msgstr "Isinusulat ang kernel sa flash memory"
 #. the flashable memory used by many embedded devices
 #. (writing the kernel and initrd to it)
 #. :sl4:
-#: ../flash-kernel-installer.templates:4001
-msgid "Configure flash memory to boot the system"
-msgstr "Isaayos ang flash memory upang iboot ang sistema"
+#: ../flash-kernel-installer.templates:6001
+msgid "Make the system bootable"
+msgstr ""
+
+#~ msgid "Configure flash memory to boot the system"
+#~ msgstr "Isaayos ang flash memory upang iboot ang sistema"
