@@ -86,8 +86,6 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
+#, fuzzy
 msgid "Make the system bootable"
-msgstr ""
-
-#~ msgid "Configure flash memory to boot the system"
-#~ msgstr "ਸਿਸਟਮ ਬੂਟ ਕਰਨ ਲਈ ਫਲੈਸ਼ ਮੋਮਰੀ ਸੰਰਚਨਾ"
+msgstr "GLAN ਟੈਂਕ ਬੂਟ-ਯੋਗ ਬਣਾਓ"

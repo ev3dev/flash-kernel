@@ -82,8 +82,6 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
+#, fuzzy
 msgid "Make the system bootable"
-msgstr ""
-
-#~ msgid "Configure flash memory to boot the system"
-#~ msgstr "Konfiguratu flash memoria sistema abiarazteko"
+msgstr "\"GLAN Tank\" abiarazgarri egiten"
