@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-29 01:00+0200\n"
+"PO-Revision-Date: 2008-06-30 00:35+0200\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,9 +42,8 @@ msgstr "Silinebilir (flash) bellek sistem açılışı için yapılandırılıyo
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Sistem hazırlanıyor"
+msgstr "Sistem önyüklenebilir yapılıyor"
 
 #. Type: text
 #. Description
@@ -52,9 +51,8 @@ msgstr "Sistem hazırlanıyor"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Sistem hazırlanıyor"
+msgstr "Sistem hazırlanıyor..."
 
 #. Type: text
 #. Description
@@ -62,9 +60,8 @@ msgstr "Sistem hazırlanıyor"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Çekirdek silinebilir (flash) belleğe yazılıyor"
+msgstr "Çekirdek silinebilir (flash) belleğe yazılıyor..."
 
 #. Type: text
 #. Description
@@ -74,7 +71,7 @@ msgstr "Çekirdek silinebilir (flash) belleğe yazılıyor"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Diskte bir önyükleme görüntüsü oluşturuluyor..."
 
 #. Type: text
 #. Description
@@ -84,6 +81,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN Tank aygıtını önyüklenebilir yap"
+msgstr "Sistemi önyüklenebilir yap"
