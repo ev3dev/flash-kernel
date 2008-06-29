@@ -19,8 +19,25 @@ findfs () {
 	mount | grep "on /target${1%/} " | cut -d' ' -f1
 }
 
+# Are we writing to flash or constructing an image on disk?
+write_to_flash() {
+	case "$machine" in
+		"HP Media Vault mv2120")
+			return 1
+		;;
+		*)
+			return 0
+		;;
+	esac
+}
 
-db_progress START 0 2 flash-kernel-installer/progress
+machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+
+if write_to_flash; then
+	db_progress START 0 2 flash-kernel-installer/progress
+else
+	db_progress START 0 2 flash-kernel-installer/progress_disk
+fi
 db_progress INFO flash-kernel-installer/prepare
 
 if ! apt-install flash-kernel; then
@@ -33,7 +50,6 @@ if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
 		/target/etc/kernel-img.conf
 fi
 
-machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"HP Media Vault mv2120")
 		in-target update-initramfs -u || true
@@ -79,7 +95,11 @@ case "$machine" in
 esac
 
 db_progress STEP 1
-db_progress INFO flash-kernel-installer/flashing
+if write_to_flash; then
+	db_progress INFO flash-kernel-installer/flashing
+else
+	db_progress INFO flash-kernel-installer/generating_image
+fi
 
 # We need the udev /dev which has the MTD devices
 mount -o bind /dev /target/dev

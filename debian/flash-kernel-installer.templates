@@ -1,9 +1,16 @@
 Template: flash-kernel-installer/progress
 Type: text
-# This item is a progress bar item when the system configures
+# This item is a progress bar heading when the system configures
 # some flashable memory used by many embedded devices
 # :sl4:
 _Description: Configuring flash memory to boot the system
+
+Template: flash-kernel-installer/progress_disk
+Type: text
+# This item is a progress bar heading when an embedded device is
+# configured so it will boot from disk
+# :sl4:
+_Description: Making the system bootable
 
 Template: flash-kernel-installer/prepare
 Type: text
@@ -19,6 +26,14 @@ Type: text
 # :sl4:
 _Description: Writing the kernel to flash memory
 
+Template: flash-kernel-installer/generating_image
+Type: text
+# This is a progress bar showing up when the system generates a
+# special boot image on disk for some embedded device so they
+# can boot.
+# :sl4:
+_Description: Generating boot image on disk...
+
 Template: debian-installer/flash-kernel-installer/title
 Type: text
 #  Main menu item
@@ -26,4 +41,4 @@ Type: text
 # the flashable memory used by many embedded devices
 # (writing the kernel and initrd to it)
 # :sl4:
-_Description: Configure flash memory to boot the system
+_Description: Make the system bootable

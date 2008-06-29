@@ -28,4 +28,4 @@ XB-Subarchitecture: iop32x ixp4xx orion5x
 Provides: bootable-system
 Depends: cdebconf-udeb, installed-base
 XB-Installer-Menu-Item: 7300
-Description: Configure flash to boot the system
+Description: Make the system bootable
