@@ -1,10 +1,46 @@
-flash-kernel (2.1) UNRELEASED; urgency=low
+flash-kernel (2.1) unstable; urgency=low
 
   * Check whether /dev/mtdblockX is a block device before writing to
     it since the device might not exist when a user has disabled
     udev.  Closes: #488565
 
- -- Martin Michlmayr <tbm@cyrius.com>  Mon, 30 Jun 2008 09:46:32 +0200
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Jens Seidel
+  * Dzongkha (dz.po) by Jurmey Rabgay(Bongop) (DIT,BHUTAN)
+  * Esperanto (eo.po) by Esperanto
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmål (nb.po) by Hans Fredrik Nordhaug
+  * Dutch (nl.po) by Frans Pop
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Slovenian (sl.po) by Matej Kovacic
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Tagalog (tl.po) by Eric Pareja
+  * Turkish (tr.po) by Mert Dirik
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Simplified Chinese (zh_CN.po) by Kov Chai
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 30 Jun 2008 13:36:24 +0200
 
 flash-kernel (2.0) unstable; urgency=low
 
