@@ -35,6 +35,12 @@ mtdblock() {
 	grep "\"$1\"" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
 }
 
+check_dev_mtdblock() {
+	if [ ! -b "$i" ]; then
+		error "$1 is not a block device"
+	fi
+}
+
 mtdsize() {
 	size=$(grep "\"$1\"" /proc/mtd | cut -d " " -f 2)
 	printf "%d" 0x$size
@@ -139,12 +145,14 @@ case "$machine" in
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'Kernel'"
 		fi
+		check_dev_mtdblock "$kmtd"
 		kmtdsize=$(mtdsize "Kernel")
 		check_size "kernel" $(($kfilesize + 16 + 16)) $kmtdsize
 		imtd=$(mtdblock Ramdisk)
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition 'Ramdisk'"
 		fi
+		check_dev_mtdblock "$imtd"
 		imtdsize=$(mtdsize "Ramdisk")
 		check_size "ramdisk" $(($ifilesize + 16)) $imtdsize
 		# The following devio magic parses the FIS directory to
@@ -207,12 +215,14 @@ case "$machine" in
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition 'RootFS1'"
 		fi
+		check_dev_mtdblock "$imtd"
 		imtdsize=$(mtdsize "RootFS1")
 		check_size "RootFS1" $ifilesize $imtdsize
 		kmtd=$(mtdblock Kernel)
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'Kernel'"
 		fi
+		check_dev_mtdblock "$kmtd"
 		kmtdsize=$(mtdsize "Kernel")
 		check_size "Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
@@ -250,12 +260,14 @@ case "$machine" in
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition 'ramdisk'"
 		fi
+		check_dev_mtdblock "$imtd"
 		imtdsize=$(mtdsize "ramdisk")
 		check_size "ramdisk" $ifilesize $imtdsize
 		kmtd=$(mtdblock kernel)
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'kernel'"
 		fi
+		check_dev_mtdblock "$kmtd"
 		kmtdsize=$(mtdsize "kernel")
 		check_size "kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2

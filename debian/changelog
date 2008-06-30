@@ -1,3 +1,11 @@
+flash-kernel (2.1) UNRELEASED; urgency=low
+
+  * Check whether /dev/mtdblockX is a block device before writing to
+    it since the device might not exist when a user has disabled
+    udev.  Closes: #488565
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 30 Jun 2008 09:46:32 +0200
+
 flash-kernel (2.0) unstable; urgency=low
 
   [ Joey Hess ]
