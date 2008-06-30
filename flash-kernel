@@ -36,7 +36,7 @@ mtdblock() {
 }
 
 check_dev_mtdblock() {
-	if [ ! -b "$i" ]; then
+	if [ ! -b "$1" ]; then
 		error "$1 is not a block device"
 	fi
 }
