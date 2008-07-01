@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-25 23:15+0100\n"
+"PO-Revision-Date: 2008-06-30 23:47+0100\n"
 "Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -34,9 +34,8 @@ msgstr "A configurar a memoria flash para que inicie o sistema"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "A preparar o sistema"
+msgstr "A facer que se poida iniciar o sistema"
 
 #. Type: text
 #. Description
@@ -44,9 +43,8 @@ msgstr "A preparar o sistema"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "A preparar o sistema"
+msgstr "A preparar o sistema..."
 
 #. Type: text
 #. Description
@@ -54,9 +52,8 @@ msgstr "A preparar o sistema"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "A gravar o núcleo na memoria flash"
+msgstr "A gravar o núcleo na memoria flash..."
 
 #. Type: text
 #. Description
@@ -66,7 +63,7 @@ msgstr "A gravar o núcleo na memoria flash"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "A xerar a imaxe de inicio no disco..."
 
 #. Type: text
 #. Description
@@ -76,6 +73,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Facer que se poida arrincar do GLAN Tank"
+msgstr "Facer que se poida iniciar o sistema"

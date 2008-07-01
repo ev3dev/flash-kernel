@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: debian-installer Level 1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-26 22:37+0930\n"
+"PO-Revision-Date: 2008-06-30 22:31+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -39,9 +39,8 @@ msgstr "Đang cấu hình bộ nhớ khó phai để khởi động hệ thống
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Đang chuẩn bị hệ thống"
+msgstr "Đang bật hệ thống có khả năng khởi động"
 
 #. Type: text
 #. Description
@@ -49,9 +48,8 @@ msgstr "Đang chuẩn bị hệ thống"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Đang chuẩn bị hệ thống"
+msgstr "Đang chuẩn bị hệ thống..."
 
 #. Type: text
 #. Description
@@ -59,9 +57,8 @@ msgstr "Đang chuẩn bị hệ thống"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Đang ghi hạt nhân vào bộ nhớ khó phai"
+msgstr "Đang ghi hạt nhân vào bộ nhớ khó phai..."
 
 #. Type: text
 #. Description
@@ -71,7 +68,7 @@ msgstr "Đang ghi hạt nhân vào bộ nhớ khó phai"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Đang tạo ảnh khởi động trên đĩa..."
 
 #. Type: text
 #. Description
@@ -81,6 +78,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Làm cho GLAN Tank có khả năng khởi động"
+msgstr "Bật hệ thống có khả năng khởi động"
