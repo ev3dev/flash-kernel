@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: d-i\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-03-20 18:08+0530\n"
+"PO-Revision-Date: 2008-07-04 13:13+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,9 +39,8 @@ msgstr "સિસ્ટમ બૂટ કરવા માટે ફ્લેશ �
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "સિસ્ટમ તૈયાર કરે છે"
+msgstr "સિસ્ટમ શરૂઆત કરી શકાય તેવી બનાવે છે"
 
 #. Type: text
 #. Description
@@ -49,9 +48,8 @@ msgstr "સિસ્ટમ તૈયાર કરે છે"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "સિસ્ટમ તૈયાર કરે છે"
+msgstr "સિસ્ટમ તૈયાર કરે છે..."
 
 #. Type: text
 #. Description
@@ -59,9 +57,8 @@ msgstr "સિસ્ટમ તૈયાર કરે છે"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે છે"
+msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે છે..."
 
 #. Type: text
 #. Description
@@ -71,7 +68,7 @@ msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "ડિસ્ક પર બૂટ ઇમેજ બનાવે છે..."
 
 #. Type: text
 #. Description
@@ -81,6 +78,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN ટેન્ક બૂટ થાય તેવું બનાવો"
+msgstr "સિસ્ટમને શરૂ કરી શકાય તેવી બનાવે છે"

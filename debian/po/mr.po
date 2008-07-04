@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-15 23:24+0530\n"
+"PO-Revision-Date: 2008-07-04 23:50+0530\n"
 "Last-Translator: Sampada <sampadanakhare@gmail.com>\n"
 "Language-Team: Marathi, janabhaaratii, C-DAC, Mumbai, India "
 "<janabhaaratii@cdacmumbai.in>\n"
@@ -40,9 +40,8 @@ msgstr "प्रणालीचा आरंभ होण्यासाठी 
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "प्रणाली तयार करत आहे"
+msgstr "प्रणाली आरंभयोग्य करत आहे"
 
 #. Type: text
 #. Description
@@ -50,7 +49,6 @@ msgstr "प्रणाली तयार करत आहे"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
 msgstr "प्रणाली तयार करत आहे"
 
@@ -60,9 +58,8 @@ msgstr "प्रणाली तयार करत आहे"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "गाभा फ्लॅश मेमरीवर लिहीत आहे"
+msgstr "गाभा फ्लॅश मेमरीवर लिहीत आहे... "
 
 #. Type: text
 #. Description
@@ -72,7 +69,7 @@ msgstr "गाभा फ्लॅश मेमरीवर लिहीत आ�
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "आरंभ प्रतिमा डिस्कवर बनवत आहे... "
 
 #. Type: text
 #. Description
@@ -82,6 +79,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN Tank आरंभयोग्य करा"
+msgstr "प्रणाली आरंभयोग्य करा"

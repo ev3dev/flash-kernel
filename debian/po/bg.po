@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-25 09:52+0300\n"
+"PO-Revision-Date: 2008-07-04 10:56+0300\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,9 +40,8 @@ msgstr "Настройване на flash-паметта"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Подготовка"
+msgstr "Подготовка на системата за първоначалното зареждане"
 
 #. Type: text
 #. Description
@@ -50,9 +49,8 @@ msgstr "Подготовка"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Подготовка"
+msgstr "Подготовка на системата..."
 
 #. Type: text
 #. Description
@@ -60,9 +58,8 @@ msgstr "Подготовка"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Записване на ядрото"
+msgstr "Записване на ядрото в постоянната памет..."
 
 #. Type: text
 #. Description
@@ -72,7 +69,7 @@ msgstr "Записване на ядрото"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Създаване на образ за първоначално зареждане на диска..."
 
 #. Type: text
 #. Description
@@ -82,6 +79,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Маркиране на GLAN Tank като способен да зареди операционната система"
+msgstr "Настройка на зареждането на системата"
