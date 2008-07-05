@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-02 11:17+0300\n"
+"PO-Revision-Date: 2008-07-05 10:40+0300\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -37,9 +37,8 @@ msgstr "Atmintuko (flash memory) konfigūravimas sistemos įkėlimui iš jo"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Sistemos paruošimas"
+msgstr "Sistemos darymas įkeliama"
 
 #. Type: text
 #. Description
@@ -47,9 +46,8 @@ msgstr "Sistemos paruošimas"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Sistemos paruošimas"
+msgstr "Sistemos paruošimas..."
 
 #. Type: text
 #. Description
@@ -57,7 +55,6 @@ msgstr "Sistemos paruošimas"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
 msgstr "Branduolio įrašymas į atmintuką (flash memory)"
 
@@ -69,7 +66,7 @@ msgstr "Branduolio įrašymas į atmintuką (flash memory)"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Įkeltie atvaizdo diske generavimas..."
 
 #. Type: text
 #. Description
@@ -79,6 +76,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Padaryti GLAN·Tank įkeliamu"
+msgstr "Padaryti sistemą įkeliama (bootable)"
