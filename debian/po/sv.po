@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-17 23:22+0100\n"
+"PO-Revision-Date: 2008-07-09 20:01+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,9 +43,8 @@ msgstr "Konfigurerar flashminne för att starta upp systemet"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Förbereder systemet"
+msgstr "Gör systemet möjligt att starta"
 
 #. Type: text
 #. Description
@@ -53,9 +52,8 @@ msgstr "Förbereder systemet"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Förbereder systemet"
+msgstr "Förbereder systemet..."
 
 #. Type: text
 #. Description
@@ -63,9 +61,8 @@ msgstr "Förbereder systemet"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Skriver kärnan till flashminne"
+msgstr "Skriver kärnan till flashminne..."
 
 #. Type: text
 #. Description
@@ -75,7 +72,7 @@ msgstr "Skriver kärnan till flashminne"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Genererar uppstartsavbildning på disk..."
 
 #. Type: text
 #. Description
@@ -85,6 +82,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Gör GLAN Tank startbar"
+msgstr "Gör systemet startbart"
