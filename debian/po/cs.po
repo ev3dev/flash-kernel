@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-06-28 15:15+0200\n"
+"PO-Revision-Date: 2008-07-12 22:30+0200\n"
 "Last-Translator:  Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team:  Czech <provoz@debian.cz>\n"
 "MIME-Version: 1.0\n"
@@ -34,9 +34,8 @@ msgstr "Nastavuje se flash paměť pro zavedení systému"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Připravuje se systém"
+msgstr "Nastavuje se systém jako zaveditelný"
 
 #. Type: text
 #. Description
@@ -44,9 +43,8 @@ msgstr "Připravuje se systém"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Připravuje se systém"
+msgstr "Připravuje se systém..."
 
 #. Type: text
 #. Description
@@ -54,9 +52,8 @@ msgstr "Připravuje se systém"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Zapisuje se jádro do flash paměti"
+msgstr "Zapisuje se jádro do flash paměti..."
 
 #. Type: text
 #. Description
@@ -66,7 +63,7 @@ msgstr "Zapisuje se jádro do flash paměti"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Na disku se vytváří zaváděcí obraz..."
 
 #. Type: text
 #. Description
@@ -76,6 +73,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Nastavit GLAN Tank pro zavádění"
+msgstr "Nastavit systém jako zaveditelný"
