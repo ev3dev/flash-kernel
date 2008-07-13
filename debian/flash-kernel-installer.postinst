@@ -65,7 +65,9 @@ case "$machine" in
 		rootfs=$(findfs /)
 		bootfs=$(findfs /boot)
 		if [ "$rootfs" != "$bootfs" ]; then
-			ln -s . /target/boot/boot
+			if [ ! -e /target/boot/boot ]; then
+				ln -s . /target/boot/boot
+			fi
 		fi
 	;;
 	"Linksys NSLU2")
