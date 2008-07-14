@@ -52,7 +52,12 @@ fi
 
 case "$machine" in
 	"HP Media Vault mv2120")
-		apt-install mv2120-utils || true
+		if ! apt-install mv2120-utils; then
+			# mv2120-utils includes some initramfs-tools scripts
+			# that would be nice to have but which are not
+			# essential.
+			log "apt-install mv2120-utils failed"
+		fi
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
