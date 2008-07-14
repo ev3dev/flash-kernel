@@ -2,6 +2,7 @@ flash-kernel (2.3) UNRELEASE; urgency=low
 
   * Update the man page to say that flash-kernel now also supports
     devices that require a special boot image on disk.
+  * Improve the package description and README.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Mon, 14 Jul 2008 23:01:27 +0300
 
