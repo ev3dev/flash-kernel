@@ -52,6 +52,7 @@ fi
 
 case "$machine" in
 	"HP Media Vault mv2120")
+		apt-install mv2120-utils || true
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
