@@ -6,7 +6,6 @@ flash-kernel (2.3) UNRELEASE; urgency=low
 
  -- Martin Michlmayr <tbm@cyrius.com>  Mon, 14 Jul 2008 23:01:27 +0300
 
-
 flash-kernel (2.2) unstable; urgency=low
 
   * mv2120: Don't fail when the "boot" symlink exists already.
