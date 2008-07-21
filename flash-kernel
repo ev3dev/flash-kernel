@@ -82,6 +82,7 @@ if [ -n "$1" ]; then
 	kfile=/boot/vmlinuz-$kvers
 	ifile=/boot/initrd.img-$kvers
 	desc="Debian kernel $1"
+	idesc="Debian ramdisk $1"
 else
 	if [ -e /vmlinuz ]; then
 		kfile=/vmlinuz
@@ -93,6 +94,7 @@ else
 		error "Cannot find a default kernel in /vmlinuz or /boot/vmlinuz"
 	fi
 	desc="Debian kernel"
+	idesc="Debian ramdisk"
 fi
 
 if [ ! -e $kfile ] || [ ! -e $ifile ]; then
@@ -109,6 +111,32 @@ subarch=$(echo "$kfile" | sed -e 's/.*-//')
 
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
+	"Buffalo/Revogear Kurobox Pro")
+		check_subarch "orion5x"
+		printf "Generating kernel u-boot image... " >&2
+		tmp=$(tempfile)
+		# Set machine id 1509 (0x05e5)
+		devio > $tmp 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
+		cat $kfile >> $tmp
+		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 -e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
+		echo "done." >&2
+		if [ -e /boot/uImage.buffalo ]; then
+			echo "Creating backup of /boot/uImage.buffalo." >&2
+			mv /boot/uImage.buffalo /boot/uImage.buffalo.bak
+		fi
+		echo "Creating new /boot/uImage.buffalo." >&2
+		mv $tmp.uboot /boot/uImage.buffalo
+		rm -f $tmp
+		printf "Generating initrd u-boot image... " >&2
+		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00008000 -e 0x00008000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+		echo "done." >&2
+		if [ -e /boot/initrd.buffalo ]; then
+			echo "Creating backup of /boot/initrd.buffalo." >&2
+			mv /boot/initrd.buffalo /boot/initrd.buffalo.bak
+		fi
+		echo "Creating new /boot/initrd.buffalo." >&2
+		mv $tmp.uboot /boot/initrd.buffalo
+	;;
 	"HP Media Vault mv2120")
 		check_subarch "orion5x"
 		tmp=$(tempfile)
