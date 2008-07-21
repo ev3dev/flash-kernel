@@ -1,9 +1,12 @@
-flash-kernel (2.4) UNRELEASED; urgency=low
+flash-kernel (2.4) unstable; urgency=low
 
-  * Add support for the Buffalor Kurobox Pro.  Patch from Per Andersson
-    as part of his Google Summer of Code work.
+  * Add support for the Buffalo Kurobox Pro.  Patch from Per Andersson
+    as part of his Google Summer of Code project.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Mon, 21 Jul 2008 12:23:46 +0300
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 21 Jul 2008 12:55:53 +0300
 
 flash-kernel (2.3) unstable; urgency=low
 
