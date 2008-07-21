@@ -113,8 +113,8 @@ machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"Buffalo/Revogear Kurobox Pro")
 		check_subarch "orion5x"
-		printf "Generating kernel u-boot image... " >&2
 		tmp=$(tempfile)
+		printf "Generating kernel u-boot image... " >&2
 		# Set machine id 1509 (0x05e5)
 		devio > $tmp 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
 		cat $kfile >> $tmp
