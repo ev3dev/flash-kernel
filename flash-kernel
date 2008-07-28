@@ -75,7 +75,19 @@ nslu2_swap() {
 		cat $1
 	fi
 }
+	
+machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 
+if [ "x$1" = "x--supported" ]; then
+	case "$machine" in
+		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
+		"HP Media Vault mv2120")		exit 0 ;;
+		"Linksys NSLU2")			exit 0 ;;
+		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
+		"Thecus N2100")				exit 0 ;;
+		*)					exit 1 ;;
+	esac
+fi
 
 if [ -n "$1" ]; then
 	kvers="$1"
@@ -109,7 +121,6 @@ if [ -L "$kfile" ]; then
 fi
 subarch=$(echo "$kfile" | sed -e 's/.*-//')
 
-machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
 	"Buffalo/Revogear Kurobox Pro")
 		check_subarch "orion5x"
