@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-05-06 12:05+0800\n"
+"PO-Revision-Date: 2008-08-09 00:35+0800\n"
 "Last-Translator: Tetralet <tetralet@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
 "debian.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "正在設定 Flash Memory，讓系統能夠開機"
+msgstr "設定快閃記憶體，讓系統能夠開機"
 
 #. Type: text
 #. Description
@@ -35,9 +35,8 @@ msgstr "正在設定 Flash Memory，讓系統能夠開機"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "正在進行系統的準備工作"
+msgstr "讓系統能夠開機"
 
 #. Type: text
 #. Description
@@ -45,9 +44,8 @@ msgstr "正在進行系統的準備工作"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "正在進行系統的準備工作"
+msgstr "正在進行系統的準備工作..."
 
 #. Type: text
 #. Description
@@ -55,9 +53,8 @@ msgstr "正在進行系統的準備工作"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "正將 Kernel 寫入 Flash Memory"
+msgstr "正將 Kernel 寫入快閃記憶體..."
 
 #. Type: text
 #. Description
@@ -67,7 +64,7 @@ msgstr "正將 Kernel 寫入 Flash Memory"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "正在磁碟上產生開機影像..."
 
 #. Type: text
 #. Description
@@ -77,6 +74,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "讓 GLAN Tank 能夠開機"
+msgstr "讓系統能夠開機"
