@@ -31,7 +31,7 @@ esac
 # Only run on some machines
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 case "$machine" in
-	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120" | "Linksys NSLU2" | "QNAP TS-109/TS-209" | "QNAP TS-409" | "Thecus N2100")
+	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120" | "Linksys NSLU2" | "QNAP TS-109/TS-209" | "QNAP TS-409" | "Thecus N2100")
 		# Pass the check and continue below
 	;;
 	*)
@@ -93,7 +93,7 @@ case "$machine" in
 	;;
 	# The boot loader passes a bogus root= (e.g. root=/dev/ram), so
 	# override the command line parameter.
-	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120" | "QNAP TS-109/TS-209" | "QNAP TS-409" | "Thecus N2100")
+	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120" | "QNAP TS-109/TS-209" | "QNAP TS-409" | "Thecus N2100")
 		install -d $DESTDIR/conf
 		echo ROOT="$rootdev" >> $DESTDIR/conf/param.conf
 	;;

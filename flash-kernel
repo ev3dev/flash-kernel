@@ -82,6 +82,7 @@ if [ "x$1" = "x--supported" ]; then
 	case "$machine" in
 		"Buffalo Linkstation Pro/Live")		exit 0 ;;
 		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
+		"D-Link DNS-323")			exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
@@ -156,6 +157,43 @@ case "$machine" in
 		fi
 		echo "Creating new /boot/initrd.buffalo." >&2
 		mv $tmp.uboot /boot/initrd.buffalo
+	;;
+	"D-Link DNS-323")
+		check_subarch "orion5x"
+		check_mtd
+		imtd=$(mtdblock "File System")
+		if [ -z "$imtd" ]; then
+			error "Cannot find mtd partition 'File System'"
+		fi
+		check_dev_mtdblock "$imtd"
+		imtdsize=$(mtdsize "File System")
+		check_size "File System" $((ifilesize + 64)) $imtdsize
+		kmtd=$(mtdblock "Linux Kernel")
+		if [ -z "$kmtd" ]; then
+			error "Cannot find mtd partition 'Linux Kernel'"
+		fi
+		check_dev_mtdblock "$kmtd"
+		kmtdsize=$(mtdsize "Linux Kernel")
+		check_size "Linux Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
+		printf "Generating kernel u-boot image... " >&2
+		tmp=$(tempfile)
+		# Set machine id 1542 (0x0606)
+		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811006,4'
+		cat $kfile >> $tmp
+		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
+			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
+		echo "done." >&2
+		printf "Flashing kernel... " >&2
+		cat $tmp.uboot > $kmtd || error "failed."
+		echo "done." >&2
+		rm -f $tmp.uboot $tmp
+		printf "Generating initramfs u-boot image... " >&2
+		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00800000 \
+			-e 0x00800000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+		printf "Flashing initramfs... " >&2
+		cat $tmp.uboot > $imtd || error "failed."
+		echo "done." >&2
+		rm -f $tmp.uboot
 	;;
 	"HP Media Vault mv2120")
 		check_subarch "orion5x"

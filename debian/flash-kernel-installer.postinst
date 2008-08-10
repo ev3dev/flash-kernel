@@ -57,6 +57,12 @@ case "$machine" in
 			error "apt-install uboot-mkimage failed"
 		fi
 	;;
+	"D-Link DNS-323")
+		in-target update-initramfs -u || true
+		if ! apt-install uboot-mkimage; then
+			error "apt-install uboot-mkimage failed"
+		fi
+	;;
 	"HP Media Vault mv2120")
 		if ! apt-install mv2120-utils; then
 			# mv2120-utils includes some initramfs-tools scripts
