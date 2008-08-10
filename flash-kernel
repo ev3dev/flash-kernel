@@ -80,6 +80,7 @@ machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 
 if [ "x$1" = "x--supported" ]; then
 	case "$machine" in
+		"Buffalo Linkstation Pro/Live")		exit 0 ;;
 		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
@@ -122,12 +123,20 @@ fi
 subarch=$(echo "$kfile" | sed -e 's/.*-//')
 
 case "$machine" in
-	"Buffalo/Revogear Kurobox Pro")
+	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		check_subarch "orion5x"
 		tmp=$(tempfile)
 		printf "Generating kernel u-boot image... " >&2
-		# Set machine id 1509 (0x05e5)
-		devio > $tmp 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
+		case "$machine" in
+			"Buffalo Linkstation Pro/Live")
+				# Set machine id 1585 (0x0631)
+				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811031,4'
+			;;
+			"Buffalo/Revogear Kurobox Pro")
+				# Set machine id 1509 (0x05e5)
+				devio > $tmp 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
+			;;
+		esac
 		cat $kfile >> $tmp
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 -e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
 		echo "done." >&2

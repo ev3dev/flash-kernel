@@ -22,7 +22,7 @@ findfs () {
 # Are we writing to flash or constructing an image on disk?
 write_to_flash() {
 	case "$machine" in
-		"Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120")
+		"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120")
 			return 1
 		;;
 		*)
@@ -51,7 +51,7 @@ if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
 fi
 
 case "$machine" in
-	"Buffalo/Revogear Kurobox Pro")
+	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
