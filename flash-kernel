@@ -139,7 +139,8 @@ case "$machine" in
 			;;
 		esac
 		cat $kfile >> $tmp
-		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 -e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
+		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
+			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/uImage.buffalo ]; then
 			echo "Creating backup of /boot/uImage.buffalo." >&2
@@ -149,7 +150,8 @@ case "$machine" in
 		mv $tmp.uboot /boot/uImage.buffalo
 		rm -f $tmp
 		printf "Generating initrd u-boot image... " >&2
-		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00008000 -e 0x00008000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00008000 \
+			-e 0x00008000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/initrd.buffalo ]; then
 			echo "Creating backup of /boot/initrd.buffalo." >&2
@@ -202,7 +204,8 @@ case "$machine" in
 		# Set machine id 1693 (0x069d)
 		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
 		cat $kfile >> $tmp
-		mkimage -A arm -O linux -T multi -C none -n "$desc" -e 0x01000000 -a 0x01000000 -d $tmp:$ifile $tmp.uboot >&2 1>/dev/null
+		mkimage -A arm -O linux -T multi -C none -n "$desc" -e 0x01000000 \
+			-a 0x01000000 -d $tmp:$ifile $tmp.uboot >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/uImage ]; then
 			echo "Creating backup of /boot/uImage." >&2
