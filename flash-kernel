@@ -150,8 +150,8 @@ case "$machine" in
 		mv $tmp.uboot /boot/uImage.buffalo
 		rm -f $tmp
 		printf "Generating initrd u-boot image... " >&2
-		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00008000 \
-			-e 0x00008000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x0 \
+			-e 0x0 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/initrd.buffalo ]; then
 			echo "Creating backup of /boot/initrd.buffalo." >&2
