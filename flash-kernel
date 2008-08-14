@@ -75,7 +75,7 @@ nslu2_swap() {
 		cat $1
 	fi
 }
-	
+
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 
 if [ "x$1" = "x--supported" ]; then
