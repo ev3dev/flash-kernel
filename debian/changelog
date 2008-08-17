@@ -1,9 +1,9 @@
-flash-kernel (2.6) UNRELEASED; urgency=low
+flash-kernel (2.6) unstable; urgency=low
 
   * Set FSCKFIX=yes in /etc/default/rcS to stop fsck from prompting the
     user for input since most users don't have a serial console.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 17 Aug 2008 16:29:24 +0300
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 17 Aug 2008 16:31:53 +0300
 
 flash-kernel (2.5) unstable; urgency=low
 
