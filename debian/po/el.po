@@ -20,9 +20,9 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2007-02-20 12:26+0200\n"
-"Last-Translator: galaxico@quad-nrg.net\n"
-"Language-Team: debian-l10n-greek@lists.debian.org\n"
+"PO-Revision-Date: 2008-08-22 20:23+0300\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,9 +43,8 @@ msgstr "Ρύθμιση της μνήμης flash για την εκκίνηση 
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Προετοιμασία του συστήματος"
+msgstr "Καθιστώντας το σύστημα εκκινήσιμο"
 
 #. Type: text
 #. Description
@@ -53,9 +52,8 @@ msgstr "Προετοιμασία του συστήματος"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Προετοιμασία του συστήματος"
+msgstr "Προετοιμασία του συστήματος..."
 
 #. Type: text
 #. Description
@@ -63,9 +61,8 @@ msgstr "Προετοιμασία του συστήματος"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Εγγραφή του πυρήνα στην μνήμη flash"
+msgstr "Εγγραφή του πυρήνα στην μνήμη flash..."
 
 #. Type: text
 #. Description
@@ -75,7 +72,7 @@ msgstr "Εγγραφή του πυρήνα στην μνήμη flash"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Δημιουργία της εικόνας εκκίνησης στον δίσκο..."
 
 #. Type: text
 #. Description
@@ -85,6 +82,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Κάνε εκκινήσιμο το GLAN Tank"
+msgstr "Κάνε σύστημα εκκινήσιμο"
