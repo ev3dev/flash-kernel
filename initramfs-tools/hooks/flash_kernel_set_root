@@ -58,7 +58,7 @@ if echo "$rootdev" | grep -q "="; then
 				done
 			fi
 			if [ $found -eq 0 ]; then
-				echo "/etc/fstab parse error; $rootdev not supported or found" >&2
+				echo "Label $b not found in /dev/disk/by-label" >&2
 				pause_error
 			else
 				rootdev="/dev/disk/by-label/$b"

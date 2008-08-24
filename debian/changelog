@@ -1,6 +1,7 @@
 flash-kernel (2.7) UNRELEASED; urgency=low
 
   * Fix UUID warning to refer to the correct directory.
+  * Improve warning shown when LABEL doesn't exist in /dev/disk/by-label.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 13:33:21 +0300
 
