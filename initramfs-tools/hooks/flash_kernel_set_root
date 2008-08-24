@@ -59,7 +59,6 @@ if echo "$rootdev" | grep -q "="; then
 			fi
 			if [ $found -eq 0 ]; then
 				echo "/etc/fstab parse error; $rootdev not supported or found" >&2
-				rootdev=/dev/sda1
 				pause_error
 			else
 				rootdev="/dev/disk/by-label/$b"
@@ -74,7 +73,6 @@ if echo "$rootdev" | grep -q "="; then
 		;;
 		*)
 			echo "/etc/fstab parse error; cannot recognize root $rootdev" >&2
-			rootdev=/dev/sda1
 			pause_error
 		;;
 	esac
