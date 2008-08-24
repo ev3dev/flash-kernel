@@ -8,6 +8,7 @@ flash-kernel (2.7) UNRELEASED; urgency=low
     this package.
   * Put in one more step in the progress bar (typically before the long
     update-initramfs call).
+  * Stop the progress bar when an error occurs, thanks Frans Pop.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 13:33:21 +0300
 

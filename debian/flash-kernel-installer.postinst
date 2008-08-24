@@ -12,6 +12,7 @@ log() {
 
 error() {
 	log "error: $@"
+	db_progress STOP
 	exit 1
 }
 
