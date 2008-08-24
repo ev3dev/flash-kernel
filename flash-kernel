@@ -83,6 +83,7 @@ if [ "x$1" = "x--supported" ]; then
 		"Buffalo Linkstation Pro/Live")		exit 0 ;;
 		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
 		"D-Link DNS-323")			exit 0 ;;
+		"GLAN Tank")				exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
@@ -196,6 +197,15 @@ case "$machine" in
 		cat $tmp.uboot > $imtd || error "failed."
 		echo "done." >&2
 		rm -f $tmp.uboot
+	;;
+	"GLAN Tank")
+		rm -f /boot/initrd /boot/zImage
+		ln -s $(basename $ifile) /boot/initrd
+		(
+			# Set machine id 1100 (0x044c)
+			devio 'wl 0xe3a01c04,4' 'wl 0xe381104c,4'
+			cat $kfile
+		) > /boot/zImage
 	;;
 	"HP Media Vault mv2120")
 		check_subarch "orion5x"

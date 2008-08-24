@@ -22,7 +22,7 @@ findfs () {
 # Are we writing to flash or constructing an image on disk?
 write_to_flash() {
 	case "$machine" in
-		"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120")
+		"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "GLAN Tank" | "HP Media Vault mv2120")
 			return 1
 		;;
 		*)
@@ -66,6 +66,9 @@ case "$machine" in
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+	;;
+	"GLAN Tank")
+		in-target update-initramfs -u || true
 	;;
 	"HP Media Vault mv2120")
 		if ! apt-install mv2120-utils; then

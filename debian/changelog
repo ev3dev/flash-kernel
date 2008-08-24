@@ -4,6 +4,8 @@ flash-kernel (2.7) UNRELEASED; urgency=low
   * Improve warning shown when LABEL doesn't exist in /dev/disk/by-label.
   * Use sda2 rather than sda1 as root device (when parsing of /etc/fstab
     fails) since this is what the installer will use by default.
+  * Move GLAN Tank support from glantank-utils/glantank-installer to
+    this package.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 13:33:21 +0300
 

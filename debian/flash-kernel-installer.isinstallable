@@ -3,12 +3,7 @@ set -e
 
 case "`archdetect`" in
 	arm*/iop32x)
-		machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
-		if echo "$machine" | grep -q "^GLAN Tank"; then
-			exit 1
-		else
 			exit 0
-		fi
 		;;
 	arm*/ixp4xx)
 			exit 0
