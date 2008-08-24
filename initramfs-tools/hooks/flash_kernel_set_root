@@ -49,9 +49,9 @@ if echo "$rootdev" | grep -q "="; then
 	b=$(echo "$rootdev" | cut -d "=" -f 2- | sed -e 's/^"\(.*\)"$/\1/')
 	case "$a" in
 		LABEL)
-			b=$(echo "$b" | sed 's#/#\\x2f#g')
-			if [ -e /dev/disk/by-label/$b ]; then
-				rootdev="/dev/disk/by-label/$b"
+			c=$(echo "$b" | sed 's#/#\\x2f#g')
+			if [ -e /dev/disk/by-label/$c ]; then
+				rootdev="/dev/disk/by-label/$c"
 			else
 				echo "Label $b not found in /dev/disk/by-label" >&2
 			fi
