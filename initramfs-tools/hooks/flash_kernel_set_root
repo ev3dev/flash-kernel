@@ -86,13 +86,13 @@ case "$machine" in
 	# provide a default.
 	"Linksys NSLU2")
 		install -d $DESTDIR/conf/conf.d
-		echo ROOT="$rootdev" > $DESTDIR/conf/conf.d/default_root
+		echo "ROOT=\"$rootdev\"" > $DESTDIR/conf/conf.d/default_root
 	;;
 	# The boot loader passes a bogus root= (e.g. root=/dev/ram), so
 	# override the command line parameter.
 	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "GLAN Tank" | "HP Media Vault mv2120" | "QNAP TS-109/TS-209" | "QNAP TS-409" | "Thecus N2100")
 		install -d $DESTDIR/conf
-		echo ROOT="$rootdev" >> $DESTDIR/conf/param.conf
+		echo "ROOT=\"$rootdev\"" >> $DESTDIR/conf/param.conf
 	;;
 	# This shouldn't happen - only if a device from the case statement
 	# above wasn't added here.
