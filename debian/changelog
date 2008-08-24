@@ -1,6 +1,7 @@
 flash-kernel (2.8) UNRELEASED; urgency=low
 
   * Make sure that ROOT in the initramfs is properly quoted.
+  * Support disk LABELs that contain / (inspired by #489008).
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 17:51:55 +0300
 

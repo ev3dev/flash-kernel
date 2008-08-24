@@ -49,19 +49,11 @@ if echo "$rootdev" | grep -q "="; then
 	b=$(echo "$rootdev" | cut -d "=" -f 2- | sed -e 's/^"\(.*\)"$/\1/')
 	case "$a" in
 		LABEL)
-			# Not all labels show up in /dev/disk/by-label:
-			# e.g. LABEL=/ doesn't.
-			found=0
-			if [ -e /dev/disk/by-label ]; then
-				for i in $(ls -1 /dev/disk/by-label/); do
-					[ "$i" = "$b" ] && found=1
-				done
-			fi
-			if [ $found -eq 0 ]; then
-				echo "Label $b not found in /dev/disk/by-label" >&2
-				pause_error
-			else
+			b=$(echo "$b" | sed 's#/#\\x2f#g')
+			if [ -e /dev/disk/by-label/$b ]; then
 				rootdev="/dev/disk/by-label/$b"
+			else
+				echo "Label $b not found in /dev/disk/by-label" >&2
 			fi
 		;;
 		UUID)
