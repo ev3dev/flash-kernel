@@ -68,7 +68,6 @@ if echo "$rootdev" | grep -q "="; then
 			rootdev=/dev/disk/by-uuid/$b
 			if [ ! -e $rootdev ]; then
 				echo "UUID $b doesn't exist in /dev/disk/by-uuid" >&2
-				pause_error
 			fi
 		;;
 		*)
