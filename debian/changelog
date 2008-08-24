@@ -1,9 +1,9 @@
-flash-kernel (2.9) UNRELEASED; urgency=low
+flash-kernel (2.9) unstable; urgency=low
 
   * Pause again when an unknown root is found.
   * Print a better warning when the LABEL is not found.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 18:02:12 +0300
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 21:31:20 +0300
 
 flash-kernel (2.8) unstable; urgency=low
 
