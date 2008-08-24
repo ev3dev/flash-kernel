@@ -1,4 +1,4 @@
-flash-kernel (2.7) UNRELEASED; urgency=low
+flash-kernel (2.7) unstable; urgency=low
 
   * Fix UUID warning to refer to the correct directory.
   * Improve warning shown when LABEL doesn't exist in /dev/disk/by-label.
@@ -10,7 +10,10 @@ flash-kernel (2.7) UNRELEASED; urgency=low
     update-initramfs call).
   * Stop the progress bar when an error occurs, thanks Frans Pop.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 13:33:21 +0300
+  [ Updated translations ]
+  * Greek, Modern (1453-) (el.po)
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 16:37:17 +0300
 
 flash-kernel (2.6) unstable; urgency=low
 
