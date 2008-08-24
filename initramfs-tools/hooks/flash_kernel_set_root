@@ -79,7 +79,7 @@ if echo "$rootdev" | grep -q "="; then
 fi
 
 if [ ! -e "$rootdev" ]; then
-	rootdev=/dev/sda1
+	rootdev=/dev/sda2
 	echo "Warning: /etc/fstab parse error; guessing that the root device is $rootdev" >&2
 fi
 case "$machine" in
