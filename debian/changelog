@@ -6,6 +6,8 @@ flash-kernel (2.7) UNRELEASED; urgency=low
     fails) since this is what the installer will use by default.
   * Move GLAN Tank support from glantank-utils/glantank-installer to
     this package.
+  * Put in one more step in the progress bar (typically before the long
+    update-initramfs call).
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 24 Aug 2008 13:33:21 +0300
 

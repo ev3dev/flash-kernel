@@ -34,9 +34,9 @@ write_to_flash() {
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 
 if write_to_flash; then
-	db_progress START 0 2 flash-kernel-installer/progress
+	db_progress START 0 3 flash-kernel-installer/progress
 else
-	db_progress START 0 2 flash-kernel-installer/progress_disk
+	db_progress START 0 3 flash-kernel-installer/progress_disk
 fi
 db_progress INFO flash-kernel-installer/prepare
 
@@ -53,6 +53,8 @@ if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
 	echo "postinst_hook = flash-kernel" >> \
 		/target/etc/kernel-img.conf
 fi
+
+db_progress STEP 1
 
 case "$machine" in
 	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
