@@ -27,7 +27,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Podešavam flash memoriju za podizanje sustava"
 
 #. Type: text
 #. Description
@@ -36,7 +36,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "Podešavam sustav kako bi se mogao podići"
 
 #. Type: text
 #. Description
@@ -45,7 +45,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "Pripremam sustav..."
 
 #. Type: text
 #. Description
@@ -54,7 +54,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Zapisujem kernel u flash memoriju..."
 
 #. Type: text
 #. Description
@@ -64,7 +64,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Pravim boot snimku na disku..."
 
 #. Type: text
 #. Description
@@ -75,4 +75,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "Učiniti sustav sposobnim za podizanje"
