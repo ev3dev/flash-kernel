@@ -15,13 +15,13 @@ msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-05-08 13:47+0200\n"
+"PO-Revision-Date: 2008-08-07 02:01+0200\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
 "Language-Team: ku <ubuntu-l10n-kur@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural= n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n!= 1);\n"
 
 #. Type: text
 #. Description
@@ -38,9 +38,8 @@ msgstr "Bîra flaş ji bo bootkirina pergalê tê veavakirin"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Pergala tê amadekirin"
+msgstr "Pergal ji bo bootkirinê tê amadekirin"
 
 #. Type: text
 #. Description
@@ -48,9 +47,8 @@ msgstr "Pergala tê amadekirin"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Pergala tê amadekirin"
+msgstr "Pergal tê amadekirin..."
 
 #. Type: text
 #. Description
@@ -58,9 +56,8 @@ msgstr "Pergala tê amadekirin"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Kernel li ser bîra flaş tê nivîsandin"
+msgstr "Kernel li ser bîra flaş tê nivîsandin..."
 
 #. Type: text
 #. Description
@@ -80,6 +77,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN Tank ji bo bootkirinê amade bike"
+msgstr "Pergal ji bo bootkirinê amade bike"
