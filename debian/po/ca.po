@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: debian-installer lenny\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-04-29 20:37+0200\n"
+"PO-Revision-Date: 2008-09-04 14:50+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,9 +37,8 @@ msgstr "S'està configurant la memòria flaix per a arrencar el sistema"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "S'està preparant el sistema"
+msgstr "S'està habilitant l'arrencada del sistema"
 
 #. Type: text
 #. Description
@@ -47,9 +46,8 @@ msgstr "S'està preparant el sistema"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "S'està preparant el sistema"
+msgstr "S'està preparant el sistema..."
 
 #. Type: text
 #. Description
@@ -57,9 +55,8 @@ msgstr "S'està preparant el sistema"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "S'està escrivint el nucli a la memòria flaix"
+msgstr "S'està escrivint el nucli a la memòria flaix..."
 
 #. Type: text
 #. Description
@@ -69,7 +66,7 @@ msgstr "S'està escrivint el nucli a la memòria flaix"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "S'està generant la imatge d'arrencada al disc..."
 
 #. Type: text
 #. Description
@@ -79,6 +76,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Feu el GLAN Tank arrencable"
+msgstr "Feu el sistema arrencable"

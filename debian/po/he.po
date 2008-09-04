@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-05-07 21:13+0300\n"
+"PO-Revision-Date: 2008-09-04 18:13+0300\n"
 "Last-Translator: Lior Kaplan <kaplan@debian.org>\n"
 "Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,9 +39,8 @@ msgstr "מגדיר את זכרון הפלאש לאתחל את המערכת"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "מכיר את המערכת"
+msgstr "הפיכת המערכת לברת איתחול"
 
 #. Type: text
 #. Description
@@ -49,9 +48,8 @@ msgstr "מכיר את המערכת"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "מכיר את המערכת"
+msgstr "מכין את המערכת..."
 
 #. Type: text
 #. Description
@@ -59,9 +57,8 @@ msgstr "מכיר את המערכת"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "כותב את הקרנל לזיכרון הפלאש"
+msgstr "כותב את הקרנל לזיכרון הפלאש..."
 
 #. Type: text
 #. Description
@@ -71,7 +68,7 @@ msgstr "כותב את הקרנל לזיכרון הפלאש"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "בונה קובץ איתחול על הדיסק..."
 
 #. Type: text
 #. Description
@@ -81,6 +78,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "הפיכת GLAN Tank לבר אתחול"
+msgstr "הפוך המערכת לברת אתחול"
