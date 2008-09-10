@@ -3,7 +3,7 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of DI_ne.po to Nepali
+# translation of debian-installer_packages_po_sublevel1_ne.po to Nepali
 # Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2006.
 # Shiva Pokharel <pokharelshiva@hotmail.com>, 2006.
 # Shyam Krishna Bal <shyam@mpp.org.np>, 2006.
@@ -13,13 +13,14 @@
 # shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
 # Nabin Gautam <nabin@mpp.org.np>, 2007.
 # Shyam Krishna Bal <balshyam24@yahoo.com>, 2008.
+# Shiva Prasad Pokharel <shiva@mpp.org.np>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: DI_ne\n"
+"Project-Id-Version: debian-installer_packages_po_sublevel1_ne\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-02-05 19:19+0545\n"
-"Last-Translator: Shyam Krishna Bal <balshyam24@yahoo.com>\n"
+"PO-Revision-Date: 2008-09-09 18:15+0545\n"
+"Last-Translator: Shiva Prasad Pokharel <shiva@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,9 +42,8 @@ msgstr "प्रणाली बुट गर्न फ्लास स्म�
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "प्रणाली तयार गरिदैछ"
+msgstr "प्रणाली बुटेबल पारिदैछ"
 
 #. Type: text
 #. Description
@@ -51,9 +51,8 @@ msgstr "प्रणाली तयार गरिदैछ"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "प्रणाली तयार गरिदैछ"
+msgstr "प्रणाली तयार गरिदैछ..."
 
 #. Type: text
 #. Description
@@ -61,9 +60,8 @@ msgstr "प्रणाली तयार गरिदैछ"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "फ्लास स्मृतिमा कर्नल लेखिँदैछ"
+msgstr "फ्ल्यास स्मृति कर्नेल लेख्दैछ ..."
 
 #. Type: text
 #. Description
@@ -73,7 +71,7 @@ msgstr "फ्लास स्मृतिमा कर्नल लेखिँ
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "डिस्कमा बुट इमेज उत्पन्न गर्दैछ ..."
 
 #. Type: text
 #. Description
@@ -83,6 +81,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN ट्यान्क बुटेबल बनाउँनुहोस्"
+msgstr "प्रणाली बुटेबल बनाउनुहोस्।"
