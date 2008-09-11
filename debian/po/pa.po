@@ -16,12 +16,13 @@
 # A S Alam <aalam@users.sf.net>, 2007.
 # Amanpreet Singh Alam <apreet.alam@gmail.com>, 2008.
 # Amanpreet Singh Brar <aalam@users.sf.net>, 2008.
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-05-02 22:01+0530\n"
+"PO-Revision-Date: 2008-09-11 08:22+0000\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
@@ -44,9 +45,8 @@ msgstr "ਸਿਸਟਮ ਬੂਟ ਕਰਨ ਲਈ ਫਲੈਸ਼ ਮੋਮਰ�
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+msgstr "ਸਿਸਟਮ ਬੂਟ ਹੋਣ ਯੋਗ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ"
 
 #. Type: text
 #. Description
@@ -54,9 +54,8 @@ msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
@@ -64,9 +63,8 @@ msgstr "ਸਿਸਟਮ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "ਕਰਨਲ ਨੂੰ ਫਲੈਸ਼ ਮੈਮੋਰੀ ਵਿੱਚ ਲਿਖਿਆ ਜਾ ਰਿਹਾ ਹੈ"
+msgstr "ਕਰਨਲ ਨੂੰ ਫਲੈਸ਼ ਮੈਮੋਰੀ ਵਿੱਚ ਲਿਖਿਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
@@ -76,7 +74,7 @@ msgstr "ਕਰਨਲ ਨੂੰ ਫਲੈਸ਼ ਮੈਮੋਰੀ ਵਿੱਚ �
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "ਡਿਸਕ ਉੱਤੇ ਬੂਟ ਡਿਸਕ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
@@ -86,6 +84,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN ਟੈਂਕ ਬੂਟ-ਯੋਗ ਬਣਾਓ"
+msgstr "ਸਿਸਟਮ ਬੂਟ-ਹੋਣ ਯੋਗ ਬਣਾਓ"
