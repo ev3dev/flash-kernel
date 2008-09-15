@@ -55,6 +55,10 @@ if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
 		/target/etc/kernel-img.conf
 fi
 
+# Temporarily move flash-kernel out of the way so update-initramfs
+# won't call flash-kernel; otherwise we'd call it twice.
+mv /target/usr/sbin/flash-kernel /target/tmp/flash-kernel.$$
+
 db_progress STEP 1
 
 case "$machine" in
@@ -130,6 +134,8 @@ if write_to_flash; then
 else
 	db_progress INFO flash-kernel-installer/generating_image
 fi
+
+mv /target/tmp/flash-kernel.$$ /target/usr/sbin/flash-kernel
 
 # We need the udev /dev which has the MTD devices
 mount -o bind /dev /target/dev

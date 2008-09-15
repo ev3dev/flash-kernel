@@ -1,3 +1,11 @@
+flash-kernel (2.10) UNRELEASED; urgency=low
+
+  * Temporarily move flash-kernel out of the way in the udeb postinst
+    so update-initramfs won't call flash-kernel; otherwise we'd call
+    it twice.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 15 Sep 2008 13:24:21 +0300
+
 flash-kernel (2.9) unstable; urgency=low
 
   * Pause again when an unknown root is found.
