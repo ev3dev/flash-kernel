@@ -1,8 +1,27 @@
-flash-kernel (2.10) UNRELEASED; urgency=low
+flash-kernel (2.10) unstable; urgency=low
 
   * Temporarily move flash-kernel out of the way in the udeb postinst
     so update-initramfs won't call flash-kernel; otherwise we'd call
     it twice.
+
+  [ Updated translations ]
+  * Catalan (ca.po) by Jordi Mallach
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Hebrew (he.po) by Lior Kaplan
+  * Hindi (hi.po) by Kumar Appaiah
+  * Croatian (hr.po) by Josip Rodin
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Central Khmer (km.po) by KHOEM Sokhem
+  * Malayalam (ml.po) by പ്രവീണ്‍ അരിമ്പ്രത്തൊടിയില്‍
+  * Nepali (ne.po) by Shiva Prasad Pokharel
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Simplified Chinese (zh_CN.po) by Deng Xiyue
 
  -- Martin Michlmayr <tbm@cyrius.com>  Mon, 15 Sep 2008 13:24:21 +0300
 
