@@ -3,19 +3,20 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# translation of debian-installer_packages_po_sublevel1_mk.po to Macedonian
 # translation of mk.po to
-# translation of mk.po to Macedonian
 # Macedonian strings from the debian-installer.
 #
 # Georgi Stanojevski, <glisha@gmail.com>, 2004, 2005, 2006.
 # Georgi Stanojevski <georgis@unet.com.mk>, 2005, 2006.
+# Arangel Angov <ufo@linux.net.mk>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: mk\n"
+"Project-Id-Version: debian-installer_packages_po_sublevel1_mk\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2006-10-15 15:53+0200\n"
-"Last-Translator: Georgi Stanojevski <glisha@gmail.com>\n"
+"PO-Revision-Date: 2008-09-17 19:03+0200\n"
+"Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,9 +37,8 @@ msgstr "Конфигурирање на флеш меморијата за да 
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Подготовка на системот"
+msgstr "Подготовка на системот за стартување"
 
 #. Type: text
 #. Description
@@ -46,9 +46,8 @@ msgstr "Подготовка на системот"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Подготовка на системот"
+msgstr "Подготовка на системот..."
 
 #. Type: text
 #. Description
@@ -56,9 +55,8 @@ msgstr "Подготовка на системот"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Запишување на кернелот во флеш меморијата"
+msgstr "Запишување на кернелот во флеш меморијата..."
 
 #. Type: text
 #. Description
@@ -68,7 +66,7 @@ msgstr "Запишување на кернелот во флеш мемориј�
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Создавање на слика за стартување на дискот..."
 
 #. Type: text
 #. Description
@@ -78,6 +76,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Направи го GLAN Tank бутабилен"
+msgstr "Подготви го системот за стартување"
