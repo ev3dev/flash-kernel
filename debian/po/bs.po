@@ -3,22 +3,23 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of bs.po to Bosnian
+# translation of debian-installer_packages_po_sublevel1_bs.po to Bosnian
 # Bosnian messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Safir Secerovic <sapphire@linux.org.ba>, 2006.
 #
+# Safir Secerovic <sapphire@linux.org.ba>, 2006.
+# Armin Besirovic <armin@linux.org.ba>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: bs\n"
+"Project-Id-Version: debian-installer_packages_po_sublevel1_bs\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2007-01-20 12:23+0100\n"
-"Last-Translator: Safir Secerovic <sapphire@linux.org.ba>\n"
+"PO-Revision-Date: 2008-09-19 19:17+0200\n"
+"Last-Translator: Armin Besirovic <armin@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: 3\n"
 
@@ -37,9 +38,8 @@ msgstr "Podešavam flash memoriju za podizanje sistema"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Pripremam sistem"
+msgstr "Pravim sistem bootabilnim"
 
 #. Type: text
 #. Description
@@ -47,9 +47,8 @@ msgstr "Pripremam sistem"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Pripremam sistem"
+msgstr "Pripremam sistem..."
 
 #. Type: text
 #. Description
@@ -57,9 +56,8 @@ msgstr "Pripremam sistem"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Upisujem kernel u flash memoriju"
+msgstr "Upisujem kernel u flash memoriju..."
 
 #. Type: text
 #. Description
@@ -69,7 +67,7 @@ msgstr "Upisujem kernel u flash memoriju"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Generišem startnu sliku na disk..."
 
 #. Type: text
 #. Description
@@ -79,6 +77,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "Učini GLAN Tank bootable"
+msgstr "Napravi sistem bootabilan"
