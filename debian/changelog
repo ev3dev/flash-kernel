@@ -1,3 +1,17 @@
+flash-kernel (2.11) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Mahay Alam Khan (মাহে আলম খান)
+  * Bosnian (bs.po) by Armin Besirovic
+  * Danish (da.po)
+  * Latvian (lv.po) by Peteris Krisjanis
+  * Macedonian (mk.po) by Arangel Angov
+  * Albanian (sq.po) by Elian Myftiu
+  * Serbian (sr.po) by Veselin Mijušković
+  * Ukrainian (uk.po) by Євгеній Мещеряков
+
+ -- Frans Pop <fjp@debian.org>  Tue, 23 Sep 2008 05:29:36 +0200
+
 flash-kernel (2.10) unstable; urgency=low
 
   * Temporarily move flash-kernel out of the way in the udeb postinst
