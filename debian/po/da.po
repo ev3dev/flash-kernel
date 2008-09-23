@@ -42,7 +42,7 @@ msgstr "Indstiller flash-hukommelsen til at starte systemet op"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Gør systemet i stand til at boote"
+msgstr "GÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¸r systemet i stand til at boote"
 
 #. Type: text
 #. Description
@@ -81,4 +81,4 @@ msgstr "Genererer boot-image til disken..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Gør systemet i stand til at boote"
+msgstr "GÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¸r systemet i stand til at boote"
