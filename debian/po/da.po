@@ -41,8 +41,9 @@ msgstr "Indstiller flash-hukommelsen til at starte systemet op"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
+#, fuzzy
 msgid "Making the system bootable"
-msgstr "Gør systemet i stand til at boote"
+msgstr "Forbereder systemet"
 
 #. Type: text
 #. Description
@@ -50,8 +51,9 @@ msgstr "Gør systemet i stand til at boote"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
+#, fuzzy
 msgid "Preparing the system..."
-msgstr "Forbereder systemet..."
+msgstr "Forbereder systemet"
 
 #. Type: text
 #. Description
@@ -59,8 +61,9 @@ msgstr "Forbereder systemet..."
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
+#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Skriver kernen til flash-hukommelsen..."
+msgstr "Skriver kernen til flash-hukommelsen"
 
 #. Type: text
 #. Description
@@ -70,7 +73,7 @@ msgstr "Skriver kernen til flash-hukommelsen..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Genererer boot-image til disken..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -80,5 +83,6 @@ msgstr "Genererer boot-image til disken..."
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
+#, fuzzy
 msgid "Make the system bootable"
-msgstr "Gør systemet i stand til at boote"
+msgstr "Efterlad filsystemet intakt"
