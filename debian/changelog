@@ -1,3 +1,10 @@
+flash-kernel (2.13) unstable; urgency=high
+
+  * Map LVM devices in the form of /dev/vg/lv to /dev/mapper/...,
+    otherwise initramfs-tools won't initialize them.  Closes: #513504
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Thu, 29 Jan 2009 23:10:16 +0100
+
 flash-kernel (2.12) unstable; urgency=high
 
   * Rebuild with fixed Danish translation

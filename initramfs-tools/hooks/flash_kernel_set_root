@@ -43,6 +43,13 @@ esac
 # Record the root filesystem device for use during boot
 rootdev=$(egrep '^[^# 	]+[ 	]+/[ 	]' /etc/fstab | awk '{print $1}') || true
 
+# Map LVM devices in the form of /dev/vg/lv to /dev/mapper/..., otherwise
+# initramfs won't initialize them.
+path=$(readlink -f $rootdev)
+if echo "$path" | grep -q "^/dev/mapper/"; then
+	rootdev=$path
+fi
+
 # Translate LABEL and UUID entries into a proper device name.
 if echo "$rootdev" | grep -q "="; then
 	a=$(echo "$rootdev" | cut -d "=" -f 1)
