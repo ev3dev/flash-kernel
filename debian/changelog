@@ -1,9 +1,15 @@
-flash-kernel (2.14) UNRELEASED; urgency=low
+flash-kernel (2.14) unstable; urgency=low
 
   * Display a message when the generation of the u-boot image for the
     D-Link DNS-323 is done.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 08 Mar 2009 20:45:13 +0100
+  [ Updated translations ]
+  * Galician (gl.po) by marce villarino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Kazakh (kk.po) by daur88
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 08 Mar 2009 22:03:02 +0100
 
 flash-kernel (2.13) unstable; urgency=high
 
