@@ -193,6 +193,7 @@ case "$machine" in
 		printf "Generating initramfs u-boot image... " >&2
 		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00800000 \
 			-e 0x00800000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		cat $tmp.uboot > $imtd || error "failed."
 		echo "done." >&2
