@@ -4,13 +4,6 @@
 # Uncomment the following line to turn on verbose mode.
 #export DH_VERBOSE=1
 
-PACKAGE=flash-kernel
-
-pwd=$(shell pwd)
-
-TOPDIR := $(shell pwd)
-t=${TOPDIR}/debian/${PACKAGE}
-
 build: build-stamp
 
 build-stamp:
