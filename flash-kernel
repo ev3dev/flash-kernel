@@ -70,9 +70,9 @@ sercomm_header() {
 
 nslu2_swap() {
 	if [ "$little_endian" ]; then
-		devio "<<"$1 "xp $,4"
+		devio "<<$1" "xp $,4"
 	else
-		cat $1
+		cat "$1"
 	fi
 }
 
@@ -94,8 +94,8 @@ fi
 
 if [ -n "$1" ]; then
 	kvers="$1"
-	kfile=/boot/vmlinuz-$kvers
-	ifile=/boot/initrd.img-$kvers
+	kfile="/boot/vmlinuz-$kvers"
+	ifile="/boot/initrd.img-$kvers"
 	desc="Debian kernel $1"
 	idesc="Debian ramdisk $1"
 else
@@ -115,8 +115,8 @@ fi
 if [ ! -e $kfile ] || [ ! -e $ifile ]; then
 	error "Can't find $kfile and $ifile"
 fi
-kfilesize=$(wc -c $kfile | awk '{print $1}')
-ifilesize=$(wc -c $ifile | awk '{print $1}')
+kfilesize=$(wc -c "$kfile" | awk '{print $1}')
+ifilesize=$(wc -c "$ifile" | awk '{print $1}')
 
 # Extract the subarchitecture from the kernel name
 if [ -L "$kfile" ]; then
@@ -127,39 +127,39 @@ subarch=$(echo "$kfile" | sed -e 's/.*-//')
 case "$machine" in
 	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		check_subarch "orion5x"
-		tmp=$(tempfile)
+		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2
 		case "$machine" in
 			"Buffalo Linkstation Pro/Live")
 				# Set machine id 1585 (0x0631)
-				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811031,4'
+				devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe3811031,4'
 			;;
 			"Buffalo/Revogear Kurobox Pro")
 				# Set machine id 1509 (0x05e5)
-				devio > $tmp 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
+				devio > "$tmp" 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
 			;;
 		esac
-		cat $kfile >> $tmp
+		cat "$kfile" >> "$tmp"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
+			-e 0x00008000 -n "$desc" -d "$tmp" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/uImage.buffalo ]; then
 			echo "Creating backup of /boot/uImage.buffalo." >&2
 			mv /boot/uImage.buffalo /boot/uImage.buffalo.bak
 		fi
 		echo "Creating new /boot/uImage.buffalo." >&2
-		mv $tmp.uboot /boot/uImage.buffalo
-		rm -f $tmp
+		mv "$tmp.uboot" /boot/uImage.buffalo
+		rm -f "$tmp"
 		printf "Generating initrd u-boot image... " >&2
 		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x0 \
-			-e 0x0 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+			-e 0x0 -n "$idesc" -d "$ifile" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/initrd.buffalo ]; then
 			echo "Creating backup of /boot/initrd.buffalo." >&2
 			mv /boot/initrd.buffalo /boot/initrd.buffalo.bak
 		fi
 		echo "Creating new /boot/initrd.buffalo." >&2
-		mv $tmp.uboot /boot/initrd.buffalo
+		mv "$tmp.uboot" /boot/initrd.buffalo
 	;;
 	"D-Link DNS-323")
 		check_subarch "orion5x"
@@ -179,52 +179,52 @@ case "$machine" in
 		kmtdsize=$(mtdsize "Linux Kernel")
 		check_size "Linux Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
-		tmp=$(tempfile)
+		tmp="$(tempfile)"
 		# Set machine id 1542 (0x0606)
-		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811006,4'
-		cat $kfile >> $tmp
+		devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe3811006,4'
+		cat "$kfile" >> "$tmp"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
+			-e 0x00008000 -n "$desc" -d "$tmp" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
-		cat $tmp.uboot > $kmtd || error "failed."
+		cat "$tmp.uboot" > "$kmtd" || error "failed."
 		echo "done." >&2
-		rm -f $tmp.uboot $tmp
+		rm -f "$tmp.uboot" "$tmp"
 		printf "Generating initramfs u-boot image... " >&2
 		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00800000 \
-			-e 0x00800000 -n "$idesc" -d $ifile $tmp.uboot >&2 1>/dev/null
+			-e 0x00800000 -n "$idesc" -d "$ifile" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
-		cat $tmp.uboot > $imtd || error "failed."
+		cat "$tmp.uboot" > "$imtd" || error "failed."
 		echo "done." >&2
-		rm -f $tmp.uboot
+		rm -f "$tmp.uboot"
 	;;
 	"GLAN Tank")
 		rm -f /boot/initrd /boot/zImage
-		ln -s $(basename $ifile) /boot/initrd
+		ln -s "$(basename "$ifile")" /boot/initrd
 		(
 			# Set machine id 1100 (0x044c)
 			devio 'wl 0xe3a01c04,4' 'wl 0xe381104c,4'
-			cat $kfile
+			cat "$kfile"
 		) > /boot/zImage
 	;;
 	"HP Media Vault mv2120")
 		check_subarch "orion5x"
-		tmp=$(tempfile)
+		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2
 		# Set machine id 1693 (0x069d)
-		devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
-		cat $kfile >> $tmp
+		devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
+		cat "$kfile" >> "$tmp"
 		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01000000 \
-			-e 0x01000000 -d $tmp:$ifile $tmp.uboot >&2 1>/dev/null
+			-e 0x01000000 -d "$tmp:$ifile" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/uImage ]; then
 			echo "Creating backup of /boot/uImage." >&2
 			mv /boot/uImage /boot/uImage.bak
 		fi
 		echo "Creating new /boot/uImage." >&2
-		mv $tmp.uboot /boot/uImage
-		rm -f $tmp
+		mv "$tmp.uboot" /boot/uImage
+		rm -f "$tmp"
 	;;
 	"Linksys NSLU2")
 		check_subarch "ixp4xx"
@@ -287,25 +287,25 @@ case "$machine" in
 		# headers.
 		boundary=1441792 # 0x00160000
 		ksize1=$(expr $boundary - $offset - 16)
-		tmp=$(tempfile)
+		tmp="$(tempfile)"
 		printf "Flashing kernel: " >&2
 		(
 			sercomm_header $(expr $kfilesize + 16)
-			dd if=$kfile of=$tmp bs=$ksize1 count=1 2>/dev/null
-			nslu2_swap $tmp
+			dd if="$kfile" of="$tmp" bs=$ksize1 count=1 2>/dev/null
+			nslu2_swap "$tmp"
 			sercomm_header 131072
-			dd if=$kfile of=$tmp ibs=$ksize1 skip=1 2>/dev/null
-			nslu2_swap $tmp
-			rm -f $tmp
+			dd if="$kfile" of="$tmp" ibs=$ksize1 skip=1 2>/dev/null
+			nslu2_swap "$tmp"
+			rm -f "$tmp"
 		) > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
-		dd if=$ifile of=$tmp ibs=$(($imtdsize - 16)) conv=sync 2>/dev/null
+		dd if="$ifile" of="$tmp" ibs=$(($imtdsize - 16)) conv=sync 2>/dev/null
 		(
 			sercomm_header $ifilesize
-			nslu2_swap $tmp
-			rm -f $tmp
-		) > $imtd || error "failed."
+			nslu2_swap "$tmp"
+			rm -f "$tmp"
+		) > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-409")
@@ -326,31 +326,31 @@ case "$machine" in
 		kmtdsize=$(mtdsize "Kernel")
 		check_size "Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
-		tmp=$(tempfile)
+		tmp="$(tempfile)"
 		case "$machine" in
 			"QNAP TS-109/TS-209")
 				# Set machine id 1565 (0x061d)
-				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
+				devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
 			;;
 			"QNAP TS-409")
 				# Set machine id 1601 (0x0641)
-				devio > $tmp 'wl 0xe3a01c06,4' 'wl 0xe3811041,4'
+				devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe3811041,4'
 			;;
 		esac
-		cat $kfile >> $tmp
+		cat "$kfile" >> "$tmp"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d $tmp $tmp.uboot >&2 1>/dev/null
+			-e 0x00008000 -n "$desc" -d "$tmp" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
-		cat $tmp.uboot > $kmtd || error "failed."
+		cat "$tmp.uboot" > "$kmtd" || error "failed."
 		echo "done." >&2
-		rm -f $tmp.uboot $tmp
+		rm -f "$tmp.uboot" "$tmp"
 		printf "Flashing initramfs... " >&2
 		pad=$(expr $imtdsize - $ifilesize)
 		(
-			cat $ifile
+			cat "$ifile"
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
-		) > $imtd || error "failed."
+		) > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
 	"Thecus N2100")
@@ -374,15 +374,15 @@ case "$machine" in
 		(
 			# Set machine id 1101 (0x044d)
 			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
-			cat $kfile
-		) > $kmtd || error "failed."
+			cat "$kfile"
+		) > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		pad=$(expr $imtdsize - $ifilesize)
 		(
-			cat $ifile
+			cat "$ifile"
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
-		) > $imtd || error "failed."
+		) > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
 	*)

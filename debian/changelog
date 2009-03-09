@@ -1,6 +1,7 @@
 flash-kernel (2.15) UNRELEASED; urgency=low
 
   * Remove unused cruft from debian/rules, pointed out by Loïc Minier.
+  * Add lots of defensive shell quoting, also pointed out by Loïc Minier.
 
  -- Colin Watson <cjwatson@debian.org>  Mon, 09 Mar 2009 15:17:25 +0000
 
