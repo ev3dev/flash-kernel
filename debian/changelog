@@ -1,4 +1,4 @@
-flash-kernel (2.15) UNRELEASED; urgency=low
+flash-kernel (2.15) unstable; urgency=low
 
   [ Colin Watson ]
   * Remove unused cruft from debian/rules, pointed out by Loïc Minier.
@@ -8,7 +8,7 @@ flash-kernel (2.15) UNRELEASED; urgency=low
   * Add support for QNAP TS-119 and TS-219 Turbo NAS.
   * Remove some code duplication in the initramfs hook.
 
- -- Colin Watson <cjwatson@debian.org>  Mon, 09 Mar 2009 15:17:25 +0000
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 24 Mar 2009 20:03:24 +0100
 
 flash-kernel (2.14) unstable; urgency=low
 
