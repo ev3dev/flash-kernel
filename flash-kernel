@@ -230,7 +230,7 @@ case "$machine" in
 	"Linksys NSLU2")
 		check_subarch "ixp4xx"
 		case "$(dpkg --print-architecture)" in
-			arm|armel)
+			armel)
 				little_endian=1
 			;;
 			armeb)

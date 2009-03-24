@@ -1,3 +1,9 @@
+flash-kernel (2.16) UNRELEASED; urgency=low
+
+  * Remove support for the old arm port.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 24 Mar 2009 20:05:18 +0100
+
 flash-kernel (2.15) unstable; urgency=low
 
   [ Colin Watson ]
