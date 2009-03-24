@@ -6,6 +6,7 @@ flash-kernel (2.15) UNRELEASED; urgency=low
 
   [ Martin Michlmayr ]
   * Add support for QNAP TS-119 and TS-219 Turbo NAS.
+  * Remove some code duplication in the initramfs hook.
 
  -- Colin Watson <cjwatson@debian.org>  Mon, 09 Mar 2009 15:17:25 +0000
 
