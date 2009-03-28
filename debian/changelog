@@ -1,6 +1,12 @@
 flash-kernel (2.16) UNRELEASED; urgency=low
 
+  [ Martin Michlmayr ]
   * Remove support for the old arm port.
+
+  [ Otavio Salvador ]
+  * Apply patch from Per Andersson <avtobiff@gmail.com> to update the
+    manpage to describe the behaviour of the subarch check and the new
+    naming conventions. Closes: #521356.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 24 Mar 2009 20:05:18 +0100
 
