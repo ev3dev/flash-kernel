@@ -1,6 +1,7 @@
 flash-kernel (2.17) UNRELEASED; urgency=low
 
-  * Add kirkwood as a supported subarchitecture.
+  * Add kirkwood as a supported subarchitecture, but only activate
+    flash-kernel on the QNAP TS-119/TS-219 so far.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 31 Mar 2009 21:24:47 +0200
 
