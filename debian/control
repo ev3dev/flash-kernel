@@ -23,7 +23,7 @@ Section: debian-installer
 Priority: standard
 XC-Package-Type: udeb
 Architecture: arm armel armeb
-XB-Subarchitecture: iop32x ixp4xx orion5x
+XB-Subarchitecture: iop32x ixp4xx kirkwood orion5x
 Provides: bootable-system
 Depends: cdebconf-udeb, installed-base
 XB-Installer-Menu-Item: 7300
