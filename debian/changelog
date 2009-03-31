@@ -1,8 +1,5 @@
 flash-kernel (2.16) UNRELEASED; urgency=low
 
-  [ Martin Michlmayr ]
-  * Remove support for the old arm port.
-
   [ Otavio Salvador ]
   * Apply patch from Per Andersson <avtobiff@gmail.com> to update the
     manpage to describe the behaviour of the subarch check and the new

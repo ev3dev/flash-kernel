@@ -8,7 +8,7 @@ Standards-Version: 3.7.2
 Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/flash-kernel
 
 Package: flash-kernel
-Architecture: armel armeb
+Architecture: arm armel armeb
 Depends: devio, initramfs-tools
 Suggests: uboot-mkimage
 Description: utility to make certain embedded devices bootable
@@ -22,7 +22,7 @@ Package: flash-kernel-installer
 Section: debian-installer
 Priority: standard
 XC-Package-Type: udeb
-Architecture: armel armeb
+Architecture: arm armel armeb
 XB-Subarchitecture: iop32x ixp4xx orion5x
 Provides: bootable-system
 Depends: cdebconf-udeb, installed-base
