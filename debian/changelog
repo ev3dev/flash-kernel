@@ -1,3 +1,10 @@
+flash-kernel (2.18) UNRELEASED; urgency=low
+
+  * Make findfs use the last of any mounts found, in case there's more than
+    one due to pilot error in the partitioner.
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 14 May 2009 13:09:01 +0100
+
 flash-kernel (2.17) unstable; urgency=low
 
   * Add kirkwood as a supported subarchitecture, but only activate
