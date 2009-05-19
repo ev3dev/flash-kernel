@@ -1,4 +1,4 @@
-flash-kernel (2.18) UNRELEASED; urgency=low
+flash-kernel (2.18) unstable; urgency=low
 
   [ Colin Watson ]
   * Make findfs use the last of any mounts found, in case there's more than
@@ -11,7 +11,7 @@ flash-kernel (2.18) UNRELEASED; urgency=low
   * Depend on initramfs-tools (>= 0.92f), which was the first version
     that called flash-kernel.
 
- -- Colin Watson <cjwatson@debian.org>  Thu, 14 May 2009 13:09:01 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 19 May 2009 12:56:10 +0200
 
 flash-kernel (2.17) unstable; urgency=low
 
