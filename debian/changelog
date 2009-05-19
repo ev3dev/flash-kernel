@@ -1,7 +1,12 @@
 flash-kernel (2.18) UNRELEASED; urgency=low
 
+  [ Colin Watson ]
   * Make findfs use the last of any mounts found, in case there's more than
     one due to pilot error in the partitioner.
+
+  [ Martin Michlmayr ]
+  * No longer add a kernel postinst hook that calls flash-kernel.  Closes:
+    #526640
 
  -- Colin Watson <cjwatson@debian.org>  Thu, 14 May 2009 13:09:01 +0100
 

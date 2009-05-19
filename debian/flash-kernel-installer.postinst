@@ -49,14 +49,8 @@ if ! apt-install flash-kernel; then
 	error "apt-install flash-kernel failed"
 fi
 
-# Set up flash-kernel to run on kernel upgrades.
-if ! grep -q flash-kernel /target/etc/kernel-img.conf; then
-	echo "postinst_hook = flash-kernel" >> \
-		/target/etc/kernel-img.conf
-fi
-
 # Temporarily move flash-kernel out of the way so update-initramfs
-# won't call flash-kernel; otherwise we'd call it twice.
+# won't call flash-kernel; otherwise we might call it twice.
 mv /target/usr/sbin/flash-kernel /target/tmp/flash-kernel.$$
 
 db_progress STEP 1
