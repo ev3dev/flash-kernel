@@ -7,6 +7,9 @@ flash-kernel (2.18) UNRELEASED; urgency=low
   [ Martin Michlmayr ]
   * No longer add a kernel postinst hook that calls flash-kernel.  Closes:
     #526640
+  * Add a NEWS file telling people that they can remove the postinst hook.
+  * Depend on initramfs-tools (>= 0.92f), which was the first version
+    that called flash-kernel.
 
  -- Colin Watson <cjwatson@debian.org>  Thu, 14 May 2009 13:09:01 +0100
 

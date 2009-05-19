@@ -9,7 +9,7 @@ Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/flash-kernel
 
 Package: flash-kernel
 Architecture: arm armel armeb
-Depends: devio, initramfs-tools
+Depends: devio, initramfs-tools (>= 0.92f)
 Suggests: uboot-mkimage
 Description: utility to make certain embedded devices bootable
  flash-kernel is a script which will put the kernel and initramfs in
