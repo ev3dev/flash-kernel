@@ -23,9 +23,22 @@ findfs () {
 # Are we writing to flash or constructing an image on disk?
 write_to_flash() {
 	case "$machine" in
-		"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "GLAN Tank" | "HP Media Vault mv2120")
+		"Buffalo Linkstation Pro/Live")
 			return 1
 		;;
+		"Buffalo/Revogear Kurobox Pro")
+			return 1
+		;;
+		"GLAN Tank")
+			return 1
+		;;
+		"HP Media Vault mv2120")
+			return 1
+		;;
+		"Marvell SheevaPlug Reference Board")
+			return 1
+		;;
+		# Assume that we write to flash for all other devices
 		*)
 			return 0
 		;;
@@ -109,6 +122,12 @@ case "$machine" in
 		fi
 		if ! apt-install apex-nslu2; then
 			error "apt-install apex-nslu2 failed"
+		fi
+	;;
+	"Marvell SheevaPlug Reference Board")
+		in-target update-initramfs -u || true
+		if ! apt-install uboot-mkimage; then
+			error "apt-install uboot-mkimage failed"
 		fi
 	;;
 	"Thecus N2100" | "Thecus N4100")

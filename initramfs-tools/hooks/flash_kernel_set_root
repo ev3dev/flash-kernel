@@ -50,6 +50,9 @@ root_type() {
 		"QNAP TS-409")
 			echo "override"
 		;;
+		"Marvell SheevaPlug Reference Board")
+			echo "default"
+		;;
 		"Thecus N2100")
 			echo "override"
 		;;
