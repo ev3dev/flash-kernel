@@ -1,8 +1,8 @@
-flash-kernel (2.19) UNRELEASED; urgency=low
+flash-kernel (2.19) unstable; urgency=low
 
   * Add support for the SheevaPlug.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Mon, 25 May 2009 21:05:23 +0200
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 25 May 2009 21:12:05 +0200
 
 flash-kernel (2.18) unstable; urgency=low
 
