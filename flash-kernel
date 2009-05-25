@@ -86,6 +86,7 @@ if [ "x$1" = "x--supported" ]; then
 		"GLAN Tank")				exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
+		"Marvell SheevaPlug Reference Board")	exit 0 ;;
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
 		"QNAP TS-119/TS-219")			exit 0 ;;
 		"Thecus N2100")				exit 0 ;;
@@ -308,6 +309,34 @@ case "$machine" in
 			rm -f "$tmp"
 		) > "$imtd" || error "failed."
 		echo "done." >&2
+	;;
+	"Marvell SheevaPlug Reference Board")
+		check_subarch "kirkwood"
+		tmp="$(tempfile)"
+		printf "Generating kernel u-boot image... " >&2
+		# Set machine id 2097 (0x0831)
+		devio > "$tmp" 'wl 0xe3a01c08,4' 'wl 0xe3811031,4'
+		cat "$kfile" >> "$tmp"
+		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
+			-e 0x00008000 -n "$desc" -d "$tmp" "$tmp.uboot" >&2 1>/dev/null
+		echo "done." >&2
+		if [ -e /boot/uImage ]; then
+			echo "Creating backup of /boot/uImage." >&2
+			mv /boot/uImage /boot/uImage.bak
+		fi
+		echo "Creating new /boot/uImage." >&2
+		mv "$tmp.uboot" /boot/uImage
+		rm -f "$tmp"
+		printf "Generating initrd u-boot image... " >&2
+		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x0 \
+			-e 0x0 -n "$idesc" -d "$ifile" "$tmp.uboot" >&2 1>/dev/null
+		echo "done." >&2
+		if [ -e /boot/uInitrd ]; then
+			echo "Creating backup of /boot/uInitrd." >&2
+			mv /boot/uInitrd /boot/uInitrd.bak
+		fi
+		echo "Creating new /boot/uInitrd." >&2
+		mv "$tmp.uboot" /boot/uInitrd
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409")
 		case "$machine" in

@@ -33,6 +33,7 @@ At the moment, the following systems are supported:
  - QNAP TS-209
  - QNAP TS-219 Turbo NAS
  - QNAP TS-409
+ - SheevaPlug
  - Thecus N2100
 
 If you would like to see support for another device, please file a bug

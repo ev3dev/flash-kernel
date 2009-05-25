@@ -9,15 +9,7 @@ case "`archdetect`" in
 		exit 0
 	;;
 	arm*/kirkwood)
-		machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
-		case "$machine" in
-			"QNAP TS-119/TS-219")
-				exit 0
-			;;
-			*)
-				exit 1
-			;;
-		esac
+		exit 0
 	;;
 	arm*/orion5x)
 		exit 0
