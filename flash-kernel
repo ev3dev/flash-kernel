@@ -90,6 +90,7 @@ if [ "x$1" = "x--supported" ]; then
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
 		"QNAP TS-119/TS-219")			exit 0 ;;
 		"Thecus N2100")				exit 0 ;;
+		"Lanner EM7210")			exit 0 ;;
 		*)					exit 1 ;;
 	esac
 fi
@@ -415,6 +416,38 @@ case "$machine" in
 		(
 			# Set machine id 1101 (0x044d)
 			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
+			cat "$kfile"
+		) > "$kmtd" || error "failed."
+		echo "done." >&2
+		printf "Flashing initramfs... " >&2
+		pad=$(expr $imtdsize - $ifilesize)
+		(
+			cat "$ifile"
+			dd if=/dev/zero bs=$pad count=1 2>/dev/null
+		) > "$imtd" || error "failed."
+		echo "done." >&2
+	;;
+	"Lanner EM7210")
+		# Really: Intel SS4000-e and compatibles
+		check_subarch "iop32x"
+		check_mtd
+		imtd=$(mtdblock "ramdisk.gz")
+		if [ -z "$imtd" ]; then
+			error "Cannot find mtd partition 'ramdisk.gz'"
+		fi
+		check_dev_mtdblock "$imtd"
+		imtdsize=$(mtdsize "ramdisk.gz")
+		check_size "ramdisk" $ifilesize $imtdsize
+		kmtd=$(mtdblock zImage)
+		if [ -z "$kmtd" ]; then
+			error "Cannot find mtd partition 'zImage'"
+		fi
+		kmtdsize=$(mtdsize "zImage")
+		check_size "zImage" $(($kfilesize + 8)) $kmtdsize
+		printf "Flashing kernel..." >&2
+		(
+			# Set machine ID 1212 (0x04bc)
+			devio 'wl 0xe3a01c04,4' 'wl 0xe38110bc,4'
 			cat "$kfile"
 		) > "$kmtd" || error "failed."
 		echo "done." >&2

@@ -1,3 +1,9 @@
+flash-kernel (2.20) unstable; urgency=low
+
+  * Add support for Lanner EM7210 and compatibles (e.g., Intel SS4000-e)
+
+ -- Wouter Verhelst <wouter@debian.org>  Sat, 06 Jun 2009 14:42:34 +0200
+
 flash-kernel (2.19) unstable; urgency=low
 
   * Add support for the SheevaPlug.
