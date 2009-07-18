@@ -1,3 +1,9 @@
+flash-kernel (2.21) UNRELEASED; urgency=low
+
+  * Add SS4000-e / Lanner EM7210 to initramfs hooks, too.
+
+ -- Wouter Verhelst <wouter@debian.org>  Sat, 18 Jul 2009 18:58:25 +0200
+
 flash-kernel (2.20) unstable; urgency=low
 
   * Add support for Lanner EM7210 and compatibles (e.g., Intel SS4000-e)
