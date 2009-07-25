@@ -138,6 +138,8 @@ case "$machine" in
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+	"Lanner EM7210")
+		in-target update-initramfs -u || true
 	;;
 esac
 
