@@ -23,7 +23,7 @@ install: build
 	dh_installdirs
 	dh_installman flash-kernel.8
 	dh_install flash-kernel usr/sbin
-	dh_install -p flash-kernel initramfs-tools usr/share
+	dh_install -p flash-kernel -X.svn initramfs-tools usr/share
 
 binary-arch: build install
 	dh_testdir

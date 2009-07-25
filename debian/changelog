@@ -2,6 +2,8 @@ flash-kernel (2.21) unstable; urgency=low
 
   * debian/flash-kernel-installer.postinst: run update-initramfs -u in
     case of Lanner EM7210, so as to override root= kernel argument.
+  * debian/rules: add "-X.svn" line to dh_install call, so that
+    subversion directories aren't needlessly copied
 
  -- Wouter Verhelst <wouter@debian.org>  Sat, 25 Jul 2009 14:37:49 +0200
 
