@@ -1,3 +1,10 @@
+flash-kernel (2.22) UNRELEASED; urgency=low
+
+  [ Martin Michlmayr ]
+  * Add the Intel SS4000-E to the README file as a supported device.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Wed, 29 Jul 2009 19:05:00 +0200
+
 flash-kernel (2.21) unstable; urgency=low
 
   * debian/flash-kernel-installer.postinst: run update-initramfs -u in
