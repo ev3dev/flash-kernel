@@ -2,6 +2,7 @@ flash-kernel (2.22) UNRELEASED; urgency=low
 
   [ Martin Michlmayr ]
   * Add the Intel SS4000-E to the README file as a supported device.
+  * Fix syntax error in the postinst of the udeb.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Wed, 29 Jul 2009 19:05:00 +0200
 
