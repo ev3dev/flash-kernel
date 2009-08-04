@@ -8,14 +8,14 @@
 # This translation is released under the same licence as the debian-installer.
 #
 # Siim Põder <siim@p6drad-teel.net>, 2007.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2009.
+# Mattias Põldaru <mahfiaz gmail com>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2009-04-24 07:13+0300\n"
+"PO-Revision-Date: 2009-08-03 14:47+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
 "Language-Team: Eesti\n"
 "MIME-Version: 1.0\n"
@@ -37,9 +37,8 @@ msgstr "Flash mälu seadistamine süsteemi alglaadimiseks"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Süsteemi ettevalmistamine"
+msgstr "Süsteemi tegemine alglaaduvaks"
 
 #. Type: text
 #. Description
@@ -47,9 +46,8 @@ msgstr "Süsteemi ettevalmistamine"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Süsteemi ettevalmistamine"
+msgstr "Süsteemi ettevalmistamine..."
 
 #. Type: text
 #. Description
@@ -57,9 +55,8 @@ msgstr "Süsteemi ettevalmistamine"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Tuuma flash mälu kirjutamise järel ootamine"
+msgstr "Tuuma kirjutamine flash-mällu..."
 
 #. Type: text
 #. Description
@@ -69,7 +66,7 @@ msgstr "Tuuma flash mälu kirjutamise järel ootamine"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Kettale alglaadimistõmmise loomine..."
 
 #. Type: text
 #. Description
@@ -79,6 +76,5 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
-#, fuzzy
 msgid "Make the system bootable"
-msgstr "GLAN Tank alglaetavaks seadmine"
+msgstr "Süsteemi tegemine alglaaduvaks"
