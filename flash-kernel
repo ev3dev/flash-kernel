@@ -231,7 +231,7 @@ case "$machine" in
 	;;
 	"Linksys NSLU2")
 		check_subarch "ixp4xx"
-		case "$(shell dpkg-architecture -qDEB_HOST_ARCH)" in
+		case "$(dpkg --print-architecture)" in
 			arm|armel)
 				little_endian=1
 			;;
