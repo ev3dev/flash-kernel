@@ -1,3 +1,9 @@
+flash-kernel (2.23) UNRELEASED; urgency=low
+
+  * Upgrade to debhelper v7.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 01 Sep 2009 04:38:38 +0100
+
 flash-kernel (2.22) unstable; urgency=low
 
   [ Martin Michlmayr ]
