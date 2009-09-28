@@ -1,6 +1,10 @@
 flash-kernel (2.23) UNRELEASED; urgency=low
 
+  [ Colin Watson ]
   * Upgrade to debhelper v7.
+
+  [ Martin Michlmayr ]
+  * Add support for the Marvell OpenRD-Base and OpenRD-Client.
 
  -- Colin Watson <cjwatson@debian.org>  Tue, 01 Sep 2009 04:38:38 +0100
 

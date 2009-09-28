@@ -86,6 +86,8 @@ if [ "x$1" = "x--supported" ]; then
 		"GLAN Tank")				exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
+		"Marvell OpenRD Base Board")		exit 0 ;;
+		"Marvell OpenRD Client Board")		exit 0 ;;
 		"Marvell SheevaPlug Reference Board")	exit 0 ;;
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
 		"QNAP TS-119/TS-219")			exit 0 ;;
@@ -311,12 +313,24 @@ case "$machine" in
 		) > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
-	"Marvell SheevaPlug Reference Board")
+	"Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell SheevaPlug Reference Board")
 		check_subarch "kirkwood"
 		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2
-		# Set machine id 2097 (0x0831)
-		devio > "$tmp" 'wl 0xe3a01c08,4' 'wl 0xe3811031,4'
+		case "$machine" in
+			"Marvell OpenRD Base Board")
+				# Set machine id 2325 (0x0915)
+				devio > "$tmp" 'wl 0xe3a01c09,4' 'wl 0xe3811015,4'
+			;;
+			"Marvell OpenRD Client Board")
+				# Set machine id 2361 (0x0939)
+				devio > "$tmp" 'wl 0xe3a01c09,4' 'wl 0xe3811039,4'
+			;;
+			"Marvell SheevaPlug Reference Board")
+				# Set machine id 2097 (0x0831)
+				devio > "$tmp" 'wl 0xe3a01c08,4' 'wl 0xe3811031,4'
+			;;
+		esac
 		cat "$kfile" >> "$tmp"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmp" "$tmp.uboot" >&2 1>/dev/null

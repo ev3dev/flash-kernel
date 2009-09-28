@@ -35,6 +35,12 @@ write_to_flash() {
 		"HP Media Vault mv2120")
 			return 1
 		;;
+		"Marvell OpenRD Base Board")
+			return 1
+		;;
+		"Marvell OpenRD Client Board")
+			return 1
+		;;
 		"Marvell SheevaPlug Reference Board")
 			return 1
 		;;
@@ -124,7 +130,7 @@ case "$machine" in
 			error "apt-install apex-nslu2 failed"
 		fi
 	;;
-	"Marvell SheevaPlug Reference Board")
+	"Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell SheevaPlug Reference Board")
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"

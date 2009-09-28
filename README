@@ -29,6 +29,8 @@ At the moment, the following systems are supported:
  - HP Media Vault mv2120
  - Intel SS4000-E
  - Linksys NSLU2
+ - Marvell OpenRD-Base
+ - Marvell OpenRD-Client
  - QNAP TS-109
  - QNAP TS-119 Turbo NAS
  - QNAP TS-209
