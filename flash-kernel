@@ -317,23 +317,8 @@ case "$machine" in
 		check_subarch "kirkwood"
 		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2
-		case "$machine" in
-			"Marvell OpenRD Base Board")
-				# Set machine id 2325 (0x0915)
-				devio > "$tmp" 'wl 0xe3a01c09,4' 'wl 0xe3811015,4'
-			;;
-			"Marvell OpenRD Client Board")
-				# Set machine id 2361 (0x0939)
-				devio > "$tmp" 'wl 0xe3a01c09,4' 'wl 0xe3811039,4'
-			;;
-			"Marvell SheevaPlug Reference Board")
-				# Set machine id 2097 (0x0831)
-				devio > "$tmp" 'wl 0xe3a01c08,4' 'wl 0xe3811031,4'
-			;;
-		esac
-		cat "$kfile" >> "$tmp"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d "$tmp" "$tmp.uboot" >&2 1>/dev/null
+			-e 0x00008000 -n "$desc" -d "$kfile" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/uImage ]; then
 			echo "Creating backup of /boot/uImage." >&2
@@ -341,7 +326,6 @@ case "$machine" in
 		fi
 		echo "Creating new /boot/uImage." >&2
 		mv "$tmp.uboot" /boot/uImage
-		rm -f "$tmp"
 		printf "Generating initrd u-boot image... " >&2
 		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x0 \
 			-e 0x0 -n "$idesc" -d "$ifile" "$tmp.uboot" >&2 1>/dev/null
@@ -352,6 +336,7 @@ case "$machine" in
 		fi
 		echo "Creating new /boot/uInitrd." >&2
 		mv "$tmp.uboot" /boot/uInitrd
+		rm -f "$tmp"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409")
 		case "$machine" in
