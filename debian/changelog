@@ -6,8 +6,8 @@ flash-kernel (2.24) UNRELEASED; urgency=low
     another time.
   * Don't hardcode the machine ID for Marvell SheevaPlug, OpenRD-Base
     and OpenRD-Client since the boot loader will (or can be configured
-    to) do pass the correct machine ID.  This allows installed disks
-    to be shared between these devices.
+    to) use the correct machine ID.  This allows installed disks to be
+    shared between these devices.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 29 Sep 2009 18:21:22 +0100
 
