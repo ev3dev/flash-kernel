@@ -1,4 +1,4 @@
-flash-kernel (2.24) UNRELEASED; urgency=low
+flash-kernel (2.24) unstable; urgency=low
 
   [ Martin Michlmayr ]
   * Move back flash-kernel to its original location upon failure of
@@ -9,7 +9,7 @@ flash-kernel (2.24) UNRELEASED; urgency=low
     to) use the correct machine ID.  This allows installed disks to be
     shared between these devices.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Tue, 29 Sep 2009 18:21:22 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Sun, 18 Oct 2009 18:29:05 +0100
 
 flash-kernel (2.23) unstable; urgency=low
 
