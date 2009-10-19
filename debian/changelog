@@ -1,5 +1,6 @@
 flash-kernel (2.25) unstable; urgency=low
 
+  [ Colin Watson ]
   * Use the EXIT trap instead of ERR, which is a bashism.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Mon, 19 Oct 2009 17:16:14 +0100
