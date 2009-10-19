@@ -158,7 +158,7 @@ else
 	db_progress INFO flash-kernel-installer/generating_image
 fi
 
-trap - ERR HUP INT QUIT TERM
+trap - EXIT HUP INT QUIT TERM
 mv /target/tmp/flash-kernel.$$ /target/usr/sbin/flash-kernel
 
 # We need the udev /dev which has the MTD devices
