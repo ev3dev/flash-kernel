@@ -71,7 +71,7 @@ fi
 # Temporarily move flash-kernel out of the way so update-initramfs
 # won't call flash-kernel; otherwise we might call it twice.
 mv /target/usr/sbin/flash-kernel /target/tmp/flash-kernel.$$
-trap "mv /target/tmp/flash-kernel.$$ /target/usr/sbin/flash-kernel" ERR HUP INT QUIT TERM
+trap "mv /target/tmp/flash-kernel.$$ /target/usr/sbin/flash-kernel" EXIT HUP INT QUIT TERM
 
 db_progress STEP 1
 

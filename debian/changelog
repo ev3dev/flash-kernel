@@ -1,3 +1,9 @@
+flash-kernel (2.25) UNRELEASED; urgency=low
+
+  * Use the EXIT trap instead of ERR, which is a bashism.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 19 Oct 2009 17:09:40 +0100
+
 flash-kernel (2.24) unstable; urgency=low
 
   [ Martin Michlmayr ]
