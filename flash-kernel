@@ -76,7 +76,12 @@ nslu2_swap() {
 	fi
 }
 
-machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+if [ "x$1" = "x--machine" ]; then
+	machine=$2
+	shift 2
+else
+	machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+fi
 
 if [ "x$1" = "x--supported" ]; then
 	case "$machine" in

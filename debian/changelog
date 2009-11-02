@@ -1,3 +1,11 @@
+flash-kernel (2.26) UNRELEASED; urgency=low
+
+  [ Martin Michlmayr ]
+  * Add an option --machine to specify the device but leave this option
+    undocumented since it only has limited use.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 02 Nov 2009 21:41:54 +0000
+
 flash-kernel (2.25) unstable; urgency=low
 
   [ Colin Watson ]
