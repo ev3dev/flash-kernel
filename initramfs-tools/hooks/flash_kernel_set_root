@@ -50,6 +50,9 @@ root_type() {
 		"QNAP TS-409")
 			echo "override"
 		;;
+		"QNAP TS-41x")
+			echo "override"
+		;;
 		"Marvell OpenRD Base Board")
 			echo "default"
 		;;

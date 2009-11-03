@@ -96,6 +96,7 @@ if [ "x$1" = "x--supported" ]; then
 		"Marvell SheevaPlug Reference Board")	exit 0 ;;
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
 		"QNAP TS-119/TS-219")			exit 0 ;;
+		"QNAP TS-41x")				exit 0 ;;
 		"Thecus N2100")				exit 0 ;;
 		"Lanner EM7210")			exit 0 ;;
 		*)					exit 1 ;;
@@ -343,12 +344,12 @@ case "$machine" in
 		mv "$tmp.uboot" /boot/uInitrd
 		rm -f "$tmp"
 	;;
-	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409")
+	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		case "$machine" in
 			"QNAP TS-109/TS-209" | "QNAP TS-409")
 				check_subarch "orion5x"
 			;;
-			"QNAP TS-119/TS-219")
+			"QNAP TS-119/TS-219" | "QNAP TS-41x")
 				check_subarch "kirkwood"
 			;;
 		esac
@@ -381,6 +382,10 @@ case "$machine" in
 			"QNAP TS-409")
 				# Set machine id 1601 (0x0641)
 				devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe3811041,4'
+			;;
+			"QNAP TS-41x")
+				# Set machine id 2502 (0x09c6)
+				devio > "$tmp" 'wl 0xe3a01c09,4' 'wl 0xe38110c6,4'
 			;;
 		esac
 		cat "$kfile" >> "$tmp"
