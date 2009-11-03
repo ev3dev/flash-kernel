@@ -1,11 +1,11 @@
-flash-kernel (2.27) UNRELEASED; urgency=low
+flash-kernel (2.27) unstable; urgency=low
 
   [ Martin Michlmayr ]
   * Add support for the QNAP TS-410, TS-410U, TS-419P and TS-419U
     Turbo NAS.
   * Mention that the QNAP TS-110 and TS-210 Turbo NAS are supported.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Tue, 03 Nov 2009 16:42:01 +0000
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 03 Nov 2009 17:28:08 +0000
 
 flash-kernel (2.26) unstable; urgency=low
 
