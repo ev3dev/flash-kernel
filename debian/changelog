@@ -1,7 +1,8 @@
 flash-kernel (2.27) UNRELEASED; urgency=low
 
   [ Martin Michlmayr ]
-  * Add support for the QNAP TS-410, TS-410U and TS-419P Turbo NAS.
+  * Add support for the QNAP TS-410, TS-410U, TS-419P and TS-419U
+    Turbo NAS.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 03 Nov 2009 16:42:01 +0000
 
