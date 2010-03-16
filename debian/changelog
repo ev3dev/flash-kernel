@@ -1,9 +1,15 @@
-flash-kernel (2.28) UNRELEASED; urgency=low
+flash-kernel (2.28) unstable; urgency=low
 
   [ John Holland ]
   * Add support for the eSATA SheevaPlug.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Tue, 16 Mar 2010 16:12:33 +0000
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bengali (bn.po) by Israt Jahan
+  * German (de.po) by Holger Wansing
+  * Slovenian (sl.po) by Vanja Cvelbar
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 16 Mar 2010 16:15:19 +0000
 
 flash-kernel (2.27) unstable; urgency=low
 
