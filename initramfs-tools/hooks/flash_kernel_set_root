@@ -62,6 +62,9 @@ root_type() {
 		"Marvell SheevaPlug Reference Board")
 			echo "default"
 		;;
+		"Marvell eSATA SheevaPlug Reference Board")
+			echo "default"
+		;;
 		"Thecus N2100")
 			echo "override"
 		;;

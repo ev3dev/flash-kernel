@@ -41,6 +41,7 @@ At the moment, the following systems are supported:
  - QNAP TS-410 and TS-410U Turbo NAS
  - QNAP TS-419P and TS-419U Turbo NAS
  - SheevaPlug
+ - SheevaPlug eSATA
  - Thecus N2100
 
 If you would like to see support for another device, please file a bug
