@@ -33,9 +33,8 @@ msgstr ""
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "Córas á ullmhú"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -43,9 +42,8 @@ msgstr "Córas á ullmhú"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "Córas á ullmhú"
+msgstr "Córas á ullmhú..."
 
 #. Type: text
 #. Description
@@ -53,9 +51,8 @@ msgstr "Córas á ullmhú"
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Eithne le suiteáil á roghnú..."
+msgstr ""
 
 #. Type: text
 #. Description
