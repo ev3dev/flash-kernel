@@ -25,7 +25,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Laomchuimhne á chumrú chun an córas a thosú"
 
 #. Type: text
 #. Description
@@ -52,7 +52,7 @@ msgstr "Córas á ullmhú..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Eithne á scríobh i laomchuimhne..."
 
 #. Type: text
 #. Description
@@ -62,7 +62,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Íomhá thosaithe á giniúint ar dhiosca..."
 
 #. Type: text
 #. Description
