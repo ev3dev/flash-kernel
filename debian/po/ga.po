@@ -34,7 +34,7 @@ msgstr "Laomchuimhne á chumrú chun an córas a thosú"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "An córas a dhéanamh intosaithe"
 
 #. Type: text
 #. Description
@@ -73,4 +73,4 @@ msgstr "Íomhá thosaithe á giniúint ar dhiosca..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "Déan an córas intosaithe"

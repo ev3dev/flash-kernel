@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-01-04 23:07+0100\n"
+"PO-Revision-Date: 2010-04-12 17:01+0100\n"
 "Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Das System boot-fähig machen"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Das System wird vorbereitet ..."
+msgstr "Vorbereiten des Systems ..."
 
 #. Type: text
 #. Description
@@ -66,7 +66,7 @@ msgstr "Das System wird vorbereitet ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Der Kernel wird in den Flash-Speicher geschrieben ..."
+msgstr "Schreiben des Kernels in den Flash-Speicher ..."
 
 #. Type: text
 #. Description
@@ -76,7 +76,7 @@ msgstr "Der Kernel wird in den Flash-Speicher geschrieben ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Boot-Image wird auf Festplatte erzeugt ..."
+msgstr "Erzeugen des Boot-Images auf Festplatte ..."
 
 #. Type: text
 #. Description
