@@ -1,3 +1,9 @@
+flash-kernel (2.29) UNRELEASED; urgency=low
+
+  * Add support for the GuruPlug.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 24 May 2010 13:55:35 +0100
+
 flash-kernel (2.28) unstable; urgency=low
 
   [ John Holland ]
