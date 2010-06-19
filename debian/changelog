@@ -1,8 +1,8 @@
-flash-kernel (2.31) UNRELEASED; urgency=low
+flash-kernel (2.31) unstable; urgency=low
 
   * Add support for the HP t5325 Thin Client.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sat, 19 Jun 2010 13:08:09 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Sat, 19 Jun 2010 13:12:44 +0100
 
 flash-kernel (2.30) unstable; urgency=low
 
