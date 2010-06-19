@@ -1,8 +1,8 @@
-flash-kernel (2.30) UNRELEASED; urgency=low
+flash-kernel (2.30) unstable; urgency=low
 
   * Add support for OpenRD-Ultimate.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sat, 19 Jun 2010 09:52:04 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Sat, 19 Jun 2010 11:02:44 +0100
 
 flash-kernel (2.29) unstable; urgency=low
 
