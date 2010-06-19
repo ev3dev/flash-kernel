@@ -89,6 +89,7 @@ if [ "x$1" = "x--supported" ]; then
 		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
 		"D-Link DNS-323")			exit 0 ;;
 		"GLAN Tank")				exit 0 ;;
+		"HP t5325 Thin Client")			exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
 		"Marvell GuruPlug Reference Board")	exit 0 ;;
@@ -222,15 +223,30 @@ case "$machine" in
 			cat "$kfile"
 		) > /boot/zImage
 	;;
-	"HP Media Vault mv2120")
-		check_subarch "orion5x"
+	"HP t5325 Thin Client" | "HP Media Vault mv2120")
+		case "$machine" in
+			"HP t5325 Thin Client")
+				check_subarch "kirkwood"
+			;;
+			"HP Media Vault mv2120")
+				check_subarch "orion5x"
+			;;
+		esac
 		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2
-		# Set machine id 1693 (0x069d)
-		devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
+		case "$machine" in
+			"HP t5325 Thin Client")
+				# Set machine id 2846 (0x0b1e)
+				devio > "$tmp" 'wl 0xe3a01c0b,4' 'wl 0xe381101e,4'
+			;;
+			"HP Media Vault mv2120")
+				# Set machine id 1693 (0x069d)
+				devio > "$tmp" 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
+			;;
+		esac
 		cat "$kfile" >> "$tmp"
-		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01000000 \
-			-e 0x01000000 -d "$tmp:$ifile" "$tmp.uboot" >&2 1>/dev/null
+		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01600000 \
+			-e 0x01600000 -d "$tmp:$ifile" "$tmp.uboot" >&2 1>/dev/null
 		echo "done." >&2
 		if [ -e /boot/uImage ]; then
 			echo "Creating backup of /boot/uImage." >&2

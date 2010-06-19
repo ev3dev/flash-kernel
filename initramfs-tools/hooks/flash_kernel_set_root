@@ -35,6 +35,9 @@ root_type() {
 		"GLAN Tank")
 			echo "override"
 		;;
+		"HP t5325 Thin Client")
+			echo "override"
+		;;
 		"HP Media Vault mv2120")
 			echo "override"
 		;;
