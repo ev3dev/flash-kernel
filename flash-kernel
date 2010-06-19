@@ -94,6 +94,7 @@ if [ "x$1" = "x--supported" ]; then
 		"Marvell GuruPlug Reference Board")	exit 0 ;;
 		"Marvell OpenRD Base Board")		exit 0 ;;
 		"Marvell OpenRD Client Board")		exit 0 ;;
+		"Marvell OpenRD Ultimate Board")	exit 0 ;;
 		"Marvell SheevaPlug Reference Board")	exit 0 ;;
 		"Marvell eSATA SheevaPlug Reference Board")	exit 0 ;;
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
@@ -321,7 +322,7 @@ case "$machine" in
 		) > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
-	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board")
+	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board")
 		check_subarch "kirkwood"
 		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2

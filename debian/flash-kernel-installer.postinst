@@ -44,6 +44,9 @@ write_to_flash() {
 		"Marvell OpenRD Client Board")
 			return 1
 		;;
+		"Marvell OpenRD Ultimate Board")
+			return 1
+		;;
 		"Marvell SheevaPlug Reference Board")
 			return 1
 		;;
@@ -137,7 +140,7 @@ case "$machine" in
 			error "apt-install apex-nslu2 failed"
 		fi
 	;;
-	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board")
+	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board")
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
