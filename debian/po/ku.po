@@ -3,26 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of ku.po to Kurdish
-# Kurdish messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Rizoyê Xerzî <riza dot seckin at gmail dot com>
-# Erdal Ronahi <erdal dot ronahi at gmail dot com>, 2008.
-msgid ""
-msgstr ""
-"Project-Id-Version: ku\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-08-07 02:01+0200\n"
-"Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
-"Language-Team: ku <ubuntu-l10n-kur@lists.ubuntu.com>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!= 1);\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -30,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Bîra flaş ji bo bootkirina pergalê tê veavakirin"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -39,7 +19,7 @@ msgstr "Bîra flaş ji bo bootkirina pergalê tê veavakirin"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Pergal ji bo bootkirinê tê amadekirin"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -48,7 +28,7 @@ msgstr "Pergal ji bo bootkirinê tê amadekirin"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Pergal tê amadekirin..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -57,7 +37,7 @@ msgstr "Pergal tê amadekirin..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Kernel li ser bîra flaş tê nivîsandin..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -78,4 +58,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Pergal ji bo bootkirinê amade bike"
+msgstr ""
