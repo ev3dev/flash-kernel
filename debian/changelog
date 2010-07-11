@@ -1,3 +1,15 @@
+flash-kernel (2.32) unstable; urgency=low
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * Persian (fa.po) by acathur
+  * Kazakh (kk.po) by Baurzhan Muftakhidinov
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Macedonian (mk.po) by Arangel Angov
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 11 Jul 2010 17:47:41 -0300
+
 flash-kernel (2.31) unstable; urgency=low
 
   * Add support for the HP t5325 Thin Client.
