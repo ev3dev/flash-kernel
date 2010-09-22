@@ -74,6 +74,9 @@ root_type() {
 		"Marvell eSATA SheevaPlug Reference Board")
 			echo "default"
 		;;
+		"Seagate FreeAgent DockStar")
+			echo "default"
+		;;
 		"Thecus N2100")
 			echo "override"
 		;;

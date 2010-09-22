@@ -101,6 +101,7 @@ if [ "x$1" = "x--supported" ]; then
 		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
 		"QNAP TS-119/TS-219")			exit 0 ;;
 		"QNAP TS-41x")				exit 0 ;;
+		"Seagate FreeAgent DockStar")		exit 0 ;;
 		"Thecus N2100")				exit 0 ;;
 		"Lanner EM7210")			exit 0 ;;
 		*)					exit 1 ;;
@@ -338,7 +339,7 @@ case "$machine" in
 		) > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
-	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board")
+	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
 		check_subarch "kirkwood"
 		tmp="$(tempfile)"
 		printf "Generating kernel u-boot image... " >&2

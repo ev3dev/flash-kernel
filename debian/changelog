@@ -1,3 +1,9 @@
+flash-kernel (2.33) UNRELEASED; urgency=low
+
+  * Add support for Seagate FreeAgent DockStar.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 14 Sep 2010 23:27:04 +0200
+
 flash-kernel (2.32) unstable; urgency=low
 
   [ Updated translations ]
