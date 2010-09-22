@@ -1,6 +1,8 @@
 flash-kernel (2.33) UNRELEASED; urgency=low
 
   * Add support for Seagate FreeAgent DockStar.
+  * Remove obsolete information about the kernel postinst hook from the
+    README file.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 14 Sep 2010 23:27:04 +0200
 
