@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-07-27 14:46+0530\n"
+"PO-Revision-Date: 2010-10-17 09:00+0530\n"
 "Last-Translator: Arjuna Rao Chavala <arjunaraoc@gmail.com>\n"
 "Language-Team: Telugu <debian-in-workers@lists.alioth.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "వ్యవస్థ బూట్ చేయటానికి, ఫ్లాష్ మెమరీ అమరిక"
 
 #. Type: text
 #. Description
@@ -39,7 +39,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "వ్యవస్థని బూట్ చేయుటకి అనుగుణంగా మార్చుట"
 
 #. Type: text
 #. Description
@@ -47,9 +47,8 @@ msgstr ""
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "వాడుకదారుడు సృష్టించబడుతున్నాడు..."
+msgstr "వ్యవస్థ  తయారుచేయుట..."
 
 #. Type: text
 #. Description
@@ -58,7 +57,7 @@ msgstr "వాడుకదారుడు సృష్టించబడుత�
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "ఫ్లాష్ మెమరీలో కెర్నెల్ వ్రాయుట..."
 
 #. Type: text
 #. Description
@@ -68,7 +67,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "బూట్  ఇమేజ్ డిస్క్ పై తయారు చేయుట..."
 
 #. Type: text
 #. Description
@@ -79,4 +78,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "వ్యవస్థని బూట్ చేయుటకి అనుగుణంగా మార్చు"
