@@ -1,8 +1,8 @@
-flash-kernel (2.34) UNRELEASED; urgency=low
+flash-kernel (2.34) unstable; urgency=low
 
   * Rebuild without .svn directories.  Closes: #601318
 
- -- Martin Michlmayr <tbm@cyrius.com>  Mon, 25 Oct 2010 14:54:15 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Mon, 25 Oct 2010 14:56:55 +0100
 
 flash-kernel (2.33) unstable; urgency=medium
 
