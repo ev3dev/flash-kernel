@@ -32,6 +32,9 @@ write_to_flash() {
 		"GLAN Tank")
 			return 1
 		;;
+		"GTA02")
+			return 1
+		;;
 		"HP t5325 Thin Client")
 			return 1
 		;;
@@ -105,6 +108,12 @@ case "$machine" in
 	;;
 	"GLAN Tank")
 		in-target update-initramfs -u || true
+	;;
+	"GTA02")
+		in-target update-initramfs -u || true
+		if ! apt-install uboot-mkimage; then
+			error "apt-install uboot-mkimage failed"
+		fi
 	;;
 	"HP t5325 Thin Client")
 		in-target update-initramfs -u || true

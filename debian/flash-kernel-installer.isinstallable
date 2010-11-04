@@ -14,6 +14,9 @@ case "`archdetect`" in
 	arm*/orion5x)
 		exit 0
 	;;
+	arm*/s3c24xx)
+		exit 0
+	;;
 	# Don't activate it by default
 	*)
 		exit 1

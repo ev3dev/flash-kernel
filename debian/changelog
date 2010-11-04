@@ -1,3 +1,10 @@
+flash-kernel (2.35) UNRELEASED; urgency=low
+
+  * Add support for "GTA02" (Neo FreeRunner).  Patch from Thibaut Girka.
+    Closes: #593235
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Thu, 04 Nov 2010 22:19:51 +0000
+
 flash-kernel (2.34) unstable; urgency=low
 
   * Rebuild without .svn directories.  Closes: #601318

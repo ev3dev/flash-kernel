@@ -89,6 +89,7 @@ if [ "x$1" = "x--supported" ]; then
 		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
 		"D-Link DNS-323")			exit 0 ;;
 		"GLAN Tank")				exit 0 ;;
+		"GTA02")				exit 0 ;;
 		"HP t5325 Thin Client")			exit 0 ;;
 		"HP Media Vault mv2120")		exit 0 ;;
 		"Linksys NSLU2")			exit 0 ;;
@@ -226,6 +227,26 @@ case "$machine" in
 			devio 'wl 0xe3a01c04,4' 'wl 0xe381104c,4'
 			cat "$kfile"
 		) > /boot/zImage
+	;;
+	"GTA02")
+		check_subarch "s3c24xx"
+		tmpdir="$(mktemp -d)"
+		printf "Generating u-boot image..." >&2
+		cp "$kfile" "$tmpdir/kernel"
+		# Hack to work around a bug in some U-Boot versions:
+		if [ $(($(stat -c '%s' "$tmpdir/kernel") % 4)) -eq 0 ]; then
+			echo >> "$tmpdir/kernel"
+		fi
+		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x30008000 \
+			-e 0x30008000 -d "$tmpdir/kernel":"$ifile" "$tmpdir/uImage" >&2 1>/dev/null
+		rm -f "$tmpdir/kernel"
+		echo "done." >&2
+		if [ -e /boot/uImage.bin ]; then
+			echo "Creating backup of /boot/uImage.bin." >&2
+			mv /boot/uImage.bin /boot/uImage.bin.bak
+		fi
+		mv "$tmpdir/uImage" /boot/uImage.bin
+		rmdir $tmpdir
 	;;
 	"HP t5325 Thin Client" | "HP Media Vault mv2120")
 		case "$machine" in
