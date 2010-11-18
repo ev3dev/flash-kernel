@@ -138,13 +138,14 @@ if echo "$rootdev" | grep -q "="; then
 		;;
 		*)
 			echo "/etc/fstab parse error; cannot recognize root $rootdev" >&2
+			rootdev=/dev/sda2
+			echo "guessing that the root device is $rootdev" >&2
 		;;
 	esac
 fi
 
 if [ ! -e "$rootdev" ]; then
-	rootdev=/dev/sda2
-	echo "Warning: /etc/fstab parse error; guessing that the root device is $rootdev" >&2
+	echo "Warning: root device $rootdev does not exist" >&2
 	pause_error
 fi
 case "$(root_type "$machine")" in

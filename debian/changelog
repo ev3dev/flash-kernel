@@ -1,3 +1,10 @@
+flash-kernel (2.37) UNRELEASED; urgency=low
+
+  * Don't set a default root device when the specified root device
+    does not exist.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Thu, 18 Nov 2010 16:54:31 +0000
+
 flash-kernel (2.36) unstable; urgency=low
 
   [ Updated translations ]
