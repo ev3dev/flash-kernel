@@ -1,3 +1,10 @@
+flash-kernel (2.38) unstable; urgency=low
+
+  [ Updated translations ]
+  * Lao (lo.po) by Anousak Souphavanh
+
+ -- Otavio Salvador <otavio@ossystems.com.br>  Fri, 24 Dec 2010 21:19:58 -0200
+
 flash-kernel (2.37) unstable; urgency=low
 
   * Don't set a default root device when the specified root device
