@@ -5,7 +5,8 @@ Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Martin Michlmayr <tbm@cyrius.com>, Wouter Verhelst <wouter@debian.org>
 Build-Depends: debhelper (>= 7.3.10)
 Standards-Version: 3.7.2
-Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/flash-kernel
+Vcs-Browser: http://git.debian.org/?p=d-i/flash-kernel.git
+Vcs-Git: git://git.debian.org/d-i/flash-kernel.git
 
 Package: flash-kernel
 Architecture: arm armel armeb
