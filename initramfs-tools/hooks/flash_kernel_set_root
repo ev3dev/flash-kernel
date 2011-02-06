@@ -23,6 +23,9 @@ pause_error() {
 # device?
 root_type() {
 	case "$1" in
+		"Buffalo Linkstation LiveV3 (LS-CHL)")
+			echo "override"
+		;;
 		"Buffalo Linkstation Pro/Live")
 			echo "override"
 		;;

@@ -23,6 +23,9 @@ findfs () {
 # Are we writing to flash or constructing an image on disk?
 write_to_flash() {
 	case "$machine" in
+		"Buffalo Linkstation LiveV3 (LS-CHL)")
+			return 1
+		;;
 		"Buffalo Linkstation Pro/Live")
 			return 1
 		;;
@@ -94,7 +97,7 @@ trap "mv /target/tmp/flash-kernel.$$ /target/usr/sbin/flash-kernel" EXIT HUP INT
 db_progress STEP 1
 
 case "$machine" in
-	"Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
+	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
