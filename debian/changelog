@@ -1,6 +1,6 @@
 flash-kernel (2.39) UNRELEASED; urgency=low
 
-  * Add support for Buffalo Linkstation LiveV3 (LS-CHL).
+  * Add support for Buffalo Linkstation LiveV3 (LS-CHL).  Closes: #612167
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 06 Feb 2011 13:20:34 +0100
 
