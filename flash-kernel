@@ -35,7 +35,9 @@ check_mtd() {
 }
 
 mtdblock() {
-	grep "\"$1\"" "$PROC_MTD" | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
+	local mtdname="$1"
+
+	sed -rn "s,^mtd([^:]*).*\"$mtdname\"\$,/dev/mtdblock\\1,p" "$PROC_MTD"
 }
 
 check_dev_mtdblock() {
