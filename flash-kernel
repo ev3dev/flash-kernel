@@ -426,14 +426,14 @@ case "$machine" in
 		if [ -z "$fismtd" ]; then
 			error "Cannot find mtd FIS directory"
 		fi
-		kmtd=$(mtdblock Kernel)
+		kmtd=$(mtdblock "Kernel")
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'Kernel'"
 		fi
 		check_dev_mtdblock "$kmtd"
 		kmtdsize=$(mtdsize "Kernel")
 		check_size "kernel" $(($kfilesize + 16 + 16)) $kmtdsize
-		imtd=$(mtdblock Ramdisk)
+		imtd=$(mtdblock "Ramdisk")
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition 'Ramdisk'"
 		fi
@@ -528,7 +528,7 @@ case "$machine" in
 		check_dev_mtdblock "$imtd"
 		imtdsize=$(mtdsize "RootFS1")
 		check_size "RootFS1" $ifilesize $imtdsize
-		kmtd=$(mtdblock Kernel)
+		kmtd=$(mtdblock "Kernel")
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'Kernel'"
 		fi
@@ -558,14 +558,14 @@ case "$machine" in
 	;;
 	"Thecus N2100")
 		check_mtd
-		imtd=$(mtdblock ramdisk)
+		imtd=$(mtdblock "ramdisk")
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition 'ramdisk'"
 		fi
 		check_dev_mtdblock "$imtd"
 		imtdsize=$(mtdsize "ramdisk")
 		check_size "ramdisk" $ifilesize $imtdsize
-		kmtd=$(mtdblock kernel)
+		kmtd=$(mtdblock "kernel")
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'kernel'"
 		fi
@@ -596,7 +596,7 @@ case "$machine" in
 		check_dev_mtdblock "$imtd"
 		imtdsize=$(mtdsize "ramdisk.gz")
 		check_size "ramdisk" $ifilesize $imtdsize
-		kmtd=$(mtdblock zImage)
+		kmtd=$(mtdblock "zImage")
 		if [ -z "$kmtd" ]; then
 			error "Cannot find mtd partition 'zImage'"
 		fi
