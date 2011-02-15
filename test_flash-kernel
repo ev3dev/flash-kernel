@@ -124,8 +124,9 @@ test_check_supported() {
             echo "Expected check_supported to fail for non-existent board, but it succeeded" >&2
             exit 1
         fi
-        if ! check_supported "Marvell SheevaPlug Reference Board"; then
-            echo "Expected check_supported to succeed with supported board, but it failed" >&2
+        machine="Marvell SheevaPlug Reference Board"
+        if ! check_supported "$machine"; then
+            echo "Expected check_supported to succeed with machine $machine, but it failed" >&2
             exit 1
         fi
     )
