@@ -93,6 +93,10 @@ check_supported() {
 	return 1
 }
 
+get_cpuinfo_hardware() {
+	grep "^Hardware" "$PROC_CPUINFO" | sed 's/Hardware\s*:\s*//'
+}
+
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
 # 16 byte MTD header, the first four bytes (big endian) give the length of
 # the remainder of the image, and the remaining bytes are zero.  Generate
@@ -111,10 +115,10 @@ nslu2_swap() {
 
 main() {
 if [ "x$1" = "x--machine" ]; then
-	machine=$2
+	machine="$2"
 	shift 2
 else
-	machine=$(grep "^Hardware" "$PROC_CPUINFO" | sed 's/Hardware\s*:\s*//')
+	machine="$(get_cpuinfo_hardware)"
 fi
 
 if [ "x$1" = "x--supported" ]; then
