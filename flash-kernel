@@ -20,19 +20,22 @@
 
 set -e
 
+PROC_CPUINFO="/proc/cpuinfo"
+PROC_MTD="/proc/mtd"
+
 error() {
 	echo "$@" >&2
 	exit 1
 }
 
 check_mtd() {
-	if [ ! -e /proc/mtd ]; then
-		error "/proc/mtd doesn't exist"
+	if [ ! -e "$PROC_MTD" ]; then
+		error "$PROC_MTD doesn't exist"
 	fi
 }
 
 mtdblock() {
-	grep "\"$1\"" /proc/mtd | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
+	grep "\"$1\"" "$PROC_MTD" | cut -d: -f 1 | sed 's/mtd/\/dev\/mtdblock/'
 }
 
 check_dev_mtdblock() {
@@ -42,7 +45,7 @@ check_dev_mtdblock() {
 }
 
 mtdsize() {
-	size=$(grep "\"$1\"" /proc/mtd | cut -d " " -f 2)
+	size=$(grep "\"$1\"" "$PROC_MTD" | cut -d " " -f 2)
 	printf "%d" 0x$size
 }
 
@@ -81,7 +84,7 @@ if [ "x$1" = "x--machine" ]; then
 	machine=$2
 	shift 2
 else
-	machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+	machine=$(grep "^Hardware" "$PROC_CPUINFO" | sed 's/Hardware\s*:\s*//')
 fi
 
 if [ "x$1" = "x--supported" ]; then
