@@ -45,8 +45,10 @@ check_dev_mtdblock() {
 }
 
 mtdsize() {
-	size=$(grep "\"$1\"" "$PROC_MTD" | cut -d " " -f 2)
-	printf "%d" 0x$size
+	local mtdname="$1"
+
+	size=$(grep "\"$mtdname\"$" "$PROC_MTD" | cut -d " " -f 2)
+	printf "%d" "0x$size"
 }
 
 check_subarch() {
