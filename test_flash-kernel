@@ -175,6 +175,21 @@ test_get_subarch() {
 }
 add_test test_get_subarch
 
+test_set_machine_id() {
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        arm_code="$(set_machine_id 2097 | od -x)"
+        expected="0000000 1c08 e3a0 1031 e381
+0000010"
+        if [ "$arm_code" != "$expected" ]; then
+            echo "Expected \"$expected\" but got \"$arm_code\"" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_set_machine_id
+
 if [ $# = 0 ]; then
     run_tests $all_tests
 else

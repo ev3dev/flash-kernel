@@ -103,6 +103,17 @@ get_subarch() {
 	echo "$kfile" | sed -e 's/.*-//'
 }
 
+# output ARM instructions to set machine number; argument is the decimal
+# machine number as found in linux/arch/arm/tools/mach-types
+set_machine_id() {
+	local machine_id="$1"
+
+	local high="$(printf "%02x" $(($machine_id / 256)))"
+	local low="$(printf "%02x" $(($machine_id % 256)))"
+
+	devio "wl 0xe3a01c$high,4" "wl 0xe38110$low,4"
+}
+
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
 # 16 byte MTD header, the first four bytes (big endian) give the length of
 # the remainder of the image, and the remaining bytes are zero.  Generate
@@ -173,22 +184,20 @@ case "$machine" in
 		printf "Generating kernel u-boot image... " >&2
 		case "$machine" in
 			"Buffalo Linkstation LiveV3 (LS-CHL)")
-				# Set machine id 2913 (0x0b61)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c0b,4' 'wl 0xe3811061,4'
+				machine_id="2913"
 			;;
 			"Buffalo Linkstation Mini")
 				# Set machine id 1858 (0x0742)
 				devio > "$tmpdir/kernel" 'wl 0xe3a01c07,4' 'wl 0xe3811042,4'
 			;;
 			"Buffalo Linkstation Pro/Live")
-				# Set machine id 1585 (0x0631)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c06,4' 'wl 0xe3811031,4'
+				machine_id="1585"
 			;;
 			"Buffalo/Revogear Kurobox Pro")
-				# Set machine id 1509 (0x05e5)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c05,4' 'wl 0xe38110e5,4'
+				machine_id="1509"
 			;;
 		esac
+		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage.buffalo" >&2 1>/dev/null
@@ -231,8 +240,7 @@ case "$machine" in
 		check_size "Linux Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
-		# Set machine id 1542 (0x0606)
-		devio > "$tmpdir/kernel" 'wl 0xe3a01c06,4' 'wl 0xe3811006,4'
+		set_machine_id 1542 >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
@@ -256,8 +264,7 @@ case "$machine" in
 		rm -f /boot/initrd /boot/zImage
 		ln -s "$(basename "$ifile")" /boot/initrd
 		(
-			# Set machine id 1100 (0x044c)
-			devio 'wl 0xe3a01c04,4' 'wl 0xe381104c,4'
+			set_machine_id 1100
 			cat "$kfile"
 		) > /boot/zImage
 	;;
@@ -294,14 +301,13 @@ case "$machine" in
 		printf "Generating kernel u-boot image... " >&2
 		case "$machine" in
 			"HP t5325 Thin Client")
-				# Set machine id 2846 (0x0b1e)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c0b,4' 'wl 0xe381101e,4'
+				machine_id="2846"
 			;;
 			"HP Media Vault mv2120")
-				# Set machine id 1693 (0x069d)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c06,4' 'wl 0xe381109d,4'
+				machine_id="1693"
 			;;
 		esac
+		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01600000 \
 			-e 0x01600000 -d "$tmpdir/kernel:$ifile" "$tmpdir/uImage" >&2 1>/dev/null
@@ -452,22 +458,19 @@ case "$machine" in
 		tmpdir="$(mktemp -d)"
 		case "$machine" in
 			"QNAP TS-109/TS-209")
-				# Set machine id 1565 (0x061d)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c06,4' 'wl 0xe381101d,4'
+				machine_id="1565"
 			;;
 			"QNAP TS-119/TS-219")
-				# Set machine id 2139 (0x085b)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c08,4' 'wl 0xe381105b,4'
+				machine_id="2139"
 			;;
 			"QNAP TS-409")
-				# Set machine id 1601 (0x0641)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c06,4' 'wl 0xe3811041,4'
+				machine_id="1601"
 			;;
 			"QNAP TS-41x")
-				# Set machine id 2502 (0x09c6)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c09,4' 'wl 0xe38110c6,4'
+				machine_id="2502"
 			;;
 		esac
+		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
@@ -505,8 +508,7 @@ case "$machine" in
 		check_size "kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
 		(
-			# Set machine id 1101 (0x044d)
-			devio 'wl 0xe3a01c04,4' 'wl 0xe381104d,4'
+			set_machine_id 1101
 			cat "$kfile"
 		) > "$kmtd" || error "failed."
 		echo "done." >&2
@@ -537,8 +539,7 @@ case "$machine" in
 		check_size "zImage" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel..." >&2
 		(
-			# Set machine ID 1212 (0x04bc)
-			devio 'wl 0xe3a01c04,4' 'wl 0xe38110bc,4'
+			set_machine_id 1212
 			cat "$kfile"
 		) > "$kmtd" || error "failed."
 		echo "done." >&2
