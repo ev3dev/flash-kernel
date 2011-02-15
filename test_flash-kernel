@@ -52,6 +52,24 @@ run_tests() {
     return 0
 }
 
+# space separated list of tempfiles; XXX doesn't support spaces in pathnames
+tempfiles=""
+last_tempfile=""
+cleanup_tempfiles(){
+    for t in $tempfiles "$last_tempfile"; do
+        if [ -n "$t" ]; then
+            rm -f "$t"
+        fi
+    done
+}
+trap cleanup_tempfiles EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
+
+get_tempfile() {
+    last_tempfile="$(mktemp -t "$self.XXXXXXXX")"
+    tempfiles="$tempfiles $last_tempfile"
+}
+
+
 test_syntax() {
     sh -n "$flash_kernel"
 }
@@ -68,6 +86,35 @@ test_bashisms() {
     checkbashisms "$flash_kernel"
 }
 add_test test_bashisms
+
+test_mtdsize() {
+    get_tempfile
+    mock_proc_mtd="$last_tempfile"
+    cat >"$mock_proc_mtd" <<EOF
+dev:    size   erasesize  name
+mtd0: 00580000 00020000 "root"
+mtd1: 00100000 00020000 "kernel"
+mtd2: 00160000 00020000 "initrd"
+mtd3: 00020000 00020000 "reset"
+mtd4: 00800000 00020000 "jffs2"
+EOF
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        PROC_MTD="$mock_proc_mtd"
+        root_size=$(mtdsize "root")
+        if [ "$root_size" != 5767168 ]; then
+            echo "Expected root size of 5767168 but got $root_size" >&2
+            exit 1
+        fi
+        jffs2_size=$(mtdsize "jffs2")
+        if [ "$jffs2_size" != 8388608 ]; then
+            echo "Expected jffs2 size of 8388608 but got $jffs2_size" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_mtdsize
 
 if [ $# = 0 ]; then
     run_tests $all_tests
