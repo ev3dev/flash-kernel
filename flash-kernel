@@ -63,6 +63,36 @@ check_size() {
 	fi
 }
 
+check_supported() {
+	local machine="$1"
+
+	case "$machine" in
+		"Buffalo Linkstation LiveV3 (LS-CHL)")		return 0;;
+		"Buffalo Linkstation Mini")			return 0;;
+		"Buffalo Linkstation Pro/Live")			return 0;;
+		"Buffalo/Revogear Kurobox Pro")			return 0;;
+		"D-Link DNS-323")				return 0;;
+		"GLAN Tank")					return 0;;
+		"GTA02")					return 0;;
+		"HP t5325 Thin Client")				return 0;;
+		"HP Media Vault mv2120")			return 0;;
+		"Linksys NSLU2")				return 0;;
+		"Marvell GuruPlug Reference Board")		return 0;;
+		"Marvell OpenRD Base Board")			return 0;;
+		"Marvell OpenRD Client Board")			return 0;;
+		"Marvell OpenRD Ultimate Board")		return 0;;
+		"Marvell SheevaPlug Reference Board")		return 0;;
+		"Marvell eSATA SheevaPlug Reference Board")	return 0;;
+		"QNAP TS-109/TS-209" | "QNAP TS-409")		return 0;;
+		"QNAP TS-119/TS-219")				return 0;;
+		"QNAP TS-41x")					return 0;;
+		"Seagate FreeAgent DockStar")			return 0;;
+		"Thecus N2100")					return 0;;
+		"Lanner EM7210")				return 0;;
+	esac
+	return 1
+}
+
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
 # 16 byte MTD header, the first four bytes (big endian) give the length of
 # the remainder of the image, and the remaining bytes are zero.  Generate
@@ -88,31 +118,10 @@ else
 fi
 
 if [ "x$1" = "x--supported" ]; then
-	case "$machine" in
-		"Buffalo Linkstation LiveV3 (LS-CHL)")	exit 0 ;;
-		"Buffalo Linkstation Mini")		exit 0 ;;
-		"Buffalo Linkstation Pro/Live")		exit 0 ;;
-		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
-		"D-Link DNS-323")			exit 0 ;;
-		"GLAN Tank")				exit 0 ;;
-		"GTA02")				exit 0 ;;
-		"HP t5325 Thin Client")			exit 0 ;;
-		"HP Media Vault mv2120")		exit 0 ;;
-		"Linksys NSLU2")			exit 0 ;;
-		"Marvell GuruPlug Reference Board")	exit 0 ;;
-		"Marvell OpenRD Base Board")		exit 0 ;;
-		"Marvell OpenRD Client Board")		exit 0 ;;
-		"Marvell OpenRD Ultimate Board")	exit 0 ;;
-		"Marvell SheevaPlug Reference Board")	exit 0 ;;
-		"Marvell eSATA SheevaPlug Reference Board")	exit 0 ;;
-		"QNAP TS-109/TS-209" | "QNAP TS-409")	exit 0 ;;
-		"QNAP TS-119/TS-219")			exit 0 ;;
-		"QNAP TS-41x")				exit 0 ;;
-		"Seagate FreeAgent DockStar")		exit 0 ;;
-		"Thecus N2100")				exit 0 ;;
-		"Lanner EM7210")			exit 0 ;;
-		*)					exit 1 ;;
-	esac
+	if check_supported "$machine"; then
+		exit 0
+	fi
+	exit 1
 fi
 
 if [ -n "$1" ]; then
