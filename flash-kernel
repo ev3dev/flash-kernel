@@ -127,6 +127,12 @@ get_machine_subarch() {
 	get_machine_field "$machine" "Subarch"
 }
 
+get_machine_id() {
+	local machine="$1"
+
+	get_machine_field "$machine" "Machine-Id"
+}
+
 # output ARM instructions to set machine number; argument is the decimal
 # machine number as found in linux/arch/arm/tools/mach-types
 set_machine_id() {
@@ -158,29 +164,37 @@ nslu2_swap() {
 MACHINE_DB="
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
 Subarch: orion5x
+Machine-Id: 2913
 
 Machine: Buffalo Linkstation Mini
 Subarch: orion5x
+Machine-Id: 1858
 
 Machine: Buffalo Linkstation Pro/Live
 Subarch: orion5x
+Machine-Id: 1585
 
 Machine: Buffalo/Revogear Kurobox Pro
 Subarch: orion5x
+Machine-Id: 1509
 
 Machine: D-Link DNS-323
 Subarch: orion5x
+Machine-Id: 1542
 
 Machine: GLAN Tank
+Machine-Id: 1100
 
 Machine: GTA02
 Subarch: s3c24xx
 
 Machine: HP t5325 Thin Client
 Subarch: kirkwood
+Machine-Id: 2846
 
 Machine: HP Media Vault mv2120
 Subarch: orion5x
+Machine-Id: 1693
 
 Machine: Linksys NSLU2
 Subarch: ixp4xx
@@ -205,24 +219,30 @@ Subarch: kirkwood
 
 Machine: QNAP TS-109/TS-209
 Subarch: orion5x
+Machine-Id: 1565
 
 Machine: QNAP TS-119/TS-219
 Subarch: kirkwood
+Machine-Id: 2139
 
 Machine: QNAP TS-409
 Subarch: orion5x
+Machine-Id: 1601
 
 Machine: QNAP TS-41x
 Subarch: kirkwood
+Machine-Id: 2502
 
 Machine: Seagate FreeAgent DockStar
 Subarch: kirkwood
 
 Machine: Thecus N2100
 Subarch: iop32x
+Machine-Id: 1101
 
 Machine: Lanner EM7210
 Subarch: iop32x
+Machine-Id: 1212
 "
 
 main() {
@@ -280,25 +300,12 @@ if subarch_field="$(get_machine_subarch "$machine")"; then
 	check_subarch "$subarch_field"
 fi
 
+machine_id="$(get_machine_id "$machine")" || :
+
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
-		case "$machine" in
-			"Buffalo Linkstation LiveV3 (LS-CHL)")
-				machine_id="2913"
-			;;
-			"Buffalo Linkstation Mini")
-				# Set machine id 1858 (0x0742)
-				devio > "$tmpdir/kernel" 'wl 0xe3a01c07,4' 'wl 0xe3811042,4'
-			;;
-			"Buffalo Linkstation Pro/Live")
-				machine_id="1585"
-			;;
-			"Buffalo/Revogear Kurobox Pro")
-				machine_id="1509"
-			;;
-		esac
 		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
@@ -341,7 +348,7 @@ case "$machine" in
 		check_size "Linux Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
-		set_machine_id 1542 >"$tmpdir/kernel"
+		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
@@ -365,7 +372,7 @@ case "$machine" in
 		rm -f /boot/initrd /boot/zImage
 		ln -s "$(basename "$ifile")" /boot/initrd
 		(
-			set_machine_id 1100
+			set_machine_id "$machine_id"
 			cat "$kfile"
 		) > /boot/zImage
 	;;
@@ -391,14 +398,6 @@ case "$machine" in
 	"HP t5325 Thin Client" | "HP Media Vault mv2120")
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
-		case "$machine" in
-			"HP t5325 Thin Client")
-				machine_id="2846"
-			;;
-			"HP Media Vault mv2120")
-				machine_id="1693"
-			;;
-		esac
 		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01600000 \
@@ -538,20 +537,6 @@ case "$machine" in
 		check_size "Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
-		case "$machine" in
-			"QNAP TS-109/TS-209")
-				machine_id="1565"
-			;;
-			"QNAP TS-119/TS-219")
-				machine_id="2139"
-			;;
-			"QNAP TS-409")
-				machine_id="1601"
-			;;
-			"QNAP TS-41x")
-				machine_id="2502"
-			;;
-		esac
 		set_machine_id "$machine_id" >"$tmpdir/kernel"
 		cat "$kfile" >> "$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
@@ -589,7 +574,7 @@ case "$machine" in
 		check_size "kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
 		(
-			set_machine_id 1101
+			set_machine_id "$machine_id"
 			cat "$kfile"
 		) > "$kmtd" || error "failed."
 		echo "done." >&2
@@ -619,7 +604,7 @@ case "$machine" in
 		check_size "zImage" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel..." >&2
 		(
-			set_machine_id 1212
+			set_machine_id "$machine_id"
 			cat "$kfile"
 		) > "$kmtd" || error "failed."
 		echo "done." >&2
