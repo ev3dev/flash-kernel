@@ -269,7 +269,7 @@ case "$machine" in
 			mv /boot/uImage.bin /boot/uImage.bin.bak
 		fi
 		mv "$tmpdir/uImage" /boot/uImage.bin
-		rmdir $tmpdir
+		rmdir "$tmpdir"
 	;;
 	"HP t5325 Thin Client" | "HP Media Vault mv2120")
 		case "$machine" in
