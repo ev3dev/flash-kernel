@@ -177,6 +177,10 @@ if [ -L "$kfile" ]; then
 fi
 subarch=$(get_subarch "$kfile")
 
+if ! check_supported "$machine"; then
+	error "Unsupported platform."
+fi
+
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		check_subarch "orion5x"
@@ -550,9 +554,6 @@ case "$machine" in
 			dd if=/dev/zero bs=$pad count=1 2>/dev/null
 		) > "$imtd" || error "failed."
 		echo "done." >&2
-	;;
-	*)
-		error "Unsupported platform."
 	;;
 esac
 }
