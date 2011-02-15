@@ -52,6 +52,11 @@ run_tests() {
     return 0
 }
 
+test_syntax() {
+    sh -n "$flash_kernel"
+}
+add_test test_syntax
+
 skip_test_bashisms() {
     if which checkbashisms 2>&1 >/dev/null; then
         return 1
