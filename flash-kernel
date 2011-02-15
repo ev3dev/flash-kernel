@@ -76,6 +76,7 @@ nslu2_swap() {
 	fi
 }
 
+main() {
 if [ "x$1" = "x--machine" ]; then
 	machine=$2
 	shift 2
@@ -531,4 +532,8 @@ case "$machine" in
 		error "Unsupported platform."
 	;;
 esac
+}
 
+if [ -z "$TEST_FLASH_KERNEL" ]; then
+	main "$@"
+fi
