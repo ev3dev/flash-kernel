@@ -176,6 +176,56 @@ test_get_kfile_subarch() {
 }
 add_test test_get_kfile_subarch
 
+test_get_machine_field() {
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        machine="Marvell SheevaPlug Reference Board"
+        if machine_field="$(get_machine_field "$machine" "Machine")"; then
+            if [ "$machine_field" != "$machine" ]; then
+                echo "Expected Machine field to be $machine but got $machine_field" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
+            exit 1
+        fi
+        subarch_field="$(get_machine_field "$machine" "Subarch")"
+        if [ "$subarch_field" != "kirkwood" ]; then
+            echo "Expected Subarch field to be kirkwood but got $subarch_field" >&2
+            exit 1
+        fi
+        if dummy_field="$(get_machine_field "$machine" "Dummy")"; then
+            echo "Expected get_machine_field to fail on unknown field Dummy but it succeeded" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_get_machine_field
+
+test_get_machine_subarch() {
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        MACHINE_DB="$MACHINE_DB
+
+Machine: Missing Subarch
+"
+        machine="Marvell SheevaPlug Reference Board"
+        subarch_field="$(get_machine_subarch "$machine")"
+        if [ "$subarch_field" != "kirkwood" ]; then
+            echo "Expected Subarch to be kirkwood but got $subarch_field" >&2
+            exit 1
+        fi
+        machine="Missing Subarch"
+        if subarch_field="$(get_machine_subarch "$machine")"; then
+            echo "Expected get_machine_subarch to fail on machine without Subarch field but it succeeded" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_get_machine_subarch
+
 test_set_machine_id() {
     (
         TEST_FLASH_KERNEL=1

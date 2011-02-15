@@ -90,6 +90,43 @@ get_kfile_subarch() {
 	echo "$kfile" | sed -e 's/.*-//'
 }
 
+# this is case-sensitive and doesn't support fields spanning multiple lines
+get_machine_field() {
+	local machine="$1"
+	local field_name="$2"
+	local state="machine"
+	local field
+	local value
+
+	echo "$MACHINE_DB" | {
+		while read field value; do
+			if [ "$state" = "machine" ] &&
+				[ "$field" = "Machine:" ] &&
+				[ "$value" = "$machine" ]; then
+				state="fields"
+			fi
+			if [ "$state" = "fields" ]; then
+				case "$field" in
+					"${field_name}:")
+						echo "$value"
+						return 0
+					;;
+					"")
+						state="machine"
+					;;
+				esac
+			fi
+		done
+		return 1
+	}
+}
+
+get_machine_subarch() {
+	local machine="$1"
+
+	get_machine_field "$machine" "Subarch"
+}
+
 # output ARM instructions to set machine number; argument is the decimal
 # machine number as found in linux/arch/arm/tools/mach-types
 set_machine_id() {
@@ -117,53 +154,75 @@ nslu2_swap() {
 	fi
 }
 
-# somewhat RFC2822 based, but not tolerant to spaces etc.
+# somewhat RFC2822 based, but case sensitive, not tolerant to spaces etc.
 MACHINE_DB="
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
+Subarch: orion5x
 
 Machine: Buffalo Linkstation Mini
+Subarch: orion5x
 
 Machine: Buffalo Linkstation Pro/Live
+Subarch: orion5x
 
 Machine: Buffalo/Revogear Kurobox Pro
+Subarch: orion5x
 
 Machine: D-Link DNS-323
+Subarch: orion5x
 
 Machine: GLAN Tank
 
 Machine: GTA02
+Subarch: s3c24xx
 
 Machine: HP t5325 Thin Client
+Subarch: kirkwood
 
 Machine: HP Media Vault mv2120
+Subarch: orion5x
 
 Machine: Linksys NSLU2
+Subarch: ixp4xx
 
 Machine: Marvell GuruPlug Reference Board
+Subarch: kirkwood
 
 Machine: Marvell OpenRD Base Board
+Subarch: kirkwood
 
 Machine: Marvell OpenRD Client Board
+Subarch: kirkwood
 
 Machine: Marvell OpenRD Ultimate Board
+Subarch: kirkwood
 
 Machine: Marvell SheevaPlug Reference Board
+Subarch: kirkwood
 
 Machine: Marvell eSATA SheevaPlug Reference Board
+Subarch: kirkwood
 
 Machine: QNAP TS-109/TS-209
+Subarch: orion5x
 
 Machine: QNAP TS-119/TS-219
+Subarch: kirkwood
 
 Machine: QNAP TS-409
+Subarch: orion5x
 
 Machine: QNAP TS-41x
+Subarch: kirkwood
 
 Machine: Seagate FreeAgent DockStar
+Subarch: kirkwood
 
 Machine: Thecus N2100
+Subarch: iop32x
 
 Machine: Lanner EM7210
+Subarch: iop32x
 "
 
 main() {
@@ -217,9 +276,12 @@ if ! check_supported "$machine"; then
 	error "Unsupported platform."
 fi
 
+if subarch_field="$(get_machine_subarch "$machine")"; then
+	check_subarch "$subarch_field"
+fi
+
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
-		check_subarch "orion5x"
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		case "$machine" in
@@ -262,7 +324,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"D-Link DNS-323")
-		check_subarch "orion5x"
 		check_mtd
 		imtd=$(mtdblock "File System")
 		if [ -z "$imtd" ]; then
@@ -309,7 +370,6 @@ case "$machine" in
 		) > /boot/zImage
 	;;
 	"GTA02")
-		check_subarch "s3c24xx"
 		tmpdir="$(mktemp -d)"
 		printf "Generating u-boot image..." >&2
 		cp "$kfile" "$tmpdir/kernel"
@@ -329,14 +389,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"HP t5325 Thin Client" | "HP Media Vault mv2120")
-		case "$machine" in
-			"HP t5325 Thin Client")
-				check_subarch "kirkwood"
-			;;
-			"HP Media Vault mv2120")
-				check_subarch "orion5x"
-			;;
-		esac
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		case "$machine" in
@@ -362,7 +414,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"Linksys NSLU2")
-		check_subarch "ixp4xx"
 		case "$(dpkg --print-architecture)" in
 			arm|armel)
 				little_endian=1
@@ -446,7 +497,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
-		check_subarch "kirkwood"
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
@@ -471,14 +521,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
-		case "$machine" in
-			"QNAP TS-109/TS-209" | "QNAP TS-409")
-				check_subarch "orion5x"
-			;;
-			"QNAP TS-119/TS-219" | "QNAP TS-41x")
-				check_subarch "kirkwood"
-			;;
-		esac
 		check_mtd
 		imtd=$(mtdblock "RootFS1")
 		if [ -z "$imtd" ]; then
@@ -530,7 +572,6 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Thecus N2100")
-		check_subarch "iop32x"
 		check_mtd
 		imtd=$(mtdblock ramdisk)
 		if [ -z "$imtd" ]; then
@@ -562,7 +603,6 @@ case "$machine" in
 	;;
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
-		check_subarch "iop32x"
 		check_mtd
 		imtd=$(mtdblock "ramdisk.gz")
 		if [ -z "$imtd" ]; then
