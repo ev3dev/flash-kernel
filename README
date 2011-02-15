@@ -47,3 +47,12 @@ report in the Debian Bug Tracking System and include all information
 related to the boot process of your device.  Instructions can be found
 at http://bugs.debian.org/
 
+
+Testsuite
+- - - - -
+
+Start the testsuite with:
+    ./test_flash-kernel
+
+You need the devscripts package for the checkbashisms test.
+
