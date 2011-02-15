@@ -50,9 +50,11 @@ mtdsize() {
 }
 
 check_subarch() {
-	if [ -n "$subarch" ] && [ "$subarch" != "$1" ]; then
+	local expected_subarch="$1"
+
+	if [ -n "$kfile_subarch" ] && [ "$kfile_subarch" != "$expected_subarch" ]; then
 		echo "Kernel $kfile does not match your subarchitecture" >&2
-		echo "$1, therefore not writing it to flash." >&2
+		echo "$expected_subarch, therefore not writing it to flash." >&2
 		exit 0
 	fi
 }
@@ -82,7 +84,7 @@ get_cpuinfo_hardware() {
 	grep "^Hardware" "$PROC_CPUINFO" | sed 's/Hardware\s*:\s*//'
 }
 
-get_subarch() {
+get_kfile_subarch() {
 	local kfile="$1"
 
 	echo "$kfile" | sed -e 's/.*-//'
@@ -209,7 +211,7 @@ ifilesize=$(wc -c "$ifile" | awk '{print $1}')
 if [ -L "$kfile" ]; then
 	kfile=$(readlink -e "$kfile")
 fi
-subarch=$(get_subarch "$kfile")
+kfile_subarch=$(get_kfile_subarch "$kfile")
 
 if ! check_supported "$machine"; then
 	error "Unsupported platform."
