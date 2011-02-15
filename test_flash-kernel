@@ -162,6 +162,19 @@ EOF
 }
 add_test test_get_cpuinfo_hardware
 
+test_get_subarch() {
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        subarch=$(get_subarch "/boot/vmlinuz-2.6.32-5-kirkwood")
+        if [ "$subarch" != "kirkwood" ]; then
+            echo "Expected subarch to be kirkwood but got $subarch" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_get_subarch
+
 if [ $# = 0 ]; then
     run_tests $all_tests
 else

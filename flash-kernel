@@ -97,6 +97,12 @@ get_cpuinfo_hardware() {
 	grep "^Hardware" "$PROC_CPUINFO" | sed 's/Hardware\s*:\s*//'
 }
 
+get_subarch() {
+	local kfile="$1"
+
+	echo "$kfile" | sed -e 's/.*-//'
+}
+
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
 # 16 byte MTD header, the first four bytes (big endian) give the length of
 # the remainder of the image, and the remaining bytes are zero.  Generate
@@ -158,7 +164,7 @@ ifilesize=$(wc -c "$ifile" | awk '{print $1}')
 if [ -L "$kfile" ]; then
 	kfile=$(readlink -e "$kfile")
 fi
-subarch=$(echo "$kfile" | sed -e 's/.*-//')
+subarch=$(get_subarch "$kfile")
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
