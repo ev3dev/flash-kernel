@@ -188,13 +188,17 @@ Machine-Id: 1100
 Machine: GTA02
 Subarch: s3c24xx
 
+Machine: HP Media Vault mv2120
+Subarch: orion5x
+Machine-Id: 1693
+
 Machine: HP t5325 Thin Client
 Subarch: kirkwood
 Machine-Id: 2846
 
-Machine: HP Media Vault mv2120
-Subarch: orion5x
-Machine-Id: 1693
+Machine: Lanner EM7210
+Subarch: iop32x
+Machine-Id: 1212
 
 Machine: Linksys NSLU2
 Subarch: ixp4xx
@@ -239,10 +243,6 @@ Subarch: kirkwood
 Machine: Thecus N2100
 Subarch: iop32x
 Machine-Id: 1101
-
-Machine: Lanner EM7210
-Subarch: iop32x
-Machine-Id: 1212
 "
 
 main() {
@@ -395,7 +395,7 @@ case "$machine" in
 		mv "$tmpdir/uImage" /boot/uImage.bin
 		rmdir "$tmpdir"
 	;;
-	"HP t5325 Thin Client" | "HP Media Vault mv2120")
+	"HP Media Vault mv2120" | "HP t5325 Thin Client")
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		set_machine_id "$machine_id" >"$tmpdir/kernel"
@@ -411,6 +411,36 @@ case "$machine" in
 		echo "Creating new /boot/uImage." >&2
 		mv "$tmpdir/uImage" /boot/
 		rmdir "$tmpdir"
+	;;
+	"Lanner EM7210")
+		# Really: Intel SS4000-e and compatibles
+		check_mtd
+		imtd=$(mtdblock "ramdisk.gz")
+		if [ -z "$imtd" ]; then
+			error "Cannot find mtd partition 'ramdisk.gz'"
+		fi
+		check_dev_mtdblock "$imtd"
+		imtdsize=$(mtdsize "ramdisk.gz")
+		check_size "ramdisk" $ifilesize $imtdsize
+		kmtd=$(mtdblock "zImage")
+		if [ -z "$kmtd" ]; then
+			error "Cannot find mtd partition 'zImage'"
+		fi
+		kmtdsize=$(mtdsize "zImage")
+		check_size "zImage" $(($kfilesize + 8)) $kmtdsize
+		printf "Flashing kernel..." >&2
+		(
+			set_machine_id "$machine_id"
+			cat "$kfile"
+		) > "$kmtd" || error "failed."
+		echo "done." >&2
+		printf "Flashing initramfs... " >&2
+		pad=$(expr $imtdsize - $ifilesize)
+		(
+			cat "$ifile"
+			dd if=/dev/zero bs=$pad count=1 2>/dev/null
+		) > "$imtd" || error "failed."
+		echo "done." >&2
 	;;
 	"Linksys NSLU2")
 		case "$(dpkg --print-architecture)" in
@@ -573,36 +603,6 @@ case "$machine" in
 		kmtdsize=$(mtdsize "kernel")
 		check_size "kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
-		(
-			set_machine_id "$machine_id"
-			cat "$kfile"
-		) > "$kmtd" || error "failed."
-		echo "done." >&2
-		printf "Flashing initramfs... " >&2
-		pad=$(expr $imtdsize - $ifilesize)
-		(
-			cat "$ifile"
-			dd if=/dev/zero bs=$pad count=1 2>/dev/null
-		) > "$imtd" || error "failed."
-		echo "done." >&2
-	;;
-	"Lanner EM7210")
-		# Really: Intel SS4000-e and compatibles
-		check_mtd
-		imtd=$(mtdblock "ramdisk.gz")
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'ramdisk.gz'"
-		fi
-		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "ramdisk.gz")
-		check_size "ramdisk" $ifilesize $imtdsize
-		kmtd=$(mtdblock "zImage")
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'zImage'"
-		fi
-		kmtdsize=$(mtdsize "zImage")
-		check_size "zImage" $(($kfilesize + 8)) $kmtdsize
-		printf "Flashing kernel..." >&2
 		(
 			set_machine_id "$machine_id"
 			cat "$kfile"
