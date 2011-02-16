@@ -323,6 +323,14 @@ if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 		error "$PROC_MTD doesn't exist"
 	fi
 fi
+if [ -n "$mtd_initrd" ]; then
+	imtd=$(mtdblock "$mtd_initrd")
+	if [ -z "$imtd" ]; then
+		error "Cannot find mtd partition '$mtd_initrd'"
+	fi
+	check_dev_mtdblock "$imtd"
+	imtdsize=$(mtdsize "$mtd_initrd")
+fi
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
@@ -355,12 +363,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"D-Link DNS-323")
-		imtd=$(mtdblock "$mtd_initrd")
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition '$mtd_initrd'"
-		fi
-		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "$mtd_initrd")
 		check_size "$mtd_initrd" $((ifilesize + 64)) $imtdsize
 		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
@@ -441,12 +443,6 @@ case "$machine" in
 	;;
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
-		imtd=$(mtdblock "$mtd_initrd")
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition '$mtd_initrd'"
-		fi
-		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "$mtd_initrd")
 		check_size "$mtd_initrd" $ifilesize $imtdsize
 		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
@@ -489,12 +485,6 @@ case "$machine" in
 		check_dev_mtdblock "$kmtd"
 		kmtdsize=$(mtdsize "$mtd_kernel")
 		check_size "$mtd_kernel" $(($kfilesize + 16 + 16)) $kmtdsize
-		imtd=$(mtdblock "$mtd_initrd")
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition '$mtd_initrd'"
-		fi
-		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "$mtd_initrd")
 		check_size "$mtd_initrd" $(($ifilesize + 16)) $imtdsize
 		# The following devio magic parses the FIS directory to
 		# obtain the size, offset and name of each partition.  This
@@ -576,12 +566,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
-		imtd=$(mtdblock "$mtd_initrd")
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition '$mtd_initrd'"
-		fi
-		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "$mtd_initrd")
 		check_size "$mtd_initrd" $ifilesize $imtdsize
 		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
@@ -614,12 +598,6 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Thecus N2100")
-		imtd=$(mtdblock "$mtd_initrd")
-		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition '$mtd_initrd'"
-		fi
-		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "$mtd_initrd")
 		check_size "$mtd_initrd" $ifilesize $imtdsize
 		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
