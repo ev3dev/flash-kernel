@@ -377,9 +377,17 @@ if [ -n "$mtd_initrd" ]; then
 	imtdsize=$(mtdsize "$mtd_initrd")
 fi
 
+tmpdir=""
+cleanup_tmpdir() {
+	if [ -n "$tmpdir" ]; then
+		rm -rf "$tmpdir"
+	fi
+}
+trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
+tmpdir="$(mktemp -d)"
+
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
-		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
@@ -396,13 +404,11 @@ case "$machine" in
 		backup /boot/initrd.buffalo
 		echo "Creating new /boot/initrd.buffalo." >&2
 		mv "$tmpdir/initrd.buffalo" /boot/
-		rmdir "$tmpdir"
 	;;
 	"D-Link DNS-323")
 		check_size "$mtd_initrd" $(($ifilesize + 64)) $imtdsize
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
-		tmpdir="$(mktemp -d)"
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
@@ -420,7 +426,6 @@ case "$machine" in
 		gen_initrd "$tmpdir/uInitrd" "$imtd" "0" || error "failed."
 		echo "done." >&2
 		rm -f "$tmpdir/uInitrd"
-		rmdir "$tmpdir"
 	;;
 	"GLAN Tank")
 		rm -f /boot/initrd /boot/zImage
@@ -428,7 +433,6 @@ case "$machine" in
 		gen_kernel "$kfile" "/boot/zImage" "$machine_id"
 	;;
 	"GTA02")
-		tmpdir="$(mktemp -d)"
 		printf "Generating u-boot image..." >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" ""
 		# Hack to work around a bug in some U-Boot versions:
@@ -441,10 +445,8 @@ case "$machine" in
 		echo "done." >&2
 		backup /boot/uImage.bin
 		mv "$tmpdir/uImage.bin" /boot/
-		rmdir "$tmpdir"
 	;;
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
-		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01600000 \
@@ -454,7 +456,6 @@ case "$machine" in
 		backup /boot/uImage
 		echo "Creating new /boot/uImage." >&2
 		mv "$tmpdir/uImage" /boot/
-		rmdir "$tmpdir"
 	;;
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
@@ -516,7 +517,6 @@ case "$machine" in
 		# headers.
 		boundary=1441792 # 0x00160000
 		ksize1=$(expr $boundary - $offset - 16)
-		tmpdir="$(mktemp -d)"
 		printf "Flashing kernel: " >&2
 		(
 			sercomm_header $(expr $kfilesize + 16)
@@ -537,10 +537,8 @@ case "$machine" in
 			rm -f "$tmpdir/initrd"
 		) > "$imtd" || error "failed."
 		echo "done." >&2
-		rmdir "$tmpdir"
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
-		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$kfile" "$tmpdir/uImage" >&2 1>/dev/null
@@ -555,13 +553,11 @@ case "$machine" in
 		backup /boot/uInitrd
 		echo "Creating new /boot/uInitrd." >&2
 		mv "$tmpdir/uInitrd" /boot/
-		rmdir "$tmpdir"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		check_size "$mtd_initrd" $ifilesize $imtdsize
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
-		tmpdir="$(mktemp -d)"
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
@@ -571,7 +567,6 @@ case "$machine" in
 		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
-		rmdir "$tmpdir"
 		printf "Flashing initramfs... " >&2
 		pad=$(expr $imtdsize - $ifilesize)
 		gen_initrd "$ifile" "$imtd" "$pad" || error "failed."
