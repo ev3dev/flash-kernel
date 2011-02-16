@@ -372,7 +372,7 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"D-Link DNS-323")
-		check_size "$mtd_initrd" $((ifilesize + 64)) $imtdsize
+		check_size "$mtd_initrd" $(($ifilesize + 64)) $imtdsize
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
