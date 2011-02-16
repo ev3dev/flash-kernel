@@ -185,6 +185,8 @@ Machine-Id: 1509
 Machine: D-Link DNS-323
 Subarch: orion5x
 Machine-Id: 1542
+Mtd-Kernel: Linux Kernel
+Mtd-Initrd: File System
 
 Machine: GLAN Tank
 Machine-Id: 1100
@@ -203,9 +205,13 @@ Machine-Id: 2846
 Machine: Lanner EM7210
 Subarch: iop32x
 Machine-Id: 1212
+Mtd-Kernel: zImage
+Mtd-Initrd: ramdisk.gz
 
 Machine: Linksys NSLU2
 Subarch: ixp4xx
+Mtd-Kernel: Kernel
+Mtd-Initrd: Ramdisk
 
 Machine: Marvell GuruPlug Reference Board
 Subarch: kirkwood
@@ -228,18 +234,26 @@ Subarch: kirkwood
 Machine: QNAP TS-109/TS-209
 Subarch: orion5x
 Machine-Id: 1565
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
 
 Machine: QNAP TS-119/TS-219
 Subarch: kirkwood
 Machine-Id: 2139
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
 
 Machine: QNAP TS-409
 Subarch: orion5x
 Machine-Id: 1601
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
 
 Machine: QNAP TS-41x
 Subarch: kirkwood
 Machine-Id: 2502
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
 
 Machine: Seagate FreeAgent DockStar
 Subarch: kirkwood
@@ -247,6 +261,8 @@ Subarch: kirkwood
 Machine: Thecus N2100
 Subarch: iop32x
 Machine-Id: 1101
+Mtd-Kernel: kernel
+Mtd-Initrd: ramdisk
 "
 
 main() {
@@ -305,6 +321,8 @@ if subarch_field="$(get_machine_subarch "$machine")"; then
 fi
 
 machine_id="$(get_machine_id "$machine")" || :
+mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
+mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
@@ -336,20 +354,20 @@ case "$machine" in
 	;;
 	"D-Link DNS-323")
 		check_mtd
-		imtd=$(mtdblock "File System")
+		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'File System'"
+			error "Cannot find mtd partition '$mtd_initrd'"
 		fi
 		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "File System")
-		check_size "File System" $((ifilesize + 64)) $imtdsize
-		kmtd=$(mtdblock "Linux Kernel")
+		imtdsize=$(mtdsize "$mtd_initrd")
+		check_size "$mtd_initrd" $((ifilesize + 64)) $imtdsize
+		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'Linux Kernel'"
+			error "Cannot find mtd partition '$mtd_kernel'"
 		fi
 		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "Linux Kernel")
-		check_size "Linux Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
+		kmtdsize=$(mtdsize "$mtd_kernel")
+		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
 		set_machine_id "$machine_id" >"$tmpdir/kernel"
@@ -419,19 +437,19 @@ case "$machine" in
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
 		check_mtd
-		imtd=$(mtdblock "ramdisk.gz")
+		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'ramdisk.gz'"
+			error "Cannot find mtd partition '$mtd_initrd'"
 		fi
 		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "ramdisk.gz")
-		check_size "ramdisk" $ifilesize $imtdsize
-		kmtd=$(mtdblock "zImage")
+		imtdsize=$(mtdsize "$mtd_initrd")
+		check_size "$mtd_initrd" $ifilesize $imtdsize
+		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'zImage'"
+			error "Cannot find mtd partition '$mtd_kernel'"
 		fi
-		kmtdsize=$(mtdsize "zImage")
-		check_size "zImage" $(($kfilesize + 8)) $kmtdsize
+		kmtdsize=$(mtdsize "$mtd_kernel")
+		check_size "$mtd_kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel..." >&2
 		(
 			set_machine_id "$machine_id"
@@ -456,24 +474,25 @@ case "$machine" in
 			;;
 		esac
 		check_mtd
-		fismtd=$(mtdblock "FIS directory")
+		mtd_fis="FIS directory"
+		fismtd=$(mtdblock "$mtd_fis")
 		if [ -z "$fismtd" ]; then
-			error "Cannot find mtd FIS directory"
+			error "Cannot find mtd partition '$mtd_fis'"
 		fi
-		kmtd=$(mtdblock "Kernel")
+		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'Kernel'"
+			error "Cannot find mtd partition '$mtd_kernel'"
 		fi
 		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "Kernel")
-		check_size "kernel" $(($kfilesize + 16 + 16)) $kmtdsize
-		imtd=$(mtdblock "Ramdisk")
+		kmtdsize=$(mtdsize "$mtd_kernel")
+		check_size "$mtd_kernel" $(($kfilesize + 16 + 16)) $kmtdsize
+		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'Ramdisk'"
+			error "Cannot find mtd partition '$mtd_initrd'"
 		fi
 		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "Ramdisk")
-		check_size "ramdisk" $(($ifilesize + 16)) $imtdsize
+		imtdsize=$(mtdsize "$mtd_initrd")
+		check_size "$mtd_initrd" $(($ifilesize + 16)) $imtdsize
 		# The following devio magic parses the FIS directory to
 		# obtain the size, offset and name of each partition.  This
 		# used used to obtain the offset of the Kernel partition.
@@ -555,20 +574,20 @@ case "$machine" in
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		check_mtd
-		imtd=$(mtdblock "RootFS1")
+		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'RootFS1'"
+			error "Cannot find mtd partition '$mtd_initrd'"
 		fi
 		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "RootFS1")
-		check_size "RootFS1" $ifilesize $imtdsize
-		kmtd=$(mtdblock "Kernel")
+		imtdsize=$(mtdsize "$mtd_initrd")
+		check_size "$mtd_initrd" $ifilesize $imtdsize
+		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'Kernel'"
+			error "Cannot find mtd partition '$mtd_kernel'"
 		fi
 		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "Kernel")
-		check_size "Kernel" $(($kfilesize + 8 + 64)) $kmtdsize
+		kmtdsize=$(mtdsize "$mtd_kernel")
+		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
 		set_machine_id "$machine_id" >"$tmpdir/kernel"
@@ -592,20 +611,20 @@ case "$machine" in
 	;;
 	"Thecus N2100")
 		check_mtd
-		imtd=$(mtdblock "ramdisk")
+		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
-			error "Cannot find mtd partition 'ramdisk'"
+			error "Cannot find mtd partition '$mtd_initrd'"
 		fi
 		check_dev_mtdblock "$imtd"
-		imtdsize=$(mtdsize "ramdisk")
-		check_size "ramdisk" $ifilesize $imtdsize
-		kmtd=$(mtdblock "kernel")
+		imtdsize=$(mtdsize "$mtd_initrd")
+		check_size "$mtd_initrd" $ifilesize $imtdsize
+		kmtd=$(mtdblock "$mtd_kernel")
 		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition 'kernel'"
+			error "Cannot find mtd partition '$mtd_kernel'"
 		fi
 		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "kernel")
-		check_size "kernel" $(($kfilesize + 8)) $kmtdsize
+		kmtdsize=$(mtdsize "$mtd_kernel")
+		check_size "$mtd_kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
 		(
 			set_machine_id "$machine_id"
