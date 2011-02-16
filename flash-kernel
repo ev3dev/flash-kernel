@@ -323,6 +323,14 @@ if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 		error "$PROC_MTD doesn't exist"
 	fi
 fi
+if [ -n "$mtd_kernel" ]; then
+	kmtd=$(mtdblock "$mtd_kernel")
+	if [ -z "$kmtd" ]; then
+		error "Cannot find mtd partition '$mtd_kernel'"
+	fi
+	check_dev_mtdblock "$kmtd"
+	kmtdsize=$(mtdsize "$mtd_kernel")
+fi
 if [ -n "$mtd_initrd" ]; then
 	imtd=$(mtdblock "$mtd_initrd")
 	if [ -z "$imtd" ]; then
@@ -364,12 +372,6 @@ case "$machine" in
 	;;
 	"D-Link DNS-323")
 		check_size "$mtd_initrd" $((ifilesize + 64)) $imtdsize
-		kmtd=$(mtdblock "$mtd_kernel")
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition '$mtd_kernel'"
-		fi
-		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "$mtd_kernel")
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
@@ -444,11 +446,6 @@ case "$machine" in
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
 		check_size "$mtd_initrd" $ifilesize $imtdsize
-		kmtd=$(mtdblock "$mtd_kernel")
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition '$mtd_kernel'"
-		fi
-		kmtdsize=$(mtdsize "$mtd_kernel")
 		check_size "$mtd_kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel..." >&2
 		(
@@ -478,12 +475,6 @@ case "$machine" in
 		if [ -z "$fismtd" ]; then
 			error "Cannot find mtd partition '$mtd_fis'"
 		fi
-		kmtd=$(mtdblock "$mtd_kernel")
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition '$mtd_kernel'"
-		fi
-		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "$mtd_kernel")
 		check_size "$mtd_kernel" $(($kfilesize + 16 + 16)) $kmtdsize
 		check_size "$mtd_initrd" $(($ifilesize + 16)) $imtdsize
 		# The following devio magic parses the FIS directory to
@@ -567,12 +558,6 @@ case "$machine" in
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		check_size "$mtd_initrd" $ifilesize $imtdsize
-		kmtd=$(mtdblock "$mtd_kernel")
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition '$mtd_kernel'"
-		fi
-		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "$mtd_kernel")
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
@@ -599,12 +584,6 @@ case "$machine" in
 	;;
 	"Thecus N2100")
 		check_size "$mtd_initrd" $ifilesize $imtdsize
-		kmtd=$(mtdblock "$mtd_kernel")
-		if [ -z "$kmtd" ]; then
-			error "Cannot find mtd partition '$mtd_kernel'"
-		fi
-		check_dev_mtdblock "$kmtd"
-		kmtdsize=$(mtdsize "$mtd_kernel")
 		check_size "$mtd_kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
 		(
