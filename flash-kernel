@@ -183,6 +183,7 @@ Mtd-Kernel: Linux Kernel
 Mtd-Initrd: File System
 
 Machine: GLAN Tank
+Subarch: iop32x
 Machine-Id: 1100
 
 Machine: GTA02
