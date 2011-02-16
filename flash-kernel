@@ -328,8 +328,10 @@ case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
-		set_machine_id "$machine_id" >"$tmpdir/kernel"
-		cat "$kfile" >> "$tmpdir/kernel"
+		(
+			set_machine_id "$machine_id"
+			cat "$kfile"
+		) >"$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage.buffalo" >&2 1>/dev/null
 		rm -f "$tmpdir/kernel"
@@ -369,8 +371,10 @@ case "$machine" in
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
-		set_machine_id "$machine_id" >"$tmpdir/kernel"
-		cat "$kfile" >> "$tmpdir/kernel"
+		(
+			set_machine_id "$machine_id"
+			cat "$kfile"
+		) >"$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
 		rm -f "$tmpdir/kernel"
@@ -419,8 +423,10 @@ case "$machine" in
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
-		set_machine_id "$machine_id" >"$tmpdir/kernel"
-		cat "$kfile" >> "$tmpdir/kernel"
+		(
+			set_machine_id "$machine_id"
+			cat "$kfile"
+		) >"$tmpdir/kernel"
 		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01600000 \
 			-e 0x01600000 -d "$tmpdir/kernel:$ifile" "$tmpdir/uImage" >&2 1>/dev/null
 		rm -f "$tmpdir/kernel"
@@ -586,8 +592,10 @@ case "$machine" in
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		tmpdir="$(mktemp -d)"
-		set_machine_id "$machine_id" >"$tmpdir/kernel"
-		cat "$kfile" >> "$tmpdir/kernel"
+		(
+			set_machine_id "$machine_id"
+			cat "$kfile"
+		) >"$tmpdir/kernel"
 		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
 			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
 		rm -f "$tmpdir/kernel"
