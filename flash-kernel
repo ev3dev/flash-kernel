@@ -28,12 +28,6 @@ error() {
 	exit 1
 }
 
-check_mtd() {
-	if [ ! -e "$PROC_MTD" ]; then
-		error "$PROC_MTD doesn't exist"
-	fi
-}
-
 mtdblock() {
 	local mtdname="$1"
 
@@ -324,6 +318,12 @@ machine_id="$(get_machine_id "$machine")" || :
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 
+if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
+	if [ ! -e "$PROC_MTD" ]; then
+		error "$PROC_MTD doesn't exist"
+	fi
+fi
+
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		tmpdir="$(mktemp -d)"
@@ -353,7 +353,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"D-Link DNS-323")
-		check_mtd
 		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition '$mtd_initrd'"
@@ -436,7 +435,6 @@ case "$machine" in
 	;;
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
-		check_mtd
 		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition '$mtd_initrd'"
@@ -473,7 +471,6 @@ case "$machine" in
 				little_endian=0
 			;;
 		esac
-		check_mtd
 		mtd_fis="FIS directory"
 		fismtd=$(mtdblock "$mtd_fis")
 		if [ -z "$fismtd" ]; then
@@ -573,7 +570,6 @@ case "$machine" in
 		rmdir "$tmpdir"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
-		check_mtd
 		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition '$mtd_initrd'"
@@ -610,7 +606,6 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Thecus N2100")
-		check_mtd
 		imtd=$(mtdblock "$mtd_initrd")
 		if [ -z "$imtd" ]; then
 			error "Cannot find mtd partition '$mtd_initrd'"
