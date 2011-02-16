@@ -289,6 +289,64 @@ test_set_machine_id() {
 }
 add_test test_set_machine_id
 
+test_gen_kernel() {
+    get_tempfile
+    kernel_input="$last_tempfile"
+    echo "foo" >"$kernel_input"
+    get_tempfile
+    kernel_output="$last_tempfile"
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        gen_kernel "$kernel_input" "$kernel_output" 2097
+        result="$(od -t x1 "$kernel_output")"
+        expected="0000000 08 1c a0 e3 31 10 81 e3 66 6f 6f 0a
+0000014"
+        if [ "$result" != "$expected" ]; then
+            echo "With machine id 2097, expected \"$expected\" but got \"$result\"" >&2
+            exit 1
+        fi
+        gen_kernel "$kernel_input" "$kernel_output" ""
+        result="$(od -t x1 "$kernel_output")"
+        expected="0000000 66 6f 6f 0a
+0000004"
+        if [ "$result" != "$expected" ]; then
+            echo "With no machine id, expected \"$expected\" but got \"$result\"" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_gen_kernel
+
+test_gen_initrd() {
+    get_tempfile
+    initrd_input="$last_tempfile"
+    echo "foo" >"$initrd_input"
+    get_tempfile
+    initrd_output="$last_tempfile"
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        gen_initrd "$initrd_input" "$initrd_output" 3
+        result="$(od -t x1 "$initrd_output")"
+        expected="0000000 66 6f 6f 0a 00 00 00
+0000007"
+        if [ "$result" != "$expected" ]; then
+            echo "With 3 byes of padding, expected \"$expected\" but got \"$result\"" >&2
+            exit 1
+        fi
+        gen_initrd "$initrd_input" "$initrd_output" 0
+        result="$(od -t x1 "$initrd_output")"
+        expected="0000000 66 6f 6f 0a
+0000004"
+        if [ "$result" != "$expected" ]; then
+            echo "With no padding, expected \"$expected\" but got \"$result\"" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_gen_initrd
+
 if [ $# = 0 ]; then
     run_tests $all_tests
 else
