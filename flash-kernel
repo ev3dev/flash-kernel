@@ -432,14 +432,14 @@ case "$machine" in
 			echo >> "$tmpdir/kernel"
 		fi
 		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x30008000 \
-			-e 0x30008000 -d "$tmpdir/kernel":"$ifile" "$tmpdir/uImage" >&2 1>/dev/null
+			-e 0x30008000 -d "$tmpdir/kernel":"$ifile" "$tmpdir/uImage.bin" >&2 1>/dev/null
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		if [ -e /boot/uImage.bin ]; then
 			echo "Creating backup of /boot/uImage.bin." >&2
 			mv /boot/uImage.bin /boot/uImage.bin.bak
 		fi
-		mv "$tmpdir/uImage" /boot/uImage.bin
+		mv "$tmpdir/uImage.bin" /boot/
 		rmdir "$tmpdir"
 	;;
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
