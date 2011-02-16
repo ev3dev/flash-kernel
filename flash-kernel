@@ -20,6 +20,8 @@
 
 set -e
 
+self="$(basename "$0")"
+
 PROC_CPUINFO="/proc/cpuinfo"
 PROC_MTD="/proc/mtd"
 
@@ -384,7 +386,7 @@ cleanup_tmpdir() {
 	fi
 }
 trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
-tmpdir="$(mktemp -d)"
+tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
