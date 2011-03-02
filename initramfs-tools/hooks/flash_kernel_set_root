@@ -26,6 +26,9 @@ root_type() {
 		"Buffalo Linkstation LiveV3 (LS-CHL)")
 			echo "override"
 		;;
+		"Buffalo Linkstation Mini")
+			echo "override"
+		;;
 		"Buffalo Linkstation Pro/Live")
 			echo "override"
 		;;

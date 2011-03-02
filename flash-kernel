@@ -86,6 +86,7 @@ fi
 if [ "x$1" = "x--supported" ]; then
 	case "$machine" in
 		"Buffalo Linkstation LiveV3 (LS-CHL)")	exit 0 ;;
+		"Buffalo Linkstation Mini")		exit 0 ;;
 		"Buffalo Linkstation Pro/Live")		exit 0 ;;
 		"Buffalo/Revogear Kurobox Pro")		exit 0 ;;
 		"D-Link DNS-323")			exit 0 ;;
@@ -143,7 +144,7 @@ fi
 subarch=$(echo "$kfile" | sed -e 's/.*-//')
 
 case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
+	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		check_subarch "orion5x"
 		tmpdir="$(mktemp -d)"
 		printf "Generating kernel u-boot image... " >&2
@@ -151,6 +152,10 @@ case "$machine" in
 			"Buffalo Linkstation LiveV3 (LS-CHL)")
 				# Set machine id 2913 (0x0b61)
 				devio > "$tmpdir/kernel" 'wl 0xe3a01c0b,4' 'wl 0xe3811061,4'
+			;;
+			"Buffalo Linkstation Mini")
+				# Set machine id 1858 (0x0742)
+				devio > "$tmpdir/kernel" 'wl 0xe3a01c07,4' 'wl 0xe3811042,4'
 			;;
 			"Buffalo Linkstation Pro/Live")
 				# Set machine id 1585 (0x0631)
