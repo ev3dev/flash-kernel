@@ -67,8 +67,12 @@ check_kflavors() {
 }
 
 check_size() {
-	if [ $2 -gt $3 ]; then
-		error "The $1 doesn't fit in flash."
+	local mtd_name="$1"
+	local required_size="$2"
+	local actual_size="$3"
+
+	if [ $required_size -gt $actual_size ]; then
+		error "Not enough space in MTD $mtd_name (need $required_size but is actually $actual_size)."
 	fi
 }
 
