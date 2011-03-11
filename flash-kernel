@@ -37,8 +37,10 @@ mtdblock() {
 }
 
 check_dev_mtdblock() {
-	if [ ! -b "$1" ]; then
-		error "$1 is not a block device"
+	local dev="$1"
+
+	if [ ! -b "$dev" ]; then
+		error "$dev is not a block device"
 	fi
 }
 
