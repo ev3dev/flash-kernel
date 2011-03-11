@@ -145,6 +145,25 @@ EOF
 }
 add_test test_mtdsize
 
+test_check_size() {
+    (
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        error() {
+            return 1
+        }
+        if check_size "MTD" 2 1; then
+            echo "Expected check_size to fail for too small size, but it succeeded" >&2
+            exit 1
+        fi
+        if ! check_size "MTD" 1 1; then
+            echo "Expected check_supported to succeed with large enough size, but it failed" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_check_size
+
 test_check_supported() {
     (
         TEST_FLASH_KERNEL=1
