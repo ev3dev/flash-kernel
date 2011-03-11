@@ -50,10 +50,11 @@ mtdsize() {
 }
 
 check_kflavor() {
-	local expected_flavor="$1"
+	local kfile_suffix="$1"
+	local expected_flavor="$2"
 
 	if [ -n "$kfile_suffix" ] && [ "$kfile_suffix" != "$expected_flavor" ]; then
-		echo "Kernel $kfile does not match expected flavor $expected_flavor, therefore not writing it to flash." >&2
+		echo "Kernel suffix $kfile_suffix does not match expected flavor $expected_flavor, therefore not writing it to flash." >&2
 		exit 0
 	fi
 }
@@ -348,7 +349,7 @@ if ! check_supported "$machine"; then
 fi
 
 if kflavor_field="$(get_machine_kflavor "$machine")"; then
-	check_kflavor "$kflavor_field"
+	check_kflavor "$kfile_suffix" "$kflavor_field"
 fi
 
 machine_id="$(get_machine_id "$machine")" || :
