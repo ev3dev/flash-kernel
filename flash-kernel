@@ -49,14 +49,19 @@ mtdsize() {
 	printf "%d" "0x$size"
 }
 
-check_kflavor() {
+check_kflavors() {
 	local kfile_suffix="$1"
-	local expected_flavor="$2"
+	shift
 
-	if [ -n "$kfile_suffix" ] && [ "$kfile_suffix" != "$expected_flavor" ]; then
-		echo "Kernel suffix $kfile_suffix does not match expected flavor $expected_flavor, therefore not writing it to flash." >&2
-		exit 0
+	if [ -z "$kfile_suffix" ]; then
+		return 0
 	fi
+	for kflavor; do
+		if [ "$kfile_suffix" = "$kflavor" ]; then
+			return 0
+		fi
+	done
+	return 1
 }
 
 check_size() {
@@ -121,10 +126,10 @@ get_machine_field() {
 	}
 }
 
-get_machine_kflavor() {
+get_machine_kflavors() {
 	local machine="$1"
 
-	get_machine_field "$machine" "Kernel-Flavor"
+	get_machine_field "$machine" "Kernel-Flavors"
 }
 
 get_machine_id() {
@@ -199,100 +204,100 @@ nslu2_swap() {
 # somewhat RFC2822 based, but case sensitive, not tolerant to spaces etc.
 MACHINE_DB="
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 2913
 
 Machine: Buffalo Linkstation Mini
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1858
 
 Machine: Buffalo Linkstation Pro/Live
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1585
 
 Machine: Buffalo/Revogear Kurobox Pro
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1509
 
 Machine: D-Link DNS-323
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1542
 Mtd-Kernel: Linux Kernel
 Mtd-Initrd: File System
 
 Machine: GLAN Tank
-Kernel-Flavor: iop32x
+Kernel-Flavors: iop32x
 Machine-Id: 1100
 
 Machine: GTA02
-Kernel-Flavor: s3c24xx
+Kernel-Flavors: s3c24xx
 
 Machine: HP Media Vault mv2120
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1693
 
 Machine: HP t5325 Thin Client
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 Machine-Id: 2846
 
 Machine: Lanner EM7210
-Kernel-Flavor: iop32x
+Kernel-Flavors: iop32x
 Machine-Id: 1212
 Mtd-Kernel: zImage
 Mtd-Initrd: ramdisk.gz
 
 Machine: Linksys NSLU2
-Kernel-Flavor: ixp4xx
+Kernel-Flavors: ixp4xx
 Mtd-Kernel: Kernel
 Mtd-Initrd: Ramdisk
 
 Machine: Marvell GuruPlug Reference Board
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: Marvell OpenRD Base Board
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: Marvell OpenRD Client Board
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: Marvell OpenRD Ultimate Board
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: Marvell SheevaPlug Reference Board
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: Marvell eSATA SheevaPlug Reference Board
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: QNAP TS-109/TS-209
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1565
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 
 Machine: QNAP TS-119/TS-219
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 Machine-Id: 2139
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 
 Machine: QNAP TS-409
-Kernel-Flavor: orion5x
+Kernel-Flavors: orion5x
 Machine-Id: 1601
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 
 Machine: QNAP TS-41x
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 Machine-Id: 2502
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 
 Machine: Seagate FreeAgent DockStar
-Kernel-Flavor: kirkwood
+Kernel-Flavors: kirkwood
 
 Machine: Thecus N2100
-Kernel-Flavor: iop32x
+Kernel-Flavors: iop32x
 Machine-Id: 1101
 Mtd-Kernel: kernel
 Mtd-Initrd: ramdisk
@@ -348,8 +353,11 @@ if ! check_supported "$machine"; then
 	error "Unsupported platform."
 fi
 
-if kflavor_field="$(get_machine_kflavor "$machine")"; then
-	check_kflavor "$kfile_suffix" "$kflavor_field"
+if kflavors="$(get_machine_kflavors "$machine")"; then
+	if ! check_kflavors "$kfile_suffix" $kflavors; then
+		echo "Kernel suffix $kfile_suffix does not match any of the expected flavors ($kflavors), therefore not writing it to flash." >&2
+		exit 0
+	fi
 fi
 
 machine_id="$(get_machine_id "$machine")" || :

@@ -219,9 +219,9 @@ test_get_machine_field() {
             echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
             exit 1
         fi
-        kflavor_field="$(get_machine_field "$machine" "Kernel-Flavor")"
-        if [ "$kflavor_field" != "kirkwood" ]; then
-            echo "Expected Kernel-Flavor field to be kirkwood but got $kflavor_field" >&2
+        kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"
+        if [ "$kflavors" != "kirkwood" ]; then
+            echo "Expected Kernel-Flavors field to be kirkwood but got $kflavors" >&2
             exit 1
         fi
         if dummy_field="$(get_machine_field "$machine" "Dummy")"; then
@@ -232,28 +232,28 @@ test_get_machine_field() {
 }
 add_test test_get_machine_field
 
-test_get_machine_kflavor() {
+test_get_machine_kflavors() {
     (
         TEST_FLASH_KERNEL=1
         . "$flash_kernel"
         MACHINE_DB="$MACHINE_DB
 
-Machine: Missing Kernel-Flavor
+Machine: Missing Kernel-Flavors
 "
         machine="Marvell SheevaPlug Reference Board"
-        kflavor_field="$(get_machine_kflavor "$machine")"
-        if [ "$kflavor_field" != "kirkwood" ]; then
-            echo "Expected Kernel-Flavor to be kirkwood but got $kflavor_field" >&2
+        kflavors="$(get_machine_kflavors "$machine")"
+        if [ "$kflavors" != "kirkwood" ]; then
+            echo "Expected Kernel-Flavors to be kirkwood but got $kflavors" >&2
             exit 1
         fi
-        machine="Missing Kernel-Flavor"
-        if kflavor_field="$(get_machine_kflavor "$machine")"; then
-            echo "Expected get_machine_kflavor to fail on machine without Kernel-Flavor field but it succeeded" >&2
+        machine="Missing Kernel-Flavors"
+        if kflavor_field="$(get_machine_kflavors "$machine")"; then
+            echo "Expected get_machine_kflavors to fail on machine without Kernel-Flavors field but it succeeded" >&2
             exit 1
         fi
     )
 }
-add_test test_get_machine_kflavor
+add_test test_get_machine_kflavors
 
 test_get_machine_id() {
     (
