@@ -192,18 +192,18 @@ EOF
 }
 add_test test_get_cpuinfo_hardware
 
-test_get_kfile_subarch() {
+test_get_kfile_suffix() {
     (
         TEST_FLASH_KERNEL=1
         . "$flash_kernel"
-        kfile_subarch=$(get_kfile_subarch "/boot/vmlinuz-2.6.32-5-kirkwood")
-        if [ "$kfile_subarch" != "kirkwood" ]; then
-            echo "Expected kernel file subarch to be kirkwood but got $kfile_subarch" >&2
+        kfile_suffix=$(get_kfile_suffix "/boot/vmlinuz-2.6.32-5-kirkwood")
+        if [ "$kfile_suffix" != "kirkwood" ]; then
+            echo "Expected kernel file suffix to be kirkwood but got $kfile_suffix" >&2
             exit 1
         fi
     )
 }
-add_test test_get_kfile_subarch
+add_test test_get_kfile_suffix
 
 test_get_machine_field() {
     (
@@ -219,9 +219,9 @@ test_get_machine_field() {
             echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
             exit 1
         fi
-        subarch_field="$(get_machine_field "$machine" "Subarch")"
-        if [ "$subarch_field" != "kirkwood" ]; then
-            echo "Expected Subarch field to be kirkwood but got $subarch_field" >&2
+        kflavor_field="$(get_machine_field "$machine" "Kernel-Flavor")"
+        if [ "$kflavor_field" != "kirkwood" ]; then
+            echo "Expected Kernel-Flavor field to be kirkwood but got $kflavor_field" >&2
             exit 1
         fi
         if dummy_field="$(get_machine_field "$machine" "Dummy")"; then
@@ -232,28 +232,28 @@ test_get_machine_field() {
 }
 add_test test_get_machine_field
 
-test_get_machine_subarch() {
+test_get_machine_kflavor() {
     (
         TEST_FLASH_KERNEL=1
         . "$flash_kernel"
         MACHINE_DB="$MACHINE_DB
 
-Machine: Missing Subarch
+Machine: Missing Kernel-Flavor
 "
         machine="Marvell SheevaPlug Reference Board"
-        subarch_field="$(get_machine_subarch "$machine")"
-        if [ "$subarch_field" != "kirkwood" ]; then
-            echo "Expected Subarch to be kirkwood but got $subarch_field" >&2
+        kflavor_field="$(get_machine_kflavor "$machine")"
+        if [ "$kflavor_field" != "kirkwood" ]; then
+            echo "Expected Kernel-Flavor to be kirkwood but got $kflavor_field" >&2
             exit 1
         fi
-        machine="Missing Subarch"
-        if subarch_field="$(get_machine_subarch "$machine")"; then
-            echo "Expected get_machine_subarch to fail on machine without Subarch field but it succeeded" >&2
+        machine="Missing Kernel-Flavor"
+        if kflavor_field="$(get_machine_kflavor "$machine")"; then
+            echo "Expected get_machine_kflavor to fail on machine without Kernel-Flavor field but it succeeded" >&2
             exit 1
         fi
     )
 }
-add_test test_get_machine_subarch
+add_test test_get_machine_kflavor
 
 test_get_machine_id() {
     (
