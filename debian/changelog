@@ -1,7 +1,24 @@
 flash-kernel (2.39) UNRELEASED; urgency=low
 
+  [ Martin Michlmayr ]
   * Add support for Buffalo Linkstation LiveV3 (LS-CHL).  Closes: #612167
   * Add support for Buffalo Linkstation Mini (LS-WSGL).
+
+  [ Loïc Minier ]
+  * Bump Standards-Version to 3.9.1.
+  * Add a testsuite and run it during build; change code a bit to be more
+    easily tested.
+  * Start reworking flash-kernel to be more data-driven.
+    - Keep some machine data in a small embedded RFC 2822 style database.
+    - Simplify code in the main "case" statement as much as possible by using
+      functions for common code and splitting error handling, initialization,
+      and sanity checks out.
+    - Various syntax tweaks.
+  * Only allow iop32x kernels on GLAN Tank.
+  * Fix Lintian warnings.
+    - Quote minus signs in man page.
+    - Depend on ${misc:Depends}.
+  * Add myself to Uploaders at tbm's proposal.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 06 Feb 2011 13:20:34 +0100
 
