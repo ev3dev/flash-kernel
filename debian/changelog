@@ -19,6 +19,8 @@ flash-kernel (2.39) UNRELEASED; urgency=low
     - Quote minus signs in man page.
     - Depend on ${misc:Depends}.
   * Add myself to Uploaders at tbm's proposal.
+  * Add myself to flash-kernel's Copyright and to debian/copyright; thanks
+    Martin Michlmayr.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 06 Feb 2011 13:20:34 +0100
 
