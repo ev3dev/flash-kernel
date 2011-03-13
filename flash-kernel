@@ -425,8 +425,8 @@ if [ -n "$1" ]; then
 	kvers="$1"
 	kfile="/boot/vmlinuz-$kvers"
 	ifile="/boot/initrd.img-$kvers"
-	desc="Debian kernel $1"
-	idesc="Debian ramdisk $1"
+	desc="Debian kernel $kvers"
+	idesc="Debian ramdisk $kvers"
 else
 	if [ -e /vmlinuz ]; then
 		kfile=/vmlinuz
