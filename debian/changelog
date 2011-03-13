@@ -1,10 +1,5 @@
-flash-kernel (2.39) UNRELEASED; urgency=low
+flash-kernel (2.40) UNRELEASED; urgency=low
 
-  [ Martin Michlmayr ]
-  * Add support for Buffalo Linkstation LiveV3 (LS-CHL).  Closes: #612167
-  * Add support for Buffalo Linkstation Mini (LS-WSGL).
-
-  [ Loïc Minier ]
   * Bump Standards-Version to 3.9.1.
   * Add a testsuite and run it during build; change code a bit to be more
     easily tested.
@@ -24,7 +19,14 @@ flash-kernel (2.39) UNRELEASED; urgency=low
   * Add myself to flash-kernel's Copyright and to debian/copyright; thanks
     Martin Michlmayr.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 06 Feb 2011 13:20:34 +0100
+ -- Loïc Minier <lool@dooz.org>  Sun, 13 Mar 2011 21:53:05 +0100
+
+flash-kernel (2.39) unstable; urgency=low
+
+  * Add support for Buffalo Linkstation LiveV3 (LS-CHL).  Closes: #612167
+  * Add support for Buffalo Linkstation Mini (LS-WSGL).
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Wed, 02 Mar 2011 17:56:22 +0000
 
 flash-kernel (2.38) unstable; urgency=low
 
