@@ -244,24 +244,34 @@ MACHINE_DB="
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
 Kernel-Flavors: orion5x
 Machine-Id: 2913
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Buffalo Linkstation Mini
 Kernel-Flavors: orion5x
 Machine-Id: 1858
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Buffalo Linkstation Pro/Live
 Kernel-Flavors: orion5x
 Machine-Id: 1585
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Buffalo/Revogear Kurobox Pro
 Kernel-Flavors: orion5x
 Machine-Id: 1509
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
 Machine-Id: 1542
 Mtd-Kernel: Linux Kernel
 Mtd-Initrd: File System
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x00800000
 
 Machine: GLAN Tank
 Kernel-Flavors: iop32x
@@ -273,10 +283,12 @@ Kernel-Flavors: s3c24xx
 Machine: HP Media Vault mv2120
 Kernel-Flavors: orion5x
 Machine-Id: 1693
+U-Boot-Multi-Address: 0x01600000
 
 Machine: HP t5325 Thin Client
 Kernel-Flavors: kirkwood
 Machine-Id: 2846
+U-Boot-Multi-Address: 0x01600000
 
 Machine: Lanner EM7210
 Kernel-Flavors: iop32x
@@ -291,48 +303,66 @@ Mtd-Initrd: Ramdisk
 
 Machine: Marvell GuruPlug Reference Board
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Marvell OpenRD Base Board
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Marvell OpenRD Client Board
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Marvell OpenRD Ultimate Board
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Marvell SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Marvell eSATA SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: QNAP TS-109/TS-209
 Kernel-Flavors: orion5x
 Machine-Id: 1565
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
 
 Machine: QNAP TS-119/TS-219
 Kernel-Flavors: kirkwood
 Machine-Id: 2139
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
 
 Machine: QNAP TS-409
 Kernel-Flavors: orion5x
 Machine-Id: 1601
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
 
 Machine: QNAP TS-41x
 Kernel-Flavors: kirkwood
 Machine-Id: 2502
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
 
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
+U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Thecus N2100
 Kernel-Flavors: iop32x
@@ -401,6 +431,9 @@ fi
 machine_id="$(get_machine_id "$machine")" || :
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
+ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
+uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
+umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -437,7 +470,7 @@ case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage_kernel 0x00008000 "$desc" "$tmpdir/kernel" \
+		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
 			"$tmpdir/uImage.buffalo"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
@@ -445,7 +478,8 @@ case "$machine" in
 		echo "Creating new /boot/uImage.buffalo." >&2
 		mv "$tmpdir/uImage.buffalo" /boot/
 		printf "Generating initrd u-boot image... " >&2
-		mkimage_initrd 0x0 "$idesc" "$ifile" "$tmpdir/initrd.buffalo"
+		mkimage_initrd "$uiaddr" "$idesc" "$ifile" \
+			"$tmpdir/initrd.buffalo"
 		echo "done." >&2
 		backup /boot/initrd.buffalo
 		echo "Creating new /boot/initrd.buffalo." >&2
@@ -456,7 +490,8 @@ case "$machine" in
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage_kernel 0x00008000 "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
+		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
+			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
@@ -464,7 +499,7 @@ case "$machine" in
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
 		printf "Generating initramfs u-boot image... " >&2
-		mkimage_initrd 0x00800000 "$idesc" "$ifile" "$tmpdir/uInitrd"
+		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		gen_initrd "$tmpdir/uInitrd" "$imtd" "0" || error "failed."
@@ -483,7 +518,8 @@ case "$machine" in
 		if [ $(($(stat -c '%s' "$tmpdir/kernel") % 4)) -eq 0 ]; then
 			echo >> "$tmpdir/kernel"
 		fi
-		mkimage_multi 0x30008000 "$desc" "$tmpdir/kernel" "$ifile" "$tmpdir/uImage.bin"
+		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
+			"$tmpdir/uImage.bin"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		backup /boot/uImage.bin
@@ -492,7 +528,8 @@ case "$machine" in
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage_multi 0x01600000 "$desc" "$tmpdir/kernel" "$ifile" "$tmpdir/uImage"
+		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
+			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		backup /boot/uImage
@@ -582,13 +619,13 @@ case "$machine" in
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
 		printf "Generating kernel u-boot image... " >&2
-		mkimage_kernel 0x00008000 "$desc" "$kfile" "$tmpdir/uImage"
+		mkimage_kernel "$ukaddr" "$desc" "$kfile" "$tmpdir/uImage"
 		echo "done." >&2
 		backup /boot/uImage
 		echo "Creating new /boot/uImage." >&2
 		mv "$tmpdir/uImage" /boot/
 		printf "Generating initrd u-boot image... " >&2
-		mkimage_initrd 0x0 "$idesc" "$ifile" "$tmpdir/uInitrd"
+		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
 		echo "done." >&2
 		backup /boot/uInitrd
 		echo "Creating new /boot/uInitrd." >&2
@@ -599,7 +636,7 @@ case "$machine" in
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage_kernel 0x00008000 "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
+		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
