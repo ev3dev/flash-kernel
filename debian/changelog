@@ -1,9 +1,9 @@
-flash-kernel (2.39) UNRELEASED; urgency=low
+flash-kernel (2.39) unstable; urgency=low
 
   * Add support for Buffalo Linkstation LiveV3 (LS-CHL).  Closes: #612167
   * Add support for Buffalo Linkstation Mini (LS-WSGL).
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 06 Feb 2011 13:20:34 +0100
+ -- Martin Michlmayr <tbm@cyrius.com>  Wed, 02 Mar 2011 17:56:22 +0000
 
 flash-kernel (2.38) unstable; urgency=low
 
