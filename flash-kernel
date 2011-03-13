@@ -551,7 +551,7 @@ case "$machine" in
 		echo "Creating new /boot/uImage." >&2
 		mv "$tmpdir/uImage" /boot/
 	;;
-	"Lanner EM7210")
+	"Lanner EM7210"|"Thecus N2100")
 		printf "Flashing kernel..." >&2
 		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
 		echo "done." >&2
@@ -653,15 +653,6 @@ case "$machine" in
 		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
-		printf "Flashing initramfs... " >&2
-		pad=$(expr $imtdsize - $ifilesize)
-		gen_initrd "$ifile" "$imtd" "$pad" || error "failed."
-		echo "done." >&2
-	;;
-	"Thecus N2100")
-		printf "Flashing kernel... " >&2
-		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
-		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		pad=$(expr $imtdsize - $ifilesize)
 		gen_initrd "$ifile" "$imtd" "$pad" || error "failed."
