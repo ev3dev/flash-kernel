@@ -328,6 +328,42 @@ test_set_machine_id() {
 }
 add_test test_set_machine_id
 
+test_mkimage_kernel() {
+    (
+        mkimage() {
+            saved_args="$@"
+        }
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        saved_args=""
+        mkimage_kernel "0xdeadbeef" "desc" "input" "output"
+        expected="-A arm -O linux -T kernel -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
+        if [ "$expected" != "$saved_args" ]; then
+            echo "Expected mkimage_kernel to be called with \"$expected\" but it was called with \"$saved_args\"" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_mkimage_kernel
+
+test_mkimage_initrd() {
+    (
+        mkimage() {
+            saved_args="$@"
+        }
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        saved_args=""
+        mkimage_initrd "0xdeadbeef" "desc" "input" "output"
+        expected="-A arm -O linux -T ramdisk -C gzip -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
+        if [ "$expected" != "$saved_args" ]; then
+            echo "Expected mkimage_initrd to be called with \"$expected\" but it was called with \"$saved_args\"" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_mkimage_initrd
+
 test_gen_kernel() {
     get_tempfile
     kernel_input="$last_tempfile"

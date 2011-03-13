@@ -182,6 +182,26 @@ gen_initrd() {
 	) >"$output"
 }
 
+mkimage_kernel() {
+	local kaddr="$1"
+	local kdesc="$2"
+	local kdata="$3"
+	local uimage="$4"
+
+	mkimage -A arm -O linux -T kernel -C none -a "$kaddr" -e "$kaddr" \
+		-n "$kdesc" -d "$kdata" "$uimage" >&2 1>/dev/null
+}
+
+mkimage_initrd() {
+	local iaddr="$1"
+	local idesc="$2"
+	local idata="$3"
+	local uinitrd="$4"
+
+	mkimage -A arm -O linux -T ramdisk -C gzip -a "$iaddr" -e "$iaddr" \
+		-n "$idesc" -d "$idata" "$uinitrd" >&2 1>/dev/null
+}
+
 backup() {
 	local file="$1"
 
@@ -406,16 +426,15 @@ case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage.buffalo" >&2 1>/dev/null
+		mkimage_kernel 0x00008000 "$desc" "$tmpdir/kernel" \
+			"$tmpdir/uImage.buffalo"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		backup /boot/uImage.buffalo
 		echo "Creating new /boot/uImage.buffalo." >&2
 		mv "$tmpdir/uImage.buffalo" /boot/
 		printf "Generating initrd u-boot image... " >&2
-		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x0 \
-			-e 0x0 -n "$idesc" -d "$ifile" "$tmpdir/initrd.buffalo" >&2 1>/dev/null
+		mkimage_initrd 0x0 "$idesc" "$ifile" "$tmpdir/initrd.buffalo"
 		echo "done." >&2
 		backup /boot/initrd.buffalo
 		echo "Creating new /boot/initrd.buffalo." >&2
@@ -426,8 +445,7 @@ case "$machine" in
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
+		mkimage_kernel 0x00008000 "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
@@ -435,8 +453,7 @@ case "$machine" in
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
 		printf "Generating initramfs u-boot image... " >&2
-		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00800000 \
-			-e 0x00800000 -n "$idesc" -d "$ifile" "$tmpdir/uInitrd" >&2 1>/dev/null
+		mkimage_initrd 0x00800000 "$idesc" "$ifile" "$tmpdir/uInitrd"
 		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		gen_initrd "$tmpdir/uInitrd" "$imtd" "0" || error "failed."
@@ -556,15 +573,13 @@ case "$machine" in
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
 		printf "Generating kernel u-boot image... " >&2
-		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d "$kfile" "$tmpdir/uImage" >&2 1>/dev/null
+		mkimage_kernel 0x00008000 "$desc" "$kfile" "$tmpdir/uImage"
 		echo "done." >&2
 		backup /boot/uImage
 		echo "Creating new /boot/uImage." >&2
 		mv "$tmpdir/uImage" /boot/
 		printf "Generating initrd u-boot image... " >&2
-		mkimage -A arm -O linux -T ramdisk -C gzip -a 0x0 \
-			-e 0x0 -n "$idesc" -d "$ifile" "$tmpdir/uInitrd" >&2 1>/dev/null
+		mkimage_initrd 0x0 "$idesc" "$ifile" "$tmpdir/uInitrd"
 		echo "done." >&2
 		backup /boot/uInitrd
 		echo "Creating new /boot/uInitrd." >&2
@@ -575,8 +590,7 @@ case "$machine" in
 		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage -A arm -O linux -T kernel -C none -a 0x00008000 \
-			-e 0x00008000 -n "$desc" -d "$tmpdir/kernel" "$tmpdir/uImage" >&2 1>/dev/null
+		mkimage_kernel 0x00008000 "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		printf "Flashing kernel... " >&2
