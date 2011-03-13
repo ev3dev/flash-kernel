@@ -219,14 +219,16 @@ mkimage_multi() {
 	echo "done." >&2
 }
 
-backup() {
-	local file="$1"
+backup_and_install() {
+	local source="$1"
+	local dest="$2"
 
-
-	if [ -e "$file" ]; then
-		echo "Creating backup of $file." >&2
-		mv "$file" "$file.bak"
+	if [ -e "$dest" ]; then
+		echo "Creating backup of $dest." >&2
+		mv "$dest" "$dest.bak"
 	fi
+	echo "Creating new $dest." >&2
+	mv "$source" "$dest"
 }
 
 # See http://www.nslu2-linux.org/wiki/Info/BootFlash -- the NSLU2 uses a
@@ -524,13 +526,9 @@ case "$machine" in
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		backup "$boot_kernel_path"
-		echo "Creating new $boot_kernel_path." >&2
-		mv "$tmpdir/uImage" "$boot_kernel_path"
+		backup_and_install "$tmpdir/uImage" "$boot_kernel_path"
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		backup "$boot_initrd_path"
-		echo "Creating new $boot_initrd_path." >&2
-		mv "$tmpdir/uInitrd" "$boot_initrd_path"
+		backup_and_install "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"D-Link DNS-323")
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
@@ -561,18 +559,14 @@ case "$machine" in
 		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		backup "$boot_multi_path"
-		echo "Creating new $boot_multi_path." >&2
-		mv "$tmpdir/uImage" "$boot_multi_path"
+		backup_and_install "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		backup "$boot_multi_path"
-		echo "Creating new $boot_multi_path." >&2
-		mv "$tmpdir/uImage" "$boot_multi_path"
+		backup_and_install "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"Lanner EM7210"|"Thecus N2100")
 		printf "Flashing kernel..." >&2
@@ -654,13 +648,9 @@ case "$machine" in
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
 		mkimage_kernel "$ukaddr" "$desc" "$kfile" "$tmpdir/uImage"
-		backup "$boot_kernel_path"
-		echo "Creating new $boot_kernel_path." >&2
-		mv "$tmpdir/uImage" "$boot_kernel_path"
+		backup_and_install "$tmpdir/uImage" "$boot_kernel_path"
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		backup "$boot_initrd_path"
-		echo "Creating new $boot_initrd_path." >&2
-		mv "$tmpdir/uInitrd" "$boot_initrd_path"
+		backup_and_install "$tmpdir/uImage" "$boot_initrd_path"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
