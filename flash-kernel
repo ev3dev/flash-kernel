@@ -279,6 +279,7 @@ Machine-Id: 1100
 
 Machine: GTA02
 Kernel-Flavors: s3c24xx
+U-Boot-Multi-Address: 0x30008000
 
 Machine: HP Media Vault mv2120
 Kernel-Flavors: orion5x
