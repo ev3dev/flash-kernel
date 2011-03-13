@@ -447,6 +447,16 @@ if [ -n "$mtd_kernel" ]; then
 	fi
 	check_dev_mtdblock "$kmtd"
 	kmtdsize=$(mtdsize "$mtd_kernel")
+	kreqsize=$kfilesize
+	# setting the machine id prepends 8 bytes in front of the kernel
+	if [ -n "$machine_id" ]; then
+		kreqsize=$(($kreqsize + 8))
+	fi
+	# encapsulating in an U-Boot image grows the size by 64 bytes
+	if [ -n "$ukaddr" ]; then
+		kreqsize=$(($kreqsize + 64))
+	fi
+	check_size "$mtd_kernel" $kreqsize $kmtdsize
 fi
 if [ -n "$mtd_initrd" ]; then
 	imtd=$(mtdblock "$mtd_initrd")
@@ -455,6 +465,12 @@ if [ -n "$mtd_initrd" ]; then
 	fi
 	check_dev_mtdblock "$imtd"
 	imtdsize=$(mtdsize "$mtd_initrd")
+	ireqsize=$kfilesize
+	# encapsulating in an U-Boot image grows the size by 64 bytes
+	if [ -n "$uiaddr" ]; then
+		ireqsize=$(($ireqsize + 64))
+	fi
+	check_size "$mtd_initrd" $ireqsize $imtdsize
 fi
 
 tmpdir=""
@@ -486,8 +502,6 @@ case "$machine" in
 		mv "$tmpdir/initrd.buffalo" /boot/
 	;;
 	"D-Link DNS-323")
-		check_size "$mtd_initrd" $(($ifilesize + 64)) $imtdsize
-		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
@@ -538,8 +552,6 @@ case "$machine" in
 	;;
 	"Lanner EM7210")
 		# Really: Intel SS4000-e and compatibles
-		check_size "$mtd_initrd" $ifilesize $imtdsize
-		check_size "$mtd_kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel..." >&2
 		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
 		echo "done." >&2
@@ -632,8 +644,6 @@ case "$machine" in
 		mv "$tmpdir/uInitrd" /boot/
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
-		check_size "$mtd_initrd" $ifilesize $imtdsize
-		check_size "$mtd_kernel" $(($kfilesize + 8 + 64)) $kmtdsize
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
@@ -649,8 +659,6 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Thecus N2100")
-		check_size "$mtd_initrd" $ifilesize $imtdsize
-		check_size "$mtd_kernel" $(($kfilesize + 8)) $kmtdsize
 		printf "Flashing kernel... " >&2
 		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
 		echo "done." >&2
