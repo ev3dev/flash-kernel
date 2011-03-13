@@ -364,6 +364,24 @@ test_mkimage_initrd() {
 }
 add_test test_mkimage_initrd
 
+test_mkimage_multi() {
+    (
+        mkimage() {
+            saved_args="$@"
+        }
+        TEST_FLASH_KERNEL=1
+        . "$flash_kernel"
+        saved_args=""
+        mkimage_multi "0xdeadbeef" "desc" "kinput" "iinput" "output"
+        expected="-A arm -O linux -T multi -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d kinput:iinput output"
+        if [ "$expected" != "$saved_args" ]; then
+            echo "Expected mkimage_multi to be called with \"$expected\" but it was called with \"$saved_args\"" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_mkimage_multi
+
 test_gen_kernel() {
     get_tempfile
     kernel_input="$last_tempfile"

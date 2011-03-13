@@ -202,6 +202,17 @@ mkimage_initrd() {
 		-n "$idesc" -d "$idata" "$uinitrd" >&2 1>/dev/null
 }
 
+mkimage_multi() {
+	local maddr="$1"
+	local mdesc="$2"
+	local kdata="$3"
+	local idata="$4"
+	local umulti="$5"
+
+	mkimage -A arm -O linux -T multi -C none -a "$maddr" -e "$maddr" \
+		-n "$mdesc" -d "$kdata:$idata" "$umulti" >&2 1>/dev/null
+}
+
 backup() {
 	local file="$1"
 
@@ -472,8 +483,7 @@ case "$machine" in
 		if [ $(($(stat -c '%s' "$tmpdir/kernel") % 4)) -eq 0 ]; then
 			echo >> "$tmpdir/kernel"
 		fi
-		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x30008000 \
-			-e 0x30008000 -d "$tmpdir/kernel":"$ifile" "$tmpdir/uImage.bin" >&2 1>/dev/null
+		mkimage_multi 0x30008000 "$desc" "$tmpdir/kernel" "$ifile" "$tmpdir/uImage.bin"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		backup /boot/uImage.bin
@@ -482,8 +492,7 @@ case "$machine" in
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage -A arm -O linux -T multi -C none -n "$desc" -a 0x01600000 \
-			-e 0x01600000 -d "$tmpdir/kernel:$ifile" "$tmpdir/uImage" >&2 1>/dev/null
+		mkimage_multi 0x01600000 "$desc" "$tmpdir/kernel" "$ifile" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
 		backup /boot/uImage
