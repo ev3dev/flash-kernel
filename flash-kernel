@@ -562,6 +562,7 @@ case "$machine" in
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		backup "$boot_multi_path"
+		echo "Creating new $boot_multi_path." >&2
 		mv "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
