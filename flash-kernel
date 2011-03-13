@@ -519,10 +519,13 @@ trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
-		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
-			"$tmpdir/uImage"
+	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
+		input="$kfile"
+		if [ -n "$machine_id" ]; then
+			gen_kernel "$input" "$tmpdir/kernel" "$machine_id"
+			input="$tmpdir/kernel"
+		fi
+		mkimage_kernel "$ukaddr" "$desc" "$input" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		backup_and_install "$tmpdir/uImage" "$boot_kernel_path"
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
@@ -643,12 +646,6 @@ case "$machine" in
 			rm -f "$tmpdir/initrd"
 		) > "$imtd" || error "failed."
 		echo "done." >&2
-	;;
-	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
-		mkimage_kernel "$ukaddr" "$desc" "$kfile" "$tmpdir/uImage"
-		backup_and_install "$tmpdir/uImage" "$boot_kernel_path"
-		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		backup_and_install "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
