@@ -188,8 +188,10 @@ mkimage_kernel() {
 	local kdata="$3"
 	local uimage="$4"
 
+	printf "Generating kernel u-boot image... " >&2
 	mkimage -A arm -O linux -T kernel -C none -a "$kaddr" -e "$kaddr" \
 		-n "$kdesc" -d "$kdata" "$uimage" >&2 1>/dev/null
+	echo "done." >&2
 }
 
 mkimage_initrd() {
@@ -198,8 +200,10 @@ mkimage_initrd() {
 	local idata="$3"
 	local uinitrd="$4"
 
+	printf "Generating initramfs u-boot image... " >&2
 	mkimage -A arm -O linux -T ramdisk -C gzip -a "$iaddr" -e "$iaddr" \
 		-n "$idesc" -d "$idata" "$uinitrd" >&2 1>/dev/null
+	echo "done." >&2
 }
 
 mkimage_multi() {
@@ -209,8 +213,10 @@ mkimage_multi() {
 	local idata="$4"
 	local umulti="$5"
 
+	printf "Generating u-boot image..." >&2
 	mkimage -A arm -O linux -T multi -C none -a "$maddr" -e "$maddr" \
 		-n "$mdesc" -d "$kdata:$idata" "$umulti" >&2 1>/dev/null
+	echo "done." >&2
 }
 
 backup() {
@@ -514,36 +520,28 @@ tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
-		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		echo "done." >&2
 		backup "$boot_kernel_path"
 		echo "Creating new $boot_kernel_path." >&2
 		mv "$tmpdir/uImage" "$boot_kernel_path"
-		printf "Generating initrd u-boot image... " >&2
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		echo "done." >&2
 		backup "$boot_initrd_path"
 		echo "Creating new $boot_initrd_path." >&2
 		mv "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"D-Link DNS-323")
-		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		echo "done." >&2
 		printf "Flashing kernel... " >&2
 		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
-		printf "Generating initramfs u-boot image... " >&2
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		echo "done." >&2
 		printf "Flashing initramfs... " >&2
 		gen_initrd "$tmpdir/uInitrd" "$imtd" "0" || error "failed."
 		echo "done." >&2
@@ -555,7 +553,6 @@ case "$machine" in
 		gen_kernel "$kfile" "/boot/zImage" "$machine_id"
 	;;
 	"GTA02")
-		printf "Generating u-boot image..." >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" ""
 		# Hack to work around a bug in some U-Boot versions:
 		if [ $(($(stat -c '%s' "$tmpdir/kernel") % 4)) -eq 0 ]; then
@@ -564,17 +561,14 @@ case "$machine" in
 		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		echo "done." >&2
 		backup "$boot_multi_path"
 		mv "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
-		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		echo "done." >&2
 		backup "$boot_multi_path"
 		echo "Creating new $boot_multi_path." >&2
 		mv "$tmpdir/uImage" "$boot_multi_path"
@@ -658,25 +652,19 @@ case "$machine" in
 		echo "done." >&2
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
-		printf "Generating kernel u-boot image... " >&2
 		mkimage_kernel "$ukaddr" "$desc" "$kfile" "$tmpdir/uImage"
-		echo "done." >&2
 		backup "$boot_kernel_path"
 		echo "Creating new $boot_kernel_path." >&2
 		mv "$tmpdir/uImage" "$boot_kernel_path"
-		printf "Generating initrd u-boot image... " >&2
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		echo "done." >&2
 		backup "$boot_initrd_path"
 		echo "Creating new $boot_initrd_path." >&2
 		mv "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
-		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		echo "done." >&2
 		printf "Flashing kernel... " >&2
 		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
 		echo "done." >&2
