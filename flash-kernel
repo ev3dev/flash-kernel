@@ -569,7 +569,7 @@ case "$machine" in
 		rm -f "$tmpdir/kernel"
 		backup_and_install "$tmpdir/uImage" "$boot_multi_path"
 	;;
-	"Lanner EM7210"|"Thecus N2100")
+	"Lanner EM7210" | "Thecus N2100")
 		printf "Flashing kernel..." >&2
 		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
 		echo "done." >&2
