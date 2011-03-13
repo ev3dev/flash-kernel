@@ -290,6 +290,7 @@ Kernel-Flavors: kirkwood
 Machine-Id: 2846
 U-Boot-Multi-Address: 0x01600000
 
+# Really: Intel SS4000-e and compatibles
 Machine: Lanner EM7210
 Kernel-Flavors: iop32x
 Machine-Id: 1212
@@ -551,7 +552,6 @@ case "$machine" in
 		mv "$tmpdir/uImage" /boot/
 	;;
 	"Lanner EM7210")
-		# Really: Intel SS4000-e and compatibles
 		printf "Flashing kernel..." >&2
 		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
 		echo "done." >&2
