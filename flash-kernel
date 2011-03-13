@@ -648,7 +648,7 @@ case "$machine" in
 		mkimage_kernel "$ukaddr" "$desc" "$kfile" "$tmpdir/uImage"
 		backup_and_install "$tmpdir/uImage" "$boot_kernel_path"
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		backup_and_install "$tmpdir/uImage" "$boot_initrd_path"
+		backup_and_install "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
