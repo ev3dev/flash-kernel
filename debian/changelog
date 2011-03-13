@@ -11,7 +11,7 @@ flash-kernel (2.39) UNRELEASED; urgency=low
   * Start reworking flash-kernel to be more data-driven.
     - Keep some machine data in a small embedded RFC 2822 style database; such
       as allowed kernel flavors, machine id to set before booting Linux,
-      MTD names, U-Boot load addresses etc.
+      MTD names, U-Boot load addresses, /boot filenames etc.
     - Simplify code in the main "case" statement as much as possible by using
       functions for common code and splitting error handling, initialization,
       and sanity checks out.

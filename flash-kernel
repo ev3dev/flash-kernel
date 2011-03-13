@@ -246,24 +246,32 @@ Kernel-Flavors: orion5x
 Machine-Id: 2913
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
 
 Machine: Buffalo Linkstation Mini
 Kernel-Flavors: orion5x
 Machine-Id: 1858
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
 
 Machine: Buffalo Linkstation Pro/Live
 Kernel-Flavors: orion5x
 Machine-Id: 1585
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
 
 Machine: Buffalo/Revogear Kurobox Pro
 Kernel-Flavors: orion5x
 Machine-Id: 1509
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
 
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
@@ -280,16 +288,19 @@ Machine-Id: 1100
 Machine: GTA02
 Kernel-Flavors: s3c24xx
 U-Boot-Multi-Address: 0x30008000
+Boot-Multi-Path: /boot/uImage.bin
 
 Machine: HP Media Vault mv2120
 Kernel-Flavors: orion5x
 Machine-Id: 1693
 U-Boot-Multi-Address: 0x01600000
+Boot-Multi-Path: /boot/uImage
 
 Machine: HP t5325 Thin Client
 Kernel-Flavors: kirkwood
 Machine-Id: 2846
 U-Boot-Multi-Address: 0x01600000
+Boot-Multi-Path: /boot/uImage
 
 # Really: Intel SS4000-e and compatibles
 Machine: Lanner EM7210
@@ -307,31 +318,43 @@ Machine: Marvell GuruPlug Reference Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell OpenRD Base Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell OpenRD Client Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell OpenRD Ultimate Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell eSATA SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: QNAP TS-109/TS-209
 Kernel-Flavors: orion5x
@@ -365,6 +388,8 @@ Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Addr: 0x00008000
 U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Thecus N2100
 Kernel-Flavors: iop32x
@@ -436,6 +461,9 @@ mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
+boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
+boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
+boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -489,19 +517,18 @@ case "$machine" in
 		printf "Generating kernel u-boot image... " >&2
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
-			"$tmpdir/uImage.buffalo"
+			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
-		backup /boot/uImage.buffalo
-		echo "Creating new /boot/uImage.buffalo." >&2
-		mv "$tmpdir/uImage.buffalo" /boot/
+		backup "$boot_kernel_path"
+		echo "Creating new $boot_kernel_path." >&2
+		mv "$tmpdir/uImage" "$boot_kernel_path"
 		printf "Generating initrd u-boot image... " >&2
-		mkimage_initrd "$uiaddr" "$idesc" "$ifile" \
-			"$tmpdir/initrd.buffalo"
+		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
 		echo "done." >&2
-		backup /boot/initrd.buffalo
-		echo "Creating new /boot/initrd.buffalo." >&2
-		mv "$tmpdir/initrd.buffalo" /boot/
+		backup "$boot_initrd_path"
+		echo "Creating new $boot_initrd_path." >&2
+		mv "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"D-Link DNS-323")
 		printf "Generating kernel u-boot image... " >&2
@@ -535,11 +562,11 @@ case "$machine" in
 			echo >> "$tmpdir/kernel"
 		fi
 		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
-			"$tmpdir/uImage.bin"
+			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
-		backup /boot/uImage.bin
-		mv "$tmpdir/uImage.bin" /boot/
+		backup "$boot_multi_path"
+		mv "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"HP Media Vault mv2120" | "HP t5325 Thin Client")
 		printf "Generating kernel u-boot image... " >&2
@@ -548,9 +575,9 @@ case "$machine" in
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
 		echo "done." >&2
-		backup /boot/uImage
-		echo "Creating new /boot/uImage." >&2
-		mv "$tmpdir/uImage" /boot/
+		backup "$boot_multi_path"
+		echo "Creating new $boot_multi_path." >&2
+		mv "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"Lanner EM7210"|"Thecus N2100")
 		printf "Flashing kernel..." >&2
@@ -634,15 +661,15 @@ case "$machine" in
 		printf "Generating kernel u-boot image... " >&2
 		mkimage_kernel "$ukaddr" "$desc" "$kfile" "$tmpdir/uImage"
 		echo "done." >&2
-		backup /boot/uImage
-		echo "Creating new /boot/uImage." >&2
-		mv "$tmpdir/uImage" /boot/
+		backup "$boot_kernel_path"
+		echo "Creating new $boot_kernel_path." >&2
+		mv "$tmpdir/uImage" "$boot_kernel_path"
 		printf "Generating initrd u-boot image... " >&2
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
 		echo "done." >&2
-		backup /boot/uInitrd
-		echo "Creating new /boot/uInitrd." >&2
-		mv "$tmpdir/uInitrd" /boot/
+		backup "$boot_initrd_path"
+		echo "Creating new $boot_initrd_path." >&2
+		mv "$tmpdir/uInitrd" "$boot_initrd_path"
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
 		printf "Generating kernel u-boot image... " >&2
