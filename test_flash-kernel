@@ -375,7 +375,7 @@ test_gen_kernel() {
 }
 add_test test_gen_kernel
 
-test_gen_initrd() {
+test_flash_initrd() {
     get_tempfile
     initrd_input="$last_tempfile"
     echo "foo" >"$initrd_input"
@@ -384,15 +384,15 @@ test_gen_initrd() {
     (
         TEST_FLASH_KERNEL=1
         . "$flash_kernel"
-        gen_initrd "$initrd_input" "$initrd_output" 3
+        flash_initrd "$initrd_input" "$initrd_output" 3 2>/dev/null
         result="$(od -t x1 "$initrd_output")"
         expected="0000000 66 6f 6f 0a 00 00 00
 0000007"
         if [ "$result" != "$expected" ]; then
-            echo "With 3 byes of padding, expected \"$expected\" but got \"$result\"" >&2
+            echo "With 3 bytes of padding, expected \"$expected\" but got \"$result\"" >&2
             exit 1
         fi
-        gen_initrd "$initrd_input" "$initrd_output" 0
+        flash_initrd "$initrd_input" "$initrd_output" 0 2>/dev/null
         result="$(od -t x1 "$initrd_output")"
         expected="0000000 66 6f 6f 0a
 0000004"
@@ -402,7 +402,7 @@ test_gen_initrd() {
         fi
     )
 }
-add_test test_gen_initrd
+add_test test_flash_initrd
 
 if [ $# = 0 ]; then
     run_tests $all_tests
