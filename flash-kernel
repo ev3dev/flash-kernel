@@ -505,7 +505,7 @@ if [ -n "$mtd_initrd" ]; then
 	fi
 	check_dev_mtdblock "$imtd"
 	imtdsize=$(mtdsize "$mtd_initrd")
-	ireqsize=$kfilesize
+	ireqsize=$ifilesize
 	# encapsulating in an U-Boot image grows the size by 64 bytes
 	if [ -n "$uiaddr" ]; then
 		ireqsize=$(($ireqsize + 64))
