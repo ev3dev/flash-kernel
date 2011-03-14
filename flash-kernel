@@ -521,17 +521,42 @@ trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
-		input="$kfile"
+	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
+		kernel="$kfile"
 		if [ -n "$machine_id" ]; then
-			gen_kernel "$input" "$tmpdir/kernel" "$machine_id"
-			input="$tmpdir/kernel"
+			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
+			kernel="$tmpdir/kernel"
 		fi
-		mkimage_kernel "$ukaddr" "$desc" "$input" "$tmpdir/uImage"
-		rm -f "$tmpdir/kernel"
-		backup_and_install "$tmpdir/uImage" "$boot_kernel_path"
-		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		backup_and_install "$tmpdir/uInitrd" "$boot_initrd_path"
+		if [ -n "$ukaddr" ]; then
+			mkimage_kernel "$ukaddr" "$desc" "$kernel" \
+				"$tmpdir/uImage"
+			kernel="$tmpdir/uImage"
+			rm -f "$tmpdir/kernel"
+		fi
+		if [ -n "$umaddr" ]; then
+			mkimage_multi "$umaddr" "$desc" "$kernel" "$ifile" \
+				"$tmpdir/uImage"
+			rm -f "$tmpdir/kernel"
+		fi
+		if [ -n "$boot_kernel_path" ]; then
+			# don't mv the original kernel
+			if [ "$kernel" != "$kfile" ]; then
+				backup_and_install "$kernel" \
+					"$boot_kernel_path"
+			else
+				# TODO add support for kernel symlink
+				:
+			fi
+		fi
+		if [ -n "$boot_multi_path" ]; then
+			backup_and_install "$tmpdir/uImage" "$boot_multi_path"
+		fi
+		if [ -n "$uiaddr" ]; then
+			mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
+		fi
+		if [ -n "$boot_initrd_path" ]; then
+			backup_and_install "$tmpdir/uInitrd" "$boot_initrd_path"
+		fi
 	;;
 	"D-Link DNS-323")
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
@@ -555,13 +580,6 @@ case "$machine" in
 		if [ $(($(stat -c '%s' "$tmpdir/kernel") % 4)) -eq 0 ]; then
 			echo >> "$tmpdir/kernel"
 		fi
-		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
-			"$tmpdir/uImage"
-		rm -f "$tmpdir/kernel"
-		backup_and_install "$tmpdir/uImage" "$boot_multi_path"
-	;;
-	"HP Media Vault mv2120" | "HP t5325 Thin Client")
-		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_multi "$umaddr" "$desc" "$tmpdir/kernel" "$ifile" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
