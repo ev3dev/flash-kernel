@@ -155,10 +155,10 @@ gen_kernel() {
 	local output="$2"
 	local machine_id="$3"
 
-	(
+	{
 		set_machine_id "$machine_id"
 		cat "$input"
-	) >"$output"
+	} >"$output"
 }
 
 gen_initrd() {
@@ -166,12 +166,12 @@ gen_initrd() {
 	local output="$2"
 	local pad="$3"
 
-	(
+	{
 		cat "$input"
 		if [ "$pad" -gt 0 ]; then
 			dd if=/dev/zero bs="$pad" count=1 2>/dev/null
 		fi
-	) >"$output"
+	} >"$output"
 }
 
 mkimage_kernel() {
@@ -619,7 +619,7 @@ case "$machine" in
 		boundary=1441792 # 0x00160000
 		ksize1=$(expr $boundary - $offset - 16)
 		printf "Flashing kernel: " >&2
-		(
+		{
 			sercomm_header $(expr $kfilesize + 16)
 			dd if="$kfile" of="$tmpdir/kpart1" bs=$ksize1 count=1 2>/dev/null
 			nslu2_swap "$tmpdir/kpart1"
@@ -628,15 +628,15 @@ case "$machine" in
 			dd if="$kfile" of="$tmpdir/kpart2" ibs=$ksize1 skip=1 2>/dev/null
 			nslu2_swap "$tmpdir/kpart2"
 			rm -f "$tmpdir/kpart2"
-		) > "$kmtd" || error "failed."
+		} > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
 		dd if="$ifile" of="$tmpdir/initrd" ibs=$(($imtdsize - 16)) conv=sync 2>/dev/null
-		(
+		{
 			sercomm_header $ifilesize
 			nslu2_swap "$tmpdir/initrd"
 			rm -f "$tmpdir/initrd"
-		) > "$imtd" || error "failed."
+		} > "$imtd" || error "failed."
 		echo "done." >&2
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
