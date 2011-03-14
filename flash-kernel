@@ -161,15 +161,17 @@ gen_kernel() {
 	} >"$output"
 }
 
-gen_initrd() {
-	local input="$1"
-	local output="$2"
+flash_initrd() {
+	local input_file="$1"
+	local output_mtd="$2"
 	local pad="$3"
 
+	printf "Flashing initramfs... " >&2
 	{
-		cat "$input"
-		dd if=/dev/zero bs="$pad" count=1 2>/dev/null
-	} >"$output"
+		cat "$input_file"
+		dd if=/dev/zero bs=$pad count=1 2>/dev/null
+	} >"$output_mtd" || error "failed."
+	echo "done." >&2
 }
 
 mkimage_kernel() {
@@ -531,9 +533,7 @@ case "$machine" in
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		printf "Flashing initramfs... " >&2
-		gen_initrd "$tmpdir/uInitrd" "$imtd" "0" || error "failed."
-		echo "done." >&2
+		flash_initrd "$tmpdir/uInitrd" "$imtd" 0
 		rm -f "$tmpdir/uInitrd"
 	;;
 	"GLAN Tank")
@@ -563,10 +563,8 @@ case "$machine" in
 		printf "Flashing kernel..." >&2
 		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
 		echo "done." >&2
-		printf "Flashing initramfs... " >&2
 		pad=$(expr $imtdsize - $ifilesize)
-		gen_initrd "$ifile" "$imtd" "$pad" || error "failed."
-		echo "done." >&2
+		flash_initrd "$ifile" "$imtd" $pad
 	;;
 	"Linksys NSLU2")
 		case "$(dpkg --print-architecture)" in
@@ -645,10 +643,8 @@ case "$machine" in
 		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
 		echo "done." >&2
 		rm -f "$tmpdir/uImage"
-		printf "Flashing initramfs... " >&2
 		pad=$(expr $imtdsize - $ifilesize)
-		gen_initrd "$ifile" "$imtd" "$pad" || error "failed."
-		echo "done." >&2
+		flash_initrd "$ifile" "$imtd" $pad
 	;;
 esac
 }
