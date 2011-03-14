@@ -521,7 +521,7 @@ trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
+	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
 		kernel="$kfile"
 		if [ -n "$machine_id" ]; then
 			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
@@ -547,6 +547,9 @@ case "$machine" in
 				# TODO add support for kernel symlink
 				:
 			fi
+		elif [ -n "$kmtd" ]; then
+			flash_kernel "$tmpdir/uImage" "$kmtd" ""
+			rm -f "$tmpdir/uImage"
 		fi
 		if [ -n "$boot_multi_path" ]; then
 			backup_and_install "$tmpdir/uImage" "$boot_multi_path"
@@ -556,18 +559,10 @@ case "$machine" in
 		fi
 		if [ -n "$boot_initrd_path" ]; then
 			backup_and_install "$tmpdir/uInitrd" "$boot_initrd_path"
+		elif [ -n "$imtd" ]; then
+			flash_initrd "$tmpdir/uInitrd" "$imtd" 0
+			rm -f "$tmpdir/uInitrd"
 		fi
-	;;
-	"D-Link DNS-323")
-		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
-		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
-			"$tmpdir/uImage"
-		rm -f "$tmpdir/kernel"
-		flash_kernel "$tmpdir/uImage" "$kmtd" ""
-		rm -f "$tmpdir/uImage"
-		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
-		flash_initrd "$tmpdir/uInitrd" "$imtd" 0
-		rm -f "$tmpdir/uInitrd"
 	;;
 	"GLAN Tank")
 		rm -f /boot/initrd /boot/zImage
