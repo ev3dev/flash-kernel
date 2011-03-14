@@ -271,25 +271,6 @@ test_get_machine_field() {
 }
 add_test test_get_machine_field
 
-test_get_machine_id() {
-    (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
-        machine="GLAN Tank"
-        machine_id="$(get_machine_id "$machine")"
-        if [ "$machine_id" != "1100" ]; then
-            echo "Expected Machine-Id to be 1100 but got $machine_id" >&2
-            exit 1
-        fi
-        machine="Marvell SheevaPlug Reference Board"
-        if machine_id="$(get_machine_id "$machine")"; then
-            echo "Expected get_machine_id to fail on machine without Machine-Id field but it succeeded" >&2
-            exit 1
-        fi
-    )
-}
-add_test test_get_machine_id
-
 test_set_machine_id() {
     (
         TEST_FLASH_KERNEL=1

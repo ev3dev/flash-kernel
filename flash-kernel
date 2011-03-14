@@ -133,12 +133,6 @@ get_machine_field() {
 	}
 }
 
-get_machine_id() {
-	local machine="$1"
-
-	get_machine_field "$machine" "Machine-Id"
-}
-
 # output ARM instructions to set machine number; argument is the decimal
 # machine number as found in linux/arch/arm/tools/mach-types
 set_machine_id() {
@@ -457,7 +451,7 @@ if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
 	fi
 fi
 
-machine_id="$(get_machine_id "$machine")" || :
+machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
