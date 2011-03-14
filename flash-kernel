@@ -133,12 +133,6 @@ get_machine_field() {
 	}
 }
 
-get_machine_kflavors() {
-	local machine="$1"
-
-	get_machine_field "$machine" "Kernel-Flavors"
-}
-
 get_machine_id() {
 	local machine="$1"
 
@@ -456,7 +450,7 @@ if ! check_supported "$machine"; then
 	error "Unsupported platform."
 fi
 
-if kflavors="$(get_machine_kflavors "$machine")"; then
+if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
 	if ! check_kflavors "$kfile_suffix" $kflavors; then
 		echo "Kernel suffix $kfile_suffix does not match any of the expected flavors ($kflavors), therefore not writing it to flash." >&2
 		exit 0
