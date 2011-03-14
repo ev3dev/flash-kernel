@@ -434,8 +434,8 @@ fi
 if [ ! -e $kfile ] || [ ! -e $ifile ]; then
 	error "Can't find $kfile and $ifile"
 fi
-kfilesize=$(wc -c "$kfile" | awk '{print $1}')
-ifilesize=$(wc -c "$ifile" | awk '{print $1}')
+kfilesize=$(stat -c '%s' "$kfile")
+ifilesize=$(stat -c '%s' "$ifile")
 
 if [ -L "$kfile" ]; then
 	kfile=$(readlink -e "$kfile")
