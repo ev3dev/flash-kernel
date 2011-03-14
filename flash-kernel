@@ -137,9 +137,15 @@ get_machine_field() {
 # machine number as found in linux/arch/arm/tools/mach-types
 set_machine_id() {
 	local machine_id="$1"
+	local high
+	local low
 
-	local high="$(printf "%02x" $(($machine_id / 256)))"
-	local low="$(printf "%02x" $(($machine_id % 256)))"
+	if [ -z "$machine_id" ]; then
+		return
+	fi
+
+	high="$(printf "%02x" $(($machine_id / 256)))"
+	low="$(printf "%02x" $(($machine_id % 256)))"
 
 	devio "wl 0xe3a01c$high,4" "wl 0xe38110$low,4"
 }
@@ -150,9 +156,7 @@ gen_kernel() {
 	local machine_id="$3"
 
 	(
-		if [ -n "$machine_id" ]; then
-			set_machine_id "$machine_id"
-		fi
+		set_machine_id "$machine_id"
 		cat "$input"
 	) >"$output"
 }

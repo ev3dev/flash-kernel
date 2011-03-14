@@ -279,7 +279,13 @@ test_set_machine_id() {
         expected="0000000 1c08 e3a0 1031 e381
 0000010"
         if [ "$arm_code" != "$expected" ]; then
-            echo "Expected \"$expected\" but got \"$arm_code\"" >&2
+            echo "Expected \"$expected\" for machine-id 2097 but got \"$arm_code\"" >&2
+            exit 1
+        fi
+        arm_code="$(set_machine_id "" | od -x)"
+        expected="0000000"
+        if [ "$arm_code" != "$expected" ]; then
+            echo "Expected \"$expected\" for empty machine-id but got \"$arm_code\"" >&2
             exit 1
         fi
     )
