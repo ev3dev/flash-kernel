@@ -161,6 +161,16 @@ gen_kernel() {
 	} >"$output"
 }
 
+flash_kernel() {
+	local input_file="$1"
+	local output_mtd="$2"
+	local machine_id="$3"
+
+	printf "Flashing kernel... " >&2
+	gen_kernel "$input_file" "$output_mtd" "$machine_id" || error "failed."
+	echo "done." >&2
+}
+
 flash_initrd() {
 	local input_file="$1"
 	local output_mtd="$2"
@@ -528,9 +538,7 @@ case "$machine" in
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" \
 			"$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		printf "Flashing kernel... " >&2
-		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
-		echo "done." >&2
+		flash_kernel "$tmpdir/uImage" "$kmtd" ""
 		rm -f "$tmpdir/uImage"
 		mkimage_initrd "$uiaddr" "$idesc" "$ifile" "$tmpdir/uInitrd"
 		flash_initrd "$tmpdir/uInitrd" "$imtd" 0
@@ -560,9 +568,7 @@ case "$machine" in
 		backup_and_install "$tmpdir/uImage" "$boot_multi_path"
 	;;
 	"Lanner EM7210" | "Thecus N2100")
-		printf "Flashing kernel..." >&2
-		gen_kernel "$kfile" "$kmtd" "$machine_id" || error "failed."
-		echo "done." >&2
+		flash_kernel "$kfile" "$kmtd" "$machine_id"
 		pad=$(expr $imtdsize - $ifilesize)
 		flash_initrd "$ifile" "$imtd" $pad
 	;;
@@ -639,9 +645,7 @@ case "$machine" in
 		gen_kernel "$kfile" "$tmpdir/kernel" "$machine_id"
 		mkimage_kernel "$ukaddr" "$desc" "$tmpdir/kernel" "$tmpdir/uImage"
 		rm -f "$tmpdir/kernel"
-		printf "Flashing kernel... " >&2
-		gen_kernel "$tmpdir/uImage" "$kmtd" "" || error "failed."
-		echo "done." >&2
+		flash_kernel "$tmpdir/uImage" "$kmtd" ""
 		rm -f "$tmpdir/uImage"
 		pad=$(expr $imtdsize - $ifilesize)
 		flash_initrd "$ifile" "$imtd" $pad
