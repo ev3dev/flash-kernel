@@ -599,7 +599,7 @@ case "$machine" in
 	;;
 	"Lanner EM7210" | "Thecus N2100")
 		flash_kernel "$kfile" "$kmtd" "$machine_id"
-		pad=$(expr $imtdsize - $ifilesize)
+		pad=$(($imtdsize - $ifilesize))
 		flash_initrd "$ifile" "$imtd" $pad
 	;;
 	"Linksys NSLU2")
@@ -649,10 +649,10 @@ case "$machine" in
 		# kernel into two and write them to flash with two Sercomm
 		# headers.
 		boundary=1441792 # 0x00160000
-		ksize1=$(expr $boundary - $offset - 16)
+		ksize1=$(($boundary - $offset - 16))
 		printf "Flashing kernel: " >&2
 		{
-			sercomm_header $(expr $kfilesize + 16)
+			sercomm_header $(($kfilesize + 16))
 			dd if="$kfile" of="$tmpdir/kpart1" bs=$ksize1 count=1 2>/dev/null
 			nslu2_swap "$tmpdir/kpart1"
 			rm -f "$tmpdir/kpart1"
