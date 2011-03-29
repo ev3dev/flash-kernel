@@ -28,9 +28,8 @@ msgstr ""
 #. some flashable memory used by many embedded devices
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "ກຳລັງຕັ້ງຄ່າລະບົບພື້ນຖານ"
+msgstr "ກຳລັງຕັງຄ່າໜ່ວຍຄວາມຈຳແຟັດຊ໌ໃຫ້ບູດລະບົບ"
 
 #. Type: text
 #. Description
@@ -38,9 +37,8 @@ msgstr "ກຳລັງຕັ້ງຄ່າລະບົບພື້ນຖານ
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "ກຳລັງແຕກແພກເກັດລະບົບພື້ນຖານ"
+msgstr "ກຳລັງເຮັດໃຫ້ລະບົບບູດໄດ້"
 
 #. Type: text
 #. Description
@@ -48,9 +46,8 @@ msgstr "ກຳລັງແຕກແພກເກັດລະບົບພື້ນ
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "ກຳລັງແຕກແພກເກັດຂອງລະບົບພື້ນຖານ..."
+msgstr "ກຳລັງຕຽມພ້ອມລະບົບ..."
 
 #. Type: text
 #. Description
@@ -58,9 +55,8 @@ msgstr "ກຳລັງແຕກແພກເກັດຂອງລະບົບພ
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "ກຳລັງເລືອກເຄີເນວເພື່ອຕິດຕັ້ງ..."
+msgstr "ກຳລັງຂຽນເຄີເນວລົງໃນໜ່ວຍຄວາມຈຳແຟັດຊ໌..."
 
 #. Type: text
 #. Description
@@ -70,7 +66,7 @@ msgstr "ກຳລັງເລືອກເຄີເນວເພື່ອຕິດ
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "ກຳລັງສ້າງອີເມວສຳລັບບູດໄດ້ໃນດິດສ໌..."
 
 #. Type: text
 #. Description
@@ -81,4 +77,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "ເຮັດໃຫ້ລະບົບບູດໄດ້"
