@@ -328,42 +328,42 @@ Mtd-Initrd: Ramdisk
 
 Machine: Marvell GuruPlug Reference Board
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell OpenRD Base Board
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell OpenRD Client Board
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell OpenRD Ultimate Board
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Marvell eSATA SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
@@ -398,7 +398,7 @@ U-Boot-Kernel-Address: 0x00008000
 
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
-U-Boot-Kernel-Addr: 0x00008000
+U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
