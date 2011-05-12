@@ -24,6 +24,9 @@ flash-kernel (2.40) UNRELEASED; urgency=low
   * Add armhf to architecture list (Closes: #620888)
     - add mx5 as armhf subarchitecture
 
+  [ Martin Michlmayr ]
+  * Remove myself from the Uploaders field.
+
  -- Hector Oron <zumbi@debian.org>  Thu, 21 Apr 2011 21:23:31 +0100
 
 flash-kernel (2.39) unstable; urgency=low
