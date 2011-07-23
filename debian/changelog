@@ -25,6 +25,9 @@ flash-kernel (2.40) UNRELEASED; urgency=low
     - add mx5 as armhf subarchitecture
   * Add myself to Uploaders field.
 
+  [ Julian Andres Klode ]
+  * Support for Toshiba AC100 (Closes: #631396)
+
   [ Martin Michlmayr ]
   * Remove myself from the Uploaders field.
 

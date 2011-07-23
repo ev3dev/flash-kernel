@@ -3,6 +3,7 @@
 # Copyright (C) 2006  Joey Hess  <joeyh@debian.org>
 # Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011  Martin Michlmayr <tbm@cyrius.com>
 # Copyright (C) 2011  Loïc Minier <lool@dooz.org>
+# Copyright (C) 2011  Julian Andres Klode <jak@debian.org>
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -251,6 +252,31 @@ nslu2_swap() {
 	fi
 }
 
+android_find_mmc_bootpart() {
+	local size
+	for dev in /dev/mmcblk?p?; do
+		size=$(abootimg -i $dev 2>/dev/null| grep "image size"|cut -d ' ' -f5)
+		if [ $size ] && \
+		   [ -z "$boot_minsize" -o "$size" -gt "$boot_minsize" ]; then
+			echo $dev
+			return 0
+		fi
+	done
+	error "Could not find an Android boot partition on a MMC device"
+}
+
+android_flash() {
+	local device="$1"
+	local args=""
+	printf "Flashing kernel and initramfs to $device... " >&2
+
+	# AC100: Configuration file. Should be replaced by something more generic
+	[ ! -e /boot/bootimg.cfg ] || args="$args -f /boot/bootimg.cfg"
+
+	abootimg -u $device $args -k $kfile -r $ifile >/dev/null || error "failed."
+	echo "done." >&2
+}
+
 # somewhat RFC2822 based, but case sensitive, not tolerant to spaces etc.
 MACHINE_DB="
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
@@ -408,6 +434,10 @@ Kernel-Flavors: iop32x
 Machine-Id: 1101
 Mtd-Kernel: kernel
 Mtd-Initrd: ramdisk
+
+Machine: Toshiba AC100 / Dynabook AZ
+Boot-Type: Android
+Boot-Device-Minimal-Size: 5242881
 "
 
 main() {
@@ -476,6 +506,8 @@ umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
+boot_type="$(get_machine_field "$machine" "Boot-Type")" || :
+boot_minsize="$(get_machine_field "$machine" "Boot-Device-Minimal-Size")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -521,6 +553,15 @@ cleanup_tmpdir() {
 }
 trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
+
+
+case "$boot_type" in
+	"Android")
+		android_bootpart=$(android_find_mmc_bootpart)
+		android_flash $android_bootpart
+	;;
+esac
+
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x" | "Seagate FreeAgent DockStar")
