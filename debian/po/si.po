@@ -12,13 +12,13 @@
 # in doc/i18n/i18n.txt
 #
 #
-# Danishka Navin <danishka@gmail.com>, 2009.
+# Danishka Navin <danishka@gmail.com>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-11-13 23:01+0530\n"
+"PO-Revision-Date: 2011-07-26 22:24+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
@@ -33,9 +33,8 @@ msgstr ""
 #. some flashable memory used by many embedded devices
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
-#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "මූලික පද්ධතිය සකසමින්"
+msgstr "පද්ධතිය පණගැන්වීමට ෆ්ලෑශ්මතකය සකසමින්"
 
 #. Type: text
 #. Description
@@ -43,9 +42,8 @@ msgstr "මූලික පද්ධතිය සකසමින්"
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
-#, fuzzy
 msgid "Making the system bootable"
-msgstr "මූලික පද්ධතිය විසුරුවමින්"
+msgstr "පද්ධතිය ආරම්භකලහැකි ලෙස සකසමින්"
 
 #. Type: text
 #. Description
@@ -53,9 +51,8 @@ msgstr "මූලික පද්ධතිය විසුරුවමින්"
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
-#, fuzzy
 msgid "Preparing the system..."
-msgstr "පද්ධතිය ස්ථාපනය කරමින්..."
+msgstr "පද්ධතිය සූදානම් කරමින්..."
 
 #. Type: text
 #. Description
@@ -63,9 +60,8 @@ msgstr "පද්ධතිය ස්ථාපනය කරමින්..."
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
-#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "ස්ථාපනයට කර්නලය (න්‍යෂඨිය) තෝරමින්..."
+msgstr "ෆ්ලෑශ් මතකයට කර්නලය ලියමින්..."
 
 #. Type: text
 #. Description
@@ -75,7 +71,7 @@ msgstr "ස්ථාපනයට කර්නලය (න්‍යෂඨිය) �
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "ආරම්භක පිළිබිඹුව තැටිය මත සකසමින්..."
 
 #. Type: text
 #. Description
@@ -86,4 +82,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "පද්ධතිය ආරම්භකලහැකි තත්වයට හරවන්න"
