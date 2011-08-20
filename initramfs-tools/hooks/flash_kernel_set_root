@@ -38,6 +38,9 @@ root_type() {
 		"D-Link DNS-323")
 			echo "override"
 		;;
+		"Genesi EfikaMX nettop" | "Genesi Efika Smartbook")
+			echo "default"
+		;;
 		"GLAN Tank")
 			echo "override"
 		;;

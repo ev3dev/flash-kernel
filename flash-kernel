@@ -319,6 +319,26 @@ Mtd-Initrd: File System
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x00800000
 
+Machine: Genesi Efika Smartbook
+Kernel-Flavors: mx5
+U-Boot-Kernel-Address: 0x90008000
+U-Boot-Initrd-Address: 0x0
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Name: bootscr.mx5
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-Script-Path: /boot/boot.scr
+
+Machine: Genesi EfikaMX nettop
+Kernel-Flavors: mx5
+U-Boot-Kernel-Address: 0x90008000
+U-Boot-Initrd-Address: 0x0
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Name: bootscr.mx5
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-Script-Path: /boot/boot.scr
+
 Machine: GLAN Tank
 Kernel-Flavors: iop32x
 Machine-Id: 1100
@@ -570,7 +590,27 @@ esac
 
 
 case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell DB-78x00-BP Development Board" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x" | "Seagate FreeAgent DockStar")
+	"Buffalo Linkstation LiveV3 (LS-CHL)" |\
+	"Buffalo Linkstation Mini" |\
+	"Buffalo Linkstation Pro/Live" |\
+	"Buffalo/Revogear Kurobox Pro" |\
+	"D-Link DNS-323" |\
+	"Genesi Efika Smartbook" |\
+	"Genesi EfikaMX nettop" |\
+	"HP Media Vault mv2120" |\
+	"HP t5325 Thin Client" |\
+	"Marvell DB-78x00-BP Development Board" |\
+	"Marvell GuruPlug Reference Board" |\
+	"Marvell OpenRD Base Board" |\
+	"Marvell OpenRD Client Board" |\
+	"Marvell OpenRD Ultimate Board" |\
+	"Marvell SheevaPlug Reference Board" |\
+	"Marvell eSATA SheevaPlug Reference Board" |\
+	"QNAP TS-109/TS-209" |\
+	"QNAP TS-119/TS-219" |\
+	"QNAP TS-409" |\
+	"QNAP TS-41x" |\
+	"Seagate FreeAgent DockStar")
 		kernel="$kfile"
 		initrd="$ifile"
 		if [ -n "$machine_id" ]; then

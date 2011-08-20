@@ -11,6 +11,9 @@ case "`archdetect`" in
 	arm*/kirkwood)
 		exit 0
 	;;
+	arm*/mx5)
+		exit 0
+	;;
 	arm*/orion5x)
 		exit 0
 	;;
