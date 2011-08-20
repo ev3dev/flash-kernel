@@ -1,7 +1,7 @@
-flash-kernel (2.40) UNRELEASED; urgency=low
+flash-kernel (3.0~rc.1) UNRELEASED; urgency=low
 
   [ Loïc Minier ]
-  * Bump Standards-Version to 3.9.1.
+  * Bump Standards-Version to 3.9.2.
   * Add a testsuite and run it during build; change code a bit to be more
     easily tested.
   * Start reworking flash-kernel to be more data-driven.
@@ -26,6 +26,7 @@ flash-kernel (2.40) UNRELEASED; urgency=low
   * Add myself to Uploaders field.
   * Add preliminary mv78xx0 support. (Closes: #594878)
   * Add build dependency on devio, needed to run test-suite.
+  * Upgrade major version to 3.0~rc.1
 
   [ Julian Andres Klode ]
   * Support for Toshiba AC100 (Closes: #631396)
@@ -33,7 +34,7 @@ flash-kernel (2.40) UNRELEASED; urgency=low
   [ Martin Michlmayr ]
   * Remove myself from the Uploaders field.
 
- -- Hector Oron <zumbi@debian.org>  Sat, 20 Aug 2011 23:47:02 +0100
+ -- Hector Oron <zumbi@debian.org>  Sat, 20 Aug 2011 23:49:45 +0100
 
 flash-kernel (2.39) unstable; urgency=low
 
