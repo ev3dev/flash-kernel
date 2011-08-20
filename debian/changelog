@@ -24,6 +24,7 @@ flash-kernel (2.40) UNRELEASED; urgency=low
   * Add armhf to architecture list (Closes: #620888)
     - add mx5 as armhf subarchitecture
   * Add myself to Uploaders field.
+  * Add preliminary mv78xx0 support. (Closes: #594878)
 
   [ Julian Andres Klode ]
   * Support for Toshiba AC100 (Closes: #631396)
@@ -31,7 +32,7 @@ flash-kernel (2.40) UNRELEASED; urgency=low
   [ Martin Michlmayr ]
   * Remove myself from the Uploaders field.
 
- -- Hector Oron <zumbi@debian.org>  Sun, 12 Jun 2011 13:36:53 +0100
+ -- Hector Oron <zumbi@debian.org>  Sat, 20 Aug 2011 23:37:07 +0100
 
 flash-kernel (2.39) unstable; urgency=low
 

@@ -65,6 +65,9 @@ root_type() {
 		"QNAP TS-41x")
 			echo "override"
 		;;
+		"Marvell DB-78x00-BP Development Board")
+			echo "default"
+		;;
 		"Marvell GuruPlug Reference Board")
 			echo "default"
 		;;

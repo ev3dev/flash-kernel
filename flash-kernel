@@ -352,6 +352,12 @@ Kernel-Flavors: ixp4xx
 Mtd-Kernel: Kernel
 Mtd-Initrd: Ramdisk
 
+Machine: Marvell DB-78x00-BP Development Board
+U-Boot-Kernel-Address: 0x2000000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
 Machine: Marvell GuruPlug Reference Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Address: 0x00008000
@@ -564,7 +570,7 @@ esac
 
 
 case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x" | "Seagate FreeAgent DockStar")
+	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro" | "D-Link DNS-323" | "HP Media Vault mv2120"  | "HP t5325 Thin Client" | "Marvell DB-78x00-BP Development Board" | "Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x" | "Seagate FreeAgent DockStar")
 		kernel="$kfile"
 		initrd="$ifile"
 		if [ -n "$machine_id" ]; then
