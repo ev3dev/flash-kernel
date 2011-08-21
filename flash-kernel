@@ -211,6 +211,18 @@ mkimage_initrd() {
 	echo "done." >&2
 }
 
+mkimage_script() {
+	local baddr="$1"
+	local bdesc="$2"
+	local bdata="$3"
+	local bscript="$4"
+	
+	printf "Generating u-boot script image... " >&2
+	mkimage -A arm -O linux -a "$baddr" -e "$baddr" -T script -C none \
+		-n "$bdesc" -d "$bdata" "$bscript" >&2 1>/dev/null
+	echo "done." >&2
+}
+
 mkimage_multi() {
 	local maddr="$1"
 	local mdesc="$2"
@@ -528,12 +540,15 @@ mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
+ubaddr="$(get_machine_field "$machine" "U-Boot-Script-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
+boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 boot_type="$(get_machine_field "$machine" "Boot-Type")" || :
 boot_minsize="$(get_machine_field "$machine" "Boot-Device-Minimal-Size")" || :
+ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -666,6 +681,23 @@ case "$machine" in
 			fi
 			flash_initrd "$initrd" "$imtd" $ipad
 			rm -f "$tmpdir/uInitrd"
+		fi
+		if [ -n "$ubfile" ]; then
+			ubdir="/boot/flash-kernel/"
+			ubdesc="Debian U-Boot Boot Script"
+			if [ ! -d "$ubdir" ]; then 
+				mkdir -p "$ubdir"
+				# XXX HACK: It needs better way of doing this
+				rootfs="\/dev\/sda2"
+				sed -e "s/@ROOTPARTITION@/$rootfs/" \
+					/usr/share/flash-kernel/bootscript/"$ubfile" \
+					>"$ubdir"/"$ubfile"
+			fi
+			if [ -e "$boot_script_path" ]; then
+				cp -a "$boot_script_path" "$boot_script_path".bak
+			fi
+			mkimage_script "$ubaddr" "$ubdesc" "$ubdir"/"$ubfile" \
+				"$boot_script_path"
 		fi
 	;;
 	"GLAN Tank")

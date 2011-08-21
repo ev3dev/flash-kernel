@@ -28,6 +28,7 @@ flash-kernel (3.0~rc.1) UNRELEASED; urgency=low
   * Add build dependency on devio, needed to run test-suite.
   * Upgrade major version to 3.0~rc.1
   * Add support for Genesi Efika MX nettops and smarttops. (Closes: #612376)
+  * Add preliminary U-Boot script support (Closes: #626434)
 
   [ Julian Andres Klode ]
   * Support for Toshiba AC100 (Closes: #631396)
@@ -35,7 +36,7 @@ flash-kernel (3.0~rc.1) UNRELEASED; urgency=low
   [ Martin Michlmayr ]
   * Remove myself from the Uploaders field.
 
- -- Hector Oron <zumbi@debian.org>  Sat, 20 Aug 2011 23:52:39 +0100
+ -- Hector Oron <zumbi@debian.org>  Sun, 21 Aug 2011 00:50:18 +0100
 
 flash-kernel (2.39) unstable; urgency=low
 

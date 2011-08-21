@@ -1,2 +1,3 @@
 flash-kernel usr/sbin
 initramfs-tools usr/share
+bootscript usr/share/flash-kernel
