@@ -264,20 +264,38 @@ nslu2_swap() {
 	fi
 }
 
+abootimg_get_image_size() {
+	local abootimg="$1"
+
+	echo "$abootimg" | sed -rn 's/^\* image size = ([0-9]+) bytes.*/\1/p'
+}
+
+abootimg_get_page_size() {
+	local abootimg="$1"
+
+	echo "$abootimg" | sed -rn 's/^ page size  = ([0-9]+) bytes.*/\1/p'
+}
+
 android_check_bootpart() {
 	local dev="$1"
-	local minsize="$2"
-	local size
+	local kfilesize="$2"
+	local ifilesize="$3"
+	local needed_pages
+	local avail_pages
 
-	if [ -z "$minsize" ]; then
-		error "Minimal size of Android boot partition not set"
-	fi
-	size=$(LC_ALL=C abootimg -i "$dev" 2>/dev/null | grep "image size" | cut -d ' ' -f5)
-	if [ -n "$size" ]; then
-		error "Couldnt read size of Android boot partition on $dev"
-	fi
-	if [ "$size" -le "$minsize" ]; then
-		error "Android boot partition is too small ($size bytes instead when minimum is $minsize bytes)"
+	abootimg="$(LC_ALL=C abootimg -i "$dev" 2>/dev/null)"
+	image_size="$(abootimg_get_image_size "$abootimg")"
+	page_size="$(abootimg_get_page_size "$abootimg")"
+
+	avail_pages=$(($image_size / $page_size))
+	# XXX this assumes there is no second stage eating pages
+	# boot header
+	needed_pages="1"
+	needed_pages=$(($needed_pages + ($kfilesize + $page_size - 1) / $page_size))
+	needed_pages=$(($needed_pages + ($kfilesize + $page_size - 1) / $page_size))
+
+	if [ "$needed_pages" -lt "$avail_pages" ]; then
+		error "Android boot partition is too small ($image_size bytes with a $page_size bytes page size for a $kfilesize bytes kernel and a $ifilesize bytes initrd)"
 	fi
 	return 0
 }
@@ -491,7 +509,6 @@ Mtd-Initrd: ramdisk
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0p2
-Android-Boot-Device-Minimal-Size: 5242881
 "
 
 main() {
@@ -615,7 +632,7 @@ tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$method" in
 	"android")
-		android_check_bootpart "$android_boot_device" "$android_boot_minsize"
+		android_check_bootpart "$android_boot_device" "$kfilesize" "$ifilesize"
 		android_flash "$android_boot_device"
 	;;
 	"generic")
