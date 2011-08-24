@@ -1,4 +1,4 @@
-flash-kernel (3.0~rc.1) UNRELEASED; urgency=low
+flash-kernel (3.0~rc.1) experimental; urgency=low
 
   [ Loïc Minier ]
   * Bump Standards-Version to 3.9.2.
@@ -36,7 +36,23 @@ flash-kernel (3.0~rc.1) UNRELEASED; urgency=low
   [ Martin Michlmayr ]
   * Remove myself from the Uploaders field.
 
- -- Hector Oron <zumbi@debian.org>  Sun, 21 Aug 2011 00:50:18 +0100
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * German (de.po) by Holger Wansing
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po)
+  * Hebrew (he.po) by Lior Kaplan
+  * Italian (it.po) by Milo Casagrande
+  * Korean (ko.po) by Changwoo Ryu
+  * Macedonian (mk.po) by Arangel Angov
+  * Romanian (ro.po) by Eddy Petrișor
+  * Sinhala (si.po) by Danishka Navin
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Uyghur (ug.po) by Sahran
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Hector Oron <zumbi@debian.org>  Wed, 24 Aug 2011 12:47:34 +0100
 
 flash-kernel (2.39) unstable; urgency=low
 

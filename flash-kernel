@@ -332,6 +332,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x00800000
 
 Machine: Genesi Efika Smartbook
+Machine-alias: Genesi Efika MX (Smartbook)
 Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
 U-Boot-Initrd-Address: 0x0
@@ -342,6 +343,7 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 
 Machine: Genesi EfikaMX nettop
+Machine-alias: Genesi Efika MX (Smarttop)
 Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
 U-Boot-Initrd-Address: 0x0
