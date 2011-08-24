@@ -212,14 +212,14 @@ mkimage_initrd() {
 }
 
 mkimage_script() {
-	local baddr="$1"
-	local bdesc="$2"
-	local bdata="$3"
-	local bscript="$4"
-	
-	printf "Generating u-boot script image... " >&2
-	mkimage -A arm -O linux -a "$baddr" -e "$baddr" -T script -C none \
-		-n "$bdesc" -d "$bdata" "$bscript" >&2 1>/dev/null
+	local saddr="$1"
+	local sdesc="$2"
+	local sdata="$3"
+	local script="$4"
+
+	printf "Generating boot script u-boot image... " >&2
+	mkimage -A arm -O linux -T script -C none -a "$saddr" -e "$saddr" \
+		-n "$sdesc" -d "$sdata" "$script" >&2 1>/dev/null
 	echo "done." >&2
 }
 
@@ -361,7 +361,7 @@ Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
 U-Boot-Initrd-Address: 0x0
 U-Boot-Script-Address: 0x0
-U-Boot-Script-Name: bootscr.mx5
+U-Boot-Script-Template: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
@@ -371,7 +371,7 @@ Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
 U-Boot-Initrd-Address: 0x0
 U-Boot-Script-Address: 0x0
-U-Boot-Script-Name: bootscr.mx5
+U-Boot-Script-Template: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
@@ -568,18 +568,18 @@ if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
 fi
 
 machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
+method="$(get_machine_field "$machine" "Method")" || method="generic"
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
-ubaddr="$(get_machine_field "$machine" "U-Boot-Script-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
+usaddr="$(get_machine_field "$machine" "U-Boot-Script-Address")" || :
+ustemplate="$(get_machine_field "$machine" "U-Boot-Script-Template")" || :
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
-method="$(get_machine_field "$machine" "Method")" || method="generic"
-ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
 android_boot_config="$(get_machine_field "$machine" "Android-Boot-Config")" || :
 
@@ -691,21 +691,20 @@ case "$method" in
 			flash_initrd "$initrd" "$imtd" $ipad
 			rm -f "$tmpdir/uInitrd"
 		fi
-		if [ -n "$ubfile" ]; then
+		if [ -n "$ustemplate" ]; then
 			ubdir="/boot/flash-kernel/"
-			ubdesc="Debian U-Boot Boot Script"
-			if [ ! -d "$ubdir" ]; then 
+			if [ ! -d "$ubdir" ]; then
 				mkdir -p "$ubdir"
 				# XXX HACK: It needs better way of doing this
 				rootfs="\/dev\/sda2"
 				sed -e "s/@ROOTPARTITION@/$rootfs/" \
-					/usr/share/flash-kernel/bootscript/"$ubfile" \
+					/usr/share/flash-kernel/bootscript/"$ustemplate" \
 					>"$ubdir"/"$ubfile"
 			fi
 			if [ -e "$boot_script_path" ]; then
 				cp -a "$boot_script_path" "$boot_script_path".bak
 			fi
-			mkimage_script "$ubaddr" "$ubdesc" "$ubdir"/"$ubfile" \
+			mkimage_script "$usaddr" "Debian boot script" "$ubdir"/"$ubfile" \
 				"$boot_script_path"
 		fi
 	;;
