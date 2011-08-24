@@ -562,7 +562,7 @@ boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
-boot_type="$(get_machine_field "$machine" "Method")" || :
+method="$(get_machine_field "$machine" "Method")" || method="generic"
 ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
 android_boot_minsize="$(get_machine_field "$machine" "Android-Boot-Minimal-Size")" || :
@@ -613,7 +613,6 @@ trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 
-method="generic"
 case "$method" in
 	"android")
 		android_check_bootpart "$android_boot_device" "$android_boot_minsize"
