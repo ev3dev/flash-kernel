@@ -365,6 +365,7 @@ U-Boot-Script-Template: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
+Extra-Cmdline: root=/dev/sda2
 
 Machine: Genesi EfikaMX nettop
 Kernel-Flavors: mx5
@@ -375,6 +376,7 @@ U-Boot-Script-Template: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
+Extra-Cmdline: root=/dev/sda2
 
 Machine: GLAN Tank
 Method: symlink
@@ -579,6 +581,8 @@ boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
+# XXX this is only supported in boot scripts at the moment
+extra_cmdline="$(get_machine_field "$machine" "Extra-Cmdline")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
 android_boot_config="$(get_machine_field "$machine" "Android-Boot-Config")" || :
 
@@ -692,12 +696,11 @@ case "$method" in
 		fi
 		if [ -n "$boot_script_path" ]; then
 			boot_script="$tmpdir/boot.txt"
-			# XXX hardcoded root device for MX5
-			sed -e "s#@ROOTPARTITION@#/dev/sda2#" \
+			sed -e "s#@EXTRA_CMDLINE@#$extra_cmdline#" \
 				"/usr/share/flash-kernel/bootscript/$ustemplate" \
 				>"$boot_script"
-			mkimage_script "$usaddr" "Debian boot script" "$boot_script" \
-				"$tmpdir/boot.scr"
+			mkimage_script "$usaddr" "Debian boot script" \
+				"$boot_script" "$tmpdir/boot.scr"
 			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi

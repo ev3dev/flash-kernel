@@ -1,6 +1,6 @@
 setenv ramdisk uInitrd;
 setenv kernel uImage;
-setenv bootargs console=ttymxc0,115200 console=tty1 root=@ROOTPARTITION@ rootwait rw;
+setenv bootargs console=ttymxc0,115200 console=tty1 @EXTRA_CMDLINE@ rootwait rw;
 ${loadcmd} ${ramdiskaddr} ${ramdisk};
 if imi ${ramdiskaddr}; then; else
   setenv bootargs ${bootargs} noinitrd;
