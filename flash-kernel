@@ -306,16 +306,10 @@ android_check_bootpart() {
 # XXX needs testsuite coverage
 android_flash() {
 	local device="$1"
-	local config_args
+	local boot_config="$2"
 
 	printf "Flashing kernel and initramfs to $device... " >&2
-	# AC100: Configuration file. Should be replaced by something more
-	# generic
-	config_args=""
-	if [ -e /boot/bootimg.cfg ]; then
-		config_args="-f /boot/bootimg.cfg"
-	fi
-	abootimg -u "$device" $config_args -k "$kfile" -r "$ifile" >/dev/null || error "failed."
+	abootimg -u "$device" -f "$boot_config" -k "$kfile" -r "$ifile" >/dev/null || error "failed."
 	echo "done." >&2
 }
 
@@ -513,6 +507,7 @@ Mtd-Initrd: ramdisk
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0p2
+Android-Boot-Config: /boot/bootimg.cfg
 "
 
 main() {
@@ -586,6 +581,7 @@ boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
 ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
+android_boot_config="$(get_machine_field "$machine" "Android-Boot-Config")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -636,7 +632,7 @@ tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 case "$method" in
 	"android")
 		android_check_bootpart "$android_boot_device" "$kfilesize" "$ifilesize"
-		android_flash "$android_boot_device"
+		android_flash "$android_boot_device" "$android_boot_config"
 	;;
 	"generic")
 		kernel="$kfile"
