@@ -354,10 +354,12 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 
 Machine: GLAN Tank
+Method: symlink
 Kernel-Flavors: iop32x
 Machine-Id: 1100
 
 Machine: GTA02
+Method: multi
 Kernel-Flavors: s3c24xx
 U-Boot-Multi-Address: 0x30008000
 Boot-Multi-Path: /boot/uImage.bin
@@ -376,12 +378,14 @@ Boot-Multi-Path: /boot/uImage
 
 # Really: Intel SS4000-e and compatibles
 Machine: Lanner EM7210
+Method: redboot
 Kernel-Flavors: iop32x
 Machine-Id: 1212
 Mtd-Kernel: zImage
 Mtd-Initrd: ramdisk.gz
 
 Machine: Linksys NSLU2
+Method: slug
 Kernel-Flavors: ixp4xx
 Mtd-Kernel: Kernel
 Mtd-Initrd: Ramdisk
@@ -470,13 +474,14 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 
 Machine: Thecus N2100
+Method: redboot
 Kernel-Flavors: iop32x
 Machine-Id: 1101
 Mtd-Kernel: kernel
 Mtd-Initrd: ramdisk
 
 Machine: Toshiba AC100 / Dynabook AZ
-Boot-Type: Android
+Method: android
 Boot-Device-Minimal-Size: 5242881
 "
 
@@ -548,7 +553,7 @@ boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
-boot_type="$(get_machine_field "$machine" "Boot-Type")" || :
+boot_type="$(get_machine_field "$machine" "Method")" || :
 boot_minsize="$(get_machine_field "$machine" "Boot-Device-Minimal-Size")" || :
 ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 
@@ -598,36 +603,13 @@ trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 
-case "$boot_type" in
-	"Android")
+method="generic"
+case "$method" in
+	"android")
 		android_bootpart=$(android_find_mmc_bootpart)
 		android_flash $android_bootpart
 	;;
-esac
-
-
-case "$machine" in
-	"Buffalo Linkstation LiveV3 (LS-CHL)" |\
-	"Buffalo Linkstation Mini" |\
-	"Buffalo Linkstation Pro/Live" |\
-	"Buffalo/Revogear Kurobox Pro" |\
-	"D-Link DNS-323" |\
-	"Genesi Efika Smartbook" |\
-	"Genesi EfikaMX nettop" |\
-	"HP Media Vault mv2120" |\
-	"HP t5325 Thin Client" |\
-	"Marvell DB-78x00-BP Development Board" |\
-	"Marvell GuruPlug Reference Board" |\
-	"Marvell OpenRD Base Board" |\
-	"Marvell OpenRD Client Board" |\
-	"Marvell OpenRD Ultimate Board" |\
-	"Marvell SheevaPlug Reference Board" |\
-	"Marvell eSATA SheevaPlug Reference Board" |\
-	"QNAP TS-109/TS-209" |\
-	"QNAP TS-119/TS-219" |\
-	"QNAP TS-409" |\
-	"QNAP TS-41x" |\
-	"Seagate FreeAgent DockStar")
+	"generic")
 		kernel="$kfile"
 		initrd="$ifile"
 		if [ -n "$machine_id" ]; then
@@ -702,12 +684,12 @@ case "$machine" in
 				"$boot_script_path"
 		fi
 	;;
-	"GLAN Tank")
+	"symlink")
 		rm -f /boot/initrd /boot/zImage
 		ln -s "$(basename "$ifile")" /boot/initrd
 		gen_kernel "$kfile" "/boot/zImage" "$machine_id"
 	;;
-	"GTA02")
+	"multi")
 		gen_kernel "$kfile" "$tmpdir/kernel" ""
 		# Hack to work around a bug in some U-Boot versions:
 		if [ $(($(stat -c '%s' "$tmpdir/kernel") % 4)) -eq 0 ]; then
@@ -718,12 +700,12 @@ case "$machine" in
 		rm -f "$tmpdir/kernel"
 		backup_and_install "$tmpdir/uImage" "$boot_multi_path"
 	;;
-	"Lanner EM7210" | "Thecus N2100")
+	"redboot")
 		flash_kernel "$kfile" "$kmtd" "$machine_id"
 		pad=$(($imtdsize - $ifilesize))
 		flash_initrd "$ifile" "$imtd" $pad
 	;;
-	"Linksys NSLU2")
+	"slug")
 		case "$(dpkg --print-architecture)" in
 			arm|armel)
 				little_endian=1
