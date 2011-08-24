@@ -68,7 +68,7 @@ check_kflavors() {
 	return 1
 }
 
-check_size() {
+check_mtd_size() {
 	local mtd_name="$1"
 	local required_size="$2"
 	local actual_size="$3"
@@ -588,7 +588,7 @@ if [ -n "$mtd_kernel" ]; then
 	if [ -n "$ukaddr" ]; then
 		kreqsize=$(($kreqsize + 64))
 	fi
-	check_size "$mtd_kernel" $kreqsize $kmtdsize
+	check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize
 fi
 if [ -n "$mtd_initrd" ]; then
 	imtd=$(mtdblock "$mtd_initrd")
@@ -602,7 +602,7 @@ if [ -n "$mtd_initrd" ]; then
 	if [ -n "$uiaddr" ]; then
 		ireqsize=$(($ireqsize + 64))
 	fi
-	check_size "$mtd_initrd" $ireqsize $imtdsize
+	check_mtd_size "$mtd_initrd" $ireqsize $imtdsize
 fi
 
 tmpdir=""
@@ -728,8 +728,8 @@ case "$method" in
 		if [ -z "$fismtd" ]; then
 			error "Cannot find mtd partition '$mtd_fis'"
 		fi
-		check_size "$mtd_kernel" $(($kfilesize + 16 + 16)) $kmtdsize
-		check_size "$mtd_initrd" $(($ifilesize + 16)) $imtdsize
+		check_mtd_size "$mtd_kernel" $(($kfilesize + 16 + 16)) $kmtdsize
+		check_mtd_size "$mtd_initrd" $(($ifilesize + 16)) $imtdsize
 		# The following devio magic parses the FIS directory to
 		# obtain the size, offset and name of each partition.  This
 		# used used to obtain the offset of the Kernel partition.

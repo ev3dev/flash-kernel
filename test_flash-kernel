@@ -172,11 +172,11 @@ test_check_size() {
         error() {
             return 1
         }
-        if check_size "MTD" 2 1; then
-            echo "Expected check_size to fail for too small size, but it succeeded" >&2
+        if check_mtd_size "MTD" 2 1; then
+            echo "Expected check_mtd_size to fail for too small size, but it succeeded" >&2
             exit 1
         fi
-        if ! check_size "MTD" 1 1; then
+        if ! check_mtd_size "MTD" 1 1; then
             echo "Expected check_supported to succeed with large enough size, but it failed" >&2
             exit 1
         fi
