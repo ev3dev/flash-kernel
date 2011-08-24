@@ -264,18 +264,22 @@ nslu2_swap() {
 	fi
 }
 
-android_find_mmc_bootpart() {
+android_check_bootpart() {
+	local dev="$1"
+	local minsize="$2"
 	local size
 
-	for dev in /dev/mmcblk?p?; do
-		size=$(LC_ALL=C abootimg -i "$dev" 2>/dev/null | grep "image size" | cut -d ' ' -f5)
-		if [ -n "$size" ] && \
-		   [ -z "$boot_minsize" -o "$size" -gt "$boot_minsize" ]; then
-			echo $dev
-			return 0
-		fi
-	done
-	error "Could not find an Android boot partition on a MMC device"
+	if [ -z "$minsize" ]; then
+		error "Minimal size of Android boot partition not set"
+	fi
+	size=$(LC_ALL=C abootimg -i "$dev" 2>/dev/null | grep "image size" | cut -d ' ' -f5)
+	if [ -n "$size" ]; then
+		error "Couldnt read size of Android boot partition on $dev"
+	fi
+	if [ "$size" -le "$minsize" ]; then
+		error "Android boot partition is too small ($size bytes instead when minimum is $minsize bytes)"
+	fi
+	return 0
 }
 
 android_flash() {
@@ -486,7 +490,8 @@ Mtd-Initrd: ramdisk
 
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
-Boot-Device-Minimal-Size: 5242881
+Android-Boot-Device: /dev/mmcblk0p2
+Android-Boot-Device-Minimal-Size: 5242881
 "
 
 main() {
@@ -558,8 +563,9 @@ boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 boot_type="$(get_machine_field "$machine" "Method")" || :
-boot_minsize="$(get_machine_field "$machine" "Boot-Device-Minimal-Size")" || :
 ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
+android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
+android_boot_minsize="$(get_machine_field "$machine" "Android-Boot-Minimal-Size")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -610,8 +616,8 @@ tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 method="generic"
 case "$method" in
 	"android")
-		android_bootpart=$(android_find_mmc_bootpart)
-		android_flash $android_bootpart
+		android_check_bootpart "$android_boot_device" "$android_boot_minsize"
+		android_flash "$android_boot_device"
 	;;
 	"generic")
 		kernel="$kfile"
