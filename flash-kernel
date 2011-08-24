@@ -586,7 +586,6 @@ boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
 ubfile="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
-android_boot_minsize="$(get_machine_field "$machine" "Android-Boot-Minimal-Size")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
