@@ -691,21 +691,16 @@ case "$method" in
 			flash_initrd "$initrd" "$imtd" $ipad
 			rm -f "$tmpdir/uInitrd"
 		fi
-		if [ -n "$ustemplate" ]; then
-			ubdir="/boot/flash-kernel/"
-			if [ ! -d "$ubdir" ]; then
-				mkdir -p "$ubdir"
-				# XXX HACK: It needs better way of doing this
-				rootfs="\/dev\/sda2"
-				sed -e "s/@ROOTPARTITION@/$rootfs/" \
-					/usr/share/flash-kernel/bootscript/"$ustemplate" \
-					>"$ubdir"/"$ubfile"
-			fi
-			if [ -e "$boot_script_path" ]; then
-				cp -a "$boot_script_path" "$boot_script_path".bak
-			fi
-			mkimage_script "$usaddr" "Debian boot script" "$ubdir"/"$ubfile" \
-				"$boot_script_path"
+		if [ -n "$boot_script_path" ]; then
+			boot_script="$tmpdir/boot.txt"
+			# XXX hardcoded root device for MX5
+			sed -e "s#@ROOTPARTITION@#/dev/sda2#" \
+				"/usr/share/flash-kernel/bootscript/$ustemplate" \
+				>"$boot_script"
+			mkimage_script "$usaddr" "Debian boot script" "$boot_script" \
+				"$tmpdir/boot.scr"
+			boot_script="$tmpdir/boot.scr"
+			backup_and_install "$boot_script" "$boot_script_path"
 		fi
 	;;
 	"symlink")
