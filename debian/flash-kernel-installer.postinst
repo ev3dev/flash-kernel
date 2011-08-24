@@ -53,6 +53,9 @@ write_to_flash() {
 		"Marvell GuruPlug Reference Board")
 			return 1
 		;;
+		"Marvell DB-78x00-BP Development Board")
+			return 1
+		;;
 		"Marvell OpenRD Base Board")
 			return 1
 		;;
