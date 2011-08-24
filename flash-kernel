@@ -264,18 +264,21 @@ nslu2_swap() {
 	fi
 }
 
+# XXX needs testsuite coverage
 abootimg_get_image_size() {
 	local abootimg="$1"
 
 	echo "$abootimg" | sed -rn 's/^\* image size = ([0-9]+) bytes.*/\1/p'
 }
 
+# XXX needs testsuite coverage
 abootimg_get_page_size() {
 	local abootimg="$1"
 
 	echo "$abootimg" | sed -rn 's/^ page size  = ([0-9]+) bytes.*/\1/p'
 }
 
+# XXX needs testsuite coverage
 android_check_bootpart() {
 	local dev="$1"
 	local kfilesize="$2"
@@ -300,6 +303,7 @@ android_check_bootpart() {
 	return 0
 }
 
+# XXX needs testsuite coverage
 android_flash() {
 	local device="$1"
 	local config_args
