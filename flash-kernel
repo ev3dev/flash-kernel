@@ -266,9 +266,10 @@ nslu2_swap() {
 
 android_find_mmc_bootpart() {
 	local size
+
 	for dev in /dev/mmcblk?p?; do
-		size=$(abootimg -i $dev 2>/dev/null| grep "image size"|cut -d ' ' -f5)
-		if [ $size ] && \
+		size=$(LC_ALL=C abootimg -i "$dev" 2>/dev/null | grep "image size" | cut -d ' ' -f5)
+		if [ -n "$size" ] && \
 		   [ -z "$boot_minsize" -o "$size" -gt "$boot_minsize" ]; then
 			echo $dev
 			return 0
@@ -279,13 +280,16 @@ android_find_mmc_bootpart() {
 
 android_flash() {
 	local device="$1"
-	local args=""
+	local config_args
+
 	printf "Flashing kernel and initramfs to $device... " >&2
-
-	# AC100: Configuration file. Should be replaced by something more generic
-	[ ! -e /boot/bootimg.cfg ] || args="$args -f /boot/bootimg.cfg"
-
-	abootimg -u $device $args -k $kfile -r $ifile >/dev/null || error "failed."
+	# AC100: Configuration file. Should be replaced by something more
+	# generic
+	config_args=""
+	if [ -e /boot/bootimg.cfg ]; then
+		config_args="-f /boot/bootimg.cfg"
+	fi
+	abootimg -u "$device" $config_args -k "$kfile" -r "$ifile" >/dev/null || error "failed."
 	echo "done." >&2
 }
 
