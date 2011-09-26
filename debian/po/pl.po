@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2011-09-18 21:28+0100\n"
+"PO-Revision-Date: 2011-09-26 10:46+0100\n"
 "Last-Translator: Marcin Owsiany <porridge@debian.org>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "Language: pl\n"
@@ -46,7 +46,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Konfigurowanie pamięci flash do uruchamiania systemu"
 
 #. Type: text
 #. Description
@@ -55,7 +55,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "Przygotowanie systemu do rozruchu"
 
 #. Type: text
 #. Description
@@ -64,7 +64,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "Przygotowywanie systemu..."
 
 #. Type: text
 #. Description
@@ -73,7 +73,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Zapisywanie jądra na pamięci flash..."
 
 #. Type: text
 #. Description
@@ -83,7 +83,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Tworzenie obrazu rozruchowego na dysku..."
 
 #. Type: text
 #. Description
@@ -94,4 +94,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "Zainstaluj jądro na dysku"
