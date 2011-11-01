@@ -85,7 +85,8 @@ check_supported() {
 
 	echo "$MACHINE_DB" | {
 		while read field value; do
-			if [ "$field" = "Machine:" ] && [ "$value" = "$machine" ]; then
+			if [ "$field" = "Machine:" ] &&
+				[ "$value" = "$machine" ]; then
 				return 0
 			fi
 		done
@@ -295,8 +296,10 @@ android_check_bootpart() {
 	# XXX this assumes there is no second stage eating pages
 	# boot header
 	needed_pages="1"
-	needed_pages=$(($needed_pages + ($kfilesize + $page_size - 1) / $page_size))
-	needed_pages=$(($needed_pages + ($kfilesize + $page_size - 1) / $page_size))
+	needed_pages=$(($needed_pages +
+		($kfilesize + $page_size - 1) / $page_size))
+	needed_pages=$(($needed_pages +
+		($kfilesize + $page_size - 1) / $page_size))
 
 	if [ "$needed_pages" -lt "$avail_pages" ]; then
 		error "Android boot partition is too small ($image_size bytes with a $page_size bytes page size for a $kfilesize bytes kernel and a $ifilesize bytes initrd)"
@@ -310,7 +313,8 @@ android_flash() {
 	local boot_config="$2"
 
 	printf "Flashing kernel and initramfs to $device... " >&2
-	abootimg -u "$device" -f "$boot_config" -k "$kfile" -r "$ifile" >/dev/null || error "failed."
+	abootimg -u "$device" -f "$boot_config" \
+		-k "$kfile" -r "$ifile" >/dev/null || error "failed."
 	echo "done." >&2
 }
 
@@ -634,7 +638,8 @@ tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$method" in
 	"android")
-		android_check_bootpart "$android_boot_device" "$kfilesize" "$ifilesize"
+		android_check_bootpart "$android_boot_device" "$kfilesize" \
+			"$ifilesize"
 		android_flash "$android_boot_device" "$android_boot_config"
 	;;
 	"generic")
@@ -740,8 +745,10 @@ case "$method" in
 		if [ -z "$fismtd" ]; then
 			error "Cannot find mtd partition '$mtd_fis'"
 		fi
-		check_mtd_size "$mtd_kernel" $(($kfilesize + 16 + 16)) $kmtdsize
-		check_mtd_size "$mtd_initrd" $(($ifilesize + 16)) $imtdsize
+		check_mtd_size "$mtd_kernel" $(($kfilesize + 16 + 16)) \
+			$kmtdsize
+		check_mtd_size "$mtd_initrd" $(($ifilesize + 16)) \
+			$imtdsize
 		# The following devio magic parses the FIS directory to
 		# obtain the size, offset and name of each partition.  This
 		# used used to obtain the offset of the Kernel partition.
@@ -777,17 +784,20 @@ case "$method" in
 		printf "Flashing kernel: " >&2
 		{
 			sercomm_header $(($kfilesize + 16))
-			dd if="$kfile" of="$tmpdir/kpart1" bs=$ksize1 count=1 2>/dev/null
+			dd if="$kfile" of="$tmpdir/kpart1" bs=$ksize1 \
+				count=1 2>/dev/null
 			nslu2_swap "$tmpdir/kpart1"
 			rm -f "$tmpdir/kpart1"
 			sercomm_header 131072
-			dd if="$kfile" of="$tmpdir/kpart2" ibs=$ksize1 skip=1 2>/dev/null
+			dd if="$kfile" of="$tmpdir/kpart2" ibs=$ksize1 \
+				skip=1 2>/dev/null
 			nslu2_swap "$tmpdir/kpart2"
 			rm -f "$tmpdir/kpart2"
 		} > "$kmtd" || error "failed."
 		echo "done." >&2
 		printf "Flashing initramfs: " >&2
-		dd if="$ifile" of="$tmpdir/initrd" ibs=$(($imtdsize - 16)) conv=sync 2>/dev/null
+		dd if="$ifile" of="$tmpdir/initrd" ibs=$(($imtdsize - 16)) \
+			conv=sync 2>/dev/null
 		{
 			sercomm_header $ifilesize
 			nslu2_swap "$tmpdir/initrd"
