@@ -2,8 +2,7 @@
 
 set -e
 
-# path to the flash-kernel script to test
-flash_kernel="./flash-kernel"
+functions="${FK_CHECKOUT:-$FK_DIR}/functions"
 
 self="$(basename "$0")"
 
@@ -71,7 +70,7 @@ get_tempfile() {
 
 
 test_syntax() {
-    sh -n "$flash_kernel"
+    sh -n "$functions"
 }
 add_test test_syntax
 
@@ -83,7 +82,7 @@ skip_test_bashisms() {
 }
 
 test_bashisms() {
-    checkbashisms "$flash_kernel"
+    checkbashisms "$functions"
 }
 add_test test_bashisms
 
@@ -99,8 +98,7 @@ mtd3: 00020000 00020000 "reset"
 mtd4: 00800000 00020000 "jffs2"
 EOF
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         PROC_MTD="$mock_proc_mtd"
         root_mtd=$(mtdblock "root")
         if [ "$root_mtd" != "/dev/mtdblock0" ]; then
@@ -128,8 +126,7 @@ mtd3: 00020000 00020000 "reset"
 mtd4: 00800000 00020000 "jffs2"
 EOF
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         PROC_MTD="$mock_proc_mtd"
         root_size=$(mtdsize "root")
         if [ "$root_size" != 5767168 ]; then
@@ -147,8 +144,7 @@ add_test test_mtdsize
 
 test_check_kflavors() {
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         if check_kflavors "ksuffix" "kflavor1" "kflavor2"; then
             echo "Expected check_kflavors to fail with kernel suffix not in expected flavors, but it succeeded" >&2
             exit 1
@@ -167,8 +163,7 @@ add_test test_check_kflavors
 
 test_check_size() {
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         error() {
             return 1
         }
@@ -186,8 +181,7 @@ add_test test_check_size
 
 test_check_supported() {
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         if check_supported "Dummy"; then
             echo "Expected check_supported to fail for non-existent board, but it succeeded" >&2
             exit 1
@@ -219,8 +213,7 @@ Revision        : 0000
 Serial          : 0000000000000000
 EOF
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         PROC_CPUINFO="$mock_proc_cpuinfo"
         machine=$(get_cpuinfo_hardware)
         if [ "$machine" != "Marvell SheevaPlug Reference Board" ]; then
@@ -233,8 +226,7 @@ add_test test_get_cpuinfo_hardware
 
 test_get_kfile_suffix() {
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         kfile_suffix=$(get_kfile_suffix "/boot/vmlinuz-2.6.32-5-kirkwood")
         if [ "$kfile_suffix" != "kirkwood" ]; then
             echo "Expected kernel file suffix to be kirkwood but got $kfile_suffix" >&2
@@ -246,8 +238,7 @@ add_test test_get_kfile_suffix
 
 test_get_machine_field() {
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         machine="Marvell SheevaPlug Reference Board"
         if machine_field="$(get_machine_field "$machine" "Machine")"; then
             if [ "$machine_field" != "$machine" ]; then
@@ -273,8 +264,7 @@ add_test test_get_machine_field
 
 test_set_machine_id() {
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         arm_code="$(set_machine_id 2097 | od -x)"
         expected="0000000 1c08 e3a0 1031 e381
 0000010"
@@ -297,8 +287,7 @@ test_mkimage_kernel() {
         mkimage() {
             saved_args="$@"
         }
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         saved_args=""
         mkimage_kernel "0xdeadbeef" "desc" "input" "output" 2>/dev/null
         expected="-A arm -O linux -T kernel -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
@@ -315,8 +304,7 @@ test_mkimage_initrd() {
         mkimage() {
             saved_args="$@"
         }
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         saved_args=""
         mkimage_initrd "0xdeadbeef" "desc" "input" "output" 2>/dev/null
         expected="-A arm -O linux -T ramdisk -C gzip -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
@@ -333,8 +321,7 @@ test_mkimage_multi() {
         mkimage() {
             saved_args="$@"
         }
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         saved_args=""
         mkimage_multi "0xdeadbeef" "desc" "kinput" "iinput" "output" 2>/dev/null
         expected="-A arm -O linux -T multi -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d kinput:iinput output"
@@ -353,8 +340,7 @@ test_gen_kernel() {
     get_tempfile
     kernel_output="$last_tempfile"
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         gen_kernel "$kernel_input" "$kernel_output" 2097
         result="$(od -t x1 "$kernel_output")"
         expected="0000000 08 1c a0 e3 31 10 81 e3 66 6f 6f 0a
@@ -382,8 +368,7 @@ test_flash_initrd() {
     get_tempfile
     initrd_output="$last_tempfile"
     (
-        TEST_FLASH_KERNEL=1
-        . "$flash_kernel"
+        . "$functions"
         flash_initrd "$initrd_input" "$initrd_output" 3 2>/dev/null
         result="$(od -t x1 "$initrd_output")"
         expected="0000000 66 6f 6f 0a 00 00 00
