@@ -1,7 +1,7 @@
 #! /usr/bin/make -f
 
 override_dh_auto_test:
-	./test_flash-kernel
+	FK_CHECKOUT=. ./test_flash-kernel
 
 %:
 	dh $@
