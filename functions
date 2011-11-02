@@ -432,6 +432,7 @@ cleanup_tmpdir() {
 	rm -rf "$tmpdir"
 }
 trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
+self="$(basename "$0")"
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 

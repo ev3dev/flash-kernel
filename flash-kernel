@@ -19,8 +19,6 @@
 
 set -e
 
-self="$(basename "$0")"
-
 FK_DIR="/usr/share/flash-kernel"
 
 . "${FK_CHECKOUT:-$FK_DIR}/functions"
