@@ -1,0 +1,195 @@
+# somewhat RFC2822 based, but case sensitive, not tolerant to spaces etc.
+
+Machine: Buffalo Linkstation LiveV3 (LS-CHL)
+Kernel-Flavors: orion5x
+Machine-Id: 2913
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
+
+Machine: Buffalo Linkstation Mini
+Kernel-Flavors: orion5x
+Machine-Id: 1858
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
+
+Machine: Buffalo Linkstation Pro/Live
+Kernel-Flavors: orion5x
+Machine-Id: 1585
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
+
+Machine: Buffalo/Revogear Kurobox Pro
+Kernel-Flavors: orion5x
+Machine-Id: 1509
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
+
+Machine: D-Link DNS-323
+Kernel-Flavors: orion5x
+Machine-Id: 1542
+Mtd-Kernel: Linux Kernel
+Mtd-Initrd: File System
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x00800000
+
+Machine: Genesi Efika Smartbook
+Kernel-Flavors: mx5
+U-Boot-Kernel-Address: 0x90008000
+U-Boot-Initrd-Address: 0x0
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Template: bootscr.mx5
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-Script-Path: /boot/boot.scr
+Extra-Cmdline: root=/dev/sda2
+
+Machine: Genesi EfikaMX nettop
+Kernel-Flavors: mx5
+U-Boot-Kernel-Address: 0x90008000
+U-Boot-Initrd-Address: 0x0
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Template: bootscr.mx5
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-Script-Path: /boot/boot.scr
+Extra-Cmdline: root=/dev/sda2
+
+Machine: GLAN Tank
+Method: symlink
+Kernel-Flavors: iop32x
+Machine-Id: 1100
+
+Machine: GTA02
+Method: multi
+Kernel-Flavors: s3c24xx
+U-Boot-Multi-Address: 0x30008000
+Boot-Multi-Path: /boot/uImage.bin
+
+Machine: HP Media Vault mv2120
+Kernel-Flavors: orion5x
+Machine-Id: 1693
+U-Boot-Multi-Address: 0x01600000
+Boot-Multi-Path: /boot/uImage
+
+Machine: HP t5325 Thin Client
+Kernel-Flavors: kirkwood
+Machine-Id: 2846
+U-Boot-Multi-Address: 0x01600000
+Boot-Multi-Path: /boot/uImage
+
+# Really: Intel SS4000-e and compatibles
+Machine: Lanner EM7210
+Method: redboot
+Kernel-Flavors: iop32x
+Machine-Id: 1212
+Mtd-Kernel: zImage
+Mtd-Initrd: ramdisk.gz
+
+Machine: Linksys NSLU2
+Method: slug
+Kernel-Flavors: ixp4xx
+Mtd-Kernel: Kernel
+Mtd-Initrd: Ramdisk
+
+Machine: Marvell DB-78x00-BP Development Board
+U-Boot-Kernel-Address: 0x2000000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Marvell GuruPlug Reference Board
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Marvell OpenRD Base Board
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Marvell OpenRD Client Board
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Marvell OpenRD Ultimate Board
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Marvell SheevaPlug Reference Board
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Marvell eSATA SheevaPlug Reference Board
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: QNAP TS-109/TS-209
+Kernel-Flavors: orion5x
+Machine-Id: 1565
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
+
+Machine: QNAP TS-119/TS-219
+Kernel-Flavors: kirkwood
+Machine-Id: 2139
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
+
+Machine: QNAP TS-409
+Kernel-Flavors: orion5x
+Machine-Id: 1601
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
+
+Machine: QNAP TS-41x
+Kernel-Flavors: kirkwood
+Machine-Id: 2502
+Mtd-Kernel: Kernel
+Mtd-Initrd: RootFS1
+U-Boot-Kernel-Address: 0x00008000
+
+Machine: Seagate FreeAgent DockStar
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+
+Machine: Thecus N2100
+Method: redboot
+Kernel-Flavors: iop32x
+Machine-Id: 1101
+Mtd-Kernel: kernel
+Mtd-Initrd: ramdisk
+
+Machine: Toshiba AC100 / Dynabook AZ
+Method: android
+Android-Boot-Device: /dev/mmcblk0p2
+Android-Boot-Config: /boot/bootimg.cfg
