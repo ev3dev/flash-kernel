@@ -28,6 +28,4 @@ FK_DIR="/usr/share/flash-kernel"
 
 . "${FK_CHECKOUT:-$FK_DIR}/functions"
 
-if [ -z "$TEST_FLASH_KERNEL" ]; then
-	main "$@"
-fi
+main "$@"
