@@ -17,8 +17,6 @@
 
 set -e
 
-FK_DIR="/usr/share/flash-kernel"
-
 self="$(basename "$0")"
 
 # space separated list of tests
