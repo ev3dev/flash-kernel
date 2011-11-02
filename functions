@@ -1,3 +1,8 @@
+MACHINE_DB="$(cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db)"
+PROC_CPUINFO="/proc/cpuinfo"
+PROC_MTD="/proc/mtd"
+
+
 error() {
 	echo "$@" >&2
 	exit 1
