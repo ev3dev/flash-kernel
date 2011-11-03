@@ -24,7 +24,7 @@ findfs () {
 	mount | grep "on /target${1%/} " | tail -n1 | cut -d' ' -f1
 }
 
-machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+machine="$(get_cpuinfo_hardware)"
 
 if machine_uses_flash "$machine"; then
 	db_progress START 0 3 flash-kernel-installer/progress
