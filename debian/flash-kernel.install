@@ -1,5 +1,5 @@
-flash-kernel usr/sbin
+flash-kernel    usr/sbin
 initramfs-tools usr/share
-bootscript usr/share/flash-kernel
-db usr/share/flash-kernel
-functions usr/share/flash-kernel
+bootscript      usr/share/flash-kernel
+db              usr/share/flash-kernel
+functions       usr/share/flash-kernel
