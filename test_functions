@@ -202,6 +202,27 @@ test_get_machine_field() {
 }
 add_test test_get_machine_field
 
+test_machine_uses_flash() {
+    (
+        . "$functions"
+        if ! machine_uses_flash "Dummy"; then
+            echo "Expected machine_uses_flash to succeed for non-existent board, but it failed" >&2
+            exit 1
+        fi
+        machine="Buffalo Linkstation Mini"
+        if machine_uses_flash "$machine"; then
+            echo "Expected machine_uses_flash to fail for $machine, but it succeeded" >&2
+            exit 1
+        fi
+        machine="Lanner EM7210"
+        if ! machine_uses_flash "$machine"; then
+            echo "Expected machine_uses_flash to succeed for $machine, but it failed" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_machine_uses_flash
+
 test_set_machine_id() {
     (
         . "$functions"

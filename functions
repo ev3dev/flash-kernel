@@ -131,6 +131,21 @@ get_machine_field() {
 	}
 }
 
+machine_uses_flash() {
+	local machine="$1"
+
+	if ! check_supported "$machine"; then
+		# assume devices not explicitly listed are using flash
+		return 0
+	fi
+
+	if [ -n "$(get_machine_field "$machine" "Mtd-Kernel")" ] ||
+		[ -n "$(get_machine_field "$machine" "Mtd-Initrd")" ]; then
+		return 0
+	fi
+	return 1
+}
+
 # output ARM instructions to set machine number; argument is the decimal
 # machine number as found in linux/arch/arm/tools/mach-types
 set_machine_id() {
@@ -608,4 +623,4 @@ case "$method" in
 esac
 }
 
-# vim:syntax=sh
+# vim:noexpandtab shiftwidth=8 syntax=sh

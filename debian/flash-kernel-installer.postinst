@@ -4,6 +4,10 @@
 
 set -e
 
+FK_DIR="/usr/share/flash-kernel"
+
+. "${FK_CHECKOUT:-$FK_DIR}/functions"
+
 . /usr/share/debconf/confmodule
 
 log() {
@@ -20,67 +24,9 @@ findfs () {
 	mount | grep "on /target${1%/} " | tail -n1 | cut -d' ' -f1
 }
 
-# Are we writing to flash or constructing an image on disk?
-write_to_flash() {
-	case "$machine" in
-		"Buffalo Linkstation LiveV3 (LS-CHL)")
-			return 1
-		;;
-		"Buffalo Linkstation Mini")
-			return 1
-		;;
-		"Buffalo Linkstation Pro/Live")
-			return 1
-		;;
-		"Buffalo/Revogear Kurobox Pro")
-			return 1
-		;;
-		"Genesi EfikaMX nettop" | "Genesi Efika Smartbook")
-			return 1
-		;;
-		"GLAN Tank")
-			return 1
-		;;
-		"GTA02")
-			return 1
-		;;
-		"HP t5325 Thin Client")
-			return 1
-		;;
-		"HP Media Vault mv2120")
-			return 1
-		;;
-		"Marvell GuruPlug Reference Board")
-			return 1
-		;;
-		"Marvell OpenRD Base Board")
-			return 1
-		;;
-		"Marvell OpenRD Client Board")
-			return 1
-		;;
-		"Marvell OpenRD Ultimate Board")
-			return 1
-		;;
-		"Marvell SheevaPlug Reference Board")
-			return 1
-		;;
-		"Marvell eSATA SheevaPlug Reference Board")
-			return 1
-		;;
-		"Seagate FreeAgent DockStar")
-			return 1
-		;;
-		# Assume that we write to flash for all other devices
-		*)
-			return 0
-		;;
-	esac
-}
-
 machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
 
-if write_to_flash; then
+if machine_uses_flash "$machine"; then
 	db_progress START 0 3 flash-kernel-installer/progress
 else
 	db_progress START 0 3 flash-kernel-installer/progress_disk
@@ -197,7 +143,7 @@ case "$machine" in
 esac
 
 db_progress STEP 1
-if write_to_flash; then
+if machine_uses_flash "$machine"; then
 	db_progress INFO flash-kernel-installer/flashing
 else
 	db_progress INFO flash-kernel-installer/generating_image
@@ -216,3 +162,5 @@ umount /target/dev || true
 
 db_progress STEP 1
 db_progress STOP
+
+# vim:noexpandtab shiftwidth=8
