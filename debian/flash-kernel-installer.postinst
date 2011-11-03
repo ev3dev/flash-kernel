@@ -50,37 +50,37 @@ db_progress STEP 1
 
 case "$machine" in
 	"Buffalo Linkstation LiveV3 (LS-CHL)" | "Buffalo Linkstation Mini" | "Buffalo Linkstation Pro/Live" | "Buffalo/Revogear Kurobox Pro")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"D-Link DNS-323")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"Genesi EfikaMX nettop" | "Genesi Efika Smartbook")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"GLAN Tank")
 		in-target update-initramfs -u || true
 	;;
 	"GTA02")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"HP t5325 Thin Client")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"HP Media Vault mv2120")
 		if ! apt-install mv2120-utils; then
@@ -89,10 +89,10 @@ case "$machine" in
 			# essential.
 			log "apt-install mv2120-utils failed"
 		fi
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 		# The firmware loads /boot/uImage from the first partition
 		# but uImage will be in / if a separate boot partition is
 		# used.  In this case, create a /boot/boot -> /boot symlink.
@@ -123,19 +123,19 @@ case "$machine" in
 		fi
 	;;
 	"Marvell GuruPlug Reference Board" | "Marvell OpenRD Base Board" | "Marvell OpenRD Client Board" | "Marvell OpenRD Ultimate Board" | "Marvell SheevaPlug Reference Board" | "Marvell eSATA SheevaPlug Reference Board" | "Seagate FreeAgent DockStar")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"Thecus N2100" | "Thecus N4100")
 		in-target update-initramfs -u || true
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
-		in-target update-initramfs -u || true
 		if ! apt-install uboot-mkimage; then
 			error "apt-install uboot-mkimage failed"
 		fi
+		in-target update-initramfs -u || true
 	;;
 	"Lanner EM7210")
 		in-target update-initramfs -u || true
