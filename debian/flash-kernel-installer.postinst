@@ -60,22 +60,6 @@ for package in $(get_machine_field "$machine" "Required-Packages"); do
 done
 
 case "$machine" in
-	"HP Media Vault mv2120")
-		in-target update-initramfs -u || true
-		# The firmware loads /boot/uImage from the first partition
-		# but uImage will be in / if a separate boot partition is
-		# used.  In this case, create a /boot/boot -> /boot symlink.
-		# Note that a partman check will make sure that /boot (if
-		# it exists) or / (if there's no separate /boot) are on the
-		# first partition.
-		rootfs=$(findfs /)
-		bootfs=$(findfs /boot)
-		if [ "$rootfs" != "$bootfs" ]; then
-			if [ ! -e /target/boot/boot ]; then
-				ln -s . /target/boot/boot
-			fi
-		fi
-	;;
 	"Linksys NSLU2")
 		# installing nslu2-utils will call update-initramfs -u
 		:
@@ -84,6 +68,22 @@ case "$machine" in
 		in-target update-initramfs -u || true
 	;;
 esac
+
+if [ "$machine" = "HP Media Vault mv2120" ]; then
+	# The firmware loads /boot/uImage from the first partition
+	# but uImage will be in / if a separate boot partition is
+	# used.  In this case, create a /boot/boot -> /boot symlink.
+	# Note that a partman check will make sure that /boot (if
+	# it exists) or / (if there's no separate /boot) are on the
+	# first partition.
+	rootfs=$(findfs /)
+	bootfs=$(findfs /boot)
+	if [ "$rootfs" != "$bootfs" ]; then
+		if [ ! -e /target/boot/boot ]; then
+			ln -s . /target/boot/boot
+		fi
+	fi
+fi
 
 db_progress STEP 1
 if machine_uses_flash "$machine"; then
