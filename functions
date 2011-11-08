@@ -18,6 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 # USA.
 
+BOOTSCRIPTS_DIR="${FK_CHECKOUT:-$FK_DIR}/bootscript"
 MACHINE_DB="$(cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db)"
 PROC_CPUINFO="/proc/cpuinfo"
 PROC_MTD="/proc/mtd"
@@ -515,8 +516,8 @@ case "$method" in
 		if [ -n "$boot_script_path" ]; then
 			boot_script="$tmpdir/boot.scr"
 			mkimage_script "$usaddr" "Debian boot script" \
-				"/usr/share/flash-kernel/bootscript/$usname" \
-				"$bootscript"
+				"$BOOTSCRIPTS_DIR/$usname" \
+				"$boot_script"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi
 	;;
