@@ -32,19 +32,6 @@ pause_error() {
 	fi
 }
 
-# Should we override the root device or merely provide a default root
-# device?
-root_type() {
-	local machine="$1"
-	local blsr="$(get_machine_field "$machine" "Bootloader-sets-root")"
-
-	if [ "$blsr" = "yes" ]; then
-		echo "override"
-	else
-		echo "default"
-	fi
-}
-
 case $1 in
 prereqs)
 	prereqs
@@ -57,11 +44,6 @@ FK_DIR="/usr/share/flash-kernel"
 . "${FK_CHECKOUT:-$FK_DIR}/functions"
 
 . /usr/share/initramfs-tools/hook-functions
-
-machine="$(get_cpuinfo_hardware)"
-if [ -z "$(root_type "$machine")" ]; then
-	exit 0
-fi
 
 # Record the root filesystem device for use during boot
 rootdev=$(egrep '^[^# 	]+[ 	]+/[ 	]' /etc/fstab | awk '{print $1}') || true
@@ -104,25 +86,23 @@ if [ ! -e "$rootdev" ]; then
 	echo "Warning: root device $rootdev does not exist" >&2
 	pause_error
 fi
-case "$(root_type "$machine")" in
+
+machine="$(get_cpuinfo_hardware)"
+
+# Should we override the root device or merely provide a default root
+# device?
+blsr="$(get_machine_field "$machine" "Bootloader-sets-root")"
+
+if [ "$blsr" = "no" ]; then
 	# The boot loader doesn't pass root= on the command line, so
 	# provide a default.
-	"default")
-		install -d $DESTDIR/conf/conf.d
-		echo "ROOT=\"$rootdev\"" > $DESTDIR/conf/conf.d/default_root
-	;;
+	install -d $DESTDIR/conf/conf.d
+	echo "ROOT=\"$rootdev\"" > $DESTDIR/conf/conf.d/default_root
+else
 	# The boot loader passes a bogus root= (e.g. root=/dev/ram), so
 	# override the command line parameter.
-	"override")
-		install -d $DESTDIR/conf
-		echo "ROOT=\"$rootdev\"" >> $DESTDIR/conf/param.conf
-	;;
-	# This shouldn't happen - only if a device from the case statement
-	# above wasn't added here.
-	*)
-		echo "Device $machine not supported.  Please file a bug." >&2
-		pause_error
-	;;
-esac
+	install -d $DESTDIR/conf
+	echo "ROOT=\"$rootdev\"" >> $DESTDIR/conf/param.conf
+fi
 
 # vim:noexpandtab shiftwidth=8
