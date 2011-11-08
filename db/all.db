@@ -55,7 +55,7 @@ Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
 U-Boot-Initrd-Address: 0x0
 U-Boot-Script-Address: 0x0
-U-Boot-Script-Template: bootscr.mx5
+U-Boot-Script-Name: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
@@ -67,7 +67,7 @@ Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
 U-Boot-Initrd-Address: 0x0
 U-Boot-Script-Address: 0x0
-U-Boot-Script-Template: bootscr.mx5
+U-Boot-Script-Name: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
