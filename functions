@@ -399,8 +399,6 @@ boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
-# XXX this is only supported in boot scripts at the moment
-extra_cmdline="$(get_machine_field "$machine" "Extra-Cmdline")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
 android_boot_config="$(get_machine_field "$machine" "Android-Boot-Config")" || :
 
@@ -515,12 +513,9 @@ case "$method" in
 			rm -f "$tmpdir/uInitrd"
 		fi
 		if [ -n "$boot_script_path" ]; then
-			boot_script="$tmpdir/boot.txt"
-			sed -e "s#@EXTRA_CMDLINE@#$extra_cmdline#" \
-				"/usr/share/flash-kernel/bootscript/$ustemplate" \
-				>"$boot_script"
 			mkimage_script "$usaddr" "Debian boot script" \
-				"$boot_script" "$tmpdir/boot.scr"
+				"/usr/share/flash-kernel/bootscript/$ustemplate" \
+				"$tmpdir/boot.scr"
 			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi

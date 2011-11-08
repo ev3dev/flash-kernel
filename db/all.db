@@ -59,9 +59,8 @@ U-Boot-Script-Template: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
-Extra-Cmdline: root=/dev/sda2
 Required-packages: uboot-mkimage
-Bootloader-sets-root: no
+Bootloader-sets-root: yes
 
 Machine: Genesi EfikaMX nettop
 Kernel-Flavors: mx5
@@ -72,9 +71,8 @@ U-Boot-Script-Template: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
-Extra-Cmdline: root=/dev/sda2
 Required-packages: uboot-mkimage
-Bootloader-sets-root: no
+Bootloader-sets-root: yes
 
 Machine: GLAN Tank
 Method: symlink
