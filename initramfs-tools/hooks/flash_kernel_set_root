@@ -124,6 +124,10 @@ prereqs)
 	;;
 esac
 
+FK_DIR="/usr/share/flash-kernel"
+
+. "${FK_CHECKOUT:-$FK_DIR}/functions"
+
 . /usr/share/initramfs-tools/hook-functions
 
 # Only run this hook on some machines
