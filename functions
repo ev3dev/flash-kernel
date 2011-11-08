@@ -394,7 +394,7 @@ ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
 usaddr="$(get_machine_field "$machine" "U-Boot-Script-Address")" || :
-ustemplate="$(get_machine_field "$machine" "U-Boot-Script-Template")" || :
+usname="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
@@ -513,10 +513,10 @@ case "$method" in
 			rm -f "$tmpdir/uInitrd"
 		fi
 		if [ -n "$boot_script_path" ]; then
-			mkimage_script "$usaddr" "Debian boot script" \
-				"/usr/share/flash-kernel/bootscript/$ustemplate" \
-				"$tmpdir/boot.scr"
 			boot_script="$tmpdir/boot.scr"
+			mkimage_script "$usaddr" "Debian boot script" \
+				"/usr/share/flash-kernel/bootscript/$usname" \
+				"$bootscript"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi
 	;;
