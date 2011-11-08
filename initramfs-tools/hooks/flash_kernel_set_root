@@ -35,86 +35,14 @@ pause_error() {
 # Should we override the root device or merely provide a default root
 # device?
 root_type() {
-	case "$1" in
-		"Buffalo Linkstation LiveV3 (LS-CHL)")
-			echo "override"
-		;;
-		"Buffalo Linkstation Mini")
-			echo "override"
-		;;
-		"Buffalo Linkstation Pro/Live")
-			echo "override"
-		;;
-		"Buffalo/Revogear Kurobox Pro")
-			echo "override"
-		;;
-		"D-Link DNS-323")
-			echo "override"
-		;;
-		"Genesi EfikaMX nettop" | "Genesi Efika Smartbook")
-			echo "default"
-		;;
-		"GLAN Tank")
-			echo "override"
-		;;
-		"GTA02")
-			echo "override"
-		;;
-		"HP t5325 Thin Client")
-			echo "override"
-		;;
-		"HP Media Vault mv2120")
-			echo "override"
-		;;
-		"Linksys NSLU2")
-			echo "default"
-		;;
-		"QNAP TS-109/TS-209")
-			echo "override"
-		;;
-		"QNAP TS-119/TS-219")
-			echo "override"
-		;;
-		"QNAP TS-409")
-			echo "override"
-		;;
-		"QNAP TS-41x")
-			echo "override"
-		;;
-		"Marvell DB-78x00-BP Development Board")
-			echo "default"
-		;;
-		"Marvell GuruPlug Reference Board")
-			echo "default"
-		;;
-		"Marvell OpenRD Base Board")
-			echo "default"
-		;;
-		"Marvell OpenRD Client Board")
-			echo "default"
-		;;
-		"Marvell OpenRD Ultimate Board")
-			echo "default"
-		;;
-		"Marvell SheevaPlug Reference Board")
-			echo "default"
-		;;
-		"Marvell eSATA SheevaPlug Reference Board")
-			echo "default"
-		;;
-		"Seagate FreeAgent DockStar")
-			echo "default"
-		;;
-		"Thecus N2100")
-			echo "override"
-		;;
-		"Lanner EM7210")
-			echo "override"
-		;;
-		*)
-			echo
-		;;
-	esac
+	local machine="$1"
+	local blsr="$(get_machine_field "$machine" "Bootloader-sets-root")"
+
+	if [ "$blsr" = "yes" ]; then
+		echo "override"
+	else
+		echo "default"
+	fi
 }
 
 case $1 in
@@ -198,3 +126,4 @@ case "$(root_type "$machine")" in
 	;;
 esac
 
+# vim:noexpandtab shiftwidth=8
