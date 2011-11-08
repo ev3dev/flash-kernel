@@ -55,8 +55,9 @@ at http://bugs.debian.org/
 Testsuite
 - - - - -
 
-Start the testsuite with:
-    ./test_flash-kernel
+Run the testsuite with:
+    FK_CHECKOUT=. ./test_flash-kernel
+    FK_CHECKOUT=. ./test_functions
 
 You need the devscripts package for the checkbashisms test.
 
