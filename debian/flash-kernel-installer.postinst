@@ -128,7 +128,7 @@ case "$machine" in
 		fi
 		in-target update-initramfs -u || true
 	;;
-	"Thecus N2100" | "Thecus N4100")
+	"Thecus N2100")
 		in-target update-initramfs -u || true
 	;;
 	"QNAP TS-109/TS-209" | "QNAP TS-119/TS-219" | "QNAP TS-409" | "QNAP TS-41x")
