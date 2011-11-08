@@ -131,7 +131,7 @@ FK_DIR="/usr/share/flash-kernel"
 . /usr/share/initramfs-tools/hook-functions
 
 # Only run this hook on some machines
-machine=$(grep "^Hardware" /proc/cpuinfo | sed 's/Hardware\s*:\s*//')
+machine="$(get_cpuinfo_hardware)"
 if [ -z "$(root_type "$machine")" ]; then
 	exit 0
 fi
