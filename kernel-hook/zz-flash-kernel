@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# see Chapter 8 of Debian Linux Kernel Handbook
+
+set -e
+
+# /etc/kernel/{postinst.d,postrm.d}/zz-flash-kernel conffile still present, but
+# flash-kernel removed
+if ! which flash-kernel >/dev/null 2>&1; then
+    exit 0
+fi
+
+# this script is used as postinst.d and postrm.d script; this is used to
+# differentiate between the two
+self="$0"
+
+# see 8.1, Kernel hooks
+abi="$1"
+vmlinuz="${2:-/boot/vmlinuz-$abi}"
+set -- $DEB_MAINT_PARAMS
+action="$1"
+action="${action#\'}"
+action="${action%\'}"
+version="$2"
+version="${version#\'}"
+version="${version%\'}"
+
+log_w() {
+    echo "$*" >&2
+}
+
+# flash-kernel can only install a single kernel; either it's told explicitly
+# which one to install, or it needs to pick one from the list; this choice is
+# implemented in flash-kernel itself and kernel and initramfs hooks just call
+# flash-kernel without any version
+
+log_w "Ignoring ABI $abi and kernel image $vmlinuz"
+
+# only call flash-kernel once on install, upgrade, removal or purge
+case "$(basename "$(dirname "$self")")/$action" in
+  postinst.d/configure|postrm.d/remove)
+    exec flash-kernel
+  ;;
+esac
+

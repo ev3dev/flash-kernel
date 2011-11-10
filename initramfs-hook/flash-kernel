@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+abi="$1"
+initrd="$2"
+
+log_w() {
+    echo "$*" >&2
+}
+
+# flash-kernel can only install a single kernel; either it's told explicitly
+# which one to install, or it needs to pick one from the list; this choice is
+# implemented in flash-kernel itself and kernel and initramfs hooks just call
+# flash-kernel without any version
+
+log_w "Ignoring ABI $abi and initrd $initrd"
+
+exec flash-kernel
+
