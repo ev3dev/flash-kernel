@@ -1,4 +1,4 @@
-initramfs-hook/zz-flash-kernel  etc/initramfs/post-update.d
+initramfs-hook/flash-kernel     etc/initramfs/post-update.d
 kernel-hook/zz-flash-kernel     etc/kernel/postinst.d
 kernel-hook/zz-flash-kernel     etc/kernel/postrm.d
 flash-kernel                    usr/sbin
