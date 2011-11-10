@@ -1,3 +1,33 @@
+flash-kernel (3.0~rc.2) experimental; urgency=low
+
+  * New kernel and initramfs hooks, new logic: flash-kernel always installs
+    the latest version according to linux-version and ignores other calls.
+    - Fixes installation of new kernel ABIs; closes: #550584.
+    - NEWS, man page: document new behavior.
+    - flash-kernel depends on linux-base >= 3.2 for linux-version.
+  * Add support for triggers; see #550584 for discussion.
+  * Misc syntax fixes / cleanups / refactoring; tweak output.
+    - Fix some bogus messages in error conditions.
+    - Refactor flash-kernel-installer and initramfs-tools hook to use shared
+      function and database.
+    - Split code and testsuite out.
+  * Toshiba AC100 / Android handling; thanks to Julian Andres Klode for his
+    input (and patience :-)
+    - abootimg would now be installed via flash-kernel-installer.
+    - set default root= in initrd.
+    - drop Android-Boot-Config hurts more than it helps
+    - don't try checking for a specific size; instead let abootimg handle size
+      checks for us; size checks were meant to identify the largest partition,
+      instead just scan all partitions from MMC and chose the largest one.
+  * Add OMAP4 Pandaboard support.
+  * Split out database in its own file under /usr/share/flash-kernel/db/;
+    document format in README.
+  * Drop Extra-Cmdline used in EfikaMX boot scripts; instead rely on initrd to
+    set root= (as for other boards).
+  * Drop accidental support for Thecus N4100 in f-k-i.
+
+ -- Loïc Minier <lool@debian.org>  Thu, 10 Nov 2011 23:59:24 +0100
+
 flash-kernel (3.0~rc.1) experimental; urgency=low
 
   [ Loïc Minier ]
