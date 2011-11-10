@@ -444,9 +444,9 @@ case "$method" in
 				part="$p"
 			fi
 		done
-		if [ -z "$part" ]; do
+		if [ -z "$part" ]; then
 			error "Couldn't find Android boot partition on $android_boot_device"
-		done
+		fi
 		android_flash "$part"
 	;;
 	"generic")
