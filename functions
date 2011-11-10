@@ -285,40 +285,6 @@ abootimg_get_image_size() {
 }
 
 # XXX needs testsuite coverage
-abootimg_get_page_size() {
-	local abootimg="$1"
-
-	echo "$abootimg" | sed -rn 's/^ page size  = ([0-9]+) bytes.*/\1/p'
-}
-
-# XXX needs testsuite coverage
-android_check_bootpart() {
-	local dev="$1"
-	local kfilesize="$2"
-	local ifilesize="$3"
-	local needed_pages
-	local avail_pages
-
-	abootimg="$(LC_ALL=C abootimg -i "$dev" 2>/dev/null)"
-	image_size="$(abootimg_get_image_size "$abootimg")"
-	page_size="$(abootimg_get_page_size "$abootimg")"
-
-	avail_pages=$(($image_size / $page_size))
-	# XXX this assumes there is no second stage eating pages
-	# boot header
-	needed_pages="1"
-	needed_pages=$(($needed_pages +
-		($kfilesize + $page_size - 1) / $page_size))
-	needed_pages=$(($needed_pages +
-		($kfilesize + $page_size - 1) / $page_size))
-
-	if [ "$needed_pages" -lt "$avail_pages" ]; then
-		error "Android boot partition is too small ($image_size bytes with a $page_size bytes page size for a $kfilesize bytes kernel and a $ifilesize bytes initrd)"
-	fi
-	return 0
-}
-
-# XXX needs testsuite coverage
 android_flash() {
 	local device="$1"
 
@@ -468,9 +434,20 @@ tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
 case "$method" in
 	"android")
-		android_check_bootpart "$android_boot_device" "$kfilesize" \
-			"$ifilesize"
-		android_flash "$android_boot_device"
+		part=""
+		largest_size="-1"
+		for p in "$android_boot_device"*[0-9]; do
+			abootimg="$(LC_ALL=C abootimg -i "$p" 2>/dev/null)"
+			image_size="$(abootimg_get_image_size "$abootimg")"
+			if [ -n "$image_size" ] &&
+				[ "$image_size" -gt "$largest_size" ]; then
+				part="$p"
+			fi
+		done
+		if [ -z "$part" ]; do
+			error "Couldn't find Android boot partition on $android_boot_device"
+		done
+		android_flash "$part"
 	;;
 	"generic")
 		kernel="$kfile"

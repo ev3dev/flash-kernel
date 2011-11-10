@@ -258,6 +258,6 @@ Bootloader-sets-root: yes
 
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
-Android-Boot-Device: /dev/mmcblk0p2
+Android-Boot-Device: /dev/mmcblk0
 Required-Packages: abootimg
 Bootloader-sets-root: no
