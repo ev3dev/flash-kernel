@@ -543,10 +543,11 @@ case "$method" in
 		fi
 		if [ -n "$boot_script_path" ]; then
 			boot_script_path="$boot_mnt_dir/$boot_script_path"
-			boot_script="$tmpdir/boot.scr"
+			boot_script="$BOOTSCRIPTS_DIR/$usname"
 			mkimage_script "$usaddr" "Debian boot script" \
-				"$BOOTSCRIPTS_DIR/$usname" \
-				"$boot_script"
+				"$boot_script" \
+				"$tmpdir/boot.scr"
+			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi
 	;;
