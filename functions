@@ -373,8 +373,8 @@ fi
 
 kfile="/boot/vmlinuz-$kvers"
 ifile="/boot/initrd.img-$kvers"
-desc="Debian kernel $kvers"
-idesc="Debian ramdisk $kvers"
+desc="kernel $kvers"
+idesc="ramdisk $kvers"
 
 if [ ! -e $kfile ] || [ ! -e $ifile ]; then
 	error "Can't find $kfile or $ifile"
@@ -544,8 +544,7 @@ case "$method" in
 		if [ -n "$boot_script_path" ]; then
 			boot_script_path="$boot_mnt_dir/$boot_script_path"
 			boot_script="$BOOTSCRIPTS_DIR/$usname"
-			mkimage_script "$usaddr" "Debian boot script" \
-				"$boot_script" \
+			mkimage_script "$usaddr" "boot script" "$boot_script" \
 				"$tmpdir/boot.scr"
 			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
