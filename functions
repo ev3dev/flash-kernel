@@ -35,7 +35,7 @@ mtdblock() {
 	sed -rn "s,^mtd([^:]*).*\"$mtdname\"\$,/dev/mtdblock\\1,p" "$PROC_MTD"
 }
 
-check_dev_mtdblock() {
+check_block_dev() {
 	local dev="$1"
 
 	if [ ! -b "$dev" ]; then
@@ -414,7 +414,7 @@ if [ -n "$mtd_kernel" ]; then
 	if [ -z "$kmtd" ]; then
 		error "Cannot find mtd partition '$mtd_kernel'"
 	fi
-	check_dev_mtdblock "$kmtd"
+	check_block_dev "$kmtd"
 	kmtdsize=$(mtdsize "$mtd_kernel")
 	kreqsize=$kfilesize
 	# setting the machine id prepends 8 bytes in front of the kernel
@@ -432,7 +432,7 @@ if [ -n "$mtd_initrd" ]; then
 	if [ -z "$imtd" ]; then
 		error "Cannot find mtd partition '$mtd_initrd'"
 	fi
-	check_dev_mtdblock "$imtd"
+	check_block_dev "$imtd"
 	imtdsize=$(mtdsize "$mtd_initrd")
 	ireqsize=$ifilesize
 	# encapsulating in an U-Boot image grows the size by 64 bytes
@@ -481,6 +481,7 @@ case "$method" in
 			rm -f "$tmpdir/kernel"
 		fi
 		if [ -n "$boot_device" ]; then
+			check_block_dev "$boot_device"
 			# don't use $tmpdir/boot as to not nuke it accidentally
 			# if umount fails
 			boot_mnt_dir="$(mktemp -dt "$self.XXXXXXXX")"
