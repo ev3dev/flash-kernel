@@ -88,18 +88,19 @@ The supported fields are:
   also indicates that U-Boot images should be generated with mkimage
 
 * U-Boot-Script-Address: (optional) like U-Boot-Kernel-Address and
-  U-Boot-Initrd-Address but for an U-Boot boot script; see
+  U-Boot-Initrd-Address but for an U-Boot boot script; see also
   U-Boot-Script-Name
 
 * U-Boot-Script-Name: (optional) name of U-Boot boot script to install
   from the flash-kernel files
 
 * Boot-Kernel-Path, Boot-Initrd-Path: (optional) where to put the
-  generated kernel and initrd files on the filesystem
+  generated kernel and initrd files on the filesystem; see also
+  Boot-Device
 
 * Boot-Script-Path: (optional) like Boot-Kernel-Path and
-  Boot-Initrd-Path but for an U-Boot boot script; see
-  U-Boot-Script-Name
+  Boot-Initrd-Path but for an U-Boot boot script; see also
+  U-Boot-Script-Name and Boot-Device
 
 * Required-packages: (optional) list of packages which must be added
   during installer phase for flash-kernel to work properly; failure to
@@ -118,4 +119,8 @@ The supported fields are:
 * Method: (optional) indicates how to support this particular machine;
   the default is "generic"; other available methods are: android, multi,
   redboot, slug, symlink
+
+* Boot-Device: (optional) block device to mount before installing
+  kernel,  initrd and U-Boot script; Boot-Kernel-Path, Boot-Initrd-Path and
+  Boot-Script-Path are then taken relative to this boot device
 

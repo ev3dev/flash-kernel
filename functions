@@ -396,6 +396,7 @@ uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
 usaddr="$(get_machine_field "$machine" "U-Boot-Script-Address")" || :
 usname="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
+boot_device="$(get_machine_field "$machine" "Boot-Device")"
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
@@ -442,10 +443,15 @@ if [ -n "$mtd_initrd" ]; then
 fi
 
 tmpdir=""
-cleanup_tmpdir() {
+boot_mnt_dir=""
+cleanups() {
+	if [ -d "$boot_mnt_dir" ]; then
+		umount "$boot_mnt_dir"
+		rmdir "$boot_mnt_dir"
+	fi
 	rm -rf "$tmpdir"
 }
-trap cleanup_tmpdir EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
+trap cleanups EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 self="$(basename "$0")"
 tmpdir="$(mktemp -dt "$self.XXXXXXXX")"
 
@@ -474,7 +480,14 @@ case "$method" in
 				"$tmpdir/uImage"
 			rm -f "$tmpdir/kernel"
 		fi
+		if [ -n "$boot_device" ]; then
+			# don't use $tmpdir/boot as to not nuke it accidentally
+			# if umount fails
+			boot_mnt_dir="$(mktemp -dt "$self.XXXXXXXX")"
+			mount "$boot_device" "$boot_mnt_dir"
+		fi
 		if [ -n "$boot_kernel_path" ]; then
+			boot_kernel_path="$boot_mnt_dir/$boot_kernel_path"
 			# don't mv the original kernel
 			if [ "$kernel" != "$kfile" ]; then
 				backup_and_install "$kernel" \
@@ -496,6 +509,7 @@ case "$method" in
 			initrd="$tmpdir/uInitrd"
 		fi
 		if [ -n "$boot_initrd_path" ]; then
+			boot_initrd_path="$boot_mnt_dir/$boot_initrd_path"
 			# don't mv the original initrd
 			if [ "$initrd" != "$ifile" ]; then
 				backup_and_install "$initrd" \
@@ -514,6 +528,7 @@ case "$method" in
 			rm -f "$tmpdir/uInitrd"
 		fi
 		if [ -n "$boot_script_path" ]; then
+			boot_script_path="$boot_mnt_dir/$boot_script_path"
 			boot_script="$tmpdir/boot.scr"
 			mkimage_script "$usaddr" "Debian boot script" \
 				"$BOOTSCRIPTS_DIR/$usname" \
