@@ -254,10 +254,10 @@ backup_and_install() {
 	local dest="$2"
 
 	if [ -e "$dest" ]; then
-		echo "Creating backup of $dest." >&2
+		echo "Taking backup of $(basename "$dest")." >&2
 		mv "$dest" "$dest.bak"
 	fi
-	echo "Creating new $dest." >&2
+	echo "Installing new $(basename "$dest")." >&2
 	mv "$source" "$dest"
 }
 
