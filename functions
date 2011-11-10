@@ -321,11 +321,10 @@ android_check_bootpart() {
 # XXX needs testsuite coverage
 android_flash() {
 	local device="$1"
-	local boot_config="$2"
 
 	printf "Flashing kernel and initramfs to $device... " >&2
-	abootimg -u "$device" -f "$boot_config" \
-		-k "$kfile" -r "$ifile" >/dev/null || error "failed."
+	abootimg -u "$device" -k "$kfile" -r "$ifile" >/dev/null ||
+		error "failed."
 	echo "done." >&2
 }
 
@@ -414,7 +413,6 @@ boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
-android_boot_config="$(get_machine_field "$machine" "Android-Boot-Config")" || :
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -472,7 +470,7 @@ case "$method" in
 	"android")
 		android_check_bootpart "$android_boot_device" "$kfilesize" \
 			"$ifilesize"
-		android_flash "$android_boot_device" "$android_boot_config"
+		android_flash "$android_boot_device"
 	;;
 	"generic")
 		kernel="$kfile"
