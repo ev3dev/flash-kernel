@@ -27,8 +27,10 @@ _version="${version#\'}"
 _version="${version%\'}"
 
 # only call flash-kernel once on install, upgrade, removal or purge
+# XXX apparently kernel postinst doesn't always pass maintainer scripts
+# arguments
 case "$(basename "$(dirname "$self")")/$action" in
-  postinst.d/configure|postrm.d/remove)
+  postinst.d/configure|postinst.d/|postrm.d/remove|postrm.d/)
     exec flash-kernel "$abi"
   ;;
 esac
