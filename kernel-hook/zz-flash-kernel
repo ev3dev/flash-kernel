@@ -4,8 +4,7 @@
 
 set -e
 
-# /etc/kernel/{postinst.d,postrm.d}/zz-flash-kernel conffile still present, but
-# flash-kernel removed
+# conffile still present, but flash-kernel removed
 if ! which flash-kernel >/dev/null 2>&1; then
     exit 0
 fi
