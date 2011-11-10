@@ -190,6 +190,19 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: uboot-mkimage
 Bootloader-sets-root: no
 
+Machine: OMAP4 Panda board
+Method: generic
+U-Boot-Kernel-Address: 0x80008000
+U-Boot-Initrd-Address: 0x0
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Name: bootscr.omap
+Boot-Device: /dev/mmcblk0p1
+Boot-Kernel-Path: uImage
+Boot-Initrd-Path: uInitrd
+Boot-Script-Path: boot.scr
+Required-Packages: uboot-mkimage
+Bootloader-sets-root: no
+
 Machine: QNAP TS-109/TS-209
 Kernel-Flavors: orion5x
 Machine-Id: 1565
