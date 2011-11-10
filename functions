@@ -345,13 +345,31 @@ if [ "x$1" = "x--supported" ]; then
 	exit 1
 fi
 
+# kernel + initrd installation/upgrade mode, with optional version
+
 if [ -n "$1" ]; then
+	# if an explicit version was given, just try installing that
 	kvers="$1"
 	kfile="/boot/vmlinuz-$kvers"
 	ifile="/boot/initrd.img-$kvers"
 	desc="Debian kernel $kvers"
 	idesc="Debian ramdisk $kvers"
 else
+	# no version was given, just accumulate multiple calls in a trigger to
+	# only run flash-kernel once; the trigger will just call flash-kernel
+	# again with FLASH_KERNEL_NOTRIGGER set to force a real run
+	if [ -z "$FLASH_KERNEL_NOTRIGGER" ] && [ -n "$DPKG_MAINTSCRIPT_PACKAGE" ] && dpkg-trigger --check-supported 2>/dev/null; then
+		# flash-kernel trigger isn't disabled, and we're called from
+		# some package maintainer script (e.g. some postinst calls
+		# flash-kernel), and dpkg-trigger is installed and confirms
+		# that the running dpkg support triggers: we can use the
+		# flash-kernel trigger (asynchronously)
+		if dpkg-trigger --no-await flash-kernel; then
+			exit 0
+		fi
+		# dpkg-trigger failed for some reason, proceed to a normal run
+	fi
+
 	if [ -e /vmlinuz ]; then
 		kfile=/vmlinuz
 		ifile=/initrd.img
