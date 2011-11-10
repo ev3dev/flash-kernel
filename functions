@@ -445,11 +445,11 @@ fi
 tmpdir=""
 boot_mnt_dir=""
 cleanups() {
+	rm -rf "$tmpdir"
 	if [ -d "$boot_mnt_dir" ]; then
 		umount "$boot_mnt_dir"
 		rmdir "$boot_mnt_dir"
 	fi
-	rm -rf "$tmpdir"
 }
 trap cleanups EXIT HUP INT QUIT ILL KILL SEGV PIPE TERM
 self="$(basename "$0")"
