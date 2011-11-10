@@ -12,7 +12,10 @@ Vcs-Git: git://git.debian.org/d-i/flash-kernel.git
 
 Package: flash-kernel
 Architecture: arm armel armeb armhf
-Depends: ${misc:Depends}, devio, initramfs-tools (>= 0.92f)
+Depends: ${misc:Depends},
+         devio,
+         initramfs-tools (>= 0.92f),
+         linux-base (>= 3.2)
 Suggests: uboot-mkimage
 Description: utility to make certain embedded devices bootable
  flash-kernel is a script which will put the kernel and initramfs in

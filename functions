@@ -347,44 +347,37 @@ fi
 
 # kernel + initrd installation/upgrade mode, with optional version
 
-if [ -n "$1" ]; then
-	# if an explicit version was given, just try installing that
-	kvers="$1"
-	kfile="/boot/vmlinuz-$kvers"
-	ifile="/boot/initrd.img-$kvers"
-	desc="Debian kernel $kvers"
-	idesc="Debian ramdisk $kvers"
-else
-	# no version was given, just accumulate multiple calls in a trigger to
-	# only run flash-kernel once; the trigger will just call flash-kernel
-	# again with FLASH_KERNEL_NOTRIGGER set to force a real run
-	if [ -z "$FLASH_KERNEL_NOTRIGGER" ] && [ -n "$DPKG_MAINTSCRIPT_PACKAGE" ] && dpkg-trigger --check-supported 2>/dev/null; then
-		# flash-kernel trigger isn't disabled, and we're called from
-		# some package maintainer script (e.g. some postinst calls
-		# flash-kernel), and dpkg-trigger is installed and confirms
-		# that the running dpkg support triggers: we can use the
-		# flash-kernel trigger (asynchronously)
-		if dpkg-trigger --no-await flash-kernel; then
-			exit 0
-		fi
-		# dpkg-trigger failed for some reason, proceed to a normal run
-	fi
+kvers="$1"
+latest_version=$(linux-version list | linux-version sort | tail -1)
+if [ -n "$kvers" ] && [ "$kvers" != "$latest_version" ]; then
+	echo "Ignoring old or unknown version $kvers (latest is $latest_version)" >&2
+	exit 0
+fi
+kvers="$latest_version"
 
-	if [ -e /vmlinuz ]; then
-		kfile=/vmlinuz
-		ifile=/initrd.img
-	elif [ -e /boot/vmlinuz ]; then
-		kfile=/boot/vmlinuz
-		ifile=/boot/initrd.img
-	else
-		error "Cannot find a default kernel in /vmlinuz or /boot/vmlinuz"
+# accumulate multiple calls in a trigger to only run flash-kernel once; the
+# trigger will just call flash-kernel again with FLASH_KERNEL_NOTRIGGER set to
+# force a real run
+if [ -z "$FLASH_KERNEL_NOTRIGGER" ] && [ -n "$DPKG_MAINTSCRIPT_PACKAGE" ] && dpkg-trigger --check-supported 2>/dev/null; then
+	# flash-kernel trigger isn't disabled, and we're called from
+	# some package maintainer script (e.g. some postinst calls
+	# flash-kernel), and dpkg-trigger is installed and confirms
+	# that the running dpkg support triggers: we can use the
+	# flash-kernel trigger (asynchronously)
+	if dpkg-trigger --no-await flash-kernel; then
+		echo "flash-kernel: deferring update (trigger activated)" >&2
+		exit 0
 	fi
-	desc="Debian kernel"
-	idesc="Debian ramdisk"
+	# dpkg-trigger failed for some reason, proceed to a normal run
 fi
 
+kfile="/boot/vmlinuz-$kvers"
+ifile="/boot/initrd.img-$kvers"
+desc="Debian kernel $kvers"
+idesc="Debian ramdisk $kvers"
+
 if [ ! -e $kfile ] || [ ! -e $ifile ]; then
-	error "Can't find $kfile and $ifile"
+	error "Can't find $kfile or $ifile"
 fi
 kfilesize=$(stat -c '%s' "$kfile")
 ifilesize=$(stat -c '%s' "$ifile")
@@ -404,6 +397,8 @@ if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
 		exit 0
 	fi
 fi
+
+echo "flash-kernel: installing version $kvers" >&2
 
 machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
