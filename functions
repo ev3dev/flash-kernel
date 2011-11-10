@@ -299,7 +299,6 @@ android_check_bootpart() {
 	local needed_pages
 	local avail_pages
 
-	# XXX abootimg isn't apt-install-ed at this point
 	abootimg="$(LC_ALL=C abootimg -i "$dev" 2>/dev/null)"
 	image_size="$(abootimg_get_image_size "$abootimg")"
 	page_size="$(abootimg_get_page_size "$abootimg")"
