@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2011-11-01 00:30+0530\n"
-"Last-Translator: Danishka Navin <danishka@gmail.com>\n"
+"PO-Revision-Date: 2011-09-15 07:01+0530\n"
+"Last-Translator: \n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "පද්ධතිය පණගැන්වීමට ෆ්ලෑශ්මතකය සකසමින්"
 
 #. Type: text
 #. Description
@@ -43,7 +43,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "පද්ධතිය ආරම්භකලහැකි ලෙස සකසමින්"
 
 #. Type: text
 #. Description
@@ -52,7 +52,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "පද්ධතිය සූදානම් කරමින්..."
 
 #. Type: text
 #. Description
@@ -61,7 +61,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "ෆ්ලෑශ් මතකයට කර්නලය ලියමින්..."
 
 #. Type: text
 #. Description
@@ -71,7 +71,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "ආරම්භක පිළිබිඹුව තැටිය මත සකසමින්..."
 
 #. Type: text
 #. Description
@@ -82,4 +82,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "පද්ධතිය ඇරඹිය-හැකි තත්වයට හරවන්න"
