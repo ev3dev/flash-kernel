@@ -3,30 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of uk.po to Ukrainian
-# translation of uk.po to
-# Ukrainian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Eugeniy Meshcheryakov <eugen@debian.org>, 2005, 2006, 2007, 2010.
-# Євгеній Мещеряков <eugen@debian.org>, 2008.
-# Borys Yanovych <borys@yanovy.ch>, 2010.
-msgid ""
-msgstr ""
-"Project-Id-Version: uk\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-11-01 01:29+0200\n"
-"Last-Translator: Borys Yanovych <borys@yanovy.ch>\n"
-"Language-Team: Ukrainian <>\n"
-"Language: uk\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -34,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Налаштування флеш-пам'яті для завантаження системи"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -43,7 +19,7 @@ msgstr "Налаштування флеш-пам'яті для завантаж�
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Система робиться завантажувальною"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -52,7 +28,7 @@ msgstr "Система робиться завантажувальною"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Підготовка системи..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -61,7 +37,7 @@ msgstr "Підготовка системи..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Запис ядра у флеш-пам'ять..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -71,7 +47,7 @@ msgstr "Запис ядра у флеш-пам'ять..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Створення завантажувального образу на диску..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -82,4 +58,4 @@ msgstr "Створення завантажувального образу на 
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Зробити систему завантажувальною"
+msgstr ""
