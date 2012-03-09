@@ -1,3 +1,9 @@
+flash-kernel (3.0~rc.3) experimental; urgency=low
+
+  * Replace uboot-mkimage by u-boot-tools
+
+ -- Hector Oron <zumbi@debian.org>  Fri, 09 Mar 2012 22:52:42 +0100
+
 flash-kernel (3.0~rc.2) experimental; urgency=low
 
   * New kernel and initramfs hooks, new logic: flash-kernel always installs
