@@ -50,6 +50,15 @@ U-Boot-Initrd-Address: 0x00800000
 Required-packages: uboot-mkimage
 Bootloader-sets-root: yes
 
+Machine: Freescale MX53 LOCO Board
+Kernel-Flavors: mx5
+U-Boot-Kernel-Address: 0x70008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Required-packages: uboot-mkimage
+Bootloader-sets-root: no
+
 Machine: Genesi Efika Smartbook
 Kernel-Flavors: mx5
 U-Boot-Kernel-Address: 0x90008000
