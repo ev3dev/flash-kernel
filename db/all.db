@@ -129,7 +129,7 @@ Required-packages: apex-nslu2 nslu2-utils
 Bootloader-sets-root: no
 
 Machine: Marvell DB-78x00-BP Development Board
-U-Boot-Kernel-Address: 0x2000000
+U-Boot-Kernel-Address: 0x8000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
