@@ -9,6 +9,7 @@ flash-kernel (3.0~rc.3) UNRELEASED; urgency=low
     - Fix breakage when Boot-Device isn't set.
     - db: Fix kernel load address for DB-78x00-BP.
     - db: Add support for MX53 LOCO Board.
+  * Also replace uboot-mkimage with u-boot-tools in db.
 
  -- Hector Oron <zumbi@debian.org>  Fri, 09 Mar 2012 22:56:08 +0100
 

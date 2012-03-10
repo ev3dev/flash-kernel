@@ -7,7 +7,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Buffalo Linkstation Mini
@@ -17,7 +17,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Buffalo Linkstation Pro/Live
@@ -27,7 +27,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Buffalo/Revogear Kurobox Pro
@@ -37,7 +37,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: D-Link DNS-323
@@ -47,7 +47,7 @@ Mtd-Kernel: Linux Kernel
 Mtd-Initrd: File System
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x00800000
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Freescale MX53 LOCO Board
@@ -56,7 +56,7 @@ U-Boot-Kernel-Address: 0x70008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Genesi Efika Smartbook
@@ -68,7 +68,7 @@ U-Boot-Script-Name: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Genesi EfikaMX nettop
@@ -80,7 +80,7 @@ U-Boot-Script-Name: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: GLAN Tank
@@ -94,7 +94,7 @@ Method: multi
 Kernel-Flavors: s3c24xx
 U-Boot-Multi-Address: 0x30008000
 Boot-Multi-Path: /boot/uImage.bin
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: HP Media Vault mv2120
@@ -105,7 +105,7 @@ Boot-Multi-Path: /boot/uImage
 # mv2120-utils includes some initramfs-tools scripts that are nice to have but
 # which are not essential
 Optional-Packages: mv2120-utils
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: HP t5325 Thin Client
@@ -113,7 +113,7 @@ Kernel-Flavors: kirkwood
 Machine-Id: 2846
 U-Boot-Multi-Address: 0x01600000
 Boot-Multi-Path: /boot/uImage
-Required-packages: uboot-mkimage
+Required-packages: u-boot-tools
 Bootloader-sets-root: yes
 
 # Really: Intel SS4000-e and compatibles
@@ -142,7 +142,7 @@ U-Boot-Kernel-Address: 0x8000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Marvell GuruPlug Reference Board
@@ -151,7 +151,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Marvell OpenRD Base Board
@@ -160,7 +160,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Marvell OpenRD Client Board
@@ -169,7 +169,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Marvell OpenRD Ultimate Board
@@ -178,7 +178,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Marvell SheevaPlug Reference Board
@@ -187,7 +187,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Marvell eSATA SheevaPlug Reference Board
@@ -196,7 +196,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: OMAP4 Panda board
@@ -209,7 +209,7 @@ Boot-Device: /dev/mmcblk0p1
 Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-Script-Path: boot.scr
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: QNAP TS-109/TS-209
@@ -218,7 +218,7 @@ Machine-Id: 1565
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: QNAP TS-119/TS-219
@@ -227,7 +227,7 @@ Machine-Id: 2139
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: QNAP TS-409
@@ -236,7 +236,7 @@ Machine-Id: 1601
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: QNAP TS-41x
@@ -245,7 +245,7 @@ Machine-Id: 2502
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Seagate FreeAgent DockStar
@@ -254,7 +254,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-Packages: uboot-mkimage
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Thecus N2100
