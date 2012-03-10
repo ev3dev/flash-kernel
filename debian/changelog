@@ -1,3 +1,13 @@
+flash-kernel (3.0~rc.3) experimental; urgency=low
+
+  * Remove executable on database file.
+  * Following changes thanks to Steve McIntyre:
+    - Fix breakage when Boot-Device isn't set.
+    - db: Fix kernel load address for DB-78x00-BP.
+    - db: Add support for MX53 LOCO Board.
+
+ -- Loïc Minier <lool@debian.org>  Fri, 09 Mar 2012 21:02:03 +0100
+
 flash-kernel (3.0~rc.2) experimental; urgency=low
 
   * New kernel and initramfs hooks, new logic: flash-kernel always installs
