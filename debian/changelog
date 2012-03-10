@@ -1,4 +1,4 @@
-flash-kernel (3.0~rc.3) UNRELEASED; urgency=low
+flash-kernel (3.0~rc.3) experimental; urgency=low
 
   [ Hector Oron ]
   * Replace uboot-mkimage by u-boot-tools.
@@ -11,7 +11,7 @@ flash-kernel (3.0~rc.3) UNRELEASED; urgency=low
     - db: Add support for MX53 LOCO Board.
   * Also replace uboot-mkimage with u-boot-tools in db; closes: #607614.
 
- -- Hector Oron <zumbi@debian.org>  Fri, 09 Mar 2012 22:56:08 +0100
+ -- Loïc Minier <lool@debian.org>  Sat, 10 Mar 2012 01:17:09 +0100
 
 flash-kernel (3.0~rc.2) experimental; urgency=low
 
