@@ -1,3 +1,9 @@
+flash-kernel (3.0~rc.5) UNRELEASED; urgency=low
+
+  * UNRELEASED
+
+ -- Hector Oron <zumbi@debian.org>  Sun, 11 Mar 2012 16:02:39 +0100
+
 flash-kernel (3.0~rc.4) unstable; urgency=low
 
   * Upload to unstable 
