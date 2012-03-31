@@ -199,6 +199,16 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
+Machine: Globalscale Technologies Dreamplug
+Kernel-Flavors: kirkwood
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Device: /dev/sdb1
+Boot-Kernel-Path: uImage
+Boot-Initrd-Path: uInitrd
+Required-Packages: u-boot-tools
+Bootloader-sets-root: no
+
 Machine: Marvell GuruPlug Reference Board
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Address: 0x00008000

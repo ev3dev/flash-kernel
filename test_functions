@@ -155,7 +155,8 @@ EOF
     (
         . "$functions"
         PROC_CPUINFO="$mock_proc_cpuinfo"
-        machine=$(get_cpuinfo_hardware)
+        PROC_DTMODEL="/this/must/not/exist"
+        machine=$(get_machine)
         if [ "$machine" != "Marvell SheevaPlug Reference Board" ]; then
             echo "Expected machine to be Marvell SheevaPlug Reference Board but got $machine" >&2
             exit 1
@@ -163,6 +164,42 @@ EOF
     )
 }
 add_test test_get_cpuinfo_hardware
+
+test_get_dt_hardware() {
+    get_tempfile
+    mock_proc_cpuinfo="$last_tempfile"
+    cat >"$mock_proc_cpuinfo" <<EOF
+Processor       : Feroceon 88FR131 rev 1 (v5l)
+BogoMIPS        : 1191.11
+Features        : swp half thumb fastmult edsp 
+CPU implementer : 0x56
+CPU architecture: 5TE
+CPU variant     : 0x2
+CPU part        : 0x131
+CPU revision    : 1
+
+Hardware        : Marvell Kirkwood (Flattened Device Tree)
+Revision        : 0000
+Serial          : 0000000000000000
+EOF
+
+    get_tempfile
+    mock_dt_model="$last_tempfile"
+    echo -n "Globalscale Technologies Dreamplug" >"$mock_dt_model"
+
+    (
+        . "$functions"
+        PROC_CPUINFO="$mock_proc_cpuinfo"
+        PROC_DTMODEL="$mock_dt_model"
+        machine=$(get_machine)
+        if [ "$machine" != "Globalscale Technologies Dreamplug" ]; then
+            echo "Expected machine to be Globalscale Technologies Dreamplug but got $machine" >&2
+            exit 1
+        fi
+    )
+
+}
+add_test test_get_dt_hardware
 
 test_get_kfile_suffix() {
     (

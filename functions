@@ -21,6 +21,7 @@
 BOOTSCRIPTS_DIR="${FK_CHECKOUT:-$FK_DIR}/bootscript"
 MACHINE_DB="$(cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db)"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
+PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
 PROC_MTD="/proc/mtd"
 
 
@@ -93,6 +94,16 @@ check_supported() {
 
 get_cpuinfo_hardware() {
 	grep "^Hardware" "$PROC_CPUINFO" | sed 's/Hardware\s*:\s*//'
+}
+get_dt_model() {
+	cat "$PROC_DTMODEL"
+}
+get_machine() {
+	if [ -f "$PROC_DTMODEL" ] ; then
+		get_dt_model
+	else
+		get_cpuinfo_hardware
+	fi
 }
 
 get_kfile_suffix() {
@@ -302,7 +313,7 @@ elif [ -n "$FK_MACHINE" ]; then
 	machine="$FK_MACHINE"
 	[ "x$machine" = "xnone" ] && exit
 else
-	machine="$(get_cpuinfo_hardware)"
+	machine="$(get_machine)"
 fi
 
 if [ "x$1" = "x--supported" ]; then
