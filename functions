@@ -382,6 +382,7 @@ machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
+dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
@@ -391,6 +392,7 @@ boot_device="$(get_machine_field "$machine" "Boot-Device")" || :
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
+boot_dtb_path="$(get_machine_field "$machine" "Boot-DTB-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
 
@@ -536,6 +538,16 @@ case "$method" in
 				"$tmpdir/boot.scr"
 			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
+		fi
+		if [ -n "$boot_dtb_path" ] ; then
+			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
+			boot_dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+			if [ ! -f "$boot_dtb" ] ; then
+				error "Couldn't find $boot_dtb"
+			fi
+			dtb="$tmpdir/dtb"
+			cp "$boot_dtb" "$dtb"
+			backup_and_install "$dtb" "$boot_dtb_path"
 		fi
 	;;
 	"symlink")

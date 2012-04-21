@@ -89,6 +89,8 @@ The supported fields are:
 * Machine-Id: (optional) linux mach-type to set before starting vmlinuz;
   will be set by a small piece of ARM code prepended to the kernel image
 
+* DTB-Id: (optional) specifies the name of the DTB file for this device
+
 * U-Boot-Kernel-Address, U-Boot-Initrd-Address: (optional) address where
   to load in (physical) RAM the kernel and initrd, respectively; this
   also indicates that U-Boot images should be generated with mkimage
@@ -107,6 +109,10 @@ The supported fields are:
 * Boot-Script-Path: (optional) like Boot-Kernel-Path and
   Boot-Initrd-Path but for an U-Boot boot script; see also
   U-Boot-Script-Name and Boot-Device
+
+* Boot-DTB-Path: (optional) like Boot-Kernel-Path and Boot-Initrd-Path
+  but for a DTB file. The DTB file named by DTB-Id will be copied
+  here; see also DTB-Id
 
 * Required-packages: (optional) list of packages which must be added
   during installer phase for flash-kernel to work properly; failure to
