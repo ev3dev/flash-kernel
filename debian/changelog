@@ -4,6 +4,8 @@ flash-kernel (3.0~rc.5) UNRELEASED; urgency=low
     - Makes it possible to pass machine name for use under chrooted setups.
       Setting FK_MACHINE to none avoids flash-kernel run.
       Thanks Johannes Schauer for patch.
+  * Add support for LaCie Kirkwood NASes.
+    Thanks Simon Guinot for patch. (Closes: #670938)
 
  -- Hector Oron <zumbi@debian.org>  Sun, 11 Mar 2012 16:02:39 +0100
 
