@@ -1,4 +1,4 @@
-flash-kernel (3.0~rc.5) UNRELEASED; urgency=low
+flash-kernel (3.0~rc.5) unstable; urgency=low
 
   * Add support for FK_MACHINE and FK_PROC_CPUINFO.
     - Makes it possible to pass machine name for use under chrooted setups.
