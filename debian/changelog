@@ -1,3 +1,19 @@
+flash-kernel (3.0) unstable; urgency=low
+
+  [ Aurelien Jarno ]
+  * Drop old arm and armeb architectures from the control file.
+
+  [ Updated translations ]
+  * Tibetan (bo.po) by Tennom
+  * Welsh (cy.po) by Dafydd Tomos
+  * Basque (eu.po) by Piarres Beobide
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Latvian (lv.po) by Rūdolfs Mazurs
+  * Macedonian (mk.po) by Arangel Angov
+  * Panjabi (pa.po) by A S Alam
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 17 Jun 2012 17:38:47 +0200
+
 flash-kernel (3.0~rc.5) unstable; urgency=low
 
   * Add support for FK_MACHINE and FK_PROC_CPUINFO.

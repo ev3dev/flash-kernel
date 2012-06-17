@@ -11,7 +11,7 @@ Vcs-Browser: http://git.debian.org/?p=d-i/flash-kernel.git
 Vcs-Git: git://git.debian.org/d-i/flash-kernel.git
 
 Package: flash-kernel
-Architecture: arm armel armeb armhf
+Architecture: armel armhf
 Depends: ${misc:Depends},
          devio,
          initramfs-tools (>= 0.92f),
@@ -28,7 +28,7 @@ Package: flash-kernel-installer
 Section: debian-installer
 Priority: standard
 XC-Package-Type: udeb
-Architecture: arm armel armeb armhf
+Architecture: armel armhf
 XB-Subarchitecture: iop32x ixp4xx kirkwood orion5x s3c24xx mx5
 Provides: bootable-system
 Depends: cdebconf-udeb, installed-base
