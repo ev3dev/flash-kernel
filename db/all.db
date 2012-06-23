@@ -202,6 +202,7 @@ Bootloader-sets-root: no
 Machine: Globalscale Technologies Dreamplug
 Kernel-Flavors: kirkwood
 DTB-Id: kirkwood-dreamplug.dtb
+DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Device: /dev/sdb1

@@ -91,6 +91,9 @@ The supported fields are:
 
 * DTB-Id: (optional) specifies the name of the DTB file for this device
 
+* DTB-Append: (optional) when yes the DTB specified by DTB-Id will be appended
+  to the kernel image.
+
 * U-Boot-Kernel-Address, U-Boot-Initrd-Address: (optional) address where
   to load in (physical) RAM the kernel and initrd, respectively; this
   also indicates that U-Boot images should be generated with mkimage

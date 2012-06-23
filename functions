@@ -186,6 +186,17 @@ gen_kernel() {
 	} >"$output"
 }
 
+append_dtb() {
+	local kernel="$1"
+	local dtb="$2"
+	local output="$3"
+
+	{
+		cat "$kernel"
+		cat "$dtb"
+	} >"$output"
+}
+
 flash_kernel() {
 	local input_file="$1"
 	local output_mtd="$2"
@@ -383,6 +394,7 @@ method="$(get_machine_field "$machine" "Method")" || method="generic"
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
+dtb_append="$(get_machine_field "$machine" "DTB-Append")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
@@ -470,6 +482,14 @@ case "$method" in
 		initrd="$ifile"
 		if [ -n "$machine_id" ]; then
 			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
+			kernel="$tmpdir/kernel"
+		fi
+		if [ x"$dtb_append" = "xyes" ] ; then
+			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+			if [ ! -f "$dtb" ] ; then
+				error "Couldn't find $dtb"
+			fi
+			append_dtb "$kernel" "$dtb" "$tmpdir/kernel"
 			kernel="$tmpdir/kernel"
 		fi
 		if [ -n "$ukaddr" ]; then
