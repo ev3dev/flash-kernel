@@ -6,7 +6,7 @@ Uploaders: Loïc Minier <lool@debian.org>,
            Hector Oron <zumbi@debian.org>,
            Wouter Verhelst <wouter@debian.org>
 Build-Depends: debhelper (>= 7.3.10), devio
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Vcs-Browser: http://git.debian.org/?p=d-i/flash-kernel.git
 Vcs-Git: git://git.debian.org/d-i/flash-kernel.git
 
