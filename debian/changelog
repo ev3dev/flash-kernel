@@ -11,6 +11,10 @@ flash-kernel (3.1~exp.1) experimental; urgency=low
   * Update Standards-Version to 3.9.3 
   * Set Boot-Device for Dreamplug to /dev/sda1. 
 
+  [ Updated translations ]
+  * Galician (gl.po) by Jorge Barreiro
+  * Croatian (hr.po) by Tomislav Krznar
+
  -- Hector Oron <zumbi@debian.org>  Sun, 08 Jul 2012 02:00:54 +0200
 
 flash-kernel (3.0) unstable; urgency=low
