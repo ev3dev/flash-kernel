@@ -205,7 +205,7 @@ DTB-Id: kirkwood-dreamplug.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
-Boot-Device: /dev/sdb1
+Boot-Device: /dev/sda1
 Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-DTB-Path: dtb
