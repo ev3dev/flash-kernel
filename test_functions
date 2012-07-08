@@ -239,6 +239,32 @@ test_get_machine_field() {
 }
 add_test test_get_machine_field
 
+test_etc_db() {
+    get_tempfile
+    mock_etc_db="$last_tempfile"
+    cat >"$mock_etc_db" <<EOF
+Machine: Marvell SheevaPlug Reference Board
+Kernel-Flavors: Dummy
+EOF
+
+    (
+        FK_ETC_DB="$mock_etc_db"
+        . "$functions"
+        machine="Marvell SheevaPlug Reference Board"
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "Dummy" ] ; then
+            echo "Expected Kernel-Flavors field to be overridden to Dummy but got $kflavors" >&2
+            exit 1
+        fi
+        kaddress=$(get_machine_field "$machine" "U-Boot-Kernel-Address")
+        if [ "$kaddress" != "0x00008000" ] ; then
+            echo "Expected U-Boot-Kernel-Address to be 0x00008000 but got $kaddress" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_etc_db
+
 test_machine_uses_flash() {
     (
         . "$functions"

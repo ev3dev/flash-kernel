@@ -78,6 +78,10 @@ RFC 2822 data or Debian control data, i.e. header: value pairs,
 with definitions separated by an empty line.  Comments starting with a
 pound are ignored.
 
+/etc/flash-kernel/db is parsed first and allows for local override of any
+field. Note that you must include the "Machine" field here as well as the
+field(s) to be overridden
+
 The supported fields are:
 
 * Machine: (required) value of the "Hardware:" line in /proc/cpuinfo and

@@ -1,6 +1,7 @@
 initramfs-hook/flash-kernel     etc/initramfs/post-update.d
 kernel-hook/zz-flash-kernel     etc/kernel/postinst.d
 kernel-hook/zz-flash-kernel     etc/kernel/postrm.d
+etc/db                          etc/flash-kernel
 flash-kernel                    usr/sbin
 initramfs-tools                 usr/share
 bootscript                      usr/share/flash-kernel

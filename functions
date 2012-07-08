@@ -24,6 +24,9 @@ PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
 PROC_MTD="/proc/mtd"
 
 read_machine_db() {
+	if [ -f "${FK_ETC_DB:-/etc/flash-kernel/db}" ] ; then
+		cat "${FK_ETC_DB:-/etc/flash-kernel/db}"
+	fi
 	cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db
 }
 MACHINE_DB="$(read_machine_db)"
