@@ -19,11 +19,14 @@
 # USA.
 
 BOOTSCRIPTS_DIR="${FK_CHECKOUT:-$FK_DIR}/bootscript"
-MACHINE_DB="$(cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db)"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
 PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
 PROC_MTD="/proc/mtd"
 
+read_machine_db() {
+	cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db
+}
+MACHINE_DB="$(read_machine_db)"
 
 error() {
 	echo "$@" >&2
