@@ -1,3 +1,9 @@
+flash-kernel (3.1~exp.2) UNRELEASED; urgency=low
+
+  *
+
+ -- Hector Oron <zumbi@debian.org>  Sun, 08 Jul 2012 02:30:05 +0200
+
 flash-kernel (3.1~exp.1) experimental; urgency=low
 
   [ Ian Campbell ]
