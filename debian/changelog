@@ -1,8 +1,10 @@
-flash-kernel (3.2~exp.1) UNRELEASED; urgency=low
+flash-kernel (3.2) unstable; urgency=low
 
-  * 
+  [ Ian Campbell ]
+  * Use get_machine in flash-kernel-installer udeb. Fixes flash-kernel at
+    install time on Dreamplug failure to install u-boot-tools.
 
- -- Hector Oron <zumbi@debian.org>  Sun, 08 Jul 2012 03:09:46 +0200
+ -- Hector Oron <zumbi@debian.org>  Fri, 27 Jul 2012 17:04:05 +0200
 
 flash-kernel (3.1) unstable; urgency=low
 
