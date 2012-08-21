@@ -99,7 +99,12 @@ get_dt_model() {
 	cat "$PROC_DTMODEL"
 }
 get_machine() {
-	if [ -f "$PROC_DTMODEL" ] ; then
+	if [ -n "$FK_MACHINE" ]; then
+		[ "x$FK_MACHINE" = "xnone" ] && exit
+		echo "$FK_MACHINE"
+	elif [ -f "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}" ] ; then
+		cat "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
+	elif [ -f "$PROC_DTMODEL" ] ; then
 		get_dt_model
 	else
 		get_cpuinfo_hardware
@@ -321,9 +326,6 @@ main() {
 if [ "x$1" = "x--machine" ]; then
 	machine="$2"
 	shift 2
-elif [ -n "$FK_MACHINE" ]; then
-	machine="$FK_MACHINE"
-	[ "x$machine" = "xnone" ] && exit
 else
 	machine="$(get_machine)"
 fi
