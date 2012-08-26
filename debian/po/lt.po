@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2012-05-27 19:07+0300\n"
+"PO-Revision-Date: 2012-08-26 02:00+0300\n"
 "Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "Language: lt\n"
@@ -42,7 +42,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Atmintuko (flash memory) konfigūravimas sistemos įkėlimui iš jo"
+msgstr "Sistemos paleidimui konfigūruojama atmintinė (flash memory)"
 
 #. Type: text
 #. Description
@@ -51,7 +51,7 @@ msgstr "Atmintuko (flash memory) konfigūravimas sistemos įkėlimui iš jo"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Sistemos darymas įkeliama"
+msgstr "Sistema paruošiama paleidimui"
 
 #. Type: text
 #. Description
@@ -60,7 +60,7 @@ msgstr "Sistemos darymas įkeliama"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Sistemos paruošimas..."
+msgstr "Ruošiamasi įrašyti branduolį..."
 
 #. Type: text
 #. Description
@@ -69,7 +69,7 @@ msgstr "Sistemos paruošimas..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Branduolio įrašymas į atmintuką (flash memory)"
+msgstr "Branduolys įrašomas į atmintinę (flash memory)"
 
 #. Type: text
 #. Description
@@ -79,7 +79,7 @@ msgstr "Branduolio įrašymas į atmintuką (flash memory)"
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Įkeltie atvaizdo diske generavimas..."
+msgstr "Paleidimo atvaizdžio diske generavimas..."
 
 #. Type: text
 #. Description
@@ -90,4 +90,4 @@ msgstr "Įkeltie atvaizdo diske generavimas..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Padaryti sistemą įkeliama (bootable)"
+msgstr "Paruošti sistemą paleidimui"
