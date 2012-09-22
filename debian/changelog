@@ -1,6 +1,6 @@
 flash-kernel (3.3) UNRELEASED; urgency=low
 
-  * Replace XC-Package-Type by Package-Typ
+  * Replace XC-Package-Type by Package-Type
 
  -- Christian Perrier <bubulle@debian.org>  Sat, 22 Sep 2012 17:45:59 +0200
 
