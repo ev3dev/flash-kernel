@@ -27,7 +27,7 @@ Description: utility to make certain embedded devices bootable
 Package: flash-kernel-installer
 Section: debian-installer
 Priority: standard
-XC-Package-Type: udeb
+Package-Type: udeb
 Architecture: armel armhf
 XB-Subarchitecture: iop32x ixp4xx kirkwood orion5x s3c24xx mx5
 Provides: bootable-system
