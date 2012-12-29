@@ -16,8 +16,8 @@ Architecture: armel armhf
 Depends: ${misc:Depends},
          devio,
          initramfs-tools (>= 0.92f),
-         linux-base (>= 3.2)
-Suggests: u-boot-tools
+         linux-base (>= 3.2),
+	 u-boot-tools
 Description: utility to make certain embedded devices bootable
  flash-kernel is a script which will put the kernel and initramfs in
  the boot location of embedded devices that don't load the kernel and
