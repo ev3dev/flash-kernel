@@ -1,3 +1,10 @@
+flash-kernel (3.5) unstable; urgency=low
+
+  * Revert "Move u-boot-tools to Depends so that the mkimage program
+    is available." as there have been some objections. Reopens: #693839
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 02 Jan 2013 22:29:11 +0100
+
 flash-kernel (3.4) unstable; urgency=low
 
   * Move u-boot-tools to Depends so that the mkimage program
