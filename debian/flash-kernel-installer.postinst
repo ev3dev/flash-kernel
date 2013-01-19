@@ -35,7 +35,12 @@ db_progress INFO flash-kernel-installer/prepare
 
 # Stop fsck from prompting the user for input since most users don't
 # have a serial console.
-sed -i "s/^FSCKFIX=no$/FSCKFIX=yes/" /target/etc/default/rcS || true
+if [ -e /target/etc/default/rcS ]; then
+	sed -i -e "s/^FSCKFIX=no$/FSCKFIX=yes/" /target/etc/default/rcS || true
+fi
+if [ -e /target/etc/default/fsck ]; then
+	sed -i -e "s/^#FSCKFIX=no$/FSCKFIX=yes/" -e "s/^FSCKFIX=no$/FSCKFIX=yes/" /target/etc/default/fsck || true
+fi
 
 if ! apt-install flash-kernel; then
 	error "apt-install flash-kernel failed"
