@@ -4,7 +4,7 @@ flash-kernel (3.6) UNRELEASED; urgency=low
   * flash-kernel-installer postinst: Update FSCKFIX in
     /etc/default/fsck as well as /etc/default/rcS for backward
     compatibility.  The purpose is to use /etc/default/fsck for
-    new installations.
+    new installations. Closes: #694928
 
  -- Roger Leigh <rleigh@debian.org>  Sun, 02 Dec 2012 23:33:24 +0000
 
