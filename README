@@ -117,7 +117,7 @@ The supported fields are:
   but for a DTB file. The DTB file named by DTB-Id will be copied
   here; see also DTB-Id
 
-* Required-packages: (optional) list of packages which must be added
+* Required-Packages: (optional) list of packages which must be added
   during installer phase for flash-kernel to work properly; failure to
   add these packages aborts the installation
 

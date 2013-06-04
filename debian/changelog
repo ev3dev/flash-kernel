@@ -3,6 +3,10 @@ flash-kernel (3.3+deb7u1) UNRELEASED; urgency=low
   [ Cyril Brulebois ]
   * Backport the following from unstable to wheezy.
 
+  [ Martin Michlmayr ]
+  * The machine database is case-sensitive so ensure that all instances
+    of "Required-Packages" are capitalized correctly.  Closes: #693839
+
  -- Cyril Brulebois <kibi@debian.org>  Thu, 06 Jun 2013 23:07:06 +0200
 
 flash-kernel (3.3) unstable; urgency=low
