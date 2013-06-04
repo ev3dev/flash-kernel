@@ -7,7 +7,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Buffalo Linkstation Mini
@@ -17,7 +17,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Buffalo Linkstation Pro/Live
@@ -27,7 +27,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Buffalo/Revogear Kurobox Pro
@@ -37,7 +37,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: D-Link DNS-323
@@ -47,7 +47,7 @@ Mtd-Kernel: Linux Kernel
 Mtd-Initrd: File System
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x00800000
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Freescale MX53 LOCO Board
@@ -56,7 +56,7 @@ U-Boot-Kernel-Address: 0x70008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: no
 
 Machine: Genesi Efika Smartbook
@@ -68,7 +68,7 @@ U-Boot-Script-Name: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: Genesi EfikaMX nettop
@@ -80,7 +80,7 @@ U-Boot-Script-Name: bootscr.mx5
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: GLAN Tank
@@ -94,7 +94,7 @@ Method: multi
 Kernel-Flavors: s3c24xx
 U-Boot-Multi-Address: 0x30008000
 Boot-Multi-Path: /boot/uImage.bin
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: HP Media Vault mv2120
@@ -105,7 +105,7 @@ Boot-Multi-Path: /boot/uImage
 # mv2120-utils includes some initramfs-tools scripts that are nice to have but
 # which are not essential
 Optional-Packages: mv2120-utils
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: HP t5325 Thin Client
@@ -113,7 +113,7 @@ Kernel-Flavors: kirkwood
 Machine-Id: 2846
 U-Boot-Multi-Address: 0x01600000
 Boot-Multi-Path: /boot/uImage
-Required-packages: u-boot-tools
+Required-Packages: u-boot-tools
 Bootloader-sets-root: yes
 
 Machine: LaCie 2Big Network v2
@@ -188,7 +188,7 @@ Mtd-Initrd: Ramdisk
 Optional-Packages: ixp4xx-firmware
 # nslu2-utils will call update-initramfs -u to include the firmware and to run
 # the hook from flash-kernel
-Required-packages: apex-nslu2 nslu2-utils
+Required-Packages: apex-nslu2 nslu2-utils
 Bootloader-sets-root: no
 
 Machine: Marvell DB-78x00-BP Development Board

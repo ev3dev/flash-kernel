@@ -1,6 +1,11 @@
 flash-kernel (3.7) UNRELEASED; urgency=low
 
+  [ Wouter Verhelst ]
   * Remove $SELF from uploaders.
+
+  [ Martin Michlmayr ]
+  * The machine database is case-sensitive so ensure that all instances
+    of "Required-Packages" are capitalized correctly.  Closes: #693839
 
  -- Wouter Verhelst <wouter@grep.be>  Tue, 04 Jun 2013 07:53:39 +0200
 
