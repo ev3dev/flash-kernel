@@ -7,6 +7,10 @@ flash-kernel (3.3+deb7u1) UNRELEASED; urgency=low
   * The machine database is case-sensitive so ensure that all instances
     of "Required-Packages" are capitalized correctly.  Closes: #693839
 
+  [ Loïc Minier ]
+  * Add test_db testsuite for the database; currently only checking for
+    unknown fields.
+
  -- Cyril Brulebois <kibi@debian.org>  Thu, 06 Jun 2013 23:07:06 +0200
 
 flash-kernel (3.3) unstable; urgency=low
