@@ -1,3 +1,10 @@
+flash-kernel (3.3+deb7u1) UNRELEASED; urgency=low
+
+  [ Cyril Brulebois ]
+  * Backport the following from unstable to wheezy.
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 06 Jun 2013 23:07:06 +0200
+
 flash-kernel (3.3) unstable; urgency=low
 
   * Replace XC-Package-Type by Package-Type
