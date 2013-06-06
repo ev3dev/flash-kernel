@@ -23,7 +23,7 @@ MACHINE_DB="$(cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db)"
 flash_kernel="${FK_CHECKOUT:-$FK_DIR}/flash-kernel"
 
 test_no_unknown_fields() {
-    local expected='Android-Boot-Device Boot-Device Boot-DTB-Path Boot-Initrd-Path Boot-Kernel-Path Bootloader-sets-root Boot-Multi-Path Boot-Script-Path DTB-Append DTB-Id Kernel-Flavors Machine Machine-Id Method Mtd-Initrd Mtd-Kernel Optional-Packages Required-Packages U-Boot-Initrd-Address U-Boot-Kernel-Address U-Boot-Multi-Address U-Boot-Script-Address U-Boot-Script-Name'
+    local expected='Android-Boot-Device Boot-Device Boot-DTB-Path Boot-Initrd-Path Boot-Kernel-Path Bootloader-Sets-Root Boot-Multi-Path Boot-Script-Path DTB-Append DTB-Id Kernel-Flavors Machine Machine-Id Method Mtd-Initrd Mtd-Kernel Optional-Packages Required-Packages U-Boot-Initrd-Address U-Boot-Kernel-Address U-Boot-Multi-Address U-Boot-Script-Address U-Boot-Script-Name'
     local fields="$(echo "$MACHINE_DB" | sed -n '/^[^#]*:/s/:.*//p' | sort -u | xargs)"
     if [ "$fields" != "$expected" ]; then
         return 1

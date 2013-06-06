@@ -95,7 +95,7 @@ machine="$(get_machine)"
 
 # Should we override the root device or merely provide a default root
 # device?
-blsr="$(get_machine_field "$machine" "Bootloader-sets-root")"
+blsr="$(get_machine_field "$machine" "Bootloader-Sets-Root")"
 
 if [ "$blsr" = "no" ]; then
 	# The boot loader doesn't pass root= on the command line, so

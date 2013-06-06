@@ -10,6 +10,8 @@ flash-kernel (3.7) UNRELEASED; urgency=low
   [ Loïc Minier ]
   * Add test_db testsuite for the database; currently only checking for
     unknown fields.
+  * Rename Bootloader-sets-root field to Bootloader-Sets-Root for consistency
+    in CamelCasing.
 
  -- Wouter Verhelst <wouter@grep.be>  Tue, 04 Jun 2013 07:53:39 +0200
 
