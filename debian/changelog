@@ -1,4 +1,4 @@
-flash-kernel (3.3+deb7u1) UNRELEASED; urgency=low
+flash-kernel (3.3+deb7u1) wheezy; urgency=low
 
   [ Cyril Brulebois ]
   * Backport the following from unstable to wheezy.
@@ -11,7 +11,7 @@ flash-kernel (3.3+deb7u1) UNRELEASED; urgency=low
   * Add test_db testsuite for the database; currently only checking for
     unknown fields.
 
- -- Cyril Brulebois <kibi@debian.org>  Thu, 06 Jun 2013 23:07:06 +0200
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 06 Jun 2013 23:17:11 +0200
 
 flash-kernel (3.3) unstable; urgency=low
 
