@@ -1,4 +1,4 @@
-flash-kernel (3.7) UNRELEASED; urgency=low
+flash-kernel (3.7) unstable; urgency=low
 
   [ Wouter Verhelst ]
   * Remove $SELF from uploaders.
@@ -13,7 +13,7 @@ flash-kernel (3.7) UNRELEASED; urgency=low
   * Rename Bootloader-sets-root field to Bootloader-Sets-Root for consistency
     in CamelCasing.
 
- -- Wouter Verhelst <wouter@grep.be>  Tue, 04 Jun 2013 07:53:39 +0200
+ -- Loïc Minier <lool@debian.org>  Thu, 06 Jun 2013 16:17:51 +0200
 
 flash-kernel (3.6) unstable; urgency=low
 
