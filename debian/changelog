@@ -1,3 +1,10 @@
+flash-kernel (3.8) UNRELEASED; urgency=low
+
+  * Fix test_db testsuite to be LC_COLLATE-independent, by calling sort -u
+    on both the $expected and $fields variables. Closes: #711759
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 12 Jun 2013 01:41:30 +0200
+
 flash-kernel (3.7) unstable; urgency=low
 
   [ Wouter Verhelst ]
