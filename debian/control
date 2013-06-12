@@ -5,10 +5,10 @@ Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Loïc Minier <lool@debian.org>,
            Hector Oron <zumbi@debian.org>,
 	   Christian Perrier <bubulle@debian.org>
-Build-Depends: debhelper (>= 7.3.10), devio
+Build-Depends: debhelper (>= 9), devio
 Standards-Version: 3.9.3
-Vcs-Browser: http://git.debian.org/?p=d-i/flash-kernel.git
-Vcs-Git: git://git.debian.org/d-i/flash-kernel.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=d-i/flash-kernel.git
+Vcs-Git: git://anonscm.debian.org/d-i/flash-kernel.git
 
 Package: flash-kernel
 Architecture: armel armhf
