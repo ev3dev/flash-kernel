@@ -31,8 +31,9 @@ msgstr ""
 #. some flashable memory used by many embedded devices
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
+#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Танзимкунии системаи асосӣ"
 
 #. Type: text
 #. Description
@@ -40,8 +41,9 @@ msgstr ""
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
+#, fuzzy
 msgid "Making the system bootable"
-msgstr ""
+msgstr "Баровардани системаи асосӣ"
 
 #. Type: text
 #. Description
@@ -49,8 +51,9 @@ msgstr ""
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
+#, fuzzy
 msgid "Preparing the system..."
-msgstr "Омодасозии система..."
+msgstr "Баровардани системаи асосӣ..."
 
 #. Type: text
 #. Description
@@ -58,8 +61,9 @@ msgstr "Омодасозии система..."
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
+#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Интихобкунии ҳаста барои насбкунӣ..."
 
 #. Type: text
 #. Description
