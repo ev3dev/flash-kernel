@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2013-08-15 16:26+0500\n"
-"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
 "Language: Tajik\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: ../flash-kernel-installer.templates:1001
 #, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr "Танзимкунии системаи асосӣ"
+msgstr "  "
 
 #. Type: text
 #. Description
@@ -43,7 +43,7 @@ msgstr "Танзимкунии системаи асосӣ"
 #: ../flash-kernel-installer.templates:2001
 #, fuzzy
 msgid "Making the system bootable"
-msgstr "Баровардани системаи асосӣ"
+msgstr "  "
 
 #. Type: text
 #. Description
@@ -53,7 +53,7 @@ msgstr "Баровардани системаи асосӣ"
 #: ../flash-kernel-installer.templates:3001
 #, fuzzy
 msgid "Preparing the system..."
-msgstr "Баровардани системаи асосӣ..."
+msgstr "  ..."
 
 #. Type: text
 #. Description
@@ -63,7 +63,7 @@ msgstr "Баровардани системаи асосӣ..."
 #: ../flash-kernel-installer.templates:4001
 #, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr "Интихобкунии ҳаста барои насбкунӣ..."
+msgstr "   ..."
 
 #. Type: text
 #. Description
