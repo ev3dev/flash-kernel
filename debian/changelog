@@ -1,3 +1,11 @@
+flash-kernel (3.9) UNRELEASED; urgency=low
+
+  [ Nobuhiro Iwamatsu ]
+  * support kernel entry point setup of mkimage
+  * support PlatHome OpenBlocks AX3-4 board
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 20 Aug 2013 09:56:33 +0200
+
 flash-kernel (3.8) unstable; urgency=low
 
   [ Dmitrijs Ledkovs ]
