@@ -287,8 +287,8 @@ test_mkimage_kernel() {
         }
         . "$functions"
         saved_args=""
-        mkimage_kernel "0xdeadbeef" "desc" "input" "output" 2>/dev/null
-        expected="-A arm -O linux -T kernel -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
+        mkimage_kernel "0xdeadbeef" "0xbaddcafe" "desc" "input" "output" 2>/dev/null
+        expected="-A arm -O linux -T kernel -C none -a 0xdeadbeef -e 0xbaddcafe -n desc -d input output"
         if [ "$expected" != "$saved_args" ]; then
             echo "Expected mkimage_kernel to be called with \"$expected\" but it was called with \"$saved_args\"" >&2
             exit 1

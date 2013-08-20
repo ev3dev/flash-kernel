@@ -224,12 +224,13 @@ flash_initrd() {
 
 mkimage_kernel() {
 	local kaddr="$1"
-	local kdesc="$2"
-	local kdata="$3"
-	local uimage="$4"
+	local epoint="$2"
+	local kdesc="$3"
+	local kdata="$4"
+	local uimage="$5"
 
 	printf "Generating kernel u-boot image... " >&2
-	mkimage -A arm -O linux -T kernel -C none -a "$kaddr" -e "$kaddr" \
+	mkimage -A arm -O linux -T kernel -C none -a "$kaddr" -e "$epoint" \
 		-n "$kdesc" -d "$kdata" "$uimage" >&2 1>/dev/null
 	echo "done." >&2
 }
@@ -396,6 +397,7 @@ mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
 dtb_append="$(get_machine_field "$machine" "DTB-Append")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
+ukepoint="$(get_machine_field "$machine" "U-Boot-Kernel-Entry-Point")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
 umaddr="$(get_machine_field "$machine" "U-Boot-Multi-Address")" || :
 usaddr="$(get_machine_field "$machine" "U-Boot-Script-Address")" || :
@@ -493,8 +495,13 @@ case "$method" in
 			kernel="$tmpdir/kernel"
 		fi
 		if [ -n "$ukaddr" ]; then
-			mkimage_kernel "$ukaddr" "$desc" "$kernel" \
-				"$tmpdir/uImage"
+			if [ -n "$ukepoint" ]; then
+				mkimage_kernel "$ukaddr" "$ukepoint" "$desc" "$kernel" \
+					"$tmpdir/uImage"
+			else
+				mkimage_kernel "$ukaddr" "$ukaddr" "$desc" "$kernel" \
+					"$tmpdir/uImage"
+			fi
 			kernel="$tmpdir/uImage"
 			rm -f "$tmpdir/kernel"
 		fi
