@@ -1,12 +1,13 @@
-flash-kernel (3.10) UNRELEASED; urgency=low
+flash-kernel (3.10) unstable; urgency=low
 
+  [ Ian Campbell ]
   * Honour FK_MACHINE in get_machine, to allow initramfs hooks etc to
     work inside a chroot. Also support reading the machine from
     /etc/flash-kernel/machine.
   * Add capability to read /etc/flash-kernel/db to override db entries.
     Closes: #680900
 
- -- Ian Campbell <ijc@hellion.org.uk>  Sat, 24 Aug 2013 13:06:52 +0100
+ -- Christian Perrier <bubulle@debian.org>  Mon, 26 Aug 2013 07:07:36 +0200
 
 flash-kernel (3.9) unstable; urgency=low
 
