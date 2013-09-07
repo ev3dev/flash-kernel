@@ -1,3 +1,10 @@
+flash-kernel (3.11) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 07 Sep 2013 07:34:26 +0200
+
 flash-kernel (3.10) unstable; urgency=low
 
   [ Ian Campbell ]
