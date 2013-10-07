@@ -311,6 +311,19 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 Bootloader-Sets-Root: no
 
+Machine: Plat'Home OpenBlocksA6
+Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-openblocks_a6.dtb
+DTB-Append: yes
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Device: /dev/sda1
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Root: no
+
 Machine: QNAP TS-109/TS-209
 Kernel-Flavors: orion5x
 Machine-Id: 1565

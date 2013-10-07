@@ -8,6 +8,7 @@ flash-kernel (3.12) UNRELEASED; urgency=low
   * Correct check for debconf, avoiding hang on error when running in Debian
     Installer. (Closes: #721485).
   * Add support for "Buffalo Linkstation LS-CHLv2" (Closes: #734130).
+  * Add support for "Plat'Home OpenBlocksA6" (Closes: #725754).
 
  -- Ian Campbell <ijc@hellion.org.uk>  Wed, 08 Jan 2014 19:55:43 +0000
 
