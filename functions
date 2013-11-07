@@ -107,7 +107,7 @@ get_dt_model() {
 }
 get_machine() {
 	if [ -n "$FK_MACHINE" ]; then
-		[ "x$FK_MACHINE" = "xnone" ] && exit
+		[ "x$FK_MACHINE" = "xnone" ] && exit 0
 		echo "$FK_MACHINE"
 	elif [ -f "$FK_ETC_MACHINE" ]; then
 		cat "$FK_ETC_MACHINE"
