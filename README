@@ -145,3 +145,14 @@ The supported fields are:
   kernel,  initrd and U-Boot script; Boot-Kernel-Path, Boot-Initrd-Path and
   Boot-Script-Path are then taken relative to this boot device
 
+
+Configuration
+- - - - - - -
+
+Two configuration files are currently supported:
+* /etc/flash-kernel/machine allows skipping the machine auto-detection from
+  /proc/cpuinfo or /proc/dtmodel and forcing a specific Machine.
+
+* /etc/flash-kernel/db allows overriding / adding fields from the Machine
+  database (but it doesn't allow removing fields or entries).
+
