@@ -24,7 +24,7 @@ PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
 PROC_MTD="/proc/mtd"
 
 read_machine_db() {
-	if [ -f "${FK_ETC_DB:-/etc/flash-kernel/db}" ] ; then
+	if [ -f "${FK_ETC_DB:-/etc/flash-kernel/db}" ]; then
 		cat "${FK_ETC_DB:-/etc/flash-kernel/db}"
 	fi
 	cat "${FK_CHECKOUT:-$FK_DIR}/db/"*.db
@@ -108,9 +108,9 @@ get_machine() {
 	if [ -n "$FK_MACHINE" ]; then
 		[ "x$FK_MACHINE" = "xnone" ] && exit
 		echo "$FK_MACHINE"
-	elif [ -f "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}" ] ; then
+	elif [ -f "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}" ]; then
 		cat "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
-	elif [ -f "$PROC_DTMODEL" ] ; then
+	elif [ -f "$PROC_DTMODEL" ]; then
 		get_dt_model
 	else
 		get_cpuinfo_hardware
@@ -494,9 +494,9 @@ case "$method" in
 			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
 			kernel="$tmpdir/kernel"
 		fi
-		if [ x"$dtb_append" = "xyes" ] ; then
+		if [ x"$dtb_append" = "xyes" ]; then
 			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
-			if [ ! -f "$dtb" ] ; then
+			if [ ! -f "$dtb" ]; then
 				error "Couldn't find $dtb"
 			fi
 			append_dtb "$kernel" "$dtb" "$tmpdir/kernel"
@@ -574,10 +574,10 @@ case "$method" in
 			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi
-		if [ -n "$boot_dtb_path" ] ; then
+		if [ -n "$boot_dtb_path" ]; then
 			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
 			boot_dtb="/usr/lib/linux-image-$kvers/$dtb_name"
-			if [ ! -f "$boot_dtb" ] ; then
+			if [ ! -f "$boot_dtb" ]; then
 				error "Couldn't find $boot_dtb"
 			fi
 			dtb="$tmpdir/dtb"

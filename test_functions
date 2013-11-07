@@ -252,12 +252,12 @@ EOF
         . "$functions"
         machine="Marvell SheevaPlug Reference Board"
         kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
-        if [ "$kflavors" != "Dummy" ] ; then
+        if [ "$kflavors" != "Dummy" ]; then
             echo "Expected Kernel-Flavors field to be overridden to Dummy but got $kflavors" >&2
             exit 1
         fi
         kaddress=$(get_machine_field "$machine" "U-Boot-Kernel-Address")
-        if [ "$kaddress" != "0x00008000" ] ; then
+        if [ "$kaddress" != "0x00008000" ]; then
             echo "Expected U-Boot-Kernel-Address to be 0x00008000 but got $kaddress" >&2
             exit 1
         fi

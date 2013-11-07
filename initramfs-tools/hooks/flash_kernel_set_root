@@ -26,7 +26,7 @@ pause_error() {
 
 	#exit 1 # won't work; initramfs-tools ignores hook script exit code
 	echo "" >&2
-	if [ "$DEBIAN_FRONTEND" = "noninteractive" ] ; then
+	if [ "$DEBIAN_FRONTEND" = "noninteractive" ]; then
 		echo "Unable to abort; system will probably be broken!" >&2
 	else
 		echo "Press Ctrl-C to abort build, or Enter to continue" >&2
