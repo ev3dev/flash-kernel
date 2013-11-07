@@ -495,7 +495,7 @@ case "$method" in
 			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
 			kernel="$tmpdir/kernel"
 		fi
-		if [ x"$dtb_append" = "xyes" ]; then
+		if [ "$dtb_append" = "yes" ]; then
 			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
 			if [ ! -f "$dtb" ]; then
 				error "Couldn't find $dtb"
