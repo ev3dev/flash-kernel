@@ -492,6 +492,9 @@ case "$method" in
 		kernel="$kfile"
 		initrd="$ifile"
 		if [ -n "$machine_id" ]; then
+			if [ "$dtb_append" = "yes" ]; then
+				error "Can't set Machine-Id and DTB-Append"
+			fi
 			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
 			kernel="$tmpdir/kernel"
 		fi
