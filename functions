@@ -19,6 +19,7 @@
 # USA.
 
 BOOTSCRIPTS_DIR="${FK_CHECKOUT:-$FK_DIR}/bootscript"
+FK_ETC_MACHINE="${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
 PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
 PROC_MTD="/proc/mtd"
@@ -108,8 +109,8 @@ get_machine() {
 	if [ -n "$FK_MACHINE" ]; then
 		[ "x$FK_MACHINE" = "xnone" ] && exit
 		echo "$FK_MACHINE"
-	elif [ -f "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}" ]; then
-		cat "${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
+	elif [ -f "$FK_ETC_MACHINE" ]; then
+		cat "$FK_ETC_MACHINE"
 	elif [ -f "$PROC_DTMODEL" ]; then
 		get_dt_model
 	else
