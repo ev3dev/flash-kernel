@@ -524,6 +524,7 @@ case "$method" in
 		fi
 		if [ -n "$boot_device" ]; then
 			check_block_dev "$boot_device"
+			echo "Will use $boot_device as boot device." >&2
 			# don't use $tmpdir/boot as to not nuke it accidentally
 			# if umount fails
 			boot_mnt_dir="$(mktemp -dt "$self.XXXXXXXX")"
