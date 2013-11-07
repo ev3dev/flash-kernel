@@ -201,6 +201,90 @@ EOF
 }
 add_test test_get_dt_hardware
 
+test_get_machine() {
+    get_tempfile
+    mock_etc_machine="$last_tempfile"
+    echo "Freescale MX53 LOCO Board" >"$mock_etc_machine"
+
+    get_tempfile
+    mock_proc_cpuinfo="$last_tempfile"
+    cat >"$mock_proc_cpuinfo" <<EOF
+Processor       : Feroceon 88FR131 rev 1 (v5l)
+BogoMIPS        : 1192.75
+Features        : swp half thumb fastmult edsp
+CPU implementer : 0x56
+CPU architecture: 5TE
+CPU variant     : 0x2
+CPU part        : 0x131
+CPU revision    : 1
+
+Hardware        : Marvell SheevaPlug Reference Board
+Revision        : 0000
+Serial          : 0000000000000000
+EOF
+
+    get_tempfile
+    mock_dt_model="$last_tempfile"
+    echo -n "Globalscale Technologies Dreamplug" >"$mock_dt_model"
+    (
+        . "$functions"
+        FK_MACHINE=""
+        PROC_DTMODEL="/this/must/not/exist"
+        FK_ETC_MACHINE="/this/must/not/exist"
+        PROC_CPUINFO="$mock_proc_cpuinfo"
+        if cpuinfo_machine="$(get_machine)"; then
+            if [ "$cpuinfo_machine" != "Marvell SheevaPlug Reference Board" ]; then
+                echo "Expected get_machine to return Marvell SheevaPlug Reference Board but got $cpuinfo_machine" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine to succeed with mocked /proc/cpuinfo but it failed" >&2
+            exit 1
+        fi
+        PROC_DTMODEL="$mock_dt_model"
+        if dtmodel_machine="$(get_machine)"; then
+            if [ "$dtmodel_machine" != "Globalscale Technologies Dreamplug" ]; then
+                echo "Expected get_machine to return Globalscale Technologies Dreamplug but got $dtmodel_machine" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine to succeed with mocked /proc/dtmodel but it failed" >&2
+            exit 1
+        fi
+        FK_ETC_MACHINE="$mock_etc_machine"
+        if etc_machine="$(get_machine)"; then
+            if [ "$etc_machine" != "Freescale MX53 LOCO Board" ]; then
+                echo "Expected get_machine to return Freescale MX53 LOCO Board but got $etc_machine" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine to succeed with mocked /etc/flash-kernel/machine but it failed" >&2
+            exit 1
+        fi
+        FK_MACHINE="Genesi EfikaMX nettop"
+        if fk_machine="$(get_machine)"; then
+            if [ "$fk_machine" != "Genesi EfikaMX nettop" ]; then
+                echo "Expected get_machine to return Genesi EfikaMX nettop but got $fk_machine" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine to succeed with valid FK_MACHINE but it failed" >&2
+            exit 1
+        fi
+        FK_MACHINE="none"
+        if none_machine="$(get_machine)"; then
+            if [ -n "$none_machine" ]; then
+                echo "Expected get_machine to return an empty string but got $none_machine" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine to succeed with FK_MACHINE=\"none\" but it failed" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_get_machine
+
 test_get_kfile_suffix() {
     (
         . "$functions"
