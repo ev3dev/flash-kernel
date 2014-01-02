@@ -497,6 +497,23 @@ test_flash_initrd() {
 }
 add_test test_flash_initrd
 
+test_dtb_append_from() {
+    (
+        . "$functions"
+        dtb_append_from="3.12"
+        kvers=3.11-1-kirkwood
+        if dtb_append_required ; then
+            echo "Kernel $kvers does not need appended DTB, but got true" >&2
+            exit 1
+        fi
+        kvers=3.12-1-kirkwood
+        if ! dtb_append_required ; then
+            echo "Kernel $kvers does need appended DTB, but got false" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_dtb_append_from
 
 test_main
 

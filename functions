@@ -319,6 +319,10 @@ abootimg_get_image_size() {
 	echo "$abootimg" | sed -rn 's/^\* image size = ([0-9]+) bytes.*/\1/p'
 }
 
+dtb_append_required() {
+	linux-version compare "$kvers" ge "$dtb_append_from"
+}
+
 # XXX needs testsuite coverage
 android_flash() {
 	local device="$1"
@@ -405,6 +409,7 @@ mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
 dtb_append="$(get_machine_field "$machine" "DTB-Append")" || :
+dtb_append_from="$(get_machine_field "$machine" "DTB-Append-From")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 ukepoint="$(get_machine_field "$machine" "U-Boot-Kernel-Entry-Point")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
@@ -418,6 +423,14 @@ boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_dtb_path="$(get_machine_field "$machine" "Boot-DTB-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
+
+if [ -n "$dtb_append_from" ]; then
+    if dtb_append_required; then
+	dtb_append="yes"
+    else
+	dtb_append="no"
+    fi
+fi
 
 if [ -n "$mtd_kernel" ] || [ -n "$mtd_initrd" ]; then
 	if [ ! -e "$PROC_MTD" ]; then
@@ -491,19 +504,15 @@ case "$method" in
 	"generic")
 		kernel="$kfile"
 		initrd="$ifile"
-		if [ -n "$machine_id" ]; then
-			if [ "$dtb_append" = "yes" ]; then
-				error "Can't set Machine-Id and DTB-Append"
-			fi
-			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
-			kernel="$tmpdir/kernel"
-		fi
 		if [ "$dtb_append" = "yes" ]; then
 			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
 			if [ ! -f "$dtb" ]; then
 				error "Couldn't find $dtb"
 			fi
 			append_dtb "$kernel" "$dtb" "$tmpdir/kernel"
+			kernel="$tmpdir/kernel"
+		elif [ -n "$machine_id" ]; then
+			gen_kernel "$kernel" "$tmpdir/kernel" "$machine_id"
 			kernel="$tmpdir/kernel"
 		fi
 		if [ -n "$ukaddr" ]; then

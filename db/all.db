@@ -250,10 +250,25 @@ Bootloader-Sets-Root: no
 
 Machine: Marvell SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-sheevaplug.dtb
+DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Root: no
+
+Machine: Globalscale Technologies SheevaPlug
+Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-sheevaplug.dtb
+DTB-Append-From: 3.12
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Root: no
 

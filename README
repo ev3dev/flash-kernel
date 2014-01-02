@@ -92,12 +92,18 @@ The supported fields are:
   suffix, installation is aborted
 
 * Machine-Id: (optional) linux mach-type to set before starting vmlinuz;
-  will be set by a small piece of ARM code prepended to the kernel image
+  will be set by a small piece of ARM code prepended to the kernel image.
+  This option is ignored if a DTB is to be appended, via either DTB-Append or
+  DTB-Append-From.
 
 * DTB-Id: (optional) specifies the name of the DTB file for this device
 
 * DTB-Append: (optional) when yes the DTB specified by DTB-Id will be appended
   to the kernel image.
+
+* DTB-Append-From: (optional): Can be used instead of DTB-Append. The argument
+  is a kernel version, if the kernel to be installed is at least this version
+  then the DTB specified named by DTB-Id will be appended to the kernel image.
 
 * U-Boot-Kernel-Address, U-Boot-Kernel-Entry-Point, U-Boot-Initrd-Address:
   (optional) address where to load in (physical) RAM the kernel, entry point
