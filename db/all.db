@@ -10,6 +10,17 @@ Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
 Bootloader-Sets-Root: yes
 
+Machine: Buffalo Linkstation LS-CHLv2
+Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-lschlv2.dtb
+DTB-Append: yes
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
+Required-Packages: u-boot-tools
+Bootloader-Sets-Root: yes
+
 Machine: Buffalo Linkstation Mini
 Kernel-Flavors: orion5x
 Machine-Id: 1858
