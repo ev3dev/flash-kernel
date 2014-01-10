@@ -109,13 +109,13 @@ get_dt_model() {
 get_machine() {
 	if [ -n "$FK_MACHINE" ]; then
 		[ "x$FK_MACHINE" = "xnone" ] && exit 0
-		echo "$FK_MACHINE"
+		machine="$FK_MACHINE"
 	elif [ -f "$FK_ETC_MACHINE" ]; then
-		cat "$FK_ETC_MACHINE"
+		machine="$(cat "$FK_ETC_MACHINE")"
 	elif [ -f "$PROC_DTMODEL" ]; then
-		get_dt_model
+		machine="$(get_dt_model)"
 	else
-		get_cpuinfo_hardware
+		machine="$(get_cpuinfo_hardware)"
 	fi
 }
 
@@ -355,7 +355,7 @@ if [ "x$1" = "x--machine" ]; then
 	machine="$2"
 	shift 2
 else
-	machine="$(get_machine)"
+	get_machine
 fi
 
 if [ "x$1" = "x--supported" ]; then

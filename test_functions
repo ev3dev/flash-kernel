@@ -156,7 +156,7 @@ EOF
         . "$functions"
         PROC_CPUINFO="$mock_proc_cpuinfo"
         PROC_DTMODEL="/this/must/not/exist"
-        machine=$(get_machine)
+        get_machine
         if [ "$machine" != "Marvell SheevaPlug Reference Board" ]; then
             echo "Expected machine to be Marvell SheevaPlug Reference Board but got $machine" >&2
             exit 1
@@ -191,7 +191,7 @@ EOF
         . "$functions"
         PROC_CPUINFO="$mock_proc_cpuinfo"
         PROC_DTMODEL="$mock_dt_model"
-        machine=$(get_machine)
+        get_machine
         if [ "$machine" != "Globalscale Technologies Dreamplug" ]; then
             echo "Expected machine to be Globalscale Technologies Dreamplug but got $machine" >&2
             exit 1
@@ -232,9 +232,9 @@ EOF
         PROC_DTMODEL="/this/must/not/exist"
         FK_ETC_MACHINE="/this/must/not/exist"
         PROC_CPUINFO="$mock_proc_cpuinfo"
-        if cpuinfo_machine="$(get_machine)"; then
-            if [ "$cpuinfo_machine" != "Marvell SheevaPlug Reference Board" ]; then
-                echo "Expected get_machine to return Marvell SheevaPlug Reference Board but got $cpuinfo_machine" >&2
+        if get_machine; then
+            if [ "$machine" != "Marvell SheevaPlug Reference Board" ]; then
+                echo "Expected get_machine to return Marvell SheevaPlug Reference Board but got $machine" >&2
                 exit 1
             fi
         else
@@ -242,9 +242,9 @@ EOF
             exit 1
         fi
         PROC_DTMODEL="$mock_dt_model"
-        if dtmodel_machine="$(get_machine)"; then
-            if [ "$dtmodel_machine" != "Globalscale Technologies Dreamplug" ]; then
-                echo "Expected get_machine to return Globalscale Technologies Dreamplug but got $dtmodel_machine" >&2
+        if get_machine; then
+            if [ "$machine" != "Globalscale Technologies Dreamplug" ]; then
+                echo "Expected get_machine to return Globalscale Technologies Dreamplug but got $machine" >&2
                 exit 1
             fi
         else
@@ -252,9 +252,9 @@ EOF
             exit 1
         fi
         FK_ETC_MACHINE="$mock_etc_machine"
-        if etc_machine="$(get_machine)"; then
-            if [ "$etc_machine" != "Freescale MX53 LOCO Board" ]; then
-                echo "Expected get_machine to return Freescale MX53 LOCO Board but got $etc_machine" >&2
+        if get_machine; then
+            if [ "$machine" != "Freescale MX53 LOCO Board" ]; then
+                echo "Expected get_machine to return Freescale MX53 LOCO Board but got $machine" >&2
                 exit 1
             fi
         else
@@ -262,9 +262,9 @@ EOF
             exit 1
         fi
         FK_MACHINE="Genesi EfikaMX nettop"
-        if fk_machine="$(get_machine)"; then
-            if [ "$fk_machine" != "Genesi EfikaMX nettop" ]; then
-                echo "Expected get_machine to return Genesi EfikaMX nettop but got $fk_machine" >&2
+        if get_machine; then
+            if [ "$machine" != "Genesi EfikaMX nettop" ]; then
+                echo "Expected get_machine to return Genesi EfikaMX nettop but got $machine" >&2
                 exit 1
             fi
         else
@@ -272,9 +272,9 @@ EOF
             exit 1
         fi
         FK_MACHINE="none"
-        if none_machine="$(get_machine)"; then
+        if get_machine; then
             if [ -n "$none_machine" ]; then
-                echo "Expected get_machine to return an empty string but got $none_machine" >&2
+                echo "Expected get_machine to return an empty string but got $machine" >&2
                 exit 1
             fi
         else

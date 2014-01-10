@@ -91,7 +91,7 @@ if [ ! -e "$rootdev" ]; then
 	pause_error
 fi
 
-machine="$(get_machine)"
+get_machine
 
 # Should we override the root device or merely provide a default root
 # device?

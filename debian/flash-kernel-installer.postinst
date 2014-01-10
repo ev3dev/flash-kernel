@@ -24,7 +24,7 @@ findfs () {
 	mount | grep "on /target${1%/} " | tail -n1 | cut -d' ' -f1
 }
 
-machine="$(get_machine)"
+get_machine
 
 if machine_uses_flash "$machine"; then
 	db_progress START 0 3 flash-kernel-installer/progress
