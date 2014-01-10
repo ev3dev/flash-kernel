@@ -320,6 +320,120 @@ test_get_machine_field() {
             exit 1
         fi
     )
+
+    get_tempfile
+    mock_etc_db="$last_tempfile"
+    cat >"$mock_etc_db" <<EOF
+Machine: Board File Machine A
+Machine: DT Machine A
+Machine: DT Machine A v2
+Kernel-Flavors: machinea
+
+Machine: Board File Machine B
+Kernel-Flavors: machineb
+
+Machine: DT Machine B
+Kernel-Flavors: machineb-dt
+
+Machine: Machine C
+Machine: Machine C
+Kernel-Flavors: machinec
+Machine: Invalid
+Dummy: Dummy
+EOF
+    (
+        FK_ETC_DB="$mock_etc_db"
+        . "$functions"
+        machine="Board File Machine A"
+        if machine_field="$(get_machine_field "$machine" "Machine")"; then
+            if [ "$machine_field" != "$machine" ]; then
+                echo "Expected Machine field to be $machine but got $machine_field" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
+            exit 1
+        fi
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "machinea" ]; then
+            echo "Expected Kernel-Flavors field to be machinea but got $kflavors" >&2
+            exit 1
+        fi
+        machine="DT Machine A"
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "machinea" ]; then
+            echo "Expected Kernel-Flavors field to be machinea but got $kflavors" >&2
+            exit 1
+        fi
+        if machine_field="$(get_machine_field "$machine" "Machine")"; then
+            if [ "$machine_field" != "$machine" ]; then
+                echo "Expected Machine field to be $machine but got $machine_field" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
+            exit 1
+        fi
+        machine="DT Machine A v2"
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "machinea" ]; then
+            echo "Expected Kernel-Flavors field to be machinea but got $kflavors" >&2
+            exit 1
+        fi
+        if machine_field="$(get_machine_field "$machine" "Machine")"; then
+            if [ "$machine_field" != "$machine" ]; then
+                echo "Expected Machine field to be $machine but got $machine_field" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
+            exit 1
+        fi
+
+        machine="Board File Machine B"
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "machineb" ]; then
+            echo "Expected Kernel-Flavors field to be machineb but got $kflavors" >&2
+            exit 1
+        fi
+        if machine_field="$(get_machine_field "$machine" "Machine")"; then
+            if [ "$machine_field" != "$machine" ]; then
+                echo "Expected Machine field to be $machine but got $machine_field" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
+            exit 1
+        fi
+
+        machine="DT Machine B"
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "machineb-dt" ]; then
+            echo "Expected Kernel-Flavors field to be machineb-dt but got $kflavors" >&2
+            exit 1
+        fi
+        if machine_field="$(get_machine_field "$machine" "Machine")"; then
+            if [ "$machine_field" != "$machine" ]; then
+                echo "Expected Machine field to be $machine but got $machine_field" >&2
+                exit 1
+            fi
+        else
+            echo "Expected get_machine_field to succeed on Machine field but it failed" >&2
+            exit 1
+        fi
+
+        machine="Machine C"
+        kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+        if [ "$kflavors" != "machinec" ]; then
+            echo "Expected Kernel-Flavors field to be machinec but got $kflavors" >&2
+            exit 1
+        fi
+        if field="$(get_machine_field "$machine" "Dummy" 2>/dev/null)"; then
+            echo "Expected Dummy field to hit syntax error but got $field" >&2
+            exit 1
+        fi
+
+    )
 }
 add_test test_get_machine_field
 

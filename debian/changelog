@@ -4,6 +4,7 @@ flash-kernel (3.12) UNRELEASED; urgency=low
     patch by Marc Kleine-Budde. (Closes: #731345).
   * Append a DTB on Guruplug from kernel version 3.12 onwards. Based on a patch
     from William Boughton. (Closes: #734769).
+  * Allow multiple Machine names per stanza in the db. 
 
  -- Ian Campbell <ijc@hellion.org.uk>  Wed, 08 Jan 2014 19:55:43 +0000
 
