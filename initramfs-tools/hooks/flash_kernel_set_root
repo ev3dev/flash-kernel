@@ -26,7 +26,15 @@ pause_error() {
 
 	#exit 1 # won't work; initramfs-tools ignores hook script exit code
 	echo "" >&2
-	if [ "$DEBIAN_FRONTEND" = "noninteractive" ]; then
+
+	# Script is called from update-initramfs which in term can be
+	# called manually by the admin from the CLI or via various
+	# postinst and trigger hooks or from the installer.
+	#
+	# If debconf appears to be running then it is important that
+	# we do not block on stdin since this would hang the
+	# installer.
+	if [ "$DEBIAN_HAS_FRONTEND" ]; then
 		echo "Unable to abort; system will probably be broken!" >&2
 	else
 		echo "Press Ctrl-C to abort build, or Enter to continue" >&2
