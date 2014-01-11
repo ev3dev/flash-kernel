@@ -106,7 +106,7 @@ get_machine
 blsr="$(get_machine_field "$machine" "Bootloader-Sets-Root")"
 
 if [ "$blsr" = "no" ]; then
-	# The boot loader doesn't pass root= on the command line, so
+	# The boot loader may or may not pass root= on the command line, so
 	# provide a default.
 	install -d $DESTDIR/conf/conf.d
 	echo "ROOT=\"$rootdev\"" > $DESTDIR/conf/conf.d/default_root
