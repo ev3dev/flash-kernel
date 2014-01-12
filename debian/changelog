@@ -1,10 +1,10 @@
-flash-kernel (3.12) UNRELEASED; urgency=low
+flash-kernel (3.12) UNRELEASED; urgency=medium
 
   * Append a DTB on Sheevaplug from kernel version 3.12 onwards. Based on a
     patch by Marc Kleine-Budde. (Closes: #731345).
   * Append a DTB on Guruplug from kernel version 3.12 onwards. Based on a patch
     from William Boughton. (Closes: #734769).
-  * Allow multiple Machine names per stanza in the db. 
+  * Allow multiple Machine names per stanza in the db.
   * Correct check for debconf, avoiding hang on error when running in Debian
     Installer. (Closes: #721485).
   * Add support for "Buffalo Linkstation LS-CHLv2" (Closes: #734130).
