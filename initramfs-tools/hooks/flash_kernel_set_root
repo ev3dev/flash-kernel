@@ -103,18 +103,18 @@ get_machine
 
 # Should we override the root device or merely provide a default root
 # device?
-blsr="$(get_machine_field "$machine" "Bootloader-Sets-Root")"
+blsir="$(get_machine_field "$machine" "Bootloader-Sets-Incorrect-Root")"
 
-if [ "$blsr" = "no" ]; then
-	# The boot loader may or may not pass root= on the command line, so
-	# provide a default.
-	install -d $DESTDIR/conf/conf.d
-	echo "ROOT=\"$rootdev\"" > $DESTDIR/conf/conf.d/default_root
-else
+if [ "$blsir" = "yes" ]; then
 	# The boot loader passes a bogus root= (e.g. root=/dev/ram), so
 	# override the command line parameter.
 	install -d $DESTDIR/conf
 	echo "ROOT=\"$rootdev\"" >> $DESTDIR/conf/param.conf
+else
+	# The boot loader may or may not pass root= on the command line, so
+	# provide a default.
+	install -d $DESTDIR/conf/conf.d
+	echo "ROOT=\"$rootdev\"" > $DESTDIR/conf/conf.d/default_root
 fi
 
 # vim:noexpandtab shiftwidth=8

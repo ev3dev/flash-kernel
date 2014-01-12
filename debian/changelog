@@ -1,6 +1,11 @@
 flash-kernel (3.13) UNRELEASED; urgency=low
 
   * Correctly handle probing for android boot partition (Closes: #683329).
+  * Rename Bootloader-Sets-Root to Bootloader-Sets-Incorrect-Root which better
+    reflects its usage.
+  * Forcibly override root only if Bootloader-Sets-Incorrect-Root is yes,
+    rather than when it is not no. Avoids overridding root on unknown platforms
+    (Closes: #718761).
 
  -- Ian Campbell <ijc@hellion.org.uk>  Sun, 12 Jan 2014 19:11:20 +0000
 

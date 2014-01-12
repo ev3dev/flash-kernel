@@ -8,7 +8,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation LS-CHLv2
 Kernel-Flavors: kirkwood
@@ -19,7 +19,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation Mini
 Kernel-Flavors: orion5x
@@ -29,7 +29,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation Pro/Live
 Kernel-Flavors: orion5x
@@ -39,7 +39,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo/Revogear Kurobox Pro
 Kernel-Flavors: orion5x
@@ -49,7 +49,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
@@ -59,7 +59,7 @@ Mtd-Initrd: File System
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x00800000
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Freescale MX53 LOCO Board
 Kernel-Flavors: mx5
@@ -68,7 +68,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Genesi Efika Smartbook
 Kernel-Flavors: mx5
@@ -80,7 +80,7 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Genesi EfikaMX nettop
 Kernel-Flavors: mx5
@@ -92,13 +92,13 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: GLAN Tank
 Method: symlink
 Kernel-Flavors: iop32x
 Machine-Id: 1100
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: GTA02
 Method: multi
@@ -106,7 +106,7 @@ Kernel-Flavors: s3c24xx
 U-Boot-Multi-Address: 0x30008000
 Boot-Multi-Path: /boot/uImage.bin
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: HP Media Vault mv2120
 Kernel-Flavors: orion5x
@@ -117,7 +117,7 @@ Boot-Multi-Path: /boot/uImage
 # which are not essential
 Optional-Packages: mv2120-utils
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: HP t5325 Thin Client
 Kernel-Flavors: kirkwood
@@ -125,7 +125,7 @@ Machine-Id: 2846
 U-Boot-Multi-Address: 0x01600000
 Boot-Multi-Path: /boot/uImage
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: LaCie 2Big Network v2
 Kernel-Flavors: kirkwood
@@ -134,7 +134,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie 5Big Network v2
 Kernel-Flavors: kirkwood
@@ -143,7 +143,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Internet Space v2
 Kernel-Flavors: kirkwood
@@ -152,7 +152,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Network Space v2
 Kernel-Flavors: kirkwood
@@ -161,7 +161,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Network Space Max v2
 Kernel-Flavors: kirkwood
@@ -170,7 +170,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie d2 Network v2
 Kernel-Flavors: kirkwood
@@ -179,7 +179,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 # Really: Intel SS4000-e and compatibles
 Machine: Lanner EM7210
@@ -188,7 +188,7 @@ Kernel-Flavors: iop32x
 Machine-Id: 1212
 Mtd-Kernel: zImage
 Mtd-Initrd: ramdisk.gz
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Linksys NSLU2
 Method: slug
@@ -200,7 +200,7 @@ Optional-Packages: ixp4xx-firmware
 # nslu2-utils will call update-initramfs -u to include the firmware and to run
 # the hook from flash-kernel
 Required-Packages: apex-nslu2 nslu2-utils
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell DB-78x00-BP Development Board
 U-Boot-Kernel-Address: 0x8000
@@ -208,7 +208,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Globalscale Technologies Dreamplug
 Kernel-Flavors: kirkwood
@@ -221,7 +221,7 @@ Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell GuruPlug Reference Board
 Machine: Globalscale Technologies Guruplug Server Plus
@@ -234,7 +234,7 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell OpenRD Base Board
 Kernel-Flavors: kirkwood
@@ -243,7 +243,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell OpenRD Client Board
 Kernel-Flavors: kirkwood
@@ -252,7 +252,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell OpenRD Ultimate Board
 Kernel-Flavors: kirkwood
@@ -261,7 +261,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell SheevaPlug Reference Board
 Machine: Globalscale Technologies SheevaPlug
@@ -274,7 +274,7 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell eSATA SheevaPlug Reference Board
 Kernel-Flavors: kirkwood
@@ -283,7 +283,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: OMAP4 Panda board
 Method: generic
@@ -296,7 +296,7 @@ Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-Script-Path: boot.scr
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: PlatHome OpenBlocks AX3-4 board
 Kernel-Flavors: armmp
@@ -309,7 +309,7 @@ Boot-Device: /dev/sda1
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Plat'Home OpenBlocksA6
 Kernel-Flavors: kirkwood
@@ -322,7 +322,7 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: QNAP TS-109/TS-209
 Kernel-Flavors: orion5x
@@ -331,7 +331,7 @@ Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-119/TS-219
 Kernel-Flavors: kirkwood
@@ -340,7 +340,7 @@ Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-409
 Kernel-Flavors: orion5x
@@ -349,7 +349,7 @@ Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-41x
 Kernel-Flavors: kirkwood
@@ -358,7 +358,7 @@ Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
@@ -367,7 +367,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
 
 Machine: Thecus N2100
 Method: redboot
@@ -375,10 +375,10 @@ Kernel-Flavors: iop32x
 Machine-Id: 1101
 Mtd-Kernel: kernel
 Mtd-Initrd: ramdisk
-Bootloader-Sets-Root: yes
+Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0
 Required-Packages: abootimg
-Bootloader-Sets-Root: no
+Bootloader-Sets-Incorrect-Root: no
