@@ -1,4 +1,4 @@
-flash-kernel (3.12) UNRELEASED; urgency=medium
+flash-kernel (3.12) unstable; urgency=medium
 
   * Append a DTB on Sheevaplug from kernel version 3.12 onwards. Based on a
     patch by Marc Kleine-Budde. (Closes: #731345).
@@ -10,7 +10,7 @@ flash-kernel (3.12) UNRELEASED; urgency=medium
   * Add support for "Buffalo Linkstation LS-CHLv2" (Closes: #734130).
   * Add support for "Plat'Home OpenBlocksA6" (Closes: #725754).
 
- -- Ian Campbell <ijc@hellion.org.uk>  Wed, 08 Jan 2014 19:55:43 +0000
+ -- Ian Campbell <ijc@hellion.org.uk>  Sun, 12 Jan 2014 15:15:49 +0000
 
 flash-kernel (3.11) unstable; urgency=low
 
