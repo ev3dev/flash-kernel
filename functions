@@ -506,7 +506,9 @@ case "$method" in
 		part=""
 		largest_size="-1"
 		for p in "$android_boot_device"*[0-9]; do
-			abootimg="$(LC_ALL=C abootimg -i "$p" 2>/dev/null)"
+			if ! abootimg="$(LC_ALL=C abootimg -i "$p" 2>/dev/null)"; then
+				continue
+			fi
 			image_size="$(abootimg_get_image_size "$abootimg")"
 			if [ -n "$image_size" ] &&
 				[ "$image_size" -gt "$largest_size" ]; then

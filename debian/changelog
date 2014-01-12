@@ -1,3 +1,9 @@
+flash-kernel (3.13) UNRELEASED; urgency=low
+
+  * Correctly handle probing for android boot partition (Closes: #683329).
+
+ -- Ian Campbell <ijc@hellion.org.uk>  Sun, 12 Jan 2014 19:11:20 +0000
+
 flash-kernel (3.12) unstable; urgency=medium
 
   * Append a DTB on Sheevaplug from kernel version 3.12 onwards. Based on a
