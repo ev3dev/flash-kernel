@@ -18,6 +18,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
@@ -147,28 +148,37 @@ Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Internet Space v2
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-is2.dtb
+DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Network Space v2
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-ns2.dtb
+DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Network Space Max v2
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-ns2max.dtb
+DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
@@ -232,7 +242,7 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Boot-DTB-Path: dtb
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
@@ -272,16 +282,20 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Boot-DTB-Path: dtb
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell eSATA SheevaPlug Reference Board
+Machine: Globalscale Technologies eSATA SheevaPlug
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-sheevaplug-esata.dtb
+DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
@@ -308,6 +322,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Device: /dev/sda1
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
@@ -320,7 +335,7 @@ U-Boot-Initrd-Address: 0x0
 Boot-Device: /dev/sda1
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
-Boot-DTB-Path: dtb
+Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 

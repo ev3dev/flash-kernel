@@ -6,6 +6,13 @@ flash-kernel (3.13) UNRELEASED; urgency=low
   * Forcibly override root only if Bootloader-Sets-Incorrect-Root is yes,
     rather than when it is not no. Avoids overridding root on unknown platforms
     (Closes: #718761).
+  * Transition additinal kirkwood systems to DT from v3.12 onwards. Board
+    support for these was removed in that release:
+    - Globalscale Technologies eSATA SheevaPlug
+    - LaCie Internet Space v2
+    - LaCie Network Space v2
+  * Consistently install DTB file next to uImage where the latter is on a
+    filesystem rather than partition.
 
  -- Ian Campbell <ijc@hellion.org.uk>  Sun, 12 Jan 2014 19:11:20 +0000
 
