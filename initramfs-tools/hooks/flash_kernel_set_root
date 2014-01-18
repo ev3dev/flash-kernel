@@ -94,11 +94,6 @@ if echo "$rootdev" | grep -q "="; then
 	esac
 fi
 
-if [ ! -e "$rootdev" ]; then
-	echo "Warning: root device $rootdev does not exist" >&2
-	pause_error
-fi
-
 get_machine
 
 # Should we override the root device or merely provide a default root
@@ -110,6 +105,13 @@ if [ -z "$blsir" ] ; then
 		echo "WARNING: flash-kernel configuration contains deprecated" >&2
 		echo "WARNING: \"Bootloader-Sets-Root\" option please update to" >&2
 		echo "WARNING: use \"Bootloader-Sets-Incorrect-Root\" instead." >&2
+	fi
+fi
+
+if [ ! -e "$rootdev" ]; then
+	echo "Warning: root device $rootdev does not exist" >&2
+	if [ "$blsir" = "yes" ]; then
+		pause_error
 	fi
 fi
 
