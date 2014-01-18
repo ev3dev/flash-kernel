@@ -104,6 +104,14 @@ get_machine
 # Should we override the root device or merely provide a default root
 # device?
 blsir="$(get_machine_field "$machine" "Bootloader-Sets-Incorrect-Root")"
+if [ -z "$blsir" ] ; then
+	blsir="$(get_machine_field "$machine" "Bootloader-Sets-Root")"
+	if [ -n "$blsir" ] ; then
+		echo "WARNING: flash-kernel configuration contains deprecated" >&2
+		echo "WARNING: \"Bootloader-Sets-Root\" option please update to" >&2
+		echo "WARNING: use \"Bootloader-Sets-Incorrect-Root\" instead." >&2
+	fi
+fi
 
 if [ "$blsir" = "yes" ]; then
 	# The boot loader passes a bogus root= (e.g. root=/dev/ram), so
