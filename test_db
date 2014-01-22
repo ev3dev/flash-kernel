@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/dash
 
 # Copyright (C) 2013  Loïc Minier <lool@dooz.org>
 
