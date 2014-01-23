@@ -1,5 +1,6 @@
-flash-kernel (3.13) UNRELEASED; urgency=low
+flash-kernel (3.13) unstable; urgency=low
 
+  [ Ian Campbell ]
   * Correctly handle probing for android boot partition (Closes: #683329).
   * Rename Bootloader-Sets-Root to Bootloader-Sets-Incorrect-Root which better
     reflects its usage.
@@ -14,7 +15,7 @@ flash-kernel (3.13) UNRELEASED; urgency=low
   * Consistently install DTB file next to uImage where the latter is on a
     filesystem rather than partition.
 
- -- Ian Campbell <ijc@hellion.org.uk>  Sun, 12 Jan 2014 19:11:20 +0000
+ -- Christian Perrier <bubulle@debian.org>  Thu, 23 Jan 2014 08:26:59 +0100
 
 flash-kernel (3.12) unstable; urgency=medium
 
