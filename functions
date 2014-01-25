@@ -365,14 +365,36 @@ if [ "x$1" = "x--supported" ]; then
 	exit 1
 fi
 
+# $FK_KERNEL_HOOK_SCRIPT is set when main() is called from
+# /etc/kernel/* to be able to differentiate between being called
+# upon kernel installation or kernel removal
+
 # kernel + initrd installation/upgrade mode, with optional version
 
 kvers="$1"
 latest_version=$(linux-version list | linux-version sort | tail -1)
-if [ -n "$kvers" ] && [ "$kvers" != "$latest_version" ]; then
+if [ -n "$kvers" ] && [ "$kvers" != "$latest_version" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postinst.d" ]; then
 	echo "Ignoring old or unknown version $kvers (latest is $latest_version)" >&2
 	exit 0
 fi
+
+if [ -n "$kvers" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postrm.d" ]; then
+	echo "flash-kernel: Kernel ${kvers} has been removed." >&2
+	if $(linux-version compare "$kvers" lt "$latest_version"); then
+		echo "flash-kernel: A higher version (${latest_version}) is still installed, no reflashing required." >&2
+		exit 0
+	else
+		if [ -n "${latest_version}" ]; then
+			echo "flash-kernel: Flashing the remaining highest-versioned kernel (${latest_version})." >&2
+		else
+			echo "flash-kernel: WARNING: No other kernel packages found!" >&2
+			echo "flash-kernel: The system might be unbootable." >&2
+			echo "flash-kernel: Please install a kernel package before rebooting the system." >&2
+			exit 0
+		fi
+	fi
+fi
+
 kvers="$latest_version"
 
 # accumulate multiple calls in a trigger to only run flash-kernel once; the

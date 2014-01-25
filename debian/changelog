@@ -5,6 +5,8 @@ flash-kernel (3.15) UNRELEASED; urgency=low
     itself as needed. (Closes: #618029)
   * Add support for Globalscale Mirabox. From Jasmin Schnatterbeck.
     (Closes: #739976).
+  * Handle removal of highest kernel version (Closes: #735093). Patch from
+    Karsten Merker.
 
  -- Ian Campbell <ijc@hellion.org.uk>  Sun, 16 Mar 2014 17:38:58 +0000
 
