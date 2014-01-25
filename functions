@@ -271,7 +271,7 @@ mkimage_initrd() {
 	local uinitrd="$4"
 
 	printf "Generating initramfs u-boot image... " >&2
-	mkimage -A arm -O linux -T ramdisk -C gzip -a "$iaddr" -e "$iaddr" \
+	mkimage -A arm -O linux -T ramdisk -C none -a "$iaddr" -e "$iaddr" \
 		-n "$idesc" -d "$idata" "$uinitrd" >&2 1>/dev/null
 	echo "done." >&2
 }

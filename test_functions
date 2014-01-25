@@ -529,7 +529,7 @@ test_mkimage_initrd() {
         . "$functions"
         saved_args=""
         mkimage_initrd "0xdeadbeef" "desc" "input" "output" 2>/dev/null
-        expected="-A arm -O linux -T ramdisk -C gzip -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
+        expected="-A arm -O linux -T ramdisk -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
         if [ "$expected" != "$saved_args" ]; then
             echo "Expected mkimage_initrd to be called with \"$expected\" but it was called with \"$saved_args\"" >&2
             exit 1
