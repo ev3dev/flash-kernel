@@ -245,6 +245,19 @@ Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
+Machine: Globalscale Mirabox
+Kernel-Flavors: armmp
+DTB-Id: armada-370-mirabox.dtb
+DTB-Append: yes
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Device: /dev/sdb1
+Boot-Kernel-Path: uImage
+Boot-Initrd-Path: uInitrd
+Boot-DTB-Path: dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
 Machine: Marvell GuruPlug Reference Board
 Machine: Globalscale Technologies Guruplug Server Plus
 Kernel-Flavors: kirkwood

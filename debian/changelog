@@ -3,6 +3,8 @@ flash-kernel (3.15) UNRELEASED; urgency=low
   * Handle machine name difference for DT based DockStar (Closes: #741692)
   * Do not mark uInitrd as compressed. The kernel can decompress the initramfs
     itself as needed. (Closes: #618029)
+  * Add support for Globalscale Mirabox. From Jasmin Schnatterbeck.
+    (Closes: #739976).
 
  -- Ian Campbell <ijc@hellion.org.uk>  Sun, 16 Mar 2014 17:38:58 +0000
 
