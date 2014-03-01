@@ -1,3 +1,9 @@
+flash-kernel (3.14) UNRELEASED; urgency=low
+
+  * Append DTB on "Seagate FreeAgent DockStar" from v3.12 onwards.
+
+ -- Ian Campbell <ijc@hellion.org.uk>  Sat, 01 Mar 2014 01:56:36 +0000
+
 flash-kernel (3.13) unstable; urgency=low
 
   [ Ian Campbell ]
