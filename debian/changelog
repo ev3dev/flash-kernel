@@ -1,9 +1,10 @@
-flash-kernel (3.14) UNRELEASED; urgency=low
+flash-kernel (3.14) unstable; urgency=low
 
+  [ Ian Campbell ]
   * Append DTB on "Seagate FreeAgent DockStar" from v3.12 onwards.
   * Add support for Buffalo Linkstation LS-XHL (Closes: #740786).
 
- -- Ian Campbell <ijc@hellion.org.uk>  Sat, 01 Mar 2014 01:56:36 +0000
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 14 Mar 2014 15:11:45 +0100
 
 flash-kernel (3.13) unstable; urgency=low
 
