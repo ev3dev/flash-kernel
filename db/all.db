@@ -387,6 +387,7 @@ U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
 DTB-Id: kirkwood-dockstar.dtb
