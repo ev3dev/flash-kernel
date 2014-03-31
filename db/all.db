@@ -232,6 +232,21 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
+# Marvell dev board has different names depending on how it's booted,
+# via DTB or older ATAGS
+Machine: Marvell Armada XP GP Board
+Machine: Marvell Armada XP Development Board DB-MV784MP-GP
+Kernel-Flavors: armmp lpae armmp-lpae
+DTB-Id: armada-xp-gp.dtb
+DTB-Append: yes
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
 Machine: Globalscale Technologies Dreamplug
 Kernel-Flavors: kirkwood
 DTB-Id: kirkwood-dreamplug.dtb
