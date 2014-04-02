@@ -4,6 +4,9 @@ flash-kernel (3.16) UNRELEASED; urgency=low
   * Add support for the Marvell Armada XP GP Board, booting via DTB.
     (Closes: #743222)
 
+  [ Christian Perrier ]
+  * Updated Standards to 3.9.5 (checked)
+
  -- Steve McIntyre <93sam@debian.org>  Fri, 28 Mar 2014 17:26:45 +0000
 
 flash-kernel (3.15) unstable; urgency=low
