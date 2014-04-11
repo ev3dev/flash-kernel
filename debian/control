@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Loïc Minier <lool@debian.org>,
            Hector Oron <zumbi@debian.org>,
-	   Christian Perrier <bubulle@debian.org>
+           Christian Perrier <bubulle@debian.org>,
+           Ian Campbell <ijc@hellion.org.uk>
 Build-Depends: debhelper (>= 9), devio, linux-base (>= 3.2), dash
 Standards-Version: 3.9.5
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=d-i/flash-kernel.git

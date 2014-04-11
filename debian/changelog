@@ -1,6 +1,7 @@
 flash-kernel (3.17) UNRELEASED; urgency=medium
 
   * Accept kernels with an additional "+" suffix (Closes: #743796)
+  * Add myself to Uploaders
 
  -- Ian Campbell <ijc@hellion.org.uk>  Fri, 11 Apr 2014 16:50:41 +0100
 
