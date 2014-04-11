@@ -97,6 +97,14 @@ test_check_kflavors() {
             echo "Expected check_kflavors to succeed with empty kernel suffix, but it failed" >&2
             exit 1
         fi
+        if check_kflavors "ksuffix+" "kflavor1" "kflavor2"; then
+            echo "Expected check_kflavors to fail with kernel suffix (with additional +) not in expected flavors, but it succeeded" >&2
+            exit 1
+        fi
+        if ! check_kflavors "foo+" "kflavor1" "foo" "kflavor2"; then
+            echo "Expected check_kflavours to succeed with kernel suffix (with additional +) in expected flavors, but it failed" >&2
+            exit 1
+        fi
     )
 }
 add_test test_check_kflavors

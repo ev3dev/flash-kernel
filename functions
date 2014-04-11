@@ -67,7 +67,7 @@ check_kflavors() {
 		return 0
 	fi
 	for kflavor; do
-		if [ "$kfile_suffix" = "$kflavor" ]; then
+		if [ "$kfile_suffix" = "$kflavor" ] || [ "$kfile_suffix" = "$kflavor+" ]; then
 			return 0
 		fi
 	done
