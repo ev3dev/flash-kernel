@@ -8,3 +8,4 @@ bootscript                      usr/share/flash-kernel
 db                              usr/share/flash-kernel
 functions                       usr/share/flash-kernel
 debian/default                  usr/share/flash-kernel
+dtb-probe                       usr/share/flash-kernel

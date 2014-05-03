@@ -481,7 +481,10 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-119/TS-219
+Machine: QNAP TS219 family
 Kernel-Flavors: kirkwood
+DTB-Id: !kirkwood-qnap
+DTB-Append-From: 3.15-rc1
 Machine-Id: 2139
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
@@ -499,7 +502,10 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-41x
+Machine: QNAP TS419 family
 Kernel-Flavors: kirkwood
+DTB-Id: !kirkwood-qnap
+DTB-Append-From: 3.15-rc1
 Machine-Id: 2502
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1

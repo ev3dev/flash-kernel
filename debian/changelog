@@ -1,3 +1,10 @@
+flash-kernel (3.22~exp.1) experimental; urgency=medium
+
+  * Autodetect correct DTB for kirkwood based QNAP devices and append from 3.15-rc1
+    onwards.
+
+ -- Ian Campbell <ijc@hellion.org.uk>  Mon, 16 Jun 2014 18:48:39 +0100
+
 flash-kernel (3.21) unstable; urgency=medium
 
   [ Ian Campbell ]
