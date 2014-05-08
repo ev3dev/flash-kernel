@@ -2,6 +2,7 @@ flash-kernel (3.18) UNRELEASED; urgency=medium
 
   * Add --force option to install a specific kernel version. 
   * Add support for the Cubietruck.
+  * Copy the dtb (if any) to /boot/dtb-$kversion in kernel postinst hook.
 
  -- Ian Campbell <ijc@hellion.org.uk>  Mon, 12 May 2014 20:12:39 +0100
 
