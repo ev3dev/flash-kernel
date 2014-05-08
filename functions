@@ -351,6 +351,11 @@ android_flash() {
 }
 
 main() {
+force="no"
+if [ "x$1" = "x--force" ]; then
+	force="yes"
+        shift
+fi
 if [ "x$1" = "x--machine" ]; then
 	machine="$2"
 	shift 2
@@ -373,7 +378,7 @@ fi
 
 kvers="$1"
 latest_version=$(linux-version list | linux-version sort | tail -1)
-if [ -n "$kvers" ] && [ "$kvers" != "$latest_version" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postinst.d" ]; then
+if [ -n "$kvers" ] && [ "x$force" != "xyes" ] && [ "$kvers" != "$latest_version" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postinst.d" ]; then
 	echo "Ignoring old or unknown version $kvers (latest is $latest_version)" >&2
 	exit 0
 fi
@@ -395,7 +400,12 @@ if [ -n "$kvers" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postrm.d" ]; then
 	fi
 fi
 
-kvers="$latest_version"
+if [ "$kvers" != "$latest_version" ] && [ "x$force" = "xyes" ]; then
+	echo "flash-kernel: forcing install of ${kvers} instead of ${latest_version}." >&2
+	echo "flash-kernel: WARNING: Installing any new kernel package might override this." >&2
+else
+	kvers="$latest_version"
+fi
 
 # accumulate multiple calls in a trigger to only run flash-kernel once; the
 # trigger will just call flash-kernel again with FLASH_KERNEL_NOTRIGGER set to

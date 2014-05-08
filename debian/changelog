@@ -1,3 +1,9 @@
+flash-kernel (3.18) UNRELEASED; urgency=medium
+
+  * Add --force option to install a specific kernel version. 
+
+ -- Ian Campbell <ijc@hellion.org.uk>  Mon, 12 May 2014 20:12:39 +0100
+
 flash-kernel (3.17) unstable; urgency=medium
 
   * Accept kernels with an additional "+" suffix (Closes: #743796)
