@@ -282,9 +282,13 @@ mkimage_script() {
 	local sdata="$3"
 	local script="$4"
 
+	local tdata="$tmpdir/$(basename $sdata)"
+
 	printf "Generating boot script u-boot image... " >&2
+	sed -e "s/@@KERNEL_VERSION@@/$kvers/g" \
+		< $sdata > $tdata
 	mkimage -A arm -O linux -T script -C none -a "$saddr" -e "$saddr" \
-		-n "$sdesc" -d "$sdata" "$script" >&2 1>/dev/null
+		-n "$sdesc" -d "$tdata" "$script" >&2 1>/dev/null
 	echo "done." >&2
 }
 

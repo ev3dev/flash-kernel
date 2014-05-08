@@ -124,7 +124,8 @@ The supported fields are:
   U-Boot-Script-Name
 
 * U-Boot-Script-Name: (optional) name of U-Boot boot script to install
-  from the flash-kernel files
+  from the flash-kernel files. @@KERNEL_VERSION@@ will be substituted for the
+  actual kernel version
 
 * Boot-Kernel-Path, Boot-Initrd-Path: (optional) where to put the
   generated kernel and initrd files on the filesystem; see also

@@ -12,13 +12,14 @@ setenv fdt_addr_r 0x47000000
 setenv ramdisk_addr_r 0x48000000
 
 image_locations='/boot/ /'
+kvers='@@KERNEL_VERSION@@'
 
 for pathprefix in ${image_locations}
 do
-  load ${device} ${partition} ${kernel_addr_r} ${pathprefix}vmlinuz \
-  && load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtb \
-  && load ${device} ${partition} ${ramdisk_addr_r} ${pathprefix}initrd.img \
-  && echo "Booting Debian from ${device} ${partition}..." \
+  load ${device} ${partition} ${kernel_addr_r} ${pathprefix}vmlinuz-${kvers} \
+  && load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtb-${kvers} \
+  && load ${device} ${partition} ${ramdisk_addr_r} ${pathprefix}initrd.img-${kvers} \
+  && echo "Booting Debian ${kvers} from ${device} ${partition}..." \
   && bootz ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
 done
 
