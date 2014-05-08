@@ -64,6 +64,14 @@ Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Cubietech Cubietruck
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+Boot-DTB-Path: /boot/dtb
+DTB-Id: sun7i-a20-cubietruck.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Bootloader-Sets-Incorrect-Root: no
+
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
 Machine-Id: 1542
