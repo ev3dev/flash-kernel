@@ -16,6 +16,10 @@ the highest version will be flashed and other versions will be
 ignored unless the \-\-force option is used. Kernel and initrd are
 read from /boot.
 .P
+Note that when the \-\-force the kernel can be overwritten with the current
+version whenever a package is installed which changes the kernel, initramfs
+etc. Therefore this is only really useful for one-off testing.
+.P
 Prior to flashing the kernel, a check is performed to verify that
 the subarchitectures of the machine and the image to be flashed
 match. Valid filenames for images to flash are suffixed with the
