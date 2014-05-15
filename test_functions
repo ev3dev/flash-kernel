@@ -93,6 +93,14 @@ test_check_kflavors() {
             echo "Expected check_kflavors to succeed with kernel suffix in expected flavors, but it failed" >&2
             exit 1
         fi
+        if ! check_kflavors "kflavor1-suffix" "klavor1" "kflavor1-suffix" "kflavor2"; then
+            echo "Expected check_kflavours to succeed with double-barrelled kernel suffix in expected flavours, but it failed" >&2
+            exit 1
+        fi
+        if check_kflavors "kflavor1-suffix" "klavor1" "kflavor2"; then
+            echo "Expected check_kflavours to fail with double-barrelled kernel suffix not in expected flavours, but it succeeded" >&2
+            exit 1
+        fi
         if ! check_kflavors "" "kflavor1" "kflavor2" "kflavor3"; then
             echo "Expected check_kflavors to succeed with empty kernel suffix, but it failed" >&2
             exit 1
@@ -299,6 +307,22 @@ test_get_kfile_suffix() {
         kfile_suffix=$(get_kfile_suffix "/boot/vmlinuz-2.6.32-5-kirkwood")
         if [ "$kfile_suffix" != "kirkwood" ]; then
             echo "Expected kernel file suffix to be kirkwood but got $kfile_suffix" >&2
+            exit 1
+        fi
+        kfile_suffix=""
+        kfile_suffix=$(get_kfile_suffix "/boot/vmlinuz-3.10-1-armmp-lpae" "$kfile_suffix")
+        if [ "$kfile_suffix" != "lpae" ]; then
+            echo "Expected kernel file suffix to be lpae but got $kfile_suffix" >&2
+            exit 1
+        fi
+        kfile_suffix=$(get_kfile_suffix "/boot/vmlinuz-3.10-1-armmp-lpae" "$kfile_suffix")
+        if [ "$kfile_suffix" != "armmp-lpae" ]; then
+            echo "Expected kernel file suffix to be armmp-lpae but got $kfile_suffix" >&2
+            exit 1
+        fi
+        kfile_suffix=$(get_kfile_suffix "/boot/vmlinuz-3.10-1-armmp")
+        if [ "$kfile_suffix" != "armmp" ]; then
+            echo "Expected kernel file suffix to be armmp but got $kfile_suffix" >&2
             exit 1
         fi
     )

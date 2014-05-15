@@ -1,10 +1,16 @@
+flash-kernel (3.19) UNRELEASED; urgency=low
+
+  * Support kernel flavours with a hyphen in (e.g. armmp-lpae).
+
+ -- Ian Campbell <ijc@hellion.org.uk>  Fri, 16 May 2014 19:27:07 +0100
+
 flash-kernel (3.18) unstable; urgency=medium
 
   [ Ian Campbell ]
   * Add --force option to install a specific kernel version. 
   * Add support for the Cubietruck.
   * Copy the dtb (if any) to /boot/dtb-$kversion in kernel postinst hook.
-  * Allow use the kernel version in boot scripts.
+  * Allow use of the kernel version in boot scripts.
 
  -- Christian Perrier <bubulle@debian.org>  Wed, 14 May 2014 06:52:17 +0200
 

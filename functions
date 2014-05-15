@@ -121,8 +121,9 @@ get_machine() {
 
 get_kfile_suffix() {
 	local kfile="$1"
+	local tail="${2:+-$2}"
 
-	echo "$kfile" | sed -e 's/.*-//'
+	echo "$kfile" | sed -e "s/.*-\([^-]*$tail\)/\\1/"
 }
 
 # this is case-sensitive and doesn't support fields spanning multiple lines
@@ -471,17 +472,25 @@ ifilesize=$(stat -c '%s' "$ifile")
 if [ -L "$kfile" ]; then
 	kfile=$(readlink -e "$kfile")
 fi
-kfile_suffix=$(get_kfile_suffix "$kfile")
 
 if ! check_supported "$machine"; then
 	error "Unsupported platform."
 fi
 
 if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
-	if ! check_kflavors "$kfile_suffix" $kflavors; then
-		echo "Kernel suffix $kfile_suffix does not match any of the expected flavors ($kflavors), therefore not writing it to flash." >&2
-		exit 0
-	fi
+	kfile_suffix=""
+	while [ "$kfile_suffix" != "$kfile" ] ; do
+		kfile_suffix=$(get_kfile_suffix "$kfile" "$kfile_suffix")
+
+		if check_kflavors "$kfile_suffix" $kflavors; then
+			break;
+		fi
+	done
+fi
+
+if [ "$kfile_suffix" = "$kfile" ]; then
+	echo "Kernel $kfile does not match any of the expected flavors ($kflavors), therefore not writing it to flash." >&2
+	exit 0
 fi
 
 echo "flash-kernel: installing version $kvers" >&2
