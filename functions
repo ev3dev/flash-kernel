@@ -356,29 +356,22 @@ android_flash() {
 }
 
 handle_dtb() {
-	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "x" ]; then
-		return
-	fi
-
 	local dtb_id="$(get_machine_field "$machine" "DTB-Id")" || :
 	if [ "x$dtb_id" = "x" ]; then
 		return
 	fi
 
 	local dtb="/usr/lib/linux-image-$kvers/$dtb_id"
-	case $FK_KERNEL_HOOK_SCRIPT in
-	postinst.d)
+	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
+		rm -f "/boot/dtb-$kvers"
+	else
 		if [ -e $dtb ]; then
 			echo "Installing $dtb_id $kvers into /boot" >&2
 			cp "$dtb" "/boot/dtb-$kvers"
 		else
 			echo "$dtb not found" >&2
 		fi
-		;;
-	postrm.d)
-		rm -f "/boot/dtb-$kvers"
-		;;
-	esac
+	fi
 }
 
 main() {
@@ -410,7 +403,9 @@ fi
 kvers="$1"
 
 # Install/remove any DTB from postinst, regardless of version
-handle_dtb
+if [ -n "$kvers" ] ; then
+	handle_dtb
+fi
 
 latest_version=$(linux-version list | linux-version sort | tail -1)
 if [ -n "$kvers" ] && [ "x$force" != "xyes" ] && [ "$kvers" != "$latest_version" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postinst.d" ]; then
@@ -440,6 +435,8 @@ if [ "$kvers" != "$latest_version" ] && [ "x$force" = "xyes" ]; then
 	echo "flash-kernel: WARNING: Installing any new kernel package might override this." >&2
 else
 	kvers="$latest_version"
+	# Make sure we install the DTB for $latest_version
+	handle_dtb
 fi
 
 # accumulate multiple calls in a trigger to only run flash-kernel once; the

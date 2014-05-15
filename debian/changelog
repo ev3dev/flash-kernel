@@ -4,6 +4,7 @@ flash-kernel (3.19) UNRELEASED; urgency=low
   * Allow armmp-lpae kernel and add u-boot-tools on cubietruck.
   * Run installer udeb on arm*/generic subarch iff the machine is listed in the
     db.
+  * Copy dtb to /boot when directly invoked as well.
 
  -- Ian Campbell <ijc@hellion.org.uk>  Fri, 16 May 2014 19:27:07 +0100
 
