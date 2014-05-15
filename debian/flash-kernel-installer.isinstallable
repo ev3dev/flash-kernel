@@ -20,6 +20,17 @@ case "`archdetect`" in
 	arm*/s3c24xx)
 		exit 0
 	;;
+	arm*/generic)
+		FK_DIR="/usr/share/flash-kernel"
+
+		. ${FK_DIR}/functions
+		get_machine
+		if check_supported "$machine" ; then
+			exit 0
+		else
+			exit 1
+		fi
+	;;
 	# Don't activate it by default
 	*)
 		exit 1
