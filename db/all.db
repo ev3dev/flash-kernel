@@ -65,10 +65,11 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Cubietech Cubietruck
-Kernel-Flavors: armmp
+Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun7i-a20-cubietruck.dtb
 U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
 Machine: D-Link DNS-323
