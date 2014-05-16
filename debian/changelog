@@ -1,4 +1,4 @@
-flash-kernel (3.19) UNRELEASED; urgency=low
+flash-kernel (3.19) unstable; urgency=low
 
   * Support kernel flavours with a hyphen in (e.g. armmp-lpae).
   * Allow armmp-lpae kernel and add u-boot-tools on cubietruck.
@@ -6,7 +6,7 @@ flash-kernel (3.19) UNRELEASED; urgency=low
     db.
   * Copy dtb to /boot when directly invoked as well.
 
- -- Ian Campbell <ijc@hellion.org.uk>  Fri, 16 May 2014 19:27:07 +0100
+ -- Ian Campbell <ijc@hellion.org.uk>  Fri, 16 May 2014 19:31:43 +0100
 
 flash-kernel (3.18) unstable; urgency=medium
 
