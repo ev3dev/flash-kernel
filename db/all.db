@@ -79,6 +79,20 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.highbank
 Required-Packages: u-boot-tools
 
+Machine: Cubietech Cubieboard
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-cubieboard.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Cubietech Cubieboard2
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-cubieboard2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Cubietech Cubietruck
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -168,6 +182,13 @@ Boot-Multi-Path: /boot/uImage
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: INet-97F Rev 02
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-inet97fv2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: LaCie 2Big Network v2
 Kernel-Flavors: kirkwood
 U-Boot-Kernel-Address: 0x00008000
@@ -233,6 +254,13 @@ Machine-Id: 1212
 Mtd-Kernel: zImage
 Mtd-Initrd: ramdisk.gz
 Bootloader-Sets-Incorrect-Root: yes
+
+Machine: LinkSprite pcDuino
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-pcduino.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 
 Machine: Linksys NSLU2
 Method: slug
@@ -350,6 +378,55 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
+Machine: Mele A1000
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-a1000.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Miniand Hackberry
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-hackberry.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Olimex A10-OLinuXino-LIME
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-olinuxino-lime.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Olimex A10s-Olinuxino Micro
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a10s-olinuxino-micro.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Olimex A13-Olinuxino
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a13-olinuxino.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Olimex A13-Olinuxino Micro
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a13-olinuxino-micro.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Olimex A20-Olinuxino Micro
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-olinuxino-micro.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: OMAP4 Panda board
 Method: generic
 U-Boot-Kernel-Address: 0x80008000
@@ -360,6 +437,13 @@ Boot-Device: /dev/mmcblk0p1
 Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-Script-Path: boot.scr
+Required-Packages: u-boot-tools
+
+Machine: PineRiver Mini X-Plus
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-mini-xplus.dtb
+U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: PlatHome OpenBlocks AX3-4 board
@@ -447,3 +531,10 @@ Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0
 Required-Packages: abootimg
+
+Machine: WITS A31 Colombus Evaluation Board
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31-colombus.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools

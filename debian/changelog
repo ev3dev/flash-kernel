@@ -11,6 +11,22 @@ flash-kernel (3.21) UNRELEASED; urgency=medium
   * Document /etc/flash-kernel/machine and the database files in the manpage.
   * Add kernel command line configuration support to sunxi bootscript. 
 
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems
+    - Cubietech Cubieboard
+    - Cubietech Cubieboard2
+    - INet-97F Rev 02
+    - LinkSprite pcDuino
+    - Mele A1000
+    - Miniand Hackberry
+    - Olimex A10-OLinuXino-LIME
+    - Olimex A10s-Olinuxino Micro
+    - Olimex A13-Olinuxino
+    - Olimex A13-Olinuxino Micro
+    - Olimex A20-Olinuxino Micro
+    - PineRiver Mini X-Plus
+    - WITS A31 Colombus Evaluation Board
+
  -- Ian Campbell <ijc@hellion.org.uk>  Tue, 10 Jun 2014 08:19:57 +0100
 
 flash-kernel (3.20) unstable; urgency=medium
