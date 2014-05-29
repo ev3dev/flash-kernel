@@ -1,5 +1,18 @@
 #! /usr/bin/make -f
 
+AUTOGEN_DEB_FILES := flash-kernel-installer.postinst
+override_dh_auto_install:
+	for i in $(AUTOGEN_DEB_FILES); do \
+		cat < debian/$$i.in > debian/$$i; \
+	done
+	dh_auto_install
+
+override_dh_auto_clean:
+	for i in $(AUTOGEN_DEB_FILES); do \
+		rm -f debian/$$i; \
+	done
+	dh_auto_clean
+
 override_dh_auto_test:
 	FK_CHECKOUT=. ./test_db
 	FK_CHECKOUT=. ./test_flash-kernel
