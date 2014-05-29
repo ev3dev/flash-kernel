@@ -252,6 +252,11 @@ flash_initrd() {
 	echo "done." >&2
 }
 
+get_kernel_cmdline() {
+        . /etc/default/flash-kernel
+	echo "$LINUX_KERNEL_CMDLINE"
+}
+
 mkimage_kernel() {
 	local kaddr="$1"
 	local epoint="$2"
@@ -287,6 +292,7 @@ mkimage_script() {
 
 	printf "Generating boot script u-boot image... " >&2
 	sed -e "s/@@KERNEL_VERSION@@/$kvers/g" \
+            -e "s/@@LINUX_KERNEL_CMDLINE@@/$(get_kernel_cmdline)/g" \
 		< $sdata > $tdata
 	mkimage -A arm -O linux -T script -C none -a "$saddr" -e "$saddr" \
 		-n "$sdesc" -d "$tdata" "$script" >&2 1>/dev/null

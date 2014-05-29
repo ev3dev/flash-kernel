@@ -1,3 +1,9 @@
+flash-kernel (3.20) UNRELEASED; urgency=medium
+
+  * Add kernel commandline configuration support
+
+ -- dann frazier <dannf@debian.org>  Fri, 30 May 2014 09:53:35 -0600
+
 flash-kernel (3.19) unstable; urgency=low
 
   * Support kernel flavours with a hyphen in (e.g. armmp-lpae).

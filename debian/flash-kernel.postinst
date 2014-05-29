@@ -2,8 +2,47 @@
 
 set -e
 
-if [ "$1" = "triggered" ]; then
-    FLASH_KERNEL_NOTRIGGER=y flash-kernel
-fi
+# cargo-culted from grub
+merge_debconf_into_conf() {
+	local tmpfile; tmpfile="$1"
+	local setting; setting="$2"
+	local template; template="$3"
+
+	db_get "$template"
+	local value; value="$(echo "$RET" | sed -e 's,[$`"\],\\&,g')"
+	if grep -q "^${setting}=" "$tmpfile"; then
+		value="$(echo "$value" | sed -e 's,[\@],\\&,g')"
+		sed -i -re "s@^(${setting}=).*@\1\"${value}\"@" "$tmpfile"
+	else
+		echo >> "$tmpfile"
+		echo "${setting}=\"${value}\"" >> "$tmpfile"
+	fi
+}
+
+case "$1" in
+	configure)
+		. /usr/share/debconf/confmodule
+
+		tmp_default_fk="$(mktemp -t flash-kernel.XXXXXXXXXX)"
+		trap "rm -f ${tmp_default_fk}" EXIT
+		cp -p /usr/share/flash-kernel/default/flash-kernel \
+			${tmp_default_fk}
+		merge_debconf_into_conf "$tmp_default_fk" \
+			LINUX_KERNEL_CMDLINE flash-kernel/linux_cmdline
+
+		ucf --three-way --debconf-ok ${tmp_default_fk} \
+			/etc/default/flash-kernel
+		ucfr flash-kernel /etc/default/flash-kernel
+		;;
+	triggered)
+		FLASH_KERNEL_NOTRIGGER=y flash-kernel
+		;;
+	abort-upgrade|abort-remove|abort-deconfigure)
+		;;
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+		;;
+esac
 
 #DEBHELPER#

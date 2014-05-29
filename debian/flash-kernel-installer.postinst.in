@@ -24,6 +24,10 @@ findfs () {
 	mount | grep "on /target${1%/} " | tail -n1 | cut -d' ' -f1
 }
 
+tac () {
+	sed '1!G;h;$!d'
+}
+
 get_machine
 
 if machine_uses_flash "$machine"; then
@@ -41,6 +45,23 @@ fi
 if [ -e /target/etc/default/fsck ]; then
 	sed -i -e "s/^#FSCKFIX=no$/FSCKFIX=yes/" -e "s/^FSCKFIX=no$/FSCKFIX=yes/" /target/etc/default/fsck || true
 fi
+
+def_params="@DEFAULT_CMDLINE@"
+# reverse them so we prefix them in the right order
+rev_def_params="$(echo $def_params | tr ' ' '\n' | tac)"
+user_params=$(user-params) || true
+kopt_params="$user_params"
+for d_param in $rev_def_params; do
+	# Don't add redundant default params
+	if echo $kopt_params | tr ' ' '\n' | grep -q "^${d_param}$"; then
+		continue
+	else
+		kopt_params="$d_param${kopt_params:+ $kopt_params}"
+	fi
+done
+
+echo flash-kernel flash-kernel/linux_cmdline string $kopt_params | \
+	chroot /target debconf-set-selections
 
 if ! apt-install flash-kernel; then
 	error "apt-install flash-kernel failed"
