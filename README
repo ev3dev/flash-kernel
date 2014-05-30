@@ -172,6 +172,24 @@ Configuration files currently supported:
 * /etc/flash-kernel/db allows overriding / adding fields from the Machine
   database (but it doesn't allow removing fields or entries).
 
+* /etc/flash-kernel/ubootenv.d can be used to add or override u-boot
+  script snippets. See "Adding U-Boot Commands for Pre-Boot Execution"
+  below for more details.
+
 * /etc/default/flash-kernel currently contains a single variable,
   LINUX_KERNEL_CMDLINE, which should be used by bootscripts to set kernel
   options.
+
+
+Adding U-Boot Commands for Pre-Boot Execution
+- - - - - - - - - - - - - - - - - - - - - - -
+
+Packages can drop in files containing U-Boot commands to be executed by a
+platform's bootscript before starting the OS. These files should be
+dropped in /usr/share/flash-kernel/ubootenv.d. Users can add additional
+stubs, or override stubs provided by packages, by adding files to
+/etc/flash-kernel/ubootenv.d. Files in the /etc path that have the same
+name as files in the /usr path will override the /usr counterparts.
+
+Platform bootscripts must contain the @@UBOOT_ENV_EXTRA@@ macro for the
+contents of these stubs to be incorporated.

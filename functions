@@ -216,6 +216,19 @@ gen_kernel() {
 	} >"$output"
 }
 
+gen_ubootenv() {
+	ENVSTUBDIRS="/etc/flash-kernel/ubootenv.d /usr/share/flash-kernel/ubootenv.d"
+	ENVSTUBS="$(find $ENVSTUBDIRS -type f -regex '.*/[0-9a-zA-Z_-]+' -printf '%f\n' | LC_ALL=C sort -u)"
+	for file in $ENVSTUBS; do
+		for dir in $ENVSTUBDIRS; do
+			if [ -f $dir/$file ]; then
+				cat $dir/$file
+				break
+			fi
+		done
+	done
+}
+
 append_dtb() {
 	local kernel="$1"
 	local dtb="$2"
@@ -290,10 +303,16 @@ mkimage_script() {
 
 	local tdata="$tmpdir/$(basename $sdata)"
 
+	local ubootenv="$(mktemp --tmpdir=$tmpdir)"
+	gen_ubootenv > $ubootenv
+
 	printf "Generating boot script u-boot image... " >&2
 	sed -e "s/@@KERNEL_VERSION@@/$kvers/g" \
             -e "s/@@LINUX_KERNEL_CMDLINE@@/$(get_kernel_cmdline)/g" \
-		< $sdata > $tdata
+            -e "/@@UBOOT_ENV_EXTRA@@/{
+                  s/@@UBOOT_ENV_EXTRA@@//g
+                  r $ubootenv
+                }" < $sdata > $tdata
 	mkimage -A arm -O linux -T script -C none -a "$saddr" -e "$saddr" \
 		-n "$sdesc" -d "$tdata" "$script" >&2 1>/dev/null
 	echo "done." >&2
