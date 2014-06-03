@@ -73,6 +73,13 @@ Boot-Initrd-Path: /boot/initrd.buffalo
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Calxeda Highbank
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.highbank
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
 Machine: Cubietech Cubietruck
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr

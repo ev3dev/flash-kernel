@@ -4,6 +4,7 @@ flash-kernel (3.20) UNRELEASED; urgency=medium
   * Add support for prepending arbitrary u-boot commands to a bootscript
   * Add arm64 support
   * Add support for APM X-Gene Mustang boards
+  * Add support for Calxeda Highbank
 
  -- dann frazier <dannf@debian.org>  Fri, 30 May 2014 09:53:35 -0600
 

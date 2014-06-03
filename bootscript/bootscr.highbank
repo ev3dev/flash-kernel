@@ -1,0 +1,5 @@
+setenv bootargs '@@LINUX_KERNEL_CMDLINE@@'
+@@UBOOT_ENV_EXTRA@@
+ext2load scsi 0 ${kernel_addr_r} vmlinuz
+ext2load scsi 0 ${ramdisk_addr_r} initrd.img
+bootz ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr}
