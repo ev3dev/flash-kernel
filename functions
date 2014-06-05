@@ -308,7 +308,7 @@ mkimage_script() {
 
 	printf "Generating boot script u-boot image... " >&2
 	sed -e "s/@@KERNEL_VERSION@@/$kvers/g" \
-            -e "s/@@LINUX_KERNEL_CMDLINE@@/$(get_kernel_cmdline)/g" \
+            -e "s!@@LINUX_KERNEL_CMDLINE@@!$(get_kernel_cmdline)!g" \
             -e "/@@UBOOT_ENV_EXTRA@@/{
                   s/@@UBOOT_ENV_EXTRA@@//g
                   r $ubootenv
