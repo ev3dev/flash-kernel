@@ -1,12 +1,13 @@
-flash-kernel (3.20) UNRELEASED; urgency=medium
+flash-kernel (3.20) unstable; urgency=medium
 
+  [ dann frazier ]
   * Add kernel commandline configuration support
   * Add support for prepending arbitrary u-boot commands to a bootscript
   * Add arm64 support
   * Add support for APM X-Gene Mustang boards
   * Add support for Calxeda Highbank
 
- -- dann frazier <dannf@debian.org>  Fri, 30 May 2014 09:53:35 -0600
+ -- Christian Perrier <bubulle@debian.org>  Thu, 05 Jun 2014 06:49:13 +0200
 
 flash-kernel (3.19) unstable; urgency=low
 
