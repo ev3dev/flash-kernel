@@ -86,6 +86,13 @@ DTB-Id: sun7i-a20-cubietruck.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: SolidRun Cubox-i Dual/Quad
+Kernel-Flavors: armmp
+DTB-Id: imx6q-cubox-i.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.cubox-i
+Required-Packages: u-boot-tools
+
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
 Machine-Id: 1542
