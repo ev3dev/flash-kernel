@@ -7,7 +7,7 @@ flash-kernel (3.20) unstable; urgency=medium
   * Add support for APM X-Gene Mustang boards
   * Add support for Calxeda Highbank
 
- -- Christian Perrier <bubulle@debian.org>  Thu, 05 Jun 2014 06:49:13 +0200
+ -- Christian Perrier <bubulle@debian.org>  Fri, 06 Jun 2014 06:49:31 +0200
 
 flash-kernel (3.19) unstable; urgency=low
 
