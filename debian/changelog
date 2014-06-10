@@ -3,6 +3,7 @@ flash-kernel (3.21) UNRELEASED; urgency=medium
   [ Ian Campbell ]
   * Bootloader-Sets-Incorrect-Root machine db entry is now optional and
     defaults to no.
+  * Purge debconf database on purge. Patch from Vagrant Cascadian (Closes: #751066)
 
  -- Ian Campbell <ijc@hellion.org.uk>  Tue, 10 Jun 2014 08:19:57 +0100
 
