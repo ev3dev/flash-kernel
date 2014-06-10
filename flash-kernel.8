@@ -27,5 +27,18 @@ subarchitecture.
 .P
 If the \-\-supported option is used, flash\-kernel will test to see if
 the hardware is supported, and return a true or false value.
+.SH ENVIRONMENT VARIABLES
+
+.IP FK_MACHINE
+Specify a specific machine, overriding the autodetection, also see the
+description of
+.B /etc/flash\-kernel/machine
+below. Can be set to `none' to disable flash\-kernel. This can be used
+when installing flash\-kernel into a chroot, for example while
+preparing a filesystem image.
+.B WARNING: Take great care when running flash\-kernel in a chroot, since the
+.B choice of machine may cause host filesystem partitions to be mounted and 
+.B modified.
+
 .SH AUTHOR
 Martin Michlmayr <tbm@cyrius.com>

@@ -7,6 +7,7 @@ flash-kernel (3.21) UNRELEASED; urgency=medium
     (Closes: #751066)
   * Add support for SolidRun Cubox-i Dual/Quad. Patch from Vagrant Cascadian.
     (Closes: #750953)
+  * Document FK_MACHINE in the manpage. (Closes: #751012)
 
  -- Ian Campbell <ijc@hellion.org.uk>  Tue, 10 Jun 2014 08:19:57 +0100
 
