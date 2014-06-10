@@ -9,6 +9,7 @@ flash-kernel (3.21) UNRELEASED; urgency=medium
     (Closes: #750953)
   * Document FK_MACHINE in the manpage. (Closes: #751012)
   * Document /etc/flash-kernel/machine and the database files in the manpage.
+  * Add kernel command line configuration support to sunxi bootscript. 
 
  -- Ian Campbell <ijc@hellion.org.uk>  Tue, 10 Jun 2014 08:19:57 +0100
 
