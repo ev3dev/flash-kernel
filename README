@@ -148,7 +148,7 @@ The supported fields are:
   added during installer pharse for flash-kernel to offer full
   functionality; failure to add these packages just triggers a warning
 
-* Bootloader-Sets-Incorrect-Root: (required) when "yes" indicates that
+* Bootloader-Sets-Incorrect-Root: (optional) when "yes" indicates that
   the bootloader passes a root= value to the kernel and that this
   should be overriden in the initrd; when "no", flash-kernel only sets
   a default value for the root device, which allows end-users to pass

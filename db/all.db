@@ -78,7 +78,6 @@ Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.highbank
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Cubietech Cubietruck
 Kernel-Flavors: armmp armmp-lpae
@@ -86,7 +85,6 @@ Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun7i-a20-cubietruck.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
@@ -105,7 +103,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Genesi Efika Smartbook
 Kernel-Flavors: armmp mx5
@@ -171,7 +168,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie 5Big Network v2
 Kernel-Flavors: kirkwood
@@ -180,7 +176,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Internet Space v2
 Kernel-Flavors: kirkwood
@@ -192,7 +187,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Network Space v2
 Kernel-Flavors: kirkwood
@@ -204,7 +198,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie Network Space Max v2
 Kernel-Flavors: kirkwood
@@ -216,7 +209,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: LaCie d2 Network v2
 Kernel-Flavors: kirkwood
@@ -225,7 +217,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 # Really: Intel SS4000-e and compatibles
 Machine: Lanner EM7210
@@ -246,7 +237,6 @@ Optional-Packages: ixp4xx-firmware
 # nslu2-utils will call update-initramfs -u to include the firmware and to run
 # the hook from flash-kernel
 Required-Packages: apex-nslu2 nslu2-utils
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell DB-78x00-BP Development Board
 U-Boot-Kernel-Address: 0x8000
@@ -254,7 +244,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 # Marvell dev board has different names depending on how it's booted,
 # via DTB or older ATAGS
@@ -269,7 +258,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Globalscale Technologies Dreamplug
 Kernel-Flavors: kirkwood
@@ -282,7 +270,6 @@ Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Globalscale Mirabox
 Kernel-Flavors: armmp
@@ -295,7 +282,6 @@ Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-DTB-Path: dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell GuruPlug Reference Board
 Machine: Globalscale Technologies Guruplug Server Plus
@@ -308,7 +294,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell OpenRD Base Board
 Kernel-Flavors: kirkwood
@@ -317,7 +302,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell OpenRD Client Board
 Kernel-Flavors: kirkwood
@@ -326,7 +310,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell OpenRD Ultimate Board
 Kernel-Flavors: kirkwood
@@ -335,7 +318,6 @@ U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell SheevaPlug Reference Board
 Machine: Globalscale Technologies SheevaPlug
@@ -348,7 +330,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Marvell eSATA SheevaPlug Reference Board
 Machine: Globalscale Technologies eSATA SheevaPlug
@@ -361,7 +342,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: OMAP4 Panda board
 Method: generic
@@ -374,7 +354,6 @@ Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-Script-Path: boot.scr
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: PlatHome OpenBlocks AX3-4 board
 Kernel-Flavors: armmp
@@ -388,7 +367,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Plat'Home OpenBlocksA6
 Kernel-Flavors: kirkwood
@@ -401,7 +379,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: QNAP TS-109/TS-209
 Kernel-Flavors: orion5x
@@ -450,7 +427,6 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: no
 
 Machine: Thecus N2100
 Method: redboot
@@ -464,4 +440,3 @@ Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0
 Required-Packages: abootimg
-Bootloader-Sets-Incorrect-Root: no
