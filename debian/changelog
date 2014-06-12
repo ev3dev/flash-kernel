@@ -1,4 +1,4 @@
-flash-kernel (3.21) UNRELEASED; urgency=medium
+flash-kernel (3.21) unstable; urgency=medium
 
   [ Ian Campbell ]
   * Bootloader-Sets-Incorrect-Root machine db entry is now optional and
@@ -27,7 +27,7 @@ flash-kernel (3.21) UNRELEASED; urgency=medium
     - PineRiver Mini X-Plus
     - WITS A31 Colombus Evaluation Board
 
- -- Ian Campbell <ijc@hellion.org.uk>  Tue, 10 Jun 2014 08:19:57 +0100
+ -- Christian Perrier <bubulle@debian.org>  Thu, 12 Jun 2014 07:31:02 +0200
 
 flash-kernel (3.20) unstable; urgency=medium
 
