@@ -1,3 +1,10 @@
+flash-kernel (3.22) UNRELEASED; urgency=medium
+
+  * Add support for BeagleBone (black). Patch from Vagrant Cascadian.
+    (Closes: #751353)
+
+ -- Ian Campbell <ijc@hellion.org.uk>  Mon, 16 Jun 2014 20:02:44 +0100
+
 flash-kernel (3.21) unstable; urgency=medium
 
   [ Ian Campbell ]

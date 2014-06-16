@@ -527,6 +527,13 @@ Mtd-Kernel: kernel
 Mtd-Initrd: ramdisk
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: TI AM335x BeagleBone
+Kernel-Flavors: armmp
+DTB-Id: am335x-boneblack.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.beaglebone
+Required-Packages: u-boot-tools
+
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0

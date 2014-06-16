@@ -1,0 +1,17 @@
+# boot script for BeagleBone
+
+setenv device mmc
+setenv partition ${bootpart}
+setenv bootargs '@@LINUX_KERNEL_CMDLINE@@'
+
+image_locations='/boot/ /'
+kvers='@@KERNEL_VERSION@@'
+
+for pathprefix in ${image_locations}
+do
+  load ${device} ${partition} ${loadaddr} ${pathprefix}vmlinuz-${kvers} \
+  && load ${device} ${partition} ${fdtaddr} ${pathprefix}dtb-${kvers} \
+  && load ${device} ${partition} ${rdaddr} ${pathprefix}initrd.img-${kvers} \
+  && echo "Booting Debian ${kvers} from ${device} ${partition}..." \
+  && bootz ${loadaddr} ${rdaddr}:${filesize} ${fdtaddr}
+done
