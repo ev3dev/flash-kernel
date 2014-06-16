@@ -1,0 +1,20 @@
+# boot script for Wandboard
+
+setenv device mmc
+setenv partition ${mmcdev}:${mmcpart}
+if test -z "${ramdiskaddr}" ; then
+	setenv ramdiskaddr 0x13000000
+fi
+setenv bootargs '@@LINUX_KERNEL_CMDLINE@@'
+
+image_locations='/boot/ /'
+kvers='@@KERNEL_VERSION@@'
+
+for pathprefix in ${image_locations}
+do
+  load ${device} ${partition} ${loadaddr} ${pathprefix}vmlinuz-${kvers} \
+  && load ${device} ${partition} ${fdt_addr} ${pathprefix}dtb-${kvers} \
+  && load ${device} ${partition} ${ramdiskaddr} ${pathprefix}initrd.img-${kvers} \
+  && echo "Booting Debian ${kvers} from ${device} ${partition}..." \
+  && bootz ${loadaddr} ${ramdiskaddr}:${filesize} ${fdt_addr}
+done
