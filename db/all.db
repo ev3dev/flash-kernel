@@ -107,6 +107,17 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.cubox-i
 Required-Packages: u-boot-tools
 
+Machine: D-Link DNS-320 NAS (Rev A1)
+Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-dns320.dtb
+DTB-Append-From: 3.12
+Mtd-Kernel: uImage
+Mtd-Initrd: ramdisk
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x00e00000
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: yes
+
 Machine: D-Link DNS-323
 Kernel-Flavors: orion5x
 Machine-Id: 1542
