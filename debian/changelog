@@ -6,6 +6,7 @@ flash-kernel (3.22) UNRELEASED; urgency=medium
     (Closes: #751340)
   * Add support for D-Link DNS-320 NAS (Rev A1). Stanza from Bastien ROUCARIES.
     (Closes: #724891)
+  * Document Mtd-Kernel and Mtd-Initrd in README.
 
  -- Ian Campbell <ijc@hellion.org.uk>  Mon, 16 Jun 2014 20:02:44 +0100
 

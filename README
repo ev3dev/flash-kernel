@@ -140,6 +140,9 @@ The supported fields are:
   but for a DTB file. The DTB file named by DTB-Id will be copied
   here; see also DTB-Id
 
+* Mtd-Kernel, Mtd-Initrd: (optional) Specifies the raw MTD partition
+  name (per /proc/mtd) to use for the kernel and initrd respectively.
+
 * Required-Packages: (optional) list of packages which must be added
   during installer phase for flash-kernel to work properly; failure to
   add these packages aborts the installation
