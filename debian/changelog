@@ -1,5 +1,6 @@
-flash-kernel (3.22) UNRELEASED; urgency=medium
+flash-kernel (3.22) unstable; urgency=medium
 
+  [ Ian Campbell ]
   * Add support for BeagleBone (black). Patch from Vagrant Cascadian.
     (Closes: #751353)
   * Add support for Wandboard i.MX6 Quad Board. Patch from Vagrant Cascadian.
@@ -8,7 +9,7 @@ flash-kernel (3.22) UNRELEASED; urgency=medium
     (Closes: #724891)
   * Document Mtd-Kernel and Mtd-Initrd in README.
 
- -- Ian Campbell <ijc@hellion.org.uk>  Mon, 16 Jun 2014 20:02:44 +0100
+ -- Christian Perrier <bubulle@debian.org>  Thu, 19 Jun 2014 06:54:26 +0200
 
 flash-kernel (3.21) unstable; urgency=medium
 
