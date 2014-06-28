@@ -1,3 +1,9 @@
+flash-kernel (3.22ev3dev1) testing; urgency=low
+
+  * Fix breakage from #721485
+
+ -- David Lechner <david@lechnology.com>  Sat, 28 Jun 2014 15:53:37 -0500
+
 flash-kernel (3.22) unstable; urgency=medium
 
   [ Ian Campbell ]
