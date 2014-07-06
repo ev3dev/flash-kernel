@@ -2,6 +2,9 @@ flash-kernel (3.23) UNRELEASED; urgency=medium
 
   * Avoid stalling install when debconf frontend is noninteractive. Patch from
     David Lechner. (Closes: #753059)
+  * Append command line options from
+    /etc/default/flash-kernel:LINUX_KERNEL_CMDLINE to ${bootargs} rather than
+    replacing it entirely. (Closes: #751816)
 
  -- Ian Campbell <ijc@hellion.org.uk>  Sun, 06 Jul 2014 16:46:09 +0100
 

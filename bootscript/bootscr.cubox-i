@@ -2,7 +2,7 @@
 
 setenv device mmc
 setenv partition ${mmcdev}:${mmcpart}
-setenv bootargs '@@LINUX_KERNEL_CMDLINE@@'
+setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 
 image_locations='/boot/ /'
 kvers='@@KERNEL_VERSION@@'
