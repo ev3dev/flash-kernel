@@ -1,4 +1,4 @@
-flash-kernel (3.23) UNRELEASED; urgency=medium
+flash-kernel (3.23) unstable; urgency=medium
 
   * Avoid stalling install when debconf frontend is noninteractive. Patch from
     David Lechner. (Closes: #753059)
@@ -6,7 +6,7 @@ flash-kernel (3.23) UNRELEASED; urgency=medium
     /etc/default/flash-kernel:LINUX_KERNEL_CMDLINE to ${bootargs} rather than
     replacing it entirely. (Closes: #751816)
 
- -- Ian Campbell <ijc@hellion.org.uk>  Sun, 06 Jul 2014 16:46:09 +0100
+ -- Ian Campbell <ijc@hellion.org.uk>  Sat, 12 Jul 2014 16:39:40 +0100
 
 flash-kernel (3.22) unstable; urgency=medium
 
