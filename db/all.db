@@ -128,6 +128,18 @@ U-Boot-Initrd-Address: 0x00800000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Freescale i.MX53 Quick Start Board
+Kernel-Flavors: armmp
+DTB-Id: imx53-qsb.dtb
+DTB-Append-From: 3.12
+Boot-DTB-Path: /boot/dtb
+U-Boot-Kernel-Address: 0x70008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
 Machine: Freescale MX53 LOCO Board
 Kernel-Flavors: armmp mx5
 U-Boot-Kernel-Address: 0x70008000
