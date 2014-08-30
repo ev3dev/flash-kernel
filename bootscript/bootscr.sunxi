@@ -1,15 +1,32 @@
 # boot script for Allwinner SunXi-based devices
 
-# u-boot-sunxi does - in contrast to u-boot on other platforms - not
-# predefine kernel_addr_r, fdt_addr_r and ramdisk_addr_r, therefore we
-# define them locally in the boot script.
-#
-# This script assumes that ${device} and ${partition} are set in the
-# environment already.
+# Mainline u-boot v2014.10 introduces a new default environment and
+# a new common bootcmd handling for all platforms, which is not fully
+# compatible with the old-style environment used by u-boot-sunxi.
+# This script therefore needs to check in which environment it
+# is running and set some variables accordingly.
 
-setenv kernel_addr_r 0x46000000
-setenv fdt_addr_r 0x47000000
-setenv ramdisk_addr_r 0x48000000
+# On u-boot-sunxi, this script assumes that ${device} and ${partition}
+# are set.
+
+# The new-style environment predefines ${boot_targets}, the old-style
+# environment does not.
+if test -n "${boot_targets}"
+then
+  echo "Mainline u-boot / new-style environment detected."
+  # Mainline u-boot v2014.10 uses ${devtype}, ${devnum} and
+  # ${bootpart} where u-boot-sunxi uses ${device} and ${partition}.
+  if test -z "${device}"; then setenv device "${devtype}"; fi
+  if test -z "${partition}"; then setenv partition "${devnum}:${bootpart}"; fi
+else
+  echo "U-boot-sunxi / old-style environment detected."
+  # U-boot-sunxi does not predefine kernel_addr_r, fdt_addr_r and
+  # ramdisk_addr_r, so they are manually set to the values used by
+  # mainline u-boot v2014.10.
+  setenv kernel_addr_r 0x42000000
+  setenv fdt_addr_r 0x43000000
+  setenv ramdisk_addr_r 0x43300000
+fi
 
 setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 @@UBOOT_ENV_EXTRA@@
