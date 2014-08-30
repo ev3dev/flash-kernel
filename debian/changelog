@@ -1,3 +1,12 @@
+flash-kernel (3.24) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Modify bootscript/bootscr.sunxi to work with the new default environment
+    and bootcmd handling introduced by mainline u-boot v2014.10 as well as
+    with the old environment still used by u-boot-sunxi.
+
+ -- Karsten Merker <merker@debian.org>  Sat, 30 Aug 2014 12:17:36 +0200
+
 flash-kernel (3.23) unstable; urgency=medium
 
   * Avoid stalling install when debconf frontend is noninteractive. Patch from
