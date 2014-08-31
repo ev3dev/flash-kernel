@@ -4,6 +4,8 @@ flash-kernel (3.24) UNRELEASED; urgency=medium
   * Modify bootscript/bootscr.sunxi to work with the new default environment
     and bootcmd handling introduced by mainline u-boot v2014.10 as well as
     with the old environment still used by u-boot-sunxi.
+  * Avoid "file not found" messages while iterating over the possible
+    locations for kernel images in bootscr.sunxi.
 
  -- Karsten Merker <merker@debian.org>  Sat, 30 Aug 2014 12:17:36 +0200
 
