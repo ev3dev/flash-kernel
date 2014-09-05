@@ -92,7 +92,7 @@ check_mtd_size() {
 			) >&2
 		;;
 		esac
-		error "Not enough space in MTD $mtd_name (need $required_size but is actually $actual_size)."
+		error "Not enough space in MTD '$mtd_name' (need $required_size but is actually $actual_size)."
 	fi
 }
 
@@ -256,6 +256,14 @@ flash_kernel() {
 	local input_file="$1"
 	local output_mtd="$2"
 	local machine_id="$3"
+
+	if [ -n "$kmtdsize" ]; then
+		kreqsize=$(stat -c '%s' "$input_file")
+		if [ -n "$machine_id" ]; then
+			kreqsize=$(($kreqsize + 8))
+		fi
+	        check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize kernel
+	fi
 
 	printf "Flashing kernel... " >&2
 	gen_kernel "$input_file" "$output_mtd" "$machine_id" || error "failed."
@@ -571,14 +579,6 @@ if [ -n "$mtd_kernel" ]; then
 	check_block_dev "$kmtd"
 	kmtdsize=$(mtdsize "$mtd_kernel")
 	kreqsize=$kfilesize
-	# setting the machine id prepends 8 bytes in front of the kernel
-	if [ -n "$machine_id" ]; then
-		kreqsize=$(($kreqsize + 8))
-	fi
-	# encapsulating in an U-Boot image grows the size by 64 bytes
-	if [ -n "$ukaddr" ]; then
-		kreqsize=$(($kreqsize + 64))
-	fi
 	check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize kernel
 fi
 if [ -n "$mtd_initrd" ]; then
