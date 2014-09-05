@@ -78,8 +78,20 @@ check_mtd_size() {
 	local mtd_name="$1"
 	local required_size="$2"
 	local actual_size="$3"
+	local what="$4"
 
 	if [ $required_size -gt $actual_size ]; then
+		case $what in
+		initrd)
+			(
+				echo "The initial ramdisk is too large. This is often due to the unnecessary inclusion"
+				echo "of all kernel modules in the image. To fix this set MODULES=dep in one or both"
+				echo "/etc/initramfs-tools/conf.d/driver-policy (if it exists) and"
+				echo "/etc/initramfs-tools/initramfs.conf and then run 'update-initramfs -u -k $kvers'"
+				echo
+			) >&2
+		;;
+		esac
 		error "Not enough space in MTD $mtd_name (need $required_size but is actually $actual_size)."
 	fi
 }
@@ -567,7 +579,7 @@ if [ -n "$mtd_kernel" ]; then
 	if [ -n "$ukaddr" ]; then
 		kreqsize=$(($kreqsize + 64))
 	fi
-	check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize
+	check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize kernel
 fi
 if [ -n "$mtd_initrd" ]; then
 	imtd=$(mtdblock "$mtd_initrd")
@@ -581,7 +593,7 @@ if [ -n "$mtd_initrd" ]; then
 	if [ -n "$uiaddr" ]; then
 		ireqsize=$(($ireqsize + 64))
 	fi
-	check_mtd_size "$mtd_initrd" $ireqsize $imtdsize
+	check_mtd_size "$mtd_initrd" $ireqsize $imtdsize initrd
 fi
 
 tmpdir=""
@@ -751,9 +763,9 @@ case "$method" in
 			error "Cannot find mtd partition '$mtd_fis'"
 		fi
 		check_mtd_size "$mtd_kernel" $(($kfilesize + 16 + 16)) \
-			$kmtdsize
+			$kmtdsize kernel
 		check_mtd_size "$mtd_initrd" $(($ifilesize + 16)) \
-			$imtdsize
+			$imtdsize initrd
 		# The following devio magic parses the FIS directory to
 		# obtain the size, offset and name of each partition.  This
 		# used used to obtain the offset of the Kernel partition.
