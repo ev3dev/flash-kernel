@@ -2,6 +2,7 @@ flash-kernel (3.25) UNRELEASED; urgency=medium
 
   * Log some clues on how to fix overly large initramfs (Closes: #760215).
   * Improved mtd partition size checks.
+  * Switch Uploaders to use my @debian.org address.
 
  -- Ian Campbell <ijc@hellion.org.uk>  Mon, 25 Aug 2014 22:26:56 +0100
 
