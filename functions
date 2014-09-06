@@ -84,6 +84,7 @@ check_mtd_size() {
 		case $what in
 		initrd)
 			(
+				echo
 				echo "The initial ramdisk is too large. This is often due to the unnecessary inclusion"
 				echo "of all kernel modules in the image. To fix this set MODULES=dep in one or both"
 				echo "/etc/initramfs-tools/conf.d/driver-policy (if it exists) and"
@@ -92,7 +93,7 @@ check_mtd_size() {
 			) >&2
 		;;
 		esac
-		error "Not enough space in MTD '$mtd_name' (need $required_size but is actually $actual_size)."
+		error "Not enough space for $what in MTD '$mtd_name' (need $required_size but is actually $actual_size)."
 	fi
 }
 
