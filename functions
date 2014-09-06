@@ -257,6 +257,7 @@ flash_kernel() {
 	local input_file="$1"
 	local output_mtd="$2"
 	local machine_id="$3"
+	local use
 
 	if [ -n "$kmtdsize" ]; then
 		kreqsize=$(stat -c '%s' "$input_file")
@@ -264,9 +265,10 @@ flash_kernel() {
 			kreqsize=$(($kreqsize + 8))
 		fi
 	        check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize kernel
+		use=" ($kreqsize/$kmtdsize bytes)"
 	fi
 
-	printf "Flashing kernel... " >&2
+	printf "Flashing kernel$use... " >&2
 	gen_kernel "$input_file" "$output_mtd" "$machine_id" || error "failed."
 	echo "done." >&2
 }
@@ -275,8 +277,13 @@ flash_initrd() {
 	local input_file="$1"
 	local output_mtd="$2"
 	local pad="$3"
+	local use
 
-	printf "Flashing initramfs... " >&2
+	if [ -n "$imtdsize" ]; then
+		use=" ($ireqsize/$imtdsize bytes)"
+	fi
+
+	printf "Flashing initramfs$use... " >&2
 	{
 		cat "$input_file"
 		if [ "$pad" -gt 0 ]; then
