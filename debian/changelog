@@ -1,3 +1,10 @@
+flash-kernel (3.26) UNRELEASED; urgency=medium
+
+  * Install a symlink to the latest dtb in /boot/dtb and keep a backup of the
+    actual file.
+
+ -- Ian Campbell <ijc@debian.org>  Tue, 23 Sep 2014 19:51:12 +0100
+
 flash-kernel (3.25) unstable; urgency=medium
 
   * Log some clues on how to fix overly large initramfs (Closes: #760215).

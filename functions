@@ -419,8 +419,10 @@ handle_dtb() {
 		rm -f "/boot/dtb-$kvers"
 	else
 		if [ -e $dtb ]; then
-			echo "Installing $dtb_id $kvers into /boot" >&2
-			cp "$dtb" "/boot/dtb-$kvers"
+			echo "Installing $dtb_id into /boot/dtb-$kvers" >&2
+			cp "$dtb" "/boot/dtb-$kvers.new"
+			backup_and_install "/boot/dtb-$kvers.new" "/boot/dtb-$kvers"
+			ln -nfs "dtb-$kvers" "/boot/dtb"
 		else
 			echo "$dtb not found" >&2
 		fi
