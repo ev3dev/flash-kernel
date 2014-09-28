@@ -207,6 +207,13 @@ Boot-Multi-Path: /boot/uImage
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Insignal Arndale evaluation board based on EXYNOS5250
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: exynos5250-arndale.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: INet-97F Rev 02
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr

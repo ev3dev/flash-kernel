@@ -1,0 +1,23 @@
+# Bootscript using the new unified bootcmd handling
+# introduced with u-boot v2014.10
+#
+# Expects to be called with the following environment variables set:
+#
+#  devtype              e.g. mmc/scsi etc
+#  devnum               The device number of the given type
+#  bootpart             The partition containing the boot files
+#  prefix               Prefix within the boot partiion to the boot files
+#  kernel_addr_r        Address to load the kernel to
+#  fdt_addr_r           Address to load the FDT to
+#  ramdisk_addr_r       Address to load the initrd to.
+#
+# The uboot must support the bootz and generic filesystem load commands.
+
+setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
+@@UBOOT_ENV_EXTRA@@
+
+load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} ${prefix}vmlinuz \
+&& load ${devtype} ${devnum}:${bootpart} ${fdt_addr_r} ${prefix}dtb \
+&& load ${devtype} ${devnum}:${bootpart} ${ramdisk_addr_r} ${prefix}initrd.img \
+&& echo "Booting Debian..." \
+&& bootz ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
