@@ -1,5 +1,6 @@
 flash-kernel (3.26) UNRELEASED; urgency=medium
 
+  [ Ian Campbell ]
   * Install a symlink to the latest dtb in /boot/dtb and keep a backup of the
     actual file.
   * Add a generic u-boot boot.scr using the upstream config_distro_bootcmd.h
@@ -7,6 +8,9 @@ flash-kernel (3.26) UNRELEASED; urgency=medium
   * Add support for the Arndale board.
   * Install uImage and uRamdisk to /boot on Xgene platform and load dtb from
     the correct path.
+
+  [ Karsten Merker ]
+  * Add support for the LeMaker Banana Pi.
 
  -- Ian Campbell <ijc@debian.org>  Tue, 23 Sep 2014 19:51:12 +0100
 
