@@ -30,6 +30,10 @@ else
   setenv ramdisk_addr_r 0x44300000
 fi
 
+if test -n "${console}"; then
+  setenv bootargs "${bootargs} console=${console}"
+fi
+
 setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 @@UBOOT_ENV_EXTRA@@
 
