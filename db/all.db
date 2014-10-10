@@ -6,7 +6,7 @@ U-Boot-Initrd-Address: 0x0
 U-Boot-Script-Address: 0x4004000000
 U-Boot-Script-Name: bootscr.xgene-mustang
 Boot-Kernel-Path: /boot/uImage
-Boot-Initrd-Path: /boot/uRamdisk
+Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 Required-Packages: u-boot-tools
 DTB-Id: apm-mustang.dtb
