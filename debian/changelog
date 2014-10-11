@@ -1,9 +1,10 @@
-flash-kernel (3.27) UNRELEASED; urgency=medium
+flash-kernel (3.27) unstable; urgency=medium
 
+  [ Ian Campbell ]
   * Install initrd with correct name (uInitrd) on Xgene so that the filename
     boot.scr are consistent.
 
- -- Ian Campbell <ijc@debian.org>  Fri, 10 Oct 2014 20:06:24 +0100
+ -- Christian Perrier <bubulle@debian.org>  Sat, 11 Oct 2014 07:41:43 +0200
 
 flash-kernel (3.26) unstable; urgency=medium
 
