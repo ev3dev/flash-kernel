@@ -1,3 +1,11 @@
+flash-kernel (3.28) UNRELEASED; urgency=medium
+
+  [ Ian Campbell ]
+  * Support for Olimex A20-OLinuXino-LIME. Patch from Christian Kastner.
+    (Closes: #764968)
+
+ -- Ian Campbell <ijc@debian.org>  Sun, 12 Oct 2014 22:05:38 +0100
+
 flash-kernel (3.27) unstable; urgency=medium
 
   [ Ian Campbell ]
