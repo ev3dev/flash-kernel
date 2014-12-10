@@ -1,3 +1,10 @@
+flash-kernel (3.30~exp.1) UNRELEASED; urgency=medium
+
+  * Autodetect correct DTB for kirkwood based QNAP devices and append from 3.15-rc1
+    onwards.
+
+ -- Ian Campbell <ijc@debian.org>  Wed, 10 Dec 2014 19:19:28 +0000
+
 flash-kernel (3.29) unstable; urgency=medium
 
   * Correct Content-Transfer-Encoding in zn_CH.po.

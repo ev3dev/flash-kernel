@@ -186,6 +186,39 @@ get_machine_field() {
 	}
 }
 
+get_dtb_name() {
+	local field="$(get_machine_field "$machine" "DTB-Id")" || :
+	case "$field" in
+	!*)
+		local dir
+		local dtb_script
+		dtb_script_name=${field#!}
+		for dir in /etc/flash-kernel/dtb-probe \
+		           /usr/share/flash-kernel/dtb-probe ; do
+			if [ -e "$dir/$dtb_script_name" ]; then
+				dtb_script="$dir/$dtb_script_name"
+				break
+			fi
+		done
+
+		if [ "x$dtb_script" = "x" ]; then
+			error "dtb-probe $dtb_script_name not found"
+		fi
+
+		dtb_name=$($dtb_script)
+		if [ $? -ne 0 ] || [ "x$dtb_name" = "x" ]; then
+			error "dtb-probe $dtb_script failed"
+		fi
+		;;
+	*)
+		dtb_name="$field"
+		;;
+	esac
+	if [ -n "$dtb_name" ] ; then
+		echo "DTB: $dtb_name" >&2
+	fi
+}
+
 machine_uses_flash() {
 	local machine="$1"
 
@@ -246,6 +279,8 @@ append_dtb() {
 	local kernel="$1"
 	local dtb="$2"
 	local output="$3"
+
+	echo "flash-kernel: appending $dtb to kernel" >&2
 
 	{
 		cat "$kernel"
@@ -409,22 +444,19 @@ android_flash() {
 }
 
 handle_dtb() {
-	local dtb_id="$(get_machine_field "$machine" "DTB-Id")" || :
-	if [ "x$dtb_id" = "x" ]; then
+	if [ "x$dtb_name" = "x" ]; then
 		return
 	fi
 
-	local dtb="/usr/lib/linux-image-$kvers/$dtb_id"
+	local dtb="/usr/lib/linux-image-$kvers/$dtb_name"
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
 		rm -f "/boot/dtb-$kvers"
 	else
 		if [ -e $dtb ]; then
-			echo "Installing $dtb_id into /boot/dtb-$kvers" >&2
+			echo "Installing $dtb_name into /boot/dtb-$kvers" >&2
 			cp "$dtb" "/boot/dtb-$kvers.new"
 			backup_and_install "/boot/dtb-$kvers.new" "/boot/dtb-$kvers"
 			ln -nfs "dtb-$kvers" "/boot/dtb"
-		else
-			echo "$dtb not found" >&2
 		fi
 	fi
 }
@@ -456,6 +488,8 @@ fi
 # kernel + initrd installation/upgrade mode, with optional version
 
 kvers="$1"
+
+get_dtb_name
 
 # Install/remove any DTB from postinst, regardless of version
 if [ -n "$kvers" ] ; then
@@ -551,7 +585,6 @@ machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
-dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
 dtb_append="$(get_machine_field "$machine" "DTB-Append")" || :
 dtb_append_from="$(get_machine_field "$machine" "DTB-Append-From")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :

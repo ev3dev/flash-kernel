@@ -106,7 +106,9 @@ The supported fields are:
   This option is ignored if a DTB is to be appended, via either DTB-Append or
   DTB-Append-From.
 
-* DTB-Id: (optional) specifies the name of the DTB file for this device
+* DTB-Id: (optional) specifies the name of the DTB file for this device. If
+  the value begins with a `!' then the field is a script which should be run.
+  The script must produce the DTB filename (and nothing else) on stdout.
 
 * DTB-Append: (optional) when yes the DTB specified by DTB-Id will be appended
   to the kernel image.
