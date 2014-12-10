@@ -300,7 +300,7 @@ flash_kernel() {
 			kreqsize=$(($kreqsize + 8))
 		fi
 	        check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize kernel
-		use=" ($kreqsize/$kmtdsize bytes)"
+		use=" (using $kreqsize/$kmtdsize bytes)"
 	fi
 
 	printf "Flashing kernel$use... " >&2
@@ -315,7 +315,7 @@ flash_initrd() {
 	local use
 
 	if [ -n "$imtdsize" ]; then
-		use=" ($ireqsize/$imtdsize bytes)"
+		use=" (using $ireqsize/$imtdsize bytes)"
 	fi
 
 	printf "Flashing initramfs$use... " >&2
