@@ -3,6 +3,7 @@ flash-kernel (3.30~exp.1) UNRELEASED; urgency=medium
   * Append a DTB to all platforms using the kirkwood flavour from v3.17-rc1
     onwards since all board file support has been removed from the kernel.
   * Autodetect correct DTB for kirkwood based QNAP devices.
+  * Upstate to standards version 3.9.6. No changes required.
 
  -- Ian Campbell <ijc@debian.org>  Wed, 10 Dec 2014 19:19:28 +0000
 
