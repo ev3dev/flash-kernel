@@ -448,6 +448,13 @@ DTB-Id: sun4i-a10-hackberry.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: NVIDIA Tegra124 Jetson TK1
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: tegra124-jetson-tk1.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Olimex A10-OLinuXino-LIME
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr

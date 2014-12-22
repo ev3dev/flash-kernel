@@ -1,3 +1,9 @@
+flash-kernel (3.31~exp.1) UNRELEASED; urgency=medium
+
+  * Add support for Nvidia Jetson TK1.
+
+ -- Ian Campbell <ijc@debian.org>  Mon, 29 Dec 2014 14:47:09 +0000
+
 flash-kernel (3.30~exp.1) experimental; urgency=medium
 
   * Append a DTB to all platforms using the kirkwood flavour from v3.17-rc1
