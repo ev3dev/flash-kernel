@@ -580,6 +580,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.beaglebone
 Required-Packages: u-boot-tools
 
+Machine: TI OMAP5 uEVM board
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: omap5-uevm.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Boot-Script-Path: /boot/boot.scr
+Required-Packages: u-boot-tools
+
 Machine: Toshiba AC100 / Dynabook AZ
 Method: android
 Android-Boot-Device: /dev/mmcblk0

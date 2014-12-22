@@ -1,3 +1,9 @@
+flash-kernel (3.30) UNRELEASED; urgency=medium
+
+  * Support for TI OMAP5 uEVM board (Patch from Chen Baozi, Closes: #773255)
+
+ -- Ian Campbell <ijc@debian.org>  Mon, 22 Dec 2014 12:18:25 +0000
+
 flash-kernel (3.29) unstable; urgency=medium
 
   * Correct Content-Transfer-Encoding in zn_CH.po.
