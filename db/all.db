@@ -301,6 +301,13 @@ DTB-Id: sun4i-a10-pcduino.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: LinkSprite pcDuino3
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-pcduino3.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Linksys NSLU2
 Method: slug
 Kernel-Flavors: ixp4xx
