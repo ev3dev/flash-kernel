@@ -19,7 +19,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 # USA.
 
-BOOTSCRIPTS_DIR="${FK_CHECKOUT:-$FK_DIR}/bootscript"
+BOOTSCRIPTS_DIR="${FK_CHECKOUT:-/etc/flash-kernel}/bootscript"
 FK_ETC_MACHINE="${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
 PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"

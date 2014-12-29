@@ -182,6 +182,9 @@ Configuration files currently supported:
   found here then it will be used in preference to the one shipped by
   the kernel being installed.
 
+* /etc/flash-kernels/bootscript (directory). The files referenced via
+  the Boot-Script-Name field are installed here.
+
 * /etc/flash-kernel/ubootenv.d can be used to add or override u-boot
   script snippets. See "Adding U-Boot Commands for Pre-Boot Execution"
   below for more details.

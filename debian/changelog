@@ -5,6 +5,8 @@ flash-kernel (3.31~exp.1) UNRELEASED; urgency=medium
     (Based on a patch from Uwe Kleine-Koenig, Closes: #767744)
   * Search for DTB files in /etc/flash-kernel/dtbs before the kernel, allowing
     local overrides.
+  * Install bootscripts under /etc/flash-kernel/dtbs and treat as conffiles,
+    allowing for local modifications.
 
  -- Ian Campbell <ijc@debian.org>  Mon, 29 Dec 2014 14:47:09 +0000
 
