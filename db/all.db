@@ -581,6 +581,7 @@ Mtd-Initrd: ramdisk
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: TI AM335x BeagleBone
+Machine: TI AM335x BeagleBone Black
 Kernel-Flavors: armmp
 DTB-Id: am335x-boneblack.dtb
 Boot-Script-Path: /boot/boot.scr

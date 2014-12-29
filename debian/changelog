@@ -2,6 +2,10 @@ flash-kernel (3.30) UNRELEASED; urgency=medium
 
   [ Ian Campbell ]
   * Support for TI OMAP5 uEVM board (Patch from Chen Baozi, Closes: #773255)
+  * Support for alternative machine name for BeagleBone Black. The old name was
+    ambiguous with the original BeagleBone (often called "White"), detect if
+    booting on a BeagleBone white and print an error since the DTB will be
+    wrong. We don't currently support the White. (Closes: #773890)
 
   [ Karsten Merker ]
   * Add a machine db entry for the LinkSprite pcDuino3
