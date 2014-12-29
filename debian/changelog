@@ -6,6 +6,8 @@ flash-kernel (3.30) UNRELEASED; urgency=medium
     ambiguous with the original BeagleBone (often called "White"), detect if
     booting on a BeagleBone white and print an error since the DTB will be
     wrong. We don't currently support the White. (Closes: #773890)
+  * Ensure mtdblock driver is loaded before accessing /dev/mtdblock*.
+    (Closes: #773991)
 
   [ Karsten Merker ]
   * Add a machine db entry for the LinkSprite pcDuino3

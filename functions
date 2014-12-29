@@ -41,7 +41,11 @@ error() {
 mtdblock() {
 	local mtdname="$1"
 
-	sed -rn "s,^mtd([^:]*).*\"$mtdname\"\$,/dev/mtdblock\\1,p" "$PROC_MTD"
+	local dev=`sed -rn "s,^mtd([^:]*).*\"$mtdname\"\$,/dev/mtdblock\\1,p" "$PROC_MTD"`
+
+	modprobe -q mtdblock && udevadm settle --exit-if-exists=$dev || :
+
+	echo $dev
 }
 
 check_block_dev() {
