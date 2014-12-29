@@ -449,7 +449,11 @@ find_dtb_file() {
 		echo "$dtb_name"
 		;;
 	*)
-		echo "/usr/lib/linux-image-$kvers/$dtb_name"
+		if [ -e "/etc/flash-kernel/dtbs/$dtb_name" ] ; then
+			echo "/etc/flash-kernel/dtbs/$dtb_name"
+		else
+			echo "/usr/lib/linux-image-$kvers/$dtb_name"
+		fi
 		;;
 	esac
 }

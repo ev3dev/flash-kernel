@@ -178,6 +178,10 @@ Configuration files currently supported:
 * /etc/flash-kernel/db allows overriding / adding fields from the Machine
   database (but it doesn't allow removing fields or entries).
 
+* /etc/flash-kernel/dtbs (directory). If a DTB matching DTB-Id is
+  found here then it will be used in preference to the one shipped by
+  the kernel being installed.
+
 * /etc/flash-kernel/ubootenv.d can be used to add or override u-boot
   script snippets. See "Adding U-Boot Commands for Pre-Boot Execution"
   below for more details.
