@@ -443,12 +443,16 @@ android_flash() {
 	echo "done." >&2
 }
 
+find_dtb_file() {
+	echo "/usr/lib/linux-image-$kvers/$dtb_name"
+}
+
 handle_dtb() {
 	if [ "x$dtb_name" = "x" ]; then
 		return
 	fi
 
-	local dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+	local dtb=$(find_dtb_file)
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
 		rm -f "/boot/dtb-$kvers"
 	else
@@ -676,7 +680,7 @@ case "$method" in
 		kernel="$kfile"
 		initrd="$ifile"
 		if [ "$dtb_append" = "yes" ]; then
-			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+			dtb=$(find_dtb_file)
 			if [ ! -f "$dtb" ]; then
 				error "Couldn't find $dtb"
 			fi
@@ -761,7 +765,7 @@ case "$method" in
 		fi
 		if [ -n "$boot_dtb_path" ]; then
 			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
-			boot_dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+			boot_dtb=$(find_dtb_file)
 			if [ ! -f "$boot_dtb" ]; then
 				error "Couldn't find $boot_dtb"
 			fi
