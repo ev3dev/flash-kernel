@@ -1,6 +1,8 @@
 flash-kernel (3.31~exp.1) UNRELEASED; urgency=medium
 
   * Add support for Nvidia Jetson TK1.
+  * Allow DTB-Id to be an absolute file name.
+    (Based on a patch from Uwe Kleine-Koenig, Closes: #767744)
 
  -- Ian Campbell <ijc@debian.org>  Mon, 29 Dec 2014 14:47:09 +0000
 

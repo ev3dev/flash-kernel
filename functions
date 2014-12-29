@@ -444,7 +444,14 @@ android_flash() {
 }
 
 find_dtb_file() {
-	echo "/usr/lib/linux-image-$kvers/$dtb_name"
+	case "$dtb_name" in
+	/*)
+		echo "$dtb_name"
+		;;
+	*)
+		echo "/usr/lib/linux-image-$kvers/$dtb_name"
+		;;
+	esac
 }
 
 handle_dtb() {
