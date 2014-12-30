@@ -1,4 +1,4 @@
-flash-kernel (3.30) UNRELEASED; urgency=medium
+flash-kernel (3.30) unstable; urgency=medium
 
   [ Ian Campbell ]
   * Support for TI OMAP5 uEVM board (Patch from Chen Baozi, Closes: #773255)
@@ -12,7 +12,7 @@ flash-kernel (3.30) UNRELEASED; urgency=medium
   [ Karsten Merker ]
   * Add a machine db entry for the LinkSprite pcDuino3
 
- -- Ian Campbell <ijc@debian.org>  Mon, 22 Dec 2014 12:18:25 +0000
+ -- Ian Campbell <ijc@debian.org>  Tue, 30 Dec 2014 15:31:42 +0000
 
 flash-kernel (3.29) unstable; urgency=medium
 
