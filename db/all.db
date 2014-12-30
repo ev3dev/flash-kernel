@@ -309,6 +309,13 @@ DTB-Id: sun4i-a10-pcduino.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: LinkSprite pcDuino3
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-pcduino3.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Linksys NSLU2
 Method: slug
 Kernel-Flavors: ixp4xx
@@ -604,10 +611,18 @@ Mtd-Initrd: ramdisk
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: TI AM335x BeagleBone
+Machine: TI AM335x BeagleBone Black
 Kernel-Flavors: armmp
 DTB-Id: am335x-boneblack.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.beaglebone
+Required-Packages: u-boot-tools
+
+Machine: TI OMAP5 uEVM board
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: omap5-uevm.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Boot-Script-Path: /boot/boot.scr
 Required-Packages: u-boot-tools
 
 Machine: Toshiba AC100 / Dynabook AZ
