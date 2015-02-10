@@ -1,9 +1,9 @@
-flash-kernel (3.31) UNRELEASED; urgency=medium
+flash-kernel (3.32) unstable; urgency=medium
 
   [ Karsten Merker ]
   * Add a machine db entry for the Olimex A20-OLinuXino-LIME2.
 
- -- Karsten Merker <merker@debian.org>  Sat, 07 Feb 2015 20:36:45 +0100
+ -- Christian Perrier <bubulle@debian.org>  Mon, 09 Feb 2015 07:00:27 +0100
 
 flash-kernel (3.30) unstable; urgency=medium
 
