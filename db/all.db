@@ -497,6 +497,13 @@ DTB-Id: sun7i-a20-olinuxino-lime.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Olimex A20-OLinuXino-LIME2
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-olinuxino-lime2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Olimex A20-Olinuxino Micro
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
