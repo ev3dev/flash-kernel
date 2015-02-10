@@ -1,8 +1,8 @@
-flash-kernel (3.33~exp.1) UNRELEASED; urgency=medium
+flash-kernel (3.33~exp.1) experimental; urgency=medium
 
   * Merge up changes from 3.32.
 
- -- Ian Campbell <ijc@debian.org>  Tue, 10 Feb 2015 07:06:02 +0000
+ -- Ian Campbell <ijc@debian.org>  Tue, 10 Feb 2015 07:27:30 +0000
 
 flash-kernel (3.32) unstable; urgency=medium
 
