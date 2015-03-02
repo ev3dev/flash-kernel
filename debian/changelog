@@ -1,3 +1,9 @@
+flash-kernel (3.33) UNRELEASED; urgency=medium
+
+  * Add a machine db entry for the LeMaker Banana Pro.
+
+ -- Karsten Merker <merker@debian.org>  Thu, 26 Feb 2015 20:58:26 +0100
+
 flash-kernel (3.32) unstable; urgency=medium
 
   [ Karsten Merker ]
