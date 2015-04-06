@@ -1,12 +1,14 @@
-flash-kernel (3.35) UNRELEASED; urgency=medium
+flash-kernel (3.35) unstable; urgency=medium
+
+  * Team upload.
 
   [ Karsten Merker ]
   * Pass the u-boot console variable to the kernel in bootscr.cubox-i
-    and bootscr.wandboard.
+    and bootscr.wandboard. (Closes: #782016)
   * Add a machine db entry for the Wandboard Dual Lite / Solo,
     supplied by Vagrant Cascadian.
 
- -- Karsten Merker <merker@debian.org>  Sun, 05 Apr 2015 13:43:15 +0200
+ -- Karsten Merker <merker@debian.org>  Tue, 07 Apr 2015 00:19:59 +0200
 
 flash-kernel (3.34) unstable; urgency=medium
 
