@@ -732,13 +732,11 @@ case "$method" in
 		if [ -n "$boot_kernel_path" ]; then
 			boot_kernel_path="$boot_mnt_dir/$boot_kernel_path"
 			# don't mv the original kernel
-			if [ "$kernel" != "$kfile" ]; then
-				backup_and_install "$kernel" \
-					"$boot_kernel_path"
-			else
-				# TODO add support for kernel symlink
-				:
+			if [ "$kernel" = "$kfile" ]; then
+				cp "$kernel" "$tmpdir/kernel"
+				kernel="$tmpdir/kernel"
 			fi
+			backup_and_install "$kernel" "$boot_kernel_path"
 		elif [ -n "$kmtd" ]; then
 			flash_kernel "$tmpdir/uImage" "$kmtd" ""
 			rm -f "$tmpdir/uImage"
@@ -754,13 +752,11 @@ case "$method" in
 		if [ -n "$boot_initrd_path" ]; then
 			boot_initrd_path="$boot_mnt_dir/$boot_initrd_path"
 			# don't mv the original initrd
-			if [ "$initrd" != "$ifile" ]; then
-				backup_and_install "$initrd" \
-					"$boot_initrd_path"
-			else
-				# TODO add support for initrd symlink
-				:
+			if [ "$initrd" = "$ifile" ]; then
+				cp "$initrd" "$tmpdir/initrd"
+				initrd="$tmpdir/initrd"
 			fi
+			backup_and_install "$initrd" "$boot_initrd_path"
 		elif [ -n "$imtd" ]; then
 			ipad=0
 			# padding isn't needed for U-Boot images

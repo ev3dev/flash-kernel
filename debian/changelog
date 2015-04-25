@@ -5,6 +5,9 @@ flash-kernel (3.37) UNRELEASED; urgency=medium
     (Closes: #783323):
     - Allow armmp-lpae kernel flavour.
     - Remove Boot-Device option since this platform can boot from /boot.
+  * Handle Boot-Kernel-Image even if none of Dtb-Append, Machine-Id or
+    U-Boot-Kernel-Address are specified. Patch from David Lechner.
+    (Closes: #783278)
 
  -- Ian Campbell <ijc@debian.org>  Sun, 03 May 2015 09:09:10 +0100
 
