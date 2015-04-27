@@ -257,6 +257,13 @@ append_dtb() {
 	} >"$output"
 }
 
+append_rpi() {
+	local kernel="$1"
+	local output="$2"
+
+	mkknlimg "$kernel" "$output"
+}
+
 flash_kernel() {
 	local input_file="$1"
 	local output_mtd="$2"
@@ -558,6 +565,7 @@ mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
 dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
 dtb_append="$(get_machine_field "$machine" "DTB-Append")" || :
 dtb_append_from="$(get_machine_field "$machine" "DTB-Append-From")" || :
+rpi_append="$(get_machine_field "$machine" "RPI-Append")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
 ukepoint="$(get_machine_field "$machine" "U-Boot-Kernel-Entry-Point")" || :
 uiaddr="$(get_machine_field "$machine" "U-Boot-Initrd-Address")" || :
@@ -646,7 +654,10 @@ case "$method" in
 	"generic")
 		kernel="$kfile"
 		initrd="$ifile"
-		if [ "$dtb_append" = "yes" ]; then
+		if [ "$rpi_append" = "yes" ]; then
+			append_rpi "$kernel" "$tmpdir/kernel"
+			kernel="$tmpdir/kernel"
+		elif [ "$dtb_append" = "yes" ]; then
 			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
 			if [ ! -f "$dtb" ]; then
 				error "Couldn't find $dtb"
