@@ -574,7 +574,21 @@ U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
-Machine: Seagate FreeAgent Dockstar
+Machine: Raspberry Pi Model B
+Machine: Raspberry Pi Model B+
+RPI-Append: yes
+Kernel-Flavors: rpi rpi-rpfv
+Boot-Kernel-Path: kernel.img
+Boot-Device: /dev/mmcblk0p1
+Required-Packages: rpi-mkimage
+
+Machine: Raspberry Pi 2 Model B
+Kernel-Flavors: rpi2 rpi2-rpfv
+RPI-Append: yes
+Boot-Kernel-Path: kernel7.img
+Boot-Device: /dev/mmcblk0p1
+Required-Packages: rpi-mkimage
+
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
 DTB-Id: kirkwood-dockstar.dtb
