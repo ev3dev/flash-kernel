@@ -76,7 +76,7 @@ You need the devscripts package for the checkbashisms test.
 Database format
 - - - - - - - -
 
-To accomodate the differences between machines, db/*.db files contain
+To accommodate the differences between machines, db/*.db files contain
 information on supported machines.  The files look somewhat like
 RFC 2822 data or Debian control data, i.e. header: value pairs,
 with definitions separated by an empty line.  Comments starting with a
@@ -148,7 +148,7 @@ The supported fields are:
   add these packages aborts the installation
 
 * Optional-Packages: (optional) list of packages which should be
-  added during installer pharse for flash-kernel to offer full
+  added during installer phase for flash-kernel to offer full
   functionality; failure to add these packages just triggers a warning
 
 * Bootloader-Sets-Incorrect-Root: (optional) when "yes" indicates that
@@ -171,7 +171,7 @@ Configuration
 
 Configuration files currently supported:
 * /etc/flash-kernel/machine allows skipping the machine auto-detection from
-  /proc/cpuinfo or /proc/dtmodel and forcing a specific Machine.
+  /proc/cpuinfo or /proc/device-tree/model and forcing a specific Machine.
 
 * /etc/flash-kernel/db allows overriding / adding fields from the Machine
   database (but it doesn't allow removing fields or entries).
