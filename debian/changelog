@@ -2,7 +2,7 @@ flash-kernel (3.36) UNRELEASED; urgency=medium
 
   [ Vagrant Cascadian ]
   * Add entries for SolidRun HummingBoard DL/Solo and SolidRun
-    HummingBoard Dual/Quad.
+    HummingBoard Dual/Quad. (Closes: #783769)
 
  -- Christian Perrier <bubulle@debian.org>  Thu, 30 Apr 2015 06:50:40 +0200
 
