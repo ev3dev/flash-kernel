@@ -1,4 +1,4 @@
-flash-kernel (3.36) UNRELEASED; urgency=medium
+flash-kernel (3.36) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
   * Add entries for SolidRun HummingBoard DL/Solo and SolidRun
@@ -10,7 +10,7 @@ flash-kernel (3.36) UNRELEASED; urgency=medium
     trigger a lintian warning and doesn't seem to be needed
     anyway
 
- -- Christian Perrier <bubulle@debian.org>  Thu, 30 Apr 2015 06:50:40 +0200
+ -- Christian Perrier <bubulle@debian.org>  Fri, 01 May 2015 09:02:39 +0200
 
 flash-kernel (3.35) unstable; urgency=medium
 
