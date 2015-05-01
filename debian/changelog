@@ -6,6 +6,9 @@ flash-kernel (3.36) UNRELEASED; urgency=medium
 
   [ Christian Perrier ]
   * Update standards to 3.9.6 (checked)
+  * No longer hardcode the path to /bin/true, which will no longer
+    trigger a lintian warning and doesn't seem to be needed
+    anyway
 
  -- Christian Perrier <bubulle@debian.org>  Thu, 30 Apr 2015 06:50:40 +0200
 
