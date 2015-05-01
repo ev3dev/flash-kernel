@@ -4,6 +4,9 @@ flash-kernel (3.36) UNRELEASED; urgency=medium
   * Add entries for SolidRun HummingBoard DL/Solo and SolidRun
     HummingBoard Dual/Quad. (Closes: #783769)
 
+  [ Christian Perrier ]
+  * Update standards to 3.9.6 (checked)
+
  -- Christian Perrier <bubulle@debian.org>  Thu, 30 Apr 2015 06:50:40 +0200
 
 flash-kernel (3.35) unstable; urgency=medium
