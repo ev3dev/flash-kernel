@@ -1,3 +1,12 @@
+flash-kernel (3.35ev3dev1) stable; urgency=medium
+
+  * Handle case when kernel == kfile check in boot_kernel_path handler.
+  * Fix typos in README
+  * Add RPI-Append for Raspberry Pi kernels.
+  * Add Raspberry Pi models to all.db
+
+ -- David Lechner <david@lechnology.com>  Fri, 01 May 2015 18:05:54 -0500
+
 flash-kernel (3.35) unstable; urgency=medium
 
   * Team upload.
