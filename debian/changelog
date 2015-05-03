@@ -1,3 +1,9 @@
+flash-kernel (3.37) UNRELEASED; urgency=medium
+
+  * Upload changes from 3.30~exp.1..3.36~exp.1 to unstable.
+
+ -- Ian Campbell <ijc@debian.org>  Sun, 03 May 2015 09:09:10 +0100
+
 flash-kernel (3.36) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
@@ -12,6 +18,13 @@ flash-kernel (3.36) unstable; urgency=medium
 
  -- Christian Perrier <bubulle@debian.org>  Fri, 01 May 2015 09:02:39 +0200
 
+flash-kernel (3.36~exp.1) experimental; urgency=medium
+
+  * Team upload.
+  * Merge up changes from 3.35
+
+ -- Karsten Merker <merker@debian.org>  Tue, 07 Apr 2015 14:24:50 +0200
+
 flash-kernel (3.35) unstable; urgency=medium
 
   * Team upload.
@@ -24,6 +37,12 @@ flash-kernel (3.35) unstable; urgency=medium
 
  -- Karsten Merker <merker@debian.org>  Tue, 07 Apr 2015 00:19:59 +0200
 
+flash-kernel (3.35~exp.1) experimental; urgency=medium
+
+  * Merge up changes from 3.34
+
+ -- Ian Campbell <ijc@debian.org>  Thu, 26 Mar 2015 21:41:38 +0000
+
 flash-kernel (3.34) unstable; urgency=medium
 
   * Update u-boot-tools to Recommends. In practice it is needed on most systems
@@ -32,6 +51,12 @@ flash-kernel (3.34) unstable; urgency=medium
 
  -- Ian Campbell <ijc@debian.org>  Thu, 26 Mar 2015 21:37:16 +0000
 
+flash-kernel (3.34~exp.1) experimental; urgency=medium
+
+  * Merge up changes from 3.33
+
+ -- Ian Campbell <ijc@debian.org>  Thu, 05 Mar 2015 07:00:54 +0000
+
 flash-kernel (3.33) unstable; urgency=medium
 
   [ Karsten Merker ]
@@ -39,12 +64,31 @@ flash-kernel (3.33) unstable; urgency=medium
 
  -- Ian Campbell <ijc@debian.org>  Thu, 05 Mar 2015 06:56:34 +0000
 
+flash-kernel (3.33~exp.1) experimental; urgency=medium
+
+  * Merge up changes from 3.32.
+
+ -- Ian Campbell <ijc@debian.org>  Tue, 10 Feb 2015 07:27:30 +0000
+
 flash-kernel (3.32) unstable; urgency=medium
 
   [ Karsten Merker ]
   * Add a machine db entry for the Olimex A20-OLinuXino-LIME2.
 
  -- Christian Perrier <bubulle@debian.org>  Mon, 09 Feb 2015 07:00:27 +0100
+
+flash-kernel (3.31~exp.1) experimental; urgency=medium
+
+  * Merge up changes from 3.30.
+  * Add support for Nvidia Jetson TK1.
+  * Allow DTB-Id to be an absolute file name.
+    (Based on a patch from Uwe Kleine-Koenig, Closes: #767744)
+  * Search for DTB files in /etc/flash-kernel/dtbs before the kernel, allowing
+    local overrides.
+  * Install bootscripts under /etc/flash-kernel/dtbs and treat as conffiles,
+    allowing for local modifications.
+
+ -- Ian Campbell <ijc@debian.org>  Tue, 30 Dec 2014 15:35:59 +0000
 
 flash-kernel (3.30) unstable; urgency=medium
 
@@ -61,6 +105,17 @@ flash-kernel (3.30) unstable; urgency=medium
   * Add a machine db entry for the LinkSprite pcDuino3
 
  -- Ian Campbell <ijc@debian.org>  Tue, 30 Dec 2014 15:31:42 +0000
+
+flash-kernel (3.30~exp.1) experimental; urgency=medium
+
+  * Append a DTB to all platforms using the kirkwood flavour from v3.17-rc1
+    onwards since all board file support has been removed from the kernel.
+  * Autodetect correct DTB for kirkwood based QNAP devices.
+  * Upstate to standards version 3.9.6. No changes required.
+  * This is the same as 3.29~exp.1 which was uploaded to unstable and then
+    superseded.
+
+ -- Ian Campbell <ijc@debian.org>  Sat, 13 Dec 2014 11:25:20 +0000
 
 flash-kernel (3.29) unstable; urgency=medium
 

@@ -19,7 +19,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 # USA.
 
-BOOTSCRIPTS_DIR="${FK_CHECKOUT:-$FK_DIR}/bootscript"
+BOOTSCRIPTS_DIR="${FK_CHECKOUT:-/etc/flash-kernel}/bootscript"
 FK_ETC_MACHINE="${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
 PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
@@ -190,6 +190,39 @@ get_machine_field() {
 	}
 }
 
+get_dtb_name() {
+	local field="$(get_machine_field "$machine" "DTB-Id")" || :
+	case "$field" in
+	!*)
+		local dir
+		local dtb_script
+		dtb_script_name=${field#!}
+		for dir in /etc/flash-kernel/dtb-probe \
+		           /usr/share/flash-kernel/dtb-probe ; do
+			if [ -e "$dir/$dtb_script_name" ]; then
+				dtb_script="$dir/$dtb_script_name"
+				break
+			fi
+		done
+
+		if [ "x$dtb_script" = "x" ]; then
+			error "dtb-probe $dtb_script_name not found"
+		fi
+
+		dtb_name=$($dtb_script)
+		if [ $? -ne 0 ] || [ "x$dtb_name" = "x" ]; then
+			error "dtb-probe $dtb_script failed"
+		fi
+		;;
+	*)
+		dtb_name="$field"
+		;;
+	esac
+	if [ -n "$dtb_name" ] ; then
+		echo "DTB: $dtb_name" >&2
+	fi
+}
+
 machine_uses_flash() {
 	local machine="$1"
 
@@ -251,6 +284,8 @@ append_dtb() {
 	local dtb="$2"
 	local output="$3"
 
+	echo "flash-kernel: appending $dtb to kernel" >&2
+
 	{
 		cat "$kernel"
 		cat "$dtb"
@@ -269,7 +304,7 @@ flash_kernel() {
 			kreqsize=$(($kreqsize + 8))
 		fi
 	        check_mtd_size "$mtd_kernel" $kreqsize $kmtdsize kernel
-		use=" ($kreqsize/$kmtdsize bytes)"
+		use=" (using $kreqsize/$kmtdsize bytes)"
 	fi
 
 	printf "Flashing kernel$use... " >&2
@@ -284,7 +319,7 @@ flash_initrd() {
 	local use
 
 	if [ -n "$imtdsize" ]; then
-		use=" ($ireqsize/$imtdsize bytes)"
+		use=" (using $ireqsize/$imtdsize bytes)"
 	fi
 
 	printf "Flashing initramfs$use... " >&2
@@ -412,23 +447,35 @@ android_flash() {
 	echo "done." >&2
 }
 
+find_dtb_file() {
+	case "$dtb_name" in
+	/*)
+		echo "$dtb_name"
+		;;
+	*)
+		if [ -e "/etc/flash-kernel/dtbs/$dtb_name" ] ; then
+			echo "/etc/flash-kernel/dtbs/$dtb_name"
+		else
+			echo "/usr/lib/linux-image-$kvers/$dtb_name"
+		fi
+		;;
+	esac
+}
+
 handle_dtb() {
-	local dtb_id="$(get_machine_field "$machine" "DTB-Id")" || :
-	if [ "x$dtb_id" = "x" ]; then
+	if [ "x$dtb_name" = "x" ]; then
 		return
 	fi
 
-	local dtb="/usr/lib/linux-image-$kvers/$dtb_id"
+	local dtb=$(find_dtb_file)
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
 		rm -f "/boot/dtb-$kvers"
 	else
 		if [ -e $dtb ]; then
-			echo "Installing $dtb_id into /boot/dtb-$kvers" >&2
+			echo "Installing $dtb_name into /boot/dtb-$kvers" >&2
 			cp "$dtb" "/boot/dtb-$kvers.new"
 			backup_and_install "/boot/dtb-$kvers.new" "/boot/dtb-$kvers"
 			ln -nfs "dtb-$kvers" "/boot/dtb"
-		else
-			echo "$dtb not found" >&2
 		fi
 	fi
 }
@@ -460,6 +507,8 @@ fi
 # kernel + initrd installation/upgrade mode, with optional version
 
 kvers="$1"
+
+get_dtb_name
 
 # Install/remove any DTB from postinst, regardless of version
 if [ -n "$kvers" ] ; then
@@ -555,7 +604,6 @@ machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :
 mtd_initrd="$(get_machine_field "$machine" "Mtd-Initrd")" || :
-dtb_name="$(get_machine_field "$machine" "DTB-Id")" || :
 dtb_append="$(get_machine_field "$machine" "DTB-Append")" || :
 dtb_append_from="$(get_machine_field "$machine" "DTB-Append-From")" || :
 ukaddr="$(get_machine_field "$machine" "U-Boot-Kernel-Address")" || :
@@ -647,7 +695,7 @@ case "$method" in
 		kernel="$kfile"
 		initrd="$ifile"
 		if [ "$dtb_append" = "yes" ]; then
-			dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+			dtb=$(find_dtb_file)
 			if [ ! -f "$dtb" ]; then
 				error "Couldn't find $dtb"
 			fi
@@ -732,7 +780,7 @@ case "$method" in
 		fi
 		if [ -n "$boot_dtb_path" ]; then
 			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
-			boot_dtb="/usr/lib/linux-image-$kvers/$dtb_name"
+			boot_dtb=$(find_dtb_file)
 			if [ ! -f "$boot_dtb" ]; then
 				error "Couldn't find $boot_dtb"
 			fi

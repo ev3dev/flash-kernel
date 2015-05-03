@@ -201,6 +201,8 @@ Bootloader-Sets-Incorrect-Root: yes
 
 Machine: HP t5325 Thin Client
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-t5325.dtb
+DTB-Append-From: 3.17-rc1
 Machine-Id: 2846
 U-Boot-Multi-Address: 0x01600000
 Boot-Multi-Path: /boot/uImage
@@ -237,6 +239,8 @@ Required-Packages: u-boot-tools
 
 Machine: LaCie 2Big Network v2
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-net2big.dtb
+DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
@@ -245,6 +249,8 @@ Required-Packages: u-boot-tools
 
 Machine: LaCie 5Big Network v2
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-net5big.dtb
+DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
@@ -286,6 +292,8 @@ Required-Packages: u-boot-tools
 
 Machine: LaCie d2 Network v2
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-d2net.dtb
+DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
@@ -398,7 +406,10 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: Marvell OpenRD Base Board
+Machine: OpenRD Base
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-openrd-base.dtb
+DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
@@ -406,7 +417,10 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 
 Machine: Marvell OpenRD Client Board
+Machine: OpenRD Client
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-openrd-client.dtb
+DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
@@ -414,7 +428,10 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 
 Machine: Marvell OpenRD Ultimate Board
+Machine: OpenRD Ultimate
 Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-openrd-ultimate.dtb
+DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage
@@ -457,6 +474,13 @@ Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun4i-a10-hackberry.dtb
 U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: NVIDIA Tegra124 Jetson TK1
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: tegra124-jetson-tk1.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: Olimex A10-OLinuXino-LIME
@@ -562,7 +586,10 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-119/TS-219
+Machine: QNAP TS219 family
 Kernel-Flavors: kirkwood
+DTB-Id: !kirkwood-qnap
+DTB-Append-From: 3.17-rc1
 Machine-Id: 2139
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
@@ -580,7 +607,10 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-41x
+Machine: QNAP TS419 family
 Kernel-Flavors: kirkwood
+DTB-Id: !kirkwood-qnap
+DTB-Append-From: 3.17-rc1
 Machine-Id: 2502
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1

@@ -106,7 +106,9 @@ The supported fields are:
   This option is ignored if a DTB is to be appended, via either DTB-Append or
   DTB-Append-From.
 
-* DTB-Id: (optional) specifies the name of the DTB file for this device
+* DTB-Id: (optional) specifies the name of the DTB file for this device. If
+  the value begins with a `!' then the field is a script which should be run.
+  The script must produce the DTB filename (and nothing else) on stdout.
 
 * DTB-Append: (optional) when yes the DTB specified by DTB-Id will be appended
   to the kernel image.
@@ -175,6 +177,13 @@ Configuration files currently supported:
 
 * /etc/flash-kernel/db allows overriding / adding fields from the Machine
   database (but it doesn't allow removing fields or entries).
+
+* /etc/flash-kernel/dtbs (directory). If a DTB matching DTB-Id is
+  found here then it will be used in preference to the one shipped by
+  the kernel being installed.
+
+* /etc/flash-kernels/bootscript (directory). The files referenced via
+  the Boot-Script-Name field are installed here.
 
 * /etc/flash-kernel/ubootenv.d can be used to add or override u-boot
   script snippets. See "Adding U-Boot Commands for Pre-Boot Execution"
