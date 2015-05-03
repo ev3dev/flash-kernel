@@ -552,13 +552,12 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: PlatHome OpenBlocks AX3-4 board
-Kernel-Flavors: armmp
+Kernel-Flavors: armmp armmp-lpae
 DTB-Id: armada-xp-openblocks-ax3-4.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x2000000
 U-Boot-Kernel-Entry-Point: 0x2000040
 U-Boot-Initrd-Address: 0x0
-Boot-Device: /dev/sda1
 Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb

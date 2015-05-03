@@ -1,6 +1,10 @@
 flash-kernel (3.37) UNRELEASED; urgency=medium
 
   * Upload changes from 3.30~exp.1..3.36~exp.1 to unstable.
+  * Improvements to support for PlatHome OpenBlocks AX3-4 board
+    (Closes: #783323):
+    - Allow armmp-lpae kernel flavour.
+    - Remove Boot-Device option since this platform can boot from /boot.
 
  -- Ian Campbell <ijc@debian.org>  Sun, 03 May 2015 09:09:10 +0100
 
