@@ -8,6 +8,8 @@ flash-kernel (3.37) UNRELEASED; urgency=medium
   * Handle Boot-Kernel-Image even if none of Dtb-Append, Machine-Id or
     U-Boot-Kernel-Address are specified. Patch from David Lechner.
     (Closes: #783278)
+  * Log some debug if either the kernel or the initrd is missing. Intended to
+    help debug one aspect of #781742.
 
  -- Ian Campbell <ijc@debian.org>  Sun, 03 May 2015 09:09:10 +0100
 

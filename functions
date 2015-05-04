@@ -569,7 +569,18 @@ desc="kernel $kvers"
 idesc="ramdisk $kvers"
 
 if [ ! -e $kfile ] || [ ! -e $ifile ]; then
-	error "Can't find $kfile or $ifile"
+	# installation-report #781742 included:
+	#     Can't find /boot/vmlinuz-[...] or /boot/initrd.img-[...]
+	#
+	# It's unclear how this can have happened or what state the
+	# system was in, so log some additional information in the
+	# hopes of catching it in the act next time.
+	(
+		set -x
+		ls -l $kfile*
+		ls -l $ifile*
+	) >> /tmp/flash-kernel-no-kernel-error.log
+	error "Can't find $kfile or $ifile (see /tmp/flash-kernel-no-kernel-error.log)"
 fi
 kfilesize=$(stat -c '%s' "$kfile")
 ifilesize=$(stat -c '%s' "$ifile")
