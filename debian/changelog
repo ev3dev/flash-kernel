@@ -1,4 +1,4 @@
-flash-kernel (3.37) UNRELEASED; urgency=medium
+flash-kernel (3.37) unstable; urgency=medium
 
   * Upload changes from 3.30~exp.1..3.36~exp.1 to unstable.
   * Improvements to support for PlatHome OpenBlocks AX3-4 board
@@ -11,7 +11,7 @@ flash-kernel (3.37) UNRELEASED; urgency=medium
   * Log some debug if either the kernel or the initrd is missing. Intended to
     help debug one aspect of #781742.
 
- -- Ian Campbell <ijc@debian.org>  Sun, 03 May 2015 09:09:10 +0100
+ -- Ian Campbell <ijc@debian.org>  Fri, 08 May 2015 19:24:06 +0100
 
 flash-kernel (3.36) unstable; urgency=medium
 
