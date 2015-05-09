@@ -51,6 +51,8 @@ The following systems are supported:
  - QNAP TS-409
  - QNAP TS-410 and TS-410U Turbo NAS
  - QNAP TS-419P and TS-419U Turbo NAS
+ - Raspberry Pi
+ - Raspberry Pi 2
  - Seagate FreeAgent DockStar
  - SheevaPlug
  - SheevaPlug eSATA
