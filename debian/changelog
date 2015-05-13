@@ -1,3 +1,11 @@
+flash-kernel (3.35ev3dev2) stable; urgency=medium
+
+  * Add Raspberry Pi device tree info to db
+  * Add Raspberry Pi to list of supported platforms in README.
+  * Add support for LEGO MINDSTORMS EV3
+
+ -- David Lechner <david@lechnology.com>  Wed, 13 May 2015 11:46:00 -0500
+
 flash-kernel (3.35ev3dev1) stable; urgency=medium
 
   * Handle case when kernel == kfile check in boot_kernel_path handler.
