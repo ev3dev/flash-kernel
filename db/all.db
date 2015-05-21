@@ -305,7 +305,7 @@ Machine: LEGO MINDSTORMS EV3 Programmable Brick
 Kernel-Flavors: ev3
 U-Boot-Kernel-Address: 0xC0008000
 U-Boot-Script-Address: 0x0
-U-Boot-Script-Name: bootscr.ev3dev
+U-Boot-Script-Name: bootscr.ev3
 Boot-Kernel-Path: uImage
 Boot-Script-Path: boot.scr
 Required-Packages: u-boot-tools
