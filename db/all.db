@@ -593,7 +593,7 @@ Boot-DTB-Path: bcm2708-rpi-b.dtb
 Boot-Device: /dev/mmcblk0p1
 Required-Packages: rpi-mkimage
 
-Machine: Raspberry Pi Model B+
+Machine: Raspberry Pi Model B Plus
 Kernel-Flavors: rpi rpi-rpfv
 DTB-Id: bcm2708-rpi-b-plus.dtb
 RPI-Append: yes
