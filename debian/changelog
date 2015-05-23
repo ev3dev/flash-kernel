@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev4) stable; urgency=medium
+
+  * Fix Raspberry Pi Model B Plus in db
+
+ -- David Lechner <david@lechnology.com>  Sat, 23 May 2015 10:25:57 -0500
+
 flash-kernel (3.35ev3dev3) stable; urgency=medium
 
   * [ev3] fix bootscript name in db.
