@@ -1,11 +1,11 @@
-flash-kernel (3.39) UNRELEASED; urgency=medium
+flash-kernel (3.39) unstable; urgency=medium
 
   * Add support for distro_bootcmd when using u-boot >= 2015.04+dfsg1-1
     by adjusting bootscr.beaglebone: use results from distro_bootcmd and
     use previous settings as a fallback (Closes: #786367). Thanks,
     Vagrant Cascadian!
 
- -- Cyril Brulebois <kibi@debian.org>  Mon, 25 May 2015 11:47:48 +0200
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 25 May 2015 11:51:38 +0200
 
 flash-kernel (3.38) unstable; urgency=medium
 
