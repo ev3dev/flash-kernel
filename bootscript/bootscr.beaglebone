@@ -10,11 +10,30 @@ then
   exit
 fi
 
-setenv device mmc
-setenv partition ${bootpart}
+if test "${devtype}" = ""
+  setenv device mmc
+then
+  # use device provided by distro_bootcmd
+  setenv device "${devtype}"
+fi
+
+if test "${devnum}" = ""
+then
+  setenv partition ${bootpart}
+else
+  # use partition provided by distro_bootcmd
+  setenv partition ${devnum}:${bootpart}
+fi
+
 setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 
-image_locations='/boot/ /'
+if test "${prefix}" = ""
+then
+  image_locations='/boot/ /'
+else
+  # use prefix provided by distro_bootcmd
+  image_locations="${prefix}"
+fi
 kvers='@@KERNEL_VERSION@@'
 
 for pathprefix in ${image_locations}
