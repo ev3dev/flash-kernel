@@ -11,8 +11,9 @@ then
 fi
 
 if test "${devtype}" = ""
-  setenv device mmc
 then
+  setenv device mmc
+else
   # use device provided by distro_bootcmd
   setenv device "${devtype}"
 fi
