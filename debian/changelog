@@ -1,8 +1,8 @@
-flash-kernel (3.40) UNRELEASED; urgency=medium
+flash-kernel (3.40) unstable; urgency=medium
 
   * Fix regression in bootscr.beaglebone (syntax error, woops).
 
- -- Cyril Brulebois <kibi@debian.org>  Tue, 26 May 2015 04:19:46 +0200
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 26 May 2015 04:20:44 +0200
 
 flash-kernel (3.39) unstable; urgency=medium
 
