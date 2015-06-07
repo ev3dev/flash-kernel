@@ -13,6 +13,12 @@
 #
 # The uboot must support the bootz and generic filesystem load commands.
 
+# Workaround lack of baudrate included with console on various iMX
+# systems (e.g. wandboard, cubox-i, hummingboard)
+if test "${console}" = "ttymxc0" && test -n "${baudrate}"; then
+  setenv console "${console},${baudrate}"
+fi
+
 if test -n "${console}"; then
   setenv bootargs "${bootargs} console=${console}"
 fi
