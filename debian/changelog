@@ -1,3 +1,10 @@
+flash-kernel (3.41) UNRELEASED; urgency=medium
+
+  * Improvements to generic u-boot boot script, from Vagrant Cascadian:
+    - If ${console} is set then add "console=${console}" to the bootargs.
+
+ -- Ian Campbell <ijc@debian.org>  Sun, 07 Jun 2015 10:27:56 +0100
+
 flash-kernel (3.40) unstable; urgency=medium
 
   * Fix regression in bootscr.beaglebone (syntax error, woops).

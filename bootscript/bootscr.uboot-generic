@@ -13,6 +13,10 @@
 #
 # The uboot must support the bootz and generic filesystem load commands.
 
+if test -n "${console}"; then
+  setenv bootargs "${bootargs} console=${console}"
+fi
+
 setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 @@UBOOT_ENV_EXTRA@@
 
