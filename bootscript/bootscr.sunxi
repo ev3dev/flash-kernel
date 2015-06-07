@@ -38,17 +38,20 @@ setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 @@UBOOT_ENV_EXTRA@@
 
 image_locations='/boot/ /'
-kvers='@@KERNEL_VERSION@@'
+if test -z "${fk_kvers}"; then
+   fk_kvers='@@KERNEL_VERSION@@'
+fi
+
 
 for pathprefix in ${image_locations}
 do
   if test -e ${device} ${partition} ${pathprefix}vmlinuz-${kvers}
   then
-    load ${device} ${partition} ${kernel_addr_r} ${pathprefix}vmlinuz-${kvers} \
-    && load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtbs/${kvers}/${fdtfile} \
-    || load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtb-${kvers} \
-    && load ${device} ${partition} ${ramdisk_addr_r} ${pathprefix}initrd.img-${kvers} \
-    && echo "Booting Debian ${kvers} from ${device} ${partition}..." \
+    load ${device} ${partition} ${kernel_addr_r} ${pathprefix}vmlinuz-${fk_kvers} \
+    && load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtbs/${fk_kvers}/${fdtfile} \
+    || load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtb-${fk_kvers} \
+    && load ${device} ${partition} ${ramdisk_addr_r} ${pathprefix}initrd.img-${fk_kvers} \
+    && echo "Booting Debian ${fk_kvers} from ${device} ${partition}..." \
     && bootz ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
   fi
 done
