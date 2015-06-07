@@ -469,13 +469,42 @@ handle_dtb() {
 
 	local dtb=$(find_dtb_file)
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
+		rm -f "/boot/dtbs/$kvers/$dtb_name"
+
+		# This was the old name we installed under. We
+		# currently include it as an alternative symlink.
 		rm -f "/boot/dtb-$kvers"
+
+		if [ -L /boot/dtb ] ; then
+			# Remove if it points to the current kernel
+			# version, both old (dtb-$kvers) and new
+			# (dtbs/...) names
+		        case $(readlink /boot/dtb) in
+				"dtb-$kvers") rm -f /boot/dtb ;;
+				"dtbs/$kvers/$dtb_name") rm -f /boot/dtb ;;
+			esac
+		fi
+
+		rmdir --ignore-fail-on-non-empty /boot/dtbs/$kvers
+		rmdir --ignore-fail-on-non-empty /boot/dtbs
 	else
 		if [ -e $dtb ]; then
-			echo "Installing $dtb_name into /boot/dtb-$kvers" >&2
-			cp "$dtb" "/boot/dtb-$kvers.new"
-			backup_and_install "/boot/dtb-$kvers.new" "/boot/dtb-$kvers"
-			ln -nfs "dtb-$kvers" "/boot/dtb"
+			echo "Installing $dtb_name into /boot/dtbs/$kvers/$dtb_name" >&2
+			mkdir -p /boot/dtbs/$kvers/
+			cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"
+			backup_and_install \
+				"/boot/dtbs/$kvers/$dtb_name.new" \
+				"/boot/dtbs/$kvers/$dtb_name"
+
+			# Historically we installed the dtb as
+			# dtb-$kvers, keep it around as an alternative
+			# for now. Useful for platforms which do not
+			# set ${fdtfile}
+			ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb-$kvers"
+
+			# This can be used along with the unversioned
+			# vmlinuz+initrd.gz e.g. as a fallback option
+			ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb"
 		fi
 	fi
 }

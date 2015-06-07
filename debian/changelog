@@ -8,6 +8,8 @@ flash-kernel (3.41) UNRELEASED; urgency=medium
     - Log which kernel (if known) and device we are booting from.
     - Workaround lack of baudrate included with console on various iMX
       system.
+  * Install dtbs into /boot/dtbs/$kvers. Based on a patch from Vagrant
+    Cascadian. Retain links at /boot/dtb and /boot/dtb-$kvers (Closes: #783073)
 
  -- Ian Campbell <ijc@debian.org>  Sun, 07 Jun 2015 10:27:56 +0100
 

@@ -22,7 +22,8 @@ kvers='@@KERNEL_VERSION@@'
 for pathprefix in ${image_locations}
 do
   load ${device} ${partition} ${loadaddr} ${pathprefix}vmlinuz-${kvers} \
-  && load ${device} ${partition} ${fdt_addr} ${pathprefix}dtb-${kvers} \
+  && load ${device} ${partition} ${fdt_addr} ${pathprefix}dtbs/${kvers}/${fdtfile} \
+  || load ${device} ${partition} ${fdt_addr} ${pathprefix}dtb-${kvers} \
   && load ${device} ${partition} ${ramdiskaddr} ${pathprefix}initrd.img-${kvers} \
   && echo "Booting Debian ${kvers} from ${device} ${partition}..." \
   && bootz ${loadaddr} ${ramdiskaddr}:${filesize} ${fdt_addr}
