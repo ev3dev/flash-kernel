@@ -5,7 +5,6 @@ etc/db                          etc/flash-kernel
 etc/README.dtbs                 etc/flash-kernel/dtbs/README
 flash-kernel                    usr/sbin
 initramfs-tools                 usr/share
-bootscript                      etc/flash-kernel
 db                              usr/share/flash-kernel
 functions                       usr/share/flash-kernel
 debian/default                  usr/share/flash-kernel
