@@ -31,7 +31,7 @@ if test -z "${fk_kvers}"; then
 fi
 
 # These two blocks should be the same apart from the use of
-# ${fk_kvers} in the first, the syntax supproted by u-boot does not
+# ${fk_kvers} in the first, the syntax supported by u-boot does not
 # lend itself to removing this duplication.
 
 load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} ${prefix}vmlinuz-${fk_kvers} \
