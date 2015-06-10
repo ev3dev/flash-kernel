@@ -42,7 +42,7 @@ if test -z "${fk_kvers}"; then
    fk_kvers='@@KERNEL_VERSION@@'
 fi
 
-if test -z "${fdtfile}"; then
+if test -n "${fdtfile}"; then
    fdtpath=dtbs/${fk_kvers}/${fdtfile}
 else
    fdtpath=dtb-${fk_kvers}

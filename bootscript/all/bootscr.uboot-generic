@@ -34,7 +34,7 @@ fi
 # ${fk_kvers} in the first, the syntax supported by u-boot does not
 # lend itself to removing this duplication.
 
-if test -z "${fdtfile}"; then
+if test -n "${fdtfile}"; then
    fdtpath=dtbs/${fk_kvers}/${fdtfile}
 else
    fdtpath=dtb-${fk_kvers}
