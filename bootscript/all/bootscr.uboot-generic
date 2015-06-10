@@ -34,9 +34,14 @@ fi
 # ${fk_kvers} in the first, the syntax supported by u-boot does not
 # lend itself to removing this duplication.
 
+if test -z "${fdtfile}"; then
+   fdtpath=dtbs/${fk_kvers}/${fdtfile}
+else
+   fdtpath=dtb-${fk_kvers}
+fi
+
 load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} ${prefix}vmlinuz-${fk_kvers} \
-&& load ${devtype} ${devnum}:${bootpart} ${fdt_addr_r} ${prefix}dtbs/${fk_kvers}/${fdtfile} \
-|| load ${devtype} ${devnum}:${bootpart} ${fdt_addr_r} ${prefix}dtb-${fk_kvers} \
+&& load ${devtype} ${devnum}:${bootpart} ${fdt_addr_r} ${prefix}${fdtpath} \
 && load ${devtype} ${devnum}:${bootpart} ${ramdisk_addr_r} ${prefix}initrd.img-${fk_kvers} \
 && echo "Booting Debian ${fk_kvers} from ${devtype} ${devnum}:${bootpart}..." \
 && bootz ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
