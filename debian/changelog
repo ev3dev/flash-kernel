@@ -4,6 +4,7 @@ flash-kernel (3.42) UNRELEASED; urgency=medium
   * Use correct variable name in bootscr.sunxi (Closes: #788221)
   * Avoid use of && and || for control flow in boot scripts, the precedence is
     not as expected.
+  * Change Vcs-Browser entry from http to https.
 
  -- Ian Campbell <ijc@debian.org>  Sun, 07 Jun 2015 13:45:07 +0100
 
