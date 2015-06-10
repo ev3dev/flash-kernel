@@ -45,7 +45,7 @@ fi
 
 for pathprefix in ${image_locations}
 do
-  if test -e ${device} ${partition} ${pathprefix}vmlinuz-${kvers}
+  if test -e ${device} ${partition} ${pathprefix}vmlinuz-${fk_kvers}
   then
     load ${device} ${partition} ${kernel_addr_r} ${pathprefix}vmlinuz-${fk_kvers} \
     && load ${device} ${partition} ${fdt_addr_r} ${pathprefix}dtbs/${fk_kvers}/${fdtfile} \

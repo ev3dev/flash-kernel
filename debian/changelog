@@ -1,6 +1,7 @@
 flash-kernel (3.42) UNRELEASED; urgency=medium
 
   * Only install bootscripts relevant to the arch.
+  * Use correct variable name in bootscr.sunxi (Closes: #788221)
 
  -- Ian Campbell <ijc@debian.org>  Sun, 07 Jun 2015 13:45:07 +0100
 
