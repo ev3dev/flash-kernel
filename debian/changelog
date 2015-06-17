@@ -1,9 +1,10 @@
-flash-kernel (3.43) UNRELEASED; urgency=medium
+flash-kernel (3.43) unstable; urgency=medium
 
+  [ Ian Campbell ]
   * Combine i.MX53 QSB and LOCO board entries, they are the same thing and the
     LOCO variant was missing DTB information. (Closes: #788782)
 
- -- Ian Campbell <ijc@debian.org>  Mon, 15 Jun 2015 19:04:31 +0100
+ -- Christian Perrier <bubulle@debian.org>  Tue, 16 Jun 2015 06:56:47 +0200
 
 flash-kernel (3.42) unstable; urgency=medium
 
