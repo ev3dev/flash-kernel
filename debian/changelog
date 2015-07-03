@@ -1,3 +1,11 @@
+flash-kernel (3.44) UNRELEASED; urgency=medium
+
+  * Add support for "Udoo i.MX6 Quad Board" using entry from Michael
+    Fladischer. Also add a similar entry for "Udoo i.MX6 Dual-lite Board" based
+    on that but with the appropriate dtb. (Closes: #789192)
+
+ -- Ian Campbell <ijc@debian.org>  Fri, 03 Jul 2015 07:57:03 +0100
+
 flash-kernel (3.43) unstable; urgency=medium
 
   [ Ian Campbell ]
