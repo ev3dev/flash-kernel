@@ -1,3 +1,30 @@
+flash-kernel (3.45) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems which are
+    (at least partially) supported in linux-image-4.0.0-2:
+    - Allwinner A31 APP4 EVB1 Evaluation Board
+    - BA10 tvbox
+    - Chuwi V7 CW0825
+    - CSQ CS908 top set box
+    - HAOYU Electronics Marsboard A10
+    - HSG H702
+    - Hyundai A7HD
+    - I12 / Q5 / QT840A A20 tvbox
+    - Ippo Q8H Dual Core Tablet (v1.2)
+    - Ippo Q8H Dual Core Tablet (v5)
+    - Mele M3
+    - Mele M9 top set box
+    - Merrii A20 Hummingbird
+    - Merrii A31 Hummingbird
+    - Merrii A80 Optimus Board
+    - MK802
+    - MK802ii
+    - MK802-A10s
+    - R7 A10s hdmi tv-stick
+
+ -- Karsten Merker <merker@debian.org>  Wed, 22 Jul 2015 21:12:15 +0200
+
 flash-kernel (3.44) unstable; urgency=medium
 
   [ Ian Campbell ]

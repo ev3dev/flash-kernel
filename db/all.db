@@ -1,5 +1,12 @@
 # somewhat RFC2822 based, but case sensitive, not tolerant to spaces etc.
 
+Machine: Allwinner A31 APP4 EVB1 Evaluation Board
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31-app4-evb1.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: APM X-Gene Mustang board
 U-Boot-Kernel-Address: 0x80000
 U-Boot-Initrd-Address: 0x0
@@ -10,6 +17,13 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 Required-Packages: u-boot-tools
 DTB-Id: apm-mustang.dtb
+
+Machine: BA10 tvbox
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-ba10-tvbox.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
 Kernel-Flavors: orion5x
@@ -79,6 +93,20 @@ Machine: Calxeda Highbank
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.highbank
+Required-Packages: u-boot-tools
+
+Machine: Chuwi V7 CW0825
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-chuwi-v7-cw0825.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: CSQ CS908 top set box
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31s-cs908.dtb
+U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: Cubietech Cubieboard
@@ -181,6 +209,13 @@ Boot-Multi-Path: /boot/uImage.bin
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: HAOYU Electronics Marsboard A10
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-marsboard.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: HP Media Vault mv2120
 Kernel-Flavors: orion5x
 Machine-Id: 1693
@@ -202,6 +237,20 @@ Boot-Multi-Path: /boot/uImage
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: HSG H702
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a13-hsg-h702.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Hyundai A7HD
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-hyundai-a7hd.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: SolidRun HummingBoard DL/Solo
 Kernel-Flavors: armmp
 DTB-Id: imx6dl-hummingboard.dtb
@@ -216,6 +265,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: I12 / Q5 / QT840A A20 tvbox
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-i12-tvbox.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Insignal Arndale evaluation board based on EXYNOS5250
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: exynos5250-arndale.dtb
@@ -227,6 +283,20 @@ Machine: INet-97F Rev 02
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun4i-a10-inet97fv2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Ippo Q8H Dual Core Tablet (v1.2)
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a23-ippo-q8h-v1.2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Ippo Q8H Dual Core Tablet (v5)
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a23-ippo-q8h-v5.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -462,10 +532,66 @@ DTB-Id: sun4i-a10-a1000.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Mele M3
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-m3.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Mele M9 top set box
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31-m9.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Merrii A20 Hummingbird
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-hummingbird.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Merrii A31 Hummingbird
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31-hummingbird.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Merrii A80 Optimus Board
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun9i-a80-optimus.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Miniand Hackberry
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun4i-a10-hackberry.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: MK802
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-mk802.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: MK802ii
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-mk802ii.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: MK802-A10s
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a10s-mk802.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -609,6 +735,13 @@ Mtd-Initrd: RootFS1
 U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
+
+Machine: R7 A10s hdmi tv-stick
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a10s-r7-tv-dongle.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
