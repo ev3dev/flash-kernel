@@ -1,4 +1,4 @@
-flash-kernel (3.45) UNRELEASED; urgency=medium
+flash-kernel (3.45) unstable; urgency=medium
 
   [ Karsten Merker ]
   * Add machine db entries for various sunxi-based systems which are
@@ -23,7 +23,7 @@ flash-kernel (3.45) UNRELEASED; urgency=medium
     - MK802-A10s
     - R7 A10s hdmi tv-stick
 
- -- Karsten Merker <merker@debian.org>  Wed, 22 Jul 2015 21:12:15 +0200
+ -- Christian Perrier <bubulle@debian.org>  Fri, 24 Jul 2015 06:46:37 +0200
 
 flash-kernel (3.44) unstable; urgency=medium
 
