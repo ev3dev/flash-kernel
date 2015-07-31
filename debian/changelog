@@ -6,6 +6,10 @@ flash-kernel (3.48) UNRELEASED; urgency=medium
   * Update wandboard and cubox-i boot scripts to improve distro_bootcmd
     support.
 
+  [ Ian Campbell ]
+  * Avoid waiting for Ctrl-C if any debconf frontend is in use, not just
+    non-interactive. (Closes: #791794)
+
  -- Vagrant Cascadian <vagrant@debian.org>  Wed, 04 Nov 2015 13:33:08 -0800
 
 flash-kernel (3.47) unstable; urgency=medium
