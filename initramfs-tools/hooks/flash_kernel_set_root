@@ -27,7 +27,7 @@ pause_error() {
 	#exit 1 # won't work; initramfs-tools ignores hook script exit code
 	echo "" >&2
 
-	# Script is called from update-initramfs which in term can be
+	# Script is called from update-initramfs which in turn can be
 	# called manually by the admin from the CLI or via various
 	# postinst and trigger hooks or from the installer.
 	#
