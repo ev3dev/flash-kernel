@@ -1,9 +1,23 @@
 # somewhat RFC2822 based, but case sensitive, not tolerant to spaces etc.
 
+Machine: Allwinner A23 Evaluation Board
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a23-evb.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Allwinner A31 APP4 EVB1 Evaluation Board
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun6i-a31-app4-evb1.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Allwinner GA10H Quad Core Tablet (v1.1)
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a33-ga10h-v1.1.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -17,6 +31,13 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-Script-Path: /boot/boot.scr
 Required-Packages: u-boot-tools
 DTB-Id: apm-mustang.dtb
+
+Machine: Auxtek t004 A10s hdmi tv-stick
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a10s-auxtek-t004.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 
 Machine: BA10 tvbox
 Kernel-Flavors: armmp
@@ -158,6 +179,13 @@ U-Boot-Initrd-Address: 0x00800000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: ET Q8 Quad Core Tablet (v1.6)
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a33-et-q8-v1.6.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Freescale i.MX53 Quick Start Board
 Machine: Freescale MX53 LOCO Board
 Kernel-Flavors: armmp mx5
@@ -170,6 +198,13 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
+
+Machine: Gemei G9 Tablet
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-gemei-g9.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 
 Machine: Genesi Efika Smartbook
 Kernel-Flavors: armmp mx5
@@ -300,6 +335,13 @@ DTB-Id: sun8i-a23-ippo-q8h-v5.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Jesurun Q5
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-jesurun-q5.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: LaCie 2Big Network v2
 Kernel-Flavors: kirkwood
 DTB-Id: kirkwood-net2big.dtb
@@ -397,6 +439,13 @@ Machine: LinkSprite pcDuino3
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun7i-a20-pcduino3.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: LinkSprite pcDuino3 Nano
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-pcduino3-nano.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -532,6 +581,20 @@ DTB-Id: sun4i-a10-a1000.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Mele A1000G Quad top set box
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31-mele-a1000g-quad.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Mele I7 Quad top set box
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31-i7.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Mele M3
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -592,6 +655,13 @@ Machine: MK802-A10s
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun5i-a10s-mk802.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: mk808c
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-mk808c.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -661,6 +731,20 @@ Boot-Device: /dev/mmcblk0p1
 Boot-Kernel-Path: uImage
 Boot-Initrd-Path: uInitrd
 Boot-Script-Path: boot.scr
+Required-Packages: u-boot-tools
+
+Machine: Orange Pi
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-orangepi.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Orange Pi Mini
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-orangepi-mini.dtb
+U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: PineRiver Mini X-Plus
@@ -755,6 +839,13 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
+Machine: Sinlinx SinA33
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a33-sinlinx-sina33.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Thecus N2100
 Method: redboot
 Kernel-Flavors: iop32x
@@ -797,6 +888,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: Utoo P66
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a13-utoo-p66.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Wandboard i.MX6 Dual Lite Board
 Kernel-Flavors: armmp
 DTB-Id: imx6dl-wandboard.dtb
@@ -809,6 +907,13 @@ Kernel-Flavors: armmp
 DTB-Id: imx6q-wandboard.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.wandboard
+Required-Packages: u-boot-tools
+
+Machine: Wexler TAB7200
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-wexler-tab7200.dtb
+U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: WITS A31 Colombus Evaluation Board

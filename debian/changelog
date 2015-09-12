@@ -1,3 +1,26 @@
+flash-kernel (3.46) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems which are
+    (at least partially) supported in linux-image-4.2.0:
+    - Allwinner A23 Evaluation Board
+    - Allwinner GA10H Quad Core Tablet (v1.1)
+    - Auxtek t004 A10s hdmi tv-stick
+    - ET Q8 Quad Core Tablet (v1.6)
+    - Gemei G9 Tablet
+    - Jesurun Q5
+    - LinkSprite pcDuino3 Nano
+    - Mele A1000G Quad top set box
+    - Mele I7 Quad top set box
+    - mk808c
+    - Orange Pi
+    - Orange Pi Mini
+    - Sinlinx SinA33
+    - Utoo P66
+    - Wexler TAB7200
+
+ -- Karsten Merker <merker@debian.org>  Sat, 12 Sep 2015 19:57:08 +0200
+
 flash-kernel (3.45) unstable; urgency=medium
 
   [ Karsten Merker ]
