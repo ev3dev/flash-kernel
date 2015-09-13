@@ -17,6 +17,9 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 # USA.
 
+# Let the function library know that it is called from the testsuite.
+FK_TESTSUITE_RUNNING="yes"
+
 . ./testlib
 
 functions="${FK_CHECKOUT:-$FK_DIR}/functions"

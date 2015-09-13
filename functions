@@ -43,7 +43,13 @@ mtdblock() {
 
 	local dev=`sed -rn "s,^mtd([^:]*).*\"$mtdname\"\$,/dev/mtdblock\\1,p" "$PROC_MTD"`
 
-	modprobe -q mtdblock && udevadm settle --exit-if-exists=$dev || :
+	# The mtdblock() function gets also called by the testsuite during
+	# the package build; don't run modprobe and udevadm then.  Invasive
+	# actions like loading modules and calling into udev should not
+	# happen at build time and they are not necessary for the testsuite.
+	if [ -z "${FK_TESTSUITE_RUNNING}" ]; then
+		modprobe -q mtdblock && udevadm settle --exit-if-exists=$dev || :
+	fi
 
 	echo $dev
 }

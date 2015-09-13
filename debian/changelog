@@ -19,6 +19,8 @@ flash-kernel (3.46) UNRELEASED; urgency=medium
     - Utoo P66
     - Wexler TAB7200
   * Change Vcs-Browser entry to use cgit instead of gitweb on alioth.
+  * Disable the use of modprobe and udevadm in the mtdblock() function
+    while running the testsuite.
 
  -- Karsten Merker <merker@debian.org>  Sat, 12 Sep 2015 19:57:08 +0200
 
