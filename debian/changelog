@@ -1,4 +1,4 @@
-flash-kernel (3.46) UNRELEASED; urgency=medium
+flash-kernel (3.46) unstable; urgency=medium
 
   [ Karsten Merker ]
   * Add machine db entries for various sunxi-based systems which are
@@ -22,7 +22,7 @@ flash-kernel (3.46) UNRELEASED; urgency=medium
   * Disable the use of modprobe and udevadm in the mtdblock() function
     while running the testsuite.
 
- -- Karsten Merker <merker@debian.org>  Sat, 12 Sep 2015 19:57:08 +0200
+ -- Christian Perrier <bubulle@debian.org>  Mon, 14 Sep 2015 07:03:46 +0200
 
 flash-kernel (3.45) unstable; urgency=medium
 
