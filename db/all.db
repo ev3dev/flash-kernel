@@ -585,6 +585,8 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Raspberry Pi Model B
+Machine: Raspberry Pi Model B Rev 1
+Machine: Raspberry Pi Model B Rev 2
 Kernel-Flavors: rpi rpi-rpfv
 DTB-Id: bcm2708-rpi-b.dtb
 RPI-Append: yes
@@ -594,6 +596,9 @@ Boot-Device: /dev/mmcblk0p1
 Required-Packages: rpi-mkimage
 
 Machine: Raspberry Pi Model B Plus
+Machine: Raspberry Pi Model B Plus Rev 1.0
+Machine: Raspberry Pi Model B Plus Rev 1.1
+Machine: Raspberry Pi Model B Plus Rev 1.2
 Kernel-Flavors: rpi rpi-rpfv
 DTB-Id: bcm2708-rpi-b-plus.dtb
 RPI-Append: yes
@@ -603,6 +608,8 @@ Boot-Device: /dev/mmcblk0p1
 Required-Packages: rpi-mkimage
 
 Machine: Raspberry Pi 2 Model B
+Machine: Raspberry Pi 2 Model B Rev 1.0
+Machine: Raspberry Pi 2 Model B Rev 1.1
 Kernel-Flavors: rpi2 rpi2-rpfv
 DTB-Id: bcm2709-rpi-2-b.dtb
 RPI-Append: yes
