@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev6) stable; urgency=medium
+
+  * Add Raspberry Pi models with "Rev" in name.
+
+ -- David Lechner <david@lechnology.com>  Tue, 15 Sep 2015 13:11:44 -0500
+
 flash-kernel (3.35ev3dev5) stable; urgency=medium
 
   * [ev3] Remove lpj parameter from bootscript.
