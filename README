@@ -116,6 +116,8 @@ The supported fields are:
 * DTB-Append-From: (optional): Can be used instead of DTB-Append. The argument
   is a kernel version, if the kernel to be installed is at least this version
   then the DTB specified named by DTB-Id will be appended to the kernel image.
+  When adding or updating this field remember to consider whether the kernel
+  will require an update to its versioned Breaks: on flash-kernel.
 
 * U-Boot-Kernel-Address, U-Boot-Kernel-Entry-Point, U-Boot-Initrd-Address:
   (optional) address where to load in (physical) RAM the kernel, entry point
