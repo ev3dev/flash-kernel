@@ -68,6 +68,18 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Buffalo Linkstation LS-XHL
+Kernel-Flavors: kirkwood
+DTB-Id: kirkwood-lsxhl.dtb
+DTB-Append: yes
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage.buffalo
+Boot-Initrd-Path: /boot/initrd.buffalo
+Boot-DTB-Path: /boot/dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: yes
+
 Machine: Buffalo Linkstation Mini
 Kernel-Flavors: orion5x
 Machine-Id: 1858
@@ -85,18 +97,6 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
-Required-Packages: u-boot-tools
-Bootloader-Sets-Incorrect-Root: yes
-
-Machine: Buffalo Linkstation LS-XHL
-Kernel-Flavors: kirkwood
-DTB-Id: kirkwood-lsxhl.dtb
-DTB-Append: yes
-U-Boot-Kernel-Address: 0x00008000
-U-Boot-Initrd-Address: 0x0
-Boot-Kernel-Path: /boot/uImage.buffalo
-Boot-Initrd-Path: /boot/initrd.buffalo
-Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 

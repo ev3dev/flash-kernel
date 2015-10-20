@@ -1,3 +1,11 @@
+flash-kernel (3.47) UNRELEASED; urgency=medium
+
+  [Roger Shimizu]
+  * Re-order machine db entries for "Buffalo Linkstation" series
+    - move up entry: Buffalo Linkstation LS-XHL
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 21 Oct 2015 00:38:28 +0900
+
 flash-kernel (3.46) unstable; urgency=medium
 
   [ Karsten Merker ]
