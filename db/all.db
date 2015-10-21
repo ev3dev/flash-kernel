@@ -180,6 +180,13 @@ DTB-Id: sun7i-a20-cubieboard2.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Cubietech Cubieboard4
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun9i-a80-cubieboard4.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Cubietech Cubietruck
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -368,6 +375,20 @@ Machine: Ippo Q8H Dual Core Tablet (v5)
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-a23-ippo-q8h-v5.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Ippo Q8H Quad Core Tablet (v1.2)
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a33-ippo-q8h-v1.2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Iteaduino Plus A10
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-itead-iteaduino-plus.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
