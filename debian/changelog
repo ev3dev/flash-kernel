@@ -1,6 +1,7 @@
 flash-kernel (3.47) UNRELEASED; urgency=medium
 
-  [Roger Shimizu]
+  [ Roger Shimizu ]
+  Various machine db updates for Buffalo Linkstation systems (Closes: #802578):
   * Re-order machine db entries for "Buffalo Linkstation" series
     - move up entry: Buffalo Linkstation LS-XHL
   * Add machine db entries for a few Buffalo Linkstation systems
