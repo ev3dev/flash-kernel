@@ -3,6 +3,14 @@ flash-kernel (3.47) UNRELEASED; urgency=medium
   [Roger Shimizu]
   * Re-order machine db entries for "Buffalo Linkstation" series
     - move up entry: Buffalo Linkstation LS-XHL
+  * Add machine db entries for a few Buffalo Linkstation systems
+    newly getting DT supported since Linux 4.3:
+    - orion5x: LS-WTGL
+    - kirkwood: LS-WVL/VL
+    - kirkwood: LS-WXL/WSXL
+  * Update machine db entries for Buffalo Linkstation system converting
+    to DT since Linux 4.3:
+    - orion5x: LS-WSGL
 
  -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 21 Oct 2015 00:38:28 +0900
 
