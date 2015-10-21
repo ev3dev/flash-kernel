@@ -118,7 +118,6 @@ Machine: Buffalo Linkstation LS-WSGL
 Kernel-Flavors: orion5x
 DTB-Append-From: 4.3
 DTB-Id: orion5x-lswsgl.dtb
-DTB-Append: yes
 Machine-Id: 1858
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
