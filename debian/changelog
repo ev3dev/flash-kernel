@@ -18,6 +18,8 @@ flash-kernel (3.47) UNRELEASED; urgency=medium
     - Cubietech Cubieboard4
     - Ippo Q8H Quad Core Tablet (v1.2)
     - Iteaduino Plus A10
+    - MSI Primo81 tablet
+    - Olimex A20-Olimex-SOM-EVB
 
  -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 21 Oct 2015 00:38:28 +0900
 

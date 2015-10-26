@@ -722,6 +722,13 @@ DTB-Id: sun7i-a20-mk808c.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: MSI Primo81 tablet
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31s-primo81.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: NVIDIA Tegra124 Jetson TK1
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: tegra124-jetson-tk1.dtb
@@ -754,6 +761,13 @@ Machine: Olimex A13-Olinuxino Micro
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun5i-a13-olinuxino-micro.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Olimex A20-Olimex-SOM-EVB
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-olimex-som-evb.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
