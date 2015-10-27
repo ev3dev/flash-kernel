@@ -1,4 +1,4 @@
-flash-kernel (3.47) UNRELEASED; urgency=medium
+flash-kernel (3.47) unstable; urgency=medium
 
   [ Roger Shimizu ]
   Various machine db updates for Buffalo Linkstation systems (Closes: #802578):
@@ -21,7 +21,7 @@ flash-kernel (3.47) UNRELEASED; urgency=medium
     - MSI Primo81 tablet
     - Olimex A20-Olimex-SOM-EVB
 
- -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 21 Oct 2015 00:38:28 +0900
+ -- Christian Perrier <bubulle@debian.org>  Tue, 27 Oct 2015 06:58:56 +0100
 
 flash-kernel (3.46) unstable; urgency=medium
 
