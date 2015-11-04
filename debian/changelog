@@ -3,6 +3,8 @@ flash-kernel (3.48) UNRELEASED; urgency=medium
   [ Vagrant Cascadian ]
   * Update beaglebone, sunxi and u-boot generic boot scripts to support
     distro_bootpart variable added in u-boot mainline.
+  * Update wandboard and cubox-i boot scripts to improve distro_bootcmd
+    support.
 
  -- Vagrant Cascadian <vagrant@debian.org>  Wed, 04 Nov 2015 13:33:08 -0800
 
