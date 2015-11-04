@@ -21,9 +21,13 @@ fi
 if test "${devnum}" = ""
 then
   setenv partition ${bootpart}
-else
+elif test "${distro_bootpart}" = ""
+then
   # use partition provided by distro_bootcmd
   setenv partition ${devnum}:${bootpart}
+else
+  # use partition provided by distro_bootpart
+  setenv partition ${devnum}:${distro_bootpart}
 fi
 
 setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
