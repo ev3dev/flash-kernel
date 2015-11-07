@@ -425,7 +425,7 @@ sercomm_header() {
 }
 
 nslu2_swap() {
-	if [ "$little_endian" ]; then
+	if [ "$little_endian" -eq 1 ]; then
 		devio "<<$1" "xp $,4"
 	else
 		cat "$1"

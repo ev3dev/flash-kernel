@@ -1,3 +1,10 @@
+flash-kernel (3.52) UNRELEASED; urgency=medium
+
+  [ Eric Cooper ]
+  * Correctly test endianess on NSLU2 (Closes: #804359)
+
+ -- Ian Campbell <ijc@debian.org>  Wed, 25 Nov 2015 20:22:34 +0000
+
 flash-kernel (3.51) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
