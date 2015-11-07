@@ -191,9 +191,12 @@ Configuration files currently supported:
   script snippets. See "Adding U-Boot Commands for Pre-Boot Execution"
   below for more details.
 
-* /etc/default/flash-kernel currently contains a single variable,
-  LINUX_KERNEL_CMDLINE, which should be used by bootscripts to set kernel
-  options.
+* /etc/default/flash-kernel currently contains the following variables:
+    - LINUX_KERNEL_CMDLINE, which should be used by bootscripts to set kernel
+      options.
+    - NO_BACKUP_FILES, which if set to "true" or "yes" will prevent
+      flash-kernel from creating backup versions of kernel, initrd,
+      and dtb files.
 
 
 Adding U-Boot Commands for Pre-Boot Execution

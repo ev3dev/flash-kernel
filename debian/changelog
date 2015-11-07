@@ -2,6 +2,7 @@ flash-kernel (3.52) UNRELEASED; urgency=medium
 
   [ Eric Cooper ]
   * Correctly test endianess on NSLU2 (Closes: #804359)
+  * Add option to avoid creation of .bak files (Closes: #803115)
 
   [ Ian Campbell ]
   * Succeed but do nothing when run on an unknown machine which was booted via

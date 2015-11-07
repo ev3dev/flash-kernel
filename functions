@@ -404,13 +404,27 @@ mkimage_multi() {
 	echo "done." >&2
 }
 
+# Return a nonempty string *unless* NO_BACKUP_FILES is set.
+get_backup_preference() {
+	. /etc/default/flash-kernel
+	case $(echo "$NO_BACKUP_FILES" | tr '[:upper:]' '[:lower:]') in
+	    true|yes|1) ;;
+	    *) echo yes ;;
+	esac
+}
+
 backup_and_install() {
 	local source="$1"
 	local dest="$2"
+	local do_backups=$(get_backup_preference)
 
 	if [ -e "$dest" ]; then
-		echo "Taking backup of $(basename "$dest")." >&2
-		mv "$dest" "$dest.bak"
+		if [ -n "$do_backups" ]; then
+			echo "Taking backup of $(basename "$dest")." >&2
+			mv "$dest" "$dest.bak"
+		else
+			echo "Skipping backup of $(basename "$dest")." >&2
+		fi
 	fi
 	echo "Installing new $(basename "$dest")." >&2
 	mv "$source" "$dest"
