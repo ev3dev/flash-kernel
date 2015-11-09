@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev7~3) stable; urgency=medium
+
+  * 
+
+ -- David Lechner <david@lechnology.com>  Fri, 06 Nov 2015 22:19:25 -0600
+
 flash-kernel (3.35ev3dev6) stable; urgency=medium
 
   * Add Raspberry Pi models with "Rev" in name.
