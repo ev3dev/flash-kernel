@@ -29,7 +29,7 @@ setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 @@UBOOT_ENV_EXTRA@@
 
 if test -z "${fk_kvers}"; then
-   fk_kvers='@@KERNEL_VERSION@@'
+   setenv fk_kvers '@@KERNEL_VERSION@@'
 fi
 
 # These two blocks should be the same apart from the use of
@@ -37,9 +37,9 @@ fi
 # lend itself to removing this duplication.
 
 if test -n "${fdtfile}"; then
-   fdtpath=dtbs/${fk_kvers}/${fdtfile}
+   setenv fdtpath dtbs/${fk_kvers}/${fdtfile}
 else
-   fdtpath=dtb-${fk_kvers}
+   setenv fdtpath dtb-${fk_kvers}
 fi
 
 if ${distro_bootpart} = ""
