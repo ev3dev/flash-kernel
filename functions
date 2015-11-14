@@ -491,8 +491,12 @@ handle_dtb() {
 			esac
 		fi
 
-		rmdir --ignore-fail-on-non-empty /boot/dtbs/$kvers
-		rmdir --ignore-fail-on-non-empty /boot/dtbs
+		if [ -d /boot/dtbs/$kvers ] ; then
+			rmdir --ignore-fail-on-non-empty /boot/dtbs/$kvers
+		fi
+		if [ -d /boot/dtbs ] ; then
+			rmdir --ignore-fail-on-non-empty /boot/dtbs
+		fi
 	else
 		if [ -e $dtb ]; then
 			echo "Installing $dtb_name into /boot/dtbs/$kvers/$dtb_name" >&2

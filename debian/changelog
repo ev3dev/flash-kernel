@@ -1,3 +1,9 @@
+flash-kernel (3.50) UNRELEASED; urgency=medium
+
+  * Only remove directories which exist.
+
+ -- Ian Campbell <ijc@debian.org>  Sat, 14 Nov 2015 15:29:26 +0000
+
 flash-kernel (3.49) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
