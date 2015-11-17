@@ -1,4 +1,4 @@
-flash-kernel (3.50) UNRELEASED; urgency=medium
+flash-kernel (3.50) unstable; urgency=medium
 
   [ Ian Campbell ]
   * Only remove directories which exist.
@@ -6,7 +6,7 @@ flash-kernel (3.50) UNRELEASED; urgency=medium
   [ Karsten Merker ]
   * Add a machine db entry for the Iomega Iconnect.
 
- -- Ian Campbell <ijc@debian.org>  Sat, 14 Nov 2015 15:29:26 +0000
+ -- Christian Perrier <bubulle@debian.org>  Tue, 17 Nov 2015 07:11:13 +0100
 
 flash-kernel (3.49) unstable; urgency=medium
 
