@@ -1,3 +1,10 @@
+flash-kernel (3.51) UNRELEASED; urgency=medium
+
+  [ Vagrant Cascadian ]
+  * Fix typo with distro_bootpart handling in u-boot generic bootscript.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Wed, 18 Nov 2015 13:41:23 -0800
+
 flash-kernel (3.50) unstable; urgency=medium
 
   [ Ian Campbell ]

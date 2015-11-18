@@ -23,7 +23,7 @@ then
   setenv partition ${bootpart}
 elif test "${distro_bootpart}" = ""
 then
-  # use partition provided by distro_bootcmd
+  # use partition provided by bootpart
   setenv partition ${devnum}:${bootpart}
 else
   # use partition provided by distro_bootpart
