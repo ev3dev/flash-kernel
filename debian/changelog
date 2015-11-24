@@ -1,4 +1,4 @@
-flash-kernel (3.51) UNRELEASED; urgency=medium
+flash-kernel (3.51) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
   * Fix typo with distro_bootpart handling in u-boot generic bootscript.
@@ -8,7 +8,7 @@ flash-kernel (3.51) UNRELEASED; urgency=medium
   * Add a machine db entry for Kosagi Novena Dual/Quad.
   * Add a machine db entry for Lamobo R1.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Wed, 18 Nov 2015 13:41:23 -0800
+ -- Christian Perrier <bubulle@debian.org>  Tue, 24 Nov 2015 12:27:57 +0100
 
 flash-kernel (3.50) unstable; urgency=medium
 
