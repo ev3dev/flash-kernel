@@ -540,7 +540,7 @@ handle_dtb() {
 			# Remove if it points to the current kernel
 			# version, both old (dtb-$kvers) and new
 			# (dtbs/...) names
-		        case $(readlink /boot/dtb) in
+			case $(readlink /boot/dtb) in
 				"dtb-$kvers") rm -f /boot/dtb ;;
 				"dtbs/$kvers/$dtb_name") rm -f /boot/dtb ;;
 			esac
@@ -578,7 +578,7 @@ main() {
 force="no"
 if [ "x$1" = "x--force" ]; then
 	force="yes"
-        shift
+	shift
 fi
 if [ "x$1" = "x--machine" ]; then
 	machine="$2"
