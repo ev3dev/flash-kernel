@@ -5,7 +5,7 @@ flash-kernel (3.52) UNRELEASED; urgency=medium
 
   [ Ian Campbell ]
   * Succeed but do nothing when run on an unknown machine which was booted via
-    EFI. Based on a patch from Newell Jensen. (Closes: #804359)
+    EFI. Based on a patch from Newell Jensen. (Closes: #806171)
 
  -- Ian Campbell <ijc@debian.org>  Wed, 25 Nov 2015 20:22:34 +0000
 
