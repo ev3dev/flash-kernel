@@ -196,10 +196,11 @@ Configuration files currently supported:
       options.
     - NO_CREATE_DOT_BAK_FILES, which if set to "true" or "yes" will
       prevent flash-kernel from creating backup ".bak" versions of
-      kernel, initrd, and dtb files when installing a new
-      version. Note that enabling this option may leave no easy way to
-      recover from a failed update, in which case JTAG or other
-      recovery mechanisms may be required.
+      kernel, initrd, and dtb files when installing a new version. The
+      default is to create such backups to avoid in recovery from
+      failed updates. If this option is enabled then more complex
+      methods or specialised hardware (e.g. JTAG) may be required to
+      recover.
 
 
 Adding U-Boot Commands for Pre-Boot Execution
