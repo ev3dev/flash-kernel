@@ -404,10 +404,10 @@ mkimage_multi() {
 	echo "done." >&2
 }
 
-# Return a nonempty string *unless* NO_BACKUP_FILES is set.
-get_backup_preference() {
+# Return a nonempty string *unless* NO_CREATE_DOT_BAK_FILES is set.
+get_dot_bak_preference() {
 	. /etc/default/flash-kernel
-	case $(echo "$NO_BACKUP_FILES" | tr '[:upper:]' '[:lower:]') in
+	case $(echo "$NO_CREATE_DOT_BAK_FILES" | tr '[:upper:]' '[:lower:]') in
 	    true|yes|1) ;;
 	    *) echo yes ;;
 	esac
@@ -416,7 +416,7 @@ get_backup_preference() {
 backup_and_install() {
 	local source="$1"
 	local dest="$2"
-	local do_backups=$(get_backup_preference)
+	local do_backups=$(get_dot_bak_preference)
 
 	if [ -e "$dest" ]; then
 		if [ -n "$do_backups" ]; then
