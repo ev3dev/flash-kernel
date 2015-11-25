@@ -57,6 +57,34 @@ EOF
 }
 add_test test_mtdblock
 
+test_mtdchar() {
+    get_tempfile
+    mock_proc_mtd="$last_tempfile"
+    cat >"$mock_proc_mtd" <<EOF
+dev:    size   erasesize  name
+mtd0: 00580000 00020000 "root"
+mtd1: 00100000 00020000 "kernel"
+mtd2: 00160000 00020000 "initrd"
+mtd3: 00020000 00020000 "reset"
+mtd4: 00800000 00020000 "jffs2"
+EOF
+    (
+        . "$functions"
+        PROC_MTD="$mock_proc_mtd"
+        root_mtd=$(mtdchar "root")
+        if [ "$root_mtd" != "/dev/mtd0" ]; then
+            echo "Expected root mtd to be /dev/mtd0 but got $root_mtd" >&2
+            exit 1
+        fi
+        jffs2_mtd=$(mtdchar "jffs2")
+        if [ "$jffs2_mtd" != "/dev/mtd4" ]; then
+            echo "Expected jffs2 mtd to be /dev/mtd4 but got $jffs2_mtd" >&2
+            exit 1
+        fi
+    )
+}
+add_test test_mtdchar
+
 test_mtdsize() {
     get_tempfile
     mock_proc_mtd="$last_tempfile"

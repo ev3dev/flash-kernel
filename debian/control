@@ -17,6 +17,7 @@ Depends: ${misc:Depends},
          devio,
          initramfs-tools (>= 0.92f),
          linux-base (>= 3.2),
+         mtd-utils,
          ucf
 Recommends: u-boot-tools
 Description: utility to make certain embedded devices bootable
