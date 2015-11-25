@@ -196,7 +196,10 @@ Configuration files currently supported:
       options.
     - NO_BACKUP_FILES, which if set to "true" or "yes" will prevent
       flash-kernel from creating backup versions of kernel, initrd,
-      and dtb files.
+      and dtb files when installing a new version. Note that enabling
+      this option may leave no easy way to recover from a failed
+      update, in which case JTAG or other recovery mechanisms may be
+      required.
 
 
 Adding U-Boot Commands for Pre-Boot Execution
