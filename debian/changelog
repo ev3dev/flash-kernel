@@ -10,6 +10,10 @@ flash-kernel (3.52) UNRELEASED; urgency=medium
   * Use /dev/mtdN when flashing, rather than needlessly going through the
     mtdblock layer (which is problematic on some platforms/kernels).
     (Closes: #794265)
+  * Keep a backup copy of any files written to either a filesystem mounted via
+    Boot-Device or directly to a flash device under /var/backups/flash-kernel.
+    This makes files which are not normally visible via the regular filesystem
+    available e.g. for convenient backing up (Closes: #736503)
 
  -- Ian Campbell <ijc@debian.org>  Wed, 25 Nov 2015 20:22:34 +0000
 

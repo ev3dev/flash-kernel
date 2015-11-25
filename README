@@ -201,7 +201,12 @@ Configuration files currently supported:
       failed updates. If this option is enabled then more complex
       methods or specialised hardware (e.g. JTAG) may be required to
       recover.
-
+    - MTD_BACKUP_DIR, which if set, names a directory to which
+      flash-kernel will write copies of files which would not normally
+      be accessible in the regular filesystem (either written to a
+      rawflash partition or to a firmware partition which is not
+      normally mounted). If unset defaults to
+      /var/backups/flash-kernel. Set to "none" to disable.
 
 Adding U-Boot Commands for Pre-Boot Execution
 - - - - - - - - - - - - - - - - - - - - - - -

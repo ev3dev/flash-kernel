@@ -318,12 +318,21 @@ write_mtd() {
 	local input_file="$1"
 	local output_mtd="$2"
 	local base_mtd=$(basename $output_mtd)
+	local mtd_backup_dir=$(get_mtd_backup_dir)
 	local tmpfile
 
 	if [ "x$input_file" = "x-" ] ; then
 		tmpfile=$(mktemp -t "$self.$base_mtd.XXXXXX") || error "Failed"
 		cat > $tmpfile
 		input_file="$tmpfile"
+	fi
+
+	# Keep a copy in a convenient place for backups etc
+	if [ -n "${mtd_backup_dir}" ] ; then
+		local backup="${mtd_backup_dir}/${base_mtd}"
+		#echo "Saving new $output_mtd in ${backup}."
+		mkdir -p "${mtd_backup_dir}"
+		cp "$input_file" "${backup}"
 	fi
 
 	# Can't really flashcp to /dev/mtd<N> when testing
@@ -454,18 +463,36 @@ get_dot_bak_preference() {
 	esac
 }
 
+# Return a nonempty string *unless* MTD_BACKUP_DIR is "none".
+get_mtd_backup_dir() {
+	. /etc/default/flash-kernel
+	case "${MTD_BACKUP_DIR:=/var/backups/flash-kernel}" in
+	    none) echo "";;
+	    *) echo "${MTD_BACKUP_DIR}";;
+	esac
+}
+
 backup_and_install() {
 	local source="$1"
 	local dest="$2"
-	local do_backups=$(get_dot_bak_preference)
-
+	local do_dot_bak=$(get_dot_bak_preference)
+	local mtd_backup_dir=$(get_mtd_backup_dir)
 	if [ -e "$dest" ]; then
-		if [ -n "$do_backups" ]; then
+		if [ -n "$do_dot_bak" ]; then
 			echo "Taking backup of $(basename "$dest")." >&2
 			mv "$dest" "$dest.bak"
 		else
 			echo "Skipping backup of $(basename "$dest")." >&2
 		fi
+	fi
+	# If we are installing to a filesystem which is not normally mounted
+	# then take a second copy in /var/backups, where they can e.g. be
+	# backed up.
+	if [ -n "$boot_mnt_dir" ] && [ -n "$mtd_backup_dir" ] ; then
+		local bak="$mtd_backup_dir/"$(basename "$dest")
+		#echo "Saving $boot_device:"$(basename "$source")" in $bak"
+		mkdir -p "$mtd_backup_dir"
+		cp "$source" "$bak"
 	fi
 	echo "Installing new $(basename "$dest")." >&2
 	mv "$source" "$dest"
