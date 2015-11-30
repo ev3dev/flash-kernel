@@ -1,4 +1,4 @@
-flash-kernel (3.52) UNRELEASED; urgency=medium
+flash-kernel (3.52) unstable; urgency=medium
 
   [ Eric Cooper ]
   * Correctly test endianess on NSLU2 (Closes: #804359)
@@ -15,7 +15,7 @@ flash-kernel (3.52) UNRELEASED; urgency=medium
     This makes files which are not normally visible via the regular filesystem
     available e.g. for convenient backing up (Closes: #736503)
 
- -- Ian Campbell <ijc@debian.org>  Wed, 25 Nov 2015 20:22:34 +0000
+ -- Christian Perrier <bubulle@debian.org>  Mon, 30 Nov 2015 06:57:43 +0100
 
 flash-kernel (3.51) unstable; urgency=medium
 
