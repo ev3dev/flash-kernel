@@ -1,10 +1,10 @@
-flash-kernel (3.35+deb8u2) UNRELEASED; urgency=medium
+flash-kernel (3.35+deb8u2) stable; urgency=medium
 
   [ Ian Campbell ]
   * Avoid waiting for Ctrl-C if any debconf frontend is in use, not just
     non-interactive. (Closes: #791794)
 
- -- Vagrant Cascadian <vagrant@debian.org>  Wed, 04 Nov 2015 13:33:08 -0800
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 05 Dec 2015 19:16:33 +0100
 
 flash-kernel (3.35+deb8u1) stable; urgency=medium
 
