@@ -229,6 +229,13 @@ DTB-Id: sun8i-a33-et-q8-v1.6.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Firefly-RK3288
+Kernel-Flavors: armmp
+DTB-Id: rk3288-firefly.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Freescale i.MX53 Quick Start Board
 Machine: Freescale MX53 LOCO Board
 Kernel-Flavors: armmp mx5
