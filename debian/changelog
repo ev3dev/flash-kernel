@@ -1,8 +1,9 @@
-flash-kernel (3.53) UNRELEASED; urgency=medium
+flash-kernel (3.53) unstable; urgency=medium
 
+  [ Vagrant Cascadian ]
   * Add a machine db entry for Firefly-RK3288.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Sat, 26 Dec 2015 19:53:53 -0800
+ -- Christian Perrier <bubulle@debian.org>  Tue, 29 Dec 2015 09:30:38 +0100
 
 flash-kernel (3.52) unstable; urgency=medium
 
