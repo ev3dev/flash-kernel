@@ -558,7 +558,7 @@ Required-Packages: u-boot-tools
 # via DTB or older ATAGS
 Machine: Marvell Armada XP GP Board
 Machine: Marvell Armada XP Development Board DB-MV784MP-GP
-Kernel-Flavors: armmp lpae armmp-lpae
+Kernel-Flavors: armmp armmp-lpae
 DTB-Id: armada-xp-gp.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000

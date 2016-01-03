@@ -2,6 +2,8 @@ flash-kernel (3.54) UNRELEASED; urgency=medium
 
   [ Martin Michlmayr ]
   * Add test_db test suite to README.
+  * Remove lpae as kernel flavour from DB-MV784MP-GP since armmp-lpae
+    is listed already.
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 03 Jan 2016 13:12:47 -0800
 
