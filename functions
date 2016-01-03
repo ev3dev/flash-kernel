@@ -725,7 +725,7 @@ if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
 		kfile_suffix=$(get_kfile_suffix "$kfile" "$kfile_suffix")
 
 		if check_kflavors "$kfile_suffix" $kflavors; then
-			break;
+			break
 		fi
 	done
 fi
