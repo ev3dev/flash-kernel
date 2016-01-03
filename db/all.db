@@ -940,6 +940,50 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
+Machine: Seagate NAS 2-Bay (Dart, SRPD20)
+Kernel-Flavors: armmp
+DTB-Id: armada-370-seagate-nas-2bay.dtb
+U-Boot-Kernel-Address: 0x2000040
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
+Machine: Seagate NAS 4-Bay (Dart, SRPD40)
+Kernel-Flavors: armmp
+DTB-Id: armada-370-seagate-nas-4bay.dtb
+U-Boot-Kernel-Address: 0x2000040
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
+Machine: Seagate Personal Cloud (Cumulus, SRN21C)
+Kernel-Flavors: armmp
+DTB-Id: armada-370-seagate-personal-cloud.dtb
+U-Boot-Kernel-Address: 0x2000040
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
+Machine: Seagate Personal Cloud 2-Bay (Cumulus, SRN22C)
+Kernel-Flavors: armmp
+DTB-Id: armada-370-seagate-personal-cloud-2bay.dtb
+U-Boot-Kernel-Address: 0x2000040
+U-Boot-Initrd-Address: 0x0
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+Boot-DTB-Path: /boot/dtb
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: no
+
 Machine: Sinlinx SinA33
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr

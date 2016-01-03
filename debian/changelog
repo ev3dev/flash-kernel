@@ -4,6 +4,8 @@ flash-kernel (3.54) UNRELEASED; urgency=medium
   * Add test_db test suite to README.
   * Remove lpae as kernel flavour from DB-MV784MP-GP since armmp-lpae
     is listed already.
+  * Add support for Seagate NAS (2 and 4 bay) and Seagate Personal
+    Cloud (1 and 2 bay).
 
  -- Martin Michlmayr <tbm@cyrius.com>  Sun, 03 Jan 2016 13:12:47 -0800
 
