@@ -67,6 +67,7 @@ Testsuite
 - - - - -
 
 Run the testsuite with:
+    FK_CHECKOUT=. ./test_db
     FK_CHECKOUT=. ./test_flash-kernel
     FK_CHECKOUT=. ./test_functions
 
