@@ -1,4 +1,4 @@
-flash-kernel (3.54) UNRELEASED; urgency=medium
+flash-kernel (3.54) unstable; urgency=medium
 
   [ Martin Michlmayr ]
   * Add test_db test suite to README.
@@ -7,7 +7,7 @@ flash-kernel (3.54) UNRELEASED; urgency=medium
   * Add support for Seagate NAS (2 and 4 bay) and Seagate Personal
     Cloud (1 and 2 bay).
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 03 Jan 2016 13:12:47 -0800
+ -- Christian Perrier <bubulle@debian.org>  Tue, 05 Jan 2016 06:51:38 +0100
 
 flash-kernel (3.53) unstable; urgency=medium
 
