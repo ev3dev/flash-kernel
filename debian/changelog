@@ -1,6 +1,10 @@
 flash-kernel (3.57) UNRELEASED; urgency=medium
 
+  [Colin Watson]
   * Use HTTPS for Vcs-Git URL.
+
+  [Roger Shimizu]
+  * Fix the install location for etc/README.dtbs
 
  -- Colin Watson <cjwatson@debian.org>  Fri, 29 Jan 2016 13:35:17 +0000
 
