@@ -1007,6 +1007,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.beaglebone
 Required-Packages: u-boot-tools
 
+Machine: TI AM5728 BeagleBoard-X15
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: am57xx-beagle-x15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: TI OMAP5 uEVM board
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: omap5-uevm.dtb
