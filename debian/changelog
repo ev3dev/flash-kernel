@@ -1,8 +1,9 @@
-flash-kernel (3.55) UNRELEASED; urgency=medium
+flash-kernel (3.55) unstable; urgency=medium
 
+  [ Vagrant Cascadian ]
   * Add a machine db entry for BeagleBoard-X15.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Sun, 24 Jan 2016 19:48:23 -0800
+ -- Christian Perrier <bubulle@debian.org>  Tue, 26 Jan 2016 09:15:32 +0100
 
 flash-kernel (3.54) unstable; urgency=medium
 
