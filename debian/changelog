@@ -1,8 +1,8 @@
-flash-kernel (3.35ev3dev7~3) stable; urgency=medium
+flash-kernel (3.35ev3dev7) stable; urgency=medium
 
-  * 
+  * Add uEnv.txt support for BeagleBone
 
- -- David Lechner <david@lechnology.com>  Fri, 06 Nov 2015 22:19:25 -0600
+ -- David Lechner <david@lechnology.com>  Tue, 26 Jan 2016 00:04:56 -0600
 
 flash-kernel (3.35ev3dev6) stable; urgency=medium
 
