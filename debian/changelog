@@ -1,3 +1,12 @@
+flash-kernel (3.56) UNRELEASED; urgency=medium
+
+  [ Martin Michlmayr ]
+  * QNAP TS-109/TS-209 and TS-409: change the kernel address to be after
+    the ramdisk so the uncompressed kernel doesn't overwrite the ramdisk.
+    (Closes: #809476)
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 26 Jan 2016 10:45:45 -0800
+
 flash-kernel (3.55) unstable; urgency=medium
 
   [ Vagrant Cascadian ]

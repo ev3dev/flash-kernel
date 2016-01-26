@@ -884,7 +884,7 @@ Kernel-Flavors: orion5x
 Machine-Id: 1565
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x00c08000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
@@ -905,7 +905,7 @@ Kernel-Flavors: orion5x
 Machine-Id: 1601
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x00c08000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
