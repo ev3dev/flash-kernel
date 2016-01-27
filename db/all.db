@@ -182,10 +182,13 @@ Required-Packages: u-boot-tools
 
 Machine: Cubietech Cubieboard4
 Kernel-Flavors: armmp armmp-lpae
-Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun9i-a80-cubieboard4.dtb
-U-Boot-Script-Name: bootscr.sunxi
+DTB-Append: yes
 Required-Packages: u-boot-tools
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+U-Boot-Kernel-Address: 0x42000000
+U-Boot-Initrd-Address: 0x0
 
 Machine: Cubietech Cubietruck
 Kernel-Flavors: armmp armmp-lpae

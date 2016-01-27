@@ -5,6 +5,10 @@ flash-kernel (3.56) UNRELEASED; urgency=medium
     the ramdisk so the uncompressed kernel doesn't overwrite the ramdisk.
     (Closes: #809476)
 
+  [ Vagrant Cascadian ]
+  * Update Cubieboard4 entry to generate uImage and uInitrd loadable by
+    the vendor u-boot, which doesn't support boot scripts.
+
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 26 Jan 2016 10:45:45 -0800
 
 flash-kernel (3.55) unstable; urgency=medium
