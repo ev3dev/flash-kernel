@@ -1,4 +1,4 @@
-flash-kernel (3.56) UNRELEASED; urgency=medium
+flash-kernel (3.56) unstable; urgency=medium
 
   [ Martin Michlmayr ]
   * QNAP TS-109/TS-209 and TS-409: change the kernel address to be after
@@ -9,7 +9,7 @@ flash-kernel (3.56) UNRELEASED; urgency=medium
   * Update Cubieboard4 entry to generate uImage and uInitrd loadable by
     the vendor u-boot, which doesn't support boot scripts.
 
- -- Martin Michlmayr <tbm@cyrius.com>  Tue, 26 Jan 2016 10:45:45 -0800
+ -- Christian Perrier <bubulle@debian.org>  Thu, 28 Jan 2016 07:16:20 +0100
 
 flash-kernel (3.55) unstable; urgency=medium
 
