@@ -9,7 +9,7 @@ Uploaders: Loïc Minier <lool@debian.org>,
 Build-Depends: debhelper (>= 9), devio, linux-base (>= 3.2), dash
 Standards-Version: 3.9.6
 Vcs-Browser: https://anonscm.debian.org/cgit/d-i/flash-kernel.git
-Vcs-Git: git://anonscm.debian.org/d-i/flash-kernel.git
+Vcs-Git: https://anonscm.debian.org/git/d-i/flash-kernel.git
 
 Package: flash-kernel
 Architecture: arm64 armel armhf

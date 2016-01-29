@@ -1,3 +1,9 @@
+flash-kernel (3.57) UNRELEASED; urgency=medium
+
+  * Use HTTPS for Vcs-Git URL.
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 29 Jan 2016 13:35:17 +0000
+
 flash-kernel (3.56) unstable; urgency=medium
 
   [ Martin Michlmayr ]
