@@ -490,6 +490,7 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 
 Machine: Lamobo R1
+Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun7i-a20-lamobo-r1.dtb
 U-Boot-Script-Name: bootscr.uboot-generic

@@ -6,6 +6,10 @@ flash-kernel (3.57) UNRELEASED; urgency=medium
   [Roger Shimizu]
   * Fix the install location for etc/README.dtbs
 
+  [ Martin Michlmayr ]
+  * Add Kernel-Flavors for Lamobo R1.  Thanks to Heinrich Schuchardt.
+    (Closes: #813927)
+
  -- Colin Watson <cjwatson@debian.org>  Fri, 29 Jan 2016 13:35:17 +0000
 
 flash-kernel (3.56) unstable; urgency=medium
