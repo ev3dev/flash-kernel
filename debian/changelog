@@ -5,6 +5,8 @@ flash-kernel (3.57) UNRELEASED; urgency=medium
 
   [Roger Shimizu]
   * Fix the install location for etc/README.dtbs
+  * Update kernel address for Buffalo Linkstation devices machine db.
+    (Closes: #810828)
 
   [ Martin Michlmayr ]
   * Add Kernel-Flavors for Lamobo R1.  Thanks to Heinrich Schuchardt.

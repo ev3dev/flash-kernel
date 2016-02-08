@@ -49,7 +49,7 @@ Required-Packages: u-boot-tools
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
 Kernel-Flavors: orion5x marvell
 Machine-Id: 2913
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -60,7 +60,7 @@ Machine: Buffalo Linkstation LS-CHLv2
 Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lschlv2.dtb
 DTB-Append: yes
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -72,7 +72,7 @@ Machine: Buffalo Linkstation LS-WTGL
 Kernel-Flavors: orion5x marvell
 DTB-Id: orion5x-linkstation-lswtgl.dtb
 DTB-Append: yes
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -83,7 +83,7 @@ Machine: Buffalo Linkstation LS-WVL/VL
 Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lswvl.dtb
 DTB-Append: yes
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -94,7 +94,7 @@ Machine: Buffalo Linkstation LS-WXL/WSXL
 Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lswxl.dtb
 DTB-Append: yes
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -105,7 +105,7 @@ Machine: Buffalo Linkstation LS-XHL
 Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lsxhl.dtb
 DTB-Append: yes
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -119,7 +119,7 @@ Kernel-Flavors: orion5x marvell
 DTB-Append-From: 4.3
 DTB-Id: orion5x-lswsgl.dtb
 Machine-Id: 1858
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -129,7 +129,7 @@ Bootloader-Sets-Incorrect-Root: yes
 Machine: Buffalo Linkstation Pro/Live
 Kernel-Flavors: orion5x marvell
 Machine-Id: 1585
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
@@ -139,7 +139,7 @@ Bootloader-Sets-Incorrect-Root: yes
 Machine: Buffalo/Revogear Kurobox Pro
 Kernel-Flavors: orion5x marvell
 Machine-Id: 1509
-U-Boot-Kernel-Address: 0x00008000
+U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0
 Boot-Kernel-Path: /boot/uImage.buffalo
 Boot-Initrd-Path: /boot/initrd.buffalo
