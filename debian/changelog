@@ -7,6 +7,17 @@ flash-kernel (3.57) UNRELEASED; urgency=medium
   * Fix the install location for etc/README.dtbs
   * Update kernel address for Buffalo Linkstation devices machine db.
     (Closes: #810828)
+  * Update a few Buffalo Linkstation entries in machine db
+      The following device will be converted to DT in kernel 4.6:
+        - Buffalo Linkstation Pro/Live (LS-GL)
+      The following device will be supported by DT in kernel 4.6:
+        - Buffalo Linkstation LS-QVL (DT will be supported in kernel 4.6)
+      The following devicies' DT will be renamed in kernel 4.6:
+        - Buffalo Linkstation LS-VL
+        - Buffalo Linkstation LS-WSXL
+        - Buffalo Linkstation LS-WVL
+        - Buffalo Linkstation LS-WXL
+  * Update support status of Buffalo Linkstation devices in README
 
   [ Martin Michlmayr ]
   * Add Kernel-Flavors for Lamobo R1.  Thanks to Heinrich Schuchardt.
