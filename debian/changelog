@@ -9,6 +9,8 @@ flash-kernel (3.57) UNRELEASED; urgency=medium
   [ Martin Michlmayr ]
   * Add Kernel-Flavors for Lamobo R1.  Thanks to Heinrich Schuchardt.
     (Closes: #813927)
+  * Add new marvell kernel flavour as alternative for orion5x and
+    kirkwood.
 
  -- Colin Watson <cjwatson@debian.org>  Fri, 29 Jan 2016 13:35:17 +0000
 

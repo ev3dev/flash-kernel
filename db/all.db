@@ -47,7 +47,7 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: Buffalo Linkstation LiveV3 (LS-CHL)
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 2913
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
@@ -57,7 +57,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation LS-CHLv2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lschlv2.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -69,7 +69,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation LS-WTGL
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 DTB-Id: orion5x-linkstation-lswtgl.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -80,7 +80,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation LS-WVL/VL
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lswvl.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -91,7 +91,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation LS-WXL/WSXL
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lswxl.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -102,7 +102,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation LS-XHL
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-lsxhl.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -115,7 +115,7 @@ Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation Mini
 Machine: Buffalo Linkstation LS-WSGL
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 DTB-Append-From: 4.3
 DTB-Id: orion5x-lswsgl.dtb
 Machine-Id: 1858
@@ -127,7 +127,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo Linkstation Pro/Live
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 1585
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
@@ -137,7 +137,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo/Revogear Kurobox Pro
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 1509
 U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x0
@@ -205,7 +205,7 @@ U-Boot-Script-Name: bootscr.cubox-i
 Required-Packages: u-boot-tools
 
 Machine: D-Link DNS-320 NAS (Rev A1)
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-dns320.dtb
 DTB-Append-From: 3.12
 Mtd-Kernel: uImage
@@ -216,7 +216,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: D-Link DNS-323
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 1542
 Mtd-Kernel: Linux Kernel
 Mtd-Initrd: File System
@@ -305,7 +305,7 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: HP Media Vault mv2120
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 1693
 U-Boot-Multi-Address: 0x01600000
 Boot-Multi-Path: /boot/uImage
@@ -316,7 +316,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: HP t5325 Thin Client
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-t5325.dtb
 DTB-Append-From: 3.17-rc1
 Machine-Id: 2846
@@ -375,7 +375,7 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: Iomega Iconnect
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-iconnect.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -427,7 +427,7 @@ U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: LaCie 2Big Network v2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-net2big.dtb
 DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
@@ -437,7 +437,7 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 
 Machine: LaCie 5Big Network v2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-net5big.dtb
 DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
@@ -447,7 +447,7 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 
 Machine: LaCie Internet Space v2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-is2.dtb
 DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
@@ -458,7 +458,7 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: LaCie Network Space v2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-ns2.dtb
 DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
@@ -469,7 +469,7 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: LaCie Network Space Max v2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-ns2max.dtb
 DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
@@ -480,7 +480,7 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: LaCie d2 Network v2
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-d2net.dtb
 DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
@@ -573,7 +573,7 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: Globalscale Technologies Dreamplug
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-dreamplug.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -598,7 +598,7 @@ Required-Packages: u-boot-tools
 
 Machine: Marvell GuruPlug Reference Board
 Machine: Globalscale Technologies Guruplug Server Plus
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-guruplug-server-plus.dtb
 DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
@@ -610,7 +610,7 @@ Required-Packages: u-boot-tools
 
 Machine: Marvell OpenRD Base Board
 Machine: OpenRD Base
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-openrd-base.dtb
 DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
@@ -621,7 +621,7 @@ Required-Packages: u-boot-tools
 
 Machine: Marvell OpenRD Client Board
 Machine: OpenRD Client
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-openrd-client.dtb
 DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
@@ -632,7 +632,7 @@ Required-Packages: u-boot-tools
 
 Machine: Marvell OpenRD Ultimate Board
 Machine: OpenRD Ultimate
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-openrd-ultimate.dtb
 DTB-Append-From: 3.17-rc1
 U-Boot-Kernel-Address: 0x00008000
@@ -643,7 +643,7 @@ Required-Packages: u-boot-tools
 
 Machine: Marvell SheevaPlug Reference Board
 Machine: Globalscale Technologies SheevaPlug
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-sheevaplug.dtb
 DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
@@ -655,7 +655,7 @@ Required-Packages: u-boot-tools
 
 Machine: Marvell eSATA SheevaPlug Reference Board
 Machine: Globalscale Technologies eSATA SheevaPlug
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-sheevaplug-esata.dtb
 DTB-Append-From: 3.12
 U-Boot-Kernel-Address: 0x00008000
@@ -872,7 +872,7 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: Plat'Home OpenBlocksA6
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-openblocks_a6.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
@@ -884,7 +884,7 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
 Machine: QNAP TS-109/TS-209
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 1565
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
@@ -894,7 +894,7 @@ Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-119/TS-219
 Machine: QNAP TS219 family
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: !kirkwood-qnap
 DTB-Append-From: 3.17-rc1
 Machine-Id: 2139
@@ -905,7 +905,7 @@ Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-409
-Kernel-Flavors: orion5x
+Kernel-Flavors: orion5x marvell
 Machine-Id: 1601
 Mtd-Kernel: Kernel
 Mtd-Initrd: RootFS1
@@ -915,7 +915,7 @@ Bootloader-Sets-Incorrect-Root: yes
 
 Machine: QNAP TS-41x
 Machine: QNAP TS419 family
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: !kirkwood-qnap
 DTB-Append-From: 3.17-rc1
 Machine-Id: 2502
@@ -934,7 +934,7 @@ Required-Packages: u-boot-tools
 
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
-Kernel-Flavors: kirkwood
+Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-dockstar.dtb
 DTB-Append: yes
 U-Boot-Kernel-Address: 0x00008000
