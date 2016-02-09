@@ -1,9 +1,9 @@
 flash-kernel (3.57) UNRELEASED; urgency=medium
 
-  [Colin Watson]
+  [ Colin Watson ]
   * Use HTTPS for Vcs-Git URL.
 
-  [Roger Shimizu]
+  [ Roger Shimizu ]
   * Fix the install location for etc/README.dtbs
   * Update kernel address for Buffalo Linkstation devices machine db.
     (Closes: #810828)
