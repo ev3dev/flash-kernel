@@ -374,8 +374,8 @@ test_get_machine_field() {
             exit 1
         fi
         kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"
-        if [ "$kflavors" != "kirkwood" ]; then
-            echo "Expected Kernel-Flavors field to be kirkwood but got $kflavors" >&2
+        if [ "$kflavors" != "kirkwood marvell" ]; then
+            echo "Expected Kernel-Flavors field to be 'kirkwood marvell' but got $kflavors" >&2
             exit 1
         fi
         if dummy_field="$(get_machine_field "$machine" "Dummy")"; then
