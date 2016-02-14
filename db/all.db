@@ -1115,9 +1115,23 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.wandboard
 Required-Packages: u-boot-tools
 
+Machine: Wandboard i.MX6 Dual Lite Board rev B1
+Kernel-Flavors: armmp
+DTB-Id: imx6dl-wandboard-revb1.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.wandboard
+Required-Packages: u-boot-tools
+
 Machine: Wandboard i.MX6 Quad Board
 Kernel-Flavors: armmp
 DTB-Id: imx6q-wandboard.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.wandboard
+Required-Packages: u-boot-tools
+
+Machine: Wandboard i.MX6 Quad Board rev B1
+Kernel-Flavors: armmp
+DTB-Id: imx6q-wandboard-revb1.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.wandboard
 Required-Packages: u-boot-tools
