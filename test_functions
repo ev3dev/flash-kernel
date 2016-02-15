@@ -203,6 +203,7 @@ EOF
         . "$functions"
         PROC_CPUINFO="$mock_proc_cpuinfo"
         PROC_DTMODEL="/this/must/not/exist"
+        FK_ETC_MACHINE="/this/must/not/exist"
         get_machine
         if [ "$machine" != "Marvell SheevaPlug Reference Board" ]; then
             echo "Expected machine to be Marvell SheevaPlug Reference Board but got $machine" >&2
@@ -238,6 +239,7 @@ EOF
         . "$functions"
         PROC_CPUINFO="$mock_proc_cpuinfo"
         PROC_DTMODEL="$mock_dt_model"
+        FK_ETC_MACHINE="/this/must/not/exist"
         get_machine
         if [ "$machine" != "Globalscale Technologies Dreamplug" ]; then
             echo "Expected machine to be Globalscale Technologies Dreamplug but got $machine" >&2
