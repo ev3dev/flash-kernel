@@ -1,4 +1,4 @@
-flash-kernel (3.58) UNRELEASED; urgency=medium
+flash-kernel (3.58) unstable; urgency=medium
 
   [ Martin Michlmayr ]
   * Add entries for Wandboard i.MX6 Dual Lite Board rev B1 and Quad
@@ -6,7 +6,7 @@ flash-kernel (3.58) UNRELEASED; urgency=medium
   * Ensure FK_ETC_MACHINE isn't used when testing get_machine.
     (Closes: #814710).
 
- -- Martin Michlmayr <tbm@cyrius.com>  Sun, 14 Feb 2016 09:54:41 -0500
+ -- Christian Perrier <bubulle@debian.org>  Tue, 16 Feb 2016 07:01:25 +0100
 
 flash-kernel (3.57) unstable; urgency=medium
 
