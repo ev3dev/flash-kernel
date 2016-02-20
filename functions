@@ -649,10 +649,6 @@ if [ -n "$kvers" ] ; then
 fi
 
 latest_version=$(linux-version list | linux-version sort | tail -1)
-if [ -n "$kvers" ] && [ "x$force" != "xyes" ] && [ "$kvers" != "$latest_version" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postinst.d" ]; then
-	echo "Ignoring old or unknown version $kvers (latest is $latest_version)" >&2
-	exit 0
-fi
 
 if [ -n "$kvers" ] && [ "$FK_KERNEL_HOOK_SCRIPT" = "postrm.d" ]; then
 	echo "flash-kernel: Kernel ${kvers} has been removed." >&2
@@ -675,6 +671,11 @@ if [ "$kvers" != "$latest_version" ] && [ "x$force" = "xyes" ]; then
 	echo "flash-kernel: forcing install of ${kvers} instead of ${latest_version}." >&2
 	echo "flash-kernel: WARNING: Installing any new kernel package might override this." >&2
 else
+	echo "Ignoring old or unknown version $kvers (latest is $latest_version)" >&2
+	if [ "$FK_KERNEL_HOOK_SCRIPT" = "postinst.d" ]; then
+		exit 0
+	fi
+	echo "Use --force if you want version $kvers." >&2
 	kvers="$latest_version"
 	# Make sure we install the DTB for $latest_version
 	handle_dtb
