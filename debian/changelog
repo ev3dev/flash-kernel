@@ -11,6 +11,7 @@ flash-kernel (3.59) UNRELEASED; urgency=medium
   * Support $LINUX_KERNEL_CMDLINE_DEFAULTS via /etc/defaults/flash-kernel. This
     will be prepended to the ${bootargs} and can therefore be overridden by the
     firmware configuration. Suggested as part of #813023.
+  * Fix debug logging intended to help with #781742.
 
  -- Ian Campbell <ijc@debian.org>  Sat, 20 Feb 2016 11:59:56 +0000
 

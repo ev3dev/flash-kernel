@@ -720,7 +720,7 @@ if [ ! -e $kfile ] || [ ! -e $ifile ]; then
 		set -x
 		ls -l $kfile*
 		ls -l $ifile*
-	) >> /tmp/flash-kernel-no-kernel-error.log
+	) >> /tmp/flash-kernel-no-kernel-error.log 2>&1
 	error "Can't find $kfile or $ifile (see /tmp/flash-kernel-no-kernel-error.log)"
 fi
 kfilesize=$(stat -c '%s' "$kfile")
