@@ -30,7 +30,7 @@ else
   setenv partition ${devnum}:${distro_bootpart}
 fi
 
-setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
+setenv bootargs @@LINUX_KERNEL_CMDLINE_DEFAULTS@@ ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 
 if test "${prefix}" = ""
 then

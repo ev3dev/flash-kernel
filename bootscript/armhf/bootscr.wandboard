@@ -32,7 +32,7 @@ if test -n "${console}"; then
   setenv bootargs "${bootargs} console=${console}"
 fi
 
-setenv bootargs ${bootargs} @@LINUX_KERNEL_CMDLINE@@
+setenv bootargs @@LINUX_KERNEL_CMDLINE_DEFAULTS@@ ${bootargs} @@LINUX_KERNEL_CMDLINE@@
 
 if test -z "${prefix}" ; then
   setenv image_locations '/boot/ /'

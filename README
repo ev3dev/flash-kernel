@@ -202,7 +202,10 @@ Configuration files currently supported:
 
 * /etc/default/flash-kernel currently contains the following variables:
     - LINUX_KERNEL_CMDLINE, which should be used by bootscripts to set kernel
-      options.
+      options, overriding the firmwares defaults (e.g. u-boot's ${bootargs}).
+    - LINUX_KERNEL_CMDLINE_DEFAULTS, which should be used by bootscripts to set
+      kernel options which should be overrideable by the firmware's defaults
+      (e.g. u-boot's ${bootargs}).
     - NO_CREATE_DOT_BAK_FILES, which if set to "true" or "yes" will
       prevent flash-kernel from creating backup ".bak" versions of
       kernel, initrd, and dtb files when installing a new version. The
