@@ -337,7 +337,19 @@ write_mtd() {
 
 	# Can't really flashcp to /dev/mtd<N> when testing
 	if [ -z "${FK_TESTSUITE_RUNNING}" ]; then
-		flashcp "$input_file" "$output_mtd"
+		local flashtype=$(cat /sys/class/mtd/$base_mtd/type)
+		case "$flashtype" in
+		nand|mlc-nand)
+			flash_erase "$output_mtd" 0 0
+			nandwrite -p "$output_mtd" "$input_file"
+			;;
+		nor)
+			flashcp "$input_file" "$output_mtd"
+			;;
+		*)
+			error "unsupported flash type"
+			;;
+		esac
 	else
 		cp "$input_file" "$output_mtd"
 	fi

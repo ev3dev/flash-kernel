@@ -1,3 +1,10 @@
+flash-kernel (3.59) UNRELEASED; urgency=medium
+
+  [ Uwe Kleine-König ]
+  * use nandwrite when writing to nand flash. (Closes: #813995)
+
+ -- Ian Campbell <ijc@debian.org>  Sat, 20 Feb 2016 11:59:56 +0000
+
 flash-kernel (3.58) unstable; urgency=medium
 
   [ Martin Michlmayr ]
