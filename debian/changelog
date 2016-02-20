@@ -13,6 +13,9 @@ flash-kernel (3.59) UNRELEASED; urgency=medium
     firmware configuration. Suggested as part of #813023.
   * Fix debug logging intended to help with #781742.
 
+  [ Vagrant Cascadian ]
+  * Update db entry for Firefly-RK3288 to allow armmp-lpae.
+
  -- Ian Campbell <ijc@debian.org>  Sat, 20 Feb 2016 11:59:56 +0000
 
 flash-kernel (3.58) unstable; urgency=medium

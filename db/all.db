@@ -290,7 +290,7 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: Firefly-RK3288
-Kernel-Flavors: armmp
+Kernel-Flavors: armmp armmp-lpae
 DTB-Id: rk3288-firefly.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
