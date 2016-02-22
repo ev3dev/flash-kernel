@@ -1,4 +1,4 @@
-flash-kernel (3.59) UNRELEASED; urgency=medium
+flash-kernel (3.59) unstable; urgency=medium
 
   [ Uwe Kleine-König ]
   * use nandwrite when writing to nand flash. (Closes: #813995)
@@ -16,7 +16,7 @@ flash-kernel (3.59) UNRELEASED; urgency=medium
   [ Vagrant Cascadian ]
   * Update db entry for Firefly-RK3288 to allow armmp-lpae.
 
- -- Ian Campbell <ijc@debian.org>  Sat, 20 Feb 2016 11:59:56 +0000
+ -- Christian Perrier <bubulle@debian.org>  Mon, 22 Feb 2016 18:52:43 +0100
 
 flash-kernel (3.58) unstable; urgency=medium
 
