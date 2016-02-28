@@ -1,3 +1,23 @@
+flash-kernel (3.60) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems
+    - Allwinner GT90H Quad Core Tablet (v4)
+    - Auxtek t003 A10s hdmi tv-stick
+    - Empire Electronix D709 tablet
+    - iNet-1
+    - INet-98V Rev 02
+    - NextThing C.H.I.P.
+    - Point of View Protab2-IPS9
+    - Q8 A13 Tablet
+    - Q8 A23 Tablet
+    - Q8 A33 Tablet
+    - Sinovoip BPI-M2
+    - Wits Pro A20 DKT
+    - Xunlong Orange Pi Plus
+
+ -- Karsten Merker <karsten@eirene>  Sun, 28 Feb 2016 15:44:39 +0100
+
 flash-kernel (3.59) unstable; urgency=medium
 
   [ Uwe Kleine-König ]
