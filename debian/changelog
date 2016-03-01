@@ -1,4 +1,4 @@
-flash-kernel (3.60) UNRELEASED; urgency=medium
+flash-kernel (3.60) unstable; urgency=medium
 
   [ Karsten Merker ]
   * Add machine db entries for various sunxi-based systems
@@ -16,7 +16,7 @@ flash-kernel (3.60) UNRELEASED; urgency=medium
     - Wits Pro A20 DKT
     - Xunlong Orange Pi Plus
 
- -- Karsten Merker <karsten@eirene>  Sun, 28 Feb 2016 15:44:39 +0100
+ -- Christian Perrier <bubulle@debian.org>  Tue, 01 Mar 2016 06:46:32 +0100
 
 flash-kernel (3.59) unstable; urgency=medium
 
