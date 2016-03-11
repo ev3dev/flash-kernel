@@ -618,6 +618,15 @@ Boot-DTB-Path: bcm2709-rpi-2-b.dtb
 Boot-Device: /dev/mmcblk0p1
 Required-Packages: rpi-mkimage
 
+Machine: Raspberry Pi 3 Model B Rev 1.2
+Kernel-Flavors: rpi2 rpi2-rpfv
+DTB-Id: bcm2710-rpi-3-b.dtb
+RPI-Append: yes
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2710-rpi-3-b.dtb
+Boot-Device: /dev/mmcblk0p1
+Required-Packages: rpi-mkimage
+
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood
 DTB-Id: kirkwood-dockstar.dtb
