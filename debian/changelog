@@ -1,3 +1,24 @@
+flash-kernel (3.61) UNRELEASED; urgency=medium
+
+  [ Roger Shimizu ]
+  * Add myself to debian/copyright
+  * Add script dtb-probe/kirkwood-linkstation, based on
+    dtb-probe/kirkwood-qnap, to support smooth upgrade/downgrade of kernel,
+    since there's a split/rename for device tree file of a few Buffalo
+    Linkstation devices.
+  * Make use of above script to determine DTB file for listed devices:
+    - Buffalo Linkstation LS-VL
+    - Buffalo Linkstation LS-WSXL
+    - Buffalo Linkstation LS-WVL
+    - Buffalo Linkstation LS-WVL/VL
+    - Buffalo Linkstation LS-WXL
+    - Buffalo Linkstation LS-WXL/WSXL
+  * Update "DTB-Append-From" field for "Buffalo Linkstation Pro/Live",
+    since the patch of device tree is backported to sid (4.4) kernel.
+  * Update machine ID for "Buffalo Linkstation Mini (LS-WSGL)"
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 23 Mar 2016 22:46:42 +0900
+
 flash-kernel (3.60) unstable; urgency=medium
 
   [ Karsten Merker ]
