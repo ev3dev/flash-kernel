@@ -1,4 +1,4 @@
-flash-kernel (3.61) UNRELEASED; urgency=medium
+flash-kernel (3.61) unstable; urgency=medium
 
   [ Roger Shimizu ]
   * Add myself to debian/copyright
@@ -17,7 +17,7 @@ flash-kernel (3.61) UNRELEASED; urgency=medium
     since the patch of device tree is backported to sid (4.4) kernel.
   * Update machine ID for "Buffalo Linkstation Mini (LS-WSGL)"
 
- -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 23 Mar 2016 22:46:42 +0900
+ -- Christian Perrier <bubulle@debian.org>  Fri, 25 Mar 2016 06:46:48 +0100
 
 flash-kernel (3.60) unstable; urgency=medium
 
