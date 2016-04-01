@@ -231,7 +231,7 @@ get_dtb_name() {
 			error "dtb-probe $dtb_script_name not found"
 		fi
 
-		dtb_name=$($dtb_script)
+		dtb_name=$($dtb_script $kvers)
 		if [ $? -ne 0 ] || [ "x$dtb_name" = "x" ]; then
 			error "dtb-probe $dtb_script failed"
 		fi

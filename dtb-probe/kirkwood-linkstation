@@ -38,7 +38,16 @@ FK_DIR="/usr/share/flash-kernel"
 info=0
 if [ "x$1" = "x--info" ] ; then
     info=1
+    [ -n "$2" ] && kvers=$2
+elif [ "x$2" = "x--info" ] ; then
+    info=1
+    kvers=$1
+elif [ -n "$1" ]; then
+    kvers=$1
 fi
+
+[ -z "$kvers" ] &&
+    kvers=$(linux-version list | linux-version sort | tail -1)
 
 last_result=
 success() {
@@ -61,7 +70,7 @@ fallback_dtb() {
         dtb=$(find_dtb_file)
         [ ! -f "$dtb" ] &&
             continue
-        echo "$dtb"
+        echo "$dtb_name"
         break
     done
 }
@@ -106,7 +115,7 @@ case $machine in
 esac
 
 dtb_name=$(fallback_dtb)
-if [ -f "$dtb_name" ]; then
+if [ -n "$dtb_name" ]; then
     success $dtb_name
 else
     echo "kirkwood-linkstation: Unable to determine $machine variant " >&2

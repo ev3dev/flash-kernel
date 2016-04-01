@@ -89,6 +89,12 @@ FK_DIR="/usr/share/flash-kernel"
 info=0
 if [ "x$1" = "x--info" ] ; then
     info=1
+    [ -n "$2" ] && kvers=$2
+elif [ "x$2" = "x--info" ] ; then
+    info=1
+    kvers=$1
+elif [ -n "$1" ]; then
+    kvers=$1
 fi
 
 last_result=
