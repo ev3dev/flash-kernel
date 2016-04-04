@@ -5,6 +5,9 @@ flash-kernel (3.62) UNRELEASED; urgency=medium
   * Fix a few cases prevent script "dtb-probe/kirkwood-linkstation" from
     running properly.
 
+  [ Vagrant Cascadian ]
+  * Add a machine db entry for Raspberry Pi 2 Model B.
+
  -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 01 Apr 2016 01:14:50 +0900
 
 flash-kernel (3.61) unstable; urgency=medium

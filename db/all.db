@@ -1059,6 +1059,13 @@ DTB-Id: sun5i-a10s-r7-tv-dongle.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Raspberry Pi 2 Model B
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: bcm2836-rpi-2-b.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+Boot-Script-Path: /boot/boot.scr
+
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood marvell
