@@ -1,3 +1,10 @@
+flash-kernel (3.35ev3dev8) stable; urgency=medium
+
+  * Add support for Raspberry Pi 3.
+  * Add new machine id for LEGO MINDSTORMS EV3
+
+ -- David Lechner <david@lechnology.com>  Sun, 10 Apr 2016 17:37:11 -0500
+
 flash-kernel (3.35ev3dev7) stable; urgency=medium
 
   * Add uEnv.txt support for BeagleBone
