@@ -301,6 +301,7 @@ DTB-Id: sun7i-a20-bananapro.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: LEGO MINDSTORMS EV3
 Machine: LEGO MINDSTORMS EV3 Programmable Brick
 Kernel-Flavors: ev3
 U-Boot-Kernel-Address: 0xC0008000
