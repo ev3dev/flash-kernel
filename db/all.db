@@ -209,6 +209,8 @@ Bootloader-Sets-Incorrect-Root: yes
 
 Machine: Buffalo/Revogear Kurobox Pro
 Kernel-Flavors: orion5x marvell
+DTB-Append-From: 4.5.1
+DTB-Id: orion5x-kuroboxpro.dtb
 Machine-Id: 1509
 U-Boot-Kernel-Address: 0x01a00000
 U-Boot-Initrd-Address: 0x0

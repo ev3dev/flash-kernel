@@ -1,3 +1,11 @@
+flash-kernel (3.63) UNRELEASED; urgency=medium
+
+  [ Roger Shimizu ]
+  * Update machine db entry for "Buffalo/Revogear Kurobox Pro" to add DTB
+    support from kernel 4.5.1
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 14 Apr 2016 20:56:35 +0900
+
 flash-kernel (3.62) unstable; urgency=medium
 
   [ Roger Shimizu ]
