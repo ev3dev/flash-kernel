@@ -68,11 +68,18 @@ success() {
 fallback_dtb() {
     for dtb_name in $dtbs; do
         dtb=$(find_dtb_file)
-        [ ! -f "$dtb" ] &&
-            continue
-        echo "$dtb_name"
-        break
+        if [ -f "$dtb" ]; then
+            echo "$dtb_name"
+            return
+        fi
     done
+
+    # Workaround: DTB file will be removed before this script is invoked,
+    # when upgrading or removing kernel package.
+    # So here just provide a fake DTB as warning message, instead of error,
+    # which will block upgrading or removing of kernel package.
+    [ ! -d /usr/lib/linux-image-$kvers ] &&
+        echo "kernel_removed?"
 }
 
 if [ $info -gt 0 ] ; then
