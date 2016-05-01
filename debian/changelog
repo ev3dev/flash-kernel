@@ -1,8 +1,9 @@
-flash-kernel (3.65) UNRELEASED; urgency=medium
+flash-kernel (3.65) unstable; urgency=medium
 
+  [ Vagrant Cascadian ]
   * Add a machine db entry for Odroid XU4.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Thu, 28 Apr 2016 22:58:55 -0700
+ -- Christian Perrier <bubulle@debian.org>  Sun, 01 May 2016 08:09:09 +0200
 
 flash-kernel (3.64) unstable; urgency=medium
 
