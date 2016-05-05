@@ -14,6 +14,13 @@ DTB-Id: sun6i-a31-app4-evb1.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Allwinner A83T H8Homlet Proto Dev Board v2.0
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a83t-allwinner-h8homlet-v2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Allwinner GA10H Quad Core Tablet (v1.1)
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -270,6 +277,13 @@ DTB-Id: sun7i-a20-cubietruck.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Cubietech Cubietruck Plus
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a83t-cubietruck-plus.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: SolidRun Cubox-i Dual/Quad
 Kernel-Flavors: armmp
 DTB-Id: imx6q-cubox-i.dtb
@@ -447,6 +461,13 @@ DTB-Id: sun7i-a20-i12-tvbox.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: ICnova-A20 SWAC
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-icnova-swac.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Insignal Arndale evaluation board based on EXYNOS5250
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: exynos5250-arndale.dtb
@@ -472,6 +493,13 @@ Machine: INet-98V Rev 02
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun5i-a13-inet-98v-rev2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: iNet-9F Rev 03
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-inet9f-rev03.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -503,6 +531,13 @@ Machine: Ippo Q8H Quad Core Tablet (v1.2)
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-a33-ippo-q8h-v1.2.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Itead Ibox A20
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun7i-a20-itead-ibox.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -1131,6 +1166,13 @@ Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
+Machine: Sinlinx SinA31s Development Board
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31s-sina31s.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Sinlinx SinA33
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -1250,9 +1292,23 @@ DTB-Id: sun7i-a20-wits-pro-a20-dkt.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: A10s-Wobo i5
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a10s-wobo-i5.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Xunlong Orange Pi Plus
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-h3-orangepi-plus.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Yones TopTech BS1078 v2 Tablet
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31s-yones-toptech-bs1078-v2.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools

@@ -1,3 +1,19 @@
+flash-kernel (3.66) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems that are
+    (at least partially) supported in kernel 4.6 and u-boot v2016.05:
+    - Allwinner A83T H8Homlet Proto Dev Board v2.0
+    - Cubietech Cubietruck Plus
+    - ICnova-A20 SWAC
+    - iNet-9F Rev 03
+    - Itead Ibox A20
+    - Sinlinx SinA31s Development Board
+    - A10s-Wobo i5
+    - Yones TopTech BS1078 v2 Tablet
+
+ -- Karsten Merker <merker@debian.org>  Thu, 05 May 2016 20:39:47 +0200
+
 flash-kernel (3.65) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
