@@ -1,4 +1,4 @@
-flash-kernel (3.66) UNRELEASED; urgency=medium
+flash-kernel (3.66) unstable; urgency=medium
 
   [ Karsten Merker ]
   * Add machine db entries for various sunxi-based systems that are
@@ -12,7 +12,7 @@ flash-kernel (3.66) UNRELEASED; urgency=medium
     - A10s-Wobo i5
     - Yones TopTech BS1078 v2 Tablet
 
- -- Karsten Merker <merker@debian.org>  Thu, 05 May 2016 20:39:47 +0200
+ -- Christian Perrier <bubulle@debian.org>  Sat, 07 May 2016 08:48:55 +0200
 
 flash-kernel (3.65) unstable; urgency=medium
 
