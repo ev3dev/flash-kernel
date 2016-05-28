@@ -3,28 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of d-i.po to Gujarati
-#
-# Debian Installer master translation file template
-# Don't forget to properly fill-in the header of PO files#
-# Debian Installer translators, please read the D-I i18n documentation
-# in doc/i18n/i18n.txt
-# Contributor:
-# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2007.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: d-i\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-07-04 13:13+0530\n"
-"Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
-"Language-Team: Gujarati <team@utkarsh.org>\n"
-"Language: gu\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -32,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "સિસ્ટમ બૂટ કરવા માટે ફ્લેશ મેમરી રૂપરેખાંકિત કરે છે"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -41,7 +19,7 @@ msgstr "સિસ્ટમ બૂટ કરવા માટે ફ્લેશ �
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "સિસ્ટમ શરૂઆત કરી શકાય તેવી બનાવે છે"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -50,7 +28,7 @@ msgstr "સિસ્ટમ શરૂઆત કરી શકાય તેવી �
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "સિસ્ટમ તૈયાર કરે છે..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -59,7 +37,7 @@ msgstr "સિસ્ટમ તૈયાર કરે છે..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે છે..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -69,7 +47,7 @@ msgstr "કર્નલને ફ્લેશ મેમરીમાં લખે
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "ડિસ્ક પર બૂટ ઇમેજ બનાવે છે..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -80,4 +58,4 @@ msgstr "ડિસ્ક પર બૂટ ઇમેજ બનાવે છે..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "સિસ્ટમને શરૂ કરી શકાય તેવી બનાવે છે"
+msgstr ""

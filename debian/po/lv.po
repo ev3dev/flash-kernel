@@ -3,41 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of lv.po to Latvian
-# Latvian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Translations from iso-codes:
-# Copyright (C) Free Software Foundation, Inc., 2001,2003.
-# Translations from KDE:
-# Andris Maziks <andzha@latnet.lv>
-#
-# Aigars Mahinovs <aigarius@debian.org>, 2006, 2008.
-# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
-# Aigars Mahinovs <aigarius@debian.org>, 2006.
-# Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
-# Free Software Foundation, Inc., 2002,2004.
-# Juris Kudiņš <cooker@inbox.lv>, 2001.
-# Rihards Priedītis <rprieditis@gmail.com>, 2009, 2010.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012.
-# Peteris Krisjanis <pecisk@gmail.com>, 2008, 2012.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2012-05-27 12:29+0300\n"
-"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latviešu <locale-l10n@googlegroups.com>\n"
-"Language: lv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2)\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -45,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Konfigurē zibatmiņu sistēmas palaišanai"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -54,7 +19,7 @@ msgstr "Konfigurē zibatmiņu sistēmas palaišanai"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Padara sistēmu palaižamu"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -63,7 +28,7 @@ msgstr "Padara sistēmu palaižamu"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Sagatavo sistēmu..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -72,7 +37,7 @@ msgstr "Sagatavo sistēmu..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Ieraksta kodolu zibatmiņā..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -82,7 +47,7 @@ msgstr "Ieraksta kodolu zibatmiņā..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Ģenerē palaišanas attēlu uz diska..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -93,4 +58,4 @@ msgstr "Ģenerē palaišanas attēlu uz diska..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Padarīt sistēmu palaižamu"
+msgstr ""

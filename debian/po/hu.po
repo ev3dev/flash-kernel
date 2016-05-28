@@ -3,26 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Hungarian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-# coor: SZERVÁC Attila - sas 321hu -- 2006-2008
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-11-08 09:16+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
-"Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
-"org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -30,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Flash memória konfigurálása a rendszer indításához"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -39,7 +19,7 @@ msgstr "Flash memória konfigurálása a rendszer indításához"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "A rendszer indíthatóvá tétele"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -48,7 +28,7 @@ msgstr "A rendszer indíthatóvá tétele"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "A rendszer előkészítése..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -57,7 +37,7 @@ msgstr "A rendszer előkészítése..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Kernel írása a flash memóriába..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -67,7 +47,7 @@ msgstr "Kernel írása a flash memóriába..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Indító kép készítése a lemezen..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -78,4 +58,4 @@ msgstr "Indító kép készítése a lemezen..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "A rendszer indíthatóvá tétele"
+msgstr ""

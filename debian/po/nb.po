@@ -3,28 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of nb.po to Norwegian Bokmål
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Knut Yrvin <knuty@skolelinux.no>, 2004.
-# Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
-# Axel Bojer <axelb@skolelinux.no>, 2004.
-# Bjørn Steensrud <bjornst@powertech.no>, 2004, 2005, 2006, 2007.
-# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005, 2007, 2008.
-msgid ""
-msgstr ""
-"Project-Id-Version: nb\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2008-08-03 07:52+0200\n"
-"Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
-"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -32,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Setter opp flash-minne for å starte systemet"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -41,7 +19,7 @@ msgstr "Setter opp flash-minne for å starte systemet"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Gjør systemet oppstartbart"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -50,7 +28,7 @@ msgstr "Gjør systemet oppstartbart"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Forbereder systemet ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -59,7 +37,7 @@ msgstr "Forbereder systemet ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Skriver kjernen til flash-minne ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -69,7 +47,7 @@ msgstr "Skriver kjernen til flash-minne ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Oppretter oppstartsbilde på disk ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -80,4 +58,4 @@ msgstr "Oppretter oppstartsbilde på disk ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Gjør systemet oppstartbart"
+msgstr ""

@@ -3,27 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_bs.po to Bosnian
-# Bosnian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Safir Secerovic <sapphire@linux.org.ba>, 2006.
-# Armin Besirovic <armin@linux.org.ba>, 2008.
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_bs\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-07-27 18:25+0100\n"
-"Last-Translator: Armin Beširović <armin@linux.org.ba>\n"
-"Language-Team: Bosnian <lokal@linux.org.ba>\n"
-"Language: bs\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: 3\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -31,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Podešavam flash memoriju za podizanje sistema"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -40,7 +19,7 @@ msgstr "Podešavam flash memoriju za podizanje sistema"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Pravim sistem bootabilnim"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -49,7 +28,7 @@ msgstr "Pravim sistem bootabilnim"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Pripremam sistem..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -58,7 +37,7 @@ msgstr "Pripremam sistem..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Upisujem kernel u flash memoriju..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -68,7 +47,7 @@ msgstr "Upisujem kernel u flash memoriju..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Generišem startnu sliku na disk..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -79,4 +58,4 @@ msgstr "Generišem startnu sliku na disk..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Napravi sistem bootabilan"
+msgstr ""

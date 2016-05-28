@@ -3,47 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of bg.po to Bulgarian
-# Bulgarian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
-# Nikola Antonov <nikola@linux-bg.org>, 2004.
-#
-#
-# Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Free Software Foundation, Inc., 2004.
-#   Georgi Georgiev <assenov_g@operamail.com>, 2001, 2004.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
-#   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
-# Copyright (C)
-#   (translations from drakfw)
-#   - further translations from ICU-3.9
-# Translation of ISO 639 (language names) to Bulgarian
-# Copyright (C) 2010 Free Software Foundation, Inc.
-#
-# Copyright (C)
-#   Roumen Petrov <transl@roumenpetrov.info>, 2010.
-# Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: bg\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2012-02-25 18:10+0200\n"
-"Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
-"Language-Team: Български <dict@fsa-bg.org>\n"
-"Language: bg\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -51,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Настройване на flash-паметта"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -60,7 +19,7 @@ msgstr "Настройване на flash-паметта"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Подготовка на системата за първоначалното зареждане"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -69,7 +28,7 @@ msgstr "Подготовка на системата за първоначалн
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Подготовка на системата..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -78,7 +37,7 @@ msgstr "Подготовка на системата..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Записване на ядрото в постоянната памет..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -88,7 +47,7 @@ msgstr "Записване на ядрото в постоянната паме�
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Създаване на образ за първоначално зареждане на диска..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -99,4 +58,4 @@ msgstr "Създаване на образ за първоначално зар�
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Настройка на зареждането на системата"
+msgstr ""

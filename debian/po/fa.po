@@ -3,23 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Persian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-# , 2005.
-msgid ""
-msgstr ""
-"Project-Id-Version: fa\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2010-07-01 18:43+0330\n"
-"Last-Translator: acathur <acathur@gmail.com>\n"
-"Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -27,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "در حال انجام تنظیمات فلش مموری برای راه‌اندازی سیستم ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -36,7 +19,7 @@ msgstr "در حال انجام تنظیمات فلش مموری برای راه�
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "در حال آماده سازی سیستم برای راه‌اندازی ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -45,7 +28,7 @@ msgstr "در حال آماده سازی سیستم برای راه‌انداز�
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "در حال آماده سازی سیستم ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -54,7 +37,7 @@ msgstr "در حال آماده سازی سیستم ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "در حال نصب کرنل بر روی فلش مموری ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -64,7 +47,7 @@ msgstr "در حال نصب کرنل بر روی فلش مموری ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "در حال ایجاد ایمیج بوت بر روی دیسک ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -75,4 +58,4 @@ msgstr "در حال ایجاد ایمیج بوت بر روی دیسک ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "سیستم را قابل راه اندازی کن ."
+msgstr ""

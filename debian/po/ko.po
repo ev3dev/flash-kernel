@@ -3,25 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Korean messages for debian-installer.
-# Copyright (C) 2003,2004,2005,2008 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Changwoo Ryu <cwryu@debian.org>, 2010, 2011.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: 2011-03-09 02:14+0900\n"
-"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
-"Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
-"Language: ko\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -29,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "플래시 메모리를 설정해 시스템을 부팅할 수 있도록 하는 중입니다"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -38,7 +19,7 @@ msgstr "플래시 메모리를 설정해 시스템을 부팅할 수 있도록 �
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "시스템을 부팅 가능하게 만드는 중입니다"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -47,7 +28,7 @@ msgstr "시스템을 부팅 가능하게 만드는 중입니다"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "시스템을 준비하는 중입니다..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -56,7 +37,7 @@ msgstr "시스템을 준비하는 중입니다..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "커널을 플래시 메모리에 쓰는 중입니다..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -66,7 +47,7 @@ msgstr "커널을 플래시 메모리에 쓰는 중입니다..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "디스크에 부팅 이미지를 만드는 중입니다..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -77,4 +58,4 @@ msgstr "디스크에 부팅 이미지를 만드는 중입니다..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "시스템을 부팅 가능하게 만들기"
+msgstr ""
