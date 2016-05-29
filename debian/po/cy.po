@@ -3,6 +3,32 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# translation of Debian Installer templates to Welsh
+# Copyright (C) 2004-2008 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Jonathan Price <mynamesnotclive@notclive.co.uk>, 2008.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   - translations from ICU-3.0
+#   Dafydd Harries <daf@muse.19inch.net>, 2002,2004,2006.
+#   Free Software Foundation, Inc., 2002,2004
+#   Alastair McKinstry <mckinstry@computer.org>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Welsh <>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -10,7 +36,7 @@
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Yn cyflunio'r cof flash i gychwyn y system"
 
 #. Type: text
 #. Description
@@ -19,7 +45,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "Yn gwneud y system yn gychwynadwy"
 
 #. Type: text
 #. Description
@@ -28,7 +54,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "Yn paratoi'r system..."
 
 #. Type: text
 #. Description
@@ -37,7 +63,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Yn ysgrifennu'r cnewyllyn i gof flash..."
 
 #. Type: text
 #. Description
@@ -47,7 +73,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Yn creu delwedd ymgychwyn ar y disg..."
 
 #. Type: text
 #. Description
@@ -58,4 +84,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "Gwneud y system yn gychwynadwy"

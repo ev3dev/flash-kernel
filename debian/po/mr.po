@@ -3,6 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Debian Installer master translation file template
+# Don't forget to properly fill-in the header of PO files
+# Debian Installer translators, please read the D-I i18n documentation
+# in doc/i18n/i18n.txt
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@debian.org>, 2004.
+# Priti Patil <prithisd@gmail.com>, 2007.
+# Sampada Nakhare, 2007.
+# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
+# localuser <sampadanakhare@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: CDAC_DI\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -10,7 +34,7 @@
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "प्रणालीचा आरंभ होण्यासाठी फ्लॅश मेमरीची संरचना होत आहे"
 
 #. Type: text
 #. Description
@@ -19,7 +43,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "प्रणाली आरंभयोग्य करत आहे"
 
 #. Type: text
 #. Description
@@ -28,7 +52,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "प्रणाली तयार करत आहे"
 
 #. Type: text
 #. Description
@@ -37,7 +61,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "गाभा फ्लॅश मेमरीवर लिहीत आहे... "
 
 #. Type: text
 #. Description
@@ -47,7 +71,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "आरंभ प्रतिमा डिस्कवर बनवत आहे... "
 
 #. Type: text
 #. Description
@@ -58,4 +82,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "प्रणाली आरंभयोग्य करा"

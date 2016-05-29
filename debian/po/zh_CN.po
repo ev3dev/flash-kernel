@@ -3,6 +3,45 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Simplified Chinese translation for Debian Installer.
+#
+# Copyright (C) 2003-2008 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Translated by Yijun Yuan (2004), Carlos Z.F. Liu (2004,2005,2006),
+# Ming Hua (2005,2006,2007,2008), Xiyue Deng (2008), Kov Chai (2008),
+# Kenlen Lai (2008), WCM (2008), Ren Xiaolei (2008).
+#
+#
+# Translations from iso-codes:
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Free Software Foundation, Inc., 2002, 2003, 2007, 2008.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Translations taken from KDE:
+#   - Wang Jian <lark@linux.net.cn>, 2000.
+#   - Carlos Z.F. Liu <carlosliu@users.sourceforge.net>, 2004 - 2006.
+#   LI Daobing <lidaobing@gmail.com>, 2007, 2008, 2009, 2010.
+#   YunQiang Su <wzssyqa@gmail.com>, 2011.
+#
+#   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
+# YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -10,7 +49,7 @@
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "正在配置闪存 (flash memory) 以启动系统"
 
 #. Type: text
 #. Description
@@ -19,7 +58,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "正在使系统可启动"
 
 #. Type: text
 #. Description
@@ -28,7 +67,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "正在准备系统..."
 
 #. Type: text
 #. Description
@@ -37,7 +76,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "正在将内核写入闪存 (flash memory)..."
 
 #. Type: text
 #. Description
@@ -47,7 +86,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "正在在磁盘上创建启动镜像..."
 
 #. Type: text
 #. Description
@@ -58,4 +97,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "使系统可启动"
