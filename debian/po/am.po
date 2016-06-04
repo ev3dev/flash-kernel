@@ -3,6 +3,24 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Amharic translation for debian-installer
+# This file is distributed under the same license as the debian-installer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
+"PO-Revision-Date: 2008-05-01 11:22-0000\n"
+"Last-Translator: tegegne tefera <tefera@mekuria.com>\n"
+"Language-Team: Amharic\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: n>1\n"
+
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -10,7 +28,7 @@
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "ገዢ ስርዓትን ለማስነሳት ተሰኪ ማኅደርን በማስተካከል ላይ"
 
 #. Type: text
 #. Description
@@ -18,8 +36,9 @@ msgstr ""
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
+#, fuzzy
 msgid "Making the system bootable"
-msgstr ""
+msgstr "ገዢ ስልትን በማሰናዳት ላይ "
 
 #. Type: text
 #. Description
@@ -27,8 +46,9 @@ msgstr ""
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
+#, fuzzy
 msgid "Preparing the system..."
-msgstr ""
+msgstr "ገዢ ስልትን በማሰናዳት ላይ "
 
 #. Type: text
 #. Description
@@ -36,8 +56,9 @@ msgstr ""
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
+#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "ከርነልን በተሰኪ ማህደር ላይ በመጻፍ ላይ"
 
 #. Type: text
 #. Description
@@ -57,5 +78,6 @@ msgstr ""
 #. (writing the kernel and initrd to it)
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
+#, fuzzy
 msgid "Make the system bootable"
-msgstr ""
+msgstr "GLAN Tankን ቡት ተደራጊ ይሁን"

@@ -3,14 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Tibetan translation for Debian Installer.
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
+"PO-Revision-Date: 2012-04-14 22:12+0600\n"
+"Last-Translator: Tennom <tankola@ymail.com, tennomyathog@gmail.com>\n"
+"Language-Team: bo <translation-team-bo@lists.sourceforge.net>\n"
+"Language: bo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
 #. some flashable memory used by many embedded devices
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
+#, fuzzy
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "མ་ལག་གི་རྨང་གཞི་སྒྲིག་འགོད་བཞིན་པ"
 
 #. Type: text
 #. Description
@@ -18,8 +34,9 @@ msgstr ""
 #. configured so it will boot from disk
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
+#, fuzzy
 msgid "Making the system bootable"
-msgstr ""
+msgstr "མ་ལག་གི་རྨང་གཞི་བཤིག་བཞིན་པ"
 
 #. Type: text
 #. Description
@@ -27,8 +44,9 @@ msgstr ""
 #. on a flashable memory
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
+#, fuzzy
 msgid "Preparing the system..."
-msgstr ""
+msgstr "རྨང་གཞི་མ་ལག་བཤིག་བཞིན་པ་་་"
 
 #. Type: text
 #. Description
@@ -36,8 +54,9 @@ msgstr ""
 #. write the kernel to the flashable memory of the embedded device
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
+#, fuzzy
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "སྒྲིག་འཇུག་དགོས་པའི་ནང་སྙིང་འདེམས་བཞིན་པ་་་"
 
 #. Type: text
 #. Description

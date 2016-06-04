@@ -3,6 +3,28 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+#
+# Debian Installer master translation file template
+# Don't forget to properly fill-in the header of PO files
+#
+# Debian Installer translators, please read the D-I i18n documentation
+# in doc/i18n/i18n.txt
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-06-29 08:15+0000\n"
+"PO-Revision-Date: 2013-08-29 17:27+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
+"Language: Tajik\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -10,7 +32,7 @@
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Танзимкунии ҳофизаи флеш барои роҳандозии система"
 
 #. Type: text
 #. Description
@@ -19,7 +41,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "Таҳиякунии системаи боршаванда"
 
 #. Type: text
 #. Description
@@ -28,7 +50,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "Омодасозии система..."
 
 #. Type: text
 #. Description
@@ -37,7 +59,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Сабткунии ҳаста ба ҳофизаи флеш..."
 
 #. Type: text
 #. Description
@@ -47,7 +69,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Эҷодкунии тасвири роҳандозӣ дар диск..."
 
 #. Type: text
 #. Description
@@ -58,4 +80,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "Таҳия кардани системаи боршаванда"
