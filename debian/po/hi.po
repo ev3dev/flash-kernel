@@ -3,43 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_hi.po to Hindi
-# translation of debian-installer_packages_po_sublevel1_hi.po to
-# Debian Installer master translation file template
-# Don't forget to properly fill-in the header of PO files
-# Debian Installer translators, please read the D-I i18n documentation
-# in doc/i18n/i18n.txt
-#
-#
-#
-# Translations from iso-codes:
-#   Data taken from ICU-2.8; originally from:
-#   - Shehnaz Nagpurwala and Anwar Nagpurwala [first version]
-#   - IBM NLTC:  http://w3.torolab.ibm.com/gcoc/documents/india/hi-nlsgg.htm
-#   - Arundhati Bhowmick [IBM Cupertino]
-#
-#
-# Nishant Sharma <me@nishants.net>, 2005, 2006.
-# Kumar Appaiah <akumar@ee.iitm.ac.in>, 2008.
-# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008, 2009, 2010.
-# Kumar Appaiah <kumar.appaiah@gmail.com>, 2009.
-#   Alastair McKinstry <mckinstry@debian.org>, 2004.
-# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
-# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011, 2012.
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: 2X-Generator: KBabel 1.11.2\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -47,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "तंत्र को बूट करने के लिए फ्लैश मेमोरी को व्यवस्थित कर रहे हैं"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -56,7 +19,7 @@ msgstr "तंत्र को बूट करने के लिए फ्ल
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "सिस्टम को बूटेबल बनाया जा रहा है"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -65,7 +28,7 @@ msgstr "सिस्टम को बूटेबल बनाया जा र�
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "तंत्र को तैयार किया जा रहा है..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -74,7 +37,7 @@ msgstr "तंत्र को तैयार किया जा रहा ह
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "कर्नल को फ्लैश मेमोरी में लिखा जा रहा है..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -84,7 +47,7 @@ msgstr "कर्नल को फ्लैश मेमोरी में ल�
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "डिस्क पर बूट इमेज बनाया जा रहा है..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -95,4 +58,4 @@ msgstr "डिस्क पर बूट इमेज बनाया जा र
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "सिस्टम के बूटेबल बनाया जा रहा है"
+msgstr ""

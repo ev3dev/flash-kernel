@@ -3,34 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of ta.po to Tamil
-# Tamil messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-#
-# Translations from iso-codes:
-# drtvasudevan <agnihot3@gmail.com>, 2006.
-# Damodharan Rajalingam <rdamodharan@gmail.com>, 2006.
-# Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2010.
-# Dr,T,Vasudevan <agnihot3@gmail.com>, 2010.
-#   Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2011, 2012, 2015.
-#   Dwayne Bailey <dwayne@translate.org.za>, 2009.
-# I. Felix <ifelix25@gmail.com>, 2009, 2012.
-msgid ""
-msgstr ""
-"Project-Id-Version: ta\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Tamil <<gnome-tamil-translation@googlegroups.com>>\n"
-"Language: ta\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -38,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "கணிணியை துவக்குவதற்காக பிளாஷ் நினைவகம் வடிவமைக்கப்படுகிறது"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -47,7 +19,7 @@ msgstr "கணிணியை துவக்குவதற்காக பி�
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "கணிணி துவக்க ஏற்பாடாகிறது"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -56,7 +28,7 @@ msgstr "கணிணி துவக்க ஏற்பாடாகிறது"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "கணிணி ஏற்பாடாகிறது..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -65,7 +37,7 @@ msgstr "கணிணி ஏற்பாடாகிறது..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "கரு பிளாஷ் நினைவகத்திற்கு எழுதப்படுகிறது..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -75,7 +47,7 @@ msgstr "கரு பிளாஷ் நினைவகத்திற்கு 
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "பூட் பிம்பத்தை உருவாக்குகிறது..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -86,4 +58,4 @@ msgstr "பூட் பிம்பத்தை உருவாக்குக�
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "கணினியை துவக்கக்கூடியதாக ஆக்கு"
+msgstr ""

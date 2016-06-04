@@ -3,39 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of ru.po to Russian
-# Russian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-#
-# Translations from iso-codes:
-# Russian L10N Team <debian-l10n-russian@lists.debian.org>, 2004.
-# Yuri Kozlov <yuray@komyakino.ru>, 2004, 2005.
-# Dmitry Beloglazov <dm-guest@alioth.debian.org>, 2005.
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2011.
-# Yuri Kozlov <yuray@komyakino.ru>, 2005, 2006, 2007, 2008.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010, 2011.
-# Alastair McKinstry <mckinstry@debian.org>, 2004.
-# Mikhail Zabaluev <mhz@altlinux.org>, 2006.
-# Nikolai Prokoschenko <nikolai@prokoschenko.de>, 2004.
-# Pavel Maryanov <acid@jack.kiev.ua>, 2009,2010.
-# Yuri Kozlov <yuray@komyakino.ru>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
-msgid ""
-msgstr ""
-"Project-Id-Version: ru\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
-"Language: ru\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -43,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Настройка флеш памяти для загрузки системы"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -52,7 +19,7 @@ msgstr "Настройка флеш памяти для загрузки сис�
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Настройка системы на загрузку"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -61,7 +28,7 @@ msgstr "Настройка системы на загрузку"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Подготовка системы..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -70,7 +37,7 @@ msgstr "Подготовка системы..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Запись ядра во флеш память..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -80,7 +47,7 @@ msgstr "Запись ядра во флеш память..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Генерация загрузочного образа на диске..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -91,4 +58,4 @@ msgstr "Генерация загрузочного образа на диске
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Сделать систему загружаемой"
+msgstr ""

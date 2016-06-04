@@ -3,30 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Czech messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-# Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Free Software Foundation, 2002,2004 
-#   Miroslav Kure <kurem@debian.cz>, 2004--2010.
-#   Petr Cech <cech@debian.org> (Petr Čech), 2000.
-#   Stanislav Brabec <utx@penguin.cz>, 2001.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team:  Czech <provoz@debian.cz>\n"
-"Language: cs\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -34,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Nastavuje se flash paměť pro zavedení systému"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -43,7 +19,7 @@ msgstr "Nastavuje se flash paměť pro zavedení systému"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Nastavuje se systém jako zaveditelný"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -52,7 +28,7 @@ msgstr "Nastavuje se systém jako zaveditelný"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Připravuje se systém..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -61,7 +37,7 @@ msgstr "Připravuje se systém..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Zapisuje se jádro do flash paměti..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -71,7 +47,7 @@ msgstr "Zapisuje se jádro do flash paměti..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Na disku se vytváří zaváděcí obraz..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -82,4 +58,4 @@ msgstr "Na disku se vytváří zaváděcí obraz..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Nastavit systém jako zaveditelný"
+msgstr ""

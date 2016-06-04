@@ -3,26 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of km.po to Khmer
-# Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2007, 2008, 2010.
-#   eng vannak <evannak@khmeros.info>, 2006.
-#   auk piseth <piseth_dv@khmeros.info>, 2006.
-#   Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2010, 2012.
-# Translations from iso-codes:
-msgid ""
-msgstr ""
-"Project-Id-Version: km\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Khmer <support@khmeros.info>\n"
-"Language: km\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -30,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "កំពុង​កំណត់​រចនាសម្ព័ន្ធ​សតិ​បញ្ចេញ​ពន្លឺ​ដើម្បី​ចាប់ផ្ដើម​ប្រព័ន្ធ"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -39,7 +19,7 @@ msgstr "កំពុង​កំណត់​រចនាសម្ព័ន្ធ
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "ធ្វើ​ឲ្យ​ប្រព័ន្ធ​អាច​ចាប់ផ្ដើមបាន"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -48,7 +28,7 @@ msgstr "ធ្វើ​ឲ្យ​ប្រព័ន្ធ​អាច​ចា
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "កំពុង​រៀបចំ​ប្រព័ន្ធ..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -57,7 +37,7 @@ msgstr "កំពុង​រៀបចំ​ប្រព័ន្ធ..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "កំពុង​សរសេរ​ខឺណែល​ទៅ​ឧបករណ៍​ផ្ទុក​ចល័ត..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -67,7 +47,7 @@ msgstr "កំពុង​សរសេរ​ខឺណែល​ទៅ​ឧបក
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "កំពុង​បង្កើត​រូបភាព​ចាប់ផ្ដើម​នៅ​លើ​ថាស..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -78,4 +58,4 @@ msgstr "កំពុង​បង្កើត​រូបភាព​ចាប់
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "ធ្វើ​ឲ្យ​ប្រព័ន្ធ​អាច​ចាប់ផ្ដើម​បាន"
+msgstr ""

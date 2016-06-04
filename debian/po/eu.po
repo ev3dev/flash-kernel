@@ -3,38 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of eu.po to Euskara
-# Basque messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-# Translations from iso-codes:
-# Copyright (C)
-# Translations from KDE:
-# Piarres Beobide <pi@beobide.net>, 2004-2009, 2011.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2010.
-# Mikel Olasagasti <hey_neken@mundurat.net>, 2004.
-# Piarres Beobide Egaña <pi@beobide.net>, 2004,2006,2007, 2008, 2009.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2010.
-# Free Software Foundation, Inc., 2002.
-# Alastair McKinstry <mckinstry@computer.org>, 2002.
-# Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
-# Piarres Beobide <pi@beobide.net>, 2008.
-# Xabier Bilbao <xabidu@gmail.com>, 2008.
-msgid ""
-msgstr ""
-"Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
-"Language: eu\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -42,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Flash memoria konfiguratzen sistema abiarazteko"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -51,7 +19,7 @@ msgstr "Flash memoria konfiguratzen sistema abiarazteko"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Sistema abiarazgarri egiten"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -60,7 +28,7 @@ msgstr "Sistema abiarazgarri egiten"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Sistema prestatzen..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -69,7 +37,7 @@ msgstr "Sistema prestatzen..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Nukleoa flash memorian idazten..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -79,7 +47,7 @@ msgstr "Nukleoa flash memorian idazten..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Abioko irudia diskoan sortzen..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -90,4 +58,4 @@ msgstr "Abioko irudia diskoan sortzen..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Sistema abiarazgarri egin"
+msgstr ""

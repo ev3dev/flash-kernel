@@ -3,35 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Translation of Debian Installer templates to Brazilian Portuguese.
-# This file is distributed under the same license as debian-installer.
-#
-# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
-# Adriano Rafael Gomes <adrianorg@arg.eti.br>, 2010-2016.
-#
-# Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
-#   Free Software Foundation, Inc., 2000
-#   Juan Carlos Castro y Castro <jcastro@vialink.com.br>, 2000-2005.
-#   Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006-2009.
-#   Lisiane Sztoltz <lisiane@conectiva.com.br>
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
-"org>\n"
-"Language: pt_BR\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -39,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Configurando a memória flash para inicializar o sistema"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -48,7 +19,7 @@ msgstr "Configurando a memória flash para inicializar o sistema"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Tornando o sistema inicializável"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -57,7 +28,7 @@ msgstr "Tornando o sistema inicializável"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Preparando o sistema..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -66,7 +37,7 @@ msgstr "Preparando o sistema..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Escrevendo o kernel na memória flash..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -76,7 +47,7 @@ msgstr "Escrevendo o kernel na memória flash..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Gerando imagem de inicialização no disco..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -87,4 +58,4 @@ msgstr "Gerando imagem de inicialização no disco..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Tornar o sistema inicializável"
+msgstr ""

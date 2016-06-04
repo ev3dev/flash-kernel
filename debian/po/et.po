@@ -3,43 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Estonian translation of Debian-installer
-#
-# This translation is released under the same licence as the debian-installer.
-#
-# Siim Põder <siim@p6drad-teel.net>, 2007.
-#
-# Thanks to following Ubuntu Translators for review and fixes:
-#     Laur Mõtus
-#     Heiki Nooremäe
-#     tabbernuk
-#
-#
-# Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
-#   Free Software Foundation, Inc., 2000, 2004, 2006
-#   Hasso Tepper <hasso@estpak.ee>, 2006.
-#   Margus Väli <mvali@hot.ee>, 2000.
-#   Siim Põder <windo@p6drad-teel.net>, 2006.
-#   Tõivo Leedjärv <leedjarv@interest.ee>, 2000, 2001, 2008.
-#   Mattias Põldaru <mahfiaz@gmail.com>, 2009-2012, 2014.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Estonian <>\n"
-"Language: et\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -47,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "Flash mälu seadistamine süsteemi alglaadimiseks"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -56,7 +19,7 @@ msgstr "Flash mälu seadistamine süsteemi alglaadimiseks"
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "Süsteemi tegemine alglaaduvaks"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -65,7 +28,7 @@ msgstr "Süsteemi tegemine alglaaduvaks"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "Süsteemi ettevalmistamine..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -74,7 +37,7 @@ msgstr "Süsteemi ettevalmistamine..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "Kerneli kirjutamine flash-mällu..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -84,7 +47,7 @@ msgstr "Kerneli kirjutamine flash-mällu..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "Kettale alglaadimistõmmise loomine..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -95,4 +58,4 @@ msgstr "Kettale alglaadimistõmmise loomine..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "Süsteemi tegemine alglaaduvaks"
+msgstr ""

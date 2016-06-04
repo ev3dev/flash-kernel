@@ -3,38 +3,6 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Japanese messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-#
-#
-# Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
-#   Free Software Foundation, Inc., 2000, 2001, 2004, 2005, 2006
-#   IIDA Yosiaki <iida@gnu.org>, 2004, 2005, 2006.
-#   Kenshi Muto <kmuto@debian.org>, 2006-2007
-#   Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2001.
-#   Takuro Ashie <ashie@homa.ne.jp>, 2001.
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Translations from KDE: 
-#   - Taiki Komoda <kom@kde.gr.jp>
-#   Yasuaki Taniguchi <yasuakit@gmail.com>, 2010, 2011.
-#   Yukihiro Nakai <nakai@gnome.gr.jp>, 2000.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Debian L10n Japanese <debian-japanese@lists.debian.org>\n"
-"Language: ja\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 #. Type: text
 #. Description
 #. This item is a progress bar heading when the system configures
@@ -42,7 +10,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr "システムをブートするためにフラッシュメモリを設定しています"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -51,7 +19,7 @@ msgstr "システムをブートするためにフラッシュメモリを設定
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr "システムを起動可能にする"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -60,7 +28,7 @@ msgstr "システムを起動可能にする"
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr "システムを準備しています..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -69,7 +37,7 @@ msgstr "システムを準備しています..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr "カーネルをフラッシュメモリに書き込んでいます..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -79,7 +47,7 @@ msgstr "カーネルをフラッシュメモリに書き込んでいます..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr "ディスクにブートイメージを生成しています..."
+msgstr ""
 
 #. Type: text
 #. Description
@@ -90,4 +58,4 @@ msgstr "ディスクにブートイメージを生成しています..."
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr "システムを起動可能にする"
+msgstr ""
