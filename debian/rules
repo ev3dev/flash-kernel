@@ -2,12 +2,6 @@
 
 AUTOGEN_DEB_FILES := flash-kernel.templates flash-kernel-installer.postinst default/flash-kernel
 
-ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
-DEFAULT_CMDLINE := quiet splash
-else
-DEFAULT_CMDLINE := quiet
-endif
-
 override_dh_auto_install:
 	for i in $(AUTOGEN_DEB_FILES); do \
 		sed "s/@DEFAULT_CMDLINE@/$(DEFAULT_CMDLINE)/" \
