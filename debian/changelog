@@ -1,3 +1,10 @@
+flash-kernel (3.35ev3dev9) stable; urgency=medium
+
+  * ev3: add "console=tty1" to bootscript
+  * Don't set any default options for bootscripts
+
+ -- David Lechner <david@lechnology.com>  Tue, 14 Jun 2016 16:03:13 -0500
+
 flash-kernel (3.35ev3dev8) stable; urgency=medium
 
   * Add support for Raspberry Pi 3.
