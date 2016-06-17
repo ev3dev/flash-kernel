@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev10) stable; urgency=medium
+
+  * EV3: no console on ttyS1
+
+ -- David Lechner <david@lechnology.com>  Fri, 17 Jun 2016 13:33:08 -0500
+
 flash-kernel (3.35ev3dev9) stable; urgency=medium
 
   * ev3: add "console=tty1" to bootscript
