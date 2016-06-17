@@ -1,3 +1,10 @@
+flash-kernel (3.67) UNRELEASED; urgency=medium
+
+  [ Vagrant Cascadian ]
+  * Add a machine db entry and boot script for Odroid-U3.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Fri, 17 Jun 2016 12:54:38 -0700
+
 flash-kernel (3.66) unstable; urgency=medium
 
   [ Karsten Merker ]
