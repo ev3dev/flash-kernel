@@ -118,9 +118,6 @@ The supported fields are:
   is a kernel version, if the kernel to be installed is at least this version
   then the DTB specified named by DTB-Id will be appended to the kernel image.
 
-* RPI-Append: (optional): Set to "yes" for Raspberry Pi kernels to enable
-  device-tree support.
-
 * U-Boot-Kernel-Address, U-Boot-Kernel-Entry-Point, U-Boot-Initrd-Address:
   (optional) address where to load in (physical) RAM the kernel, entry point
   and initrd, respectively; this also indicates that U-Boot images should be
