@@ -1,3 +1,10 @@
+flash-kernel (3.35ev3dev11) stable; urgency=medium
+
+  * Revert "Add RPI-Append for Raspberry Pi kernels."
+  * Remove remaining references to rpi-mkimage
+
+ -- David Lechner <david@lechnology.com>  Sun, 26 Jun 2016 15:36:46 -0500
+
 flash-kernel (3.35ev3dev10) stable; urgency=medium
 
   * EV3: no console on ttyS1
