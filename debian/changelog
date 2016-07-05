@@ -1,3 +1,19 @@
+flash-kernel (3.68) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems that are
+    (at least partially) supported in kernel 4.7 and u-boot v2016.07:
+    - Colorfly E708 Q1 tablet
+    - Difrnce DIT4350
+    - Dserve DSRV9703C
+    - Polaroid MID2809PXE04 tablet
+    - Xunlong Orange Pi One
+    - Xunlong Orange Pi PC
+    - Xunlong Orange Pi 2
+  * Fix the DTB-ID for generic Allwinner-A13-based Q8-form-factor tablets.
+
+ -- Karsten Merker <merker@debian.org>  Tue, 05 Jul 2016 15:07:14 +0200
+
 flash-kernel (3.67) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
