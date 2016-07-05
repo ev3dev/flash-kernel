@@ -239,6 +239,13 @@ DTB-Id: sun4i-a10-chuwi-v7-cw0825.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Colorfly E708 Q1 tablet
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun6i-a31s-colorfly-e708-q1.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: CSQ CS908 top set box
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -311,6 +318,20 @@ U-Boot-Kernel-Address: 0x00008000
 U-Boot-Initrd-Address: 0x00800000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
+
+Machine: Difrnce DIT4350
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-a13-difrnce-dit4350.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Dserve DSRV9703C
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun4i-a10-dserve-dsrv9703c.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
 
 Machine: Empire Electronix D709 tablet
 Kernel-Flavors: armmp
@@ -1040,6 +1061,13 @@ DTB-Id: sun4i-a10-pov-protab2-ips9.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Polaroid MID2809PXE04 tablet
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a23-polaroid-mid2809pxe04.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Q8 A13 Tablet
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
@@ -1306,10 +1334,31 @@ DTB-Id: sun5i-a10s-wobo-i5.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Xunlong Orange Pi One
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h3-orangepi-one.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Xunlong Orange Pi PC
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h3-orangepi-pc.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: Xunlong Orange Pi Plus
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-h3-orangepi-plus.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Xunlong Orange Pi 2
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h3-orangepi-2.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
