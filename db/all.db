@@ -1071,7 +1071,7 @@ Required-Packages: u-boot-tools
 Machine: Q8 A13 Tablet
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
-DTB-Id: sun5i-a13-q8-tablet
+DTB-Id: sun5i-a13-q8-tablet.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
