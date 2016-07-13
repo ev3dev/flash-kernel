@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: be\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-06-29 08:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2015-12-21 15:13+0300\n"
+"Last-Translator: Viktar Siarheichyk <vics@fsfe.org>\n"
 "Language-Team: Debian l10n team for Belarusian <debian-l10n-belarusian@lists."
 "debian.org>\n"
 "Language: be\n"
@@ -41,7 +41,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:1001
 msgid "Configuring flash memory to boot the system"
-msgstr ""
+msgstr "Наладка флэш-памяці для загрузкі сістэмы"
 
 #. Type: text
 #. Description
@@ -50,7 +50,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:2001
 msgid "Making the system bootable"
-msgstr ""
+msgstr "Падрыхтоўка загрузкі сістэмы"
 
 #. Type: text
 #. Description
@@ -59,7 +59,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:3001
 msgid "Preparing the system..."
-msgstr ""
+msgstr "Падрыхтоўка сістэмы..."
 
 #. Type: text
 #. Description
@@ -68,7 +68,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:4001
 msgid "Writing the kernel to flash memory..."
-msgstr ""
+msgstr "Запіс ядра ў флэш-памяць..."
 
 #. Type: text
 #. Description
@@ -78,7 +78,7 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:5001
 msgid "Generating boot image on disk..."
-msgstr ""
+msgstr "Стварэнне вобразу загрузкі на дыску.."
 
 #. Type: text
 #. Description
@@ -89,4 +89,4 @@ msgstr ""
 #. :sl4:
 #: ../flash-kernel-installer.templates:6001
 msgid "Make the system bootable"
-msgstr ""
+msgstr "Зрабіць сістэму загрузачнай"
