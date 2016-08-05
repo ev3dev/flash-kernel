@@ -12,6 +12,9 @@ flash-kernel (3.68) UNRELEASED; urgency=medium
     - Xunlong Orange Pi 2
   * Fix the DTB-ID for generic Allwinner-A13-based Q8-form-factor tablets.
 
+  [ Martin Michlmayr ]
+  * Handle DTBs in vendor subdirectories (as found on arm64 kernels).
+
  -- Karsten Merker <merker@debian.org>  Tue, 05 Jul 2016 15:07:14 +0200
 
 flash-kernel (3.67) unstable; urgency=medium
