@@ -17,6 +17,7 @@ flash-kernel (3.68) UNRELEASED; urgency=medium
   * Add uboot-generic boot script for arm64: based on the armhf version
     but with booti.
   * Produce an error when the DTB cannot be found. (Closes: #833097)
+  * Add a machine db entry for NVIDIA Jetson TX1 Developer Kit.
 
  -- Karsten Merker <merker@debian.org>  Tue, 05 Jul 2016 15:07:14 +0200
 

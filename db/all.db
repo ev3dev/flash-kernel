@@ -934,6 +934,12 @@ DTB-Id: sun5i-r8-chip.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: NVIDIA Jetson TX1 Developer Kit
+DTB-Id: tegra210-p2371-2180.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: NVIDIA Tegra124 Jetson TK1
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: tegra124-jetson-tk1.dtb
