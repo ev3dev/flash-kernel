@@ -14,6 +14,8 @@ flash-kernel (3.68) UNRELEASED; urgency=medium
 
   [ Martin Michlmayr ]
   * Handle DTBs in vendor subdirectories (as found on arm64 kernels).
+  * Add uboot-generic boot script for arm64: based on the armhf version
+    but with booti.
 
  -- Karsten Merker <merker@debian.org>  Tue, 05 Jul 2016 15:07:14 +0200
 
