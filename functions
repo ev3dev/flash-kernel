@@ -620,6 +620,8 @@ handle_dtb() {
 			# This can be used along with the unversioned
 			# vmlinuz+initrd.gz e.g. as a fallback option
 			ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb"
+		else
+			error "Couldn't find $dtb"
 		fi
 	fi
 }
