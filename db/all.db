@@ -1137,6 +1137,12 @@ U-Boot-Kernel-Address: 0x00008000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Qualcomm Technologies, Inc. APQ 8016 SBC
+DTB-Id: apq8016-sbc.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: R7 A10s hdmi tv-stick
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr

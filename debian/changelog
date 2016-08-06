@@ -18,6 +18,7 @@ flash-kernel (3.68) UNRELEASED; urgency=medium
     but with booti.
   * Produce an error when the DTB cannot be found. (Closes: #833097)
   * Add a machine db entry for NVIDIA Jetson TX1 Developer Kit.
+  * Add a machine db entry for DragonBoard 410c.
 
  -- Karsten Merker <merker@debian.org>  Tue, 05 Jul 2016 15:07:14 +0200
 
