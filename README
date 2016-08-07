@@ -85,7 +85,7 @@ You need the devscripts package for the checkbashisms test.
 Database format
 - - - - - - - -
 
-To accomodate the differences between machines, db/*.db files contain
+To accommodate the differences between machines, db/*.db files contain
 information on supported machines.  The files look somewhat like
 RFC 2822 data or Debian control data, i.e. header: value pairs,
 with definitions separated by an empty line.  Comments starting with a
@@ -165,12 +165,12 @@ The supported fields are:
   add these packages aborts the installation
 
 * Optional-Packages: (optional) list of packages which should be
-  added during installer pharse for flash-kernel to offer full
+  added during installer phase for flash-kernel to offer full
   functionality; failure to add these packages just triggers a warning
 
 * Bootloader-Sets-Incorrect-Root: (optional) when "yes" indicates that
   the bootloader passes a root= value to the kernel and that this
-  should be overriden in the initrd; when "no", flash-kernel only sets
+  should be overridden in the initrd; when "no", flash-kernel only sets
   a default value for the root device, which allows end-users to pass
   root= to the kernel.
 
