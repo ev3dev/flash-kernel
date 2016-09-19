@@ -67,7 +67,7 @@ if [ -n "$rootdev" ]; then
 	fi
 fi
 
-# Translate LABEL and UUID entries into a proper device name.
+# Translate LABEL, UUID, and PARTUUID entries into a proper device name.
 if echo "$rootdev" | grep -q "="; then
 	a=$(echo "$rootdev" | cut -d "=" -f 1)
 	b=$(echo "$rootdev" | cut -d "=" -f 2- | sed -e 's/^"\(.*\)"$/\1/')
@@ -82,6 +82,12 @@ if echo "$rootdev" | grep -q "="; then
 		;;
 		UUID)
 			rootdev=/dev/disk/by-uuid/$b
+			if [ ! -e $rootdev ]; then
+				echo "UUID $b doesn't exist in /dev/disk/by-uuid" >&2
+			fi
+		;;
+		PARTUUID)
+			rootdev=/dev/disk/by-partuuid/$b
 			if [ ! -e $rootdev ]; then
 				echo "UUID $b doesn't exist in /dev/disk/by-uuid" >&2
 			fi
