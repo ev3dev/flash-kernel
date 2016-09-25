@@ -35,6 +35,13 @@ DTB-Id: sun8i-a23-gt90h-v4.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Allwinner R16 EVB (Parrot)
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-r16-parrot.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: APM X-Gene Mustang board
 U-Boot-Kernel-Address: 0x80000
 U-Boot-Initrd-Address: 0x0
@@ -507,6 +514,13 @@ Machine: iNet-1
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun4i-a10-inet1.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: INet-86DZ Rev 01
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a23-inet86dz.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -1003,6 +1017,13 @@ DTB-Id: sun7i-a20-olinuxino-micro.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Olimex A33-OLinuXino
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a33-olinuxino.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: OMAP4 Panda board
 Method: generic
 U-Boot-Kernel-Address: 0x80008000
@@ -1064,6 +1085,13 @@ Machine: Point of View Protab2-IPS9
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun4i-a10-pov-protab2-ips9.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Polaroid MID2407PXE03 tablet
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-a23-polaroid-mid2407pxe03.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
