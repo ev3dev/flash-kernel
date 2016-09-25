@@ -1,3 +1,16 @@
+flash-kernel (3.70) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems that are
+    (at least partially) supported in kernel 4.8 and u-boot v2016.09:
+    - Allwinner R16 EVB (Parrot)
+    - INet-86DZ Rev 01
+    - Polaroid MID2407PXE03 tablet
+  * Add a machine db entry for the Olimex A33-OLinuXino (supported
+    in u-boot v2016.09 and in linux-next-20160923).
+
+ -- Karsten Merker <merker@debian.org>  Sun, 25 Sep 2016 16:09:00 +0200
+
 flash-kernel (3.69) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
