@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev12) stable; urgency=medium
+
+  * Add Raspberry Pi 2 Model B Rev 1.2
+
+ -- David Lechner <david@lechnology.com>  Mon, 10 Oct 2016 20:48:57 -0500
+
 flash-kernel (3.35ev3dev11) stable; urgency=medium
 
   * Revert "Add RPI-Append for Raspberry Pi kernels."
