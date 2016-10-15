@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev13) stable; urgency=medium
+
+  * Don't include cmdline in beaglebone uEnv.txt
+
+ -- David Lechner <david@lechnology.com>  Sat, 15 Oct 2016 17:56:34 -0500
+
 flash-kernel (3.35ev3dev12) stable; urgency=medium
 
   * Add Raspberry Pi 2 Model B Rev 1.2
