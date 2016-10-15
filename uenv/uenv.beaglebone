@@ -1,6 +1,5 @@
 #Docs: http://elinux.org/Beagleboard:U-boot_partitioning_layout_2.0
 
 uname_r=@@KERNEL_VERSION@@
-cmdline=@@LINUX_KERNEL_CMDLINE@@
 
 @@UBOOT_ENV_EXTRA@@
