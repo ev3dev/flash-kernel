@@ -1,3 +1,9 @@
+flash-kernel (3.71) UNRELEASED; urgency=medium
+
+  * Add machine db entry for USB armory board.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Wed, 02 Nov 2016 14:00:56 -0700
+
 flash-kernel (3.70) unstable; urgency=medium
 
   [ Karsten Merker ]

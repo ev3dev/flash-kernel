@@ -545,6 +545,13 @@ DTB-Id: sun4i-a10-inet9f-rev03.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Inverse Path USB armory
+Kernel-Flavors: armmp
+DTB-Id: imx53-usbarmory.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Iomega Iconnect
 Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-iconnect.dtb
