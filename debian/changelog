@@ -1,6 +1,9 @@
 flash-kernel (3.71) UNRELEASED; urgency=medium
 
   * Add machine db entry for USB armory board.
+  * Update Cubieboard4 machine db entry to generate a boot script(in
+    addition to legacy uImage/uInitrd), as Cubieboard4 is now supported in
+    mainline u-boot.
 
  -- Vagrant Cascadian <vagrant@debian.org>  Wed, 02 Nov 2016 14:00:56 -0700
 

@@ -276,6 +276,7 @@ Required-Packages: u-boot-tools
 
 Machine: Cubietech Cubieboard4
 Kernel-Flavors: armmp armmp-lpae
+U-Boot-Script-Name: bootscr.uboot-generic
 DTB-Id: sun9i-a80-cubieboard4.dtb
 DTB-Append: yes
 Required-Packages: u-boot-tools
