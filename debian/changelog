@@ -1,11 +1,12 @@
-flash-kernel (3.71) UNRELEASED; urgency=medium
+flash-kernel (3.71) unstable; urgency=medium
 
+  [ Vagrant Cascadian ]
   * Add machine db entry for USB armory board.
   * Update Cubieboard4 machine db entry to generate a boot script(in
     addition to legacy uImage/uInitrd), as Cubieboard4 is now supported in
     mainline u-boot.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Wed, 02 Nov 2016 14:00:56 -0700
+ -- Christian Perrier <bubulle@debian.org>  Sun, 13 Nov 2016 07:46:00 +0100
 
 flash-kernel (3.70) unstable; urgency=medium
 
