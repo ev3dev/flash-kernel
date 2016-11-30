@@ -1,3 +1,18 @@
+flash-kernel (3.72) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems that are
+    (at least partially) supported in kernel 4.9 and u-boot v2016.11:
+    - Empire Electronix M712 tablet
+    - FriendlyARM NanoPi NEO
+    - INet-D978 Rev 02
+    - iNet Q972 tablet
+    - Xunlong Orange Pi Lite
+    - Xunlong Orange Pi PC Plus
+    - Xunlong Orange Pi Plus 2E
+
+ -- Karsten Merker <merker@debian.org>  Wed, 30 Nov 2016 21:14:23 +0100
+
 flash-kernel (3.71) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
