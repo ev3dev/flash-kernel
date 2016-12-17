@@ -236,17 +236,19 @@ get_dtb_name() {
 			error "dtb-probe $dtb_script failed"
 		fi
 		;;
-	*)
+	/*)
 		dtb_name="$field"
 		;;
-	esac
-	if [ -n "$dtb_name" ] ; then
+	*)
 		# DTBs on arm64 are stored in subdirs for each vendor; strip
 		# the dir away (in case someone specified it, although it's
 		# not needed).
 		# The DTB will be stored in /boot/dtbs/$kvers/ without
 		# additional subdirs.
-		dtb_name=$(basename $dtb_name)
+		dtb_name=$(basename "$field")
+		;;
+	esac
+	if [ -n "$dtb_name" ] ; then
 		echo "DTB: $dtb_name" >&2
 	fi
 }

@@ -1,3 +1,10 @@
+flash-kernel (3.73) UNRELEASED; urgency=medium
+
+  [ Martin Michlmayr ]
+  * Restore support for DTBs with absolute paths.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Sat, 17 Dec 2016 13:36:21 -0800
+
 flash-kernel (3.72) unstable; urgency=medium
 
   * Team upload.
