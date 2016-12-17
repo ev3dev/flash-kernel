@@ -581,6 +581,7 @@ handle_dtb() {
 	fi
 
 	local dtb=$(find_dtb_file)
+	local dtb_name=$(basename $dtb_name)
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
 		rm -f "/boot/dtbs/$kvers/$dtb_name"
 
