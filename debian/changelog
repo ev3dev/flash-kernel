@@ -3,6 +3,9 @@ flash-kernel (3.73) UNRELEASED; urgency=medium
   [ Martin Michlmayr ]
   * Restore support for DTBs with absolute paths.
 
+  [ Uwe Kleine-König ]
+  * Add machine db entry for Netgear ReadyNAS 104 (Closes: #806926)
+
  -- Martin Michlmayr <tbm@cyrius.com>  Sat, 17 Dec 2016 13:36:21 -0800
 
 flash-kernel (3.72) unstable; urgency=medium

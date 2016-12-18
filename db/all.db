@@ -977,6 +977,16 @@ DTB-Id: sun6i-a31s-primo81.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: NETGEAR ReadyNAS 104
+DTB-Id: armada-370-netgear-rn104.dtb
+DTB-Append: yes
+Mtd-Kernel: uImage
+Mtd-Initrd: minirootfs
+U-Boot-Kernel-Address: 0x04000000
+U-Boot-Initrd-Address: 0x05000000
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: yes
+
 Machine: NextThing C.H.I.P.
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
