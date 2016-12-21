@@ -786,6 +786,12 @@ Boot-Initrd-Path: /boot/uInitrd
 Boot-DTB-Path: /boot/dtb
 Required-Packages: u-boot-tools
 
+Machine: Globalscale Marvell ESPRESSOBin Board
+DTB-Id: armada-3720-espressobin.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Globalscale Technologies Dreamplug
 Kernel-Flavors: kirkwood marvell
 DTB-Id: kirkwood-dreamplug.dtb
