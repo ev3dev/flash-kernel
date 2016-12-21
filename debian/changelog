@@ -1,8 +1,14 @@
+flash-kernel (3.74) UNRELEASED; urgency=medium
+
+  [ Martin Michlmayr ]
+  * Add machine db entry for Marvell ESPRESSOBin.
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Tue, 20 Dec 2016 18:06:13 -0800
+
 flash-kernel (3.73) unstable; urgency=medium
 
   [ Martin Michlmayr ]
   * Restore support for DTBs with absolute paths.
-  * Add machine db entry for Marvell ESPRESSOBin.
 
   [ Uwe Kleine-König ]
   * Add machine db entry for Netgear ReadyNAS 104 (Closes: #806926)
