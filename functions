@@ -942,7 +942,7 @@ case "$method" in
 			boot_script="$tmpdir/boot.scr"
 			backup_and_install "$boot_script" "$boot_script_path"
 		fi
-		if [ -n "$boot_dtb_path" ]; then
+		if [ -n "$boot_dtb_path" ] && [ "$dtb_append" != "no" ]; then
 			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
 			boot_dtb=$(find_dtb_file)
 			if [ ! -f "$boot_dtb" ]; then

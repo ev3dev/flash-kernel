@@ -2,6 +2,8 @@ flash-kernel (3.74) UNRELEASED; urgency=medium
 
   [ Martin Michlmayr ]
   * Add machine db entry for Marvell ESPRESSOBin.
+  * Only create DTB boot file on kernels that require DTB (Closes:
+    #789886)
 
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 20 Dec 2016 18:06:13 -0800
 
