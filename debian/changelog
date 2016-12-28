@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev15) stable; urgency=medium
+
+  * Fix LEGO EV3 + lms2012-comapt entry
+
+ -- David Lechner <david@lechnology.com>  Wed, 28 Dec 2016 17:13:19 -0600
+
 flash-kernel (3.35ev3dev14) stable; urgency=medium
 
   * Add LEGO EV3 + lms2012-comapt entry
