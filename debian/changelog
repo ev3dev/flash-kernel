@@ -1,3 +1,9 @@
+flash-kernel (3.35ev3dev14) stable; urgency=medium
+
+  * Add LEGO EV3 + lms2012-comapt entry
+
+ -- David Lechner <david@lechnology.com>  Wed, 28 Dec 2016 13:12:20 -0600
+
 flash-kernel (3.35ev3dev13) stable; urgency=medium
 
   * Don't include cmdline in beaglebone uEnv.txt
