@@ -312,6 +312,18 @@ Boot-Script-Path: boot.scr
 Required-Packages: u-boot-tools
 Boot-Device: /dev/mmcblk0p1
 
+Machine: LEGO MINDSTORMS EV3 + lms2012-compat
+Kernel-Flavors: ev3+lms2012
+DTB-Id: da850-lego-ev3-lms2012.dts
+DTB-Append: yes
+U-Boot-Kernel-Address: 0xC0008000
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Name: bootscr.ev3
+Boot-Kernel-Path: uImage
+Boot-Script-Path: boot.scr
+Required-Packages: u-boot-tools
+Boot-Device: /dev/mmcblk0p1
+
 Machine: LinkSprite pcDuino
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
