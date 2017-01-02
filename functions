@@ -249,7 +249,7 @@ get_dtb_name() {
 		;;
 	esac
 	if [ -n "$dtb_name" ] ; then
-		echo "DTB: $dtb_name" >&2
+		echo "Using DTB: $dtb_name" >&2
 	fi
 }
 
@@ -561,18 +561,25 @@ android_flash() {
 }
 
 find_dtb_file() {
+	local dtb
 	case "$dtb_name" in
 	/*)
-		echo "$dtb_name"
+		dtb="$dtb_name"
+		if [ ! -f "$dtb" ]; then
+			error "Couldn't find $dtb"
+		fi
 		;;
 	*)
-		local dtb=$(find /etc/flash-kernel/dtbs -name $dtb_name 2>/dev/null | head -n 1)
+		dtb=$(find /etc/flash-kernel/dtbs -name $dtb_name 2>/dev/null | head -n 1)
 		if [ -z "$dtb" ]; then
 			dtb=$(find /usr/lib/linux-image-$kvers -name $dtb_name 2>/dev/null | head -n 1)
 		fi
-		echo $dtb
+		if [ ! -f "$dtb" ]; then
+			error "Couldn't find DTB $dtb_name in /usr/lib/linux-image-$kvers or /etc/flash-kernel/dtbs"
+		fi
 		;;
 	esac
+	echo $dtb
 }
 
 handle_dtb() {
@@ -580,9 +587,10 @@ handle_dtb() {
 		return
 	fi
 
-	local dtb=$(find_dtb_file)
-	local dtb_name=$(basename $dtb_name)
+	local dtb
+	local dtb_name
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
+		dtb_name=$(basename $dtb_name)
 		rm -f "/boot/dtbs/$kvers/$dtb_name"
 
 		# This was the old name we installed under. We
@@ -606,26 +614,24 @@ handle_dtb() {
 			rmdir --ignore-fail-on-non-empty /boot/dtbs
 		fi
 	else
-		if [ -e "$dtb" ]; then
-			echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_name" >&2
-			mkdir -p /boot/dtbs/$kvers/
-			cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"
-			backup_and_install \
-				"/boot/dtbs/$kvers/$dtb_name.new" \
-				"/boot/dtbs/$kvers/$dtb_name"
+		dtb=$(find_dtb_file)
+		dtb_name=$(basename $dtb_name)
+		echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_name" >&2
+		mkdir -p /boot/dtbs/$kvers/
+		cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"
+		backup_and_install \
+			"/boot/dtbs/$kvers/$dtb_name.new" \
+			"/boot/dtbs/$kvers/$dtb_name"
 
-			# Historically we installed the dtb as
-			# dtb-$kvers, keep it around as an alternative
-			# for now. Useful for platforms which do not
-			# set ${fdtfile}
-			ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb-$kvers"
+		# Historically we installed the dtb as
+		# dtb-$kvers, keep it around as an alternative
+		# for now. Useful for platforms which do not
+		# set ${fdtfile}
+		ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb-$kvers"
 
-			# This can be used along with the unversioned
-			# vmlinuz+initrd.gz e.g. as a fallback option
-			ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb"
-		else
-			error "Couldn't find $dtb"
-		fi
+		# This can be used along with the unversioned
+		# vmlinuz+initrd.gz e.g. as a fallback option
+		ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb"
 	fi
 }
 
@@ -864,9 +870,6 @@ case "$method" in
 		initrd="$ifile"
 		if [ "$dtb_append" = "yes" ]; then
 			dtb=$(find_dtb_file)
-			if [ ! -f "$dtb" ]; then
-				error "Couldn't find $dtb"
-			fi
 			append_dtb "$kernel" "$dtb" "$tmpdir/kernel"
 			kernel="$tmpdir/kernel"
 		elif [ -n "$machine_id" ]; then
@@ -945,9 +948,6 @@ case "$method" in
 		if [ -n "$boot_dtb_path" ] && [ "$dtb_append" != "no" ]; then
 			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
 			boot_dtb=$(find_dtb_file)
-			if [ ! -f "$boot_dtb" ]; then
-				error "Couldn't find $boot_dtb"
-			fi
 			dtb="$tmpdir/dtb"
 			cp "$boot_dtb" "$dtb"
 			backup_and_install "$dtb" "$boot_dtb_path"
