@@ -212,6 +212,14 @@ get_machine_field() {
 	}
 }
 
+get_mkimage_architecture() {
+	kfile_suffix=$(get_kfile_suffix "$1" "")
+	case "$kfile_suffix" in
+		"arm64") echo "arm64";;
+		*) echo "arm";;
+	esac
+}
+
 get_dtb_name() {
 	local field="$(get_machine_field "$machine" "DTB-Id")" || :
 	case "$field" in
@@ -425,7 +433,7 @@ mkimage_kernel() {
 	local uimage="$5"
 
 	printf "Generating kernel u-boot image... " >&2
-	mkimage -A arm -O linux -T kernel -C none -a "$kaddr" -e "$epoint" \
+	mkimage -A "$mkarch" -O linux -T kernel -C none -a "$kaddr" -e "$epoint" \
 		-n "$kdesc" -d "$kdata" "$uimage" >&2 1>/dev/null
 	echo "done." >&2
 }
@@ -437,7 +445,7 @@ mkimage_initrd() {
 	local uinitrd="$4"
 
 	printf "Generating initramfs u-boot image... " >&2
-	mkimage -A arm -O linux -T ramdisk -C none -a "$iaddr" -e "$iaddr" \
+	mkimage -A "$mkarch" -O linux -T ramdisk -C none -a "$iaddr" -e "$iaddr" \
 		-n "$idesc" -d "$idata" "$uinitrd" >&2 1>/dev/null
 	echo "done." >&2
 }
@@ -461,7 +469,7 @@ mkimage_script() {
                   s/@@UBOOT_ENV_EXTRA@@//g
                   r $ubootenv
                 }" < $sdata > $tdata
-	mkimage -A arm -O linux -T script -C none -a "$saddr" -e "$saddr" \
+	mkimage -A "$mkarch" -O linux -T script -C none -a "$saddr" -e "$saddr" \
 		-n "$sdesc" -d "$tdata" "$script" >&2 1>/dev/null
 	echo "done." >&2
 }
@@ -474,7 +482,7 @@ mkimage_multi() {
 	local umulti="$5"
 
 	printf "Generating u-boot image..." >&2
-	mkimage -A arm -O linux -T multi -C none -a "$maddr" -e "$maddr" \
+	mkimage -A "$mkarch" -O linux -T multi -C none -a "$maddr" -e "$maddr" \
 		-n "$mdesc" -d "$kdata:$idata" "$umulti" >&2 1>/dev/null
 	echo "done." >&2
 }
@@ -774,6 +782,7 @@ fi
 
 echo "flash-kernel: installing version $kvers" >&2
 
+mkarch="$(get_mkimage_architecture $kvers)"
 machine_id="$(get_machine_field "$machine" "Machine-Id")" || :
 method="$(get_machine_field "$machine" "Method")" || method="generic"
 mtd_kernel="$(get_machine_field "$machine" "Mtd-Kernel")" || :

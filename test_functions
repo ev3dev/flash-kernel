@@ -576,6 +576,7 @@ test_mkimage_kernel() {
         }
         . "$functions"
         saved_args=""
+        mkarch="arm"
         mkimage_kernel "0xdeadbeef" "0xbaddcafe" "desc" "input" "output" 2>/dev/null
         expected="-A arm -O linux -T kernel -C none -a 0xdeadbeef -e 0xbaddcafe -n desc -d input output"
         if [ "$expected" != "$saved_args" ]; then
@@ -593,6 +594,7 @@ test_mkimage_initrd() {
         }
         . "$functions"
         saved_args=""
+        mkarch="arm"
         mkimage_initrd "0xdeadbeef" "desc" "input" "output" 2>/dev/null
         expected="-A arm -O linux -T ramdisk -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d input output"
         if [ "$expected" != "$saved_args" ]; then
@@ -610,6 +612,7 @@ test_mkimage_multi() {
         }
         . "$functions"
         saved_args=""
+        mkarch="arm"
         mkimage_multi "0xdeadbeef" "desc" "kinput" "iinput" "output" 2>/dev/null
         expected="-A arm -O linux -T multi -C none -a 0xdeadbeef -e 0xdeadbeef -n desc -d kinput:iinput output"
         if [ "$expected" != "$saved_args" ]; then

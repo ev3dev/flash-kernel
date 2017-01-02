@@ -7,6 +7,9 @@ flash-kernel (3.74) UNRELEASED; urgency=medium
   * Improve error message when DTB is missing by showing search
     path for DTB (Closes: #836679)
 
+  [ Heinrich Schuchardt ]
+  * Call mkimage with correct architecture (Closes: #845779)
+
  -- Martin Michlmayr <tbm@cyrius.com>  Tue, 20 Dec 2016 18:06:13 -0800
 
 flash-kernel (3.73) unstable; urgency=medium
