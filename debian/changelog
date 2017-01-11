@@ -1,4 +1,4 @@
-flash-kernel (3.74) UNRELEASED; urgency=medium
+flash-kernel (3.74) unstable; urgency=medium
 
   [ Martin Michlmayr ]
   * Add machine db entry for Marvell ESPRESSOBin.
@@ -10,7 +10,7 @@ flash-kernel (3.74) UNRELEASED; urgency=medium
   [ Heinrich Schuchardt ]
   * Call mkimage with correct architecture (Closes: #845779)
 
- -- Martin Michlmayr <tbm@cyrius.com>  Tue, 20 Dec 2016 18:06:13 -0800
+ -- Christian Perrier <bubulle@debian.org>  Wed, 11 Jan 2017 05:48:07 +0100
 
 flash-kernel (3.73) unstable; urgency=medium
 
