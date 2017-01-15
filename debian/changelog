@@ -1,3 +1,9 @@
+flash-kernel (3.75) UNRELEASED; urgency=medium
+
+  * Add machine db entry for Pine64+.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Sat, 14 Jan 2017 17:17:02 -0800
+
 flash-kernel (3.74) unstable; urgency=medium
 
   [ Martin Michlmayr ]

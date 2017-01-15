@@ -1109,6 +1109,13 @@ DTB-Id: sun4i-a10-mini-xplus.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Pine64+
+Kernel-Flavors: arm64
+DTB-Id: sun50i-a64-pine64-plus.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: PlatHome OpenBlocks AX3-4 board
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: armada-xp-openblocks-ax3-4.dtb
