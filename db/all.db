@@ -1088,6 +1088,13 @@ Boot-Initrd-Path: uInitrd
 Boot-Script-Path: boot.scr
 Required-Packages: u-boot-tools
 
+Machine: TI OMAP4 PandaBoard-ES
+Kernel-Flavors: armmp
+DTB-Id: omap4-panda-es.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Orange Pi
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr

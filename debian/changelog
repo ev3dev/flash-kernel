@@ -1,3 +1,10 @@
+flash-kernel (3.76) UNRELEASED; urgency=medium
+
+  [ Marc Kleine-Budde ]
+  * Add machine db entry for TI OMAP4 PandaBoard-ES.
+
+ -- Uwe Kleine-König <ukleinek@debian.org>  Mon, 13 Mar 2017 20:58:01 +0100
+
 flash-kernel (3.75) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
