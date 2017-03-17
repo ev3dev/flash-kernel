@@ -993,6 +993,16 @@ U-Boot-Initrd-Address: 0x05000000
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: NETGEAR ReadyNAS Duo v2
+DTB-Id: kirkwood-netgear_readynas_duo_v2.dtb
+DTB-Append: yes
+Mtd-Kernel: uImage
+Mtd-Initrd: minirootfs
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x00000000
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: yes
+
 Machine: NextThing C.H.I.P.
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
