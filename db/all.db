@@ -441,6 +441,13 @@ DTB-Id: sun4i-a10-marsboard.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Hardkernel ODROID-C2
+Kernel-Flavors: arm64
+DTB-Id: meson-gxbb-odroidc2.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Hardkernel ODROID-U3 board based on Exynos4412
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: exynos4412-odroidu3.dtb

@@ -3,6 +3,8 @@ flash-kernel (3.77) UNRELEASED; urgency=medium
   [ Martin Michlmayr ]
   * Add machine db entry for NETGEAR ReadyNAS Duo v2.  Thanks to Scott
     Barker (Closes: #855960)
+  * Add machine db entry for Hardkernel ODROID-C2.  Thanks Heinrich
+    Schuchardt (Closes: #845818).
 
  -- Martin Michlmayr <tbm@cyrius.com>  Fri, 17 Mar 2017 16:26:39 -0700
 
