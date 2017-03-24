@@ -1,3 +1,9 @@
+flash-kernel (3.75ev3dev1) testing; urgency=medium
+
+  * ev3dev takeover with patches from jessie
+
+ -- David Lechner <david@lechnology.com>  Fri, 24 Mar 2017 17:41:27 -0500
+
 flash-kernel (3.75) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
