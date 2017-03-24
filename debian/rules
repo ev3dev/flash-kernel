@@ -4,12 +4,6 @@ DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 AUTOGEN_DEB_FILES := flash-kernel.templates flash-kernel-installer.postinst default/flash-kernel
 
-ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
-DEFAULT_CMDLINE := quiet splash
-else
-DEFAULT_CMDLINE := quiet
-endif
-
 override_dh_auto_install:
 	for i in $(AUTOGEN_DEB_FILES); do \
 		sed "s/@DEFAULT_CMDLINE@/$(DEFAULT_CMDLINE)/" \
@@ -21,6 +15,12 @@ override_dh_auto_install:
 		[ -d bootscript/$${arch} ] || continue ; \
 		install -m0644 bootscript/$${arch}/bootscr.* \
 			debian/flash-kernel/etc/flash-kernel/bootscript/ ; \
+	done
+	install -m0755 -p -d debian/flash-kernel/etc/flash-kernel/uenv
+	set -ex ; for arch in all $(DEB_HOST_ARCH) ; do \
+		[ -d uenv/$${arch} ] || continue ; \
+		install -m0644 uenv/$${arch}/uenv.* \
+			debian/flash-kernel/etc/flash-kernel/uenv/ ; \
 	done
 
 	dh_auto_install

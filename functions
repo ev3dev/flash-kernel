@@ -20,6 +20,7 @@
 # USA.
 
 BOOTSCRIPTS_DIR="${FK_CHECKOUT:-/etc/flash-kernel}/bootscript"
+UENV_DIR="${FK_CHECKOUT:-$FK_DIR}/uenv"
 FK_ETC_MACHINE="${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
 PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
@@ -487,6 +488,21 @@ mkimage_multi() {
 	echo "done." >&2
 }
 
+generate_uenv() {
+	local input_file="$1"
+
+	local output_file="$tmpdir/uEnv.txt"
+
+	printf "Generating uEnv.txt..." >&2
+	sed -e "s/@@KERNEL_VERSION@@/$kvers/g" \
+		-e "s!@@LINUX_KERNEL_CMDLINE@@!$(get_kernel_cmdline)!g" \
+		-e "/@@UBOOT_ENV_EXTRA@@/{
+			s/@@UBOOT_ENV_EXTRA@@//g
+			r $ubootenv
+		}" > "$output_file" < "$input_file"
+	echo "done." >&2
+}
+
 # Return a nonempty string *unless* NO_CREATE_DOT_BAK_FILES is set.
 get_dot_bak_preference() {
 	. /etc/default/flash-kernel
@@ -802,6 +818,8 @@ boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_dtb_path="$(get_machine_field "$machine" "Boot-DTB-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
+uenv_path="$(get_machine_field "$machine" "U-Env-Path")" || :
+uenv_name="$(get_machine_field "$machine" "U-Env-Name")" || :
 
 if [ -n "$dtb_append_from" ]; then
     if dtb_append_required; then
@@ -960,6 +978,13 @@ case "$method" in
 			dtb="$tmpdir/dtb"
 			cp "$boot_dtb" "$dtb"
 			backup_and_install "$dtb" "$boot_dtb_path"
+		fi
+		if [ -n "$uenv_path" ]; then
+			uenv_path="$boot_mnt_dir/$uenv_path"
+			uenv_txt="$UENV_DIR/$uenv_name"
+			generate_uenv "$uenv_txt"
+			uenv_txt="$tmpdir/uEnv.txt"
+			backup_and_install "$uenv_txt" "$uenv_path"
 		fi
 	;;
 	"symlink")

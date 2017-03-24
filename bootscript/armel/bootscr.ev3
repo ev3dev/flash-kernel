@@ -1,0 +1,3 @@
+run loadimage
+setenv bootargs mem=${memsize} console=tty1 root=/dev/mmcblk0p2 rw rootwait splash @@LINUX_KERNEL_CMDLINE@@
+bootm ${loadaddr}

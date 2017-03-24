@@ -40,6 +40,7 @@ The following systems are supported:
  - LaCie Network Space v2
  - LaCie Network Space Max v2
  - LaCie d2 Network v2
+ - LEGO MINDSTORMS EV3
  - Linksys NSLU2
  - Marvell DB-78x00-BP Development Board
  - Marvell OpenRD-Base
@@ -57,6 +58,8 @@ The following systems are supported:
  - QNAP TS-409
  - QNAP TS-410 and TS-410U Turbo NAS
  - QNAP TS-419P and TS-419U Turbo NAS
+ - Raspberry Pi
+ - Raspberry Pi 2/3
  - Seagate FreeAgent DockStar
  - Seagate NAS (2 and 4 bay)
  - Seagate Personal Cloud (1 and 2 bay)

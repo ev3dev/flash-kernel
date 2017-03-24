@@ -719,6 +719,29 @@ Mtd-Kernel: zImage
 Mtd-Initrd: ramdisk.gz
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: LEGO MINDSTORMS EV3
+Machine: LEGO MINDSTORMS EV3 Programmable Brick
+Kernel-Flavors: ev3
+U-Boot-Kernel-Address: 0xC0008000
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Name: bootscr.ev3
+Boot-Kernel-Path: uImage
+Boot-Script-Path: boot.scr
+Required-Packages: u-boot-tools
+Boot-Device: /dev/mmcblk0p1
+
+Machine: LEGO MINDSTORMS EV3 + lms2012-compat
+Kernel-Flavors: ev3-lms2012
+DTB-Id: da850-lego-ev3-lms2012.dtb
+DTB-Append: yes
+U-Boot-Kernel-Address: 0xC0008000
+U-Boot-Script-Address: 0x0
+U-Boot-Script-Name: bootscr.ev3
+Boot-Kernel-Path: uImage
+Boot-Script-Path: boot.scr
+Required-Packages: u-boot-tools
+Boot-Device: /dev/mmcblk0p1
+
 Machine: LeMaker Banana Pi
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
@@ -1237,12 +1260,41 @@ DTB-Id: sun5i-a10s-r7-tv-dongle.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Raspberry Pi Model B
+Machine: Raspberry Pi Model B Rev 1
+Machine: Raspberry Pi Model B Rev 2
+Kernel-Flavors: rpi rpi-rpfv
+DTB-Id: bcm2708-rpi-b.dtb
+Boot-Kernel-Path: kernel.img
+Boot-DTB-Path: bcm2708-rpi-b.dtb
+Boot-Device: /dev/mmcblk0p1
+
+Machine: Raspberry Pi Model B Plus
+Machine: Raspberry Pi Model B Plus Rev 1.0
+Machine: Raspberry Pi Model B Plus Rev 1.1
+Machine: Raspberry Pi Model B Plus Rev 1.2
+Kernel-Flavors: rpi rpi-rpfv
+DTB-Id: bcm2708-rpi-b-plus.dtb
+Boot-Kernel-Path: kernel.img
+Boot-DTB-Path: bcm2708-rpi-b-plus.dtb
+Boot-Device: /dev/mmcblk0p1
+
 Machine: Raspberry Pi 2 Model B
-Kernel-Flavors: armmp armmp-lpae
-DTB-Id: bcm2836-rpi-2-b.dtb
-U-Boot-Script-Name: bootscr.uboot-generic
-Required-Packages: u-boot-tools
-Boot-Script-Path: /boot/boot.scr
+Machine: Raspberry Pi 2 Model B Rev 1.0
+Machine: Raspberry Pi 2 Model B Rev 1.1
+Machine: Raspberry Pi 2 Model B Rev 1.2
+Kernel-Flavors: rpi2 rpi2-rpfv
+DTB-Id: bcm2709-rpi-2-b.dtb
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2709-rpi-2-b.dtb
+Boot-Device: /dev/mmcblk0p1
+
+Machine: Raspberry Pi 3 Model B Rev 1.2
+Kernel-Flavors: rpi2 rpi2-rpfv
+DTB-Id: bcm2710-rpi-3-b.dtb
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2710-rpi-3-b.dtb
+Boot-Device: /dev/mmcblk0p1
 
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
@@ -1331,10 +1383,10 @@ Bootloader-Sets-Incorrect-Root: yes
 
 Machine: TI AM335x BeagleBone
 Machine: TI AM335x BeagleBone Black
-Kernel-Flavors: armmp
-DTB-Id: am335x-boneblack.dtb
-Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.beaglebone
+Machine: TI AM335x BeagleBone Green
+Kernel-Flavors: bb.org
+U-Env-Path: /boot/uEnv.txt
+U-Env-Name: uenv.beaglebone
 Required-Packages: u-boot-tools
 
 Machine: TI AM5728 BeagleBoard-X15
