@@ -720,8 +720,9 @@ Mtd-Initrd: ramdisk.gz
 Bootloader-Sets-Incorrect-Root: yes
 
 Machine: LEGO MINDSTORMS EV3
-Machine: LEGO MINDSTORMS EV3 Programmable Brick
 Kernel-Flavors: ev3
+DTB-Id: da850-lego-ev3.dtb
+DTB-Append: yes
 U-Boot-Kernel-Address: 0xC0008000
 U-Boot-Script-Address: 0x0
 U-Boot-Script-Name: bootscr.ev3
