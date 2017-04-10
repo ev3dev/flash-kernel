@@ -1,3 +1,11 @@
+flash-kernel (3.78) UNRELEASED; urgency=medium
+
+  [ Vagrant Cascadian ]
+  * Update Orange Pi Plus db entry to also support "Xunlong Orange Pi Plus
+    / Plus 2" which is used in recent kernel versions.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Mon, 10 Apr 2017 16:46:32 -0700
+
 flash-kernel (3.77) unstable; urgency=medium
 
   [ Martin Michlmayr ]

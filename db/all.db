@@ -1486,6 +1486,7 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: Xunlong Orange Pi Plus
+Machine: Xunlong Orange Pi Plus / Plus 2
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-h3-orangepi-plus.dtb
