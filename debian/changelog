@@ -1,10 +1,10 @@
-flash-kernel (3.79) UNRELEASED; urgency=medium
+flash-kernel (3.79) unstable; urgency=medium
 
   [ Roger Shimizu ]
   * Update db entry of Buffalo Linkstation LiveV3 (LS-CHL),
     because DTS is supported since debian kernel 4.9.10-1.
 
- -- Roger Shimizu <rogershimizu@gmail.com>  Mon, 17 Apr 2017 21:28:38 +0900
+ -- Christian Perrier <bubulle@debian.org>  Wed, 19 Apr 2017 06:52:13 +0200
 
 flash-kernel (3.78) unstable; urgency=medium
 
