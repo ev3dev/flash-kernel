@@ -514,7 +514,7 @@ Required-Packages: u-boot-tools
 
 Machine: Hardkernel ODROID-C2
 Kernel-Flavors: arm64
-DTB-Id: meson-gxbb-odroidc2.dtb
+DTB-Id: amlogic/meson-gxbb-odroidc2.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools

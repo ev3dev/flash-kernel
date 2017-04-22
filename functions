@@ -244,21 +244,15 @@ get_dtb_name() {
 			error "dtb-probe $dtb_script failed"
 		fi
 		;;
-	/*)
-		dtb_name="$field"
-		;;
 	*)
-		# DTBs on arm64 are stored in subdirs for each vendor; strip
-		# the dir away (in case someone specified it, although it's
-		# not needed).
-		# The DTB will be stored in /boot/dtbs/$kvers/ without
-		# additional subdirs.
-		dtb_name=$(basename "$field")
+		dtb_name="$field"
 		;;
 	esac
 	if [ -n "$dtb_name" ] ; then
 		echo "Using DTB: $dtb_name" >&2
 	fi
+	dtb_dir=$(dirname "$dtb_name")
+	dtb_name=$(basename "$dtb_name")
 }
 
 machine_uses_flash() {
@@ -594,9 +588,9 @@ android_flash() {
 
 find_dtb_file() {
 	local dtb
-	case "$dtb_name" in
+	case "$dtb_dir" in
 	/*)
-		dtb="$dtb_name"
+		dtb="$dtb_dir/$dtb_name"
 		if [ ! -f "$dtb" ]; then
 			error "Couldn't find $dtb"
 		fi
@@ -619,9 +613,9 @@ handle_dtb() {
 		return
 	fi
 
-	local dtb_name=$(basename "$dtb_name")
+	local dtb
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
-		rm -f "/boot/dtbs/$kvers/$dtb_name"
+		rm -f "/boot/dtbs/$kvers/$dtb_dir/$dtb_name"
 
 		# This was the old name we installed under. We
 		# currently include it as an alternative symlink.
@@ -645,22 +639,22 @@ handle_dtb() {
 		fi
 	else
 		local dtb=$(find_dtb_file)
-		echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_name" >&2
-		mkdir -p /boot/dtbs/$kvers/
-		cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"
+		echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_dir/$dtb_name" >&2
+		mkdir -p "/boot/dtbs/$kvers/$dtb_dir"
+		cp "$dtb" "/boot/dtbs/$kvers/$dtb_dir/$dtb_name.new"
 		backup_and_install \
-			"/boot/dtbs/$kvers/$dtb_name.new" \
-			"/boot/dtbs/$kvers/$dtb_name"
+			"/boot/dtbs/$kvers/$dtb_dir/$dtb_name.new" \
+			"/boot/dtbs/$kvers/$dtb_dir/$dtb_name"
 
 		# Historically we installed the dtb as
 		# dtb-$kvers, keep it around as an alternative
 		# for now. Useful for platforms which do not
 		# set ${fdtfile}
-		ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb-$kvers"
+		ln -nfs "dtbs/$kvers/$dtb_dir/$dtb_name" "/boot/dtb-$kvers"
 
 		# This can be used along with the unversioned
 		# vmlinuz+initrd.gz e.g. as a fallback option
-		ln -nfs "dtbs/$kvers/$dtb_name" "/boot/dtb"
+		ln -nfs "dtbs/$kvers/$dtb_dir/$dtb_name" "/boot/dtb"
 	fi
 }
 

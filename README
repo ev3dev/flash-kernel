@@ -115,13 +115,16 @@ The supported fields are:
   This option is ignored if a DTB is to be appended, via either DTB-Append or
   DTB-Append-From.
 
-* DTB-Id: (optional) specifies the name of the DTB file for this device
-  relative to the kernel package DTB dir or /etc/flash-kernel/dtbs.
-  It's not necessary to specify the directory if the DTB is in a vendor
-  subdirectory as flash-kernel will search for the filename in
-  subdirectories.  If the value begins with a `!' then the field is a script
-  which should be run.  The script must produce the DTB filename (just the
-  filename, without a vendor subdirectory) on stdout (and nothing else).
+* DTB-Id: (optional) specifies the name of the DTB file for this device.
+  If DTB-Id specifies an absolute path the directory specifies the path from
+  where the DTB is copied.
+  If DTB-Id specifies a relative path the directory specifies the subdirectory
+  of the kernel version directory where the DTB will be installed.
+  The filename is used to search for the filename in subdirectories of
+  /usr/lib/linux-image-* or /etc/flash-kernel/dtbs.
+  If the value begins with a `!' then the field is a script which should be
+  run. The script must produce the DTB filename (possibly including a
+  directory) on stdout.
 
 * DTB-Append: (optional) when yes the DTB specified by DTB-Id will be appended
   to the kernel image.
