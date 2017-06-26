@@ -1,3 +1,10 @@
+flash-kernel (3.80) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Simplified Chinese (zh_CN.po) by Yangfl
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 26 Jun 2017 10:46:53 +0200
+
 flash-kernel (3.79) unstable; urgency=medium
 
   [ Roger Shimizu ]
