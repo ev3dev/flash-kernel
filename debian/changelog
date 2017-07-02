@@ -1,3 +1,11 @@
+flash-kernel (3.81) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Applied a patch from Matthias Fritzsche <txt.file@txtfile.eu> adding
+    a machine db entry for the BeagleBone Green (Closes: #866822).
+
+ -- Karsten Merker <merker@debian.org>  Sun, 02 Jul 2017 14:43:29 +0200
+
 flash-kernel (3.80) unstable; urgency=medium
 
   [ Updated translations ]
