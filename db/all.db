@@ -67,6 +67,13 @@ DTB-Id: sun5i-a10s-auxtek-t004.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Banana Pi BPI-M2-Plus
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h3-bananapi-m2-plus.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: BA10 tvbox
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
@@ -384,10 +391,24 @@ Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 Bootloader-Sets-Incorrect-Root: no
 
+Machine: FriendlyArm NanoPi M1
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h3-nanopi-m1.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: FriendlyARM NanoPi NEO
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-h3-nanopi-neo.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: FriendlyARM NanoPi NEO Air
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h3-nanopi-neo-air.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -742,6 +763,13 @@ DTB-Id: sun7i-a20-bananapro.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Lichee Pi Zero
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-v3s-licheepi-zero.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
 Machine: LinkSprite pcDuino
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
@@ -1016,6 +1044,13 @@ Machine: NextThing C.H.I.P.
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun5i-r8-chip.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: NextThing C.H.I.P. Pro
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun5i-gr8-chip-pro.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
@@ -1506,6 +1541,13 @@ Machine: Xunlong Orange Pi Plus 2E
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
 DTB-Id: sun8i-h3-orangepi-plus2e.dtb
+U-Boot-Script-Name: bootscr.sunxi
+Required-Packages: u-boot-tools
+
+Machine: Xunlong Orange Pi Zero
+Kernel-Flavors: armmp armmp-lpae
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: sun8i-h2-plus-orangepi-zero.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
