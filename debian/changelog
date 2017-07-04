@@ -1,3 +1,17 @@
+flash-kernel (3.82) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Add machine db entries for various sunxi-based systems that are (at
+    least partially) supported in kernel 4.12 and u-boot v2017.07-rc3:
+    - Banana Pi BPI-M2-Plus
+    - FriendlyArm NanoPi M1
+    - FriendlyARM NanoPi NEO Air
+    - Lichee Pi Zero
+    - NextThing C.H.I.P. Pro
+    - Xunlong Orange Pi Zero
+
+ -- Karsten Merker <merker@debian.org>  Tue, 04 Jul 2017 23:34:42 +0200
+
 flash-kernel (3.81) unstable; urgency=medium
 
   [ Karsten Merker ]
