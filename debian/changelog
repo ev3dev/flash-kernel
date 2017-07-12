@@ -1,3 +1,11 @@
+flash-kernel (3.83) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Applied a patch from Eva Ramon <debian@empanadilla.net> adding
+    a machine db entry for the Radxa Rock 2 Square (Closes: #868166).
+
+ -- Karsten Merker <merker@debian.org>  Wed, 12 Jul 2017 20:10:01 +0200
+
 flash-kernel (3.82) unstable; urgency=medium
 
   [ Karsten Merker ]
