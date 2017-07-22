@@ -1312,6 +1312,13 @@ U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 Boot-Script-Path: /boot/boot.scr
 
+Machine: Raspberry Pi 3 Model B
+Kernel-Flavors: arm64
+DTB-Id: bcm2837-rpi-3-b.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+Boot-Script-Path: /boot/boot.scr
+
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood marvell
