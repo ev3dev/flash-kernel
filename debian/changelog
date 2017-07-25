@@ -1,3 +1,9 @@
+flash-kernel (3.75ev3dev4) testing; urgency=medium
+
+  * Fix lms2012-compat kernel flavor
+
+ -- David Lechner <david@lechnology.com>  Tue, 25 Jul 2017 10:31:15 -0500
+
 flash-kernel (3.75ev3dev3) testing; urgency=medium
 
   * Update EV3 entry for device tree
