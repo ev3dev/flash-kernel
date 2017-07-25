@@ -1,4 +1,4 @@
-flash-kernel (3.84) UNRELEASED; urgency=medium
+flash-kernel (3.84) unstable; urgency=medium
 
   [ James Valleroy ]
   * Add a machine db entry for the Raspberry Pi 3 Model B
@@ -7,7 +7,7 @@ flash-kernel (3.84) UNRELEASED; urgency=medium
   [ Vagrant Cascadian ]
   * Add a machine db entry for the Firefly-RK3399.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Sun, 23 Jul 2017 21:31:20 -0400
+ -- Christian Perrier <bubulle@debian.org>  Tue, 25 Jul 2017 06:58:47 +0200
 
 flash-kernel (3.83) unstable; urgency=medium
 
