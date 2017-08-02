@@ -22,7 +22,7 @@
 BOOTSCRIPTS_DIR="${FK_CHECKOUT:-/etc/flash-kernel}/bootscript"
 FK_ETC_MACHINE="${FK_ETC_MACHINE:-/etc/flash-kernel/machine}"
 PROC_CPUINFO="${FK_PROC_CPUINFO:-/proc/cpuinfo}"
-PROC_DTMODEL="${FK_PROC_DRMODEL:-/proc/device-tree/model}"
+PROC_DTMODEL="${FK_PROC_DTMODEL:-/proc/device-tree/model}"
 PROC_MTD="/proc/mtd"
 
 read_machine_db() {
