@@ -304,6 +304,19 @@ gen_kernel() {
 	} >"$output"
 }
 
+gen_preboot() {
+	PRESTUBDIRS="/etc/flash-kernel/preboot.d /usr/share/flash-kernel/preboot.d"
+	PRESTUBS="$(find $PRESTUBDIRS -type f -regex '.*/[0-9a-zA-Z_-]+' -printf '%f\n' | LC_ALL=C sort -u)"
+	for file in $PRESTUBS; do
+		for dir in $PRESTUBDIRS; do
+			if [ -f $dir/$file ]; then
+				cat $dir/$file
+				break
+			fi
+		done
+	done
+}
+
 gen_ubootenv() {
 	ENVSTUBDIRS="/etc/flash-kernel/ubootenv.d /usr/share/flash-kernel/ubootenv.d"
 	ENVSTUBS="$(find $ENVSTUBDIRS -type f -regex '.*/[0-9a-zA-Z_-]+' -printf '%f\n' | LC_ALL=C sort -u)"
@@ -460,6 +473,8 @@ mkimage_script() {
 
 	local ubootenv="$(mktemp --tmpdir=$tmpdir)"
 	gen_ubootenv > $ubootenv
+	local preboot="$(mktemp --tmpdir=$tmpdir)"
+	gen_preboot > $preboot
 
 	if [ "$(stat --printf='%s' $ubootenv)" -gt 0 ] && \
 		! grep -q '@@UBOOT_ENV_EXTRA@@' "$sdata" ; then
@@ -473,6 +488,10 @@ mkimage_script() {
             -e "/@@UBOOT_ENV_EXTRA@@/{
                   s/@@UBOOT_ENV_EXTRA@@//g
                   r $ubootenv
+                }" < $sdata > $tdata \
+            -e "/@@UBOOT_PREBOOT_EXTRA@@/{
+                  s/@@UBOOT_PREBOOT_EXTRA@@//g
+                  r $preboot
                 }" < $sdata > $tdata
 	mkimage -A "$mkarch" -O linux -T script -C none -a "$saddr" -e "$saddr" \
 		-n "$sdesc" -d "$tdata" "$script" >&2 1>/dev/null
