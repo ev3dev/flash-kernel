@@ -1,3 +1,9 @@
+flash-kernel (3.75ev3dev5) testing; urgency=medium
+
+  * Add Raspberry Pi Zero Wireless
+
+ -- David Lechner <david@lechnology.com>  Fri, 08 Sep 2017 19:17:20 -0500
+
 flash-kernel (3.75ev3dev4) testing; urgency=medium
 
   * Fix lms2012-compat kernel flavor
