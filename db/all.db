@@ -1261,6 +1261,13 @@ DTB-Id: sun5i-a10s-r7-tv-dongle.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: Raspberry Pi Zero W Rev 1.1
+Kernel-Flavors: rpi rpi-rpfv
+DTB-Id: bcm2708-rpi-0-w.dtb
+Boot-Kernel-Path: kernel.img
+Boot-DTB-Path: bcm2708-rpi-0-w.dtb
+Boot-Device: /dev/mmcblk0p1
+
 Machine: Raspberry Pi Model B
 Machine: Raspberry Pi Model B Rev 1
 Machine: Raspberry Pi Model B Rev 2
