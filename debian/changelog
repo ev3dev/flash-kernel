@@ -1,4 +1,6 @@
-flash-kernel (3.85) UNRELEASED; urgency=medium
+flash-kernel (3.85) unstable; urgency=medium
+
+  * Team upload.
 
   [ Ian Campbell ]
   * Correct typo, FK_PROC_DRMODEL should be FK_PROC_DTMODEL.
@@ -9,7 +11,7 @@ flash-kernel (3.85) UNRELEASED; urgency=medium
     - FriendlyArm NanoPi M1 Plus
     - Olimex A20-OLinuXino-LIME2-eMMC
 
- -- Ian Campbell <ijc@debian.org>  Wed, 02 Aug 2017 09:03:19 +0100
+ -- Karsten Merker <merker@debian.org>  Wed, 04 Oct 2017 21:44:02 +0200
 
 flash-kernel (3.84) unstable; urgency=medium
 
