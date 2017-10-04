@@ -1,6 +1,13 @@
 flash-kernel (3.85) UNRELEASED; urgency=medium
 
+  [ Ian Campbell ]
   * Correct typo, FK_PROC_DRMODEL should be FK_PROC_DTMODEL.
+
+  [ Karsten Merker ]
+  * Add machine db entries for two sunxi-based systems that are (at
+    least partially) supported in kernel 4.13 and u-boot v2017.09:
+    - FriendlyArm NanoPi M1 Plus
+    - Olimex A20-OLinuXino-LIME2-eMMC
 
  -- Ian Campbell <ijc@debian.org>  Wed, 02 Aug 2017 09:03:19 +0100
 
