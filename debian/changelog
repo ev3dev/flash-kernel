@@ -1,3 +1,9 @@
+flash-kernel (3.86) UNRELEASED; urgency=medium
+
+  * Add entry for SolidRun HummingBoard Solo/DualLite.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Sun, 08 Oct 2017 14:13:01 -0700
+
 flash-kernel (3.85) unstable; urgency=medium
 
   * Team upload.

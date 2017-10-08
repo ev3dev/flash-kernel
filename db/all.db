@@ -535,6 +535,7 @@ U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
 Machine: SolidRun HummingBoard DL/Solo
+Machine: SolidRun HummingBoard Solo/DualLite
 Kernel-Flavors: armmp
 DTB-Id: imx6dl-hummingboard.dtb
 Boot-Script-Path: /boot/boot.scr
