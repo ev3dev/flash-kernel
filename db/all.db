@@ -824,6 +824,20 @@ Boot-Kernel-Path: /boot/uImage
 Boot-Initrd-Path: /boot/uInitrd
 Required-Packages: u-boot-tools
 
+Machine: Marvell Armada 8040 DB board
+Kernel-Flavors: arm64
+DTB-Id: armada-8040-db.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: Marvell 8040 MACHIATOBin
+Kernel-Flavors: arm64
+DTB-Id: armada-8040-mcbin.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 # Marvell dev board has different names depending on how it's booted,
 # via DTB or older ATAGS
 Machine: Marvell Armada XP GP Board
