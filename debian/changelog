@@ -1,3 +1,14 @@
+flash-kernel (3.87) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Apply a patch from Heinrich Schuchardt <xypron.glpk@gmx.de> adding
+    machine db entries for
+    - Marvell Armada 8040 DB board
+    - Marvell 8040 MACHIATOBin
+    (Closes: #878570).
+
+ -- Karsten Merker <merker@debian.org>  Sun, 15 Oct 2017 21:03:45 +0200
+
 flash-kernel (3.86) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
