@@ -1,4 +1,6 @@
-flash-kernel (3.87) UNRELEASED; urgency=medium
+flash-kernel (3.87) unstable; urgency=medium
+
+  * Team upload.
 
   [ Karsten Merker ]
   * Apply a patch from Heinrich Schuchardt <xypron.glpk@gmx.de> adding
@@ -7,7 +9,7 @@ flash-kernel (3.87) UNRELEASED; urgency=medium
     - Marvell 8040 MACHIATOBin
     (Closes: #878570).
 
- -- Karsten Merker <merker@debian.org>  Sun, 15 Oct 2017 21:03:45 +0200
+ -- Karsten Merker <merker@debian.org>  Sun, 15 Oct 2017 21:39:03 +0200
 
 flash-kernel (3.86) unstable; urgency=medium
 
