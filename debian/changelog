@@ -1,3 +1,11 @@
+flash-kernel (3.88) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Norwegian Nynorsk (nn.po) by Allan Nordhøy
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 30 Nov 2017 06:26:18 +0100
+
 flash-kernel (3.87) unstable; urgency=medium
 
   * Team upload.
