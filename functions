@@ -463,7 +463,7 @@ mkimage_script() {
 	local sdata="$3"
 	local script="$4"
 
-	local tdata="$tmpdir/$(basename $sdata)"
+	local tdata="$tmpdir/$(basename $sdata).out"
 
 	local ubootenv="$(mktemp --tmpdir=$tmpdir)"
 	gen_ubootenv > $ubootenv
