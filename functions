@@ -976,7 +976,11 @@ case "$method" in
 		fi
 		if [ -n "$boot_script_path" ]; then
 			boot_script_path="$boot_mnt_dir/$boot_script_path"
-			boot_script="$BOOTSCRIPTS_DIR/$usname"
+			boot_script="$tmpdir/bootscript"
+			for script in $usname ; do
+				echo "\n#\n# flash-kernel: $script\n#\n" >> "$boot_script"
+				cat "$BOOTSCRIPTS_DIR/$script" >> "$boot_script"
+			done
 			mkimage_script "$usaddr" "boot script" "$boot_script" \
 				"$tmpdir/boot.scr"
 			boot_script="$tmpdir/boot.scr"
