@@ -461,6 +461,11 @@ mkimage_script() {
 	local ubootenv="$(mktemp --tmpdir=$tmpdir)"
 	gen_ubootenv > $ubootenv
 
+	if [ "$(stat --printf='%s' $ubootenv)" -gt 0 ] && \
+           ! grep -q '@@UBOOT_ENV_EXTRA@@' "$sdata" ; then
+		echo "WARNING: ubootenv.d snippet used, but $sdata has no @@UBOOT_ENV_EXTRA@@ marker. Snippet will be ignored." >&2
+        fi
+
 	printf "Generating boot script u-boot image... " >&2
 	sed -e "s/@@KERNEL_VERSION@@/$kvers/g" \
             -e "s!@@LINUX_KERNEL_CMDLINE@@!$(get_kernel_cmdline)!g" \
