@@ -116,31 +116,19 @@ add_test test_mtdsize
 test_check_kflavors() {
     (
         . "$functions"
-        if check_kflavors "ksuffix" "kflavor1" "kflavor2"; then
+        if check_kflavors "4.14.0-1-armmp" "armmp-lpae"; then
             echo "Expected check_kflavors to fail with kernel suffix not in expected flavors, but it succeeded" >&2
             exit 1
         fi
-        if ! check_kflavors "foo" "kflavor1" "foo" "kflavor3"; then
+        if ! check_kflavors "4.14.0-1-armmp-lpae" "armmp-lpae"; then
             echo "Expected check_kflavors to succeed with kernel suffix in expected flavors, but it failed" >&2
             exit 1
         fi
-        if ! check_kflavors "kflavor1-suffix" "klavor1" "kflavor1-suffix" "kflavor2"; then
-            echo "Expected check_kflavours to succeed with double-barrelled kernel suffix in expected flavours, but it failed" >&2
-            exit 1
-        fi
-        if check_kflavors "kflavor1-suffix" "klavor1" "kflavor2"; then
-            echo "Expected check_kflavours to fail with double-barrelled kernel suffix not in expected flavours, but it succeeded" >&2
-            exit 1
-        fi
-        if ! check_kflavors "" "kflavor1" "kflavor2" "kflavor3"; then
-            echo "Expected check_kflavors to succeed with empty kernel suffix, but it failed" >&2
-            exit 1
-        fi
-        if check_kflavors "ksuffix+" "kflavor1" "kflavor2"; then
+        if check_kflavors "4.14.0-1-armp-lpae+" "armmp"; then
             echo "Expected check_kflavors to fail with kernel suffix (with additional +) not in expected flavors, but it succeeded" >&2
             exit 1
         fi
-        if ! check_kflavors "foo+" "kflavor1" "foo" "kflavor2"; then
+        if ! check_kflavors "4.14.0-1-armmp-lpae+" "armmp-lpae"; then
             echo "Expected check_kflavours to succeed with kernel suffix (with additional +) in expected flavors, but it failed" >&2
             exit 1
         fi
