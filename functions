@@ -86,17 +86,17 @@ mtdsize() {
 }
 
 check_kflavors() {
-	local kfile_suffix="$1"
-	shift
-
-	if [ -z "$kfile_suffix" ]; then
+	local kvers="$1"
+	local kflavor="$2"
+	if [ "$kflavor" = "any" ]; then
 		return 0
 	fi
-	for kflavor; do
-		if [ "$kfile_suffix" = "$kflavor" ] || [ "$kfile_suffix" = "$kflavor+" ]; then
-			return 0
-		fi
-	done
+	# count flavor+ as valid
+	kvers=${kvers%%+}
+	if [ "${kvers}" != "${kvers%%$kflavor}" ]; then
+		# kernel version ended with flavor
+		return 0
+	fi
 	return 1
 }
 
@@ -769,18 +769,16 @@ if ! check_supported "$machine"; then
 	error "Unsupported platform."
 fi
 
-if kflavors="$(get_machine_field "$machine" "Kernel-Flavors")"; then
-	kfile_suffix=""
-	while [ "$kfile_suffix" != "$kfile" ] ; do
-		kfile_suffix=$(get_kfile_suffix "$kfile" "$kfile_suffix")
+kfile_suffix=""
+kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
+for kflavor in ${kflavors} ; do
+	if check_kflavors "$kvers" "$kflavor" ; then
+		kfile_suffix="$kflavor"
+		break
+	fi
+done
 
-		if check_kflavors "$kfile_suffix" $kflavors; then
-			break
-		fi
-	done
-fi
-
-if [ "$kfile_suffix" = "$kfile" ]; then
+if [ -z "$kfile_suffix" ]; then
 	echo "Kernel $kfile does not match any of the expected flavors ($kflavors), therefore not writing it to flash." >&2
 	exit 0
 fi
