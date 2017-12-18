@@ -132,6 +132,10 @@ test_check_kflavors() {
             echo "Expected check_kflavours to succeed with kernel suffix (with additional +) in expected flavors, but it failed" >&2
             exit 1
         fi
+        if ! check_kflavors "4.14.0-1-armmp-lpae" "any"; then
+            echo "Expected check_kflavours to succeed with kernel suffix 'any' in expected flavors, but it failed" >&2
+            exit 1
+        fi
     )
 }
 add_test test_check_kflavors
