@@ -771,7 +771,7 @@ fi
 
 kfile_suffix=""
 kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
-for kflavor in ${kflavors} ; do
+for kflavor in ${kflavors:-"any"} ; do
 	if check_kflavors "$kvers" "$kflavor" ; then
 		kfile_suffix="$kflavor"
 		break
