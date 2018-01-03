@@ -1,3 +1,12 @@
+flash-kernel (3.89) UNRELEASED; urgency=medium
+
+  [ Karsten Merker ]
+  * Applied a patch from Sunil Mohan Adapa <sunil@medhas.org> supporting
+    the installation of 32bit kernels on the Raspberry Pi 3.
+    (Closes: #886225).
+
+ -- Karsten Merker <merker@debian.org>  Wed, 03 Jan 2018 21:28:50 +0100
+
 flash-kernel (3.88) unstable; urgency=medium
 
   [ Updated translations ]
