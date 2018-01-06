@@ -4,6 +4,9 @@ flash-kernel (3.90) UNRELEASED; urgency=medium
   * Make ubootenv.d work on Wandboard (Closes: #884375).
   * Warn when ubootenv.d snippet will be ignored (Closes: #884376).
 
+  [ Vagrant Cascadian ]
+  * Add option to allow "any" in Kernel-Flavors (Closes: #883547).
+
  -- Vagrant Cascadian <vagrant@debian.org>  Sat, 06 Jan 2018 12:13:34 -0800
 
 flash-kernel (3.89) unstable; urgency=medium
