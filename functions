@@ -600,10 +600,8 @@ handle_dtb() {
 		return
 	fi
 
-	local dtb
-	local dtb_name
+	local dtb_name=$(basename "$dtb_name")
 	if [ "x$FK_KERNEL_HOOK_SCRIPT" = "xpostrm.d" ] ; then
-		dtb_name=$(basename $dtb_name)
 		rm -f "/boot/dtbs/$kvers/$dtb_name"
 
 		# This was the old name we installed under. We
@@ -627,8 +625,7 @@ handle_dtb() {
 			rmdir --ignore-fail-on-non-empty /boot/dtbs
 		fi
 	else
-		dtb=$(find_dtb_file)
-		dtb_name=$(basename $dtb_name)
+		local dtb=$(find_dtb_file)
 		echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_name" >&2
 		mkdir -p /boot/dtbs/$kvers/
 		cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"

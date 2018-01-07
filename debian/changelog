@@ -7,6 +7,10 @@ flash-kernel (3.90) UNRELEASED; urgency=medium
   [ Vagrant Cascadian ]
   * Add option to allow "any" in Kernel-Flavors (Closes: #883547).
 
+  [ Ian Campbell ]
+  * Fix local shadow of $dtb_name in handle_dtb (Closes: #870430).
+  * Reduce scope of $dtb in handle_dtb.
+
  -- Vagrant Cascadian <vagrant@debian.org>  Sat, 06 Jan 2018 12:13:34 -0800
 
 flash-kernel (3.89) unstable; urgency=medium
