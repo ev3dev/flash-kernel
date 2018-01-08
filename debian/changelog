@@ -1,4 +1,4 @@
-flash-kernel (3.90) UNRELEASED; urgency=medium
+flash-kernel (3.90) unstable; urgency=medium
 
   [ Andreas Henriksson ]
   * Make ubootenv.d work on Wandboard (Closes: #884375).
@@ -15,7 +15,7 @@ flash-kernel (3.90) UNRELEASED; urgency=medium
   * Remove Loic, Hector and Ian from Uploaders. Thanks for your work
   * Add Vagrant and Karsten in Uploaders.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Sat, 06 Jan 2018 12:13:34 -0800
+ -- Christian Perrier <bubulle@debian.org>  Mon, 08 Jan 2018 06:54:35 +0100
 
 flash-kernel (3.89) unstable; urgency=medium
 
