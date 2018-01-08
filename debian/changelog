@@ -11,6 +11,10 @@ flash-kernel (3.90) UNRELEASED; urgency=medium
   * Fix local shadow of $dtb_name in handle_dtb (Closes: #870430).
   * Reduce scope of $dtb in handle_dtb.
 
+  [ Christian Perrier ]
+  * Remove Loic, Hector and Ian from Uploaders. Thanks for your work
+  * Add Vagrant and Karsten in Uploaders.
+
  -- Vagrant Cascadian <vagrant@debian.org>  Sat, 06 Jan 2018 12:13:34 -0800
 
 flash-kernel (3.89) unstable; urgency=medium
