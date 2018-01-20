@@ -24,6 +24,9 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   * Add compatibility symlink to dtb in vendor sub-directory.
   * Add support for root device specified by PARTLABEL.
 
+  [ Andre Heider ]
+  * Add support for multiple scripts sources
+
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 22:13:59 -0800
 
 flash-kernel (3.90) unstable; urgency=medium
