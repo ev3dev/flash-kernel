@@ -92,6 +92,12 @@ if echo "$rootdev" | grep -q "="; then
 				echo "PARTUUID $b doesn't exist in /dev/disk/by-partuuid" >&2
 			fi
 		;;
+		PARTLABEL)
+			rootdev=/dev/disk/by-partlabel/$b
+			if [ ! -e $rootdev ]; then
+				echo "PARTLABEL $b doesn't exist in /dev/disk/by-partlabel" >&2
+			fi
+		;;
 		*)
 			echo "/etc/fstab parse error; cannot recognize root $rootdev" >&2
 			rootdev=/dev/sda2
