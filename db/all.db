@@ -329,6 +329,19 @@ DTB-Id: armada-388-clearfog-pre.dtb
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: SolidRun CuBox
+Kernel-Flavors: armmp
+DTB-Id: dove-cubox.dtb
+DTB-Append: yes
+Boot-Kernel-Path: /boot/uImage
+Boot-Initrd-Path: /boot/uInitrd
+U-Boot-Kernel-Address: 0x00008000
+U-Boot-Initrd-Address: 0x0
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.cubox
+Required-Packages: u-boot-tools
+Bootloader-Sets-Incorrect-Root: yes
+
 Machine: SolidRun Cubox-i Dual/Quad
 Kernel-Flavors: armmp
 DTB-Id: imx6q-cubox-i.dtb
