@@ -7,6 +7,9 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   [ Heinrich Schuchardt ]
   * flash-kernel: Provide hook to start EFI application (Closes: #873390).
 
+  [ Vagrant Cascadian ]
+  * Add support for SolidRun Clearfog Boards (Closes: #839595).
+
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 16:32:38 -0800
 
 flash-kernel (3.90) unstable; urgency=medium

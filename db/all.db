@@ -308,6 +308,27 @@ DTB-Id: sun8i-a83t-cubietruck-plus.dtb
 U-Boot-Script-Name: bootscr.sunxi
 Required-Packages: u-boot-tools
 
+Machine: SolidRun Clearfog A1
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: armada-388-clearfog.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun Clearfog Base A1
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: armada-388-clearfog-base.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun Clearfog Pro A1
+Kernel-Flavors: armmp
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: armada-388-clearfog-pre.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: SolidRun Cubox-i Dual/Quad
 Kernel-Flavors: armmp
 DTB-Id: imx6q-cubox-i.dtb
