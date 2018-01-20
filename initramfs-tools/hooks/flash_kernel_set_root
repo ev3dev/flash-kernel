@@ -89,7 +89,7 @@ if echo "$rootdev" | grep -q "="; then
 		PARTUUID)
 			rootdev=/dev/disk/by-partuuid/$b
 			if [ ! -e $rootdev ]; then
-				echo "UUID $b doesn't exist in /dev/disk/by-uuid" >&2
+				echo "PARTUUID $b doesn't exist in /dev/disk/by-partuuid" >&2
 			fi
 		;;
 		*)
