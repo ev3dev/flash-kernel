@@ -8,7 +8,8 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   * flash-kernel: Provide hook to start EFI application (Closes: #873390).
 
   [ Vagrant Cascadian ]
-  * Add support for SolidRun Clearfog Boards (Closes: #839595).
+  * Add support for SolidRun Clearfog Boards (Closes: #839595). Thanks to
+    Christoph Egger and Joshua Mayer.
   * Add support for SolidRun CuBox (dove) (Closes: #876773). Thanks to
     Josua Mayer.
 
