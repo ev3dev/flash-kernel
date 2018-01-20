@@ -820,6 +820,8 @@ usname="$(get_machine_field "$machine" "U-Boot-Script-Name")" || :
 boot_device="$(get_machine_field "$machine" "Boot-Device")" || :
 boot_kernel_path="$(get_machine_field "$machine" "Boot-Kernel-Path")" || :
 boot_initrd_path="$(get_machine_field "$machine" "Boot-Initrd-Path")" || :
+boot_kernel_path_version="$(get_machine_field "$machine" "Boot-Kernel-Path-Version")" || :
+boot_initrd_path_version="$(get_machine_field "$machine" "Boot-Initrd-Path-Version")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_dtb_path="$(get_machine_field "$machine" "Boot-DTB-Path")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
@@ -933,6 +935,9 @@ case "$method" in
 		fi
 		if [ -n "$boot_kernel_path" ]; then
 			boot_kernel_path="$boot_mnt_dir/$boot_kernel_path"
+			if [ "$boot_kernel_path_version" = "yes" ]; then
+			   boot_kernel_path="${boot_kernel_path}-${kvers}"
+			fi
 			# don't mv the original kernel
 			if [ "$kernel" = "$kfile" ]; then
 				cp "$kernel" "$tmpdir/kernel"
@@ -953,6 +958,9 @@ case "$method" in
 		fi
 		if [ -n "$boot_initrd_path" ]; then
 			boot_initrd_path="$boot_mnt_dir/$boot_initrd_path"
+			if [ "$boot_initrd_path_version" = "yes" ]; then
+			   boot_initrd_path="${boot_initrd_path}-${kvers}"
+			fi
 			# don't mv the original initrd
 			if [ "$initrd" = "$ifile" ]; then
 				cp "$initrd" "$tmpdir/initrd"
