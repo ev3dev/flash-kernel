@@ -1,7 +1,11 @@
 flash-kernel (3.91) UNRELEASED; urgency=medium
 
+  [ Vagrant Cascadian ]
   * Make ubootenv.d work on CuBox-i. Thanks to Rainer Dorsch.
   * Do not install flash-kernel.in.
+
+  [ Heinrich Schuchardt ]
+  * flash-kernel: Provide hook to start EFI application (Closes: #873390).
 
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 16:32:38 -0800
 
