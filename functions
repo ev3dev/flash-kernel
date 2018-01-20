@@ -646,6 +646,10 @@ handle_dtb() {
 			"/boot/dtbs/$kvers/$dtb_dir/$dtb_name.new" \
 			"/boot/dtbs/$kvers/$dtb_dir/$dtb_name"
 
+		if [ "$dtb_dir" != "." ]; then
+			ln -nfs "$dtb_dir/$dtb_name" "/boot/dtbs/$kvers/$dtb_name"
+		fi
+
 		# Historically we installed the dtb as
 		# dtb-$kvers, keep it around as an alternative
 		# for now. Useful for platforms which do not

@@ -20,6 +20,9 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   [ Heinrich Schuchardt ]
   * flash-kernel: support relative paths for DTB-Id (Closes: #860304).
 
+  [ Vagrant Cascadian ]
+  * Add compatibility symlink to dtb in vendor sub-directory.
+
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 22:13:59 -0800
 
 flash-kernel (3.90) unstable; urgency=medium
