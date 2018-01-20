@@ -786,8 +786,11 @@ if ! check_supported "$machine"; then
 fi
 
 kfile_suffix=""
-kflavors=$(get_machine_field "$machine" "Kernel-Flavors")
-for kflavor in ${kflavors:-"any"} ; do
+if ! kflavors=$(get_machine_field "$machine" "Kernel-Flavors") ; then
+	# Since no Kernel-Flavors were specified, allow any kernel.
+	kflavors="any"
+fi
+for kflavor in $kflavors ; do
 	if check_kflavors "$kvers" "$kflavor" ; then
 		kfile_suffix="$kflavor"
 		break

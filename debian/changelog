@@ -12,6 +12,7 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
     Christoph Egger and Joshua Mayer.
   * Add support for SolidRun CuBox (dove) (Closes: #876773). Thanks to
     Josua Mayer.
+  * Fix when no Kernel-Flavors are defined (Closes: #887803).
 
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 16:32:38 -0800
 
