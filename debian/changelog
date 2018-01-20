@@ -15,6 +15,7 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   * Fix when no Kernel-Flavors are defined (Closes: #887803).
   * Add Boot-Kernel-Path-Version and Boot-Initrd-Path-Version to be used
     to append the version to the generated kernel/initrd images.
+  * debian/control: Set Rules-Requires-Root: no.
 
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 16:32:38 -0800
 
