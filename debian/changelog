@@ -17,7 +17,10 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
     to append the version to the generated kernel/initrd images.
   * debian/control: Set Rules-Requires-Root: no.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 16:32:38 -0800
+  [ Heinrich Schuchardt ]
+  * flash-kernel: support relative paths for DTB-Id (Closes: #860304).
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 22:13:59 -0800
 
 flash-kernel (3.90) unstable; urgency=medium
 
