@@ -1,3 +1,9 @@
+flash-kernel (3.91) UNRELEASED; urgency=medium
+
+  * Make ubootenv.d work on CuBox-i. Thanks to Rainer Dorsch.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 16:32:38 -0800
+
 flash-kernel (3.90) unstable; urgency=medium
 
   [ Andreas Henriksson ]
