@@ -1479,14 +1479,14 @@ Machine: TI AM335x BeagleBone Black
 Kernel-Flavors: armmp
 DTB-Id: am335x-boneblack.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.beaglebone bootscr.uboot-generic
+U-Boot-Script-Name: bootscr.beaglebone
 Required-Packages: u-boot-tools
 
 Machine: TI AM335x BeagleBone Green
 Kernel-Flavors: armmp
 DTB-Id: am335x-bonegreen.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.beaglebone bootscr.uboot-generic
+U-Boot-Script-Name: bootscr.beaglebone
 Required-Packages: u-boot-tools
 
 Machine: TI AM5728 BeagleBoard-X15
