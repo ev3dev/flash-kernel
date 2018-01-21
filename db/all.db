@@ -346,7 +346,7 @@ Machine: SolidRun Cubox-i Dual/Quad
 Kernel-Flavors: armmp
 DTB-Id: imx6q-cubox-i.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.cubox-i
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: D-Link DNS-320 NAS (Rev A1)
@@ -1533,28 +1533,28 @@ Machine: Wandboard i.MX6 Dual Lite Board
 Kernel-Flavors: armmp
 DTB-Id: imx6dl-wandboard.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.wandboard
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: Wandboard i.MX6 Dual Lite Board rev B1
 Kernel-Flavors: armmp
 DTB-Id: imx6dl-wandboard-revb1.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.wandboard
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: Wandboard i.MX6 Quad Board
 Kernel-Flavors: armmp
 DTB-Id: imx6q-wandboard.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.wandboard
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: Wandboard i.MX6 Quad Board rev B1
 Kernel-Flavors: armmp
 DTB-Id: imx6q-wandboard-revb1.dtb
 Boot-Script-Path: /boot/boot.scr
-U-Boot-Script-Name: bootscr.wandboard
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 Machine: Wexler TAB7200

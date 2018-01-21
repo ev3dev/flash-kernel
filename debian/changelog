@@ -27,6 +27,10 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   [ Andre Heider ]
   * Add support for multiple scripts sources
 
+  [ Vagrant Cascadian ]
+  * Convert Wandboard and CuBox-i to use a shared imx-base plus
+    uboot-generic boot script.
+
  -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 22:13:59 -0800
 
 flash-kernel (3.90) unstable; urgency=medium
