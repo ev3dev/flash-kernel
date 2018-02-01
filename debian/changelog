@@ -1,4 +1,4 @@
-flash-kernel (3.91) UNRELEASED; urgency=medium
+flash-kernel (3.91) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
   * Make ubootenv.d work on CuBox-i. Thanks to Rainer Dorsch.
@@ -33,7 +33,10 @@ flash-kernel (3.91) UNRELEASED; urgency=medium
   * Adjust sunxi boot script to prefer prefix variable if defined to set
     the locations to search for boot files.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Fri, 19 Jan 2018 22:13:59 -0800
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 01 Feb 2018 06:32:56 +0100
 
 flash-kernel (3.90) unstable; urgency=medium
 
