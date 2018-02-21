@@ -1,3 +1,10 @@
+flash-kernel (3.92) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 21 Feb 2018 12:19:06 +0100
+
 flash-kernel (3.91) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
