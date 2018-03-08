@@ -1474,6 +1474,13 @@ Mtd-Kernel: kernel
 Mtd-Initrd: ramdisk
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: Theobroma Systems RK3399-Q7 SoM
+Kernel-Flavors: arm64
+DTB-Id: rockchip/rk3399-puma-haikou.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: TI AM335x BeagleBone
 Machine: TI AM335x BeagleBone Black
 Kernel-Flavors: armmp
