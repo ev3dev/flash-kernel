@@ -8,15 +8,15 @@ if test "${devnum}" ; then
   setenv devnum ${mmcdev}
 fi
 
-if -z "${partition}" ; then
+if test -z "${partition}" ; then
    setenv partition ${distro_bootpart}
 fi
 
-if -z "${partition}" ; then
+if test -z "${partition}" ; then
    setenv partition ${bootpart}
 fi
 
-if -z "${partition}" ; then
+if test -z "${partition}" ; then
    setenv partition ${mmcpart}
 fi
 

@@ -1,3 +1,9 @@
+flash-kernel (3.94) UNRELEASED; urgency=medium
+
+  * Fix typos in imx-base boot script.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Tue, 20 Mar 2018 00:59:07 -0700
+
 flash-kernel (3.93) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
