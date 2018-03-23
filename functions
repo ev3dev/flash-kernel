@@ -822,6 +822,7 @@ boot_kernel_path_version="$(get_machine_field "$machine" "Boot-Kernel-Path-Versi
 boot_initrd_path_version="$(get_machine_field "$machine" "Boot-Initrd-Path-Version")" || :
 boot_script_path="$(get_machine_field "$machine" "Boot-Script-Path")" || :
 boot_dtb_path="$(get_machine_field "$machine" "Boot-DTB-Path")" || :
+boot_dtb_path_version="$(get_machine_field "$machine" "Boot-DTB-Path-Version")" || :
 boot_multi_path="$(get_machine_field "$machine" "Boot-Multi-Path")" || :
 android_boot_device="$(get_machine_field "$machine" "Android-Boot-Device")" || :
 
@@ -988,6 +989,9 @@ case "$method" in
 		fi
 		if [ -n "$boot_dtb_path" ] && [ "$dtb_append" != "no" ]; then
 			boot_dtb_path="$boot_mnt_dir/$boot_dtb_path"
+			if [ "$boot_dtb_path_version" = "yes" ]; then
+				boot_dtb_path="${boot_dtb_path}-${kvers}"
+			fi
 			boot_dtb=$(find_dtb_file)
 			dtb="$tmpdir/dtb"
 			cp "$boot_dtb" "$dtb"

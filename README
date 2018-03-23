@@ -152,9 +152,9 @@ The supported fields are:
   generated kernel and initrd files on the filesystem; see also
   Boot-Device
 
-* Boot-Kernel-Path-Version, Boot-Initrd-Path-Version: (optional)
-  appends the kernel version to files created with Boot-Kernel-Path
-  and Boot-Initrd-Path.
+* Boot-Kernel-Path-Version, Boot-Initrd-Path-Version, Boot-DTB-Path-Version:
+  (optional) if "yes" appends the kernel version to files created with
+  Boot-Kernel-Path, Boot-Initrd-Path and Boot-DTB-Path.
 
 * Boot-Script-Path: (optional) like Boot-Kernel-Path and
   Boot-Initrd-Path but for an U-Boot boot script; see also
