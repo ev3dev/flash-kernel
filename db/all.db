@@ -1304,6 +1304,13 @@ Boot-Kernel-Path: kernel7.img
 Boot-DTB-Path: bcm2710-rpi-3-b.dtb
 Boot-Device: /dev/mmcblk0p1
 
+Machine: Raspberry Pi 3 Model B+ Rev 1.3
+Kernel-Flavors: rpi2 rpi2-rpfv
+DTB-Id: bcm2710-rpi-3-b-plus.dtb
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2710-rpi-3-b-plus.dtb
+Boot-Device: /dev/mmcblk0p1
+
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood marvell
