@@ -1,3 +1,9 @@
+flash-kernel (3.75ev3dev6) stable; urgency=medium
+
+  * Add Raspberry Pi 3 Model B+
+
+ -- David Lechner <david@lechnology.com>  Mon, 09 Apr 2018 21:07:07 -0500
+
 flash-kernel (3.75ev3dev5) testing; urgency=medium
 
   * Add Raspberry Pi Zero Wireless
