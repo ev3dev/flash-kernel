@@ -1,4 +1,4 @@
-flash-kernel (3.94) UNRELEASED; urgency=medium
+flash-kernel (3.94) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
   * Fix typos in imx-base boot script.
@@ -6,7 +6,7 @@ flash-kernel (3.94) UNRELEASED; urgency=medium
   [ Uwe Kleine-König ]
   * Add Boot-DTB-Path-Version similar to Boot-Kernel-Path-Version.
 
- -- Vagrant Cascadian <vagrant@debian.org>  Tue, 20 Mar 2018 00:59:07 -0700
+ -- Christian Perrier <bubulle@debian.org>  Sat, 14 Apr 2018 07:42:10 +0200
 
 flash-kernel (3.93) unstable; urgency=medium
 
