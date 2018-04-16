@@ -1,3 +1,9 @@
+flash-kernel (3.75ev3dev7) stable; urgency=medium
+
+  * fix RPi3B+ model name
+
+ -- David Lechner <david@lechnology.com>  Sun, 15 Apr 2018 21:31:11 -0500
+
 flash-kernel (3.75ev3dev6) stable; urgency=medium
 
   * Add Raspberry Pi 3 Model B+
