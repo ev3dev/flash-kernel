@@ -1,3 +1,11 @@
+flash-kernel (3.95) UNRELEASED; urgency=medium
+
+  [ Heinrich Schuchardt ]
+  * Add a machine db entry for the Rockchip RK3288 Tinker Board.
+    (Closes: #895934)
+
+ -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
+
 flash-kernel (3.94) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
