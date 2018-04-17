@@ -1389,6 +1389,13 @@ U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 Boot-Script-Path: /boot/boot.scr
 
+Machine: Rockchip RK3288 Tinker Board
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: rk3288-tinker.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood marvell
