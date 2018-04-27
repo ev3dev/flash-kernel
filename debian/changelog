@@ -4,6 +4,9 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
   * Add a machine db entry for the Rockchip RK3288 Tinker Board.
     (Closes: #895934)
 
+  [ Cyril Brulebois ]
+  * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
  -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
 
 flash-kernel (3.94) unstable; urgency=medium

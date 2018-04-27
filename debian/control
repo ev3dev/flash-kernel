@@ -7,8 +7,8 @@ Uploaders: Christian Perrier <bubulle@debian.org>,
            Karsten Merker <merker@debian.org>
 Build-Depends: debhelper (>= 9), devio, linux-base (>= 3.2), dash
 Standards-Version: 3.9.6
-Vcs-Browser: https://anonscm.debian.org/cgit/d-i/flash-kernel.git
-Vcs-Git: https://anonscm.debian.org/git/d-i/flash-kernel.git
+Vcs-Browser: https://salsa.debian.org/installer-team/flash-kernel
+Vcs-Git: https://salsa.debian.org/installer-team/flash-kernel.git
 Rules-Requires-Root: no
 
 Package: flash-kernel
