@@ -414,7 +414,7 @@ Required-Packages: u-boot-tools
 
 Machine: Firefly-RK3399 Board
 Kernel-Flavors: arm64
-DTB-Id: rk3399-firefly.dtb
+DTB-Id: rockchip/rk3399-firefly.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
