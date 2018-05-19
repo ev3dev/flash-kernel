@@ -7,6 +7,13 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
   [ Cyril Brulebois ]
   * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
 
+  [ Heinrich Schuchardt ]
+  * Update Firefly-RK3399 Board (Closes: #899091).
+  * Rockchip RK3399 Evaluation Board (Closes: #899090).
+  * Update entry for Marvell 8040 MACCHIATOBin (Closes: #899092):
+    - Add new Machine name.
+    - Update DTB path.
+
  -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
 
 flash-kernel (3.94) unstable; urgency=medium
