@@ -1396,6 +1396,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: Rockchip RK3399 Evaluation Board
+Kernel-Flavors: arm64
+DTB-Id: rockchip/rk3399-evb.dts
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood marvell
