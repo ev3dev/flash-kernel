@@ -13,6 +13,7 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
   * Update entry for Marvell 8040 MACCHIATOBin (Closes: #899092):
     - Add new Machine name.
     - Update DTB path.
+  * Update Pine64+ (Closes: #899093).
 
  -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
 
