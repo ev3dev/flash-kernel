@@ -262,6 +262,14 @@ get_dtb_name() {
 	fi
 }
 
+get_alt_dtbs() {
+	local field="$(get_machine_field "$machine" "DTB-Alt-Ids")" || :
+	dtb_alt_names="$field"
+	if [ -n "$dtb_alt_names" ] ; then
+		echo "Alternate DTBs: $dtb_alt_names" >&2
+	fi
+}
+
 machine_uses_flash() {
 	local machine="$1"
 
@@ -638,14 +646,16 @@ handle_dtb() {
 			rmdir --ignore-fail-on-non-empty /boot/dtbs
 		fi
 	else
-		dtb=$(find_dtb_file)
-		dtb_name=$(basename $dtb_name)
-		echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_name" >&2
-		mkdir -p /boot/dtbs/$kvers/
-		cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"
-		backup_and_install \
-			"/boot/dtbs/$kvers/$dtb_name.new" \
-			"/boot/dtbs/$kvers/$dtb_name"
+		for dtb_name in $dtb_alt_names $dtb_name; do
+			dtb=$(find_dtb_file)
+			dtb_name=$(basename $dtb_name)
+			echo "Installing $dtb into /boot/dtbs/$kvers/$dtb_name" >&2
+			mkdir -p /boot/dtbs/$kvers/
+			cp "$dtb" "/boot/dtbs/$kvers/$dtb_name.new"
+			backup_and_install \
+				"/boot/dtbs/$kvers/$dtb_name.new" \
+				"/boot/dtbs/$kvers/$dtb_name"
+		done
 
 		# Historically we installed the dtb as
 		# dtb-$kvers, keep it around as an alternative
@@ -688,6 +698,7 @@ fi
 kvers="$1"
 
 get_dtb_name
+get_alt_dtbs
 
 # Install/remove any DTB from postinst, regardless of version
 if [ -n "$kvers" ] ; then
