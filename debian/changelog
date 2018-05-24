@@ -1,3 +1,10 @@
+flash-kernel (3.75ev3dev8) stable; urgency=medium
+
+  * Add DTB-Alt-Ids field for supporting more than one DTB file for a board
+  * update LEGO MINDSTORMS EV3 to use generic boot script
+
+ -- David Lechner <david@lechnology.com>  Thu, 24 May 2018 16:23:44 -0500
+
 flash-kernel (3.75ev3dev7) stable; urgency=medium
 
   * fix RPi3B+ model name
