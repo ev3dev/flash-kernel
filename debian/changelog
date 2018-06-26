@@ -15,6 +15,9 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
     - Update DTB path.
   * Update Pine64+ (Closes: #899093).
 
+  [ Josua Mayer ]
+  * Clearfog Pro: correct DTB name (Closes: #902432).
+
  -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
 
 flash-kernel (3.94) unstable; urgency=medium
