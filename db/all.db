@@ -325,7 +325,7 @@ Required-Packages: u-boot-tools
 Machine: SolidRun Clearfog Pro A1
 Kernel-Flavors: armmp
 Boot-Script-Path: /boot/boot.scr
-DTB-Id: armada-388-clearfog-pre.dtb
+DTB-Id: armada-388-clearfog-pro.dtb
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
