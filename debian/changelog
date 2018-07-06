@@ -18,6 +18,11 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
   [ Josua Mayer ]
   * Clearfog Pro: correct DTB name (Closes: #902432).
 
+  [ Vagrant Cascadian ]
+  * Add entries for additional Cubox-i models:
+    - SolidRun Cubox-i Dual/Quad (1.5som)
+    - SolidRun Cubox-i Dual/Quad (1.5som+emmc)
+
  -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
 
 flash-kernel (3.94) unstable; urgency=medium
