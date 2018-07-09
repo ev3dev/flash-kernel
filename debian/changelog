@@ -1,3 +1,9 @@
+flash-kernel (3.75ev3dev10) stable; urgency=medium
+
+  * Add da850-lego-ev3-adafruit18.dtb to LEGO MINDSTORMS EV3
+
+ -- David Lechner <david@lechnology.com>  Sun, 08 Jul 2018 19:11:46 -0500
+
 flash-kernel (3.75ev3dev9) stable; urgency=medium
 
   * Add da850-lego-ev3-color.dtb to LEGO MINDSTORMS EV3
