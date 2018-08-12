@@ -590,9 +590,79 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: SolidRun HummingBoard Solo/DualLite (1.5som)
+Kernel-Flavors: armmp
+DTB-Id: imx6dl-hummingboard-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard Solo/DualLite (1.5som+emmc)
+Kernel-Flavors: armmp
+DTB-Id: imx6dl-hummingboard-emmc-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: SolidRun HummingBoard Dual/Quad
 Kernel-Flavors: armmp
 DTB-Id: imx6q-hummingboard.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard Dual/Quad (1.5som)
+Kernel-Flavors: armmp
+DTB-Id: imx6q-hummingboard-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard Dual/Quad (1.5som+emmc)
+Kernel-Flavors: armmp
+DTB-Id: imx6q-hummingboard-emmc-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard2 Solo/DualLite
+Kernel-Flavors: armmp
+DTB-Id: imx6dl-hummingboard2.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard2 Solo/DualLite (1.5som)
+Kernel-Flavors: armmp
+DTB-Id: imx6dl-hummingboard2-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard2 Solo/DualLite (1.5som+emmc)
+Kernel-Flavors: armmp
+DTB-Id: imx6dl-hummingboard2-emmc-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard2 Dual/Quad
+Kernel-Flavors: armmp
+DTB-Id: imx6q-hummingboard2.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard2 Dual/Quad (1.5som)
+Kernel-Flavors: armmp
+DTB-Id: imx6q-hummingboard2-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun HummingBoard2 Dual/Quad (1.5som+emmc)
+Kernel-Flavors: armmp
+DTB-Id: imx6q-hummingboard2-emmc-som-v15.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
