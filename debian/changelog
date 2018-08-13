@@ -14,9 +14,11 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
     - Add new Machine name.
     - Update DTB path.
   * Update Pine64+ (Closes: #899093).
+  * Update Raspberry Pi 3 Model B (Closes: #899096).
 
   [ Josua Mayer ]
   * Clearfog Pro: correct DTB name (Closes: #902432).
+  * Add missing entries for HummingBoard variants (Closes: #905962).
 
   [ Vagrant Cascadian ]
   * Add entries for additional Cubox-i models:
