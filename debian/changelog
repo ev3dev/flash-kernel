@@ -24,6 +24,8 @@ flash-kernel (3.95) UNRELEASED; urgency=medium
   * Add entries for additional Cubox-i models:
     - SolidRun Cubox-i Dual/Quad (1.5som)
     - SolidRun Cubox-i Dual/Quad (1.5som+emmc)
+  * Add entry for Raspberry PI 3 B+ (Closes: #905002).
+    Thanks to Johannes Keyser.
 
  -- Karsten Merker <merker@debian.org>  Tue, 17 Apr 2018 21:42:09 +0200
 

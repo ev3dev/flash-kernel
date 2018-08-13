@@ -1474,6 +1474,13 @@ U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 Boot-Script-Path: /boot/boot.scr
 
+Machine: Raspberry Pi 3 Model B+
+Kernel-Flavors: arm64 armmp armmp-lpae
+DTB-Id: broadcom/bcm2837-rpi-3-b-plus.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+Boot-Script-Path: /boot/boot.scr
+
 Machine: Rockchip RK3288 Tinker Board
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: rk3288-tinker.dtb
