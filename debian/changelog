@@ -3,6 +3,10 @@ flash-kernel (3.96) UNRELEASED; urgency=medium
   [ Helmut Grohne ]
   * Support DEB_BUILD_OPTIONS=nocheck (Closes: #908355)
 
+  [ Karsten Merker ]
+  * Add a machine db entry for the Helios-4 NAS system,
+    provided by Josua Mayer. (Closes: #914016)
+
  -- Karsten Merker <merker@debian.org>  Sun, 09 Sep 2018 15:09:44 +0200
 
 flash-kernel (3.95) unstable; urgency=medium

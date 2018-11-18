@@ -547,6 +547,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: Helios4
+Kernel-Flavors: armmp
+DTB-Id: armada-388-helios4.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: HP Media Vault mv2120
 Kernel-Flavors: orion5x marvell
 Machine-Id: 1693
