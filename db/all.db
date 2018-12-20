@@ -540,6 +540,13 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.odroid bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: Hardkernel Odroid HC1
+Kernel-Flavors: armmp armmp-lpae
+DTB-Id: exynos5422-odroidhc1.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: Hardkernel Odroid XU4
 Kernel-Flavors: armmp armmp-lpae
 DTB-Id: exynos5422-odroidxu4.dtb
