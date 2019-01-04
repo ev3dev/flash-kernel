@@ -1509,6 +1509,16 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: Seagate Blackarmor NAS220
+Kernel-Flavors: kirkwood marvell
+DTB-Id: kirkwood-blackarmor-nas220.dtb
+DTB-Append: yes
+Mtd-Kernel: uimage
+Mtd-Initrd: rootfs
+U-Boot-Kernel-Address: 0x00040000
+U-Boot-Initrd-Address: 0x00800000
+Required-Packages: u-boot-tools
+
 Machine: Seagate FreeAgent Dockstar
 Machine: Seagate FreeAgent DockStar
 Kernel-Flavors: kirkwood marvell
