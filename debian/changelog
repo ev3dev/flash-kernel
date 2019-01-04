@@ -1,4 +1,4 @@
-flash-kernel (3.97) UNRELEASED; urgency=medium
+flash-kernel (3.97) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
   * Add machine db entry for Odroid HC1 (Closes: #916980). Thanks to
@@ -8,7 +8,7 @@ flash-kernel (3.97) UNRELEASED; urgency=medium
   * Apply a patch from Hajo Noerenberg adding a machine db entry for
     the Seagate Blackarmor NAS220 (Closes: #918193).
 
- -- Vagrant Cascadian <vagrant@debian.org>  Thu, 20 Dec 2018 15:38:31 -0800
+ -- Karsten Merker <merker@debian.org>  Fri, 04 Jan 2019 14:43:50 +0100
 
 flash-kernel (3.96) unstable; urgency=medium
 
