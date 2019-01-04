@@ -1,7 +1,12 @@
 flash-kernel (3.97) UNRELEASED; urgency=medium
 
+  [ Vagrant Cascadian ]
   * Add machine db entry for Odroid HC1 (Closes: #916980). Thanks to
     Benjamin Drung.
+
+  [ Karsten Merker ]
+  * Apply a patch from Hajo Noerenberg adding a machine db entry for
+    the Seagate Blackarmor NAS220 (Closes: #918193).
 
  -- Vagrant Cascadian <vagrant@debian.org>  Thu, 20 Dec 2018 15:38:31 -0800
 
