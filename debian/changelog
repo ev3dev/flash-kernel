@@ -1,3 +1,12 @@
+flash-kernel (3.97ev3dev1) testing; urgency=medium
+
+  * ev3dev takeover
+  * Add DTB-Alt-Ids field for supporting more than one DTB file for a board
+  * Add LEGO MINDSTORMS EV3 support
+  * Update Raspberry Pi entries for ev3dev
+
+ -- David Lechner <david@lechnology.com>  Mon, 18 Feb 2019 18:37:32 -0600
+
 flash-kernel (3.97) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
