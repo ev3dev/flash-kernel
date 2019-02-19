@@ -126,6 +126,9 @@ The supported fields are:
   run. The script must produce the DTB filename (possibly including a
   directory) on stdout.
 
+* DTB-Alt-Ids: (optional) specifies the names of one or more DTB files for this
+  device relative to the kernel package DTB dir or /etc/flash-kernel/dtbs.
+
 * DTB-Append: (optional) when yes the DTB specified by DTB-Id will be appended
   to the kernel image.
 
