@@ -1482,26 +1482,57 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: Raspberry Pi Zero W Rev 1.1
+Kernel-Flavors: rpi
+DTB-Id: bcm2708-rpi-0-w.dtb
+Boot-Kernel-Path: kernel.img
+Boot-DTB-Path: bcm2708-rpi-0-w.dtb
+Boot-Device: /dev/mmcblk0p1
+
+Machine: Raspberry Pi Model B
+Machine: Raspberry Pi Model B Rev 1
+Machine: Raspberry Pi Model B Rev 2
+Kernel-Flavors: rpi
+DTB-Id: bcm2708-rpi-b.dtb
+Boot-Kernel-Path: kernel.img
+Boot-DTB-Path: bcm2708-rpi-b.dtb
+Boot-Device: /dev/mmcblk0p1
+
+Machine: Raspberry Pi Model B Plus
+Machine: Raspberry Pi Model B Plus Rev 1.0
+Machine: Raspberry Pi Model B Plus Rev 1.1
+Machine: Raspberry Pi Model B Plus Rev 1.2
+Kernel-Flavors: rpi
+DTB-Id: bcm2708-rpi-b-plus.dtb
+Boot-Kernel-Path: kernel.img
+Boot-DTB-Path: bcm2708-rpi-b-plus.dtb
+Boot-Device: /dev/mmcblk0p1
+
 Machine: Raspberry Pi 2 Model B
-Kernel-Flavors: armmp armmp-lpae
-DTB-Id: bcm2836-rpi-2-b.dtb
-U-Boot-Script-Name: bootscr.uboot-generic
-Required-Packages: u-boot-tools
-Boot-Script-Path: /boot/boot.scr
+Machine: Raspberry Pi 2 Model B Rev 1.0
+Machine: Raspberry Pi 2 Model B Rev 1.1
+Machine: Raspberry Pi 2 Model B Rev 1.2
+Kernel-Flavors: rpi2
+DTB-Id: bcm2709-rpi-2-b.dtb
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2709-rpi-2-b.dtb
+Boot-Device: /dev/mmcblk0p1
 
 Machine: Raspberry Pi 3 Model B
-Kernel-Flavors: arm64 armmp armmp-lpae
-DTB-Id: broadcom/bcm2837-rpi-3-b.dtb
-U-Boot-Script-Name: bootscr.uboot-generic
-Required-Packages: u-boot-tools
-Boot-Script-Path: /boot/boot.scr
+Machine: Raspberry Pi 3 Model B Rev 1.2
+Kernel-Flavors: rpi2
+DTB-Id: bcm2710-rpi-3-b.dtb
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2710-rpi-3-b.dtb
+Boot-Device: /dev/mmcblk0p1
 
 Machine: Raspberry Pi 3 Model B+
-Kernel-Flavors: arm64 armmp armmp-lpae
-DTB-Id: broadcom/bcm2837-rpi-3-b-plus.dtb
-U-Boot-Script-Name: bootscr.uboot-generic
-Required-Packages: u-boot-tools
-Boot-Script-Path: /boot/boot.scr
+Machine: Raspberry Pi 3 Model B Plus Rev 1.3
+Kernel-Flavors: rpi2
+DTB-Id: bcm2710-rpi-3-b-plus.dtb
+Boot-Kernel-Path: kernel7.img
+Boot-DTB-Path: bcm2710-rpi-3-b-plus.dtb
+Boot-Device: /dev/mmcblk0p1
 
 Machine: Rockchip RK3288 Tinker Board
 Kernel-Flavors: armmp armmp-lpae
