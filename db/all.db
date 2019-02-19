@@ -896,6 +896,14 @@ Mtd-Kernel: zImage
 Mtd-Initrd: ramdisk.gz
 Bootloader-Sets-Incorrect-Root: yes
 
+Machine: LEGO MINDSTORMS EV3
+Kernel-Flavors: ev3
+Boot-Script-Path: /boot/boot.scr
+DTB-Id: da850-lego-ev3.dtb
+DTB-Alt-Ids: da850-lego-ev3-lms2012.dtb da850-lego-ev3-adafruit18.dtb da850-lego-ev3-color.dtb
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: LeMaker Banana Pi
 Kernel-Flavors: armmp armmp-lpae
 Boot-Script-Path: /boot/boot.scr
